@@ -1,0 +1,22 @@
+<controls>
+    <SliderInt_popBalloonCountX>
+        <name>popBalloonCountX</name>
+        <value>40</value>
+    </SliderInt_popBalloonCountX>
+    <SliderInt_popBalloonMotionThreshold>
+        <name>popBalloonMotionThreshold</name>
+        <value>20</value>
+    </SliderInt_popBalloonMotionThreshold>
+    <SliderInt_popBalloonMomentumSecs>
+        <name>popBalloonMomentumSecs</name>
+        <value>5</value>
+    </SliderInt_popBalloonMomentumSecs>
+    <SliderFloat_popBalloonLerpUp>
+        <name>popBalloonLerpUp</name>
+        <value>0.100000</value>
+    </SliderFloat_popBalloonLerpUp>
+    <SliderFloat_popBalloonLerpDown>
+        <name>popBalloonLerpDown</name>
+        <value>0.050000</value>
+    </SliderFloat_popBalloonLerpDown>
+</controls>
