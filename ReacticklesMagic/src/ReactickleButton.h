@@ -8,11 +8,25 @@
 #pragma once
 #include "InteractiveObject.h"
 
+class ReactickleButtonListener {
+public:
+	virtual void reactickleSelected(string name) = 0;
+};
 class ReactickleButton: public InteractiveObject {
 public:
-	ReactickleButton(string screenshotUrl);
+	ReactickleButton(string name, string screenshotUrl);
 	
 	void draw();
+	
+	bool touchDown(float xx, float yy, int tid);
+	bool touchMoved(float xx, float yy, int tid);
+	bool touchUp(float xx, float yy, int tid);
+		
+	void setListener(ReactickleButtonListener *listener);
 private:
 	ofImage *screenshot;
+	string name;
+	ReactickleButtonListener *listener;
+	int currTouchId;
+	bool down;
 };

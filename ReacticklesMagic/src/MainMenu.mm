@@ -9,28 +9,35 @@
 #include "MainMenu.h"
 #include "constants.h"
 #include "ImageCache.h"
+#include "ClapClock.h"
+#include "ReactickleApp.h"
 
 void MainMenu::setup() {
 	// add all the buttons for the different Reactickles
 	
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton(IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("clap clock", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	/*reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));*/
 	
 	// copy the reactickle list to the items list - the items list
 	// is the one used to propagating events.
 	for(int i = 0; i < reactickleButtons.size(); i++) {
+		
+		// add a button listener
+		reactickleButtons[i]->setListener(this);
+		
+		// add it to the display/interaction hierarchy
 		items.push_back(reactickleButtons[i]);
 	}
 	scrollRect.x = 0;
@@ -43,6 +50,14 @@ void MainMenu::setup() {
 	touching = false;
 }
 
+
+void MainMenu::reactickleSelected(string name) {
+	printf("Starting %s!\n", name.c_str());
+	if(name=="clap clock") {
+
+		ReactickleApp::instance->launchReactickle(new ClapClock());
+	}
+}
 
 // this method arranges the reacticklesButtons nicely
 void MainMenu::arrange() {
@@ -104,15 +119,31 @@ void MainMenu::touchDown(float x, float y, int touchId) {
 		touchY = y;
 		touching = true;
 	}
+	for(int i = 0; i < items.size(); i++) {
+		if(items[i]->touchDown(x, y, touchId)) {
+			return;
+		}
+	}
 }
 
 void MainMenu::touchMoved(float x, float y, int touchId) {
 	deltaY = y - touchY;
 	scrollOffset += deltaY;
 	touchY = y;
+	for(int i = 0; i < items.size(); i++) {
+		if(items[i]->touchMoved(x, y, touchId)) {
+			return;
+		}
+	}
 }
 
 void MainMenu::touchUp(float x, float y, int touchId) {
 	touching = false;
+	for(int i = 0; i < items.size(); i++) {
+		if(items[i]->touchUp(x, y, touchId)) {
+			return;
+		}
+	}
 }
+
 

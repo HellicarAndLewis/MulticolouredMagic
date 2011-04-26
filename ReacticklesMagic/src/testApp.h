@@ -6,8 +6,9 @@
 #include "constants.h"
 #include "TTApp.h"
 #include "MainMenu.h"
+#include "ReactickleApp.h"
 
-class testApp : public ofxiPhoneApp {
+class testApp : public ReactickleApp {
 	
 public:
 	void setup();
@@ -26,6 +27,7 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
+	void launchReactickle(TTApp *reactickle);
 	MainMenu mainMenu;
 	
 	// this is the app that's currently receiving events

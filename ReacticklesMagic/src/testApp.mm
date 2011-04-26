@@ -4,6 +4,7 @@
 //--------------------------------------------------------------
 void testApp::setup(){	
 	
+	ReactickleApp::instance = this;
 	setupGraphics();
 	setupOrientation();
 	
@@ -79,12 +80,19 @@ void testApp::draw(){
 	}
 	
 //	ofCircle(WIDTH/2, HEIGHT/2, HEIGHT/2);
-	mainMenu.draw();
+	//mainMenu.draw();
+	currentApp->draw();
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
 		glPopMatrix();
 	}
 	
+}
+
+
+void testApp::launchReactickle(TTApp *reactickle) {
+
+	currentApp = reactickle;
 }
 
 //--------------------------------------------------------------

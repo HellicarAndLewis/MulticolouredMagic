@@ -8,7 +8,7 @@
 #include "TTApp.h"
 #include "InteractiveObject.h"
 #include "ReactickleButton.h"
-class MainMenu: public TTApp {
+class MainMenu: public TTApp, public ReactickleButtonListener {
 public:
 	void setup();
 	void draw();
@@ -23,7 +23,7 @@ public:
 	void touchDown(float x, float y, int touchId);
 	void touchMoved(float x, float y, int touchId);
 	void touchUp(float x, float y, int touchId);
-	
+	void reactickleSelected(string name);
 private:
 	void arrange();
 	

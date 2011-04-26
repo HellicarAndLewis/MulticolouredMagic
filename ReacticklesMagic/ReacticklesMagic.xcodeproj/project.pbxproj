@@ -49,11 +49,13 @@
 		EA20B5031366F6EF0038E922 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA20B4F71366F6EF0038E922 /* Icon.png */; };
 		EA20B5041366F6EF0038E922 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA20B4F81366F6EF0038E922 /* Icon@2x.png */; };
 		EA20B530136703040038E922 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = EA20B52F136703040038E922 /* iTunesArtwork */; };
-		EA20B544136703810038E922 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B543136703810038E922 /* MainMenu.cpp */; };
+		EA20B544136703810038E922 /* MainMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20B543136703810038E922 /* MainMenu.mm */; };
 		EA20B572136703EA0038E922 /* MagicShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B569136703EA0038E922 /* MagicShapes.cpp */; };
 		EA20B573136703EA0038E922 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B56D136703EA0038E922 /* util.cpp */; };
 		EA20B8751367151A0038E922 /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B8741367151A0038E922 /* ReactickleButton.cpp */; };
 		EA20B888136716690038E922 /* ImageCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B887136716690038E922 /* ImageCache.cpp */; };
+		EA20B9811367283B0038E922 /* ClapClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B97F1367283B0038E922 /* ClapClock.cpp */; };
+		EA20B987136728990038E922 /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20B986136728990038E922 /* ReactickleApp.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,7 +171,7 @@
 		EA20B4F81366F6EF0038E922 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		EA20B52F136703040038E922 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		EA20B542136703810038E922 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
-		EA20B543136703810038E922 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
+		EA20B543136703810038E922 /* MainMenu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainMenu.mm; sourceTree = "<group>"; };
 		EA20B569136703EA0038E922 /* MagicShapes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MagicShapes.cpp; sourceTree = "<group>"; };
 		EA20B56A136703EA0038E922 /* MagicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShapes.h; sourceTree = "<group>"; };
 		EA20B56B136703EA0038E922 /* msaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msaColor.h; sourceTree = "<group>"; };
@@ -182,6 +184,10 @@
 		EA20B8741367151A0038E922 /* ReactickleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleButton.cpp; sourceTree = "<group>"; };
 		EA20B886136716690038E922 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
 		EA20B887136716690038E922 /* ImageCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageCache.cpp; sourceTree = "<group>"; };
+		EA20B97F1367283B0038E922 /* ClapClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClapClock.cpp; sourceTree = "<group>"; };
+		EA20B9801367283B0038E922 /* ClapClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClapClock.h; sourceTree = "<group>"; };
+		EA20B985136728990038E922 /* ReactickleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleApp.h; sourceTree = "<group>"; };
+		EA20B986136728990038E922 /* ReactickleApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReactickleApp.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,7 @@
 				BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */,
 				EA20B4ED1366F6EF0038E922 /* Resources */,
 				E4D8936A11527B74007E1F53 /* src */,
+				EA20B97E1367283B0038E922 /* reactickles */,
 				EA20B563136703EA0038E922 /* framework */,
 				BB24E1F710DAA51900E9C588 /* openFrameworks */,
 				BB16F26B0F2B646B00518274 /* addons */,
@@ -550,13 +557,15 @@
 		E4D8936A11527B74007E1F53 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EA20B985136728990038E922 /* ReactickleApp.h */,
+				EA20B986136728990038E922 /* ReactickleApp.mm */,
 				EA20B8731367151A0038E922 /* ReactickleButton.h */,
 				EA20B8741367151A0038E922 /* ReactickleButton.cpp */,
 				EA20B4951366EFB60038E922 /* constants.h */,
 				E4D8936B11527B74007E1F53 /* main.mm */,
 				E4D8936D11527B74007E1F53 /* testApp.mm */,
 				EA20B542136703810038E922 /* MainMenu.h */,
-				EA20B543136703810038E922 /* MainMenu.cpp */,
+				EA20B543136703810038E922 /* MainMenu.mm */,
 				E4D8936C11527B74007E1F53 /* testApp.h */,
 			);
 			path = src;
@@ -606,6 +615,16 @@
 			);
 			path = gui;
 			sourceTree = "<group>";
+		};
+		EA20B97E1367283B0038E922 /* reactickles */ = {
+			isa = PBXGroup;
+			children = (
+				EA20B97F1367283B0038E922 /* ClapClock.cpp */,
+				EA20B9801367283B0038E922 /* ClapClock.h */,
+			);
+			name = reactickles;
+			path = ../reactickles;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -715,11 +734,13 @@
 			files = (
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
 				E4D8936F11527B74007E1F53 /* testApp.mm in Sources */,
-				EA20B544136703810038E922 /* MainMenu.cpp in Sources */,
+				EA20B544136703810038E922 /* MainMenu.mm in Sources */,
 				EA20B572136703EA0038E922 /* MagicShapes.cpp in Sources */,
 				EA20B573136703EA0038E922 /* util.cpp in Sources */,
 				EA20B8751367151A0038E922 /* ReactickleButton.cpp in Sources */,
 				EA20B888136716690038E922 /* ImageCache.cpp in Sources */,
+				EA20B9811367283B0038E922 /* ClapClock.cpp in Sources */,
+				EA20B987136728990038E922 /* ReactickleApp.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
