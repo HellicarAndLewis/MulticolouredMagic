@@ -15,7 +15,8 @@ void testApp::setup(){
 	
 	//iPhoneAlerts will be sent to this.
 	ofxiPhoneAlerts.addListener(this);
-	
+	currentApp = &mainMenu;
+	mainMenu.setup();
 }
 
 void testApp::setupOrientation() {
@@ -78,7 +79,7 @@ void testApp::draw(){
 	}
 	
 //	ofCircle(WIDTH/2, HEIGHT/2, HEIGHT/2);
-	drawHeart(ofVec2f(WIDTH/2, HEIGHT/2), HEIGHT/2);
+	mainMenu.draw();
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
 		glPopMatrix();
@@ -93,17 +94,17 @@ void testApp::exit(){
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs &touch){
-
+	currentApp->touchDown(touch.x, touch.y, touch.id);
 }
 
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch){
-
+	currentApp->touchMoved(touch.x, touch.y, touch.id);
 }
 
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs &touch){
-
+	currentApp->touchUp(touch.x, touch.y, touch.id);
 }
 
 //--------------------------------------------------------------

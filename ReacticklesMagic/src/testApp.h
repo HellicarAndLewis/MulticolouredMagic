@@ -4,6 +4,9 @@
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
 #include "constants.h"
+#include "TTApp.h"
+#include "MainMenu.h"
+
 class testApp : public ofxiPhoneApp {
 	
 public:
@@ -23,6 +26,11 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
+	MainMenu mainMenu;
+	
+	// this is the app that's currently receiving events
+	TTApp *currentApp;
+	
 private:
 	int currOrientation;
 	
