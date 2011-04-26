@@ -87,37 +87,40 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 325530300;
-			PBXWorkspaceStateSaveDate = 325530300;
+			PBXPerProjectTemplateStateSaveDate = 325531463;
+			PBXWorkspaceStateSaveDate = 325531463;
 		};
 		perUserProjectItems = {
-			EA20B70113670A600038E922 /* PBXTextBookmark */ = EA20B70113670A600038E922 /* PBXTextBookmark */;
-			EA20B70213670A600038E922 /* PBXTextBookmark */ = EA20B70213670A600038E922 /* PBXTextBookmark */;
-			EA20B70313670A600038E922 /* PBXTextBookmark */ = EA20B70313670A600038E922 /* PBXTextBookmark */;
-			EA20BA9E1367315A0038E922 /* PBXTextBookmark */ = EA20BA9E1367315A0038E922 /* PBXTextBookmark */;
-			EA20BB37136734370038E922 /* PBXTextBookmark */ = EA20BB37136734370038E922 /* PBXTextBookmark */;
-			EA20BB38136734370038E922 /* PBXTextBookmark */ = EA20BB38136734370038E922 /* PBXTextBookmark */;
-			EA20BB39136734370038E922 /* PBXTextBookmark */ = EA20BB39136734370038E922 /* PBXTextBookmark */;
-			EA59EBF41356F75E00AB4B38 /* PBXTextBookmark */ = EA59EBF41356F75E00AB4B38 /* PBXTextBookmark */;
-			EA59EBF51356F75E00AB4B38 /* PBXTextBookmark */ = EA59EBF51356F75E00AB4B38 /* PBXTextBookmark */;
-			EA7413741354539D00C69A4D /* PBXTextBookmark */ = EA7413741354539D00C69A4D /* PBXTextBookmark */;
-			EA74139B135455A400C69A4D /* PBXTextBookmark */ = EA74139B135455A400C69A4D /* PBXTextBookmark */;
-			EA7413C213545B0400C69A4D /* PBXTextBookmark */ = EA7413C213545B0400C69A4D /* PBXTextBookmark */;
-			EA7416DF1354A38300C69A4D /* PBXTextBookmark */ = EA7416DF1354A38300C69A4D /* PBXTextBookmark */;
-			EA7417561354ABD500C69A4D /* PBXTextBookmark */ = EA7417561354ABD500C69A4D /* PBXTextBookmark */;
-			EA8659C11355FDD800BAA004 /* PBXTextBookmark */ = EA8659C11355FDD800BAA004 /* PBXTextBookmark */;
-			EA8659C31355FDD800BAA004 /* PBXTextBookmark */ = EA8659C31355FDD800BAA004 /* PBXTextBookmark */;
-			EA8659C41355FDD800BAA004 /* PBXTextBookmark */ = EA8659C41355FDD800BAA004 /* PBXTextBookmark */;
-			EA8659C81355FDD800BAA004 /* PBXTextBookmark */ = EA8659C81355FDD800BAA004 /* PBXTextBookmark */;
-			EA8659F61356065F00BAA004 /* PBXTextBookmark */ = EA8659F61356065F00BAA004 /* PBXTextBookmark */;
-			EA865A2513560AC700BAA004 /* PBXTextBookmark */ = EA865A2513560AC700BAA004 /* PBXTextBookmark */;
-			EA865A2813560AC700BAA004 /* PBXTextBookmark */ = EA865A2813560AC700BAA004 /* PBXTextBookmark */;
-			EACD78C31357121200803D49 /* PBXTextBookmark */ = EACD78C31357121200803D49 /* PBXTextBookmark */;
-			EACD790A13572E1C00803D49 /* PBXTextBookmark */ = EACD790A13572E1C00803D49 /* PBXTextBookmark */;
-			EAD6E1AB135333C100075A87 /* PBXTextBookmark */ = EAD6E1AB135333C100075A87 /* PBXTextBookmark */;
-			EAD6E232135334E400075A87 /* PBXTextBookmark */ = EAD6E232135334E400075A87 /* PBXTextBookmark */;
-			EAD6E3BF1353393A00075A87 /* PlistBookmark */ = EAD6E3BF1353393A00075A87 /* PlistBookmark */;
-			EAD6E5B81353461200075A87 /* PBXTextBookmark */ = EAD6E5B81353461200075A87 /* PBXTextBookmark */;
+			EA20B70113670A600038E922 = EA20B70113670A600038E922 /* PBXTextBookmark */;
+			EA20B70213670A600038E922 = EA20B70213670A600038E922 /* PBXTextBookmark */;
+			EA20B70313670A600038E922 = EA20B70313670A600038E922 /* PBXTextBookmark */;
+			EA20BA9E1367315A0038E922 = EA20BA9E1367315A0038E922 /* PBXTextBookmark */;
+			EA20BB37136734370038E922 = EA20BB37136734370038E922 /* PBXTextBookmark */;
+			EA20BB38136734370038E922 = EA20BB38136734370038E922 /* PBXTextBookmark */;
+			EA20BB39136734370038E922 = EA20BB39136734370038E922 /* PBXTextBookmark */;
+			EA20BB8A136737730038E922 /* XCBuildMessageTextBookmark */ = EA20BB8A136737730038E922 /* XCBuildMessageTextBookmark */;
+			EA20BB8B136737730038E922 /* PBXTextBookmark */ = EA20BB8B136737730038E922 /* PBXTextBookmark */;
+			EA20BB8D136737740038E922 /* PBXTextBookmark */ = EA20BB8D136737740038E922 /* PBXTextBookmark */;
+			EA59EBF41356F75E00AB4B38 = EA59EBF41356F75E00AB4B38 /* PBXTextBookmark */;
+			EA59EBF51356F75E00AB4B38 = EA59EBF51356F75E00AB4B38 /* PBXTextBookmark */;
+			EA7413741354539D00C69A4D = EA7413741354539D00C69A4D /* PBXTextBookmark */;
+			EA74139B135455A400C69A4D = EA74139B135455A400C69A4D /* PBXTextBookmark */;
+			EA7413C213545B0400C69A4D = EA7413C213545B0400C69A4D /* PBXTextBookmark */;
+			EA7416DF1354A38300C69A4D = EA7416DF1354A38300C69A4D /* PBXTextBookmark */;
+			EA7417561354ABD500C69A4D = EA7417561354ABD500C69A4D /* PBXTextBookmark */;
+			EA8659C11355FDD800BAA004 = EA8659C11355FDD800BAA004 /* PBXTextBookmark */;
+			EA8659C31355FDD800BAA004 = EA8659C31355FDD800BAA004 /* PBXTextBookmark */;
+			EA8659C41355FDD800BAA004 = EA8659C41355FDD800BAA004 /* PBXTextBookmark */;
+			EA8659C81355FDD800BAA004 = EA8659C81355FDD800BAA004 /* PBXTextBookmark */;
+			EA8659F61356065F00BAA004 = EA8659F61356065F00BAA004 /* PBXTextBookmark */;
+			EA865A2513560AC700BAA004 = EA865A2513560AC700BAA004 /* PBXTextBookmark */;
+			EA865A2813560AC700BAA004 = EA865A2813560AC700BAA004 /* PBXTextBookmark */;
+			EACD78C31357121200803D49 = EACD78C31357121200803D49 /* PBXTextBookmark */;
+			EACD790A13572E1C00803D49 = EACD790A13572E1C00803D49 /* PBXTextBookmark */;
+			EAD6E1AB135333C100075A87 = EAD6E1AB135333C100075A87 /* PBXTextBookmark */;
+			EAD6E232135334E400075A87 = EAD6E232135334E400075A87 /* PBXTextBookmark */;
+			EAD6E3BF1353393A00075A87 = EAD6E3BF1353393A00075A87 /* PlistBookmark */;
+			EAD6E5B81353461200075A87 = EAD6E5B81353461200075A87 /* PBXTextBookmark */;
 		};
 		sourceControlManager = EA673851134BA17F009DE4CB /* Source Control */;
 		userBuildSettings = {
@@ -194,14 +197,6 @@
 		vrLen = 1149;
 		vrLoc = 0;
 	};
-	EA20BA75136730CC0038E922 /* CircleSwarm.cpp */ = {
-		isa = PBXFileReference;
-		fileEncoding = 4;
-		lastKnownFileType = sourcecode.cpp.cpp;
-		name = CircleSwarm.cpp;
-		path = /Work/openFrameworks/apps/MulticolouredMagic/reactickles/CircleSwarm/CircleSwarm.cpp;
-		sourceTree = "<absolute>";
-	};
 	EA20BA89136730DC0038E922 /* Reactickle.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {747, 858}}";
@@ -244,9 +239,38 @@
 		fRef = EAD6E370135338F300075A87 /* Apps.cpp */;
 		name = "Apps.cpp: 16";
 		rLen = 0;
-		rLoc = 316;
+		rLoc = 293;
 		rType = 0;
 		vrLen = 818;
+		vrLoc = 41;
+	};
+	EA20BB8A136737730038E922 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "ExampleApp.h: No such file or directory";
+		fRef = EAD6E370135338F300075A87 /* Apps.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 11;
+		rType = 1;
+	};
+	EA20BB8B136737730038E922 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EAD6E370135338F300075A87 /* Apps.cpp */;
+		name = "Apps.cpp: 12";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 384;
+		vrLoc = 452;
+	};
+	EA20BB8D136737740038E922 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EAD6E370135338F300075A87 /* Apps.cpp */;
+		name = "Apps.cpp: 12";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 794;
 		vrLoc = 41;
 	};
 	EA59EBF41356F75E00AB4B38 /* PBXTextBookmark */ = {
@@ -374,13 +398,13 @@
 		continueAfterActions = 0;
 		countType = 0;
 		delayBeforeContinue = 0;
-		fileReference = EA20BA75136730CC0038E922 /* CircleSwarm.cpp */;
+		fileReference = EA20BB09136732D00038E922 /* CircleSwarm.cpp */;
 		functionName = "CircleSwarm::update()";
 		hitCount = 1;
 		ignoreCount = 0;
 		lineNumber = 61;
 		location = magicDebug;
-		modificationTime = 325530300.873262;
+		modificationTime = 325531462.979421;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -574,8 +598,8 @@
 	EAD6E370135338F300075A87 /* Apps.cpp */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {747, 468}}";
-			sepNavSelRange = "{316, 0}";
-			sepNavVisRange = "{41, 818}";
+			sepNavSelRange = "{169, 0}";
+			sepNavVisRange = "{41, 794}";
 		};
 	};
 	EAD6E376135338F300075A87 /* main.cpp */ = {
@@ -586,6 +610,12 @@
 		};
 	};
 	EAD6E378135338F300075A87 /* 01JGLCircleGetsBigger.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = 01JGLCircleGetsBigger.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/touchtrust/01JGLCircleGetsBigger.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {856, 2171}}";
 			sepNavSelRange = "{273, 0}";
@@ -593,6 +623,12 @@
 		};
 	};
 	EAD6E379135338F300075A87 /* 02JGLGridOfSquaresToCircles.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = 02JGLGridOfSquaresToCircles.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/touchtrust/02JGLGridOfSquaresToCircles.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {852, 1131}}";
 			sepNavSelRange = "{1576, 0}";
@@ -601,6 +637,12 @@
 		};
 	};
 	EAD6E37A135338F300075A87 /* 03JGLColourChangeOnNoise.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = 03JGLColourChangeOnNoise.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/touchtrust/03JGLColourChangeOnNoise.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {600, 741}}";
 			sepNavSelRange = "{0, 0}";
@@ -608,6 +650,12 @@
 		};
 	};
 	EAD6E37B135338F300075A87 /* AudioBalloonApp.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = AudioBalloonApp.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/touchtrust/AudioBalloonApp.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {856, 1833}}";
 			sepNavSelRange = "{1647, 0}";
@@ -615,6 +663,12 @@
 		};
 	};
 	EAD6E37C135338F300075A87 /* ClapBang.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ClapBang.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/touchtrust/ClapBang.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {747, 2249}}";
 			sepNavSelRange = "{934, 0}";

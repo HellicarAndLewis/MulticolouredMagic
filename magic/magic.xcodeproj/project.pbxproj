@@ -373,6 +373,8 @@
 		EA20BB18136732D00038E922 /* 02JGLGridOfSquaresToCircles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 02JGLGridOfSquaresToCircles.h; sourceTree = "<group>"; };
 		EA20BB1A136732D00038E922 /* Inversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Inversion.cpp; sourceTree = "<group>"; };
 		EA20BB1B136732D00038E922 /* Inversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inversion.h; sourceTree = "<group>"; };
+		EA20BB84136737660038E922 /* 01JGLCircleGetsBigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 01JGLCircleGetsBigger.h; sourceTree = "<group>"; };
+		EA20BB861367376C0038E922 /* AudioBalloonApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioBalloonApp.h; sourceTree = "<group>"; };
 		EAD6E0C21353336400075A87 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		EAD6E0C71353336400075A87 /* cv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cv.h; sourceTree = "<group>"; };
 		EAD6E0C81353336400075A87 /* cv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cv.hpp; sourceTree = "<group>"; };
@@ -522,13 +524,6 @@
 		EAD6E24E1353353100075A87 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		EAD6E370135338F300075A87 /* Apps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Apps.cpp; sourceTree = "<group>"; };
 		EAD6E376135338F300075A87 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		EAD6E378135338F300075A87 /* 01JGLCircleGetsBigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 01JGLCircleGetsBigger.h; sourceTree = "<group>"; };
-		EAD6E379135338F300075A87 /* 02JGLGridOfSquaresToCircles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 02JGLGridOfSquaresToCircles.h; sourceTree = "<group>"; };
-		EAD6E37A135338F300075A87 /* 03JGLColourChangeOnNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 03JGLColourChangeOnNoise.h; sourceTree = "<group>"; };
-		EAD6E37B135338F300075A87 /* AudioBalloonApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioBalloonApp.h; sourceTree = "<group>"; };
-		EAD6E37C135338F300075A87 /* ClapBang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClapBang.h; sourceTree = "<group>"; };
-		EAD6E37D135338F300075A87 /* Example2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2.h; sourceTree = "<group>"; };
-		EAD6E37E135338F300075A87 /* ExampleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleApp.h; sourceTree = "<group>"; };
 		EAD6E383135338F300075A87 /* TuioKinect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioKinect.cpp; sourceTree = "<group>"; };
 		EAD6E384135338F300075A87 /* TuioKinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioKinect.h; sourceTree = "<group>"; };
 		EAD6E58D135345AD00075A87 /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
@@ -1133,6 +1128,8 @@
 		EA20BA6D136730CC0038E922 /* reactickles */ = {
 			isa = PBXGroup;
 			children = (
+				EA20BB851367376C0038E922 /* AudioBalloon */,
+				EA20BB83136737660038E922 /* CircleGetsBigger */,
 				EA20BB02136732D00038E922 /* Circles2D */,
 				EA20BB08136732D00038E922 /* CircleSwarm */,
 				EA20BB0D136732D00038E922 /* ClapBang */,
@@ -1225,6 +1222,22 @@
 				EA20BB1B136732D00038E922 /* Inversion.h */,
 			);
 			path = Inversion;
+			sourceTree = "<group>";
+		};
+		EA20BB83136737660038E922 /* CircleGetsBigger */ = {
+			isa = PBXGroup;
+			children = (
+				EA20BB84136737660038E922 /* 01JGLCircleGetsBigger.h */,
+			);
+			path = CircleGetsBigger;
+			sourceTree = "<group>";
+		};
+		EA20BB851367376C0038E922 /* AudioBalloon */ = {
+			isa = PBXGroup;
+			children = (
+				EA20BB861367376C0038E922 /* AudioBalloonApp.h */,
+			);
+			path = AudioBalloon;
 			sourceTree = "<group>";
 		};
 		EAD6E0C11353336400075A87 /* ofxOpenCv */ = {
@@ -1614,25 +1627,10 @@
 				EA20B550136703D30038E922 /* framework */,
 				EAD6E370135338F300075A87 /* Apps.cpp */,
 				EAD6E376135338F300075A87 /* main.cpp */,
-				EAD6E377135338F300075A87 /* touchtrust */,
 				EAD6E383135338F300075A87 /* TuioKinect.cpp */,
 				EAD6E384135338F300075A87 /* TuioKinect.h */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		EAD6E377135338F300075A87 /* touchtrust */ = {
-			isa = PBXGroup;
-			children = (
-				EAD6E378135338F300075A87 /* 01JGLCircleGetsBigger.h */,
-				EAD6E379135338F300075A87 /* 02JGLGridOfSquaresToCircles.h */,
-				EAD6E37A135338F300075A87 /* 03JGLColourChangeOnNoise.h */,
-				EAD6E37B135338F300075A87 /* AudioBalloonApp.h */,
-				EAD6E37C135338F300075A87 /* ClapBang.h */,
-				EAD6E37D135338F300075A87 /* Example2.h */,
-				EAD6E37E135338F300075A87 /* ExampleApp.h */,
-			);
-			path = touchtrust;
 			sourceTree = "<group>";
 		};
 		EAD6E58C135345AD00075A87 /* osx */ = {

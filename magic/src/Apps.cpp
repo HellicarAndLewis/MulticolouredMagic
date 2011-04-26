@@ -9,7 +9,7 @@
 
 
 #include "MagicApp.h"
-#include "ExampleApp.h"
+
 #include "01JGLCircleGetsBigger.h"
 #include "02JGLGridOfSquaresToCircles.h"
 #include "03JGLColourChangeOnNoise.h"
