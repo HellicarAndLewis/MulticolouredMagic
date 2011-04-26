@@ -4,7 +4,7 @@
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
 #include "constants.h"
-#include "TTApp.h"
+#include "Reactickle.h"
 #include "MainMenu.h"
 #include "ReactickleApp.h"
 
@@ -27,11 +27,11 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
-	void launchReactickle(TTApp *reactickle);
+	void launchReactickle(Reactickle *reactickle);
 	MainMenu mainMenu;
 	
 	// this is the app that's currently receiving events
-	TTApp *currentApp;
+	Reactickle *currentApp;
 	
 private:
 	int currOrientation;

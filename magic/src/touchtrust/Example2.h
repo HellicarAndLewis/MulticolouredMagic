@@ -7,9 +7,9 @@
  *
  */
 
-#include "TTApp.h"
+#include "Reactickle.h"
 
-class Example2: public TTApp {
+class Example2: public Reactickle {
 	void draw() {
 		ofSetHexColor(0x00FF00);
 		ofRect(0, 0, ofGetWidth(), ofGetHeight()*movement);

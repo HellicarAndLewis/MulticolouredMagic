@@ -90,7 +90,7 @@ void testApp::draw(){
 }
 
 
-void testApp::launchReactickle(TTApp *reactickle) {
+void testApp::launchReactickle(Reactickle *reactickle) {
 
 	currentApp = reactickle;
 }

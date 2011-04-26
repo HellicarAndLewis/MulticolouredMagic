@@ -5,7 +5,7 @@
  * Created by Marek Bereza on 12/04/2011.
  *
  */
-#include "TTApp.h"
+#include "Reactickle.h"
 #include "SwarmParticle.h"
 #define NUM_SWARM_PARTICLES 150
 class SwarmTouch: public ofVec2f {
@@ -19,7 +19,7 @@ public:
 		this->y = y;
 	}
 };
-class CircleSwarm: public TTApp {
+class CircleSwarm: public Reactickle {
 public:
 	float timeOfLastInteraction;
 	bool needsKinect() { return true; }

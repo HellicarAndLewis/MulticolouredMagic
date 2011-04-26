@@ -13,7 +13,7 @@
     </SliderFloat_blend_amount>
     <SliderFloat_Sound_Meter>
         <name>Sound Meter</name>
-        <value>0.965508</value>
+        <value>0.000000</value>
     </SliderFloat_Sound_Meter>
     <SliderFloat_Sound_input_volume>
         <name>Sound input volume</name>

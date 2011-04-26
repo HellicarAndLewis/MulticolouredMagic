@@ -15,20 +15,7 @@
 void MainMenu::setup() {
 	// add all the buttons for the different Reactickles
 	
-	reactickleButtons.push_back(new ReactickleButton("clap clock", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	/*reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("", IMAGE_ROOT + "defaultScreenshot.jpg"));*/
+	initMenu();
 	
 	// copy the reactickle list to the items list - the items list
 	// is the one used to propagating events.
@@ -51,13 +38,7 @@ void MainMenu::setup() {
 }
 
 
-void MainMenu::reactickleSelected(string name) {
-	printf("Starting %s!\n", name.c_str());
-	if(name=="clap clock") {
 
-		ReactickleApp::instance->launchReactickle(new ClapClock());
-	}
-}
 
 // this method arranges the reacticklesButtons nicely
 void MainMenu::arrange() {

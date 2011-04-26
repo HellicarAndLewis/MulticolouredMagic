@@ -6,8 +6,8 @@
  *
  */
 
-#include "TTApp.h"
-class Expander: public TTApp {
+#include "Reactickle.h"
+class Expander: public Reactickle {
 public:
 	void setup(){
         ofSetCircleResolution(42); //42 is the answer to everything!

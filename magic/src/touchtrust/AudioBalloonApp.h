@@ -10,7 +10,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "TTApp.h"
+#include "Reactickle.h"
 
 static int		audioBalloonCountX	= 4;
 static int		audioBalloonCountY	= 3;
@@ -52,7 +52,7 @@ public:
 	
 };
 
-class AudioBalloonApp : public TTApp {
+class AudioBalloonApp : public Reactickle {
 public:
 	
 	vector<AudioBalloon>	balloons;

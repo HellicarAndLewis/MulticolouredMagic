@@ -28,7 +28,7 @@
 #endif
 
 
-class TTApp: public ofBaseApp {
+class Reactickle: public ofBaseApp {
 public:
 	
 	// this is called every time the app is restarted

@@ -5,11 +5,11 @@
  * Created by Marek Bereza on 11/04/2011.
  *
  */
-#include "TTApp.h"
+#include "Reactickle.h"
 #include "CircleParticle.h"
 #define SPAWN_RATE 1
 #define MAX_NUM_PARTICLES 200
-class Circles2D: public TTApp {
+class Circles2D: public Reactickle {
 public:
 	void update();
 	void draw();

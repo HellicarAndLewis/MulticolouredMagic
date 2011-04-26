@@ -5,7 +5,7 @@
  * Created by Marek Bereza on 13/04/2011.
  *
  */
-#include "TTApp.h"
+#include "Reactickle.h"
 class InversionTouch: public ofVec2f {
 public:
 	InversionTouch(float x, float y, int touchId) {
@@ -15,7 +15,7 @@ public:
 	}
 	int touchId;
 };
-class Inversion: public TTApp {
+class Inversion: public Reactickle {
 public:
 	
 	bool needsKinect() { return true; }

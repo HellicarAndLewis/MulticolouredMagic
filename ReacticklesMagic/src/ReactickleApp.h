@@ -13,10 +13,10 @@
 #include "ofMain.h"
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
-#include "TTApp.h"
+#include "Reactickle.h"
 
 class ReactickleApp: public ofxiPhoneApp {
 public:
-	virtual void launchReactickle(TTApp *reactickle) = 0;
+	virtual void launchReactickle(Reactickle *reactickle) = 0;
 	static ReactickleApp *instance;
 };

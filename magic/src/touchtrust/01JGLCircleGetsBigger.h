@@ -7,11 +7,11 @@
  *
  */
 
-#include "TTApp.h"
+#include "Reactickle.h"
 
 #include "ofxFft.h"
 
-class CircleBiggerApp: public TTApp {
+class CircleBiggerApp: public Reactickle {
 	
 	void init(){
 		ofSetCircleResolution(64);

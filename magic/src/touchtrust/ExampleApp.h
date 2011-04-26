@@ -7,9 +7,9 @@
  *
  */
 
-#include "TTApp.h"
+#include "Reactickle.h"
 
-class ExampleApp: public TTApp {
+class ExampleApp: public Reactickle {
 	void draw() {
 		ofSetColor(0xFF0000);
 		ofRect(0, 0, ofGetWidth()*volume, ofGetHeight());

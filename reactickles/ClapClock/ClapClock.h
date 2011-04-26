@@ -7,8 +7,8 @@
  *
  */
 
-#include "TTApp.h"
-class ClapClock: public TTApp {
+#include "Reactickle.h"
+class ClapClock: public Reactickle {
 public:
 	void setup(){
         ofSetCircleResolution(42); //42 is the answer to everything!

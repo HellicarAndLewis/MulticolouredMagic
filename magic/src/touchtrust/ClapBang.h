@@ -6,7 +6,7 @@
  *  Copyright 2010 Marek Bereza. All rights reserved.
  *
  */
-#include "TTApp.h"
+#include "Reactickle.h"
 #include "msaColor.h"
 
 class ClapParticle {
@@ -55,7 +55,7 @@ public:
 };
 
 
-class ClapBang: public TTApp {
+class ClapBang: public Reactickle {
 public:
 
 	ofImage img;

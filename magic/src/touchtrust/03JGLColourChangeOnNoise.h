@@ -7,10 +7,10 @@
  *
  */
 
-#include "TTApp.h"
+#include "Reactickle.h"
 #include "msaColor.h"
 
-class ColourChangeOnNoiseApp: public TTApp {
+class ColourChangeOnNoiseApp: public Reactickle {
 	
 	void setup() {
 		

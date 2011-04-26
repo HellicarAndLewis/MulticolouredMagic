@@ -7,9 +7,9 @@
  *
  */
 
-#include "TTApp.h"
+#include "Reactickle.h"
 
-class GridOfSquaresApp: public TTApp {
+class GridOfSquaresApp: public Reactickle {
 	
 	void setup(){
 		gridWidth = 6;

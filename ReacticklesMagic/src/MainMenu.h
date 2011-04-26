@@ -5,10 +5,10 @@
  * Created by Marek Bereza on 26/04/2011.
  *
  */
-#include "TTApp.h"
+#include "Reactickle.h"
 #include "InteractiveObject.h"
 #include "ReactickleButton.h"
-class MainMenu: public TTApp, public ReactickleButtonListener {
+class MainMenu: public Reactickle, public ReactickleButtonListener {
 public:
 	void setup();
 	void draw();
@@ -19,7 +19,7 @@ public:
 	// this is a subset of items - just the ones that are listed
 	// as reactickles
 	vector<ReactickleButton*> reactickleButtons;
-	
+	void initMenu();
 	void touchDown(float x, float y, int touchId);
 	void touchMoved(float x, float y, int touchId);
 	void touchUp(float x, float y, int touchId);

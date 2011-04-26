@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "TTApp.h"
+#include "Reactickle.h"
 #include "ofxOpenCv.h"
 #include "ofxSimpleGuiToo.h"
 #include "TuioKinect.h"
@@ -44,7 +44,7 @@ public:
 	float volume;
 	float volumeThreshold;
 	float movement;
-	vector<TTApp*> apps;
+	vector<Reactickle*> apps;
 	int appIndex;
 	int lastAppIndex;
 	
