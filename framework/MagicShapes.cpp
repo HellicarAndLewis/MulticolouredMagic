@@ -7,10 +7,10 @@
 //
 
 #include "MagicShapes.h"
-#include "ofxDisplayList.h"
+//#include "ofxDisplayList.h"
 
-ofxDisplayList *heartDisplayList = NULL;
-
+//ofxDisplayList *heartDisplayList = NULL;
+ofPath *heartDisplayList = NULL;
 
 void drawTriangle(ofVec2f centre, float size, float rotation) {
     size *= 1.15;
@@ -44,35 +44,38 @@ void drawCross(ofVec2f centre, float size, float rotation) {
     
     
 }
-
+float heart1(float x) {
+	float xx = ABS(x) - 1;
+	xx *= xx;
+	float y = sqrt(1 - xx);
+	return y-0.01;
+}
+float heart2(float x) {
+	float sqrt2Inv = 1.f/sqrt(2);
+	float xx = sqrt(ABS(x))*sqrt2Inv;
+	float y = -3*sqrt(1 - xx);
+	return y;
+}
 void drawHeart(ofVec2f centre, float size, float rotation) {
     // from: http://www.wolframalpha.com/input/?i=%281-%28|x|-1%29^2%29^0.5%3D-3%281-%28|x|%2F2%29^0.5%29^0.5
-    
-	if(heartDisplayList==NULL) {
-		heartDisplayList = new ofxDisplayList();
-		heartDisplayList->begin(false);
 
-		ofBeginShape();
+	
+	if(heartDisplayList==NULL) {
+		heartDisplayList = new ofPath();
+		heartDisplayList->newSubPath();
+		heartDisplayList->moveTo(-2, heart1(-2));
+
 		
-		for(float x = -2; x <= 2; x += 0.05) {
-			float xx = ABS(x) - 1;
-			xx *= xx;
-			float y = sqrt(1 - xx);
-			ofVertex(x, y-0.01);
+		for(float x = -1.95; x <= 2; x += 0.05) {
+			heartDisplayList->lineTo(x, heart1(x));
 		}
 		
-		ofEndShape(true);
-		
-		ofBeginShape();
-		float sqrt2Inv = 1.f/sqrt(2);
-		for(float x = -2; x <= 2; x += 0.05) {
-			float xx = sqrt(ABS(x))*sqrt2Inv;
-			float y = -3*sqrt(1 - xx);
-			ofVertex(x, y);
+
+		heartDisplayList->newSubPath();
+		heartDisplayList->moveTo(-2, heart2(-2));
+		for(float x = -1.95; x <= 2; x += 0.05) {
+			heartDisplayList->lineTo(x, heart2(x));
 		}
-		
-		ofEndShape(true);
-		heartDisplayList->end();
 	}
 	glPushMatrix();
     glTranslatef(centre.x, centre.y, 0);
@@ -92,16 +95,23 @@ void drawHexagon(ofVec2f centre, float size, float rotation) {
     glTranslatef(centre.x, centre.y, 0);
     if(rotation==0) glRotatef(rotation, 0, 0, 1);
     glScalef(size, size, 1);
-    glBegin(GL_TRIANGLE_FAN);
-    glVertex2f(0, 0);
-    glVertex2f(0.5, 0);
-    glVertex2f(0.25, -v);
-    glVertex2f(-0.25, -v);
-    glVertex2f(-0.5, 0);
-    glVertex2f(-0.25, v);
-    glVertex2f(0.25, v);
-    glVertex2f(0.5, 0);
-    glEnd();
+	ofVec2f points[8];
+	points[0] = ofVec2f(0, 0);
+    points[1] = ofVec2f(0.5, 0);
+    points[2] = ofVec2f(0.25, -v);
+    points[3] = ofVec2f(-0.25, -v);
+    points[4] = ofVec2f(-0.5, 0);
+    points[5] = ofVec2f(-0.25, v);
+    points[6] = ofVec2f(0.25, v);
+    points[7] = ofVec2f(0.5, 0);
+	
+	
+	
+	glEnableClientState( GL_VERTEX_ARRAY );
+	glVertexPointer(2, GL_FLOAT, 0, points );
+	
+	
+	glDrawArrays(GL_TRIANGLE_FAN, 0, 8);
     glPopMatrix();
 
 }

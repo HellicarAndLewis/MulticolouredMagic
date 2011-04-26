@@ -6,16 +6,26 @@
  *  Copyright 2010 Marek Bereza. All rights reserved.
  *
  */
+
+
+
 #pragma once
+#include "ofConstants.h"
 #include "ofMain.h"
-#include "ofxSimpleGuiToo.h"
-#include "ofxOpenCv.h"
+
+
 #include "MagicShapes.h"
-#define VISION_WIDTH 640
-#define VISION_HEIGHT 480
-#define CAM_THRESHOLD 20
-#define MAX_MOVEMENT 5000
-#define MOVEMENT_FILTER 0.3f
+
+#ifndef TARGET_OF_IPHONE
+	// this is what you get if you're not on iphone
+	#include "ofxSimpleGuiToo.h"
+	#include "ofxOpenCv.h"
+	#define VISION_WIDTH 640
+	#define VISION_HEIGHT 480
+	#define CAM_THRESHOLD 20
+	#define MAX_MOVEMENT 5000
+	#define MOVEMENT_FILTER 0.3f
+#endif
 
 
 class TTApp: public ofBaseApp {
@@ -31,9 +41,13 @@ public:
     
     // if the mode has been changed, 
     virtual void modeChanged() {};
-    
-	virtual bool needsKinect() { return false; }
 	
+#ifndef TARGET_OF_IPHONE
+	virtual bool needsKinect() { return false; }
+
+    // how much camera movement there is
+	float movement;
+#endif
     
     void setMode(int mode) {
         this->mode = mode;
@@ -47,8 +61,7 @@ public:
 	float volumeThreshold;
 	
 	
-    // how much camera movement there is
-	float movement;
+
 
 protected:
     int mode;

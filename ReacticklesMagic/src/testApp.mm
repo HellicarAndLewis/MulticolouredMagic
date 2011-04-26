@@ -1,4 +1,5 @@
 #include "testApp.h"
+#include "MagicShapes.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -76,8 +77,8 @@ void testApp::draw(){
 		glScalef(0.5, 0.5, 1);
 	}
 	
-	ofCircle(WIDTH/2, HEIGHT/2, HEIGHT/2);
-	
+//	ofCircle(WIDTH/2, HEIGHT/2, HEIGHT/2);
+	drawHeart(ofVec2f(WIDTH/2, HEIGHT/2), HEIGHT/2);
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
 		glPopMatrix();

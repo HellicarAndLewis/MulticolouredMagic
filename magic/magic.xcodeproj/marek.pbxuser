@@ -1,19 +1,5 @@
 // !$*UTF8*$!
 {
-	5DCCEB0E1355A7F7004B51D8 /* MagicShapes.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {775, 2041}}";
-			sepNavSelRange = "{1097, 0}";
-			sepNavVisRange = "{2519, 960}";
-		};
-	};
-	5DCCEB0F1355A7F7004B51D8 /* MagicShapes.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {600, 609}}";
-			sepNavSelRange = "{690, 0}";
-			sepNavVisRange = "{0, 764}";
-		};
-	};
 	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = EA67382C134BA160009DE4CB /* magic */;
@@ -84,7 +70,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					468,
+					529,
 					60,
 					20,
 					48,
@@ -101,19 +87,19 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 324472437;
-			PBXWorkspaceStateSaveDate = 324472437;
+			PBXPerProjectTemplateStateSaveDate = 325518278;
+			PBXWorkspaceStateSaveDate = 325518278;
 		};
 		perUserProjectItems = {
+			EA20B70013670A600038E922 /* PBXTextBookmark */ = EA20B70013670A600038E922 /* PBXTextBookmark */;
+			EA20B70113670A600038E922 /* PBXTextBookmark */ = EA20B70113670A600038E922 /* PBXTextBookmark */;
+			EA20B70213670A600038E922 /* PBXTextBookmark */ = EA20B70213670A600038E922 /* PBXTextBookmark */;
+			EA20B70313670A600038E922 /* PBXTextBookmark */ = EA20B70313670A600038E922 /* PBXTextBookmark */;
+			EA20B70413670A600038E922 /* PBXBookmark */ = EA20B70413670A600038E922 /* PBXBookmark */;
+			EA20B70513670A600038E922 /* PBXTextBookmark */ = EA20B70513670A600038E922 /* PBXTextBookmark */;
 			EA4202D21355C51B00074433 /* PBXTextBookmark */ = EA4202D21355C51B00074433 /* PBXTextBookmark */;
-			EA59EBEE1356F75E00AB4B38 /* PBXTextBookmark */ = EA59EBEE1356F75E00AB4B38 /* PBXTextBookmark */;
-			EA59EBEF1356F75E00AB4B38 /* PBXTextBookmark */ = EA59EBEF1356F75E00AB4B38 /* PBXTextBookmark */;
-			EA59EBF01356F75E00AB4B38 /* PBXTextBookmark */ = EA59EBF01356F75E00AB4B38 /* PBXTextBookmark */;
-			EA59EBF11356F75E00AB4B38 /* PBXTextBookmark */ = EA59EBF11356F75E00AB4B38 /* PBXTextBookmark */;
-			EA59EBF21356F75E00AB4B38 /* PBXTextBookmark */ = EA59EBF21356F75E00AB4B38 /* PBXTextBookmark */;
 			EA59EBF41356F75E00AB4B38 /* PBXTextBookmark */ = EA59EBF41356F75E00AB4B38 /* PBXTextBookmark */;
 			EA59EBF51356F75E00AB4B38 /* PBXTextBookmark */ = EA59EBF51356F75E00AB4B38 /* PBXTextBookmark */;
-			EA59EC271356F9AE00AB4B38 /* PBXTextBookmark */ = EA59EC271356F9AE00AB4B38 /* PBXTextBookmark */;
 			EA59EC281356F9AE00AB4B38 /* PBXTextBookmark */ = EA59EC281356F9AE00AB4B38 /* PBXTextBookmark */;
 			EA59EC2E1356F9C300AB4B38 /* PBXTextBookmark */ = EA59EC2E1356F9C300AB4B38 /* PBXTextBookmark */;
 			EA59EC4B1356FB2100AB4B38 /* PBXTextBookmark */ = EA59EC4B1356FB2100AB4B38 /* PBXTextBookmark */;
@@ -132,12 +118,9 @@
 			EA8659F61356065F00BAA004 /* PBXTextBookmark */ = EA8659F61356065F00BAA004 /* PBXTextBookmark */;
 			EA865A2513560AC700BAA004 /* PBXTextBookmark */ = EA865A2513560AC700BAA004 /* PBXTextBookmark */;
 			EA865A2813560AC700BAA004 /* PBXTextBookmark */ = EA865A2813560AC700BAA004 /* PBXTextBookmark */;
-			EA865A7C13560CF300BAA004 /* PBXTextBookmark */ = EA865A7C13560CF300BAA004 /* PBXTextBookmark */;
 			EA865A8413560D5600BAA004 /* PBXTextBookmark */ = EA865A8413560D5600BAA004 /* PBXTextBookmark */;
 			EA865A8513560D5600BAA004 /* PBXTextBookmark */ = EA865A8513560D5600BAA004 /* PBXTextBookmark */;
 			EA865A8613560D5600BAA004 /* PBXTextBookmark */ = EA865A8613560D5600BAA004 /* PBXTextBookmark */;
-			EA865AA113560E0200BAA004 /* PBXTextBookmark */ = EA865AA113560E0200BAA004 /* PBXTextBookmark */;
-			EA865ACB13560F4300BAA004 /* PBXTextBookmark */ = EA865ACB13560F4300BAA004 /* PBXTextBookmark */;
 			EA865AFE1356163E00BAA004 /* PBXTextBookmark */ = EA865AFE1356163E00BAA004 /* PBXTextBookmark */;
 			EA865AFF1356163E00BAA004 /* PBXTextBookmark */ = EA865AFF1356163E00BAA004 /* PBXTextBookmark */;
 			EACD785413570E8700803D49 /* PBXTextBookmark */ = EACD785413570E8700803D49 /* PBXTextBookmark */;
@@ -153,11 +136,9 @@
 			EACD78E413572BD400803D49 /* PBXTextBookmark */ = EACD78E413572BD400803D49 /* PBXTextBookmark */;
 			EACD790A13572E1C00803D49 /* PBXTextBookmark */ = EACD790A13572E1C00803D49 /* PBXTextBookmark */;
 			EACD790B13572E1C00803D49 /* PBXTextBookmark */ = EACD790B13572E1C00803D49 /* PBXTextBookmark */;
-			EACD790E1357359500803D49 /* PBXTextBookmark */ = EACD790E1357359500803D49 /* PBXTextBookmark */;
 			EAD6E1AB135333C100075A87 /* PBXTextBookmark */ = EAD6E1AB135333C100075A87 /* PBXTextBookmark */;
 			EAD6E232135334E400075A87 /* PBXTextBookmark */ = EAD6E232135334E400075A87 /* PBXTextBookmark */;
 			EAD6E3BF1353393A00075A87 /* PlistBookmark */ = EAD6E3BF1353393A00075A87 /* PlistBookmark */;
-			EAD6E3EE13533A9000075A87 /* PBXTextBookmark */ = EAD6E3EE13533A9000075A87 /* PBXTextBookmark */;
 			EAD6E40113533AFA00075A87 /* PBXTextBookmark */ = EAD6E40113533AFA00075A87 /* PBXTextBookmark */;
 			EAD6E40213533AFA00075A87 /* PBXTextBookmark */ = EAD6E40213533AFA00075A87 /* PBXTextBookmark */;
 			EAD6E40313533AFA00075A87 /* PBXTextBookmark */ = EAD6E40313533AFA00075A87 /* PBXTextBookmark */;
@@ -179,19 +160,107 @@
 			EA67382C134BA160009DE4CB /* magic */,
 		);
 	};
+	EA20B5C3136705160038E922 /* .gitignore */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {747, 417}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 84}";
+		};
+	};
+	EA20B5DE136705160038E922 /* libfreenect.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {922, 5278}}";
+			sepNavSelRange = "{6025, 0}";
+			sepNavVisRange = "{5480, 1215}";
+		};
+	};
+	EA20B606136705160038E922 /* changelog.txt */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {789, 455}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1314}";
+		};
+	};
+	EA20B635136705160038E922 /* ofxTuioClient.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {747, 2262}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1149}";
+		};
+	};
+	EA20B636136705160038E922 /* ofxTuioClient.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {747, 1027}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1117}";
+		};
+	};
+	EA20B70013670A600038E922 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EAD6E370135338F300075A87 /* Apps.cpp */;
+		name = "Apps.cpp: 4";
+		rLen = 0;
+		rLoc = 40;
+		rType = 0;
+		vrLen = 771;
+		vrLoc = 0;
+	};
+	EA20B70113670A600038E922 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EA20B5C3136705160038E922 /* .gitignore */;
+		name = ".gitignore: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 84;
+		vrLoc = 0;
+	};
+	EA20B70213670A600038E922 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EA20B606136705160038E922 /* changelog.txt */;
+		name = "changelog.txt: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1314;
+		vrLoc = 0;
+	};
+	EA20B70313670A600038E922 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EA20B635136705160038E922 /* ofxTuioClient.cpp */;
+		name = "ofxTuioClient.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1149;
+		vrLoc = 0;
+	};
+	EA20B70413670A600038E922 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = EA20B636136705160038E922 /* ofxTuioClient.h */;
+	};
+	EA20B70513670A600038E922 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EA20B636136705160038E922 /* ofxTuioClient.h */;
+		name = "ofxTuioClient.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1117;
+		vrLoc = 0;
+	};
 	EA4202A91355C31900074433 /* ofxDisplayList.cpp */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ofxDisplayList.cpp;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxDisplayList/src/ofxDisplayList.cpp;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {963, 637}}";
 			sepNavSelRange = "{874, 0}";
 			sepNavVisRange = "{488, 454}";
 			sepNavWindowFrame = "{{15, 4}, {1112, 874}}";
-		};
-	};
-	EA4202AA1355C31900074433 /* ofxDisplayList.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {963, 368}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 350}";
 		};
 	};
 	EA4202D21355C51B00074433 /* PBXTextBookmark */ = {
@@ -232,56 +301,6 @@
 			sepNavVisRange = "{764, 1688}";
 		};
 	};
-	EA59EBEE1356F75E00AB4B38 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EA865AD41356138100BAA004 /* KinectOrCamera.cpp */;
-		name = "KinectOrCamera.cpp: 64";
-		rLen = 0;
-		rLoc = 1090;
-		rType = 0;
-		vrLen = 810;
-		vrLoc = 315;
-	};
-	EA59EBEF1356F75E00AB4B38 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EA865AD31356138100BAA004 /* KinectOrCamera.h */;
-		name = "KinectOrCamera.h: 24";
-		rLen = 32;
-		rLoc = 331;
-		rType = 0;
-		vrLen = 404;
-		vrLoc = 0;
-	};
-	EA59EBF01356F75E00AB4B38 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5DCCEB0F1355A7F7004B51D8 /* MagicShapes.h */;
-		name = "MagicShapes.h: 27";
-		rLen = 0;
-		rLoc = 690;
-		rType = 0;
-		vrLen = 764;
-		vrLoc = 0;
-	};
-	EA59EBF11356F75E00AB4B38 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5DCCEB0E1355A7F7004B51D8 /* MagicShapes.cpp */;
-		name = "MagicShapes.cpp: 47";
-		rLen = 0;
-		rLoc = 1097;
-		rType = 0;
-		vrLen = 960;
-		vrLoc = 2519;
-	};
-	EA59EBF21356F75E00AB4B38 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EAD6E374135338F300075A87 /* MagicApp.h */;
-		name = "MagicApp.h: 18";
-		rLen = 0;
-		rLoc = 265;
-		rType = 0;
-		vrLen = 868;
-		vrLoc = 76;
-	};
 	EA59EBF41356F75E00AB4B38 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = EAD6E384135338F300075A87 /* TuioKinect.h */;
@@ -301,16 +320,6 @@
 		rType = 0;
 		vrLen = 1348;
 		vrLoc = 3966;
-	};
-	EA59EC271356F9AE00AB4B38 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EAD6E375135338F300075A87 /* TTApp.h */;
-		name = "TTApp.h: 55";
-		rLen = 0;
-		rLoc = 1127;
-		rType = 0;
-		vrLen = 987;
-		vrLoc = 143;
 	};
 	EA59EC281356F9AE00AB4B38 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -423,6 +432,12 @@
 		sourceTree = "<absolute>";
 	};
 	EA7413AC135458AC00C69A4D /* ofxTuioClient.cpp */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ofxTuioClient.cpp;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxTuioClient/ofxTuioClient.cpp;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1223, 2184}}";
 			sepNavSelRange = "{0, 0}";
@@ -431,6 +446,12 @@
 		};
 	};
 	EA7413AD135458AC00C69A4D /* ofxTuioClient.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ofxTuioClient.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxTuioClient/ofxTuioClient.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1053, 1092}}";
 			sepNavSelRange = "{1754, 0}";
@@ -614,13 +635,6 @@
 		path = "/Work/snowboard/oF/openframeworks-openFrameworks-7735968/apps/snowboard-d02574f0f04c/Snowboard/src/testApp.cpp";
 		sourceTree = "<absolute>";
 	};
-	EA8659DF1356055300BAA004 /* MagicAppEvents.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {607, 1742}}";
-			sepNavSelRange = "{7, 0}";
-			sepNavVisRange = "{992, 1319}";
-		};
-	};
 	EA8659F61356065F00BAA004 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = EA8659F71356065F00BAA004 /* util.h */;
@@ -645,13 +659,6 @@
 		path = "/Work/snowboard/oF/openframeworks-openFrameworks-7735968/addons/mareklib/util/util.cpp";
 		sourceTree = "<absolute>";
 	};
-	EA8659FD135606D300BAA004 /* util.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {856, 507}}";
-			sepNavSelRange = "{37, 0}";
-			sepNavVisRange = "{0, 693}";
-		};
-	};
 	EA865A2513560AC700BAA004 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = EA8659F91356065F00BAA004 /* util.cpp */;
@@ -671,16 +678,6 @@
 		rType = 0;
 		vrLen = 1319;
 		vrLoc = 14024;
-	};
-	EA865A7C13560CF300BAA004 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EAD6E370135338F300075A87 /* Apps.cpp */;
-		name = "Apps.cpp: 35";
-		rLen = 0;
-		rLoc = 857;
-		rType = 0;
-		vrLen = 857;
-		vrLoc = 0;
 	};
 	EA865A8413560D5600BAA004 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -711,40 +708,6 @@
 		rType = 0;
 		vrLen = 357;
 		vrLoc = 0;
-	};
-	EA865AA113560E0200BAA004 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EA8659DF1356055300BAA004 /* MagicAppEvents.cpp */;
-		name = "MagicAppEvents.cpp: 2";
-		rLen = 0;
-		rLoc = 7;
-		rType = 0;
-		vrLen = 1319;
-		vrLoc = 992;
-	};
-	EA865ACB13560F4300BAA004 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EAD6E373135338F300075A87 /* MagicApp.cpp */;
-		name = "MagicApp.cpp: 134";
-		rLen = 0;
-		rLoc = 3049;
-		rType = 0;
-		vrLen = 1255;
-		vrLoc = 932;
-	};
-	EA865AD31356138100BAA004 /* KinectOrCamera.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {600, 609}}";
-			sepNavSelRange = "{331, 32}";
-			sepNavVisRange = "{0, 404}";
-		};
-	};
-	EA865AD41356138100BAA004 /* KinectOrCamera.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {600, 884}}";
-			sepNavSelRange = "{1090, 0}";
-			sepNavVisRange = "{315, 810}";
-		};
 	};
 	EA865AFE1356163E00BAA004 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -896,16 +859,6 @@
 		vrLen = 1965;
 		vrLoc = 4978;
 	};
-	EACD790E1357359500803D49 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EAD6E370135338F300075A87 /* Apps.cpp */;
-		name = "Apps.cpp: 35";
-		rLen = 0;
-		rLoc = 857;
-		rType = 0;
-		vrLen = 859;
-		vrLoc = 0;
-	};
 	EAD6E0C71353336400075A87 /* cv.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {971, 1092}}";
@@ -963,6 +916,12 @@
 		vrLoc = 1994;
 	};
 	EAD6E2FC135338F300075A87 /* ofxCvKalman.cpp */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ofxCvKalman.cpp;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxCvKalman/ofxCvKalman.cpp;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {841, 754}}";
 			sepNavSelRange = "{0, 0}";
@@ -970,6 +929,12 @@
 		};
 	};
 	EAD6E2FD135338F300075A87 /* ofxCvKalman.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ofxCvKalman.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxCvKalman/ofxCvKalman.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {841, 471}}";
 			sepNavSelRange = "{0, 0}";
@@ -977,6 +942,12 @@
 		};
 	};
 	EAD6E305135338F300075A87 /* ofxFft.cpp */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ofxFft.cpp;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxFFT/ofxFft.cpp;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {841, 3822}}";
 			sepNavSelRange = "{0, 0}";
@@ -984,6 +955,12 @@
 		};
 	};
 	EAD6E306135338F300075A87 /* ofxFft.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ofxFft.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxFFT/ofxFft.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {841, 1456}}";
 			sepNavSelRange = "{0, 0}";
@@ -991,6 +968,12 @@
 		};
 	};
 	EAD6E307135338F300075A87 /* ofxFftBasic.cpp */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ofxFftBasic.cpp;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxFFT/ofxFftBasic.cpp;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {841, 520}}";
 			sepNavSelRange = "{0, 0}";
@@ -998,6 +981,12 @@
 		};
 	};
 	EAD6E308135338F300075A87 /* ofxFftBasic.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ofxFftBasic.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxFFT/ofxFftBasic.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {841, 471}}";
 			sepNavSelRange = "{0, 0}";
@@ -1005,6 +994,12 @@
 		};
 	};
 	EAD6E30A135338F300075A87 /* changelog.txt */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = text;
+		name = changelog.txt;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxMSAInteractiveObject/changelog.txt;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {841, 471}}";
 			sepNavSelRange = "{0, 0}";
@@ -1012,67 +1007,23 @@
 		};
 	};
 	EAD6E319135338F300075A87 /* changelog.txt */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = text;
+		name = changelog.txt;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxSimpleGuiToo/changelog.txt;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {841, 471}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 1399}";
 		};
 	};
-	EAD6E337135338F300075A87 /* ofxSimpleGuiSliderInt.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {873, 234}}";
-			sepNavSelRange = "{163, 0}";
-			sepNavVisRange = "{0, 304}";
-		};
-	};
-	EAD6E341135338F300075A87 /* ofxSimpleGuiPage.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {922, 3627}}";
-			sepNavSelRange = "{6476, 0}";
-			sepNavVisRange = "{6185, 730}";
-		};
-	};
-	EAD6E343135338F300075A87 /* ofxSimpleGuiToo.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {915, 5629}}";
-			sepNavSelRange = "{9126, 0}";
-			sepNavVisRange = "{8940, 451}";
-		};
-	};
 	EAD6E370135338F300075A87 /* Apps.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {747, 609}}";
-			sepNavSelRange = "{857, 0}";
-			sepNavVisRange = "{0, 859}";
-		};
-	};
-	EAD6E372135338F300075A87 /* msaColor.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {841, 2834}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1884}";
-		};
-	};
-	EAD6E373135338F300075A87 /* MagicApp.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {600, 1963}}";
-			sepNavSelRange = "{3049, 0}";
-			sepNavVisRange = "{932, 1255}";
-			sepNavWindowFrame = "{{15, 4}, {1112, 874}}";
-		};
-	};
-	EAD6E374135338F300075A87 /* MagicApp.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {600, 767}}";
-			sepNavSelRange = "{265, 0}";
-			sepNavVisRange = "{76, 868}";
-		};
-	};
-	EAD6E375135338F300075A87 /* TTApp.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {747, 728}}";
-			sepNavSelRange = "{1127, 0}";
-			sepNavVisRange = "{143, 987}";
+			sepNavIntBoundsRect = "{{0, 0}, {747, 468}}";
+			sepNavSelRange = "{40, 0}";
+			sepNavVisRange = "{0, 771}";
 		};
 	};
 	EAD6E376135338F300075A87 /* main.cpp */ = {
@@ -1144,16 +1095,6 @@
 		name = "/Work/openFrameworks/apps/MulticolouredMagic/magic/openFrameworks-Info.plist";
 		rLen = 0;
 		rLoc = 9223372036854775808;
-	};
-	EAD6E3EE13533A9000075A87 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = EAD6E372135338F300075A87 /* msaColor.h */;
-		name = "msaColor.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 1884;
-		vrLoc = 0;
 	};
 	EAD6E40113533AFA00075A87 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1236,20 +1177,25 @@
 		vrLoc = 0;
 	};
 	EAD6E43313533B3100075A87 /* .gitignore */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = text;
+		name = .gitignore;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxKinect/.gitignore;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {600, 584}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 84}";
 		};
 	};
-	EAD6E45313533B3100075A87 /* libfreenect.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {922, 5278}}";
-			sepNavSelRange = "{6025, 0}";
-			sepNavVisRange = "{5480, 1222}";
-		};
-	};
 	EAD6E46013533B3100075A87 /* README.markdown */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = text;
+		name = README.markdown;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxKinect/README.markdown;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1972, 3016}}";
 			sepNavSelRange = "{0, 0}";
@@ -1257,6 +1203,12 @@
 		};
 	};
 	EAD6E46213533B3100075A87 /* ofxBase3DVideo.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ofxBase3DVideo.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxKinect/src/ofxBase3DVideo.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {600, 584}}";
 			sepNavSelRange = "{0, 0}";
@@ -1264,6 +1216,12 @@
 		};
 	};
 	EAD6E46313533B3100075A87 /* ofxKinect.cpp */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = ofxKinect.cpp;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxKinect/src/ofxKinect.cpp;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1053, 6396}}";
 			sepNavSelRange = "{5500, 0}";
@@ -1272,6 +1230,12 @@
 		};
 	};
 	EAD6E46413533B3100075A87 /* ofxKinect.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ofxKinect.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/ofxKinect/src/ofxKinect.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1053, 2080}}";
 			sepNavSelRange = "{981, 19}";
@@ -1280,6 +1244,12 @@
 		};
 	};
 	EAD6E4B313533F5000075A87 /* OscSender.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = OscSender.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/TUIO/OscSender.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {856, 1027}}";
 			sepNavSelRange = "{938, 0}";
@@ -1287,6 +1257,12 @@
 		};
 	};
 	EAD6E4C213533F5000075A87 /* TuioListener.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = TuioListener.h;
+		path = /Work/openFrameworks/apps/MulticolouredMagic/magic/src/addons/TUIO/TuioListener.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1069, 1664}}";
 			sepNavSelRange = "{3831, 571}";
