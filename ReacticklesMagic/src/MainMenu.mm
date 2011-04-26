@@ -9,7 +9,6 @@
 #include "MainMenu.h"
 #include "constants.h"
 #include "ImageCache.h"
-#include "ClapClock.h"
 #include "ReactickleApp.h"
 
 void MainMenu::setup() {

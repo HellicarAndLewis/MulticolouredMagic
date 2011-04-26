@@ -78,13 +78,13 @@
 		EA20B697136705160038E922 /* TuioTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65A136705160038E922 /* TuioTime.cpp */; };
 		EA20B698136705160038E922 /* UdpReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65C136705160038E922 /* UdpReceiver.cpp */; };
 		EA20B699136705160038E922 /* UdpSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65E136705160038E922 /* UdpSender.cpp */; };
-		EA20BA82136730CC0038E922 /* Circles2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BA6F136730CC0038E922 /* Circles2D.cpp */; };
-		EA20BA83136730CC0038E922 /* CircleParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BA72136730CC0038E922 /* CircleParticle.cpp */; };
-		EA20BA84136730CC0038E922 /* CircleSwarm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BA75136730CC0038E922 /* CircleSwarm.cpp */; };
-		EA20BA85136730CC0038E922 /* SwarmParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BA77136730CC0038E922 /* SwarmParticle.cpp */; };
-		EA20BA86136730CC0038E922 /* ClapClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BA7A136730CC0038E922 /* ClapClock.cpp */; };
-		EA20BA87136730CC0038E922 /* Expander.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BA7D136730CC0038E922 /* Expander.cpp */; };
-		EA20BA88136730CC0038E922 /* Inversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BA80136730CC0038E922 /* Inversion.cpp */; };
+		EA20BB1C136732D00038E922 /* Circles2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BB03136732D00038E922 /* Circles2D.cpp */; };
+		EA20BB1D136732D00038E922 /* CircleParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BB06136732D00038E922 /* CircleParticle.cpp */; };
+		EA20BB1E136732D00038E922 /* CircleSwarm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BB09136732D00038E922 /* CircleSwarm.cpp */; };
+		EA20BB1F136732D00038E922 /* SwarmParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BB0B136732D00038E922 /* SwarmParticle.cpp */; };
+		EA20BB20136732D00038E922 /* ClapClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BB10136732D00038E922 /* ClapClock.cpp */; };
+		EA20BB21136732D00038E922 /* Expander.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BB15136732D00038E922 /* Expander.cpp */; };
+		EA20BB22136732D00038E922 /* Inversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BB1A136732D00038E922 /* Inversion.cpp */; };
 		EAD6E1671353336400075A87 /* opencv_calib3d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E1181353336400075A87 /* opencv_calib3d.a */; };
 		EAD6E1681353336400075A87 /* opencv_contrib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E1191353336400075A87 /* opencv_contrib.a */; };
 		EAD6E1691353336400075A87 /* opencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E11A1353336400075A87 /* opencv_core.a */; };
@@ -355,21 +355,24 @@
 		EA20B65D136705160038E922 /* UdpReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpReceiver.h; sourceTree = "<group>"; };
 		EA20B65E136705160038E922 /* UdpSender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UdpSender.cpp; sourceTree = "<group>"; };
 		EA20B65F136705160038E922 /* UdpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpSender.h; sourceTree = "<group>"; };
-		EA20BA6F136730CC0038E922 /* Circles2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Circles2D.cpp; sourceTree = "<group>"; };
-		EA20BA70136730CC0038E922 /* Circles2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circles2D.h; sourceTree = "<group>"; };
-		EA20BA72136730CC0038E922 /* CircleParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircleParticle.cpp; sourceTree = "<group>"; };
-		EA20BA73136730CC0038E922 /* CircleParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleParticle.h; sourceTree = "<group>"; };
-		EA20BA75136730CC0038E922 /* CircleSwarm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircleSwarm.cpp; sourceTree = "<group>"; };
-		EA20BA76136730CC0038E922 /* CircleSwarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleSwarm.h; sourceTree = "<group>"; };
-		EA20BA77136730CC0038E922 /* SwarmParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwarmParticle.cpp; sourceTree = "<group>"; };
-		EA20BA78136730CC0038E922 /* SwarmParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwarmParticle.h; sourceTree = "<group>"; };
-		EA20BA7A136730CC0038E922 /* ClapClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClapClock.cpp; sourceTree = "<group>"; };
-		EA20BA7B136730CC0038E922 /* ClapClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClapClock.h; sourceTree = "<group>"; };
-		EA20BA7D136730CC0038E922 /* Expander.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expander.cpp; sourceTree = "<group>"; };
-		EA20BA7E136730CC0038E922 /* Expander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expander.h; sourceTree = "<group>"; };
-		EA20BA80136730CC0038E922 /* Inversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Inversion.cpp; sourceTree = "<group>"; };
-		EA20BA81136730CC0038E922 /* Inversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inversion.h; sourceTree = "<group>"; };
 		EA20BA89136730DC0038E922 /* Reactickle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reactickle.h; sourceTree = "<group>"; };
+		EA20BB03136732D00038E922 /* Circles2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Circles2D.cpp; sourceTree = "<group>"; };
+		EA20BB04136732D00038E922 /* Circles2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circles2D.h; sourceTree = "<group>"; };
+		EA20BB06136732D00038E922 /* CircleParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircleParticle.cpp; sourceTree = "<group>"; };
+		EA20BB07136732D00038E922 /* CircleParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleParticle.h; sourceTree = "<group>"; };
+		EA20BB09136732D00038E922 /* CircleSwarm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircleSwarm.cpp; sourceTree = "<group>"; };
+		EA20BB0A136732D00038E922 /* CircleSwarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleSwarm.h; sourceTree = "<group>"; };
+		EA20BB0B136732D00038E922 /* SwarmParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwarmParticle.cpp; sourceTree = "<group>"; };
+		EA20BB0C136732D00038E922 /* SwarmParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwarmParticle.h; sourceTree = "<group>"; };
+		EA20BB0E136732D00038E922 /* ClapBang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClapBang.h; sourceTree = "<group>"; };
+		EA20BB10136732D00038E922 /* ClapClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClapClock.cpp; sourceTree = "<group>"; };
+		EA20BB11136732D00038E922 /* ClapClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClapClock.h; sourceTree = "<group>"; };
+		EA20BB13136732D00038E922 /* 03JGLColourChangeOnNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 03JGLColourChangeOnNoise.h; sourceTree = "<group>"; };
+		EA20BB15136732D00038E922 /* Expander.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expander.cpp; sourceTree = "<group>"; };
+		EA20BB16136732D00038E922 /* Expander.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expander.h; sourceTree = "<group>"; };
+		EA20BB18136732D00038E922 /* 02JGLGridOfSquaresToCircles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 02JGLGridOfSquaresToCircles.h; sourceTree = "<group>"; };
+		EA20BB1A136732D00038E922 /* Inversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Inversion.cpp; sourceTree = "<group>"; };
+		EA20BB1B136732D00038E922 /* Inversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inversion.h; sourceTree = "<group>"; };
 		EAD6E0C21353336400075A87 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		EAD6E0C71353336400075A87 /* cv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cv.h; sourceTree = "<group>"; };
 		EAD6E0C81353336400075A87 /* cv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cv.hpp; sourceTree = "<group>"; };
@@ -1130,69 +1133,96 @@
 		EA20BA6D136730CC0038E922 /* reactickles */ = {
 			isa = PBXGroup;
 			children = (
-				EA20BA6E136730CC0038E922 /* Circles2D */,
-				EA20BA74136730CC0038E922 /* CircleSwarm */,
-				EA20BA79136730CC0038E922 /* ClapClock */,
-				EA20BA7C136730CC0038E922 /* Expander */,
-				EA20BA7F136730CC0038E922 /* Inversion */,
+				EA20BB02136732D00038E922 /* Circles2D */,
+				EA20BB08136732D00038E922 /* CircleSwarm */,
+				EA20BB0D136732D00038E922 /* ClapBang */,
+				EA20BB0F136732D00038E922 /* ClapClock */,
+				EA20BB12136732D00038E922 /* ColourChangeOnNoise */,
+				EA20BB14136732D00038E922 /* Expander */,
+				EA20BB17136732D00038E922 /* GridOfSquaresToCircles */,
+				EA20BB19136732D00038E922 /* Inversion */,
 			);
 			name = reactickles;
 			path = ../reactickles;
 			sourceTree = SOURCE_ROOT;
 		};
-		EA20BA6E136730CC0038E922 /* Circles2D */ = {
+		EA20BB02136732D00038E922 /* Circles2D */ = {
 			isa = PBXGroup;
 			children = (
-				EA20BA6F136730CC0038E922 /* Circles2D.cpp */,
-				EA20BA70136730CC0038E922 /* Circles2D.h */,
-				EA20BA71136730CC0038E922 /* particles */,
+				EA20BB03136732D00038E922 /* Circles2D.cpp */,
+				EA20BB04136732D00038E922 /* Circles2D.h */,
+				EA20BB05136732D00038E922 /* particles */,
 			);
 			path = Circles2D;
 			sourceTree = "<group>";
 		};
-		EA20BA71136730CC0038E922 /* particles */ = {
+		EA20BB05136732D00038E922 /* particles */ = {
 			isa = PBXGroup;
 			children = (
-				EA20BA72136730CC0038E922 /* CircleParticle.cpp */,
-				EA20BA73136730CC0038E922 /* CircleParticle.h */,
+				EA20BB06136732D00038E922 /* CircleParticle.cpp */,
+				EA20BB07136732D00038E922 /* CircleParticle.h */,
 			);
 			path = particles;
 			sourceTree = "<group>";
 		};
-		EA20BA74136730CC0038E922 /* CircleSwarm */ = {
+		EA20BB08136732D00038E922 /* CircleSwarm */ = {
 			isa = PBXGroup;
 			children = (
-				EA20BA75136730CC0038E922 /* CircleSwarm.cpp */,
-				EA20BA76136730CC0038E922 /* CircleSwarm.h */,
-				EA20BA77136730CC0038E922 /* SwarmParticle.cpp */,
-				EA20BA78136730CC0038E922 /* SwarmParticle.h */,
+				EA20BB09136732D00038E922 /* CircleSwarm.cpp */,
+				EA20BB0A136732D00038E922 /* CircleSwarm.h */,
+				EA20BB0B136732D00038E922 /* SwarmParticle.cpp */,
+				EA20BB0C136732D00038E922 /* SwarmParticle.h */,
 			);
 			path = CircleSwarm;
 			sourceTree = "<group>";
 		};
-		EA20BA79136730CC0038E922 /* ClapClock */ = {
+		EA20BB0D136732D00038E922 /* ClapBang */ = {
 			isa = PBXGroup;
 			children = (
-				EA20BA7A136730CC0038E922 /* ClapClock.cpp */,
-				EA20BA7B136730CC0038E922 /* ClapClock.h */,
+				EA20BB0E136732D00038E922 /* ClapBang.h */,
+			);
+			path = ClapBang;
+			sourceTree = "<group>";
+		};
+		EA20BB0F136732D00038E922 /* ClapClock */ = {
+			isa = PBXGroup;
+			children = (
+				EA20BB10136732D00038E922 /* ClapClock.cpp */,
+				EA20BB11136732D00038E922 /* ClapClock.h */,
 			);
 			path = ClapClock;
 			sourceTree = "<group>";
 		};
-		EA20BA7C136730CC0038E922 /* Expander */ = {
+		EA20BB12136732D00038E922 /* ColourChangeOnNoise */ = {
 			isa = PBXGroup;
 			children = (
-				EA20BA7D136730CC0038E922 /* Expander.cpp */,
-				EA20BA7E136730CC0038E922 /* Expander.h */,
+				EA20BB13136732D00038E922 /* 03JGLColourChangeOnNoise.h */,
+			);
+			path = ColourChangeOnNoise;
+			sourceTree = "<group>";
+		};
+		EA20BB14136732D00038E922 /* Expander */ = {
+			isa = PBXGroup;
+			children = (
+				EA20BB15136732D00038E922 /* Expander.cpp */,
+				EA20BB16136732D00038E922 /* Expander.h */,
 			);
 			path = Expander;
 			sourceTree = "<group>";
 		};
-		EA20BA7F136730CC0038E922 /* Inversion */ = {
+		EA20BB17136732D00038E922 /* GridOfSquaresToCircles */ = {
 			isa = PBXGroup;
 			children = (
-				EA20BA80136730CC0038E922 /* Inversion.cpp */,
-				EA20BA81136730CC0038E922 /* Inversion.h */,
+				EA20BB18136732D00038E922 /* 02JGLGridOfSquaresToCircles.h */,
+			);
+			path = GridOfSquaresToCircles;
+			sourceTree = "<group>";
+		};
+		EA20BB19136732D00038E922 /* Inversion */ = {
+			isa = PBXGroup;
+			children = (
+				EA20BB1A136732D00038E922 /* Inversion.cpp */,
+				EA20BB1B136732D00038E922 /* Inversion.h */,
 			);
 			path = Inversion;
 			sourceTree = "<group>";
@@ -1767,13 +1797,13 @@
 				EA20B697136705160038E922 /* TuioTime.cpp in Sources */,
 				EA20B698136705160038E922 /* UdpReceiver.cpp in Sources */,
 				EA20B699136705160038E922 /* UdpSender.cpp in Sources */,
-				EA20BA82136730CC0038E922 /* Circles2D.cpp in Sources */,
-				EA20BA83136730CC0038E922 /* CircleParticle.cpp in Sources */,
-				EA20BA84136730CC0038E922 /* CircleSwarm.cpp in Sources */,
-				EA20BA85136730CC0038E922 /* SwarmParticle.cpp in Sources */,
-				EA20BA86136730CC0038E922 /* ClapClock.cpp in Sources */,
-				EA20BA87136730CC0038E922 /* Expander.cpp in Sources */,
-				EA20BA88136730CC0038E922 /* Inversion.cpp in Sources */,
+				EA20BB1C136732D00038E922 /* Circles2D.cpp in Sources */,
+				EA20BB1D136732D00038E922 /* CircleParticle.cpp in Sources */,
+				EA20BB1E136732D00038E922 /* CircleSwarm.cpp in Sources */,
+				EA20BB1F136732D00038E922 /* SwarmParticle.cpp in Sources */,
+				EA20BB20136732D00038E922 /* ClapClock.cpp in Sources */,
+				EA20BB21136732D00038E922 /* Expander.cpp in Sources */,
+				EA20BB22136732D00038E922 /* Inversion.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

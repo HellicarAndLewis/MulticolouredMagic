@@ -6,7 +6,7 @@
  * Hacked by Joel Gethin Lewis on 12/04/2011.
  *
  */
-
+#pragma once
 #include "Reactickle.h"
 class ClapClock: public Reactickle {
 public:
