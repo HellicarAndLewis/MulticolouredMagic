@@ -37,7 +37,7 @@ int main(){
 			IPAD = [[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPad;
 		}
 	}
-	printf("WIDTH: %d    HEIGHT: %d\n", WIDTH, HEIGHT);
+	//printf("WIDTH: %d    HEIGHT: %d\n", WIDTH, HEIGHT);
 	if(RETINA) {
 		WIDTH *= 2;
 		HEIGHT *= 2;

@@ -3,3 +3,4 @@ magic/bin/magic.app/*
 ReacticklesMagic/build/*
 *.xcuserdatad
 *.pbxuser
+*.mode1v3

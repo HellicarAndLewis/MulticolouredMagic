@@ -5,7 +5,7 @@
  * Created by Marek Bereza on 26/04/2011.
  *
  */
-
+#pragma once
 // this is your pixel width and height
 extern int WIDTH;
 extern int HEIGHT;

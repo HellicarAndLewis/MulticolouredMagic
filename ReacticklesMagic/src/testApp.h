@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
-
+#include "constants.h"
 class testApp : public ofxiPhoneApp {
 	
 public:

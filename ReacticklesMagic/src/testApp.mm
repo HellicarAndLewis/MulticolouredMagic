@@ -3,12 +3,8 @@
 //--------------------------------------------------------------
 void testApp::setup(){	
 	
-	
-	
 	setupGraphics();
 	setupOrientation();
-	
-
 	
 	// register touch events
 	ofRegisterTouchEvents(this);
@@ -19,10 +15,6 @@ void testApp::setup(){
 	//iPhoneAlerts will be sent to this.
 	ofxiPhoneAlerts.addListener(this);
 	
-	//If you want a landscape oreintation 
-	//iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
-	
-	ofBackground(127,127,127);
 }
 
 void testApp::setupOrientation() {
@@ -84,6 +76,7 @@ void testApp::draw(){
 		glScalef(0.5, 0.5, 1);
 	}
 	
+	ofCircle(WIDTH/2, HEIGHT/2, HEIGHT/2);
 	
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
