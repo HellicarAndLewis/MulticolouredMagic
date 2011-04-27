@@ -3,7 +3,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){	
-	
+	gain = 1;
 	ReactickleApp::instance = this;
 	setupGraphics();
 	setupOrientation();
@@ -18,6 +18,18 @@ void testApp::setup(){
 	ofxiPhoneAlerts.addListener(this);
 	currentApp = &mainMenu;
 	mainMenu.setup();
+	
+	backButton.setup("back", ofVec2f(0,0), IMAGE_ROOT + "backButton.png", IMAGE_ROOT + "backButtonDown.png");
+	backButton.x = WIDTH - backButton.width;
+	backButton.y = HEIGHT - backButton.height;
+	backButton.setListener(this);
+	ofSoundStreamSetup(0, 1, this, 22050, 1024, 1);
+}
+
+void testApp::buttonPressed(string name) {
+	if(name=="back") {
+		currentApp = &mainMenu;
+	}
 }
 
 void testApp::setupOrientation() {
@@ -82,6 +94,9 @@ void testApp::draw(){
 //	ofCircle(WIDTH/2, HEIGHT/2, HEIGHT/2);
 	//mainMenu.draw();
 	currentApp->draw();
+	if(currentApp!=&mainMenu) {
+		backButton.draw();
+	}
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
 		glPopMatrix();
@@ -102,16 +117,31 @@ void testApp::exit(){
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs &touch){
+	if(currentApp!=&mainMenu) {
+		if(backButton.touchDown(touch.x, touch.y, touch.id)) {
+			return;
+		}
+	}
 	currentApp->touchDown(touch.x, touch.y, touch.id);
 }
 
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch){
+	if(currentApp!=&mainMenu) {
+		if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
+			return;
+		}
+	}
 	currentApp->touchMoved(touch.x, touch.y, touch.id);
 }
 
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs &touch){
+	if(currentApp!=&mainMenu) {
+		if(backButton.touchUp(touch.x, touch.y, touch.id)) {
+			return;
+		}
+	}
 	currentApp->touchUp(touch.x, touch.y, touch.id);
 }
 
@@ -146,3 +176,26 @@ void testApp::touchCancelled(ofTouchEventArgs& args){
 
 }
 
+void testApp::showAbout() {
+	currentApp = &aboutPage;
+}
+
+void testApp::showSettings() {
+	currentApp = &settingsPage;
+}
+
+void testApp::audioReceived( float * input, int bufferSize, int nChannels ) {
+	// samples are "interleaved"
+	float max = 0;
+	
+	for (int i = 0; i < bufferSize; i++){
+		float val = gain*ABS(input[i]);
+		if(val>max) max = val;
+	}
+	
+	if(max>volume) volume = max;
+	else volume *= 0.96;
+	
+	//volume *= gain;
+	currentApp->audioReceived(input, bufferSize, nChannels);
+}

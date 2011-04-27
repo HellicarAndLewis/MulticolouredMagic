@@ -24,6 +24,7 @@ public:
 		
 	void setListener(ReactickleButtonListener *listener);
 private:
+	float startY;
 	ofImage *screenshot;
 	string name;
 	ReactickleButtonListener *listener;

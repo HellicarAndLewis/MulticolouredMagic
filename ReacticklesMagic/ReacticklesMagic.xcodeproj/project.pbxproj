@@ -63,6 +63,8 @@
 		EA20BAEC1367327D0038E922 /* ClapClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BADC1367327D0038E922 /* ClapClock.cpp */; };
 		EA20BAED1367327D0038E922 /* Expander.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BAE11367327D0038E922 /* Expander.cpp */; };
 		EA20BAEE1367327D0038E922 /* Inversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BAE61367327D0038E922 /* Inversion.cpp */; };
+		EA20BC4C13682A850038E922 /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20BC4B13682A850038E922 /* AboutPage.mm */; };
+		EA20BC4F13682A8B0038E922 /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20BC4E13682A8B0038E922 /* SettingsPage.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +215,11 @@
 		EA20BAE71367327D0038E922 /* Inversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inversion.h; sourceTree = "<group>"; };
 		EA20BB30136734060038E922 /* 01JGLCircleGetsBigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 01JGLCircleGetsBigger.h; sourceTree = "<group>"; };
 		EA20BB52136734EC0038E922 /* AudioBalloonApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioBalloonApp.h; sourceTree = "<group>"; };
+		EA20BBAF13681B770038E922 /* DoubleTapButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleTapButton.h; sourceTree = "<group>"; };
+		EA20BC4A13682A850038E922 /* AboutPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPage.h; sourceTree = "<group>"; };
+		EA20BC4B13682A850038E922 /* AboutPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AboutPage.mm; sourceTree = "<group>"; };
+		EA20BC4D13682A8B0038E922 /* SettingsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsPage.h; sourceTree = "<group>"; };
+		EA20BC4E13682A8B0038E922 /* SettingsPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsPage.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,6 +589,10 @@
 		E4D8936A11527B74007E1F53 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EA20BC4A13682A850038E922 /* AboutPage.h */,
+				EA20BC4B13682A850038E922 /* AboutPage.mm */,
+				EA20BC4D13682A8B0038E922 /* SettingsPage.h */,
+				EA20BC4E13682A8B0038E922 /* SettingsPage.mm */,
 				EA20B985136728990038E922 /* ReactickleApp.h */,
 				EA20B986136728990038E922 /* ReactickleApp.mm */,
 				EA20B8731367151A0038E922 /* ReactickleButton.h */,
@@ -638,6 +649,7 @@
 			children = (
 				EA20B867136713EC0038E922 /* InteractiveObject.h */,
 				EA20B868136713EC0038E922 /* SimpleButton.h */,
+				EA20BBAF13681B770038E922 /* DoubleTapButton.h */,
 			);
 			path = gui;
 			sourceTree = "<group>";
@@ -879,6 +891,8 @@
 				EA20BAEC1367327D0038E922 /* ClapClock.cpp in Sources */,
 				EA20BAED1367327D0038E922 /* Expander.cpp in Sources */,
 				EA20BAEE1367327D0038E922 /* Inversion.cpp in Sources */,
+				EA20BC4C13682A850038E922 /* AboutPage.mm in Sources */,
+				EA20BC4F13682A8B0038E922 /* SettingsPage.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

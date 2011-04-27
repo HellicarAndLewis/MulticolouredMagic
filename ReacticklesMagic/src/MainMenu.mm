@@ -26,6 +26,18 @@ void MainMenu::setup() {
 		// add it to the display/interaction hierarchy
 		items.push_back(reactickleButtons[i]);
 	}
+	
+	
+	settingsButton.setup("settings", ofVec2f(50, 50), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
+	aboutButton.setup("about", ofVec2f(150, 50), IMAGE_ROOT + "aboutButton.png", IMAGE_ROOT + "aboutButtonDown.png");
+	
+	items.push_back(&aboutButton);
+	items.push_back(&settingsButton);
+	
+	aboutButton.setListener(this);
+	settingsButton.setListener(this);
+	
+	// setup scrolling stuff
 	scrollRect.x = 0;
 	scrollRect.width = WIDTH;
 	scrollRect.y = 100;
@@ -37,7 +49,9 @@ void MainMenu::setup() {
 }
 
 
+void MainMenu::buttonPressed(string name) {
 
+}
 
 // this method arranges the reacticklesButtons nicely
 void MainMenu::arrange() {

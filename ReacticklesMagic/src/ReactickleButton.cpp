@@ -30,10 +30,10 @@ void ReactickleButton::setListener(ReactickleButtonListener *listener) {
 
 
 bool ReactickleButton::touchDown(float xx, float yy, int tid) {
-	printf("touchDown\n");
 	if(inside(xx, yy)) {
 		currTouchId = tid;
 		down = true;
+		startY = yy;
 	}
 	
 	return down;
@@ -53,7 +53,7 @@ bool ReactickleButton::touchUp(float xx, float yy, int tid) {
 	if(currTouchId==tid) {
 		currTouchId = -1;
 		down = false;
-		if(inside(xx, yy)) {
+		if(inside(xx, yy) && ABS(startY - yy)<2) {
 			if(listener!=NULL) listener->reactickleSelected(name);
 		}
 	}

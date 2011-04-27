@@ -7,8 +7,11 @@
 #include "Reactickle.h"
 #include "MainMenu.h"
 #include "ReactickleApp.h"
+#include "DoubleTapButton.h"
+#include "AboutPage.h"
+#include "SettingsPage.h"
 
-class testApp : public ReactickleApp {
+class testApp : public ReactickleApp, public SimpleButtonListener {
 	
 public:
 	void setup();
@@ -21,17 +24,31 @@ public:
 	void touchUp(ofTouchEventArgs &touch);
 	void touchDoubleTap(ofTouchEventArgs &touch);
 	void touchCancelled(ofTouchEventArgs &touch);
-
+	
+	void audioReceived( float * input, int bufferSize, int nChannels );
+	
 	void lostFocus();
 	void gotFocus();
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
+	// app stuff
 	void launchReactickle(Reactickle *reactickle);
+	void showSettings();
+	void showAbout();
+	
 	MainMenu mainMenu;
+	AboutPage aboutPage;
+	SettingsPage settingsPage;
 	
 	// this is the app that's currently receiving events
 	Reactickle *currentApp;
+	
+	// back buttons for when on a reactickle
+	DoubleTapButton backButton;
+
+	// button event (for back button)
+	void buttonPressed(string name);
 	
 private:
 	int currOrientation;
@@ -39,6 +56,8 @@ private:
 	void setupGraphics();
 	void setupOrientation();
 	void updateOrientation();
+	
+
 };
 
 

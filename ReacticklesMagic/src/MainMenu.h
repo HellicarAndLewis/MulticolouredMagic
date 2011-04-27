@@ -8,7 +8,9 @@
 #include "Reactickle.h"
 #include "InteractiveObject.h"
 #include "ReactickleButton.h"
-class MainMenu: public Reactickle, public ReactickleButtonListener {
+#include "SimpleButton.h"
+
+class MainMenu: public Reactickle, public ReactickleButtonListener, public SimpleButtonListener {
 public:
 	void setup();
 	void draw();
@@ -24,6 +26,7 @@ public:
 	void touchMoved(float x, float y, int touchId);
 	void touchUp(float x, float y, int touchId);
 	void reactickleSelected(string name);
+	void buttonPressed(string name);
 private:
 	void arrange();
 	
@@ -38,4 +41,7 @@ private:
 	float touchY;
 	float deltaY;
 	float totalHeight;
+	
+	SimpleButton settingsButton;
+	SimpleButton aboutButton;
 };

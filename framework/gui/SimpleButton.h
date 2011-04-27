@@ -7,7 +7,7 @@
  */
 #pragma once
 #include "ofMain.h"
-#include "GuiResources.h"
+#include "ImageCache.h"
 #include "ofVec2f.h"
 #include "InteractiveObject.h"
 
@@ -23,13 +23,16 @@ class SimpleButton: public InteractiveObject {
 private:
 	ofImage *upImg;
 	ofImage *dnImg;
-	int currTouchId;
+
 	
+	
+protected:
+	int currTouchId;
 	string name;
 	SimpleButtonListener *listener;
-protected:
 	bool down;
 	float alpha;
+	
 public:
 	
 	
@@ -42,12 +45,12 @@ public:
 		this->name = name;
 		currTouchId = -1;
 		alpha = 1;
-		upImg = GuiResources::globals.getImage(upImgUrl);
+		upImg = ImageCache::getImage(upImgUrl);
 
 		if(dnImgUrl=="") {
 			dnImg = NULL;
 		} else {
-			dnImg = GuiResources::globals.getImage(dnImgUrl);
+			dnImg = ImageCache::getImage(dnImgUrl);
 		}
 
 	 
