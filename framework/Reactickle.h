@@ -32,8 +32,8 @@ class Reactickle: public ofBaseApp {
 public:
 	
 	// this is called every time the app is restarted
-	virtual void init() {};
-	
+	virtual void start() {};
+	virtual void stop() {};
 	virtual void touchDown(float x, float y, int touchId) {};
 	virtual void touchMoved(float x, float y, int touchId) {};
 	virtual void touchUp(float x, float y, int touchId) {};

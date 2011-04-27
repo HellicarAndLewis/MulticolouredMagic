@@ -7,6 +7,7 @@
  */
 #pragma once
 #include "InteractiveObject.h"
+#include "GlowingBorder.h"
 
 class ReactickleButtonListener {
 public:
@@ -24,10 +25,11 @@ public:
 		
 	void setListener(ReactickleButtonListener *listener);
 private:
-	float startY;
+	float startX;
 	ofImage *screenshot;
 	string name;
 	ReactickleButtonListener *listener;
 	int currTouchId;
 	bool down;
+	GlowingBorder border;
 };

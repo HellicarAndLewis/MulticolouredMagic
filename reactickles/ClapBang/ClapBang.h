@@ -59,7 +59,7 @@ class ClapBang: public Reactickle {
 public:
 
 	ofImage img;
-	void init() {
+	void start() {
 		ofSetCircleResolution(16);
 	}
 	

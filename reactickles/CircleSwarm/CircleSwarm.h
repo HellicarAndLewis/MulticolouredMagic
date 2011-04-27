@@ -25,7 +25,7 @@ public:
 	bool needsKinect() { return true; }
 	void update();
 	void draw();
-	void init();
+	void start();
 	
 	void clap();
 	void modeChanged();

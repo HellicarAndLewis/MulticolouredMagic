@@ -62,7 +62,7 @@ public:
 	float					incSpeed;
 	float					volumeThreshold;
 	
-	void init() {
+	void start() {
 		//gui->setPage("Audio Balloon");
 		
 		ofSetCircleResolution(64);
@@ -90,7 +90,7 @@ public:
 		
 
 		
-		init();
+		start();
 		
 	}
 	

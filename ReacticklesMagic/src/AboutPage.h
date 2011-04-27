@@ -7,7 +7,12 @@
  */
 
 #include "Reactickle.h"
-
+#include "ofxiPhoneWebView.h"
 class AboutPage: public Reactickle {
 public:
+	void start() {
+		webView.show();
+		printf("Shwoing web view\n");
+	}
+	ofxiPhoneWebView webView;
 };

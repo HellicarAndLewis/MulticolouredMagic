@@ -13,7 +13,7 @@
 
 class CircleBiggerApp: public Reactickle {
 	
-	void init(){
+	void start(){
 		ofSetCircleResolution(64);
 	}
 	

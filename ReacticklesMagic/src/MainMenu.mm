@@ -43,10 +43,11 @@ void MainMenu::setup() {
 	scrollRect.y = 100;
 	scrollRect.height = HEIGHT - scrollRect.y;
 	scrollOffset = 0;
-	deltaY = 0;
-	touchY = 0;
+	deltaX = 0;
+	touchX = 0;
 	touching = false;
 }
+
 
 
 void MainMenu::buttonPressed(string name) {
@@ -59,18 +60,19 @@ void MainMenu::buttonPressed(string name) {
 
 // this method arranges the reacticklesButtons nicely
 void MainMenu::arrange() {
-	int itemsPerRow = 3;
-	int rowHeight = reactickleButtons[0]->height+10;
-	int colWidth = reactickleButtons[0]->width+10;
+	int itemsPerCol = 3;
+	int PADDING = 10*WIDTH_SCALE;
+	int rowHeight = reactickleButtons[0]->height+PADDING;
+	int colWidth = reactickleButtons[0]->width+PADDING;
 	
 	
 	for(int i = 0; i < reactickleButtons.size(); i++) {
-		int col = i % itemsPerRow;
-		int row = i / itemsPerRow;
-		reactickleButtons[i]->x = colWidth*col;
-		reactickleButtons[i]->y = rowHeight*row + scrollRect.y + scrollOffset;
-		if(totalHeight<reactickleButtons[i]->y + reactickleButtons[i]->height) {
-			totalHeight = reactickleButtons[i]->y + reactickleButtons[i]->height;
+		int col = i / itemsPerCol;
+		int row = i % itemsPerCol;
+		reactickleButtons[i]->x = colWidth*col + scrollOffset + PADDING;
+		reactickleButtons[i]->y = rowHeight*row + scrollRect.y + PADDING;
+		if(totalWidth<reactickleButtons[i]->x + reactickleButtons[i]->width) {
+			totalWidth = reactickleButtons[i]->x + reactickleButtons[i]->width;
 		}
 	}
 }
@@ -83,26 +85,26 @@ void MainMenu::draw() {
 		
 		// pulling the top
 		if(scrollOffset>0) {
-			deltaY = -scrollOffset*0.1;
+			deltaX = -scrollOffset*0.1;
 			
 			
 			// pulling the bottom
-		} else if(ABS(scrollOffset)>totalHeight-scrollRect.height) {
-			deltaY = (ABS(scrollOffset)-(totalHeight-scrollRect.height))*0.1;
+		} else if(ABS(scrollOffset)>totalWidth-scrollRect.width) {
+			deltaX = (ABS(scrollOffset)-(totalWidth-scrollRect.width))*0.1;
 			
 		} else {
 			// normal momentum
-			deltaY *= 0.9;
+			deltaX *= 0.9;
 			
 		}
-		if(ABS(deltaY)<1) deltaY = 0;
-		scrollOffset += deltaY;
+		if(ABS(deltaX)<1) deltaX = 0;
+		scrollOffset += deltaX;
 	}
 	
 	
 	
 	ofSetHexColor(0xFFFFFF);
-	ofDrawBitmapString("Reactickles" , 20, 20);
+	ofDrawBitmapString(ofToString(ofGetFrameRate(), 2), 20, 20);
 	
 	for(int i = 0; i < items.size(); i++) {
 		items[i]->draw();
@@ -114,7 +116,7 @@ void MainMenu::draw() {
 
 void MainMenu::touchDown(float x, float y, int touchId) {
 	if(scrollRect.inside(x, y)) {
-		touchY = y;
+		touchX = x;
 		touching = true;
 	}
 	for(int i = 0; i < items.size(); i++) {
@@ -125,9 +127,9 @@ void MainMenu::touchDown(float x, float y, int touchId) {
 }
 
 void MainMenu::touchMoved(float x, float y, int touchId) {
-	deltaY = y - touchY;
-	scrollOffset += deltaY;
-	touchY = y;
+	deltaX = x - touchX;
+	scrollOffset += deltaX;
+	touchX = x;
 	for(int i = 0; i < items.size(); i++) {
 		if(items[i]->touchMoved(x, y, touchId)) {
 			return;

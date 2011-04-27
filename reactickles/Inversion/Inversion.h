@@ -31,7 +31,7 @@ public:
 	// deque of them. It was originally needed as a trail.
 	// haven't got time to change that right now.
 	deque<ofVec2f> pos;
-	void init();
+	void start();
 	int currShapeId;
 	ofVec2f lastPos;
 };

@@ -54,9 +54,9 @@ void testApp::updateOrientation() {
 	
 	if(orientation!=currOrientation || orient==OFXIPHONE_ORIENTATION_PORTRAIT || orient==OFXIPHONE_ORIENTATION_UPSIDEDOWN) {
 		if(orientation==UIDeviceOrientationLandscapeLeft) {
-			iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
-		} else if(orientation==UIDeviceOrientationLandscapeRight) {
 			iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
+		} else if(orientation==UIDeviceOrientationLandscapeRight) {
+			iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 		}
 	}
 	
@@ -75,6 +75,7 @@ void testApp::update(){
 	if(currentApp!=NULL) {
 		currentApp->volume = volume;
 		currentApp->volumeThreshold = volumeThreshold;
+		currentApp->update();
 	}
 	
 }
@@ -110,7 +111,9 @@ bool testApp::isReactickle(Reactickle *reactickle) {
 }
 
 void testApp::switchReactickle(Reactickle *reactickle) {
-	
+	if(currentApp!=NULL) {
+		currentApp->stop();
+	}
 	// take care of previous reactickle - i.e. delete it if it's an actual reactickle
 	if(isReactickle(currentApp)) {
 		delete currentApp;
@@ -122,6 +125,8 @@ void testApp::switchReactickle(Reactickle *reactickle) {
 	if(isReactickle(currentApp)) {
 		currentApp->setup();
 	}
+	currentApp->start();
+
 }
 
 void testApp::buttonPressed(string name) {

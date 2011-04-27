@@ -6,13 +6,12 @@
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
-	
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon@2x.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.mazbox.${EXECUTABLE_NAME}</string>
+	<string>com.reactickles.magic</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -32,9 +31,9 @@
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
-<array>
-    <string>UIInterfaceOrientationLandscapeRight</string>
-    <string>UIInterfaceOrientationLandscapeLeft</string>
-</array>
+	<array>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+	</array>
 </dict>
 </plist>

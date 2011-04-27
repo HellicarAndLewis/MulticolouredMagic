@@ -21,7 +21,7 @@ void MagicApp::setup(){
 	}
 	
 	
-	apps[appIndex]->init();
+	apps[appIndex]->start();
 	apps[appIndex]->setMode(0);
 
 
@@ -82,7 +82,7 @@ void MagicApp::update() {
 	
 	if(appIndex!=lastAppIndex) {
 		gui.setPage(1);
-		apps[appIndex]->init();
+		apps[appIndex]->start();
         apps[appIndex]->setMode(0);
 	}
 	lastAppIndex = appIndex;

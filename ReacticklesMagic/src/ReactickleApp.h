@@ -16,6 +16,7 @@
 #include "ofxiPhoneExtras.h"
 #include "Reactickle.h"
 
+
 class ReactickleApp: public ofxiPhoneApp {
 public:
 	virtual void launchReactickle(Reactickle *reactickle) = 0;
@@ -27,4 +28,5 @@ protected:
 	float gain;
 	float volume;
 	float volumeThreshold;
+
 };

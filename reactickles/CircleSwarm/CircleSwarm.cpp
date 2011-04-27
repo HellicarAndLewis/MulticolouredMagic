@@ -8,7 +8,7 @@
 
 #include "CircleSwarm.h"
 
-void CircleSwarm::init() {
+void CircleSwarm::start() {
 	currShapeId = 0;
 }
 

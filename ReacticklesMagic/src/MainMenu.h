@@ -38,9 +38,9 @@ private:
 	
 	// scrolling touch stuff
 	bool touching;
-	float touchY;
-	float deltaY;
-	float totalHeight;
+	float touchX;
+	float deltaX;
+	float totalWidth;
 	
 	SimpleButton settingsButton;
 	SimpleButton aboutButton;

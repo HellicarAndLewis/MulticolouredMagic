@@ -65,6 +65,7 @@
 		EA20BAEE1367327D0038E922 /* Inversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BAE61367327D0038E922 /* Inversion.cpp */; };
 		EA20BC4C13682A850038E922 /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20BC4B13682A850038E922 /* AboutPage.mm */; };
 		EA20BC4F13682A8B0038E922 /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20BC4E13682A8B0038E922 /* SettingsPage.mm */; };
+		EA20BD6213685B6D0038E922 /* ofxiPhoneWebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20BD6113685B6D0038E922 /* ofxiPhoneWebView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +221,9 @@
 		EA20BC4B13682A850038E922 /* AboutPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AboutPage.mm; sourceTree = "<group>"; };
 		EA20BC4D13682A8B0038E922 /* SettingsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsPage.h; sourceTree = "<group>"; };
 		EA20BC4E13682A8B0038E922 /* SettingsPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsPage.mm; sourceTree = "<group>"; };
+		EA20BD49136858180038E922 /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
+		EA20BD6013685B6D0038E922 /* ofxiPhoneWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneWebView.h; sourceTree = "<group>"; };
+		EA20BD6113685B6D0038E922 /* ofxiPhoneWebView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneWebView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +357,7 @@
 		BB16F26B0F2B646B00518274 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				EA20BD5F13685B5B0038E922 /* ofxiPhoneWebView */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -593,6 +598,7 @@
 				EA20B8731367151A0038E922 /* ReactickleButton.h */,
 				EA20B8741367151A0038E922 /* ReactickleButton.cpp */,
 				EA20B4951366EFB60038E922 /* constants.h */,
+				EA20BD49136858180038E922 /* GlowingBorder.h */,
 				E4D8936B11527B74007E1F53 /* main.mm */,
 			);
 			path = src;
@@ -777,6 +783,15 @@
 			name = gui;
 			sourceTree = "<group>";
 		};
+		EA20BD5F13685B5B0038E922 /* ofxiPhoneWebView */ = {
+			isa = PBXGroup;
+			children = (
+				EA20BD6013685B6D0038E922 /* ofxiPhoneWebView.h */,
+				EA20BD6113685B6D0038E922 /* ofxiPhoneWebView.mm */,
+			);
+			name = ofxiPhoneWebView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -901,6 +916,7 @@
 				EA20BAEE1367327D0038E922 /* Inversion.cpp in Sources */,
 				EA20BC4C13682A850038E922 /* AboutPage.mm in Sources */,
 				EA20BC4F13682A8B0038E922 /* SettingsPage.mm in Sources */,
+				EA20BD6213685B6D0038E922 /* ofxiPhoneWebView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,6 +940,7 @@
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../libs/freetype/lib/osx\"",
@@ -932,7 +949,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -944,6 +961,7 @@
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../libs/freetype/lib/osx\"",
@@ -952,7 +970,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -1101,6 +1119,7 @@
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../libs/freetype/lib/osx\"",
@@ -1109,7 +1128,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = ReleaseArmv7;
 		};

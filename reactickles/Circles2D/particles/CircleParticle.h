@@ -19,7 +19,7 @@ public:
 		birthday = ofGetElapsedTimef();
 		color.setHsb(ofRandom(0, 360), 190, 255, 255);
 		if(!inited) {
-			init();
+			start();
 		}
 		brightness = ofRandom(0.5, 1.0);
 		radius = radiusBase = ofRandom(7, 30);
@@ -54,7 +54,7 @@ public:
 	ofVec2f vel;
 	
 	static ofImage img;
-	static void init() {
+	static void start() {
 		if(!img.loadImage("bubble.png")) {
 			printf("Couldn't load image\n");
 		}

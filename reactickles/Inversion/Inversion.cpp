@@ -8,7 +8,7 @@
 
 #include "Inversion.h"
 
-void Inversion::init() {
+void Inversion::start() {
 	pos.push_back(ofGetWindowSize()/2);
 	lastPos = pos.back();
 	currShapeId = MAGIC_CIRCLE;
