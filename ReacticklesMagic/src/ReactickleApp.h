@@ -26,4 +26,5 @@ public:
 protected:
 	float gain;
 	float volume;
+	float volumeThreshold;
 };

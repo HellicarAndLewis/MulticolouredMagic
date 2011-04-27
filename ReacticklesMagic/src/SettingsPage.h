@@ -9,4 +9,5 @@
 
 class SettingsPage: public Reactickle {
 public:
+	void draw();
 };

@@ -50,7 +50,11 @@ void MainMenu::setup() {
 
 
 void MainMenu::buttonPressed(string name) {
-
+	if(name=="settings") {
+		ReactickleApp::instance->showSettings();
+	} else if(name=="about") {
+		ReactickleApp::instance->showAbout();
+	}
 }
 
 // this method arranges the reacticklesButtons nicely

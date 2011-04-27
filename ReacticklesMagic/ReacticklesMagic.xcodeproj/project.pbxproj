@@ -164,8 +164,8 @@
 		E49BCC4812554B69009F19D0 /* iPhone+OF Lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "iPhone+OF Lib.xcodeproj"; path = "../../../libs/openFrameworksCompiled/project/iphone/iPhone+OF Lib.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		E4A823A312561BE3002F86A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E4D8936B11527B74007E1F53 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = src/main.mm; sourceTree = SOURCE_ROOT; };
-		E4D8936C11527B74007E1F53 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
-		E4D8936D11527B74007E1F53 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = SOURCE_ROOT; };
+		E4D8936C11527B74007E1F53 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
+		E4D8936D11527B74007E1F53 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
 		EA20B4951366EFB60038E922 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		EA20B4EE1366F6EF0038E922 /* Default-LandscapeLeft~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-LandscapeLeft~ipad.png"; sourceTree = "<group>"; };
 		EA20B4EF1366F6EF0038E922 /* Default-LandscapeRight~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-LandscapeRight~ipad.png"; sourceTree = "<group>"; };
@@ -589,21 +589,11 @@
 		E4D8936A11527B74007E1F53 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				EA20BC4A13682A850038E922 /* AboutPage.h */,
-				EA20BC4B13682A850038E922 /* AboutPage.mm */,
-				EA20BC4D13682A8B0038E922 /* SettingsPage.h */,
-				EA20BC4E13682A8B0038E922 /* SettingsPage.mm */,
-				EA20B985136728990038E922 /* ReactickleApp.h */,
-				EA20B986136728990038E922 /* ReactickleApp.mm */,
+				EA20BC8013682D8B0038E922 /* gui */,
 				EA20B8731367151A0038E922 /* ReactickleButton.h */,
 				EA20B8741367151A0038E922 /* ReactickleButton.cpp */,
 				EA20B4951366EFB60038E922 /* constants.h */,
 				E4D8936B11527B74007E1F53 /* main.mm */,
-				E4D8936D11527B74007E1F53 /* testApp.mm */,
-				EA20B542136703810038E922 /* MainMenu.h */,
-				EA20B543136703810038E922 /* MainMenu.mm */,
-				E4D8936C11527B74007E1F53 /* testApp.h */,
-				EA20BA1E13672EDB0038E922 /* Apps.mm */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -767,6 +757,24 @@
 				EA20BB52136734EC0038E922 /* AudioBalloonApp.h */,
 			);
 			path = AudioBalloon;
+			sourceTree = "<group>";
+		};
+		EA20BC8013682D8B0038E922 /* gui */ = {
+			isa = PBXGroup;
+			children = (
+				EA20B985136728990038E922 /* ReactickleApp.h */,
+				EA20B986136728990038E922 /* ReactickleApp.mm */,
+				E4D8936C11527B74007E1F53 /* testApp.h */,
+				E4D8936D11527B74007E1F53 /* testApp.mm */,
+				EA20B542136703810038E922 /* MainMenu.h */,
+				EA20B543136703810038E922 /* MainMenu.mm */,
+				EA20BC4A13682A850038E922 /* AboutPage.h */,
+				EA20BC4B13682A850038E922 /* AboutPage.mm */,
+				EA20BC4D13682A8B0038E922 /* SettingsPage.h */,
+				EA20BC4E13682A8B0038E922 /* SettingsPage.mm */,
+				EA20BA1E13672EDB0038E922 /* Apps.mm */,
+			);
+			name = gui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -4,6 +4,7 @@
 //--------------------------------------------------------------
 void testApp::setup(){	
 	gain = 1;
+	volumeThreshold = 0.3;
 	ReactickleApp::instance = this;
 	setupGraphics();
 	setupOrientation();
@@ -26,11 +27,7 @@ void testApp::setup(){
 	ofSoundStreamSetup(0, 1, this, 22050, 1024, 1);
 }
 
-void testApp::buttonPressed(string name) {
-	if(name=="back") {
-		currentApp = &mainMenu;
-	}
-}
+
 
 void testApp::setupOrientation() {
 	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
@@ -75,6 +72,10 @@ void testApp::setupGraphics() {
 //--------------------------------------------------------------
 void testApp::update(){
 	updateOrientation();
+	if(currentApp!=NULL) {
+		currentApp->volume = volume;
+		currentApp->volumeThreshold = volumeThreshold;
+	}
 	
 }
 
@@ -104,11 +105,46 @@ void testApp::draw(){
 	
 }
 
+bool testApp::isReactickle(Reactickle *reactickle) {
+	return currentApp!=&mainMenu && currentApp!=&aboutPage && currentApp!=&settingsPage;
+}
+
+void testApp::switchReactickle(Reactickle *reactickle) {
+	
+	// take care of previous reactickle - i.e. delete it if it's an actual reactickle
+	if(isReactickle(currentApp)) {
+		delete currentApp;
+		currentApp = NULL;
+	}
+	
+	// start the new one
+	currentApp = reactickle;
+	if(isReactickle(currentApp)) {
+		currentApp->setup();
+	}
+}
+
+void testApp::buttonPressed(string name) {
+	if(name=="back") {
+		switchReactickle(&mainMenu);
+	}
+}
+
 
 void testApp::launchReactickle(Reactickle *reactickle) {
-
-	currentApp = reactickle;
+	switchReactickle(reactickle);
 }
+
+
+void testApp::showAbout() {
+	switchReactickle(&aboutPage);
+}
+
+void testApp::showSettings() {
+	switchReactickle(&settingsPage);
+}
+
+
 
 //--------------------------------------------------------------
 void testApp::exit(){
@@ -176,13 +212,6 @@ void testApp::touchCancelled(ofTouchEventArgs& args){
 
 }
 
-void testApp::showAbout() {
-	currentApp = &aboutPage;
-}
-
-void testApp::showSettings() {
-	currentApp = &settingsPage;
-}
 
 void testApp::audioReceived( float * input, int bufferSize, int nChannels ) {
 	// samples are "interleaved"

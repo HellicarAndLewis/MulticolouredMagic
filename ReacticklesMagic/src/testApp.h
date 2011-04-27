@@ -37,6 +37,8 @@ public:
 	void showSettings();
 	void showAbout();
 	
+
+	void switchReactickle(Reactickle *reactickle);
 	MainMenu mainMenu;
 	AboutPage aboutPage;
 	SettingsPage settingsPage;
@@ -51,12 +53,13 @@ public:
 	void buttonPressed(string name);
 	
 private:
+	bool isReactickle(Reactickle *reactickle);
 	int currOrientation;
 	
 	void setupGraphics();
 	void setupOrientation();
 	void updateOrientation();
-	
+
 
 };
 
