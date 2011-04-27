@@ -66,6 +66,7 @@
 		EA20BC4C13682A850038E922 /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20BC4B13682A850038E922 /* AboutPage.mm */; };
 		EA20BC4F13682A8B0038E922 /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20BC4E13682A8B0038E922 /* SettingsPage.mm */; };
 		EA20BD6213685B6D0038E922 /* ofxiPhoneWebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA20BD6113685B6D0038E922 /* ofxiPhoneWebView.mm */; };
+		EA20BE68136875710038E922 /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20BE67136875710038E922 /* ColorPicker.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,8 @@
 		EA20BD49136858180038E922 /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
 		EA20BD6013685B6D0038E922 /* ofxiPhoneWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneWebView.h; sourceTree = "<group>"; };
 		EA20BD6113685B6D0038E922 /* ofxiPhoneWebView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneWebView.mm; sourceTree = "<group>"; };
+		EA20BE66136875710038E922 /* ColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPicker.h; sourceTree = "<group>"; };
+		EA20BE67136875710038E922 /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -769,6 +772,8 @@
 			isa = PBXGroup;
 			children = (
 				EA20B985136728990038E922 /* ReactickleApp.h */,
+				EA20BE66136875710038E922 /* ColorPicker.h */,
+				EA20BE67136875710038E922 /* ColorPicker.cpp */,
 				EA20B986136728990038E922 /* ReactickleApp.mm */,
 				E4D8936C11527B74007E1F53 /* testApp.h */,
 				E4D8936D11527B74007E1F53 /* testApp.mm */,
@@ -917,6 +922,7 @@
 				EA20BC4C13682A850038E922 /* AboutPage.mm in Sources */,
 				EA20BC4F13682A8B0038E922 /* SettingsPage.mm in Sources */,
 				EA20BD6213685B6D0038E922 /* ofxiPhoneWebView.mm in Sources */,
+				EA20BE68136875710038E922 /* ColorPicker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

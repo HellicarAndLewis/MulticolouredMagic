@@ -16,8 +16,11 @@ ofxiPhoneWebView::ofxiPhoneWebView() {
 }
 void ofxiPhoneWebView::show() {
 	if(!webView) {
-		webView	= [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, ofGetWidth(), ofGetHeight())];
+		webView	= [[UIWebView alloc] initWithFrame:CGRectMake(-128, 128, ofGetWidth(), ofGetHeight())];
 		((UIWebView*)webView).delegate	= NULL;
 	}
+	
+	((UIWebView*)webView).transform = CGAffineTransformMakeRotation (PI/2);
 	[ofxiPhoneGetUIWindow() addSubview:(UIWebView*)webView];
+	[webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"about" ofType:@"html"]isDirectory:NO]]];
 }
