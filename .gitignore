@@ -4,3 +4,4 @@ ReacticklesMagic/build/*
 *.xcuserdatad
 *.pbxuser
 *.mode1v3
+*/build/*
