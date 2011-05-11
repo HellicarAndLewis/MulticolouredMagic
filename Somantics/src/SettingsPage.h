@@ -7,7 +7,7 @@
  */
 #pragma once
 #include "Reactickle.h"
-#include "ColorPicker.h"
+#include "SomanticsColorPicker.h"
 class SettingsPage: public Reactickle {
 public:
 	void setup();
@@ -15,6 +15,6 @@ public:
 	void touchDown(float x, float y, int touchId);
 	void touchMoved(float x, float y, int touchId);
 	void touchUp(float x, float y, int touchId);
-	ColorPicker colorPicker;
-	vector<InteractiveObject*> items;
+	SomanticsColorPicker colorPicker;
+	Container root;
 };

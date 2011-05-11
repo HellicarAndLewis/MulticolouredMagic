@@ -18,6 +18,7 @@ string IMAGE_ROOT;
 
 
 int main(){
+#ifdef TARGET_OF_IPHONE
 	if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
 		if ([[UIScreen mainScreen] scale] > 1) {
 			RETINA = true;
@@ -54,6 +55,16 @@ int main(){
 	
 	WIDTH_SCALE = (float)WIDTH/480.f;
 	HEIGHT_SCALE = (float)HEIGHT/320.f;
+#else 
+	IPAD = true;
+	RETINA = false;
+	HI_RES = true;
+	WIDTH_SCALE = 2;
+	HEIGHT_SCALE = 2;
+	IMAGE_ROOT = "images4/";
+	WIDTH = 1024;
+	HEIGHT = 768;
+#endif
 	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
 	
 	// this kicks off the running of my app

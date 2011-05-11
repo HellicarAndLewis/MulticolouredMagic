@@ -198,6 +198,7 @@
 		EA20BD49136858180038E922 /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
 		EA20BE66136875710038E922 /* ColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPicker.h; sourceTree = "<group>"; };
 		EA20BE67136875710038E922 /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
+		EAB30903137AD51F0086DE6F /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -625,6 +626,7 @@
 		EA20BC8013682D8B0038E922 /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				EAB30903137AD51F0086DE6F /* ScrollView.h */,
 				EA20B985136728990038E922 /* SomanticsApp.h */,
 				EA20B986136728990038E922 /* SomanticsApp.mm */,
 				EA20BE66136875710038E922 /* ColorPicker.h */,

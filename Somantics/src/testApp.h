@@ -1,8 +1,10 @@
 #pragma once
 
 #include "ofMain.h"
+#ifdef TARGET_OF_IPHONE
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
+#endif
 #include "constants.h"
 #include "Reactickle.h"
 #include "MainMenu.h"
@@ -18,6 +20,12 @@ public:
 	void update();
 	void draw();
 	void exit();
+	
+#ifndef TARGET_OF_IPHONE
+	void mouseDragged(int x, int y, int button);
+	void mousePressed(int x, int y, int button);
+	void mouseReleased(int x, int y, int button);
+#endif
 	
 	void touchDown(ofTouchEventArgs &touch);
 	void touchMoved(ofTouchEventArgs &touch);

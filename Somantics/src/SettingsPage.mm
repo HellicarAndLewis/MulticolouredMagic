@@ -10,43 +10,27 @@
 #include "constants.h"
 
 void SettingsPage::setup() {
-	colorPicker.setup();
-	items.push_back(&colorPicker);
+	//colorPicker.setup();
+	root.add(&colorPicker);
 }
 
 void SettingsPage::draw() {
 	//ofSetHexColor(0xFF0000);
 	//ofRect(0, 0, WIDTH, volume*(float)HEIGHT);
-	for(int i = 0; i < items.size(); i++) {
-		
-		items[i]->draw();
-	}
+	root.draw();
 }
 
 
 void SettingsPage::touchDown(float x, float y, int touchId) {
-	for(int i = 0; i < items.size(); i++) {
-		if(items[i]->touchDown(x, y, touchId)) {
-			return;
-		}
-	}
+	root.touchDown(x, y, touchId);
 }
 
 void SettingsPage::touchMoved(float x, float y, int touchId) {
-	for(int i = 0; i < items.size(); i++) {
-		if(items[i]->touchMoved(x, y, touchId)) {
-			return;
-		}
-	}
+	root.touchMoved(x, y, touchId);
 }
 
 void SettingsPage::touchUp(float x, float y, int touchId) {
-
-	for(int i = 0; i < items.size(); i++) {
-		if(items[i]->touchUp(x, y, touchId)) {
-			return;
-		}
-	}
+	root.touchUp(x, y, touchId);
 }
 
 

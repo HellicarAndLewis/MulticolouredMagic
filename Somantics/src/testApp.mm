@@ -8,7 +8,7 @@ void testApp::setup(){
 	SomanticsApp::instance = this;
 	setupGraphics();
 	setupOrientation();
-	
+#ifdef TARGET_OF_IPHONE
 	// register touch events
 	ofRegisterTouchEvents(this);
 	
@@ -17,6 +17,7 @@ void testApp::setup(){
 	
 	//iPhoneAlerts will be sent to this.
 	ofxiPhoneAlerts.addListener(this);
+#endif
 	currentApp = &mainMenu;
 	mainMenu.setup();
 	
@@ -32,6 +33,7 @@ void testApp::setup(){
 
 
 void testApp::setupOrientation() {
+#ifdef TARGET_OF_IPHONE
 	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 	
 	int orientation = [[UIDevice currentDevice] orientation];
@@ -46,10 +48,12 @@ void testApp::setupOrientation() {
 	}
 	
 	currOrientation = UIDeviceOrientationPortrait;	
+#endif
 }
 
 
 void testApp::updateOrientation() {
+#ifdef TARGET_OF_IPHONE
 	int orientation = [[UIDevice currentDevice] orientation];
 	int orient = iPhoneGetOrientation();
 	//printf("Phone orientation: %d, window orientation %d\n", orientation, orient);
@@ -63,6 +67,7 @@ void testApp::updateOrientation() {
 	}
 	
 	currOrientation = orientation;
+#endif
 }
 
 void testApp::setupGraphics() {
@@ -155,7 +160,9 @@ void testApp::showSettings() {
 
 //--------------------------------------------------------------
 void testApp::exit(){
+#ifdef TARGET_OF_IPHONE
 	[[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+#endif
 }
 
 //--------------------------------------------------------------
@@ -235,3 +242,26 @@ void testApp::audioReceived( float * input, int bufferSize, int nChannels ) {
 	//volume *= gain;
 	currentApp->audioReceived(input, bufferSize, nChannels);
 }
+#ifndef TARGET_OF_IPHONE
+void testApp::mouseDragged(int x, int y, int button) {
+	ofTouchEventArgs touch;
+	touch.x = x;
+	touch.y = y;
+	touch.id = button;
+	touchMoved(touch);
+}
+void testApp::mousePressed(int x, int y, int button) {
+	ofTouchEventArgs touch;
+	touch.x = x;
+	touch.y = y;
+	touch.id = button;
+	touchDown(touch);
+}
+void testApp::mouseReleased(int x, int y, int button) {
+	ofTouchEventArgs touch;
+	touch.x = x;
+	touch.y = y;
+	touch.id = button;
+	touchUp(touch);
+}
+#endif

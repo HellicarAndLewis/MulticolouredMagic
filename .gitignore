@@ -5,3 +5,4 @@ ReacticklesMagic/build/*
 *.pbxuser
 *.mode1v3
 */build/*
+*/bin/*.app

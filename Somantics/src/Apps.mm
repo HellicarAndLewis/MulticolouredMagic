@@ -20,18 +20,14 @@
 
 
 void MainMenu::initMenu() {
-	/*reactickleButtons.push_back(new ReactickleButton("expander", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("clap clock", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("inversion", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	
-	*/
-	
-	
+	scrollView.add(new ReactickleButton("expander", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	scrollView.add(new ReactickleButton("clap clock", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	scrollView.add(new ReactickleButton("inversion", IMAGE_ROOT + "defaultScreenshot.jpg"));
 
 }
 
 void MainMenu::reactickleSelected(string name) {
-	printf("Starting %s!\n", name.c_str());
+
 	/*if(name=="expander") {
 		ReactickleApp::instance->launchReactickle(new Expander());
 	} else if(name=="clap clock") {
