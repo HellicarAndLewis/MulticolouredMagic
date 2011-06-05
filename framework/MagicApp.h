@@ -7,6 +7,11 @@
 #include "TuioKinect.h"
 #include "ofxTuioClient.h"
 
+#include "ofxOsc.h"
+
+#define HOST "localhost"
+#define PORT 12345
+
 class MagicApp : public ofBaseApp {
 	
 public:
@@ -55,5 +60,7 @@ public:
 	float gain;	
 	bool mustTakeScreenshot;
 	ofImage screenshot;
+    
+    ofxOscSender sender;
 };
 

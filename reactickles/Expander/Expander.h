@@ -7,6 +7,12 @@
  */
 
 #include "Reactickle.h"
+
+#include "ofxOsc.h"
+
+#define HOST "localhost"
+#define PORT 12345
+
 class Expander: public Reactickle {
 public:
 	void setup(){
@@ -25,6 +31,9 @@ public:
         shapeScale = 1.f;
         
         whiteBg = false;
+        
+        // open an outgoing connection to HOST:PORT
+        sender.setup( HOST, PORT );
 	}
 	
 	void update(){
@@ -75,11 +84,26 @@ public:
 	}
     
     void touchDown(float x, float y, int touchId){        
+        ofxOscMessage simpleMessage;
+        
         switch (mode) {
             case 0:
                 drawACircle = !drawACircle;
                 
-                timeOfLastInteraction = ofGetElapsedTimef();                
+                timeOfLastInteraction = ofGetElapsedTimef(); 
+                
+                int shapeType;
+                
+                if(drawACircle){
+                    shapeType = 0;
+                }else{
+                    shapeType = 2;
+                }
+                
+                simpleMessage.setAddress( "/shapechange" );
+                simpleMessage.addIntArg( shapeType );
+                sender.sendMessage( simpleMessage );
+                
                 break;
             case 1:
                 nextShape();
@@ -99,6 +123,11 @@ public:
             default:
                 break;
         }
+        
+        ofxOscMessage m;
+        m.setAddress( "/touchdown" );
+        m.addIntArg(mode);
+        sender.sendMessage(m);
     }
     
     void nextShape(){
@@ -107,6 +136,11 @@ public:
         if(currentShapeType >= NUM_MAGIC_SHAPES || currentShapeType < 0) { //safety!
             currentShapeType = 0;
         }
+        
+        ofxOscMessage m;
+		m.setAddress( "/shapechange" );
+		m.addIntArg( currentShapeType );
+		sender.sendMessage( m );
     }
 	
 	float timeOfLastInteraction;
@@ -119,4 +153,6 @@ public:
     float shapeScale;
     
     bool whiteBg;
+    
+    ofxOscSender sender;
 };

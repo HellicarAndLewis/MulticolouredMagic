@@ -47,10 +47,26 @@ void MagicApp::keyPressed  (int key){
 			
             apps[appIndex]->setMode(0);
             
+            ofxOscMessage m;
+            m.setAddress( "/modechange" );
+            m.addIntArg(0);
+            sender.sendMessage(m);
+            
         } else if(key=='w' || key=='W') {
             apps[appIndex]->setMode(1);
+            
+            ofxOscMessage m;
+            m.setAddress( "/modechange" );
+            m.addIntArg(1);
+            sender.sendMessage(m);
+            
         } else if(key=='e' || key=='E') {
             apps[appIndex]->setMode(2);
+            
+            ofxOscMessage m;
+            m.setAddress( "/modechange" );
+            m.addIntArg(2);
+            sender.sendMessage(m);
         }
         
 	} else if(key=='f') {

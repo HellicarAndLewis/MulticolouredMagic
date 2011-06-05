@@ -42,7 +42,8 @@ void MagicApp::setup(){
 	
 	setupGui();
 	
-	
+	// open an outgoing connection to HOST:PORT
+	sender.setup( HOST, PORT );
 }
 
 void MagicApp::setupGui() {
