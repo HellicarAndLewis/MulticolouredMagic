@@ -15,7 +15,8 @@ void MainMenu::setup() {
 	// add all the buttons for the different Reactickles
 	
 	initMenu();
-	
+	logo = ImageCache::getImage(IMAGE_ROOT + "logo.png");
+	logo->setAnchorPercent(0.5, 1);
 	// copy the reactickle list to the items list - the items list
 	// is the one used to propagating events.
 	for(int i = 0; i < reactickleButtons.size(); i++) {
@@ -24,15 +25,15 @@ void MainMenu::setup() {
 		reactickleButtons[i]->setListener(this);
 		
 		// add it to the display/interaction hierarchy
-		items.push_back(reactickleButtons[i]);
+		add(reactickleButtons[i]);
 	}
 	
 	
 	settingsButton.setup("settings", ofVec2f(50, 50), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
 	aboutButton.setup("about", ofVec2f(150, 50), IMAGE_ROOT + "aboutButton.png", IMAGE_ROOT + "aboutButtonDown.png");
 	
-	items.push_back(&aboutButton);
-	items.push_back(&settingsButton);
+	add(&aboutButton);
+	add(&settingsButton);
 	
 	aboutButton.setListener(this);
 	settingsButton.setListener(this);
@@ -40,18 +41,30 @@ void MainMenu::setup() {
 	// setup scrolling stuff
 	scrollRect.x = 0;
 	scrollRect.width = WIDTH;
-	scrollRect.y = 100;
+	scrollRect.y = 150;
 	scrollRect.height = HEIGHT - scrollRect.y;
 	scrollOffset = 0;
 	deltaX = 0;
 	touchX = 0;
 	touching = false;
+	
+	
+	if(IPAD) {
+		bgImage = ImageCache::getImage("img/bgIPad.png");
+	} else if(HI_RES) {
+		bgImage = ImageCache::getImage("img/bgIPhone4.png");
+	} else {
+		bgImage = ImageCache::getImage("img/bgIPhone.png");
+	}
+	
+	
 }
 
 
 
 void MainMenu::buttonPressed(string name) {
 	if(name=="settings") {
+
 		ReactickleApp::instance->showSettings();
 	} else if(name=="about") {
 		ReactickleApp::instance->showAbout();
@@ -60,7 +73,7 @@ void MainMenu::buttonPressed(string name) {
 
 // this method arranges the reacticklesButtons nicely
 void MainMenu::arrange() {
-	int itemsPerCol = 3;
+	int itemsPerCol = 2;
 	int PADDING = 10*WIDTH_SCALE;
 	int rowHeight = reactickleButtons[0]->height+PADDING;
 	int colWidth = reactickleButtons[0]->width+PADDING;
@@ -78,7 +91,9 @@ void MainMenu::arrange() {
 }
 
 void MainMenu::draw() {
-	
+	ofSetHexColor(0xFFFFFF);
+	bgImage->draw(0, 0, WIDTH, HEIGHT);
+	logo->draw(WIDTH/2, 35+logo->getHeight());
 	arrange();
 	
 	if(!touching) {
@@ -103,15 +118,8 @@ void MainMenu::draw() {
 	
 	
 	
-	ofSetHexColor(0xFFFFFF);
-	ofDrawBitmapString(ofToString(ofGetFrameRate(), 2), 20, 20);
-	
-	for(int i = 0; i < items.size(); i++) {
-		items[i]->draw();
-	}
-	ofNoFill();
-	ofRect(scrollRect);
-	ofFill();
+	ofSetHexColor(0xFFFFFF);	
+	Container::draw();
 }
 
 bool MainMenu::touchDown(float x, float y, int touchId) {
@@ -119,6 +127,7 @@ bool MainMenu::touchDown(float x, float y, int touchId) {
 		touchX = x;
 		touching = true;
 	}
+
 	return Container::touchDown(x, y, touchId);
 }
 
@@ -126,12 +135,12 @@ bool MainMenu::touchMoved(float x, float y, int touchId) {
 	deltaX = x - touchX;
 	scrollOffset += deltaX;
 	touchX = x;
-	return Container::touchDown(x, y, touchId);
+	return Container::touchMoved(x, y, touchId);
 }
 
 bool MainMenu::touchUp(float x, float y, int touchId) {
 	touching = false;
-	return Container::touchDown(x, y, touchId);
+	return Container::touchUp(x, y, touchId);
 }
 
 

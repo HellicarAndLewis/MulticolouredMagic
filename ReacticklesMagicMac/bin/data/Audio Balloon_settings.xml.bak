@@ -1,0 +1,30 @@
+<controls>
+    <SliderInt_audioBalloonCountX>
+        <name>audioBalloonCountX</name>
+        <value>4</value>
+    </SliderInt_audioBalloonCountX>
+    <SliderInt_audioBalloonCountY>
+        <name>audioBalloonCountY</name>
+        <value>3</value>
+    </SliderInt_audioBalloonCountY>
+    <SliderInt_audioBalloonMinRadius>
+        <name>audioBalloonMinRadius</name>
+        <value>5</value>
+    </SliderInt_audioBalloonMinRadius>
+    <SliderFloat_dieSpeed>
+        <name>dieSpeed</name>
+        <value>0.000100</value>
+    </SliderFloat_dieSpeed>
+    <SliderFloat_incSpeed>
+        <name>incSpeed</name>
+        <value>0.030000</value>
+    </SliderFloat_incSpeed>
+    <SliderFloat_volumeThreshold>
+        <name>volumeThreshold</name>
+        <value>0.100000</value>
+    </SliderFloat_volumeThreshold>
+    <SliderFloat_volume>
+        <name>volume</name>
+        <value>0.000000</value>
+    </SliderFloat_volume>
+</controls>

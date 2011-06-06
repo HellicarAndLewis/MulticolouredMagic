@@ -59,11 +59,12 @@ bool ReactickleButton::touchMoved(float xx, float yy, int tid) {
 
 bool ReactickleButton::touchUp(float xx, float yy, int tid) {
 	
+	
 	if(currTouchId==tid) {
 		currTouchId = -1;
 		down = false;
-		if(inside(xx, yy) && ABS(startX - xx)<2) {
-			printf("%d\n", ABS(startX - xx));
+		if(inside(xx, yy) && ABS(startX - xx)<5) {
+			//printf("%d\n", ABS(startX - xx));
 			if(listener!=NULL) listener->reactickleSelected(name);
 		}
 	}

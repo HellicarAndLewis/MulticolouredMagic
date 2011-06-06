@@ -39,6 +39,9 @@ public:
 	// called at the beginning of the app
 	virtual void setup() {};
 	
+	// called when the app quits
+	virtual void exit() {};
+	
 	// same as ofBaseApp
 	virtual void update() {};
 	
@@ -52,7 +55,7 @@ public:
 	virtual void mouseReleased(int x, int y, int button ){}
 	virtual void audioReceived( float * input, int bufferSize, int nChannels ){}
 	virtual void audioRequested( float * input, int bufferSize, int nChannels ){}
-    
+    virtual void windowResized(int x, int y) {} // probably won't be used.
     // if the mode has been changed, 
     virtual void modeChanged() {};
 	

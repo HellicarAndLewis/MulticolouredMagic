@@ -15,8 +15,6 @@ public:
 	void setup();
 	void draw();
 	
-	// this is a list of all the things that can be interacted with
-	vector<InteractiveObject*> items;
 	
 	// this is a subset of items - just the ones that are listed
 	// as reactickles
@@ -44,4 +42,6 @@ private:
 	
 	SimpleButton settingsButton;
 	SimpleButton aboutButton;
+	ofImage *bgImage;
+	ofImage *logo;
 };
