@@ -8,13 +8,18 @@
 #pragma once
 #include "Reactickle.h"
 #include "SomanticsColorPicker.h"
+#include "SimpleButton.h"
+#include "BrightnessSlider.h"
+
 class SettingsPage: public Reactickle {
 public:
 	void setup();
 	void draw();
-	void touchDown(float x, float y, int touchId);
-	void touchMoved(float x, float y, int touchId);
-	void touchUp(float x, float y, int touchId);
 	SomanticsColorPicker colorPicker;
-	Container root;
+	SimpleButton resetButton;
+	BrightnessSlider slider;
+	ofImage *bgImage;
+	ofImage *settingsTitle;
+	ofImage *colourPickerTitle;
+	ofImage *logo;
 };

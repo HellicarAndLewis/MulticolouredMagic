@@ -7,10 +7,11 @@
 #include "TuioKinect.h"
 #include "ofxTuioClient.h"
 
+#ifndef TARGET_OF_IPHONE
 #include "ofxOsc.h"
-
 #define HOST "localhost"
 #define PORT 12345
+#endif
 
 class MagicApp : public ofBaseApp {
 	

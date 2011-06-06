@@ -222,11 +222,11 @@
 		EA20BC4B13682A850038E922 /* AboutPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AboutPage.mm; sourceTree = "<group>"; };
 		EA20BC4D13682A8B0038E922 /* SettingsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsPage.h; sourceTree = "<group>"; };
 		EA20BC4E13682A8B0038E922 /* SettingsPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsPage.mm; sourceTree = "<group>"; };
-		EA20BD49136858180038E922 /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
 		EA20BD6013685B6D0038E922 /* ofxiPhoneWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneWebView.h; sourceTree = "<group>"; };
 		EA20BD6113685B6D0038E922 /* ofxiPhoneWebView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneWebView.mm; sourceTree = "<group>"; };
 		EA20BE66136875710038E922 /* ColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPicker.h; sourceTree = "<group>"; };
 		EA20BE67136875710038E922 /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
+		EA23E99E139CDE340071404C /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlowingBorder.h; path = ../framework/GlowingBorder.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -601,7 +601,7 @@
 				EA20B8731367151A0038E922 /* ReactickleButton.h */,
 				EA20B8741367151A0038E922 /* ReactickleButton.cpp */,
 				EA20B4951366EFB60038E922 /* constants.h */,
-				EA20BD49136858180038E922 /* GlowingBorder.h */,
+				EA23E99E139CDE340071404C /* GlowingBorder.h */,
 				E4D8936B11527B74007E1F53 /* main.mm */,
 			);
 			path = src;

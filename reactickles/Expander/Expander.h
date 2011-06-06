@@ -7,11 +7,12 @@
  */
 
 #include "Reactickle.h"
-
+#ifndef TARGET_OF_IPHONE
 #include "ofxOsc.h"
 
 #define HOST "localhost"
 #define PORT 12345
+#endif
 
 class Expander: public Reactickle {
 public:
@@ -31,9 +32,10 @@ public:
         shapeScale = 1.f;
         
         whiteBg = false;
-        
+#ifndef TARGET_OF_IPHONE
         // open an outgoing connection to HOST:PORT
         sender.setup( HOST, PORT );
+#endif
 	}
 	
 	void update(){
@@ -83,9 +85,10 @@ public:
         ofPopStyle(); //pop back what was there before
 	}
     
-    void touchDown(float x, float y, int touchId){        
+    void touchDown(float x, float y, int touchId){  
+#ifndef TARGET_OF_IPHONE
         ofxOscMessage simpleMessage;
-        
+#endif
         switch (mode) {
             case 0:
                 drawACircle = !drawACircle;
@@ -99,11 +102,11 @@ public:
                 }else{
                     shapeType = 2;
                 }
-                
+#ifndef TARGET_OF_IPHONE
                 simpleMessage.setAddress( "/shapechange" );
                 simpleMessage.addIntArg( shapeType );
                 sender.sendMessage( simpleMessage );
-                
+#endif
                 break;
             case 1:
                 nextShape();
@@ -123,11 +126,12 @@ public:
             default:
                 break;
         }
-        
+#ifndef TARGET_OF_IPHONE
         ofxOscMessage m;
         m.setAddress( "/touchdown" );
         m.addIntArg(mode);
         sender.sendMessage(m);
+#endif
     }
     
     void nextShape(){
@@ -136,11 +140,12 @@ public:
         if(currentShapeType >= NUM_MAGIC_SHAPES || currentShapeType < 0) { //safety!
             currentShapeType = 0;
         }
-        
+#ifndef TARGET_OF_IPHONE
         ofxOscMessage m;
 		m.setAddress( "/shapechange" );
 		m.addIntArg( currentShapeType );
 		sender.sendMessage( m );
+#endif
     }
 	
 	float timeOfLastInteraction;
@@ -153,6 +158,7 @@ public:
     float shapeScale;
     
     bool whiteBg;
-    
+#ifndef TARGET_OF_IPHONE
     ofxOscSender sender;
+#endif
 };

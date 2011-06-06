@@ -11,7 +11,7 @@
 #include "SimpleButton.h"
 #include "ScrollView.h"
 #include "Container.h"
-class MainMenu: public Reactickle, public ReactickleButtonListener, public SimpleButtonListener, public Container {
+class MainMenu: public Reactickle, public ReactickleButtonListener, public SimpleButtonListener {
 public:
 	void setup();
 	void draw();
@@ -23,8 +23,8 @@ public:
 	void reactickleSelected(string name);
 	void buttonPressed(string name);
 private:
-	ofImage bgImage;
-	
+	ofImage *bgImage;
+	ofImage *logo;
 	ScrollView scrollView;
 	
 	SimpleButton settingsButton;

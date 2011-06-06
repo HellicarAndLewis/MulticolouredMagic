@@ -27,17 +27,31 @@
 	#define MOVEMENT_FILTER 0.3f
 #endif
 
+#include "Container.h"
 
-class Reactickle: public ofBaseApp {
+class Reactickle: public Container {
 public:
 	
 	// this is called every time the app is restarted
 	virtual void start() {};
 	virtual void stop() {};
-	virtual void touchDown(float x, float y, int touchId) {};
-	virtual void touchMoved(float x, float y, int touchId) {};
-	virtual void touchUp(float x, float y, int touchId) {};
 	
+	// called at the beginning of the app
+	virtual void setup() {};
+	
+	// same as ofBaseApp
+	virtual void update() {};
+	
+	virtual void keyPressed( int key ){}
+	virtual void keyReleased( int key ){}
+	
+	virtual void mouseMoved( int x, int y ){}
+	virtual void mouseDragged( int x, int y, int button ){}
+	virtual void mousePressed( int x, int y, int button ){}
+	virtual void mouseReleased(){}
+	virtual void mouseReleased(int x, int y, int button ){}
+	virtual void audioReceived( float * input, int bufferSize, int nChannels ){}
+	virtual void audioRequested( float * input, int bufferSize, int nChannels ){}
     
     // if the mode has been changed, 
     virtual void modeChanged() {};

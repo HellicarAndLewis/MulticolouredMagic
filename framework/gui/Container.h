@@ -25,6 +25,7 @@ public:
 				return true;
 			}
 		}
+		return false;
 	}
 	
 	virtual bool touchUp(float x, float y, int touchId) {

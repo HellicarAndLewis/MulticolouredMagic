@@ -39,12 +39,31 @@ public:
 			0xF8E7E2,
 			0xFBE0EE
 		};
-
 		
+		x = 120;
+		y = 98;
+		
+		int PADDING = 9;
+		int NUM_COLS = 7;
+		int BG_Y_OFFSET = 234;
+		
+		// foreground
 		for(int i = 0; i < NUM_PICKER_COLORS; i++) {
 			ColorCube *c = new ColorCube();
 			c->setup(colors[i]);
-			
+			c->x = (i%NUM_COLS)*(c->width+PADDING);
+			c->y = (i/NUM_COLS)*(c->height+PADDING);
+			add(c);
+		}
+		
+		// background
+
+		for(int i = 0; i < NUM_PICKER_COLORS; i++) {
+			ColorCube *c = new ColorCube();
+			c->setup(colors[i], true);
+			c->x = (i%NUM_COLS)*(c->width+PADDING);
+			c->y = BG_Y_OFFSET + (i/NUM_COLS)*(c->height+PADDING);
+			add(c);
 		}
 		
 	}

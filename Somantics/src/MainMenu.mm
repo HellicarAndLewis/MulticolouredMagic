@@ -29,17 +29,19 @@ void MainMenu::setup() {
 	settingsButton.setListener(this);
 	scrollView.setListener(this);
 	if(IPAD) {
-		bgImage.loadImage("img/bgIPad.png");
+		bgImage = ImageCache::getImage("img/bgIPad.png");
 	} else if(HI_RES) {
-		bgImage.loadImage("img/bgIPhone4.png");
+		bgImage = ImageCache::getImage("img/bgIPhone4.png");
 	} else {
-		bgImage.loadImage("img/bgIPhone.png");
+		bgImage = ImageCache::getImage("img/bgIPhone.png");
 	}
+	logo = ImageCache::getImage(IMAGE_ROOT + "logo.png");
 }
 
 
 
 void MainMenu::buttonPressed(string name) {
+
 	if(name=="settings") {
 		SomanticsApp::instance->showSettings();
 	} else if(name=="about") {
@@ -49,10 +51,9 @@ void MainMenu::buttonPressed(string name) {
 
 
 
-void MainMenu::draw() {
-	
+void MainMenu::draw() {	
 	ofSetHexColor(0xFFFFFF);
-	ofDrawBitmapString(ofToString(ofGetFrameRate(), 2), 20, 20);
-	bgImage.draw(0, 0, ofGetWidth(), ofGetHeight());
+	bgImage->draw(0, 0, ofGetWidth(), ofGetHeight());
+	logo->draw(WIDTH/2, HEIGHT - 20);
 	Container::draw();
 }
