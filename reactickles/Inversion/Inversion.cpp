@@ -60,15 +60,16 @@ void Inversion::update() {
 		lastPos = pos.back();
 	}
 }
-void Inversion::touchDown(float x, float y, int touchId) {
+bool Inversion::touchDown(float x, float y, int touchId) {
 	touches.push_back(InversionTouch(x, y, touchId));
 	ofVec2f lastPos;
 	if(pos.size()>0) {
 		lastPos = pos.back();
 	}
 	pos.push_back((ofVec2f(x, y)*0.05+lastPos*0.95));
+	return true;
 }
-void Inversion::touchMoved(float x, float y, int touchId) {
+bool Inversion::touchMoved(float x, float y, int touchId) {
 	ofVec2f lastPos;
 	if(pos.size()>0) {
 		lastPos = pos.back();
@@ -79,17 +80,18 @@ void Inversion::touchMoved(float x, float y, int touchId) {
 		if(touchId==touches[i].touchId) {
 			touches[i].x = x;
 			touches[i].y = y;
-			return;
+			return true;
 		}
 	}
-	touchDown(x, y, touchId);
+	return touchDown(x, y, touchId);
 	
 }
-void Inversion::touchUp(float x, float y, int touchId) {
+bool Inversion::touchUp(float x, float y, int touchId) {
 	for(int i = 0; i < touches.size(); i++) {
 		if(touchId==touches[i].touchId) {
 			touches.erase(touches.begin()+i);
-			return;
+			return true;
 		}
 	}
+	return true;
 }

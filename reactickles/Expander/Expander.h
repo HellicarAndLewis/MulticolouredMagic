@@ -85,7 +85,7 @@ public:
         ofPopStyle(); //pop back what was there before
 	}
     
-    void touchDown(float x, float y, int touchId){  
+    bool touchDown(float x, float y, int touchId){  
 #ifndef TARGET_OF_IPHONE
         ofxOscMessage simpleMessage;
 #endif
@@ -132,6 +132,7 @@ public:
         m.addIntArg(mode);
         sender.sendMessage(m);
 #endif
+		return true;
     }
     
     void nextShape(){

@@ -8,9 +8,15 @@
 
 #include "Properties.h"
 #include "Settings.h"
+#ifdef TARGET_OF_IPHONE
 #include "ofxiPhoneExtras.h"
+#endif
 Settings::Settings() {
-
+#ifdef TARGET_OF_IPHONE
+	path = ofxiPhoneGetDocumentsDirectory() + "/settings.xml";
+#else
+	path = ofToDataPath("settings.xml", true);
+#endif
 	setDefaultValues();
 	load();
 }
@@ -29,15 +35,17 @@ void Settings::reset() {
 }
 
 void Settings::save() {
+	
 	Properties p;
 	
 	map<string,float>::iterator it;
 	for ( it=settings.begin() ; it != settings.end(); it++ ) {
 		p.set((*it).first, (*it).second);
 	}
+	p.save(path);
+	printf("Saved to %s\n", path.c_str());
 }
 void Settings::load() {
-	string path = ofxiPhoneGetDocumentsDirectory() + "/settings.xml";
 	Properties p;
 	p.load(path);
 	vector<string> keys;

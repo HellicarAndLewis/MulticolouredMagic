@@ -38,6 +38,7 @@ void SettingsPage::setup() {
 void SettingsPage::buttonPressed(string name) {
 	if(name=="reset") {
 		Settings::getInstance()->reset();
+		colorPicker.reset();
 	}
 }
 

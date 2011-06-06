@@ -59,6 +59,7 @@ public:
 			int c = 3;
 			glPushMatrix();
 			glTranslatef(x + width/2, y + height/2, 0);
+			glRotatef(40, 0, 0, 1);
 			ofRect(-c, -height/2, c*2, height);
 			ofRect(-width/2, -c, width, c*2);
 			glPopMatrix();

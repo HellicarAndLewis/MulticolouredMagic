@@ -134,7 +134,7 @@ public:
         ofPopStyle(); //pop back what was there before
 	}
     
-    void touchDown(float x, float y, int touchId){     
+    bool touchDown(float x, float y, int touchId){     
         switch (mode) {
             case 0:
                 shapeOnScreen = !shapeOnScreen;
@@ -182,6 +182,7 @@ public:
             default:
                 break;
         }
+		return true;
     }
     
     void nextShape(){

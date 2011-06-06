@@ -121,32 +121,33 @@ void CircleSwarm::collision(SwarmParticle &p1, SwarmParticle &p2) {
 	}
 }
 
-void CircleSwarm::touchDown(float x, float y, int touchId) {
+bool CircleSwarm::touchDown(float x, float y, int touchId) {
 	if(currShapeId<0 || currShapeId>=NUM_MAGIC_SHAPES) currShapeId = 0;
 	touches.push_back(SwarmTouch(x, y, touchId, currShapeId));
-
+	return true;
 }
 
-void CircleSwarm::touchMoved(float x, float y, int touchId) {
+bool CircleSwarm::touchMoved(float x, float y, int touchId) {
 //	printf("x: %f  y: %f  id: %d\n", x, y, touchId);
 	for(int i = 0; i < touches.size(); i++) {
 		if(touchId==touches[i].touchId) {
 			touches[i].x = x;
 			touches[i].y = y;
 			
-			return;
+			return true;
 		}
 	}
-	touchDown(x, y, touchId);
+	return touchDown(x, y, touchId);
 }
 
-void CircleSwarm::touchUp(float x, float y, int touchId) {
+bool CircleSwarm::touchUp(float x, float y, int touchId) {
 	for(int i = 0; i < touches.size(); i++) {
 		if(touchId==touches[i].touchId) {
 			touches.erase(touches.begin()+i);
-			return;
+			return true;
 		}
 	}
+	return true;
 }
 void CircleSwarm::keyPressed(int key) {
 	switch(key) {

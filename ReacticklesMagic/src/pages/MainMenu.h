@@ -22,9 +22,9 @@ public:
 	// as reactickles
 	vector<ReactickleButton*> reactickleButtons;
 	void initMenu();
-	void touchDown(float x, float y, int touchId);
-	void touchMoved(float x, float y, int touchId);
-	void touchUp(float x, float y, int touchId);
+	bool touchDown(float x, float y, int touchId);
+	bool touchMoved(float x, float y, int touchId);
+	bool touchUp(float x, float y, int touchId);
 	void reactickleSelected(string name);
 	void buttonPressed(string name);
 private:

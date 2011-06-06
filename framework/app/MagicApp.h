@@ -2,12 +2,14 @@
 
 #include "ofMain.h"
 #include "Reactickle.h"
+
+#ifndef TARGET_OF_IPHONE
 #include "ofxOpenCv.h"
 #include "ofxSimpleGuiToo.h"
 #include "TuioKinect.h"
 #include "ofxTuioClient.h"
 
-#ifndef TARGET_OF_IPHONE
+
 #include "ofxOsc.h"
 #define HOST "localhost"
 #define PORT 12345
@@ -41,12 +43,12 @@ public:
 	
 	void setupGui();
 	
-	
+#ifndef TARGET_OF_IPHONE
 	ofxTuioClient tuioClient;
-	
-	
+    ofxOscSender sender;	
+	ofxSimpleGuiToo gui;	
 	TuioKinect kinect;
-	
+#endif
 	float volume;
 	float volumeThreshold;
 	float movement;
@@ -57,11 +59,11 @@ public:
 	
 	
 
-	ofxSimpleGuiToo gui;
+
 	float gain;	
 	bool mustTakeScreenshot;
 	ofImage screenshot;
     
-    ofxOscSender sender;
+
 };
 

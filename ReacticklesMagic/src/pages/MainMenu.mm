@@ -114,36 +114,24 @@ void MainMenu::draw() {
 	ofFill();
 }
 
-void MainMenu::touchDown(float x, float y, int touchId) {
+bool MainMenu::touchDown(float x, float y, int touchId) {
 	if(scrollRect.inside(x, y)) {
 		touchX = x;
 		touching = true;
 	}
-	for(int i = 0; i < items.size(); i++) {
-		if(items[i]->touchDown(x, y, touchId)) {
-			return;
-		}
-	}
+	return Container::touchDown(x, y, touchId);
 }
 
-void MainMenu::touchMoved(float x, float y, int touchId) {
+bool MainMenu::touchMoved(float x, float y, int touchId) {
 	deltaX = x - touchX;
 	scrollOffset += deltaX;
 	touchX = x;
-	for(int i = 0; i < items.size(); i++) {
-		if(items[i]->touchMoved(x, y, touchId)) {
-			return;
-		}
-	}
+	return Container::touchDown(x, y, touchId);
 }
 
-void MainMenu::touchUp(float x, float y, int touchId) {
+bool MainMenu::touchUp(float x, float y, int touchId) {
 	touching = false;
-	for(int i = 0; i < items.size(); i++) {
-		if(items[i]->touchUp(x, y, touchId)) {
-			return;
-		}
-	}
+	return Container::touchDown(x, y, touchId);
 }
 
 

@@ -17,9 +17,9 @@ public:
 #ifndef TARGET_OF_IPHONE
 	bool needsKinect() { return true; }
 #endif
-	virtual void touchDown(float x, float y, int touchId);
-	virtual void touchMoved(float x, float y, int touchId);
-	virtual void touchUp(float x, float y, int touchId);
+	virtual bool touchDown(float x, float y, int touchId);
+	virtual bool touchMoved(float x, float y, int touchId);
+	virtual bool touchUp(float x, float y, int touchId);
 private:
 	void spawn(ofVec2f pos);
 	void collision(CircleParticle &bubble1, CircleParticle &bubble2);

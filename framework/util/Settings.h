@@ -5,7 +5,7 @@
  * Created by Marek Bereza on 06/06/2011.
  *
  */
-
+#pragma once
 class Settings {
 private:
 	Settings();
@@ -25,4 +25,5 @@ public:
 	map<string, float> settings;
 private:
 	void setDefaultValues();
+	string path;
 };

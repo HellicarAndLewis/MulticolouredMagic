@@ -10,10 +10,11 @@
 
 #include "Container.h"
 #include "ColorCube.h"
+#include "Settings.h"
 
-class SomanticsColorPicker: public Container, public ColorCubeListener {
+class ColorPicker: public Container, public ColorCubeListener {
 public:
-	SomanticsColorPicker() {
+	ColorPicker() {
 		int colors[NUM_PICKER_COLORS] = {
 			0x4D1965,
 			0xE50043,
@@ -72,21 +73,60 @@ public:
 			bgs[i] = c;
 			add(c);
 		}
+		reset();
 		
 	}
-	void cubePressed(ColorCube *cube) {
-		ColorCube **section;
-		if(cube->getIsBackground()) {
-			section = bgs;
-		} else {
-			section = fgs;
-		}
-		
+	void reset() {
+		selectFg(Settings::getInstance()->settings["fgColor"]);
+		selectBg(Settings::getInstance()->settings["bgColor"]);
+	}
+	
+	void selectFg(int index) {
+		// deselect all
 		for(int i = 0; i < NUM_PICKER_COLORS; i++) {
-			section[i]->setSelected(false);
+			fgs[i]->setSelected(false);
 		}
 		
-		cube->setSelected(true);
+		// select the appropriate one
+		fgs[index]->setSelected(true);
+
+		// save to persistent settings
+		Settings::getInstance()->settings["fgColor"] = index;
+		Settings::getInstance()->save();
+	}
+	
+	void selectBg(int index) {
+		// deselect all
+		for(int i = 0; i < NUM_PICKER_COLORS; i++) {
+			bgs[i]->setSelected(false);
+		}
+		
+		// select the appropriate one
+		bgs[index]->setSelected(true);
+		
+		// save to persistent settings
+		Settings::getInstance()->settings["bgColor"] = index;
+		Settings::getInstance()->save();
+	}
+	
+	void cubePressed(ColorCube *cube) {
+		if(cube->getIsBackground()) {
+
+			// find the colour's index
+			for(int i = 0; i < NUM_PICKER_COLORS; i++) {
+				if(bgs[i]==cube) {
+					selectBg(i);
+					return;
+				}
+			}
+		} else {
+			for(int i = 0; i < NUM_PICKER_COLORS; i++) {
+				if(fgs[i]==cube) {
+					selectFg(i);
+					return;
+				}
+			}
+		}
 	}
 	ColorCube **fgs;
 	ColorCube **bgs;

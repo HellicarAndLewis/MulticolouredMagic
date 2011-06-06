@@ -73,14 +73,18 @@ void Circles2D::collision(CircleParticle &p1, CircleParticle &p2) {
 	}
 }
 
-void Circles2D::touchDown(float x, float y, int touchId) {
+bool Circles2D::touchDown(float x, float y, int touchId) {
 	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
+	return true;
 }
 
-void Circles2D::touchMoved(float x, float y, int touchId) {
+bool Circles2D::touchMoved(float x, float y, int touchId) {
 	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
+	return true;
 }
 
-void Circles2D::touchUp(float x, float y, int touchId) {
+
+bool Circles2D::touchUp(float x, float y, int touchId) {
 	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
+	return true;
 }

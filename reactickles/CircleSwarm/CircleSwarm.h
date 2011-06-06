@@ -29,9 +29,9 @@ public:
 	
 	void clap();
 	void modeChanged();
-	virtual void touchDown(float x, float y, int touchId);
-	virtual void touchMoved(float x, float y, int touchId);
-	virtual void touchUp(float x, float y, int touchId);
+	virtual bool touchDown(float x, float y, int touchId);
+	virtual bool touchMoved(float x, float y, int touchId);
+	virtual bool touchUp(float x, float y, int touchId);
 	void collision(SwarmParticle &p1, SwarmParticle &p2);
 private:
 	vector<SwarmTouch> touches;

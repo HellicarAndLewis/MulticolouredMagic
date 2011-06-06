@@ -7,7 +7,7 @@
  */
 #pragma once
 #include "Reactickle.h"
-#include "SomanticsColorPicker.h"
+#include "ColorPicker.h"
 #include "SimpleButton.h"
 #include "BrightnessSlider.h"
 
@@ -16,7 +16,7 @@ public:
 	void setup();
 	void draw();
 	void buttonPressed(string name);
-	SomanticsColorPicker colorPicker;
+	ColorPicker colorPicker;
 	SimpleButton resetButton;
 	BrightnessSlider slider;
 	ofImage *bgImage;
