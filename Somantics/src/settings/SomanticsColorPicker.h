@@ -11,7 +11,7 @@
 #include "Container.h"
 #include "ColorCube.h"
 
-class SomanticsColorPicker: public Container {
+class SomanticsColorPicker: public Container, public ColorCubeListener {
 public:
 	SomanticsColorPicker() {
 		int colors[NUM_PICKER_COLORS] = {
@@ -47,12 +47,17 @@ public:
 		int NUM_COLS = 7;
 		int BG_Y_OFFSET = 234;
 		
+		fgs = new ColorCube*[NUM_PICKER_COLORS];
+		bgs = new ColorCube*[NUM_PICKER_COLORS];
+		
 		// foreground
 		for(int i = 0; i < NUM_PICKER_COLORS; i++) {
 			ColorCube *c = new ColorCube();
 			c->setup(colors[i]);
 			c->x = (i%NUM_COLS)*(c->width+PADDING);
 			c->y = (i/NUM_COLS)*(c->height+PADDING);
+			c->setListener(this);
+			fgs[i] = c;
 			add(c);
 		}
 		
@@ -63,8 +68,26 @@ public:
 			c->setup(colors[i], true);
 			c->x = (i%NUM_COLS)*(c->width+PADDING);
 			c->y = BG_Y_OFFSET + (i/NUM_COLS)*(c->height+PADDING);
+			c->setListener(this);
+			bgs[i] = c;
 			add(c);
 		}
 		
 	}
+	void cubePressed(ColorCube *cube) {
+		ColorCube **section;
+		if(cube->getIsBackground()) {
+			section = bgs;
+		} else {
+			section = fgs;
+		}
+		
+		for(int i = 0; i < NUM_PICKER_COLORS; i++) {
+			section[i]->setSelected(false);
+		}
+		
+		cube->setSelected(true);
+	}
+	ColorCube **fgs;
+	ColorCube **bgs;
 };

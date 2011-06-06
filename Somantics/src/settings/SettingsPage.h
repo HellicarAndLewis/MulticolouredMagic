@@ -11,10 +11,11 @@
 #include "SimpleButton.h"
 #include "BrightnessSlider.h"
 
-class SettingsPage: public Reactickle {
+class SettingsPage: public Reactickle, public SimpleButtonListener {
 public:
 	void setup();
 	void draw();
+	void buttonPressed(string name);
 	SomanticsColorPicker colorPicker;
 	SimpleButton resetButton;
 	BrightnessSlider slider;

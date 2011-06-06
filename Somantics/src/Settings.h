@@ -18,9 +18,11 @@ public:
 		return instance;
 	}
 
+	void reset();
 	void save();
 	void load();
 
 	map<string, float> settings;
-
+private:
+	void setDefaultValues();
 };

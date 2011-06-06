@@ -24,6 +24,7 @@ public:
 		value = &Settings::getInstance()->settings["brightness"];
 	}
 	void draw() {
+		ofSetHexColor(0xFFFFFF);
 		sliderBG->draw(x, y);
 		float yy = ofMap(*value, 0, 1, 389+this->y, 69+this->y, true);
 		sliderHandle->draw(x + sliderBG->getWidth()/2, yy);
@@ -32,8 +33,10 @@ public:
 	bool touchDown(float x, float y, int touchId) {
 		if(inside(x, y)) {
 			*value = ofMap(y, 69+this->y, 389+this->y, 1, 0, true);
-			printf("%f\n", *value);
+			return true;
+			
 		}
+		return false;
 	}
 	
 	bool touchUp(float x, float y, int touchId) {
@@ -41,11 +44,13 @@ public:
 		touchDown(x, y, touchId);
 		if(inside(x, y)) {
 			Settings::getInstance()->save();
+			return true;
 		}
+		return false;
 	}
 	
 	bool touchMoved(float x, float y, int touchId) {
-		touchDown(x, y, touchId);
+		return touchDown(x, y, touchId);
 		
 	}
 private:

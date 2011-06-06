@@ -11,13 +11,22 @@
 #include "ofxiPhoneExtras.h"
 Settings::Settings() {
 
-	// default values
+	setDefaultValues();
+	load();
+}
+
+void Settings::setDefaultValues() {
 	settings["brightness"] = 0.5;
 	settings["fgColor"] = 1;
 	settings["bgColor"] = 2;
-	
 }
 
+void Settings::reset() {
+	// default values
+	setDefaultValues();
+	save();
+	
+}
 
 void Settings::save() {
 	Properties p;

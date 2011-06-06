@@ -31,9 +31,15 @@ void SettingsPage::setup() {
 	logo->setAnchorPercent(0.5, 1);
 	resetButton.setup("reset", ofVec2f(987, 53), IMAGE_ROOT+"reset.png", IMAGE_ROOT+"resetDown.png");
 	add(&resetButton);
+	resetButton.setListener(this);
 }
 
 
+void SettingsPage::buttonPressed(string name) {
+	if(name=="reset") {
+		Settings::getInstance()->reset();
+	}
+}
 
 void SettingsPage::draw() {	
 	ofSetHexColor(0xFFFFFF);

@@ -11,6 +11,8 @@
 class Container: public InteractiveObject {
 public:
 	virtual bool touchDown(float x, float y, int touchId) {
+		x -= this->x;
+		y -= this->y;
 		for(int i = 0; i < items.size(); i++) {
 			if(items[i]->touchDown(x, y, touchId)) {
 				return true;
@@ -20,6 +22,8 @@ public:
 	}
 	
 	virtual bool touchMoved(float x, float y, int touchId) {
+		x -= this->x;
+		y -= this->y;
 		for(int i = 0; i < items.size(); i++) {
 			if(items[i]->touchMoved(x, y, touchId)) {
 				return true;
@@ -29,6 +33,8 @@ public:
 	}
 	
 	virtual bool touchUp(float x, float y, int touchId) {
+		x -= this->x;
+		y -= this->y;
 		for(int i = 0; i < items.size(); i++) {
 			if(items[i]->touchUp(x, y, touchId)) {
 				return true;
