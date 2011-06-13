@@ -12,12 +12,21 @@
 #pragma once
 
 #include "ofMain.h"
+#ifdef TARGET_OF_IPHONE
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
+#endif
 #include "Reactickle.h"
 
 
-class ReactickleApp: public ofxiPhoneApp {
+class ReactickleApp: 
+#ifdef TARGET_OF_IPHONE
+public ofxiPhoneApp 
+#else
+public ofBaseApp
+#endif
+
+{
 public:
 	virtual void launchReactickle(Reactickle *reactickle) = 0;
 	virtual void showSettings() = 0;

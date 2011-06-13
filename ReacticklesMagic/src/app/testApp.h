@@ -1,8 +1,10 @@
 #pragma once
 
 #include "ofMain.h"
+#ifdef TARGET_OF_IPHONE
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
+#endif
 #include "constants.h"
 #include "Reactickle.h"
 #include "MainMenu.h"
@@ -24,6 +26,10 @@ public:
 	void touchUp(ofTouchEventArgs &touch);
 	void touchDoubleTap(ofTouchEventArgs &touch);
 	void touchCancelled(ofTouchEventArgs &touch);
+	
+	void mousePressed(int x, int y, int button);
+	void mouseDragged(int x, int y, int button);
+	void mouseReleased(int x, int y, int button);
 	
 	void audioReceived( float * input, int bufferSize, int nChannels );
 	

@@ -7,8 +7,9 @@
  */
 
 #include "AboutPage.h"
+#ifdef TARGET_OF_IPHONE
 #include "ofxiPhoneExtras.h"
-
+#endif
 void AboutPage::start() {
 	if(IPAD) {
 		bgImage.setup(ofVec2f(), "img/bgIPad.png");
@@ -33,14 +34,18 @@ void AboutPage::start() {
 	add(youtubeButton);
 	
 }
-
+#ifdef TARGET_OF_IPHONE
 void ofxiPhoneLaunchBrowser(string url) {
+	
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:ofxStringToNSString(url)]];
 }
-
+#endif
 void AboutPage::buttonPressed(string name) {
 	if(name=="youtube") {
-
+#ifdef TARGET_OF_IPHONE
 		ofxiPhoneLaunchBrowser("http://www.youtube.com/watch?v=nKfj7SfV9sI");
+#else
+		ofLaunchBrowser("http://www.youtube.com/watch?v=nKfj7SfV9sI");
+#endif
 	}
 }

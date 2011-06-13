@@ -9,7 +9,7 @@ void testApp::setup(){
 	ReactickleApp::instance = this;
 	setupGraphics();
 	setupOrientation();
-	
+#ifdef TARGET_OF_IPHONE
 	// register touch events
 	ofRegisterTouchEvents(this);
 	
@@ -18,6 +18,7 @@ void testApp::setup(){
 	//==--
 	//iPhoneAlerts will be sent to this.
 	ofxiPhoneAlerts.addListener(this);
+#endif
 	currentApp = &mainMenu;
 	mainMenu.setup();
 	
@@ -51,6 +52,7 @@ void testApp::setup(){
 
 
 void testApp::setupOrientation() {
+	#ifdef TARGET_OF_IPHONE
 	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 	
 	int orientation = [[UIDevice currentDevice] orientation];
@@ -65,10 +67,12 @@ void testApp::setupOrientation() {
 	}
 	
 	currOrientation = UIDeviceOrientationPortrait;	
+#endif
 }
 
 
 void testApp::updateOrientation() {
+#ifdef TARGET_OF_IPHONE
 	int orientation = [[UIDevice currentDevice] orientation];
 	int orient = iPhoneGetOrientation();
 	//printf("Phone orientation: %d, window orientation %d\n", orientation, orient);
@@ -82,6 +86,7 @@ void testApp::updateOrientation() {
 	}
 	
 	currOrientation = orientation;
+#endif
 }
 
 void testApp::setupGraphics() {
@@ -201,7 +206,9 @@ void testApp::showSettings() {
 
 //--------------------------------------------------------------
 void testApp::exit(){
+#ifdef TARGET_OF_IPHONE
 	[[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+#endif
 }
 
 //--------------------------------------------------------------
@@ -259,6 +266,32 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 	}
 	currentApp->touchUp(touch.x, touch.y, touch.id);
 }
+
+#ifndef TARGET_OF_IPHONE
+void testApp::mousePressed(int x, int y, int button) {
+	ofTouchEventArgs t;
+	t.x = x;
+	t.y = y;
+	t.id = button;
+	touchDown(t);
+}
+
+void testApp::mouseDragged(int x, int y, int button) {
+	ofTouchEventArgs t;
+	t.x = x;
+	t.y = y;
+	t.id = button;
+	touchMoved(t);
+}
+
+void testApp::mouseReleased(int x, int y, int button) {
+	ofTouchEventArgs t;
+	t.x = x;
+	t.y = y;
+	t.id = button;
+	touchUp(t);
+}
+#endif
 
 //--------------------------------------------------------------
 void testApp::touchDoubleTap(ofTouchEventArgs &touch){
