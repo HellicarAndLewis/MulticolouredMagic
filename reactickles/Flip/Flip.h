@@ -1,21 +1,21 @@
 /**
- * Inversion.h
+ * Flip.h
  * magic
  *
  * Created by Marek Bereza on 13/04/2011.
  *
  */
 #include "Reactickle.h"
-class InversionTouch: public ofVec2f {
+class FlipTouch: public ofVec2f {
 public:
-	InversionTouch(float x, float y, int touchId) {
+	FlipTouch(float x, float y, int touchId) {
 		this->x = x;
 		this->y = y;
 		this->touchId = touchId;
 	}
 	int touchId;
 };
-class Inversion: public Reactickle {
+class Flip: public Reactickle {
 public:
 	
 	bool needsKinect() { return true; }
@@ -25,7 +25,7 @@ public:
 	virtual bool touchDown(float x, float y, int touchId);
 	virtual bool touchMoved(float x, float y, int touchId);
 	virtual bool touchUp(float x, float y, int touchId);
-	vector<InversionTouch> touches;
+	vector<FlipTouch> touches;
 
 	// this really should be just an ofVec2f rather than a 
 	// deque of them. It was originally needed as a trail.

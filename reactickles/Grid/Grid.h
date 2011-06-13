@@ -1,7 +1,5 @@
 /*
- *  ExampleApp.h
- *  audioInputExample
- *
+ *  Grid.h
  *  Created by Marek Bereza on 05/07/2010.
  *  Copyright 2010 Marek Bereza. All rights reserved.
  *
@@ -9,7 +7,7 @@
 
 #include "Reactickle.h"
 
-class GridOfSquaresApp: public Reactickle {
+class Grid: public Reactickle {
 	
 	void setup(){
 		gridWidth = 6;

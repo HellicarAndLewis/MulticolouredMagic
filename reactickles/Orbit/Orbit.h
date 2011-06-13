@@ -1,5 +1,5 @@
 /**
- * ClapClock.h
+ * Orbit.h
  * magic
  *
  * Named by Marek Bereza on 12/04/2011.
@@ -8,7 +8,7 @@
  */
 #pragma once
 #include "Reactickle.h"
-class ClapClock: public Reactickle {
+class Orbit: public Reactickle {
 public:
 	void setup(){
         ofSetCircleResolution(42); //42 is the answer to everything!

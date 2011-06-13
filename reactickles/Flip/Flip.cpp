@@ -6,14 +6,14 @@
  *
  */
 
-#include "Inversion.h"
+#include "Flip.h"
 
-void Inversion::start() {
+void Flip::start() {
 	pos.push_back(ofGetWindowSize()/2);
 	lastPos = pos.back();
 	currShapeId = MAGIC_CIRCLE;
 }
-void Inversion::draw() {
+void Flip::draw() {
 	int color1 = 0x000000;
 	int color2 = 0xAAAAAA;
 	
@@ -46,7 +46,7 @@ void Inversion::draw() {
 	}
 }
 
-void Inversion::update() {
+void Flip::update() {
 	if(mode==0) {
 		currShapeId = MAGIC_CIRCLE;
 	} else {
@@ -60,8 +60,8 @@ void Inversion::update() {
 		lastPos = pos.back();
 	}
 }
-bool Inversion::touchDown(float x, float y, int touchId) {
-	touches.push_back(InversionTouch(x, y, touchId));
+bool Flip::touchDown(float x, float y, int touchId) {
+	touches.push_back(FlipTouch(x, y, touchId));
 	ofVec2f lastPos;
 	if(pos.size()>0) {
 		lastPos = pos.back();
@@ -69,7 +69,7 @@ bool Inversion::touchDown(float x, float y, int touchId) {
 	pos.push_back((ofVec2f(x, y)*0.05+lastPos*0.95));
 	return true;
 }
-bool Inversion::touchMoved(float x, float y, int touchId) {
+bool Flip::touchMoved(float x, float y, int touchId) {
 	ofVec2f lastPos;
 	if(pos.size()>0) {
 		lastPos = pos.back();
@@ -86,7 +86,7 @@ bool Inversion::touchMoved(float x, float y, int touchId) {
 	return touchDown(x, y, touchId);
 	
 }
-bool Inversion::touchUp(float x, float y, int touchId) {
+bool Flip::touchUp(float x, float y, int touchId) {
 	for(int i = 0; i < touches.size(); i++) {
 		if(touchId==touches[i].touchId) {
 			touches.erase(touches.begin()+i);

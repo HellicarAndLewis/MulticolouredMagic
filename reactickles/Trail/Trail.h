@@ -1,15 +1,15 @@
 /**
- * Circles2D.h
+ * Trail.h
  * magic
  *
  * Created by Marek Bereza on 11/04/2011.
  *
  */
 #include "Reactickle.h"
-#include "CircleParticle.h"
+#include "TrailParticle.h"
 #define SPAWN_RATE 1
 #define MAX_NUM_PARTICLES 200
-class Circles2D: public Reactickle {
+class Trail: public Reactickle {
 public:
 	void update();
 	void draw();
@@ -22,6 +22,6 @@ public:
 	virtual bool touchUp(float x, float y, int touchId);
 private:
 	void spawn(ofVec2f pos);
-	void collision(CircleParticle &bubble1, CircleParticle &bubble2);
-	vector<CircleParticle> particles;
+	void collision(TrailParticle &bubble1, TrailParticle &bubble2);
+	vector<TrailParticle> particles;
 };

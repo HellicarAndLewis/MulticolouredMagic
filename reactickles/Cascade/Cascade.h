@@ -1,7 +1,5 @@
 /*
- *  ClapBang.h
- *  audioInputExample
- *
+ *  Cascade.h
  *  Created by Marek Bereza on 05/07/2010.
  *  Copyright 2010 Marek Bereza. All rights reserved.
  *
@@ -9,7 +7,7 @@
 #include "Reactickle.h"
 #include "msaColor.h"
 
-class ClapParticle {
+class CascadeParticle {
 public:
 	ofPoint pos;
 	ofPoint vel;
@@ -18,7 +16,7 @@ public:
 	ofColor color;
 	ofImage *circleImage;
 	
-	ClapParticle(float x, float y, float magnitude, ofColor _color, ofImage *_circleImage) {
+	CascadeParticle(float x, float y, float magnitude, ofColor _color, ofImage *_circleImage) {
 		pos.x = x;
 		pos.y = y;
 		circleImage = _circleImage;
@@ -55,7 +53,7 @@ public:
 };
 
 
-class ClapBang: public Reactickle {
+class Cascade: public Reactickle {
 public:
 
 	ofImage img;
@@ -118,7 +116,7 @@ public:
 			
 			for(int i = 0; i < numParticles; i++) {
 				if(particles.size()<100) {
-					particles.push_back(ClapParticle(clapPoint.x, clapPoint.y, volume, color, &img));
+					particles.push_back(CascadeParticle(clapPoint.x, clapPoint.y, volume, color, &img));
 				}
 			}
 			clapping = false;
@@ -169,6 +167,5 @@ public:
 	float magnitude;
 	float lastClap;
 	bool clapping;
-	//ofxCvContourFinder contourFinder;
-	vector<ClapParticle> particles;
+	vector<CascadeParticle> particles;
 };

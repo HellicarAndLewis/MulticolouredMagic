@@ -1,5 +1,5 @@
 /*
- *  Bubble.h
+ *  TrailParticle.h
  *  audioReactive
  *
  *  Created by Marek Bereza on 19/01/2011.
@@ -10,12 +10,12 @@
 #include "ofMain.h"
 #define BUBBLE2_MAX_AGE 2
 
-class CircleParticle{
+class TrailParticle{
 public: 
 	ofColor color;
 	float brightness;
 	float birthday;
-	CircleParticle() {
+	TrailParticle() {
 		birthday = ofGetElapsedTimef();
 		color.setHsb(ofRandom(0, 360), 190, 255, 255);
 		if(!inited) {

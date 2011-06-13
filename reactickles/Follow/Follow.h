@@ -1,25 +1,25 @@
 /**
- * CircleSwarm.h
+ * Follow.h
  * magic
  *
  * Created by Marek Bereza on 12/04/2011.
  *
  */
 #include "Reactickle.h"
-#include "SwarmParticle.h"
+#include "FollowParticle.h"
 #define NUM_SWARM_PARTICLES 150
-class SwarmTouch: public ofVec2f {
+class FollowTouch: public ofVec2f {
 public:
 	int touchId;
 	int shapeId;
-	SwarmTouch(float x, float y, int touchId, int shapeId) {
+	FollowTouch(float x, float y, int touchId, int shapeId) {
 		this->shapeId = shapeId;
 		this->touchId = touchId;
 		this->x = x;
 		this->y = y;
 	}
 };
-class CircleSwarm: public Reactickle {
+class Follow: public Reactickle {
 public:
 	float timeOfLastInteraction;
 	bool needsKinect() { return true; }
@@ -32,10 +32,10 @@ public:
 	virtual bool touchDown(float x, float y, int touchId);
 	virtual bool touchMoved(float x, float y, int touchId);
 	virtual bool touchUp(float x, float y, int touchId);
-	void collision(SwarmParticle &p1, SwarmParticle &p2);
+	void collision(FollowParticle &p1, FollowParticle &p2);
 private:
-	vector<SwarmTouch> touches;
-	SwarmParticle particles[NUM_SWARM_PARTICLES];
+	vector<FollowTouch> touches;
+	FollowParticle particles[NUM_SWARM_PARTICLES];
 	void keyPressed(int key);
 	int numParticles;
 	int currShapeId;

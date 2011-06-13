@@ -6,15 +6,15 @@
  *
  */
 
-#include "CircleSwarm.h"
+#include "Follow.h"
 
-void CircleSwarm::start() {
+void Follow::start() {
 	currShapeId = 0;
 }
 
 
 
-void CircleSwarm::clap() {
+void Follow::clap() {
 	if(mode>0) {
 		currShapeId++;
 		currShapeId %= NUM_MAGIC_SHAPES;
@@ -27,7 +27,7 @@ void CircleSwarm::clap() {
 
 
 
-void CircleSwarm::update() {
+void Follow::update() {
 
 	float timeNow = ofGetElapsedTimef();
 	
@@ -93,7 +93,7 @@ void CircleSwarm::update() {
 	}
 }
 
-void CircleSwarm::draw() {
+void Follow::draw() {
 	for(int i = 0; i < numParticles; i++) {
 		particles[i].draw();
 	}
@@ -106,7 +106,7 @@ void CircleSwarm::draw() {
 }
 
 
-void CircleSwarm::collision(SwarmParticle &p1, SwarmParticle &p2) {
+void Follow::collision(FollowParticle &p1, FollowParticle &p2) {
 	float minDistSqr = p1.radius + p2.radius;
 	minDistSqr *= minDistSqr;
 	float currDistSqr = p2.pos.squareDistance(p1.pos);
@@ -121,13 +121,13 @@ void CircleSwarm::collision(SwarmParticle &p1, SwarmParticle &p2) {
 	}
 }
 
-bool CircleSwarm::touchDown(float x, float y, int touchId) {
+bool Follow::touchDown(float x, float y, int touchId) {
 	if(currShapeId<0 || currShapeId>=NUM_MAGIC_SHAPES) currShapeId = 0;
-	touches.push_back(SwarmTouch(x, y, touchId, currShapeId));
+	touches.push_back(FollowTouch(x, y, touchId, currShapeId));
 	return true;
 }
 
-bool CircleSwarm::touchMoved(float x, float y, int touchId) {
+bool Follow::touchMoved(float x, float y, int touchId) {
 //	printf("x: %f  y: %f  id: %d\n", x, y, touchId);
 	for(int i = 0; i < touches.size(); i++) {
 		if(touchId==touches[i].touchId) {
@@ -140,7 +140,7 @@ bool CircleSwarm::touchMoved(float x, float y, int touchId) {
 	return touchDown(x, y, touchId);
 }
 
-bool CircleSwarm::touchUp(float x, float y, int touchId) {
+bool Follow::touchUp(float x, float y, int touchId) {
 	for(int i = 0; i < touches.size(); i++) {
 		if(touchId==touches[i].touchId) {
 			touches.erase(touches.begin()+i);
@@ -149,25 +149,25 @@ bool CircleSwarm::touchUp(float x, float y, int touchId) {
 	}
 	return true;
 }
-void CircleSwarm::keyPressed(int key) {
+void Follow::keyPressed(int key) {
 	switch(key) {
 		case 'a':
-			SwarmParticle::colorMode = COLOR_MODE_RAINBOW;
+			FollowParticle::colorMode = COLOR_MODE_RAINBOW;
 			break;
 		case 's':
-			SwarmParticle::colorMode = COLOR_MODE_RED;
+			FollowParticle::colorMode = COLOR_MODE_RED;
 			break;
 		case 'd':
-			SwarmParticle::colorMode = COLOR_MODE_GREEN;
+			FollowParticle::colorMode = COLOR_MODE_GREEN;
 			break;
 		case 'f':
-			SwarmParticle::colorMode = COLOR_MODE_BLUE;
+			FollowParticle::colorMode = COLOR_MODE_BLUE;
 			break;
 	}
 	
 }
 
-void CircleSwarm::modeChanged() {
+void Follow::modeChanged() {
 	if(mode==0) {
 		numParticles = 1;
 		particles[0].spawn(ofGetWidth()*0.5, ofGetHeight()*0.5, mode);

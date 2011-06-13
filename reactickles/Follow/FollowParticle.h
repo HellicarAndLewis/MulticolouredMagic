@@ -1,6 +1,4 @@
 /*
- *  Bubble.h
- *  audioReactive
  *
  *  Created by Marek Bereza on 19/01/2011.
  *
@@ -15,12 +13,12 @@
 #define COLOR_MODE_GREEN 3
 #define COLOR_MODE_BLUE 4
 
-class SwarmParticle {
+class FollowParticle {
 public: 
 	ofColor color;
 	float brightness;
 	float birthday;
-	SwarmParticle();
+	FollowParticle();
 	
 	float seed;
 	

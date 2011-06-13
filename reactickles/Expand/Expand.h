@@ -1,5 +1,5 @@
 /**
- * Expander.h
+ * Expand.h
  * magic
  *
  * Created by Joel Gethin Lewis on 13/04/2011.
@@ -14,7 +14,7 @@
 #define PORT 12345
 #endif
 
-class Expander: public Reactickle {
+class Expand: public Reactickle {
 public:
 	void setup(){
         ofSetCircleResolution(42); //42 is the answer to everything!

@@ -8,17 +8,17 @@
 // 10, 35
 #define MIN_RADIUS 20
 #define MAX_RADIUS 50
-#include "SwarmParticle.h"
+#include "FollowParticle.h"
 #include "MagicShapes.h"
 
-int SwarmParticle::colorMode = COLOR_MODE_RAINBOW;
+int FollowParticle::colorMode = COLOR_MODE_RAINBOW;
 
-SwarmParticle::SwarmParticle() {
+FollowParticle::FollowParticle() {
 	spawn(ofRandomWidth(), ofRandomHeight(), 0);
 }
 
 
-void SwarmParticle::spawn(float x, float y, int mode, int shape) {
+void FollowParticle::spawn(float x, float y, int mode, int shape) {
 	this->shape = shape;
 	this->mode = mode;
 	pos = ofVec2f(x, y);
@@ -41,7 +41,7 @@ void SwarmParticle::spawn(float x, float y, int mode, int shape) {
 	}
 }
 #define MAX_SPEED 8
-void SwarmParticle::update() {
+void FollowParticle::update() {
 	
 	
 	
@@ -78,7 +78,7 @@ void SwarmParticle::update() {
 	else if(pos.y<-radius) vel.y = 0;
 }
 
-void SwarmParticle::draw() {
+void FollowParticle::draw() {
 	if(!isAlive()) return;
 	ofFill();
 	float alpha = ofMap(ofGetElapsedTimef() - birthday, maxAge*0.76, maxAge, 255, 0, true);
@@ -105,7 +105,7 @@ void SwarmParticle::draw() {
 	drawShape(shape, pos, shapeSize);
 }
 
-bool SwarmParticle::isAlive() {
+bool FollowParticle::isAlive() {
 	return ofGetElapsedTimef() < maxAge+birthday;
 }
 /*
@@ -126,7 +126,7 @@ void SwarmParticle::attract(ofVec2f &point) {
 	vel -= delta*magnitude*0.05*(1.f/mass);
 }*/
 
-void SwarmParticle::attract(ofVec2f &point) {
+void FollowParticle::attract(ofVec2f &point) {
 	ofVec2f delta = pos - point;
 	
 	float dist = delta.length();

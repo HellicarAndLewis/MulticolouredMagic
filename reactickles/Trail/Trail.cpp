@@ -1,14 +1,14 @@
 /**
- * Circles2D.cpp
+ * Trail.cpp
  * magic
  *
  * Created by Marek Bereza on 11/04/2011.
  *
  */
 
-#include "Circles2D.h"
+#include "Trail.h"
 
-void Circles2D::update() {
+void Trail::update() {
 	for(int i = 0; i < particles.size(); i++) particles[i].update();
 	
 	// check for collisions
@@ -41,7 +41,7 @@ void Circles2D::update() {
 }
 
 
-void Circles2D::draw() {
+void Trail::draw() {
 	//ofClear(100, 0, 0, 255);
 	//glDisable(GL_DEPTH_TEST);
 		ofBackground(0,0,0);
@@ -51,14 +51,14 @@ void Circles2D::draw() {
 }
 
 
-void Circles2D::spawn(ofVec2f pos) {
+void Trail::spawn(ofVec2f pos) {
 	if(particles.size()<MAX_NUM_PARTICLES) {
-		particles.push_back(CircleParticle());
+		particles.push_back(TrailParticle());
 		particles.back().pos = pos;
 	}
 }
 
-void Circles2D::collision(CircleParticle &p1, CircleParticle &p2) {
+void Trail::collision(TrailParticle &p1, TrailParticle &p2) {
 	float minDistSqr = p1.radius + p2.radius;
 	minDistSqr *= minDistSqr;
 	float currDistSqr = p2.pos.squareDistance(p1.pos);
@@ -73,18 +73,18 @@ void Circles2D::collision(CircleParticle &p1, CircleParticle &p2) {
 	}
 }
 
-bool Circles2D::touchDown(float x, float y, int touchId) {
+bool Trail::touchDown(float x, float y, int touchId) {
 	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
 	return true;
 }
 
-bool Circles2D::touchMoved(float x, float y, int touchId) {
+bool Trail::touchMoved(float x, float y, int touchId) {
 	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
 	return true;
 }
 
 
-bool Circles2D::touchUp(float x, float y, int touchId) {
+bool Trail::touchUp(float x, float y, int touchId) {
 	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
 	return true;
 }
