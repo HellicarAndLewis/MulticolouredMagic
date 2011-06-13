@@ -116,7 +116,7 @@ void MainMenu::draw() {
 		} else if(totalWidth + scrollOffset < scrollRect.width) {
 			
 			deltaX = (scrollRect.width - (totalWidth + scrollOffset))*0.1;
-			printf("%f - (%f + %f) = %f\n", scrollRect.width , totalWidth , scrollOffset, deltaX);
+			//printf("%f - (%f + %f) = %f\n", scrollRect.width , totalWidth , scrollOffset, deltaX);
 //		} else if(ABS(scrollOffset)>totalWidth-scrollRect.width) {
 //			deltaX = (ABS(scrollOffset)-(totalWidth-scrollRect.width))*0.1;
 			

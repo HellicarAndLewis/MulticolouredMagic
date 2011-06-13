@@ -26,10 +26,7 @@ public:
 	ImageObject settingsTitle;
 	ImageObject colourPickerTitle;
 	ImageObject logo;
-	/*
-	ofImage *bgImage;
-	ofImage *settingsTitle;
-	ofImage *colourPickerTitle;
-	ofImage *logo;
-	 */
+	
+	
+	
 };

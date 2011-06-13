@@ -14,7 +14,8 @@
 void SettingsPage::setup() {
 	
 	settingsTitle.setup(ofVec2f(39, 35+55), IMAGE_ROOT + "settingsTitle.png");	
-	colourPickerTitle.setup(ofVec2f(260, 115), IMAGE_ROOT + "colourPickerTitle.png");
+	colourPickerTitle.setup(ofVec2f(273, 115), IMAGE_ROOT + "colourPickerTitle.png");
+	
 	
 	colorPicker.setup();
 	slider.setup();
@@ -44,13 +45,12 @@ void SettingsPage::setup() {
 	add(bgImage);	
 	add(colorPicker);
 	add(slider);
-	add(settingsTitle);
+	add(colourPickerTitle);
 	add(volumeSlider);
 	add(settingsTitle);
 
 	add(logo);
-	
-	
+
 	
 	add(resetButton);
 

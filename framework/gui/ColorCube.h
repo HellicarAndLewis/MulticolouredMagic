@@ -94,6 +94,12 @@ public:
 		return false;
 	}
 	
+	int getColor() {
+		return color;
+	}
+	void setColor(int color) {
+		this->color = color;
+	}
 	bool touchUp(float x, float y, int touchId) {
 		return touchDown(x, y, touchId);
 	}

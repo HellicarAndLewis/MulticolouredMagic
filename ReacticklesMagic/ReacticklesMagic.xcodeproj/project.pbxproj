@@ -72,6 +72,7 @@
 		EA62108913A6481200A88AF0 /* FollowParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107313A6481200A88AF0 /* FollowParticle.cpp */; };
 		EA62108A13A6481200A88AF0 /* TrailParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107713A6481200A88AF0 /* TrailParticle.cpp */; };
 		EA62108B13A6481200A88AF0 /* Trail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107913A6481200A88AF0 /* Trail.cpp */; };
+		EA6212EA13A6712E00A88AF0 /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6212E913A6712E00A88AF0 /* ColorPicker.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,6 +248,7 @@
 		EA62108213A6481200A88AF0 /* Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
 		EA62108413A6481200A88AF0 /* Trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trace.h; sourceTree = "<group>"; };
 		EA62124613A6652100A88AF0 /* ModeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDisplay.h; sourceTree = "<group>"; };
+		EA6212E913A6712E00A88AF0 /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -701,6 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				EA23EF2E139D1E0A0071404C /* ColorCube.h */,
+				EA6212E913A6712E00A88AF0 /* ColorPicker.cpp */,
 				EA23EF2F139D1E0A0071404C /* ColorPicker.h */,
 				EA23EF30139D1E0A0071404C /* Container.h */,
 				EA23EF31139D1E0A0071404C /* HoldButton.h */,
@@ -1028,6 +1031,7 @@
 				EA62108913A6481200A88AF0 /* FollowParticle.cpp in Sources */,
 				EA62108A13A6481200A88AF0 /* TrailParticle.cpp in Sources */,
 				EA62108B13A6481200A88AF0 /* Trail.cpp in Sources */,
+				EA6212EA13A6712E00A88AF0 /* ColorPicker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

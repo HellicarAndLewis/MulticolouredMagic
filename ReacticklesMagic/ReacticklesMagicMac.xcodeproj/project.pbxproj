@@ -109,6 +109,7 @@
 		EA62111D13A64C4400A88AF0 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62111013A64C4400A88AF0 /* util.cpp */; };
 		EA62111E13A64C4400A88AF0 /* KinectOrCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62111313A64C4400A88AF0 /* KinectOrCamera.cpp */; };
 		EA62111F13A64C4400A88AF0 /* TuioKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62111513A64C4400A88AF0 /* TuioKinect.cpp */; };
+		EA6212B113A6700300A88AF0 /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6212B013A6700300A88AF0 /* ColorPicker.cpp */; };
 		EAD6E1671353336400075A87 /* opencv_calib3d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E1181353336400075A87 /* opencv_calib3d.a */; };
 		EAD6E1681353336400075A87 /* opencv_contrib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E1191353336400075A87 /* opencv_contrib.a */; };
 		EAD6E1691353336400075A87 /* opencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E11A1353336400075A87 /* opencv_core.a */; };
@@ -440,6 +441,7 @@
 		EA62111513A64C4400A88AF0 /* TuioKinect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioKinect.cpp; sourceTree = "<group>"; };
 		EA62111613A64C4400A88AF0 /* TuioKinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioKinect.h; sourceTree = "<group>"; };
 		EA6211ED13A661B200A88AF0 /* ModeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDisplay.h; sourceTree = "<group>"; };
+		EA6212B013A6700300A88AF0 /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
 		EAD6E0C21353336400075A87 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		EAD6E0C71353336400075A87 /* cv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cv.h; sourceTree = "<group>"; };
 		EAD6E0C81353336400075A87 /* cv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cv.hpp; sourceTree = "<group>"; };
@@ -1385,6 +1387,7 @@
 			children = (
 				EA62110213A64C4400A88AF0 /* ColorCube.h */,
 				EA62110313A64C4400A88AF0 /* ColorPicker.h */,
+				EA6212B013A6700300A88AF0 /* ColorPicker.cpp */,
 				EA62110413A64C4400A88AF0 /* Container.h */,
 				EA62110513A64C4400A88AF0 /* HoldButton.h */,
 				EA62110613A64C4400A88AF0 /* ImageObject.h */,
@@ -1981,6 +1984,7 @@
 				EA62111D13A64C4400A88AF0 /* util.cpp in Sources */,
 				EA62111E13A64C4400A88AF0 /* KinectOrCamera.cpp in Sources */,
 				EA62111F13A64C4400A88AF0 /* TuioKinect.cpp in Sources */,
+				EA6212B113A6700300A88AF0 /* ColorPicker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
