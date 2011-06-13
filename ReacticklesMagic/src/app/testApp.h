@@ -26,10 +26,12 @@ public:
 	void touchUp(ofTouchEventArgs &touch);
 	void touchDoubleTap(ofTouchEventArgs &touch);
 	void touchCancelled(ofTouchEventArgs &touch);
-	
+
+#ifndef TARGET_OF_IPHONE	
 	void mousePressed(int x, int y, int button);
 	void mouseDragged(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
+#endif
 	
 	void audioReceived( float * input, int bufferSize, int nChannels );
 	

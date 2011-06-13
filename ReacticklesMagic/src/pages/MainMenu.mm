@@ -20,7 +20,7 @@ void MainMenu::setup() {
 	logo.x = WIDTH/2 - logo.width/2;
 	logo.y = 35;
 	
-	
+	int PADDING = 10*WIDTH_SCALE;
 	
 	settingsButton.setup("settings", ofVec2f(), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
 	aboutButton.setup("about", ofVec2f(), IMAGE_ROOT + "aboutButton.png", IMAGE_ROOT + "aboutButtonDown.png");
@@ -36,7 +36,7 @@ void MainMenu::setup() {
 	scrollRect.x = 0;
 	scrollRect.width = WIDTH;
 	scrollRect.y = 150;
-	scrollRect.height = HEIGHT - scrollRect.y;
+	scrollRect.height = 2*reactickleButtons[0]->height+PADDING;
 	scrollOffset = 0;
 	deltaX = 0;
 	touchX = 0;
@@ -67,6 +67,7 @@ void MainMenu::setup() {
 		// add it to the display/interaction hierarchy
 		add(reactickleButtons[i]);
 	}
+	totalWidth = ((reactickleButtons.size()+1)/2)*(reactickleButtons[0]->width+PADDING);
 }
 
 
@@ -80,6 +81,8 @@ void MainMenu::buttonPressed(string name) {
 	}
 }
 
+
+
 // this method arranges the reacticklesButtons nicely
 void MainMenu::arrange() {
 	int itemsPerCol = 2;
@@ -87,15 +90,11 @@ void MainMenu::arrange() {
 	int rowHeight = reactickleButtons[0]->height+PADDING;
 	int colWidth = reactickleButtons[0]->width+PADDING;
 	
-	
 	for(int i = 0; i < reactickleButtons.size(); i++) {
 		int col = i / itemsPerCol;
 		int row = i % itemsPerCol;
 		reactickleButtons[i]->x = colWidth*col + scrollOffset + PADDING;
 		reactickleButtons[i]->y = rowHeight*row + scrollRect.y + PADDING;
-		if(totalWidth<reactickleButtons[i]->x + reactickleButtons[i]->width) {
-			totalWidth = reactickleButtons[i]->x + reactickleButtons[i]->width;
-		}
 	}
 }
 
@@ -113,8 +112,13 @@ void MainMenu::draw() {
 			
 			
 			// pulling the bottom
-		} else if(ABS(scrollOffset)>totalWidth-scrollRect.width) {
-			deltaX = (ABS(scrollOffset)-(totalWidth-scrollRect.width))*0.1;
+			// 
+		} else if(totalWidth + scrollOffset < scrollRect.width) {
+			
+			deltaX = (scrollRect.width - (totalWidth + scrollOffset))*0.1;
+			printf("%f - (%f + %f) = %f\n", scrollRect.width , totalWidth , scrollOffset, deltaX);
+//		} else if(ABS(scrollOffset)>totalWidth-scrollRect.width) {
+//			deltaX = (ABS(scrollOffset)-(totalWidth-scrollRect.width))*0.1;
 			
 		} else {
 			// normal momentum
@@ -141,9 +145,11 @@ bool MainMenu::touchDown(float x, float y, int touchId) {
 }
 
 bool MainMenu::touchMoved(float x, float y, int touchId) {
-	deltaX = x - touchX;
-	scrollOffset += deltaX;
-	touchX = x;
+	if(scrollRect.inside(x, y)) {
+		deltaX = x - touchX;
+		scrollOffset += deltaX;
+		touchX = x;
+	}
 	return Container::touchMoved(x, y, touchId);
 }
 
