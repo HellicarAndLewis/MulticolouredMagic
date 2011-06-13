@@ -3,6 +3,7 @@
 #define BUTTON_PADDING 20
 //--------------------------------------------------------------
 void testApp::setup(){	
+	
 	gain = 1;
 	volumeThreshold = 0.3;
 	ReactickleApp::instance = this;
@@ -147,7 +148,10 @@ void testApp::switchReactickle(Reactickle *reactickle) {
 	// start the new one
 	currentApp = reactickle;
 	if(isReactickle(currentApp)) {
+		backButton.setHoldMode(true); // make the back button require a hold
 		currentApp->setup();
+	} else {
+		backButton.setHoldMode(false); // let the back button just work normally
 	}
 	currentApp->start();
 

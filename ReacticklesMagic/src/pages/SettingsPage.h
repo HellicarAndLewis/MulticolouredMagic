@@ -10,17 +10,26 @@
 #include "ColorPicker.h"
 #include "SimpleButton.h"
 #include "BrightnessSlider.h"
+#include "VolumeSlider.h"
+#include "ImageObject.h"
 
 class SettingsPage: public Reactickle, public SimpleButtonListener {
 public:
 	void setup();
-	void draw();
 	void buttonPressed(string name);
 	ColorPicker colorPicker;
 	SimpleButton resetButton;
 	BrightnessSlider slider;
+	VolumeSlider volumeSlider;
+	
+	ImageObject bgImage;
+	ImageObject settingsTitle;
+	ImageObject colourPickerTitle;
+	ImageObject logo;
+	/*
 	ofImage *bgImage;
 	ofImage *settingsTitle;
 	ofImage *colourPickerTitle;
 	ofImage *logo;
+	 */
 };

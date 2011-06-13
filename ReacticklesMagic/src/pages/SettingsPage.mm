@@ -13,25 +13,47 @@
 
 void SettingsPage::setup() {
 	
-	settingsTitle = ImageCache::getImage(IMAGE_ROOT + "settingsTitle.png");	
-	colourPickerTitle = ImageCache::getImage(IMAGE_ROOT + "colourPickerTitle.png");
+	settingsTitle.setup(ofVec2f(39, 35+55), IMAGE_ROOT + "settingsTitle.png");	
+	colourPickerTitle.setup(ofVec2f(260, 115), IMAGE_ROOT + "colourPickerTitle.png");
+	
 	colorPicker.setup();
 	slider.setup();
+	volumeSlider.setup();
 	
-	add(&colorPicker);
-	add(&slider);
+
+	
 	if(IPAD) {
-		bgImage = ImageCache::getImage("img/bgIPad.png");
+		bgImage.setup(ofVec2f(), "img/bgIPad.png");
 	} else if(HI_RES) {
-		bgImage = ImageCache::getImage("img/bgIPhone4.png");
+		bgImage.setup(ofVec2f(), "img/bgIPhone4.png");
 	} else {
-		bgImage = ImageCache::getImage("img/bgIPhone.png");
+		bgImage.setup(ofVec2f(), "img/bgIPhone.png");
 	}
-	logo = ImageCache::getImage(IMAGE_ROOT + "logo.png");
-	logo->setAnchorPercent(0.5, 1);
+	
+	
+	logo.setup(ofVec2f(), IMAGE_ROOT + "logo.png");
+	logo.x = WIDTH/2 - logo.width/2;
+	logo.y = 35;
+	
+	
+	
 	resetButton.setup("reset", ofVec2f(987, 53), IMAGE_ROOT+"reset.png", IMAGE_ROOT+"resetDown.png");
-	add(&resetButton);
 	resetButton.setListener(this);
+	
+	
+	add(bgImage);	
+	add(colorPicker);
+	add(slider);
+	add(settingsTitle);
+	add(volumeSlider);
+	add(settingsTitle);
+
+	add(logo);
+	
+	
+	
+	add(resetButton);
+
 }
 
 
@@ -42,11 +64,4 @@ void SettingsPage::buttonPressed(string name) {
 	}
 }
 
-void SettingsPage::draw() {	
-	ofSetHexColor(0xFFFFFF);
-	bgImage->draw(0, 0, ofGetWidth(), ofGetHeight());
-	settingsTitle->draw(39, 35+55);
-	colourPickerTitle->draw(260, 115);
-	logo->draw(WIDTH/2, 35+logo->getHeight());
-	Container::draw();
-}
+	   

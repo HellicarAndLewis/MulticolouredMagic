@@ -21,6 +21,9 @@ public:
 		
 		
 	}
+	ofImage *bgTitle;
+	ofImage *fgTitle;
+	
 	GlowingBorder glowingBorder;
 	void setup() {
 		int colors[NUM_PICKER_COLORS] = {
@@ -99,6 +102,10 @@ public:
 			fgs[i]->glowingBorder = &glowingBorder;
 			bgs[i]->glowingBorder = &glowingBorder;
 		}
+		
+		fgTitle = ImageCache::getImage(IMAGE_ROOT + "foreground.png");
+		bgTitle = ImageCache::getImage(IMAGE_ROOT + "background.png");
+		
 	}
 	void reset() {
 		selectFg(Settings::getInstance()->settings["fgColor"]);

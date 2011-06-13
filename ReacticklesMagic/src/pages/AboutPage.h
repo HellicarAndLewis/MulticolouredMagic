@@ -9,26 +9,17 @@
 #include "Reactickle.h"
 #include "ImageCache.h"
 #include "constants.h"
+#include "ImageObject.h"
+#include "SimpleButton.h"
 
-class AboutPage: public Reactickle {
+class AboutPage: public Reactickle, public SimpleButtonListener {
 public:
-	void start() {
-		if(IPAD) {
-			bgImage = ImageCache::getImage("img/bgIPad.png");
-		} else if(HI_RES) {
-			bgImage = ImageCache::getImage("img/bgIPhone4.png");
-		} else {
-			bgImage = ImageCache::getImage("img/bgIPhone.png");
-		}
-		logo = ImageCache::getImage(IMAGE_ROOT + "logo.png");
-		logo->setAnchorPercent(0.5, 1);
-	}
+	void start() ;
 	
-	void draw() {
-		bgImage->draw(0, 0, WIDTH, HEIGHT);
-		logo->draw(WIDTH/2, 35+logo->getHeight());
-	}
+	void buttonPressed(string name) ;
 	
-	ofImage *bgImage;
-	ofImage *logo;
+	ImageObject bgImage;
+	ImageObject logo;
+	ImageObject aboutContent;
+	SimpleButton youtubeButton;
 };

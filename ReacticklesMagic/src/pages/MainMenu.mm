@@ -15,18 +15,11 @@ void MainMenu::setup() {
 	// add all the buttons for the different Reactickles
 	
 	initMenu();
-	logo = ImageCache::getImage(IMAGE_ROOT + "logo.png");
-	logo->setAnchorPercent(0.5, 1);
-	// copy the reactickle list to the items list - the items list
-	// is the one used to propagating events.
-	for(int i = 0; i < reactickleButtons.size(); i++) {
-		
-		// add a button listener
-		reactickleButtons[i]->setListener(this);
-		
-		// add it to the display/interaction hierarchy
-		add(reactickleButtons[i]);
-	}
+
+	logo.setup(ofVec2f(), IMAGE_ROOT + "logo.png");
+	logo.x = WIDTH/2 - logo.width/2;
+	logo.y = 35;
+	
 	
 	
 	settingsButton.setup("settings", ofVec2f(), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
@@ -34,8 +27,7 @@ void MainMenu::setup() {
 	settingsButton.x = 10 + WIDTH/2 - settingsButton.width;
 	aboutButton.x = WIDTH/2 + 10;
 	settingsButton.y = aboutButton.y = HEIGHT - settingsButton.height - 10;
-	add(&aboutButton);
-	add(&settingsButton);
+	
 	
 	aboutButton.setListener(this);
 	settingsButton.setListener(this);
@@ -52,14 +44,29 @@ void MainMenu::setup() {
 	
 	
 	if(IPAD) {
-		bgImage = ImageCache::getImage("img/bgIPad.png");
+		bgImage.setup(ofVec2f(), "img/bgIPad.png");
 	} else if(HI_RES) {
-		bgImage = ImageCache::getImage("img/bgIPhone4.png");
+		bgImage.setup(ofVec2f(), "img/bgIPhone4.png");
 	} else {
-		bgImage = ImageCache::getImage("img/bgIPhone.png");
+		bgImage.setup(ofVec2f(), "img/bgIPhone.png");
 	}
 	
 	
+	add(&bgImage);
+	add(&aboutButton);
+	add(&settingsButton);
+	add(&logo);
+	
+	// copy the reactickle list to the items list - the items list
+	// is the one used to propagating events.
+	for(int i = 0; i < reactickleButtons.size(); i++) {
+		
+		// add a button listener
+		reactickleButtons[i]->setListener(this);
+		
+		// add it to the display/interaction hierarchy
+		add(reactickleButtons[i]);
+	}
 }
 
 
@@ -94,8 +101,8 @@ void MainMenu::arrange() {
 
 void MainMenu::draw() {
 	ofSetHexColor(0xFFFFFF);
-	bgImage->draw(0, 0, WIDTH, HEIGHT);
-	logo->draw(WIDTH/2, 35+logo->getHeight());
+
+
 	arrange();
 	
 	if(!touching) {
@@ -119,9 +126,9 @@ void MainMenu::draw() {
 	}
 	
 	
+	Container::draw();	
+
 	
-	ofSetHexColor(0xFFFFFF);	
-	Container::draw();
 }
 
 bool MainMenu::touchDown(float x, float y, int touchId) {

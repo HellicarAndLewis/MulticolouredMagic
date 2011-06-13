@@ -244,6 +244,8 @@
 		EA23EF5D139D1E2F0071404C /* SettingsPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsPage.mm; sourceTree = "<group>"; };
 		EA23EF9C139D1FA50071404C /* BrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSlider.h; sourceTree = "<group>"; };
 		EA23F0DF139D30CB0071404C /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.entitlements"; sourceTree = "<group>"; };
+		EA620EE513A6316600A88AF0 /* VolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
+		EA620EF913A6329700A88AF0 /* ImageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageObject.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -817,6 +819,7 @@
 				EA23EF30139D1E0A0071404C /* Container.h */,
 				EA23EF31139D1E0A0071404C /* HoldButton.h */,
 				EA23EF32139D1E0A0071404C /* InteractiveObject.h */,
+				EA620EF913A6329700A88AF0 /* ImageObject.h */,
 				EA23EF33139D1E0A0071404C /* SimpleButton.h */,
 			);
 			path = gui;
@@ -881,6 +884,7 @@
 			isa = PBXGroup;
 			children = (
 				EA23EF9C139D1FA50071404C /* BrightnessSlider.h */,
+				EA620EE513A6316600A88AF0 /* VolumeSlider.h */,
 				EA23EF58139D1E2F0071404C /* AboutPage.h */,
 				EA23EF59139D1E2F0071404C /* AboutPage.mm */,
 				EA23EF5A139D1E2F0071404C /* MainMenu.h */,

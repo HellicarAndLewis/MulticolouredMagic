@@ -55,6 +55,9 @@ public:
 	void add(InteractiveObject *obj) {
 		items.push_back(obj);
 	}
+	void add(InteractiveObject &obj) {
+		items.push_back(&obj);
+	}
 protected:
 	vector<InteractiveObject*> items;
 };

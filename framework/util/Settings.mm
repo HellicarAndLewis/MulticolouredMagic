@@ -25,6 +25,7 @@ void Settings::setDefaultValues() {
 	settings["brightness"] = 0.5;
 	settings["fgColor"] = 1;
 	settings["bgColor"] = 2;
+	settings["volume"] = 0.5;
 }
 
 void Settings::reset() {

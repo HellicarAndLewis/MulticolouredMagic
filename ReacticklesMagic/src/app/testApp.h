@@ -39,6 +39,7 @@ public:
 	
 
 	void switchReactickle(Reactickle *reactickle);
+	
 	MainMenu mainMenu;
 	AboutPage aboutPage;
 	SettingsPage settingsPage;

@@ -9,7 +9,7 @@
 #include "InteractiveObject.h"
 #include "ReactickleButton.h"
 #include "SimpleButton.h"
-
+#include "ImageObject.h"
 class MainMenu: public Reactickle, public ReactickleButtonListener, public SimpleButtonListener {
 public:
 	void setup();
@@ -42,6 +42,6 @@ private:
 	
 	SimpleButton settingsButton;
 	SimpleButton aboutButton;
-	ofImage *bgImage;
-	ofImage *logo;
+	ImageObject bgImage;
+	ImageObject logo;
 };
