@@ -19,28 +19,29 @@
 #include "ReactickleApp.h"
 
 
-#include "ClapClock.h"
-#include "01JGLCircleGetsBigger.h"
-#include "02JGLGridOfSquaresToCircles.h"
-#include "03JGLColourChangeOnNoise.h"
-#include "ClapBang.h"
-#include "AudioBalloonApp.h"
-#include "Circles2D.h"
-#include "ClapClock.h"
-#include "CircleSwarm.h"
-#include "Inversion.h"
-#include "Expander.h"
+#include "Expand.h"
+#include "Orbit.h"
+#include "Flip.h"
+#include "Follow.h"
+#include "Trail.h"
+#include "Grid.h"
+#include "Cascade.h"
+#include "Change.h"
+#include "Find.h"
+#include "Trace.h"
+
 
 void MainMenu::initMenu() {
-	reactickleButtons.push_back(new ReactickleButton("expander", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("clap clock", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("inversion", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("circle swarm", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("circles 2d", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("squares to circles", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("clap bang", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("colour change on noise", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("circle bigger", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("expand", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("orbit", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("flip", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("follow", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("trail", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("grid", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("cascade", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("change", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("find", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	reactickleButtons.push_back(new ReactickleButton("trace", IMAGE_ROOT + "defaultScreenshot.jpg"));
 	
 	
 	
@@ -49,23 +50,25 @@ void MainMenu::initMenu() {
 
 void MainMenu::reactickleSelected(string name) {
 	printf("Starting %s!\n", name.c_str());
-	if(name=="expander") {
-		ReactickleApp::instance->launchReactickle(new Expander());
-	} else if(name=="clap clock") {
-		ReactickleApp::instance->launchReactickle(new ClapClock());
-	} else if(name=="inversion") {
-		ReactickleApp::instance->launchReactickle(new Inversion());
-	} else if(name=="circle swarm") {
-		ReactickleApp::instance->launchReactickle(new CircleSwarm());
-	} else if(name=="circles 2d") {
-		ReactickleApp::instance->launchReactickle(new Circles2D());
-	} else if(name=="squares to circles") {
-		ReactickleApp::instance->launchReactickle(new GridOfSquaresApp());
-	} else if(name=="clap bang") {
-		ReactickleApp::instance->launchReactickle(new ClapBang());
-	} else if(name=="colour change on noise") {
-		ReactickleApp::instance->launchReactickle(new ColourChangeOnNoiseApp());
-	} else if(name=="circle bigger") {
-		ReactickleApp::instance->launchReactickle(new CircleBiggerApp());
+	if(name=="expand") {
+		ReactickleApp::instance->launchReactickle(new Expand());
+	} else if(name=="orbit") {
+		ReactickleApp::instance->launchReactickle(new Orbit());
+	} else if(name=="flip") {
+		ReactickleApp::instance->launchReactickle(new Flip());
+	} else if(name=="follow") {
+		ReactickleApp::instance->launchReactickle(new Follow());
+	} else if(name=="trail") {
+		ReactickleApp::instance->launchReactickle(new Trail());
+	} else if(name=="grid") {
+		ReactickleApp::instance->launchReactickle(new Grid());
+	} else if(name=="cascade") {
+		ReactickleApp::instance->launchReactickle(new Cascade());
+	} else if(name=="change") {
+		ReactickleApp::instance->launchReactickle(new Change());
+	} else if(name=="find") {
+		ReactickleApp::instance->launchReactickle(new Find());
+	} else if(name=="trace") {
+		ReactickleApp::instance->launchReactickle(new Trace());
 	}
 }
