@@ -20,11 +20,15 @@ public:
 		} else {
 			bgImage = ImageCache::getImage("img/bgIPhone.png");
 		}
+		logo = ImageCache::getImage(IMAGE_ROOT + "logo.png");
+		logo->setAnchorPercent(0.5, 1);
 	}
 	
 	void draw() {
 		bgImage->draw(0, 0, WIDTH, HEIGHT);
+		logo->draw(WIDTH/2, 35+logo->getHeight());
 	}
 	
 	ofImage *bgImage;
+	ofImage *logo;
 };

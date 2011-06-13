@@ -1,6 +1,6 @@
 #include "testApp.h"
 #include "MagicShapes.h"
-
+#define BUTTON_PADDING 20
 //--------------------------------------------------------------
 void testApp::setup(){	
 	gain = 1;
@@ -21,9 +21,27 @@ void testApp::setup(){
 	mainMenu.setup();
 	
 	backButton.setup("back", ofVec2f(0,0), IMAGE_ROOT + "backButton.png", IMAGE_ROOT + "backButtonDown.png");
-	backButton.x = WIDTH - backButton.width;
-	backButton.y = HEIGHT - backButton.height;
+	backButton.x = BUTTON_PADDING;
+	backButton.y = HEIGHT - backButton.height - BUTTON_PADDING;
 	backButton.setListener(this);
+	backButton.setHoldMode(false);
+	
+	
+	modeUpButton.setup("modeUp", ofVec2f(0,0), IMAGE_ROOT + "modeUpButton.png", IMAGE_ROOT + "modeUpButtonDown.png");
+	modeDownButton.setup("modeDown", ofVec2f(0,0), IMAGE_ROOT + "modeDownButton.png", IMAGE_ROOT + "modeDownButtonDown.png");
+	
+	modeUpButton.x = WIDTH - modeUpButton.width - BUTTON_PADDING;
+	modeUpButton.y = BUTTON_PADDING;
+	
+	modeDownButton.x = WIDTH - modeDownButton.width - BUTTON_PADDING;
+	modeDownButton.y = HEIGHT - modeDownButton.height - BUTTON_PADDING;
+	
+	modeUpButton.setListener(this);
+	modeDownButton.setListener(this);
+	
+	modeUpButton.setHoldMode(true);
+	modeDownButton.setHoldMode(true);
+	
 	ofSoundStreamSetup(0, 1, this, 22050, 1024, 1);
 	aboutPage.setup();
 	settingsPage.setup();
@@ -100,6 +118,10 @@ void testApp::draw(){
 	currentApp->draw();
 	if(currentApp!=&mainMenu) {
 		backButton.draw();
+		if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
+			modeUpButton.draw();
+			modeDownButton.draw();
+		}
 	}
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
@@ -134,6 +156,26 @@ void testApp::switchReactickle(Reactickle *reactickle) {
 void testApp::buttonPressed(string name) {
 	if(name=="back") {
 		switchReactickle(&mainMenu);
+	} else if(name=="modeUp") {
+		// increment mode
+		if(isReactickle(currentApp)) {
+			int newMode = currentApp->getMode();
+			newMode++;
+			if(newMode>currentApp->getNumModes()) {
+				newMode = 0;
+			}
+			currentApp->setMode(newMode);
+		}
+	} else if(name=="modeDown") {
+		// decrement mode
+		if(isReactickle(currentApp)) {
+			int newMode = currentApp->getMode();
+			newMode--;
+			if(newMode<0) {
+				newMode = currentApp->getNumModes()-1;
+			}
+			currentApp->setMode(newMode);
+		}
 	}
 }
 
@@ -163,6 +205,16 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 	if(currentApp!=&mainMenu) {
 		if(backButton.touchDown(touch.x, touch.y, touch.id)) {
 			return;
+			
+		} else {
+			if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
+				if(modeUpButton.touchDown(touch.x, touch.y, touch.id)) {
+					return;
+				} else if(modeDownButton.touchDown(touch.x, touch.y, touch.id)) {
+					return;
+				}
+					
+			}
 		}
 	}
 	currentApp->touchDown(touch.x, touch.y, touch.id);
@@ -173,6 +225,14 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 	if(currentApp!=&mainMenu) {
 		if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
 			return;
+		} else {
+			if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
+				if(modeUpButton.touchMoved(touch.x, touch.y, touch.id)) {
+					return;
+				} else if(modeDownButton.touchMoved(touch.x, touch.y, touch.id)) {
+					return;
+				}
+			}
 		}
 	}
 	currentApp->touchMoved(touch.x, touch.y, touch.id);
@@ -183,6 +243,14 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 	if(currentApp!=&mainMenu) {
 		if(backButton.touchUp(touch.x, touch.y, touch.id)) {
 			return;
+		}  else {
+			if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
+				if(modeUpButton.touchUp(touch.x, touch.y, touch.id)) {
+					return;
+				} else if(modeDownButton.touchUp(touch.x, touch.y, touch.id)) {
+					return;
+				}
+			}
 		}
 	}
 	currentApp->touchUp(touch.x, touch.y, touch.id);

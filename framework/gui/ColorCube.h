@@ -7,6 +7,8 @@
  */
 
 #include "InteractiveObject.h"
+#include "GlowingBorder.h"
+
 class ColorCube;
 
 class ColorCubeListener {
@@ -15,14 +17,18 @@ public:
 };
 class ColorCube: public InteractiveObject {
 public:
+
 	ColorCube() {
 		width = 58;
 		height = width;
 		color = 0;
 		selected = false;
+		cross = NULL;
 		
 		listener = NULL;
 	}
+	ofImage *cross;
+	GlowingBorder *glowingBorder;
 	
 	void setListener(ColorCubeListener *listener) {
 		this->listener = listener;
@@ -35,6 +41,15 @@ public:
 	}
 	
 	void draw() {
+		
+		if(selected) {
+			ofVec2f points[4];
+			points[0] = ofVec2f(x, y);
+			points[1] = ofVec2f(x+width, y);
+			points[2] = ofVec2f(x+width, y+height);
+			points[3] = ofVec2f(x, y+height);
+			glowingBorder->draw(points, ofColor(255, 150));
+		}
 		ofSetHexColor(color);
 		if(isBackground) {
 			int r = 3;
@@ -54,14 +69,13 @@ public:
 			ofRect(*this);
 		}
 		
-		if(selected) {
+		if(selected && cross!=NULL) {
 			ofSetHexColor(0xFFFFFF);
-			int c = 3;
+
 			glPushMatrix();
+			
 			glTranslatef(x + width/2, y + height/2, 0);
-			glRotatef(40, 0, 0, 1);
-			ofRect(-c, -height/2, c*2, height);
-			ofRect(-width/2, -c, width, c*2);
+			cross->draw(0, 0);
 			glPopMatrix();
 		}
 	}

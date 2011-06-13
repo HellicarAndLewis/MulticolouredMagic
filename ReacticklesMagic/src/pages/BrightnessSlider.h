@@ -15,7 +15,7 @@ public:
 	
 	void setup() {
 		x = 770;
-		y = 77;
+		y = 77+55;
 		sliderBG = ImageCache::getImage(IMAGE_ROOT+"sliderBG.png");
 		width = sliderBG->getWidth();
 		height = sliderBG->getHeight();

@@ -7,14 +7,22 @@
  */
 #pragma once
 #define NUM_PICKER_COLORS 21
-
+#include "ImageCache.h"
 #include "Container.h"
+#include "constants.h"
 #include "ColorCube.h"
 #include "Settings.h"
+#include "GlowingBorder.h"
 
 class ColorPicker: public Container, public ColorCubeListener {
 public:
+	ofImage *cross;
 	ColorPicker() {
+		
+		
+	}
+	GlowingBorder glowingBorder;
+	void setup() {
 		int colors[NUM_PICKER_COLORS] = {
 			0x4D1965,
 			0xE50043,
@@ -42,31 +50,37 @@ public:
 		};
 		
 		x = 120;
-		y = 98;
+		y = 98+55;
 		
 		int PADDING = 9;
 		int NUM_COLS = 7;
 		int BG_Y_OFFSET = 234;
 		
+		
 		fgs = new ColorCube*[NUM_PICKER_COLORS];
 		bgs = new ColorCube*[NUM_PICKER_COLORS];
+		
 		
 		// foreground
 		for(int i = 0; i < NUM_PICKER_COLORS; i++) {
 			ColorCube *c = new ColorCube();
+			
 			c->setup(colors[i]);
 			c->x = (i%NUM_COLS)*(c->width+PADDING);
 			c->y = (i/NUM_COLS)*(c->height+PADDING);
 			c->setListener(this);
 			fgs[i] = c;
 			add(c);
+			
 		}
 		
 		// background
-
+		
 		for(int i = 0; i < NUM_PICKER_COLORS; i++) {
 			ColorCube *c = new ColorCube();
+			
 			c->setup(colors[i], true);
+			
 			c->x = (i%NUM_COLS)*(c->width+PADDING);
 			c->y = BG_Y_OFFSET + (i/NUM_COLS)*(c->height+PADDING);
 			c->setListener(this);
@@ -75,6 +89,16 @@ public:
 		}
 		reset();
 		
+		glowingBorder.setup(ImageCache::getImage("img/dropShadow.png"), 4);
+		cross = ImageCache::getImage(IMAGE_ROOT + "x.png");
+		cross->setAnchorPercent(0.5 ,0.5);
+
+		for(int i = 0; i < NUM_PICKER_COLORS; i++) {
+			fgs[i]->cross = cross;
+			bgs[i]->cross = cross;
+			fgs[i]->glowingBorder = &glowingBorder;
+			bgs[i]->glowingBorder = &glowingBorder;
+		}
 	}
 	void reset() {
 		selectFg(Settings::getInstance()->settings["fgColor"]);

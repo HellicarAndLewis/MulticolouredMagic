@@ -20,13 +20,14 @@ public:
  * Really simple button class
  */
 class SimpleButton: public InteractiveObject {
-private:
-	ofImage *upImg;
-	ofImage *dnImg;
+
 
 	
 	
 protected:
+	ofImage *upImg;
+	ofImage *dnImg;
+
 	int currTouchId;
 	string name;
 	SimpleButtonListener *listener;
@@ -110,6 +111,7 @@ public:
 				ofSetHexColor(0xFFCCCC);
 				upImg->draw(x, y);
 			}
+			
 		} else {
 			upImg->draw(x, y);
 		}

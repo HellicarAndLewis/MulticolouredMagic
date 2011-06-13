@@ -71,6 +71,14 @@ public:
         modeChanged();
     }
     
+	int getMode() {
+		return mode;
+	}
+	
+	// you need to override this if you support more than one mode.
+	virtual int getNumModes() {
+		return 1;
+	}
 	// how loud the sound is at the moment
 	float volume;
 

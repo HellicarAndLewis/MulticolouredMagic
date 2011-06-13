@@ -29,9 +29,11 @@ void MainMenu::setup() {
 	}
 	
 	
-	settingsButton.setup("settings", ofVec2f(50, 50), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
-	aboutButton.setup("about", ofVec2f(150, 50), IMAGE_ROOT + "aboutButton.png", IMAGE_ROOT + "aboutButtonDown.png");
-	
+	settingsButton.setup("settings", ofVec2f(), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
+	aboutButton.setup("about", ofVec2f(), IMAGE_ROOT + "aboutButton.png", IMAGE_ROOT + "aboutButtonDown.png");
+	settingsButton.x = 10 + WIDTH/2 - settingsButton.width;
+	aboutButton.x = WIDTH/2 + 10;
+	settingsButton.y = aboutButton.y = HEIGHT - settingsButton.height - 10;
 	add(&aboutButton);
 	add(&settingsButton);
 	

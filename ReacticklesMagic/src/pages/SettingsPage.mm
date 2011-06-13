@@ -15,7 +15,7 @@ void SettingsPage::setup() {
 	
 	settingsTitle = ImageCache::getImage(IMAGE_ROOT + "settingsTitle.png");	
 	colourPickerTitle = ImageCache::getImage(IMAGE_ROOT + "colourPickerTitle.png");
-	
+	colorPicker.setup();
 	slider.setup();
 	
 	add(&colorPicker);
@@ -45,8 +45,8 @@ void SettingsPage::buttonPressed(string name) {
 void SettingsPage::draw() {	
 	ofSetHexColor(0xFFFFFF);
 	bgImage->draw(0, 0, ofGetWidth(), ofGetHeight());
-	settingsTitle->draw(39, 35);
-	colourPickerTitle->draw(260, 59);
-	logo->draw(WIDTH/2, HEIGHT - 20);
+	settingsTitle->draw(39, 35+55);
+	colourPickerTitle->draw(260, 115);
+	logo->draw(WIDTH/2, 35+logo->getHeight());
 	Container::draw();
 }

@@ -7,7 +7,7 @@
 #include "Reactickle.h"
 #include "MainMenu.h"
 #include "ReactickleApp.h"
-#include "DoubleTapButton.h"
+#include "HoldButton.h"
 #include "AboutPage.h"
 #include "SettingsPage.h"
 
@@ -47,8 +47,10 @@ public:
 	Reactickle *currentApp;
 	
 	// back buttons for when on a reactickle
-	DoubleTapButton backButton;
-
+	HoldButton backButton;
+	HoldButton modeUpButton;
+	HoldButton modeDownButton;
+	
 	// button event (for back button)
 	void buttonPressed(string name);
 	
