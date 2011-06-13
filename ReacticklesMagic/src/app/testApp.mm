@@ -4,6 +4,8 @@
 //--------------------------------------------------------------
 void testApp::setup(){	
 	
+	
+	modeDisplay.setup();
 	gain = 1;
 	volumeThreshold = 0.3;
 	ReactickleApp::instance = this;
@@ -94,6 +96,10 @@ void testApp::setupGraphics() {
 	ofBackground(0, 0, 0);
 	ofSetFrameRate(30.f);
 	ofEnableAlphaBlending();
+	ofSetCircleResolution(64);
+#ifndef TARGET_OF_IPHONE
+	ofSetVerticalSync(true);
+#endif
 }
 //--------------------------------------------------------------
 void testApp::update(){
@@ -109,6 +115,9 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 	
+	
+	// this is more to reset the blend mode
+	ofEnableAlphaBlending();
 	// if we're running on the retina display,
 	// the openGL coordinates aren't pixel coordinates
 	// (it's still 480x320 on a 960x640 iphone4 display)
@@ -128,6 +137,9 @@ void testApp::draw(){
 			modeUpButton.draw();
 			modeDownButton.draw();
 		}
+	}
+	if(isReactickle(currentApp)) {
+		modeDisplay.draw();
 	}
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
@@ -174,6 +186,7 @@ void testApp::buttonPressed(string name) {
 				newMode = 0;
 			}
 			currentApp->setMode(newMode);
+			modeDisplay.setMode(newMode);
 		}
 	} else if(name=="modeDown") {
 		// decrement mode
@@ -184,6 +197,7 @@ void testApp::buttonPressed(string name) {
 				newMode = currentApp->getNumModes()-1;
 			}
 			currentApp->setMode(newMode);
+			modeDisplay.setMode(newMode);
 		}
 	}
 }

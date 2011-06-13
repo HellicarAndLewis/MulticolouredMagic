@@ -8,10 +8,14 @@
 
 #include "ReactickleButton.h"
 #include "ImageCache.h"
-ReactickleButton::ReactickleButton(string name, string screenshotUrl) {
-	screenshot = ImageCache::getImage(screenshotUrl);
+#include "constants.h"
+
+ReactickleButton::ReactickleButton(string name) {
+	screenshot = ImageCache::getImage(IMAGE_ROOT+"apps/"+name+".png");
 	width = screenshot->getWidth();
 	height = screenshot->getHeight();
+	
+	height *= 0.8;
 	border.setup(ImageCache::getImage("img/dropShadow.png"), 4);
 	this->name = name;
 	listener = NULL;
@@ -20,17 +24,12 @@ ReactickleButton::ReactickleButton(string name, string screenshotUrl) {
 }
 
 void ReactickleButton::draw() {
-	ofSetHexColor(0xFFFFFF);
-	screenshot->draw(x, y, width, height);
 	if(down) {
-		ofVec2f points[4];
-		points[0] = ofVec2f(x, y);
-		points[1] = ofVec2f(x+width, y);
-		points[2] = ofVec2f(x+width, y+height);
-		points[3] = ofVec2f(x, y+height);
-		border.draw(points, ofColor(255, 255, 255, 255));
+		ofSetHexColor(0x999999);
+	} else {
+		ofSetHexColor(0xFFFFFF);
 	}
-	ofDrawBitmapString(name, x+2, y+16);
+	screenshot->draw(x, y-20);
 }
 
 void ReactickleButton::setListener(ReactickleButtonListener *listener) {

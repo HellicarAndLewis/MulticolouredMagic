@@ -12,6 +12,7 @@
 #include "HoldButton.h"
 #include "AboutPage.h"
 #include "SettingsPage.h"
+#include "ModeDisplay.h"
 
 class testApp : public ReactickleApp, public SimpleButtonListener {
 	
@@ -71,7 +72,7 @@ private:
 	void setupOrientation();
 	void updateOrientation();
 
-
+	ModeDisplay modeDisplay;
 };
 
 

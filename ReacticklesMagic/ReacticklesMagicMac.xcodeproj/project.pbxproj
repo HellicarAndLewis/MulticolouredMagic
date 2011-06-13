@@ -439,6 +439,7 @@
 		EA62111413A64C4400A88AF0 /* KinectOrCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectOrCamera.h; sourceTree = "<group>"; };
 		EA62111513A64C4400A88AF0 /* TuioKinect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioKinect.cpp; sourceTree = "<group>"; };
 		EA62111613A64C4400A88AF0 /* TuioKinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioKinect.h; sourceTree = "<group>"; };
+		EA6211ED13A661B200A88AF0 /* ModeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDisplay.h; sourceTree = "<group>"; };
 		EAD6E0C21353336400075A87 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		EAD6E0C71353336400075A87 /* cv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cv.h; sourceTree = "<group>"; };
 		EAD6E0C81353336400075A87 /* cv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cv.hpp; sourceTree = "<group>"; };
@@ -1324,6 +1325,7 @@
 			children = (
 				EA6210DD13A64A8A00A88AF0 /* ReactickleButton.cpp */,
 				EA6210DE13A64A8A00A88AF0 /* ReactickleButton.h */,
+				EA6211ED13A661B200A88AF0 /* ModeDisplay.h */,
 			);
 			path = gui;
 			sourceTree = "<group>";

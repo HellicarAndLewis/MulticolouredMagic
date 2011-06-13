@@ -1,6 +1,6 @@
 <properties>
-    <property key="bgColor" value="10"></property>
-    <property key="brightness" value="0.8625"></property>
-    <property key="fgColor" value="18"></property>
+    <property key="bgColor" value="2"></property>
+    <property key="brightness" value="0.5"></property>
+    <property key="fgColor" value="1"></property>
     <property key="volume" value="0.5"></property>
 </properties>

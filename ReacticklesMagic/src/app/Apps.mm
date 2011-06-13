@@ -32,20 +32,16 @@
 
 
 void MainMenu::initMenu() {
-	reactickleButtons.push_back(new ReactickleButton("expand", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("orbit", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("flip", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("follow", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("trail", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("grid", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("cascade", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("change", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("find", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	reactickleButtons.push_back(new ReactickleButton("trace", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	
-	
-	
-
+	reactickleButtons.push_back(new ReactickleButton("expand"));
+	reactickleButtons.push_back(new ReactickleButton("orbit"));
+	reactickleButtons.push_back(new ReactickleButton("flip"));
+	reactickleButtons.push_back(new ReactickleButton("follow"));
+	reactickleButtons.push_back(new ReactickleButton("trail"));
+	reactickleButtons.push_back(new ReactickleButton("grid"));
+	reactickleButtons.push_back(new ReactickleButton("cascade"));
+	reactickleButtons.push_back(new ReactickleButton("change"));
+	reactickleButtons.push_back(new ReactickleButton("find"));
+	reactickleButtons.push_back(new ReactickleButton("trace"));
 }
 
 void MainMenu::reactickleSelected(string name) {

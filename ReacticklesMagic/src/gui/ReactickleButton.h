@@ -15,7 +15,7 @@ public:
 };
 class ReactickleButton: public InteractiveObject {
 public:
-	ReactickleButton(string name, string screenshotUrl);
+	ReactickleButton(string name);
 	
 	void draw();
 	

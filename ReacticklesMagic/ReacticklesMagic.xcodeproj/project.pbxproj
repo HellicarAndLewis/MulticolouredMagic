@@ -246,6 +246,7 @@
 		EA62108013A6481200A88AF0 /* Change.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Change.h; sourceTree = "<group>"; };
 		EA62108213A6481200A88AF0 /* Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
 		EA62108413A6481200A88AF0 /* Trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trace.h; sourceTree = "<group>"; };
+		EA62124613A6652100A88AF0 /* ModeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDisplay.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -759,6 +760,7 @@
 		EA23EF53139D1E2F0071404C /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				EA62124613A6652100A88AF0 /* ModeDisplay.h */,
 				EA23EF54139D1E2F0071404C /* ReactickleButton.cpp */,
 				EA23EF55139D1E2F0071404C /* ReactickleButton.h */,
 			);

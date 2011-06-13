@@ -19,7 +19,7 @@ public:
 
 	bool holdMode;
 	float touchStart;
-	
+	bool buttonPressed;
 	
 	/**
 	 * If hold mode is set to true, you need to hold
@@ -32,7 +32,7 @@ public:
 	
 	
 	bool touchDown(float xx, float yy, int tid) {
-		
+		buttonPressed = false;
 		if(inside(xx, yy)) {
 			touchStart = ofGetElapsedTimef();
 			currTouchId = tid;
@@ -83,7 +83,8 @@ public:
 				float a = ofMap(ofGetElapsedTimef(), touchStart, touchStart+HOLD_TIME, 0, 1, true);
 				ofSetColor(255, 255, 255, alpha*255.f*a);
 				dnImg->draw(x, y);
-				if(ofGetElapsedTimef() - touchStart>HOLD_TIME) {
+				if(buttonPressed==false && ofGetElapsedTimef() - touchStart>HOLD_TIME) {
+					buttonPressed = true;
 					listener->buttonPressed(name);
 					down = false;
 				}
