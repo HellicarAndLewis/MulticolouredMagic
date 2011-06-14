@@ -96,7 +96,7 @@ void TuioKinect::update(bool sendTuio) {
 	
 	
 	
-	
+
 	// do we need this line?
 	grayImage.flagImageChanged();
 	

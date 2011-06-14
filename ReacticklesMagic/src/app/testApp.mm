@@ -68,9 +68,9 @@ void testApp::setup(){
 	
 	// set up tuio
 	tuioClient.connect(3333);
-	ofAddListener(ofEvents.touchDown, this, &testApp::touchDown);
-	ofAddListener(ofEvents.touchUp, this, &testApp::touchUp);
-	ofAddListener(ofEvents.touchMoved, this, &testApp::touchMoved);
+	ofAddListener(ofEvents.touchDown, this, &testApp::tuioTouchDown);
+	ofAddListener(ofEvents.touchUp, this, &testApp::tuioTouchUp);
+	ofAddListener(ofEvents.touchMoved, this, &testApp::tuioTouchMoved);
 	
 #endif	
 }
@@ -296,126 +296,6 @@ void testApp::exit(){
 #endif
 }
 
-//--------------------------------------------------------------
-void testApp::touchDown(ofTouchEventArgs &touch){
-#ifndef TARGET_OF_IPHONE
-	if(!gui.isOn()) 
-#endif
-	{
-		if(currentApp!=&mainMenu) {
-			if(backButton.touchDown(touch.x, touch.y, touch.id)) {
-				return;
-				
-			} else {
-				if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
-					if(modeUpButton.touchDown(touch.x, touch.y, touch.id)) {
-						return;
-					} else if(modeDownButton.touchDown(touch.x, touch.y, touch.id)) {
-						return;
-					}
-						
-				}
-			}
-		}
-		currentApp->touchDown(touch.x, touch.y, touch.id);
-
-	}
-}
-
-//--------------------------------------------------------------
-void testApp::touchMoved(ofTouchEventArgs &touch){
-#ifndef TARGET_OF_IPHONE
-	if(!gui.isOn()) 
-#endif
-	{
-		if(currentApp!=&mainMenu) {
-			if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
-				return;
-			} else {
-				if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
-					if(modeUpButton.touchMoved(touch.x, touch.y, touch.id)) {
-						return;
-					} else if(modeDownButton.touchMoved(touch.x, touch.y, touch.id)) {
-						return;
-					}
-				}
-			}
-		}
-		currentApp->touchMoved(touch.x, touch.y, touch.id);
-	}
-}
-
-//--------------------------------------------------------------
-void testApp::touchUp(ofTouchEventArgs &touch){
-#ifndef TARGET_OF_IPHONE
-	if(!gui.isOn()) 
-#endif
-	{
-		if(currentApp!=&mainMenu) {
-			if(backButton.touchUp(touch.x, touch.y, touch.id)) {
-				return;
-			}  else {
-				if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
-					if(modeUpButton.touchUp(touch.x, touch.y, touch.id)) {
-						return;
-					} else if(modeDownButton.touchUp(touch.x, touch.y, touch.id)) {
-						return;
-					}
-				}
-			}
-		}
-		currentApp->touchUp(touch.x, touch.y, touch.id);
-	}
-}
-
-#ifndef TARGET_OF_IPHONE
-void testApp::mousePressed(int x, int y, int button) {
-	ofTouchEventArgs t;
-	t.x = x;
-	t.y = y;
-	t.id = button;
-	touchDown(t);
-}
-
-void testApp::mouseDragged(int x, int y, int button) {
-	ofTouchEventArgs t;
-	t.x = x;
-	t.y = y;
-	t.id = button;
-	touchMoved(t);
-}
-
-void testApp::mouseReleased(int x, int y, int button) {
-	ofTouchEventArgs t;
-	t.x = x;
-	t.y = y;
-	t.id = button;
-	touchUp(t);
-}
-#endif
-
-//--------------------------------------------------------------
-void testApp::touchDoubleTap(ofTouchEventArgs &touch){
-
-}
-
-
-
-//--------------------------------------------------------------
-void testApp::gotMemoryWarning(){
-
-}
-
-//--------------------------------------------------------------
-void testApp::deviceOrientationChanged(int newOrientation){
-
-}
-
-
-//--------------------------------------------------------------
-void testApp::touchCancelled(ofTouchEventArgs& args){
-
-}
 
 
 void testApp::audioReceived( float * input, int bufferSize, int nChannels ) {
@@ -433,19 +313,5 @@ void testApp::audioReceived( float * input, int bufferSize, int nChannels ) {
 	volume *= gain;
 	currentApp->audioReceived(input, bufferSize, nChannels);
 }
-#ifdef TARGET_OF_IPHONE	
-void testApp::gotFocus() {
-//	ofSoundStreamStart();
-}
-void testApp::lostFocus() {
-//	ofSoundStreamStop();
-}
-#else
-void testApp::keyPressed(int key) {
-	if(key==' ') {
-		gui.toggleDraw();
-	} else if(key=='p' || key=='P') {
-		mustTakeScreenshot = true;
-	}
-}
-#endif
+
+

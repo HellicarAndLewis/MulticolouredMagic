@@ -36,6 +36,8 @@ public:
 	void touchMoved(ofTouchEventArgs &touch);
 	void touchUp(ofTouchEventArgs &touch);
 	
+	
+	
 	void windowResized(int w, int h);
 	
 	void audioReceived 	(float * input, int bufferSize, int nChannels); 
@@ -44,6 +46,7 @@ public:
 	void setupGui();
 	
 #ifndef TARGET_OF_IPHONE
+	
 	ofxTuioClient tuioClient;
     ofxOscSender sender;	
 	ofxSimpleGuiToo gui;	

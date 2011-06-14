@@ -48,6 +48,9 @@ public:
 	void mouseDragged(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
 	void keyPressed(int key);
+	void tuioTouchDown(ofTouchEventArgs &touch);
+	void tuioTouchMoved(ofTouchEventArgs &touch);
+	void tuioTouchUp(ofTouchEventArgs &touch);
 #else
 	virtual void gotFocus();
 	virtual void lostFocus();
