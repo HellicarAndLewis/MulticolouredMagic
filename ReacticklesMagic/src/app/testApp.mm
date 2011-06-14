@@ -1,6 +1,10 @@
 #include "testApp.h"
 #include "MagicShapes.h"
 #define BUTTON_PADDING 20
+#ifndef TARGET_OF_IPHONE
+#include "util.h"
+
+#endif
 //--------------------------------------------------------------
 void testApp::setup(){	
 
@@ -10,6 +14,7 @@ void testApp::setup(){
 	string dataRoot = path;
 	dataRoot += "/../data/";
 	ofSetDataPathRoot(dataRoot);
+	setupGui();
 #endif
 	
 	modeDisplay.setup();
@@ -56,6 +61,18 @@ void testApp::setup(){
 	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
 	aboutPage.setup();
 	settingsPage.setup();
+	
+#ifndef TARGET_OF_IPHONE
+	// set up kinect
+	kinect.setup();
+	
+	// set up tuio
+	tuioClient.connect(3333);
+	ofAddListener(ofEvents.touchDown, this, &testApp::touchDown);
+	ofAddListener(ofEvents.touchUp, this, &testApp::touchUp);
+	ofAddListener(ofEvents.touchMoved, this, &testApp::touchMoved);
+	
+#endif	
 }
 
 
@@ -78,7 +95,36 @@ void testApp::setupOrientation() {
 	currOrientation = UIDeviceOrientationPortrait;	
 #endif
 }
+#ifndef TARGET_OF_IPHONE
+void testApp::setupGui() {
+	
+	gui.addSlider("Threshold", kinect.threshold, 0, 255);
+	gui.addSlider("Far clipping", kinect.farClip, 0, 255);
+	gui.addSlider("blend amount", kinect.blendAmount, 0.01, 0.2);
+	
+	
+	gui.addTitle("SOUND");
+	gui.addSlider("Sound Meter", volume, 0, 1);
+	gui.addSlider("Sound input volume", gain, 0, 3);
+	gui.addSlider("Volume Sensitivity", volumeThreshold, 0, 1);
+	
 
+	gui.addTitle("KINECT");
+	gui.addToggle("Flip X", kinect.flipX);
+	gui.addToggle("Flip Y", kinect.flipY);
+	gui.addContent("Camera image", kinect.colorImage);
+	gui.addContent("Depth image", kinect.depthImage);
+	gui.addContent("Thresholded image", kinect.grayImage);
+	gui.addContent("Bg image", kinect.bgImage);
+	gui.addContent("Blobs", kinect.contourFinder);
+	
+	gui.setDraw(false);
+	gui.loadFromXML();
+	gui.setAutoSave(true);
+}
+
+
+#endif
 
 void testApp::updateOrientation() {
 #ifdef TARGET_OF_IPHONE
@@ -112,11 +158,15 @@ void testApp::setupGraphics() {
 void testApp::update(){
 	updateOrientation();
 	if(currentApp!=NULL) {
-		currentApp->volume = volume;
+		gain = Settings::getInstance()->settings["volume"];
+#ifndef TARGET_OF_IPHONE	
+		kinect.update(currentApp->needsKinect());
+#endif
+		currentApp->volume = volume*gain;
 		currentApp->volumeThreshold = volumeThreshold;
 		currentApp->update();
 	}
-	
+
 }
 
 //--------------------------------------------------------------
@@ -153,6 +203,17 @@ void testApp::draw(){
 		glPopMatrix();
 	}
 	
+#ifndef TARGET_OF_IPHONE
+	// do the screenshot
+	if(mustTakeScreenshot) {
+		screenshot.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
+		string filename = getDesktopPath() + "/Magic-" + dateTimeString()+ ".jpg";
+		
+		screenshot.saveImage(filename);
+		mustTakeScreenshot = false;
+	}
+	gui.draw(); 
+#endif
 }
 
 bool testApp::isReactickle(Reactickle *reactickle) {
@@ -229,63 +290,82 @@ void testApp::showSettings() {
 void testApp::exit(){
 #ifdef TARGET_OF_IPHONE
 	[[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+#else 
+	// stop the kinect
+	kinect.exit();
 #endif
 }
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs &touch){
-	if(currentApp!=&mainMenu) {
-		if(backButton.touchDown(touch.x, touch.y, touch.id)) {
-			return;
-			
-		} else {
-			if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
-				if(modeUpButton.touchDown(touch.x, touch.y, touch.id)) {
-					return;
-				} else if(modeDownButton.touchDown(touch.x, touch.y, touch.id)) {
-					return;
+#ifndef TARGET_OF_IPHONE
+	if(!gui.isOn()) 
+#endif
+	{
+		if(currentApp!=&mainMenu) {
+			if(backButton.touchDown(touch.x, touch.y, touch.id)) {
+				return;
+				
+			} else {
+				if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
+					if(modeUpButton.touchDown(touch.x, touch.y, touch.id)) {
+						return;
+					} else if(modeDownButton.touchDown(touch.x, touch.y, touch.id)) {
+						return;
+					}
+						
 				}
-					
 			}
 		}
+		currentApp->touchDown(touch.x, touch.y, touch.id);
+
 	}
-	currentApp->touchDown(touch.x, touch.y, touch.id);
 }
 
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch){
-	if(currentApp!=&mainMenu) {
-		if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
-			return;
-		} else {
-			if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
-				if(modeUpButton.touchMoved(touch.x, touch.y, touch.id)) {
-					return;
-				} else if(modeDownButton.touchMoved(touch.x, touch.y, touch.id)) {
-					return;
+#ifndef TARGET_OF_IPHONE
+	if(!gui.isOn()) 
+#endif
+	{
+		if(currentApp!=&mainMenu) {
+			if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
+				return;
+			} else {
+				if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
+					if(modeUpButton.touchMoved(touch.x, touch.y, touch.id)) {
+						return;
+					} else if(modeDownButton.touchMoved(touch.x, touch.y, touch.id)) {
+						return;
+					}
 				}
 			}
 		}
+		currentApp->touchMoved(touch.x, touch.y, touch.id);
 	}
-	currentApp->touchMoved(touch.x, touch.y, touch.id);
 }
 
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs &touch){
-	if(currentApp!=&mainMenu) {
-		if(backButton.touchUp(touch.x, touch.y, touch.id)) {
-			return;
-		}  else {
-			if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
-				if(modeUpButton.touchUp(touch.x, touch.y, touch.id)) {
-					return;
-				} else if(modeDownButton.touchUp(touch.x, touch.y, touch.id)) {
-					return;
+#ifndef TARGET_OF_IPHONE
+	if(!gui.isOn()) 
+#endif
+	{
+		if(currentApp!=&mainMenu) {
+			if(backButton.touchUp(touch.x, touch.y, touch.id)) {
+				return;
+			}  else {
+				if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
+					if(modeUpButton.touchUp(touch.x, touch.y, touch.id)) {
+						return;
+					} else if(modeDownButton.touchUp(touch.x, touch.y, touch.id)) {
+						return;
+					}
 				}
 			}
 		}
+		currentApp->touchUp(touch.x, touch.y, touch.id);
 	}
-	currentApp->touchUp(touch.x, touch.y, touch.id);
 }
 
 #ifndef TARGET_OF_IPHONE
@@ -319,15 +399,7 @@ void testApp::touchDoubleTap(ofTouchEventArgs &touch){
 
 }
 
-//--------------------------------------------------------------
-void testApp::lostFocus(){
 
-}
-
-//--------------------------------------------------------------
-void testApp::gotFocus(){
-
-}
 
 //--------------------------------------------------------------
 void testApp::gotMemoryWarning(){
@@ -351,14 +423,29 @@ void testApp::audioReceived( float * input, int bufferSize, int nChannels ) {
 	float max = 0;
 	
 	for (int i = 0; i < bufferSize; i++){
-		float val = gain*ABS(input[i]);
+		float val = ABS(input[i]);
 		if(val>max) max = val;
 	}
 	
 	if(max>volume) volume = max;
 	else volume *= 0.96;
 	
-	printf("volume: %f\n", volume);
-	//volume *= gain;
+	volume *= gain;
 	currentApp->audioReceived(input, bufferSize, nChannels);
 }
+#ifdef TARGET_OF_IPHONE	
+void testApp::gotFocus() {
+//	ofSoundStreamStart();
+}
+void testApp::lostFocus() {
+//	ofSoundStreamStop();
+}
+#else
+void testApp::keyPressed(int key) {
+	if(key==' ') {
+		gui.toggleDraw();
+	} else if(key=='p' || key=='P') {
+		mustTakeScreenshot = true;
+	}
+}
+#endif

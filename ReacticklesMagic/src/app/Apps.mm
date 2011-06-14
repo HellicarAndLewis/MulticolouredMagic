@@ -42,29 +42,36 @@ void MainMenu::initMenu() {
 	reactickleButtons.push_back(new ReactickleButton("change"));
 	reactickleButtons.push_back(new ReactickleButton("find"));
 	reactickleButtons.push_back(new ReactickleButton("trace"));
+	
 }
 
 void MainMenu::reactickleSelected(string name) {
 	printf("Starting %s!\n", name.c_str());
+	Reactickle *r = NULL;
 	if(name=="expand") {
-		ReactickleApp::instance->launchReactickle(new Expand());
+		r = new Expand();
 	} else if(name=="orbit") {
-		ReactickleApp::instance->launchReactickle(new Orbit());
+		r = new Orbit();
 	} else if(name=="flip") {
-		ReactickleApp::instance->launchReactickle(new Flip());
+		r = new Flip();
 	} else if(name=="follow") {
-		ReactickleApp::instance->launchReactickle(new Follow());
+		r = new Follow();
 	} else if(name=="trail") {
-		ReactickleApp::instance->launchReactickle(new Trail());
+		r = new Trail();
 	} else if(name=="grid") {
-		ReactickleApp::instance->launchReactickle(new Grid());
+		r = new Grid();
 	} else if(name=="cascade") {
-		ReactickleApp::instance->launchReactickle(new Cascade());
+		r = new Cascade();
 	} else if(name=="change") {
-		ReactickleApp::instance->launchReactickle(new Change());
+		r = new Change();
 	} else if(name=="find") {
-		ReactickleApp::instance->launchReactickle(new Find());
+		r = new Find();
 	} else if(name=="trace") {
-		ReactickleApp::instance->launchReactickle(new Trace());
+		r = new Trace();
+	}
+	if(r!=NULL) {
+		ReactickleApp::instance->launchReactickle(r);
+	} else {
+		printf("Unknown reactickle! '%s'\n", name.c_str());
 	}
 }

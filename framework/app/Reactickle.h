@@ -32,7 +32,7 @@
 class Reactickle: public Container {
 public:
 	
-	// this is called every time the app is restarted
+	// this is called every time the reactickle is restarted
 	virtual void start() {};
 	virtual void stop() {};
 	

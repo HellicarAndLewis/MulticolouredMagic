@@ -1,10 +1,25 @@
 #pragma once
 
 #include "ofMain.h"
+
 #ifdef TARGET_OF_IPHONE
+
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
+
+#else
+
+#include "ofxOpenCv.h"
+#include "ofxSimpleGuiToo.h"
+#include "TuioKinect.h"
+#include "ofxTuioClient.h"
+#include "ofxOsc.h"
+#define HOST "localhost"
+#define PORT 12345
+
 #endif
+
+
 #include "constants.h"
 #include "Reactickle.h"
 #include "MainMenu.h"
@@ -32,12 +47,15 @@ public:
 	void mousePressed(int x, int y, int button);
 	void mouseDragged(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
+	void keyPressed(int key);
+#else
+	virtual void gotFocus();
+	virtual void lostFocus();
 #endif
 	
 	void audioReceived( float * input, int bufferSize, int nChannels );
 	
-	void lostFocus();
-	void gotFocus();
+
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 
@@ -73,6 +91,15 @@ private:
 	void updateOrientation();
 
 	ModeDisplay modeDisplay;
+#ifndef TARGET_OF_IPHONE
+	ofxTuioClient tuioClient;
+    ofxOscSender sender;	
+	ofxSimpleGuiToo gui;	
+	TuioKinect kinect;
+	void setupGui();
+	bool mustTakeScreenshot;
+	ofImage screenshot;
+#endif
 };
 
 
