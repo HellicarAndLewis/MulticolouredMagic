@@ -22,6 +22,10 @@ public:
 	virtual bool touchDown(float x, float y, int touchId);
 	virtual bool touchMoved(float x, float y, int touchId);
 	virtual bool touchUp(float x, float y, int touchId);
+    
+    int getNumModes() {
+		return 3;
+	}
 private:
 	void spawn(ofVec2f pos);
 	void collision(TrailParticle &bubble1, TrailParticle &bubble2);

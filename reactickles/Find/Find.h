@@ -80,6 +80,10 @@ class Find: public Reactickle {
 	bool touchUp(float x, float y, int touchId){
         return true;
     }
+    
+    int getNumModes() {
+		return 3;
+	}
 	
 	msaColor findColour;
     ofVec2f posOfShape;

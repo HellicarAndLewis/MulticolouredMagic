@@ -48,6 +48,10 @@ class Change: public Reactickle {
 		noiseColour.setGL();
 		ofRect(0, 0, ofGetWidth(), ofGetHeight());
 	}
+    
+    int getNumModes() {
+		return 3;
+	}
 	
 	float timeOfLastNewCircle;
 	int colourPosition;

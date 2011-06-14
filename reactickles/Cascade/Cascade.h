@@ -149,6 +149,11 @@ public:
 			lastSample = input[i];
 		}
 	}
+    
+    int getNumModes() {
+		return 3;
+	}
+    
 	float clapThreshold;
 	float magnitude;
 	float lastClap;

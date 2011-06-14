@@ -148,6 +148,10 @@ public:
 		sender.sendMessage( m );
 #endif
     }
+    
+    int getNumModes() {
+		return 3;
+	}
 	
 	float timeOfLastInteraction;
     float bigShapeRadius;

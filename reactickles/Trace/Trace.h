@@ -79,6 +79,10 @@ class Trace: public Reactickle {
         
         positionInTrace %= maximumLengthOfTrace;
     }
+    
+    int getNumModes() {
+		return 3;
+	}
 	
     vector<TraceShape> traces;
     

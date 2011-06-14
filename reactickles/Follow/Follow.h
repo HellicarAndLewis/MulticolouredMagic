@@ -33,6 +33,10 @@ public:
 	virtual bool touchMoved(float x, float y, int touchId);
 	virtual bool touchUp(float x, float y, int touchId);
 	void collision(FollowParticle &p1, FollowParticle &p2);
+    
+    int getNumModes() {
+		return 3;
+	}
 private:
 	vector<FollowTouch> touches;
 	FollowParticle particles[NUM_SWARM_PARTICLES];

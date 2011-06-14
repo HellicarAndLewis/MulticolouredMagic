@@ -192,6 +192,10 @@ public:
             currentShapeType = 0;
         }
     }
+    
+    int getNumModes() {
+		return 3;
+	}
 	
 	float timeOfLastInteraction;
     int numberOfShapes;

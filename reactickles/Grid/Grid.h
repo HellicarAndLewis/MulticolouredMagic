@@ -95,6 +95,10 @@ class Grid: public Reactickle {
 			}
 		}
 	}
+    
+    int getNumModes() {
+		return 3;
+	}
 	
 	int gridWidth;
 	int gridHeight;
