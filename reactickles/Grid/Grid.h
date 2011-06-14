@@ -27,17 +27,28 @@ class Grid: public Reactickle {
 		
 		int numberOfElements = gridWidth*gridHeight;
 		
-		if((volume > 0.9f) && (timeSinceLastCircle > 0.1f )){
-			
-//			if(++positionInGrid == gridWidth*gridHeight){
-//				positionInGrid = 0;
-//			}
-			
+		if((volume > volumeThreshold) && (timeSinceLastCircle > 0.1f )){			
 			positionInGrid++;
 			
 			if(positionInGrid > numberOfElements){
 				positionInGrid = 0;
 			}
+            
+//            if(mode>0) {
+//                if(mode == 1){
+//                    if (currShapeId == MAGIC_CIRCLE){
+//                        currShapeId = MAGIC_CROSS;
+//                    }else{
+//                        currShapeId = MAGIC_CIRCLE;
+//                    }
+//                }else{
+//                    currShapeId++;
+//                    currShapeId %= NUM_MAGIC_SHAPES;                
+//                }
+//            }else{
+//                currShapeId = MAGIC_CIRCLE;
+//            }            
+            
 			
 			timeOfLastNewCircle = timeNow;
 		}
@@ -48,10 +59,23 @@ class Grid: public Reactickle {
 		int shapeId = MAGIC_CIRCLE;
 		
 		ofSetHexColor(0xFFFFFF);
+        
 		for(int i=0; i< gridHeight; i++){
 			for(int j = 0; j < gridWidth; j++){
-				shapeId++;
-				shapeId %= NUM_MAGIC_SHAPES;
+                
+                if(mode == 0){
+                    //not much
+                }else if (mode == 1) {
+                    if (shapeId == MAGIC_CIRCLE){
+                        shapeId = MAGIC_CROSS;
+                    }else{
+                        shapeId = MAGIC_CIRCLE;
+                    }
+                }else{
+                    shapeId++;
+                    shapeId %= NUM_MAGIC_SHAPES;
+                }
+                
 				int positionNow = i*gridWidth + j;
 				
 				int topLeftX = j*gridElementWidth;
@@ -61,15 +85,11 @@ class Grid: public Reactickle {
 				int centreY = topLeftY + gridElementHeight/2;
 				
 				if(positionNow < positionInGrid){
-					// draw a circle
-					if(mode!=0) ofSetHexColor(0xFF0000);
-					if(mode!=2) ofCircle(centreX, centreY, gridElementWidth/2);
-					else drawShape(shapeId, ofVec2f(centreX, centreY), gridElementWidth*1.5/2.f);
+                    drawShape(shapeId, ofVec2f(centreX, centreY), gridElementWidth*1.5/2.f);
 				}else{
 					// draw a square
 					float border = 10.f;
-					
-					if(mode!=0) ofSetHexColor(0x1100dd);
+                    
 					ofRect(topLeftX+border/2.f, topLeftY+border/2.f, gridElementWidth-border, gridElementHeight-border);
 				}
 			}

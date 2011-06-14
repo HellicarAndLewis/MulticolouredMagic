@@ -6,6 +6,7 @@
  *
  */
 #include "Reactickle.h"
+
 class FlipTouch: public ofVec2f {
 public:
 	FlipTouch(float x, float y, int touchId) {
@@ -15,6 +16,7 @@ public:
 	}
 	int touchId;
 };
+
 class Flip: public Reactickle {
 public:
 	

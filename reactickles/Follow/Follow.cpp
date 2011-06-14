@@ -12,13 +12,20 @@ void Follow::start() {
 	currShapeId = 0;
 }
 
-
-
 void Follow::clap() {
 	if(mode>0) {
-		currShapeId++;
-		currShapeId %= NUM_MAGIC_SHAPES;
+        if(mode == 1){
+            if (currShapeId == MAGIC_CIRCLE){
+                currShapeId = MAGIC_CROSS;
+            }else{
+                currShapeId = MAGIC_CIRCLE;
+            }
+        }else{
+            currShapeId++;
+            currShapeId %= NUM_MAGIC_SHAPES;                
+        }
 	}
+    
 	if(mode==1 && numParticles+1<NUM_SWARM_PARTICLES) {
 		
 		particles[numParticles++].spawn(ofRandomWidth(), ofRandomHeight(), mode, currShapeId);

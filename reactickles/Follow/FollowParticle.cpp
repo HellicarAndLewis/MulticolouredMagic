@@ -42,10 +42,7 @@ void FollowParticle::spawn(float x, float y, int mode, int shape) {
 }
 #define MAX_SPEED 8
 void FollowParticle::update() {
-	
-	
-	
-	
+		
 	pos += vel;
 	vel += ofVec2f(
 				   ofRandom(-0.2, 0.2),

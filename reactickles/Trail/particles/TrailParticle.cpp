@@ -8,5 +8,5 @@
 
 
 #include "TrailParticle.h"
-ofImage TrailParticle::img;
+
 bool TrailParticle::inited = false;

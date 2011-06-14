@@ -13,8 +13,8 @@ class Change: public Reactickle {
 	
 	void setup() {
 		
-		noiseColour.setHSV(ofRandom(0.f,360.f), 1, 1);
-		
+//		noiseColour.setHSV(ofRandom(0.f,360.f), 1, 1);
+		noiseColour.set(0,0,0);
 	}
 	
 	void update() {
@@ -22,9 +22,23 @@ class Change: public Reactickle {
 		
 		float timeSinceLastCircle = timeNow - timeOfLastNewCircle;
 		
-		if((volume > 0.9f) && (timeSinceLastCircle > 0.1f )) {
+        if((volume > volumeThreshold) && (timeSinceLastCircle > 0.3f )){	
 			
-			noiseColour.setHSV(ofRandom(0,360), 1, 1);
+            if(mode == 0){
+                if(noiseColour == msaColor(255,255,255)){
+                    noiseColour.set(0,0,0);
+                }else{
+                    noiseColour.set(255,255,255);
+                }
+            }else if(mode == 1){
+                if(noiseColour == msaColor(0,0,0)){
+                     noiseColour.setHSV(ofRandom(0,360), 1, 1);
+                }else{
+                    noiseColour.set(0,0,0);
+                }               
+            }else{
+                noiseColour.setHSV(ofRandom(0,360), 1, 1);                
+            }
 			
 			timeOfLastNewCircle = timeNow;
 		}

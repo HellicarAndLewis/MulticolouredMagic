@@ -15,6 +15,7 @@
 #include "Flip.h"
 #include "Follow.h"
 #include "Trail.h"
+#include "Grid.h"
 #include "Cascade.h"
 #include "Change.h"
 #include "Find.h"
@@ -27,6 +28,7 @@ void MagicApp::initApps() {
     apps.push_back(new Flip());
     apps.push_back(new Follow());
     apps.push_back(new Trail());
+    apps.push_back(new Grid());
     apps.push_back(new Cascade());
     apps.push_back(new Change());
     apps.push_back(new Find());

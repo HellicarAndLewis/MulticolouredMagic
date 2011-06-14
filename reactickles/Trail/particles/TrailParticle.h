@@ -8,6 +8,8 @@
 #pragma once
 
 #include "ofMain.h"
+#include "MagicShapes.h"
+
 #define BUBBLE2_MAX_AGE 2
 
 class TrailParticle{
@@ -38,13 +40,11 @@ public:
 		);
 		radius = radiusBase + (radiusBase *0.4)*sin(seed+ofGetElapsedTimef()*seed);
 	}
-	void draw() {
-//		printf("Bubble\n");
+	void draw(int shapeType) {
 		ofFill();
 		ofSetColor(color.r, color.g, color.b, ofMap(ofGetElapsedTimef() - birthday, 0, BUBBLE2_MAX_AGE, 255, 0, true));
-		ofCircle(pos.x, pos.y, radius);
-//		ofSetColor(color);
-//		img.draw(pos.x, pos.y, radius*2, radius*2);
+        drawShape(shapeType, pos, radius);
+		//ofCircle(pos.x, pos.y, radius);
 	}
 	
 	
@@ -53,12 +53,7 @@ public:
 	ofVec2f pos;
 	ofVec2f vel;
 	
-	static ofImage img;
 	static void start() {
-		if(!img.loadImage("bubble.png")) {
-			printf("Couldn't load image\n");
-		}
-		img.setAnchorPercent(0.5, 0.5);
 		inited = true;
 	}
 	static bool inited;

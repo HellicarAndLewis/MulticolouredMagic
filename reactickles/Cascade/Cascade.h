@@ -6,6 +6,7 @@
  */
 #include "Reactickle.h"
 #include "msaColor.h"
+#include "MagicShapes.h"
 
 class CascadeParticle {
 public:
@@ -14,18 +15,18 @@ public:
 	float birth;
 	float age;
 	ofColor color;
-	ofImage *circleImage;
-	
-	CascadeParticle(float x, float y, float magnitude, ofColor _color, ofImage *_circleImage) {
+    int shape;
+    
+	CascadeParticle(float x, float y, float magnitude, ofColor _color, int _shape){
 		pos.x = x;
 		pos.y = y;
-		circleImage = _circleImage;
 		color = _color;
 		float angle = ofRandom(0, PI*2);
 		float speed = magnitude*5.f + ofRandom(-2, 3);
 		vel.x = speed*cos(angle);
 		vel.y = speed*sin(angle);
 		birth = ofGetElapsedTimef();
+        shape = _shape;
 	}
 	
 	void update() {
@@ -37,14 +38,21 @@ public:
 	
 	void draw() {
 		
+//		ofSetColor(color.r*255, color.g*255, color.b*255, age*255);
+//		float radius = ofMap(age, 1, 0.6, 50, 0, true);
+//		circleImage->draw(pos.x, pos.y, radius*4, radius*4);
+//		//ofCircle(pos.x, pos.y, radius);
+//		ofSetColor(color.r*255, color.g*255, color.b*255, ofMap(age, 1, 0.6, 100, 0, true));
+//		//ofCircle(pos.x, pos.y, ofMap(age, 1, 0.9, 0, 100, false));
+//		radius = ofMap(age, 1, 0.8, 0, 100, false);
+//		circleImage->draw(pos.x, pos.y, radius*4, radius*4);
+        
 		ofSetColor(color.r*255, color.g*255, color.b*255, age*255);
 		float radius = ofMap(age, 1, 0.6, 50, 0, true);
-		circleImage->draw(pos.x, pos.y, radius*4, radius*4);
-		//ofCircle(pos.x, pos.y, radius);
+        drawShape(shape, pos, radius*4);
 		ofSetColor(color.r*255, color.g*255, color.b*255, ofMap(age, 1, 0.6, 100, 0, true));
-		//ofCircle(pos.x, pos.y, ofMap(age, 1, 0.9, 0, 100, false));
 		radius = ofMap(age, 1, 0.8, 0, 100, false);
-		circleImage->draw(pos.x, pos.y, radius*4, radius*4);
+		drawShape(shape, pos, radius*4);        
 	}
 	bool isDead() {
 		return age<0.6;
@@ -56,71 +64,49 @@ public:
 class Cascade: public Reactickle {
 public:
 
-	ofImage img;
 	void start() {
 		ofSetCircleResolution(16);
-	}
-	
+        currShapeId = 0;
+    }
 	
 	void setup() {
-		img.loadImage("bang.png");
-		img.setAnchorPercent(0.5, 0.5);
 		lastClap = 0;
 		clapping = false;
-		
-		
-		/*gui->saveToXML();
-		gui->addPage("ClapBang");
-		gui->addSlider("ClapThreshold",clapThreshold, 0, 1);
-		gui->loadFromXML();*/
+        currShapeId = 0;
 	}
 	
-	/*
-	ofPoint findBiggestBlob() {
-		contourFinder.findContours(*greyDiff, 20, (340*240)/3, 10, false);
-		
-		// default if there's no blobs
-		if(contourFinder.nBlobs==0) {
-			float x = ofRandom(ofGetWidth()/3, 2.f*ofGetWidth()/3);
-			float y = ofRandom(ofGetHeight()/6, 2.f*ofGetHeight()/3);
-			return ofPoint(x, y);
-		}
-		
-		float maxArea = 0;
-		int maxI = 0;
-		for (int i = 0; i < contourFinder.nBlobs; i++) {
-			if(contourFinder.blobs[i].area>maxArea) {
-				maxArea = contourFinder.blobs[i].area;
-				maxI = i;
-			}
-		}
-		//printf("%f %f\n", contourFinder.blobs[maxI].centroid.x, contourFinder.blobs[maxI].centroid.y);
-		ofPoint src = contourFinder.blobs[maxI].centroid;
-		src.x *= (float)ofGetWidth()/(float)VISION_WIDTH;
-		src.y *= (float)ofGetHeight()/(float)VISION_HEIGHT;
-		return src;
-	}*/
 	void update() {
 		clapThreshold = volumeThreshold;
 		if(clapping) {
-			
-			
-			ofPoint clapPoint = ofPoint(ofRandomWidth(), ofRandomHeight());//findBiggestBlob();
-			
+            
+            if(mode>0) {
+                if(mode == 1){
+                    if (currShapeId == MAGIC_CIRCLE){
+                        currShapeId = MAGIC_CROSS;
+                    }else{
+                        currShapeId = MAGIC_CIRCLE;
+                    }
+                }else{
+                    currShapeId++;
+                    currShapeId %= NUM_MAGIC_SHAPES;                
+                }
+            }
+            
+			ofPoint clapPoint = ofPoint(ofRandomWidth(), ofRandomHeight());
 			
 			msaColor color;
 			color.setHSV(ofRandom(0, 360), 1, 1);
-
-
+            
 			int numParticles = ofRandom(12, 20);
 			
 			for(int i = 0; i < numParticles; i++) {
 				if(particles.size()<100) {
-					particles.push_back(CascadeParticle(clapPoint.x, clapPoint.y, volume, color, &img));
+					particles.push_back(CascadeParticle(clapPoint.x, clapPoint.y, volume, color, currShapeId));
 				}
 			}
 			clapping = false;
 		}
+                                        
 		for(int i = 0; i < particles.size(); i++) {
 			particles[i].update();
 			if(particles[i].isDead()) {
@@ -168,4 +154,5 @@ public:
 	float lastClap;
 	bool clapping;
 	vector<CascadeParticle> particles;
+    int currShapeId;
 };

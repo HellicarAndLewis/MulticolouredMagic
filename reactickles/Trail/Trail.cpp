@@ -8,7 +8,34 @@
 
 #include "Trail.h"
 
+void Trail::start() {
+	currShapeId = MAGIC_CIRCLE;
+}
+
 void Trail::update() {
+    float timeNow = ofGetElapsedTimef();
+	
+	float timeSinceLastInteraction = timeNow - timeOfLastInteraction;        
+	
+	if((volume > volumeThreshold) && (timeSinceLastInteraction > 0.3f )){
+        if(mode>0) {
+            if(mode == 1){
+                if (currShapeId == MAGIC_CIRCLE){
+                    currShapeId = MAGIC_CROSS;
+                }else{
+                    currShapeId = MAGIC_CIRCLE;
+                }
+            }else{
+                currShapeId++;
+                currShapeId %= NUM_MAGIC_SHAPES;                
+            }
+        }else{
+            currShapeId = MAGIC_CIRCLE;
+        }
+                
+		timeOfLastInteraction = timeNow;
+	}
+    
 	for(int i = 0; i < particles.size(); i++) particles[i].update();
 	
 	// check for collisions
@@ -47,7 +74,7 @@ void Trail::draw() {
 		ofBackground(0,0,0);
 	ofClear(0, 0, 0, 0);
 	
-	for(int i = 0; i < particles.size(); i++) particles[i].draw();
+	for(int i = 0; i < particles.size(); i++) particles[i].draw(currShapeId);
 }
 
 

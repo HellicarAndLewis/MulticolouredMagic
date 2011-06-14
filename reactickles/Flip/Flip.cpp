@@ -29,18 +29,10 @@ void Flip::draw() {
 	
 	ofSetHexColor(color2);
 	ofRect(ofGetWidth()/2, 0, ofGetWidth()/2, ofGetHeight());
-
-	
-	
-//	for(int i = 0; i < pos.size(); i++) {
-//		if((pos.size()-i)%2==1) ofSetHexColor(color1);
-//		else ofSetHexColor(color2);
 	
 	ofSetHexColor(0xFFFFFF);
 	drawShape(currShapeId, pos.back(), 400);
-//	ofCircle(pos.back().x, pos.back().y, 200);
 
-	
 	while(pos.size()>100) {
 		pos.pop_front();
 	}
@@ -49,17 +41,25 @@ void Flip::draw() {
 void Flip::update() {
 	if(mode==0) {
 		currShapeId = MAGIC_CIRCLE;
-	} else {
-	
+	} else {        
 		float w2 = ofGetWidth()/2;
 		if((lastPos.x<w2 && pos.back().x>w2) || (lastPos.x>w2 && pos.back().x<w2)) {
-			currShapeId++;
-			currShapeId %= NUM_MAGIC_SHAPES;
+            if(mode == 1){
+                if (currShapeId == MAGIC_CIRCLE){
+                    currShapeId = MAGIC_CROSS;
+                }else{
+                    currShapeId = MAGIC_CIRCLE;
+                }
+            }else{
+                currShapeId++;
+                currShapeId %= NUM_MAGIC_SHAPES;                
+            }
 		}
 		
 		lastPos = pos.back();
 	}
 }
+
 bool Flip::touchDown(float x, float y, int touchId) {
 	touches.push_back(FlipTouch(x, y, touchId));
 	ofVec2f lastPos;

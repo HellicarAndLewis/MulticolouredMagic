@@ -9,8 +9,10 @@
 #include "TrailParticle.h"
 #define SPAWN_RATE 1
 #define MAX_NUM_PARTICLES 200
+
 class Trail: public Reactickle {
 public:
+    void start();
 	void update();
 	void draw();
 
@@ -24,4 +26,6 @@ private:
 	void spawn(ofVec2f pos);
 	void collision(TrailParticle &bubble1, TrailParticle &bubble2);
 	vector<TrailParticle> particles;
+	int currShapeId;
+    float timeOfLastInteraction;
 };
