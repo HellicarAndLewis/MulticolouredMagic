@@ -3,7 +3,14 @@
 #define BUTTON_PADDING 20
 //--------------------------------------------------------------
 void testApp::setup(){	
-	
+
+#ifndef TARGET_OF_IPHONE
+	char path[512];
+	getcwd(path, 512);
+	string dataRoot = path;
+	dataRoot += "/../data/";
+	ofSetDataPathRoot(dataRoot);
+#endif
 	
 	modeDisplay.setup();
 	gain = 1;
