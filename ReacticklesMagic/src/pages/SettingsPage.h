@@ -27,6 +27,6 @@ public:
 	ImageObject colourPickerTitle;
 	ImageObject logo;
 	
-	
+	void draw();
 	
 };

@@ -53,7 +53,7 @@ void testApp::setup(){
 	modeUpButton.setHoldMode(true);
 	modeDownButton.setHoldMode(true);
 	
-	ofSoundStreamSetup(0, 1, this, 22050, 1024, 1);
+	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
 	aboutPage.setup();
 	settingsPage.setup();
 }
@@ -358,6 +358,7 @@ void testApp::audioReceived( float * input, int bufferSize, int nChannels ) {
 	if(max>volume) volume = max;
 	else volume *= 0.96;
 	
+	printf("volume: %f\n", volume);
 	//volume *= gain;
 	currentApp->audioReceived(input, bufferSize, nChannels);
 }

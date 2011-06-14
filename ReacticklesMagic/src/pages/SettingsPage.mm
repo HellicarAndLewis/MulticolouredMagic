@@ -65,3 +65,8 @@ void SettingsPage::buttonPressed(string name) {
 }
 
 	   
+void SettingsPage::draw() {
+	Reactickle::draw();
+	ofSetHexColor(0xFF0000);
+	ofRect(0, 0, ofMap(volume, 0, 1, 0, ofGetWidth()), 20);
+}
