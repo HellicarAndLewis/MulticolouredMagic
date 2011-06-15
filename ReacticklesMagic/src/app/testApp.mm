@@ -9,11 +9,11 @@
 void testApp::setup(){	
 
 #ifndef TARGET_OF_IPHONE
-	char path[512];
+/*	char path[512];
 	getcwd(path, 512);
 	string dataRoot = path;
 	dataRoot += "/../data/";
-	ofSetDataPathRoot(dataRoot);
+	ofSetDataPathRoot(dataRoot);*/
 	setupGui();
 #endif
 	
@@ -238,8 +238,9 @@ void testApp::switchReactickle(Reactickle *reactickle) {
 	} else {
 		backButton.setHoldMode(false); // let the back button just work normally
 	}
+	
 	currentApp->start();
-
+	currentApp->setMode(0);
 }
 
 void testApp::buttonPressed(string name) {

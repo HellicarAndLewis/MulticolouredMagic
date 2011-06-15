@@ -122,6 +122,42 @@ void testApp::keyPressed(int key) {
 		gui.toggleDraw();
 	} else if(key=='p' || key=='P') {
 		mustTakeScreenshot = true;
+	} else if(key=='q' || key=='w' || key=='e' || key=='Q' || key=='W' || key=='E') {
+        
+        if(key=='q' || key=='Q') {
+			
+			if(isReactickle(currentApp)) {
+				currentApp->setMode(0);
+				modeDisplay.setMode(0);
+			}
+//            ofxOscMessage m;
+ //           m.setAddress( "/modechange" );
+//            m.addIntArg(0);
+//            sender.sendMessage(m);
+            
+        } else if(key=='w' || key=='W') {
+            if(isReactickle(currentApp)) {
+				currentApp->setMode(1);
+				modeDisplay.setMode(1);
+			}
+            
+//            ofxOscMessage m;
+//            m.setAddress( "/modechange" );
+//            m.addIntArg(1);
+//            sender.sendMessage(m);
+            
+        } else if(key=='e' || key=='E') {
+            if(isReactickle(currentApp)) {
+				currentApp->setMode(2);
+				modeDisplay.setMode(2);
+			}
+            
+//            ofxOscMessage m;
+//            m.setAddress( "/modechange" );
+//            m.addIntArg(2);
+//            sender.sendMessage(m);
+        }
+        
 	}
 }
 

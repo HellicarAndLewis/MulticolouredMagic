@@ -43,7 +43,7 @@ public:
 	void draw(int shapeType) {
 		ofFill();
 		ofSetColor(color.r, color.g, color.b, ofMap(ofGetElapsedTimef() - birthday, 0, BUBBLE2_MAX_AGE, 255, 0, true));
-        drawShape(shapeType, pos, radius);
+        drawShape(shapeType, pos, radius*2);
 		//ofCircle(pos.x, pos.y, radius);
 	}
 	

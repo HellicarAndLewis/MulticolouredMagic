@@ -30,6 +30,8 @@ void ReactickleButton::draw() {
 		ofSetHexColor(0xFFFFFF);
 	}
 	screenshot->draw(x, y-20);
+	ofSetHexColor(0xFF0000);
+	ofDrawBitmapString(name, x, y);
 }
 
 void ReactickleButton::setListener(ReactickleButtonListener *listener) {

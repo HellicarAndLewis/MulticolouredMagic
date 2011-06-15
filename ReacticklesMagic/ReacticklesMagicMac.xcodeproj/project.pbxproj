@@ -94,15 +94,11 @@
 		EA20B698136705160038E922 /* UdpReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65C136705160038E922 /* UdpReceiver.cpp */; };
 		EA20B699136705160038E922 /* UdpSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65E136705160038E922 /* UdpSender.cpp */; };
 		EA6210E913A64A8A00A88AF0 /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210D613A64A8A00A88AF0 /* Apps.mm */; };
-		EA6210EA13A64A8A00A88AF0 /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210D813A64A8A00A88AF0 /* ReactickleApp.mm */; };
 		EA6210EB13A64A8A00A88AF0 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210DA13A64A8A00A88AF0 /* testApp.mm */; };
 		EA6210EC13A64A8A00A88AF0 /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6210DD13A64A8A00A88AF0 /* ReactickleButton.cpp */; };
-		EA6210ED13A64A8A00A88AF0 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210DF13A64A8A00A88AF0 /* main.mm */; };
 		EA6210EE13A64A8A00A88AF0 /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E413A64A8A00A88AF0 /* AboutPage.mm */; };
 		EA6210EF13A64A8A00A88AF0 /* MainMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E613A64A8A00A88AF0 /* MainMenu.mm */; };
 		EA6210F013A64A8A00A88AF0 /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E813A64A8A00A88AF0 /* SettingsPage.mm */; };
-		EA62111713A64C4400A88AF0 /* MagicApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6210F813A64C4400A88AF0 /* MagicApp.cpp */; };
-		EA62111813A64C4400A88AF0 /* MagicAppEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6210FA13A64C4400A88AF0 /* MagicAppEvents.cpp */; };
 		EA62111913A64C4400A88AF0 /* MagicShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6210FE13A64C4400A88AF0 /* MagicShapes.cpp */; };
 		EA62111A13A64C4400A88AF0 /* ImageCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62110A13A64C4400A88AF0 /* ImageCache.cpp */; };
 		EA62111B13A64C4400A88AF0 /* Properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62110C13A64C4400A88AF0 /* Properties.cpp */; };
@@ -111,6 +107,7 @@
 		EA62111E13A64C4400A88AF0 /* KinectOrCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62111313A64C4400A88AF0 /* KinectOrCamera.cpp */; };
 		EA62111F13A64C4400A88AF0 /* TuioKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62111513A64C4400A88AF0 /* TuioKinect.cpp */; };
 		EA6212B113A6700300A88AF0 /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6212B013A6700300A88AF0 /* ColorPicker.cpp */; };
+		EAD4933D13A8B52500D312FE /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4933C13A8B52500D312FE /* ReactickleApp.mm */; };
 		EAD6E1671353336400075A87 /* opencv_calib3d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E1181353336400075A87 /* opencv_calib3d.a */; };
 		EAD6E1681353336400075A87 /* opencv_contrib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E1191353336400075A87 /* opencv_contrib.a */; };
 		EAD6E1691353336400075A87 /* opencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E11A1353336400075A87 /* opencv_core.a */; };
@@ -178,7 +175,7 @@
 		EAD6E2511353353100075A87 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E24B1353353100075A87 /* tinyxmlparser.cpp */; };
 		EAD6E2521353353100075A87 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E24D1353353100075A87 /* ofxXmlSettings.cpp */; };
 		EAD6E58E135345AD00075A87 /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E58D135345AD00075A87 /* osc.a */; };
-		EAE2AE0C13A7857A002B789C /* testAppEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE2AE0B13A7857A002B789C /* testAppEvents.cpp */; };
+		EAE2AE0C13A7857A002B789C /* testAppEvents.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAE2AE0B13A7857A002B789C /* testAppEvents.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -410,14 +407,10 @@
 		EA20B65E136705160038E922 /* UdpSender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UdpSender.cpp; sourceTree = "<group>"; };
 		EA20B65F136705160038E922 /* UdpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpSender.h; sourceTree = "<group>"; };
 		EA6210D613A64A8A00A88AF0 /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
-		EA6210D713A64A8A00A88AF0 /* ReactickleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleApp.h; sourceTree = "<group>"; };
-		EA6210D813A64A8A00A88AF0 /* ReactickleApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReactickleApp.mm; sourceTree = "<group>"; };
 		EA6210D913A64A8A00A88AF0 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		EA6210DA13A64A8A00A88AF0 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
-		EA6210DB13A64A8A00A88AF0 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		EA6210DD13A64A8A00A88AF0 /* ReactickleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleButton.cpp; sourceTree = "<group>"; };
 		EA6210DE13A64A8A00A88AF0 /* ReactickleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleButton.h; sourceTree = "<group>"; };
-		EA6210DF13A64A8A00A88AF0 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		EA6210E113A64A8A00A88AF0 /* BrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSlider.h; sourceTree = "<group>"; };
 		EA6210E213A64A8A00A88AF0 /* VolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
 		EA6210E313A64A8A00A88AF0 /* AboutPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPage.h; sourceTree = "<group>"; };
@@ -426,9 +419,6 @@
 		EA6210E613A64A8A00A88AF0 /* MainMenu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainMenu.mm; sourceTree = "<group>"; };
 		EA6210E713A64A8A00A88AF0 /* SettingsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsPage.h; sourceTree = "<group>"; };
 		EA6210E813A64A8A00A88AF0 /* SettingsPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsPage.mm; sourceTree = "<group>"; };
-		EA6210F813A64C4400A88AF0 /* MagicApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MagicApp.cpp; sourceTree = "<group>"; };
-		EA6210F913A64C4400A88AF0 /* MagicApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicApp.h; sourceTree = "<group>"; };
-		EA6210FA13A64C4400A88AF0 /* MagicAppEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MagicAppEvents.cpp; sourceTree = "<group>"; };
 		EA6210FB13A64C4400A88AF0 /* Reactickle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reactickle.h; sourceTree = "<group>"; };
 		EA6210FD13A64C4400A88AF0 /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
 		EA6210FE13A64C4400A88AF0 /* MagicShapes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MagicShapes.cpp; sourceTree = "<group>"; };
@@ -455,6 +445,8 @@
 		EA62111613A64C4400A88AF0 /* TuioKinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioKinect.h; sourceTree = "<group>"; };
 		EA6211ED13A661B200A88AF0 /* ModeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDisplay.h; sourceTree = "<group>"; };
 		EA6212B013A6700300A88AF0 /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
+		EAD4933B13A8B52500D312FE /* ReactickleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleApp.h; sourceTree = "<group>"; };
+		EAD4933C13A8B52500D312FE /* ReactickleApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReactickleApp.mm; sourceTree = "<group>"; };
 		EAD6E0C21353336400075A87 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		EAD6E0C71353336400075A87 /* cv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cv.h; sourceTree = "<group>"; };
 		EAD6E0C81353336400075A87 /* cv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cv.hpp; sourceTree = "<group>"; };
@@ -603,7 +595,7 @@
 		EAD6E24D1353353100075A87 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		EAD6E24E1353353100075A87 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		EAD6E58D135345AD00075A87 /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
-		EAE2AE0B13A7857A002B789C /* testAppEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testAppEvents.cpp; sourceTree = "<group>"; };
+		EAE2AE0B13A7857A002B789C /* testAppEvents.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testAppEvents.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1317,9 +1309,7 @@
 			isa = PBXGroup;
 			children = (
 				EA6210D513A64A8A00A88AF0 /* app */,
-				EA6210DB13A64A8A00A88AF0 /* constants.h */,
 				EA6210DC13A64A8A00A88AF0 /* gui */,
-				EA6210DF13A64A8A00A88AF0 /* main.mm */,
 				EA6210E013A64A8A00A88AF0 /* pages */,
 			);
 			path = src;
@@ -1329,11 +1319,9 @@
 			isa = PBXGroup;
 			children = (
 				EA6210D613A64A8A00A88AF0 /* Apps.mm */,
-				EA6210D713A64A8A00A88AF0 /* ReactickleApp.h */,
-				EA6210D813A64A8A00A88AF0 /* ReactickleApp.mm */,
 				EA6210D913A64A8A00A88AF0 /* testApp.h */,
 				EA6210DA13A64A8A00A88AF0 /* testApp.mm */,
-				EAE2AE0B13A7857A002B789C /* testAppEvents.cpp */,
+				EAE2AE0B13A7857A002B789C /* testAppEvents.mm */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -1379,9 +1367,8 @@
 		EA6210F713A64C4400A88AF0 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				EA6210F813A64C4400A88AF0 /* MagicApp.cpp */,
-				EA6210F913A64C4400A88AF0 /* MagicApp.h */,
-				EA6210FA13A64C4400A88AF0 /* MagicAppEvents.cpp */,
+				EAD4933B13A8B52500D312FE /* ReactickleApp.h */,
+				EAD4933C13A8B52500D312FE /* ReactickleApp.mm */,
 				EA6210FB13A64C4400A88AF0 /* Reactickle.h */,
 			);
 			path = app;
@@ -1985,15 +1972,11 @@
 				5D1CD57613A64162003A5232 /* TrailParticle.cpp in Sources */,
 				5D1CD57713A64162003A5232 /* Trail.cpp in Sources */,
 				EA6210E913A64A8A00A88AF0 /* Apps.mm in Sources */,
-				EA6210EA13A64A8A00A88AF0 /* ReactickleApp.mm in Sources */,
 				EA6210EB13A64A8A00A88AF0 /* testApp.mm in Sources */,
 				EA6210EC13A64A8A00A88AF0 /* ReactickleButton.cpp in Sources */,
-				EA6210ED13A64A8A00A88AF0 /* main.mm in Sources */,
 				EA6210EE13A64A8A00A88AF0 /* AboutPage.mm in Sources */,
 				EA6210EF13A64A8A00A88AF0 /* MainMenu.mm in Sources */,
 				EA6210F013A64A8A00A88AF0 /* SettingsPage.mm in Sources */,
-				EA62111713A64C4400A88AF0 /* MagicApp.cpp in Sources */,
-				EA62111813A64C4400A88AF0 /* MagicAppEvents.cpp in Sources */,
 				EA62111913A64C4400A88AF0 /* MagicShapes.cpp in Sources */,
 				EA62111A13A64C4400A88AF0 /* ImageCache.cpp in Sources */,
 				EA62111B13A64C4400A88AF0 /* Properties.cpp in Sources */,
@@ -2002,7 +1985,8 @@
 				EA62111E13A64C4400A88AF0 /* KinectOrCamera.cpp in Sources */,
 				EA62111F13A64C4400A88AF0 /* TuioKinect.cpp in Sources */,
 				EA6212B113A6700300A88AF0 /* ColorPicker.cpp in Sources */,
-				EAE2AE0C13A7857A002B789C /* testAppEvents.cpp in Sources */,
+				EAE2AE0C13A7857A002B789C /* testAppEvents.mm in Sources */,
+				EAD4933D13A8B52500D312FE /* ReactickleApp.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,16 +52,9 @@
 		EA23EF1F139D1DFA0071404C /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF18139D1DFA0071404C /* tinyxmlerror.cpp */; };
 		EA23EF20139D1DFA0071404C /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF19139D1DFA0071404C /* tinyxmlparser.cpp */; };
 		EA23EF21139D1DFA0071404C /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF1B139D1DFA0071404C /* ofxXmlSettings.cpp */; };
-		EA23EF44139D1E0A0071404C /* MagicShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF2A139D1E0A0071404C /* MagicShapes.cpp */; };
-		EA23EF45139D1E0A0071404C /* ImageCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF35139D1E0A0071404C /* ImageCache.cpp */; };
-		EA23EF46139D1E0A0071404C /* Properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF37139D1E0A0071404C /* Properties.cpp */; };
-		EA23EF47139D1E0A0071404C /* Settings.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF3A139D1E0A0071404C /* Settings.mm */; };
-		EA23EF48139D1E0A0071404C /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF3B139D1E0A0071404C /* util.cpp */; };
 		EA23EF5E139D1E2F0071404C /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF4D139D1E2F0071404C /* Apps.mm */; };
-		EA23EF5F139D1E2F0071404C /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF4F139D1E2F0071404C /* ReactickleApp.mm */; };
 		EA23EF60139D1E2F0071404C /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF51139D1E2F0071404C /* testApp.mm */; };
 		EA23EF61139D1E2F0071404C /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF54139D1E2F0071404C /* ReactickleButton.cpp */; };
-		EA23EF62139D1E2F0071404C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF56139D1E2F0071404C /* main.mm */; };
 		EA23EF63139D1E2F0071404C /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF59139D1E2F0071404C /* AboutPage.mm */; };
 		EA23EF64139D1E2F0071404C /* MainMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF5B139D1E2F0071404C /* MainMenu.mm */; };
 		EA23EF65139D1E2F0071404C /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF5D139D1E2F0071404C /* SettingsPage.mm */; };
@@ -72,7 +65,15 @@
 		EA62108913A6481200A88AF0 /* FollowParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107313A6481200A88AF0 /* FollowParticle.cpp */; };
 		EA62108A13A6481200A88AF0 /* TrailParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107713A6481200A88AF0 /* TrailParticle.cpp */; };
 		EA62108B13A6481200A88AF0 /* Trail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107913A6481200A88AF0 /* Trail.cpp */; };
-		EA6212EA13A6712E00A88AF0 /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6212E913A6712E00A88AF0 /* ColorPicker.cpp */; };
+		EAD493FB13A8B75700D312FE /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD493DA13A8B75700D312FE /* main.mm */; };
+		EAD493FC13A8B75700D312FE /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD493DD13A8B75700D312FE /* ReactickleApp.mm */; };
+		EAD493FD13A8B75700D312FE /* MagicShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD493E113A8B75700D312FE /* MagicShapes.cpp */; };
+		EAD493FE13A8B75700D312FE /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD493E613A8B75700D312FE /* ColorPicker.cpp */; };
+		EAD493FF13A8B75700D312FE /* ImageCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD493EE13A8B75700D312FE /* ImageCache.cpp */; };
+		EAD4940013A8B75700D312FE /* Properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD493F013A8B75700D312FE /* Properties.cpp */; };
+		EAD4940113A8B75700D312FE /* Settings.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD493F313A8B75700D312FE /* Settings.mm */; };
+		EAD4940213A8B75700D312FE /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD493F413A8B75700D312FE /* util.cpp */; };
+		EAD4940C13A8B7A200D312FE /* testAppEvents.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4940B13A8B7A200D312FE /* testAppEvents.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,34 +191,11 @@
 		EA23EF19139D1DFA0071404C /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		EA23EF1B139D1DFA0071404C /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		EA23EF1C139D1DFA0071404C /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
-		EA23EF27139D1E0A0071404C /* Reactickle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reactickle.h; sourceTree = "<group>"; };
-		EA23EF29139D1E0A0071404C /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
-		EA23EF2A139D1E0A0071404C /* MagicShapes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MagicShapes.cpp; sourceTree = "<group>"; };
-		EA23EF2B139D1E0A0071404C /* MagicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShapes.h; sourceTree = "<group>"; };
-		EA23EF2C139D1E0A0071404C /* msaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msaColor.h; sourceTree = "<group>"; };
-		EA23EF2E139D1E0A0071404C /* ColorCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCube.h; sourceTree = "<group>"; };
-		EA23EF2F139D1E0A0071404C /* ColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPicker.h; sourceTree = "<group>"; };
-		EA23EF30139D1E0A0071404C /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
-		EA23EF31139D1E0A0071404C /* HoldButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoldButton.h; sourceTree = "<group>"; };
-		EA23EF32139D1E0A0071404C /* InteractiveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveObject.h; sourceTree = "<group>"; };
-		EA23EF33139D1E0A0071404C /* SimpleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleButton.h; sourceTree = "<group>"; };
-		EA23EF35139D1E0A0071404C /* ImageCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageCache.cpp; sourceTree = "<group>"; };
-		EA23EF36139D1E0A0071404C /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
-		EA23EF37139D1E0A0071404C /* Properties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Properties.cpp; sourceTree = "<group>"; };
-		EA23EF38139D1E0A0071404C /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
-		EA23EF39139D1E0A0071404C /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		EA23EF3A139D1E0A0071404C /* Settings.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Settings.mm; sourceTree = "<group>"; };
-		EA23EF3B139D1E0A0071404C /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
-		EA23EF3C139D1E0A0071404C /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		EA23EF4D139D1E2F0071404C /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
-		EA23EF4E139D1E2F0071404C /* ReactickleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleApp.h; sourceTree = "<group>"; };
-		EA23EF4F139D1E2F0071404C /* ReactickleApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReactickleApp.mm; sourceTree = "<group>"; };
 		EA23EF50139D1E2F0071404C /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		EA23EF51139D1E2F0071404C /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
-		EA23EF52139D1E2F0071404C /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		EA23EF54139D1E2F0071404C /* ReactickleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleButton.cpp; sourceTree = "<group>"; };
 		EA23EF55139D1E2F0071404C /* ReactickleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleButton.h; sourceTree = "<group>"; };
-		EA23EF56139D1E2F0071404C /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		EA23EF58139D1E2F0071404C /* AboutPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPage.h; sourceTree = "<group>"; };
 		EA23EF59139D1E2F0071404C /* AboutPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AboutPage.mm; sourceTree = "<group>"; };
 		EA23EF5A139D1E2F0071404C /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
@@ -227,7 +205,6 @@
 		EA23EF9C139D1FA50071404C /* BrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSlider.h; sourceTree = "<group>"; };
 		EA23F0DF139D30CB0071404C /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.entitlements"; sourceTree = "<group>"; };
 		EA620EE513A6316600A88AF0 /* VolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
-		EA620EF913A6329700A88AF0 /* ImageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageObject.h; sourceTree = "<group>"; };
 		EA62106813A6481200A88AF0 /* Expand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expand.cpp; sourceTree = "<group>"; };
 		EA62106913A6481200A88AF0 /* Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expand.h; sourceTree = "<group>"; };
 		EA62106B13A6481200A88AF0 /* Orbit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Orbit.cpp; sourceTree = "<group>"; };
@@ -248,7 +225,32 @@
 		EA62108213A6481200A88AF0 /* Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
 		EA62108413A6481200A88AF0 /* Trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trace.h; sourceTree = "<group>"; };
 		EA62124613A6652100A88AF0 /* ModeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDisplay.h; sourceTree = "<group>"; };
-		EA6212E913A6712E00A88AF0 /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
+		EAD493DA13A8B75700D312FE /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		EAD493DB13A8B75700D312FE /* Reactickle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reactickle.h; sourceTree = "<group>"; };
+		EAD493DC13A8B75700D312FE /* ReactickleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleApp.h; sourceTree = "<group>"; };
+		EAD493DD13A8B75700D312FE /* ReactickleApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReactickleApp.mm; sourceTree = "<group>"; };
+		EAD493DE13A8B75700D312FE /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		EAD493E013A8B75700D312FE /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
+		EAD493E113A8B75700D312FE /* MagicShapes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MagicShapes.cpp; sourceTree = "<group>"; };
+		EAD493E213A8B75700D312FE /* MagicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShapes.h; sourceTree = "<group>"; };
+		EAD493E313A8B75700D312FE /* msaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msaColor.h; sourceTree = "<group>"; };
+		EAD493E513A8B75700D312FE /* ColorCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCube.h; sourceTree = "<group>"; };
+		EAD493E613A8B75700D312FE /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
+		EAD493E713A8B75700D312FE /* ColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPicker.h; sourceTree = "<group>"; };
+		EAD493E813A8B75700D312FE /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
+		EAD493E913A8B75700D312FE /* HoldButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoldButton.h; sourceTree = "<group>"; };
+		EAD493EA13A8B75700D312FE /* ImageObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageObject.h; sourceTree = "<group>"; };
+		EAD493EB13A8B75700D312FE /* InteractiveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveObject.h; sourceTree = "<group>"; };
+		EAD493EC13A8B75700D312FE /* SimpleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleButton.h; sourceTree = "<group>"; };
+		EAD493EE13A8B75700D312FE /* ImageCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageCache.cpp; sourceTree = "<group>"; };
+		EAD493EF13A8B75700D312FE /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
+		EAD493F013A8B75700D312FE /* Properties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Properties.cpp; sourceTree = "<group>"; };
+		EAD493F113A8B75700D312FE /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
+		EAD493F213A8B75700D312FE /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		EAD493F313A8B75700D312FE /* Settings.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Settings.mm; sourceTree = "<group>"; };
+		EAD493F413A8B75700D312FE /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		EAD493F513A8B75700D312FE /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		EAD4940B13A8B7A200D312FE /* testAppEvents.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testAppEvents.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,7 +304,7 @@
 			children = (
 				BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */,
 				EA20B4ED1366F6EF0038E922 /* Resources */,
-				EA23EF22139D1E0A0071404C /* framework */,
+				EAD493D813A8B75700D312FE /* framework */,
 				EA23EF4B139D1E2F0071404C /* src */,
 				BB24E1F710DAA51900E9C588 /* openFrameworks */,
 				EA62106613A6481200A88AF0 /* reactickles */,
@@ -667,82 +669,11 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		EA23EF22139D1E0A0071404C /* framework */ = {
-			isa = PBXGroup;
-			children = (
-				EA23EF23139D1E0A0071404C /* app */,
-				EA23EF28139D1E0A0071404C /* graphics */,
-				EA23EF2D139D1E0A0071404C /* gui */,
-				EA23EF34139D1E0A0071404C /* util */,
-				EA23EF3D139D1E0A0071404C /* vision */,
-			);
-			name = framework;
-			path = ../framework;
-			sourceTree = SOURCE_ROOT;
-		};
-		EA23EF23139D1E0A0071404C /* app */ = {
-			isa = PBXGroup;
-			children = (
-				EA23EF27139D1E0A0071404C /* Reactickle.h */,
-			);
-			path = app;
-			sourceTree = "<group>";
-		};
-		EA23EF28139D1E0A0071404C /* graphics */ = {
-			isa = PBXGroup;
-			children = (
-				EA23EF29139D1E0A0071404C /* GlowingBorder.h */,
-				EA23EF2A139D1E0A0071404C /* MagicShapes.cpp */,
-				EA23EF2B139D1E0A0071404C /* MagicShapes.h */,
-				EA23EF2C139D1E0A0071404C /* msaColor.h */,
-			);
-			path = graphics;
-			sourceTree = "<group>";
-		};
-		EA23EF2D139D1E0A0071404C /* gui */ = {
-			isa = PBXGroup;
-			children = (
-				EA23EF2E139D1E0A0071404C /* ColorCube.h */,
-				EA6212E913A6712E00A88AF0 /* ColorPicker.cpp */,
-				EA23EF2F139D1E0A0071404C /* ColorPicker.h */,
-				EA23EF30139D1E0A0071404C /* Container.h */,
-				EA23EF31139D1E0A0071404C /* HoldButton.h */,
-				EA23EF32139D1E0A0071404C /* InteractiveObject.h */,
-				EA620EF913A6329700A88AF0 /* ImageObject.h */,
-				EA23EF33139D1E0A0071404C /* SimpleButton.h */,
-			);
-			path = gui;
-			sourceTree = "<group>";
-		};
-		EA23EF34139D1E0A0071404C /* util */ = {
-			isa = PBXGroup;
-			children = (
-				EA23EF35139D1E0A0071404C /* ImageCache.cpp */,
-				EA23EF36139D1E0A0071404C /* ImageCache.h */,
-				EA23EF37139D1E0A0071404C /* Properties.cpp */,
-				EA23EF38139D1E0A0071404C /* Properties.h */,
-				EA23EF39139D1E0A0071404C /* Settings.h */,
-				EA23EF3A139D1E0A0071404C /* Settings.mm */,
-				EA23EF3B139D1E0A0071404C /* util.cpp */,
-				EA23EF3C139D1E0A0071404C /* util.h */,
-			);
-			path = util;
-			sourceTree = "<group>";
-		};
-		EA23EF3D139D1E0A0071404C /* vision */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = vision;
-			sourceTree = "<group>";
-		};
 		EA23EF4B139D1E2F0071404C /* src */ = {
 			isa = PBXGroup;
 			children = (
 				EA23EF4C139D1E2F0071404C /* app */,
-				EA23EF52139D1E2F0071404C /* constants.h */,
 				EA23EF53139D1E2F0071404C /* gui */,
-				EA23EF56139D1E2F0071404C /* main.mm */,
 				EA23EF57139D1E2F0071404C /* pages */,
 			);
 			path = src;
@@ -752,10 +683,9 @@
 			isa = PBXGroup;
 			children = (
 				EA23EF4D139D1E2F0071404C /* Apps.mm */,
-				EA23EF4E139D1E2F0071404C /* ReactickleApp.h */,
-				EA23EF4F139D1E2F0071404C /* ReactickleApp.mm */,
 				EA23EF50139D1E2F0071404C /* testApp.h */,
 				EA23EF51139D1E2F0071404C /* testApp.mm */,
+				EAD4940B13A8B7A200D312FE /* testAppEvents.mm */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -900,6 +830,79 @@
 			path = Trace;
 			sourceTree = "<group>";
 		};
+		EAD493D813A8B75700D312FE /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				EAD493D913A8B75700D312FE /* app */,
+				EAD493DE13A8B75700D312FE /* constants.h */,
+				EAD493DF13A8B75700D312FE /* graphics */,
+				EAD493E413A8B75700D312FE /* gui */,
+				EAD493ED13A8B75700D312FE /* util */,
+				EAD493F613A8B75700D312FE /* vision */,
+			);
+			name = framework;
+			path = ../framework;
+			sourceTree = SOURCE_ROOT;
+		};
+		EAD493D913A8B75700D312FE /* app */ = {
+			isa = PBXGroup;
+			children = (
+				EAD493DA13A8B75700D312FE /* main.mm */,
+				EAD493DB13A8B75700D312FE /* Reactickle.h */,
+				EAD493DC13A8B75700D312FE /* ReactickleApp.h */,
+				EAD493DD13A8B75700D312FE /* ReactickleApp.mm */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		EAD493DF13A8B75700D312FE /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				EAD493E013A8B75700D312FE /* GlowingBorder.h */,
+				EAD493E113A8B75700D312FE /* MagicShapes.cpp */,
+				EAD493E213A8B75700D312FE /* MagicShapes.h */,
+				EAD493E313A8B75700D312FE /* msaColor.h */,
+			);
+			path = graphics;
+			sourceTree = "<group>";
+		};
+		EAD493E413A8B75700D312FE /* gui */ = {
+			isa = PBXGroup;
+			children = (
+				EAD493E513A8B75700D312FE /* ColorCube.h */,
+				EAD493E613A8B75700D312FE /* ColorPicker.cpp */,
+				EAD493E713A8B75700D312FE /* ColorPicker.h */,
+				EAD493E813A8B75700D312FE /* Container.h */,
+				EAD493E913A8B75700D312FE /* HoldButton.h */,
+				EAD493EA13A8B75700D312FE /* ImageObject.h */,
+				EAD493EB13A8B75700D312FE /* InteractiveObject.h */,
+				EAD493EC13A8B75700D312FE /* SimpleButton.h */,
+			);
+			path = gui;
+			sourceTree = "<group>";
+		};
+		EAD493ED13A8B75700D312FE /* util */ = {
+			isa = PBXGroup;
+			children = (
+				EAD493EE13A8B75700D312FE /* ImageCache.cpp */,
+				EAD493EF13A8B75700D312FE /* ImageCache.h */,
+				EAD493F013A8B75700D312FE /* Properties.cpp */,
+				EAD493F113A8B75700D312FE /* Properties.h */,
+				EAD493F213A8B75700D312FE /* Settings.h */,
+				EAD493F313A8B75700D312FE /* Settings.mm */,
+				EAD493F413A8B75700D312FE /* util.cpp */,
+				EAD493F513A8B75700D312FE /* util.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		EAD493F613A8B75700D312FE /* vision */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = vision;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1011,16 +1014,9 @@
 				EA23EF1F139D1DFA0071404C /* tinyxmlerror.cpp in Sources */,
 				EA23EF20139D1DFA0071404C /* tinyxmlparser.cpp in Sources */,
 				EA23EF21139D1DFA0071404C /* ofxXmlSettings.cpp in Sources */,
-				EA23EF44139D1E0A0071404C /* MagicShapes.cpp in Sources */,
-				EA23EF45139D1E0A0071404C /* ImageCache.cpp in Sources */,
-				EA23EF46139D1E0A0071404C /* Properties.cpp in Sources */,
-				EA23EF47139D1E0A0071404C /* Settings.mm in Sources */,
-				EA23EF48139D1E0A0071404C /* util.cpp in Sources */,
 				EA23EF5E139D1E2F0071404C /* Apps.mm in Sources */,
-				EA23EF5F139D1E2F0071404C /* ReactickleApp.mm in Sources */,
 				EA23EF60139D1E2F0071404C /* testApp.mm in Sources */,
 				EA23EF61139D1E2F0071404C /* ReactickleButton.cpp in Sources */,
-				EA23EF62139D1E2F0071404C /* main.mm in Sources */,
 				EA23EF63139D1E2F0071404C /* AboutPage.mm in Sources */,
 				EA23EF64139D1E2F0071404C /* MainMenu.mm in Sources */,
 				EA23EF65139D1E2F0071404C /* SettingsPage.mm in Sources */,
@@ -1031,7 +1027,15 @@
 				EA62108913A6481200A88AF0 /* FollowParticle.cpp in Sources */,
 				EA62108A13A6481200A88AF0 /* TrailParticle.cpp in Sources */,
 				EA62108B13A6481200A88AF0 /* Trail.cpp in Sources */,
-				EA6212EA13A6712E00A88AF0 /* ColorPicker.cpp in Sources */,
+				EAD493FB13A8B75700D312FE /* main.mm in Sources */,
+				EAD493FC13A8B75700D312FE /* ReactickleApp.mm in Sources */,
+				EAD493FD13A8B75700D312FE /* MagicShapes.cpp in Sources */,
+				EAD493FE13A8B75700D312FE /* ColorPicker.cpp in Sources */,
+				EAD493FF13A8B75700D312FE /* ImageCache.cpp in Sources */,
+				EAD4940013A8B75700D312FE /* Properties.cpp in Sources */,
+				EAD4940113A8B75700D312FE /* Settings.mm in Sources */,
+				EAD4940213A8B75700D312FE /* util.cpp in Sources */,
+				EAD4940C13A8B7A200D312FE /* testAppEvents.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

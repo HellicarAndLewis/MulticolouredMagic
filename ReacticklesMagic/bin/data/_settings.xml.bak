@@ -1,31 +1,31 @@
 <controls>
     <SliderInt_Threshold>
         <name>Threshold</name>
-        <value>39</value>
+        <value>81</value>
     </SliderInt_Threshold>
     <SliderInt_Far_clipping>
         <name>Far clipping</name>
-        <value>53</value>
+        <value>0</value>
     </SliderInt_Far_clipping>
     <SliderFloat_blend_amount>
         <name>blend amount</name>
-        <value>0.068900</value>
+        <value>0.100000</value>
     </SliderFloat_blend_amount>
     <SliderFloat_Sound_Meter>
         <name>Sound Meter</name>
-        <value>0.000000</value>
+        <value>0.125713</value>
     </SliderFloat_Sound_Meter>
     <SliderFloat_Sound_input_volume>
         <name>Sound input volume</name>
-        <value>0.885000</value>
+        <value>0.900000</value>
     </SliderFloat_Sound_input_volume>
     <SliderFloat_Volume_Sensitivity>
         <name>Volume Sensitivity</name>
-        <value>0.530000</value>
+        <value>0.300000</value>
     </SliderFloat_Volume_Sensitivity>
     <Toggle_Flip_X>
         <name>Flip X</name>
-        <value>1</value>
+        <value>0</value>
     </Toggle_Flip_X>
     <Toggle_Flip_Y>
         <name>Flip Y</name>

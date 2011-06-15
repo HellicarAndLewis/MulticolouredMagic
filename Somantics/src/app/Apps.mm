@@ -16,7 +16,7 @@
 
 #include "MainMenu.h"
 #include "constants.h"
-#include "SomanticsApp.h"
+#include "ReactickleApp.h"
 
 
 void MainMenu::initMenu() {

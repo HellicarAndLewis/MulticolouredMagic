@@ -8,12 +8,12 @@
 #include "constants.h"
 #include "Reactickle.h"
 #include "MainMenu.h"
-#include "SomanticsApp.h"
+#include "ReactickleApp.h"
 #include "DoubleTapButton.h"
 #include "AboutPage.h"
 #include "SettingsPage.h"
 
-class testApp : public SomanticsApp, public SimpleButtonListener {
+class testApp : public ReactickleApp, public SimpleButtonListener {
 	
 public:
 	void setup();

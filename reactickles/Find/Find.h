@@ -74,6 +74,16 @@ class Find: public Reactickle {
     }
     
 	bool touchMoved(float x, float y, int touchId){
+        float forgiveness = 2.f;
+        
+        ofVec2f touchPoint = ofVec2f(x,y);
+        
+        ofVec2f difference = posOfShape - touchPoint;
+        
+        if(difference.length() < forgiveness + radius){
+            newShapePositionAndColour();            
+        }
+        
         return true;
     }
     

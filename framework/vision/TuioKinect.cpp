@@ -56,7 +56,7 @@ void TuioKinect::setup() {
 	bgImage.allocate(kinect.width, kinect.height);
 	mixImage.allocate(kinect.width, kinect.height);
 	
-	threshold = 155;
+	threshold = 60;
 	flipX = false;
 	flipY = false;
 	blendAmount = 0.1;
