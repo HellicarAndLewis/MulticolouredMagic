@@ -16,35 +16,36 @@
 
 #include "MainMenu.h"
 #include "constants.h"
+
 #include "ReactickleApp.h"
 
+#include "Corridors.h"
+#include "Silhouettes.h"
+#include "Windmills.h"
 
 void MainMenu::initMenu() {
-	scrollView.add(new ReactickleButton("Corridors"));
-	scrollView.add(new ReactickleButton("Silhouette"));
-	scrollView.add(new ReactickleButton("Windmills"));
+	addReactickleButton(new ReactickleButton("Corridors"));
+	addReactickleButton(new ReactickleButton("Silhouette"));
+	addReactickleButton(new ReactickleButton("Windmills"));
 
 }
 
 void MainMenu::reactickleSelected(string name) {
+	printf("Launching '%s'\n", name.c_str());
+	Reactickle *r = NULL;
+	
+	if(name=="Corridors") {
+		r = new Corridors();
+	} else if(name=="Silhouette") {
+		r = new Silhouettes();
+	} else if(name=="Windmills") {
+		r = new Windmills();
+	}
+	
+	if(r!=NULL) {	
+		ReactickleApp::instance->launchReactickle(r);
+	} else {
+		printf("Couldn't find reactickle '%s'!!\n", name.c_str());
+	}
 
-	/*if(name=="expander") {
-		ReactickleApp::instance->launchReactickle(new Expander());
-	} else if(name=="clap clock") {
-		ReactickleApp::instance->launchReactickle(new ClapClock());
-	} else if(name=="inversion") {
-		ReactickleApp::instance->launchReactickle(new Inversion());
-	} else if(name=="circle swarm") {
-		ReactickleApp::instance->launchReactickle(new CircleSwarm());
-	} else if(name=="circles 2d") {
-		ReactickleApp::instance->launchReactickle(new Circles2D());
-	} else if(name=="squares to circles") {
-		ReactickleApp::instance->launchReactickle(new GridOfSquaresApp());
-	} else if(name=="clap bang") {
-		ReactickleApp::instance->launchReactickle(new ClapBang());
-	} else if(name=="colour change on noise") {
-		ReactickleApp::instance->launchReactickle(new ColourChangeOnNoiseApp());
-	} else if(name=="circle bigger") {
-		ReactickleApp::instance->launchReactickle(new CircleBiggerApp());
-	}*/
 }

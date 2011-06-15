@@ -170,6 +170,12 @@
 		EAD4947413A8BA9A00D312FE /* ofxKinectPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4946913A8BA9A00D312FE /* ofxKinectPlayer.cpp */; };
 		EAD4947513A8BA9A00D312FE /* ofxKinectRecorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4946B13A8BA9A00D312FE /* ofxKinectRecorder.cpp */; };
 		EAD4956513A8C5A300D312FE /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4956313A8C5A300D312FE /* ReactickleButton.cpp */; };
+		EAD4960913A8CD5C00D312FE /* Windmills.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4960013A8CD5C00D312FE /* Windmills.cpp */; };
+		EAD4962B13A8CEF400D312FE /* ofxMultiTouchPad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4962913A8CEF400D312FE /* ofxMultiTouchPad.cpp */; };
+		EAD4962D13A8CF2B00D312FE /* MultitouchSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD4962C13A8CF2B00D312FE /* MultitouchSupport.framework */; };
+		EAD4968F13A8D2B600D312FE /* Corridors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4968613A8D2B600D312FE /* Corridors.cpp */; };
+		EAD4969113A8D2B600D312FE /* Silhouette.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4968A13A8D2B600D312FE /* Silhouette.cpp */; };
+		EAD4969213A8D2B600D312FE /* Silhouettes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4968C13A8D2B600D312FE /* Silhouettes.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -517,6 +523,23 @@
 		EAD4946C13A8BA9A00D312FE /* ofxKinectRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxKinectRecorder.h; sourceTree = "<group>"; };
 		EAD4956313A8C5A300D312FE /* ReactickleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleButton.cpp; sourceTree = "<group>"; };
 		EAD4956413A8C5A300D312FE /* ReactickleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleButton.h; sourceTree = "<group>"; };
+		EAD4960013A8CD5C00D312FE /* Windmills.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Windmills.cpp; sourceTree = "<group>"; };
+		EAD4960113A8CD5C00D312FE /* Windmills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Windmills.h; sourceTree = "<group>"; };
+		EAD4960213A8CD5C00D312FE /* Windmill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Windmill.h; sourceTree = "<group>"; };
+		EAD4960A13A8CDFF00D312FE /* BrushedLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushedLine.h; sourceTree = "<group>"; };
+		EAD4962513A8CEF400D312FE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EAD4962613A8CEF400D312FE /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		EAD4962813A8CEF400D312FE /* MTTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTypes.h; sourceTree = "<group>"; };
+		EAD4962913A8CEF400D312FE /* ofxMultiTouchPad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMultiTouchPad.cpp; sourceTree = "<group>"; };
+		EAD4962A13A8CEF400D312FE /* ofxMultiTouchPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMultiTouchPad.h; sourceTree = "<group>"; };
+		EAD4962C13A8CF2B00D312FE /* MultitouchSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultitouchSupport.framework; path = /System/Library/PrivateFrameworks/MultitouchSupport.framework; sourceTree = "<absolute>"; };
+		EAD4968413A8D2B600D312FE /* Corridor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Corridor.h; sourceTree = "<group>"; };
+		EAD4968613A8D2B600D312FE /* Corridors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Corridors.cpp; sourceTree = "<group>"; };
+		EAD4968713A8D2B600D312FE /* Corridors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Corridors.h; sourceTree = "<group>"; };
+		EAD4968A13A8D2B600D312FE /* Silhouette.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Silhouette.cpp; sourceTree = "<group>"; };
+		EAD4968B13A8D2B600D312FE /* Silhouette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Silhouette.h; sourceTree = "<group>"; };
+		EAD4968C13A8D2B600D312FE /* Silhouettes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Silhouettes.cpp; sourceTree = "<group>"; };
+		EAD4968D13A8D2B600D312FE /* Silhouettes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Silhouettes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -635,6 +658,7 @@
 				EAB30B92137AF41A0086DE6F /* libcvaux.a in Frameworks */,
 				EAB30B93137AF41A0086DE6F /* libcxcore.a in Frameworks */,
 				EAD4947113A8BA9A00D312FE /* usb-1.0.a in Frameworks */,
+				EAD4962D13A8CF2B00D312FE /* MultitouchSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +681,7 @@
 				E45BE9770E8CC7DD009D7055 /* CoreServices.framework */,
 				E45BE9790E8CC7DD009D7055 /* OpenGL.framework */,
 				E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */,
+				EAD4962C13A8CF2B00D312FE /* MultitouchSupport.framework */,
 			);
 			name = frameworks;
 			sourceTree = "<group>";
@@ -693,6 +718,7 @@
 		EA23EDD0139D13AE0071404C /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EAD495F113A8CD5C00D312FE /* somantics */,
 				EA23EDD1139D13AE0071404C /* app */,
 				EA23EDD8139D13AE0071404C /* gui */,
 				EA23EDDD139D13AE0071404C /* pages */,
@@ -753,6 +779,7 @@
 		EAB3098B137AF2ED0086DE6F /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				EAD4962413A8CEF400D312FE /* ofxMultiTouchPad */,
 				EAD4944E13A8BA9A00D312FE /* ofxKinect */,
 				EA23EE6C139D1CBE0071404C /* ofxCvKalman */,
 				EAB30A5E137AF4190086DE6F /* ofxOpenCv */,
@@ -1321,6 +1348,7 @@
 		EAD492F313A8B48D00D312FE /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				EAD4960A13A8CDFF00D312FE /* BrushedLine.h */,
 				EAD492F413A8B48D00D312FE /* GlowingBorder.h */,
 				EAD492F513A8B48D00D312FE /* MagicShapes.cpp */,
 				EAD492F613A8B48D00D312FE /* MagicShapes.h */,
@@ -1464,6 +1492,68 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		EAD495F113A8CD5C00D312FE /* somantics */ = {
+			isa = PBXGroup;
+			children = (
+				EAD4968313A8D2B600D312FE /* Corridors */,
+				EAD4968813A8D2B600D312FE /* Silhouette */,
+				EAD495FE13A8CD5C00D312FE /* Windmills */,
+			);
+			path = somantics;
+			sourceTree = "<group>";
+		};
+		EAD495FE13A8CD5C00D312FE /* Windmills */ = {
+			isa = PBXGroup;
+			children = (
+				EAD4960013A8CD5C00D312FE /* Windmills.cpp */,
+				EAD4960113A8CD5C00D312FE /* Windmills.h */,
+				EAD4960213A8CD5C00D312FE /* Windmill.h */,
+			);
+			path = Windmills;
+			sourceTree = "<group>";
+		};
+		EAD4962413A8CEF400D312FE /* ofxMultiTouchPad */ = {
+			isa = PBXGroup;
+			children = (
+				EAD4962513A8CEF400D312FE /* .gitignore */,
+				EAD4962613A8CEF400D312FE /* License.txt */,
+				EAD4962713A8CEF400D312FE /* src */,
+			);
+			name = ofxMultiTouchPad;
+			path = ../addons/ofxMultiTouchPad;
+			sourceTree = SOURCE_ROOT;
+		};
+		EAD4962713A8CEF400D312FE /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EAD4962813A8CEF400D312FE /* MTTypes.h */,
+				EAD4962913A8CEF400D312FE /* ofxMultiTouchPad.cpp */,
+				EAD4962A13A8CEF400D312FE /* ofxMultiTouchPad.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EAD4968313A8D2B600D312FE /* Corridors */ = {
+			isa = PBXGroup;
+			children = (
+				EAD4968413A8D2B600D312FE /* Corridor.h */,
+				EAD4968613A8D2B600D312FE /* Corridors.cpp */,
+				EAD4968713A8D2B600D312FE /* Corridors.h */,
+			);
+			path = Corridors;
+			sourceTree = "<group>";
+		};
+		EAD4968813A8D2B600D312FE /* Silhouette */ = {
+			isa = PBXGroup;
+			children = (
+				EAD4968A13A8D2B600D312FE /* Silhouette.cpp */,
+				EAD4968B13A8D2B600D312FE /* Silhouette.h */,
+				EAD4968C13A8D2B600D312FE /* Silhouettes.cpp */,
+				EAD4968D13A8D2B600D312FE /* Silhouettes.h */,
+			);
+			path = Silhouette;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1599,6 +1689,11 @@
 				EAD4947413A8BA9A00D312FE /* ofxKinectPlayer.cpp in Sources */,
 				EAD4947513A8BA9A00D312FE /* ofxKinectRecorder.cpp in Sources */,
 				EAD4956513A8C5A300D312FE /* ReactickleButton.cpp in Sources */,
+				EAD4960913A8CD5C00D312FE /* Windmills.cpp in Sources */,
+				EAD4962B13A8CEF400D312FE /* ofxMultiTouchPad.cpp in Sources */,
+				EAD4968F13A8D2B600D312FE /* Corridors.cpp in Sources */,
+				EAD4969113A8D2B600D312FE /* Silhouette.cpp in Sources */,
+				EAD4969213A8D2B600D312FE /* Silhouettes.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1742,8 +1837,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -1845,8 +1942,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G4;

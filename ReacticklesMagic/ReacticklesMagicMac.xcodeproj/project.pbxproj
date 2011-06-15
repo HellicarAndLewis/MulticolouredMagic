@@ -95,7 +95,6 @@
 		EA20B699136705160038E922 /* UdpSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65E136705160038E922 /* UdpSender.cpp */; };
 		EA6210E913A64A8A00A88AF0 /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210D613A64A8A00A88AF0 /* Apps.mm */; };
 		EA6210EB13A64A8A00A88AF0 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210DA13A64A8A00A88AF0 /* testApp.mm */; };
-		EA6210EC13A64A8A00A88AF0 /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6210DD13A64A8A00A88AF0 /* ReactickleButton.cpp */; };
 		EA6210EE13A64A8A00A88AF0 /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E413A64A8A00A88AF0 /* AboutPage.mm */; };
 		EA6210EF13A64A8A00A88AF0 /* MainMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E613A64A8A00A88AF0 /* MainMenu.mm */; };
 		EA6210F013A64A8A00A88AF0 /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E813A64A8A00A88AF0 /* SettingsPage.mm */; };
@@ -108,6 +107,8 @@
 		EA62111F13A64C4400A88AF0 /* TuioKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62111513A64C4400A88AF0 /* TuioKinect.cpp */; };
 		EA6212B113A6700300A88AF0 /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6212B013A6700300A88AF0 /* ColorPicker.cpp */; };
 		EAD4933D13A8B52500D312FE /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4933C13A8B52500D312FE /* ReactickleApp.mm */; };
+		EAD4969B13A8D32D00D312FE /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4969A13A8D32D00D312FE /* main.mm */; };
+		EAD496AB13A8D36700D312FE /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD496A913A8D36700D312FE /* ReactickleButton.cpp */; };
 		EAD6E1671353336400075A87 /* opencv_calib3d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E1181353336400075A87 /* opencv_calib3d.a */; };
 		EAD6E1681353336400075A87 /* opencv_contrib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E1191353336400075A87 /* opencv_contrib.a */; };
 		EAD6E1691353336400075A87 /* opencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E11A1353336400075A87 /* opencv_core.a */; };
@@ -279,7 +280,7 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured MagicDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reactickles Multicoloured MagicDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured Magic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reactickles Multicoloured Magic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4C2421610CC549C004149E2 /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -409,8 +410,6 @@
 		EA6210D613A64A8A00A88AF0 /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
 		EA6210D913A64A8A00A88AF0 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		EA6210DA13A64A8A00A88AF0 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
-		EA6210DD13A64A8A00A88AF0 /* ReactickleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleButton.cpp; sourceTree = "<group>"; };
-		EA6210DE13A64A8A00A88AF0 /* ReactickleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleButton.h; sourceTree = "<group>"; };
 		EA6210E113A64A8A00A88AF0 /* BrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSlider.h; sourceTree = "<group>"; };
 		EA6210E213A64A8A00A88AF0 /* VolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
 		EA6210E313A64A8A00A88AF0 /* AboutPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPage.h; sourceTree = "<group>"; };
@@ -447,6 +446,10 @@
 		EA6212B013A6700300A88AF0 /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
 		EAD4933B13A8B52500D312FE /* ReactickleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleApp.h; sourceTree = "<group>"; };
 		EAD4933C13A8B52500D312FE /* ReactickleApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReactickleApp.mm; sourceTree = "<group>"; };
+		EAD4969913A8D32400D312FE /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		EAD4969A13A8D32D00D312FE /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		EAD496A913A8D36700D312FE /* ReactickleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleButton.cpp; sourceTree = "<group>"; };
+		EAD496AA13A8D36700D312FE /* ReactickleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleButton.h; sourceTree = "<group>"; };
 		EAD6E0C21353336400075A87 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		EAD6E0C71353336400075A87 /* cv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cv.h; sourceTree = "<group>"; };
 		EAD6E0C81353336400075A87 /* cv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cv.hpp; sourceTree = "<group>"; };
@@ -966,7 +969,7 @@
 				EA20BA6D136730CC0038E922 /* reactickles */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				EA092D7A13A76A5400739FFE /* icon.icns */,
-				E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured MagicDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured Magic.app */,
 				E4C2422310CC54B6004149E2 /* openFrameworks */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 			);
@@ -1329,8 +1332,6 @@
 		EA6210DC13A64A8A00A88AF0 /* gui */ = {
 			isa = PBXGroup;
 			children = (
-				EA6210DD13A64A8A00A88AF0 /* ReactickleButton.cpp */,
-				EA6210DE13A64A8A00A88AF0 /* ReactickleButton.h */,
 				EA6211ED13A661B200A88AF0 /* ModeDisplay.h */,
 			);
 			path = gui;
@@ -1354,6 +1355,7 @@
 		EA6210F613A64C4400A88AF0 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				EAD4969913A8D32400D312FE /* constants.h */,
 				EA6210F713A64C4400A88AF0 /* app */,
 				EA6210FC13A64C4400A88AF0 /* graphics */,
 				EA62110113A64C4400A88AF0 /* gui */,
@@ -1367,6 +1369,7 @@
 		EA6210F713A64C4400A88AF0 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				EAD4969A13A8D32D00D312FE /* main.mm */,
 				EAD4933B13A8B52500D312FE /* ReactickleApp.h */,
 				EAD4933C13A8B52500D312FE /* ReactickleApp.mm */,
 				EA6210FB13A64C4400A88AF0 /* Reactickle.h */,
@@ -1388,6 +1391,8 @@
 		EA62110113A64C4400A88AF0 /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				EAD496A913A8D36700D312FE /* ReactickleButton.cpp */,
+				EAD496AA13A8D36700D312FE /* ReactickleButton.h */,
 				EA62110213A64C4400A88AF0 /* ColorCube.h */,
 				EA62110313A64C4400A88AF0 /* ColorPicker.h */,
 				EA6212B013A6700300A88AF0 /* ColorPicker.cpp */,
@@ -1834,7 +1839,7 @@
 			);
 			name = "Reactickles Multicoloured Magic";
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured MagicDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured Magic.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1973,7 +1978,6 @@
 				5D1CD57713A64162003A5232 /* Trail.cpp in Sources */,
 				EA6210E913A64A8A00A88AF0 /* Apps.mm in Sources */,
 				EA6210EB13A64A8A00A88AF0 /* testApp.mm in Sources */,
-				EA6210EC13A64A8A00A88AF0 /* ReactickleButton.cpp in Sources */,
 				EA6210EE13A64A8A00A88AF0 /* AboutPage.mm in Sources */,
 				EA6210EF13A64A8A00A88AF0 /* MainMenu.mm in Sources */,
 				EA6210F013A64A8A00A88AF0 /* SettingsPage.mm in Sources */,
@@ -1987,6 +1991,8 @@
 				EA6212B113A6700300A88AF0 /* ColorPicker.cpp in Sources */,
 				EAE2AE0C13A7857A002B789C /* testAppEvents.mm in Sources */,
 				EAD4933D13A8B52500D312FE /* ReactickleApp.mm in Sources */,
+				EAD4969B13A8D32D00D312FE /* main.mm in Sources */,
+				EAD496AB13A8D36700D312FE /* ReactickleButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

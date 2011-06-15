@@ -38,7 +38,10 @@ void MainMenu::setup() {
 	logo = ImageCache::getImage(IMAGE_ROOT + "logo.png");
 }
 
-
+void MainMenu::addReactickleButton(ReactickleButton *reactickleButton) {
+	scrollView.add(reactickleButton);
+	reactickleButton->setListener(this);
+}
 
 void MainMenu::buttonPressed(string name) {
 

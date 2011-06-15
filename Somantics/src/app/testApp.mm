@@ -25,7 +25,7 @@ void testApp::setup(){
 	backButton.x = WIDTH - backButton.width;
 	backButton.y = HEIGHT - backButton.height;
 	backButton.setListener(this);
-	ofSoundStreamSetup(0, 1, this, 22050, 1024, 1);
+	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
 	aboutPage.setup();
 	settingsPage.setup();
 }

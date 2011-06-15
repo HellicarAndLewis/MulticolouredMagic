@@ -6,6 +6,8 @@
  *
  */
 #include "BrushedLine.h"
+#include "ImageCache.h"
+
 class Silhouette {
 public:
 	
@@ -16,8 +18,7 @@ public:
 	static void setup() {
 		static ofImage *img = NULL;
 		if(img==NULL) {
-			img = new ofImage();
-			img->loadImage("blob.png");
+			img = ImageCache::getImage("img/blob.png");
 		}
 		lineImage = img;
 	}
