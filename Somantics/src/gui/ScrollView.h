@@ -10,12 +10,16 @@
 class ScrollView: public InteractiveObject {
 public:
 	SimpleButtonListener *listener;
-	void setup(float x, float y, float width, float height) {
+	void setup(float x, float y, float width, float height, int itemsPerCol = 2) {
+		
 		listener = NULL;
 		scrollOffset = 0;
+
 		deltaX = 0;
 		touchX = 0;
 		touching = false;
+		
+		this->itemsPerCol = itemsPerCol;
 		this->x = x;
 		this->y = y;
 		this->width = width;
@@ -45,9 +49,9 @@ public:
 				
 				
 				// pulling the bottom
-			} else if(ABS(scrollOffset)>totalWidth-width) {
-				deltaX = (ABS(scrollOffset)-(totalWidth-width))*0.1;
-				
+			} else if(totalWidth + scrollOffset < width) {
+					
+				deltaX = (width - (totalWidth + scrollOffset))*0.1;
 			} else {
 				// normal momentum
 				deltaX *= 0.9;
@@ -63,7 +67,6 @@ public:
 	}
 	
 	void arrange() {
-		int itemsPerCol = 3;
 		int PADDING = 10*WIDTH_SCALE;
 		int rowHeight = items[0]->height+PADDING;
 		int colWidth = items[0]->width+PADDING;
@@ -125,4 +128,5 @@ public:
 	float touchX;
 	float deltaX;
 	float totalWidth;
+	int itemsPerCol;
 };

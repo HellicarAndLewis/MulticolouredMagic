@@ -5,7 +5,7 @@
 void testApp::setup(){	
 	gain = 1;
 	volumeThreshold = 0.3;
-	SomanticsApp::instance = this;
+	ReactickleApp::instance = this;
 	setupGraphics();
 	setupOrientation();
 #ifdef TARGET_OF_IPHONE

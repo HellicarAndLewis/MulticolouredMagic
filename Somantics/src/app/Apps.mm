@@ -20,9 +20,9 @@
 
 
 void MainMenu::initMenu() {
-	scrollView.add(new ReactickleButton("expander", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	scrollView.add(new ReactickleButton("clap clock", IMAGE_ROOT + "defaultScreenshot.jpg"));
-	scrollView.add(new ReactickleButton("inversion", IMAGE_ROOT + "defaultScreenshot.jpg"));
+	scrollView.add(new ReactickleButton("Corridors"));
+	scrollView.add(new ReactickleButton("Silhouette"));
+	scrollView.add(new ReactickleButton("Windmills"));
 
 }
 

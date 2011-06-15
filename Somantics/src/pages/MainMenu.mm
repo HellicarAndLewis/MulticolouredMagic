@@ -9,7 +9,7 @@
 #include "MainMenu.h"
 #include "constants.h"
 #include "ImageCache.h"
-#include "SomanticsApp.h"
+#include "ReactickleApp.h"
 
 void MainMenu::setup() {
 	
@@ -43,9 +43,9 @@ void MainMenu::setup() {
 void MainMenu::buttonPressed(string name) {
 
 	if(name=="settings") {
-		SomanticsApp::instance->showSettings();
+		ReactickleApp::instance->showSettings();
 	} else if(name=="about") {
-		SomanticsApp::instance->showAbout();
+		ReactickleApp::instance->showAbout();
 	}
 }
 

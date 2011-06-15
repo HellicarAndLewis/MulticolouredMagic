@@ -25,6 +25,6 @@ extern bool HI_RES;
 
 // this is where you get your resolution dependent images from.
 // it will get initialized to point to images/ or images4/ depending 
-// on whether you're HIRES or not. If it's an iPad or iPhone4, the images
+// on whether you're HI_RES or not. If it's an iPad or iPhone4, the images
 // need to be 2x as big (well 2x2 times as big, hence the 4
 extern std::string IMAGE_ROOT;
