@@ -21,4 +21,5 @@ class Windmills : public Reactickle {
 	vector<Windmill> windmills;
 	int windmillsX;
 	int windmillsY;
+
 };

@@ -133,13 +133,13 @@ public:
 		
 		sortPoints(border, touches.size());
 		
-		ofBeginShape();
+	/*	ofBeginShape();
 		for(i = 0; i < touches.size(); i++) {
 			ofVertex(border[i].x, border[i].y);
 		}
 		ofEndShape(true);
 		
-		
+		*/
 		line.drawLines(border, touches.size(), true);
 		
 	}

@@ -17,10 +17,12 @@ void Silhouettes::setup(){
 	
 	float w = WIDTH;
 	float h = HEIGHT;
+
 	
-	//currFrame.setup(w, h);
-	//histFrame.setup(w, h);
-	
+#ifdef USE_FBO
+	currFrame.setup(w, h);
+	histFrame.setup(w, h);
+#endif
 }
 //--------------------------------------------------------------
 void Silhouettes::update(){
@@ -31,7 +33,10 @@ bool histFrameCleared = false;
 void Silhouettes::draw(){
 	ofBackground(255);
 	
-	//currFrame.begin();
+	
+#ifdef USE_FBO	
+	currFrame.begin();
+#endif
 	ofClear(0, 0, 0, 0);
 	for(int i = 0; i < silhouettes.size(); i++) {
 		ofSetColor(colors[i%NUM_COLORS]);
@@ -41,8 +46,9 @@ void Silhouettes::draw(){
 			i--;
 		}
 	}
-	//currFrame.end();
-	/*histFrame.begin();
+#ifdef USE_FBO
+	currFrame.end();
+	histFrame.begin();
 	if(!histFrameCleared) {
 		ofClear(0,0,0,0);
 		histFrameCleared = true;
@@ -56,17 +62,8 @@ void Silhouettes::draw(){
 	histFrame.end();
 	glColor4f(1, 1, 1, 1);
 	histFrame.draw(0, 0);
-	 */
-	/*
-	ofSetHexColor(0);
-	ofNoFill();
-	map<int,ofVec2f>::iterator it;
-	for(it = touches.begin(); it != touches.end(); it++) {
-		ofCircle((*it).second.x, (*it).second.y, 10);
-		ofDrawBitmapString(ofToString((*it).first), (*it).second);
-	}
-	ofFill();
-	ofDrawBitmapString(ofToString(corridors.size()), 20, ofGetHeight()-20);*/
+#endif
+	
 }
 
 
@@ -82,7 +79,7 @@ bool Silhouettes::touchDown(float x, float y, int touchId) {
 	return true;	
 }
 
-bool Silhouettes::touchUp(int touchId) {
+bool Silhouettes::touchUp(float x, float y, int touchId) {
 	touches.erase(touchId);
 	for(int i = 0; i < silhouettes.size(); i++) {
 		if(silhouettes[i].touchUp(touchId)) {

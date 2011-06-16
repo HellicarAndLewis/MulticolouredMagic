@@ -62,18 +62,14 @@ void drawHeart(ofVec2f centre, float size, float rotation) {
 	
 	if(heartDisplayList==NULL) {
 		heartDisplayList = new ofPath();
-		heartDisplayList->newSubPath();
 		heartDisplayList->moveTo(-2, heart1(-2));
-
+		
 		
 		for(float x = -1.95; x <= 2; x += 0.05) {
 			heartDisplayList->lineTo(x, heart1(x));
 		}
 		
-
-		heartDisplayList->newSubPath();
-		heartDisplayList->moveTo(-2, heart2(-2));
-		for(float x = -1.95; x <= 2; x += 0.05) {
+		for(float x = 2; x >= -1.95; x -= 0.05) {
 			heartDisplayList->lineTo(x, heart2(x));
 		}
 	}

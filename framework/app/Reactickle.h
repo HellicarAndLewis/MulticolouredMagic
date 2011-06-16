@@ -19,7 +19,7 @@
 #ifndef TARGET_OF_IPHONE
 	// this is what you get if you're not on iphone
 	#include "ofxSimpleGuiToo.h"
-	#include "ofxOpenCv.h"
+	//#include "ofxOpenCv.h"
 	#define VISION_WIDTH 640
 	#define VISION_HEIGHT 480
 	#define CAM_THRESHOLD 20

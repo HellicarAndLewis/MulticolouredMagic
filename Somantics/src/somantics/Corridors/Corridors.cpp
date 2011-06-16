@@ -59,7 +59,8 @@ bool Corridors::touchDown(float x, float y, int touchId) {
 	return true;
 }
 
-bool Corridors::touchUp(int touchId) {
+bool Corridors::touchUp(float x, float y, int touchId) {
+	printf("Touch up\n");
 	touches.erase(touchId);
 	for(int i = 0; i < corridors.size(); i++) {
 		if(corridors[i].touchUp(touchId)) {

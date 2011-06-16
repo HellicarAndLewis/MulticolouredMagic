@@ -3,11 +3,12 @@
 //--------------------------------------------------------------
 void Windmills::setup(){
 	
-	windmillsX = 40;
-	windmillsY = 35;
+	windmillsX = 30;
+	windmillsY = 25;
 	
 	float w = WIDTH;
 	float h = HEIGHT;
+	
 	
 	for(int x = 0; x < windmillsX; x++) {
 		for(int y = 0; y < windmillsY; y++) {

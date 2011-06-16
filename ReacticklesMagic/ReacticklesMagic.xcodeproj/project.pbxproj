@@ -33,7 +33,7 @@
 		E434BF7312477FBA00452519 /* freetype-iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E434BF7212477FBA00452519 /* freetype-iphone.a */; };
 		E496D5B11252C8210098A2B3 /* glu-iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E496D5AF1252C8210098A2B3 /* glu-iphone.a */; };
 		E496D5B21252C8210098A2B3 /* glu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E496D5B01252C8210098A2B3 /* glu.a */; };
-		E49BCC7A12554CD6009F19D0 /* libofxiPhone_iphoneos_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */; };
+		E49BCC7A12554CD6009F19D0 /* libofxiPhone_macosx_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49BCC5012554B6A009F19D0 /* libofxiPhone_macosx_Debug.a */; };
 		E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
 		EA20B4FA1366F6EF0038E922 /* Default-LandscapeLeft~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EA20B4EE1366F6EF0038E922 /* Default-LandscapeLeft~ipad.png */; };
 		EA20B4FB1366F6EF0038E922 /* Default-LandscapeRight~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EA20B4EF1366F6EF0038E922 /* Default-LandscapeRight~ipad.png */; };
@@ -54,10 +54,11 @@
 		EA23EF21139D1DFA0071404C /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF1B139D1DFA0071404C /* ofxXmlSettings.cpp */; };
 		EA23EF5E139D1E2F0071404C /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF4D139D1E2F0071404C /* Apps.mm */; };
 		EA23EF60139D1E2F0071404C /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF51139D1E2F0071404C /* testApp.mm */; };
-		EA23EF61139D1E2F0071404C /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF54139D1E2F0071404C /* ReactickleButton.cpp */; };
 		EA23EF63139D1E2F0071404C /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF59139D1E2F0071404C /* AboutPage.mm */; };
 		EA23EF64139D1E2F0071404C /* MainMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF5B139D1E2F0071404C /* MainMenu.mm */; };
 		EA23EF65139D1E2F0071404C /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF5D139D1E2F0071404C /* SettingsPage.mm */; };
+		EA2FABF613AA063400CB21FA /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2FABF413AA063400CB21FA /* ReactickleButton.cpp */; };
+		EA2FAC1B13AA06AE00CB21FA /* tess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2FAC1A13AA06AE00CB21FA /* tess2.a */; };
 		EA62108513A6481200A88AF0 /* Expand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62106813A6481200A88AF0 /* Expand.cpp */; };
 		EA62108613A6481200A88AF0 /* Orbit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62106B13A6481200A88AF0 /* Orbit.cpp */; };
 		EA62108713A6481200A88AF0 /* Flip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62106E13A6481200A88AF0 /* Flip.cpp */; };
@@ -95,7 +96,7 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* ReacticklesMagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReacticklesMagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* magic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = magic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhone_Prefix.pch; sourceTree = "<group>"; };
@@ -194,8 +195,6 @@
 		EA23EF4D139D1E2F0071404C /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
 		EA23EF50139D1E2F0071404C /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		EA23EF51139D1E2F0071404C /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
-		EA23EF54139D1E2F0071404C /* ReactickleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleButton.cpp; sourceTree = "<group>"; };
-		EA23EF55139D1E2F0071404C /* ReactickleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleButton.h; sourceTree = "<group>"; };
 		EA23EF58139D1E2F0071404C /* AboutPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPage.h; sourceTree = "<group>"; };
 		EA23EF59139D1E2F0071404C /* AboutPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AboutPage.mm; sourceTree = "<group>"; };
 		EA23EF5A139D1E2F0071404C /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
@@ -204,6 +203,10 @@
 		EA23EF5D139D1E2F0071404C /* SettingsPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsPage.mm; sourceTree = "<group>"; };
 		EA23EF9C139D1FA50071404C /* BrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSlider.h; sourceTree = "<group>"; };
 		EA23F0DF139D30CB0071404C /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.entitlements"; sourceTree = "<group>"; };
+		EA2FABF413AA063400CB21FA /* ReactickleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleButton.cpp; sourceTree = "<group>"; };
+		EA2FABF513AA063400CB21FA /* ReactickleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleButton.h; sourceTree = "<group>"; };
+		EA2FAC1713AA06AE00CB21FA /* tesselator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tesselator.h; sourceTree = "<group>"; };
+		EA2FAC1A13AA06AE00CB21FA /* tess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = tess2.a; sourceTree = "<group>"; };
 		EA620EE513A6316600A88AF0 /* VolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
 		EA62106813A6481200A88AF0 /* Expand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expand.cpp; sourceTree = "<group>"; };
 		EA62106913A6481200A88AF0 /* Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expand.h; sourceTree = "<group>"; };
@@ -258,7 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E49BCC7A12554CD6009F19D0 /* libofxiPhone_iphoneos_Debug.a in Frameworks */,
+				E49BCC7A12554CD6009F19D0 /* libofxiPhone_macosx_Debug.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -285,6 +288,7 @@
 				BBD28A9B13636CB7002BF7C7 /* PocoNet.a in Frameworks */,
 				BBD28A9C13636CB7002BF7C7 /* PocoUtil.a in Frameworks */,
 				BBD28A9D13636CB7002BF7C7 /* PocoXML.a in Frameworks */,
+				EA2FAC1B13AA06AE00CB21FA /* tess2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +298,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* ReacticklesMagic.app */,
+				1D6058910D05DD3D006BFB54 /* magic.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -565,6 +569,7 @@
 		BB3F144E0F4C6BF200A33527 /* core libraries */ = {
 			isa = PBXGroup;
 			children = (
+				EA2FAC1513AA06AE00CB21FA /* tess2 */,
 				5E25686A10ED26BE00A9501C /* poco */,
 				BB24DDCD10DA784F00E9C588 /* FreeImage */,
 				BB24DDDD10DA785000E9C588 /* freetype */,
@@ -614,7 +619,7 @@
 		E49BCC4912554B69009F19D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */,
+				E49BCC5012554B6A009F19D0 /* libofxiPhone_macosx_Debug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -694,8 +699,6 @@
 			isa = PBXGroup;
 			children = (
 				EA62124613A6652100A88AF0 /* ModeDisplay.h */,
-				EA23EF54139D1E2F0071404C /* ReactickleButton.cpp */,
-				EA23EF55139D1E2F0071404C /* ReactickleButton.h */,
 			);
 			path = gui;
 			sourceTree = "<group>";
@@ -713,6 +716,40 @@
 				EA23EF5D139D1E2F0071404C /* SettingsPage.mm */,
 			);
 			path = pages;
+			sourceTree = "<group>";
+		};
+		EA2FAC1513AA06AE00CB21FA /* tess2 */ = {
+			isa = PBXGroup;
+			children = (
+				EA2FAC1613AA06AE00CB21FA /* include */,
+				EA2FAC1813AA06AE00CB21FA /* lib */,
+			);
+			name = tess2;
+			path = ../../../libs/tess2;
+			sourceTree = SOURCE_ROOT;
+		};
+		EA2FAC1613AA06AE00CB21FA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EA2FAC1713AA06AE00CB21FA /* tesselator.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		EA2FAC1813AA06AE00CB21FA /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EA2FAC1913AA06AE00CB21FA /* osx */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		EA2FAC1913AA06AE00CB21FA /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				EA2FAC1A13AA06AE00CB21FA /* tess2.a */,
+			);
+			path = osx;
 			sourceTree = "<group>";
 		};
 		EA62106613A6481200A88AF0 /* reactickles */ = {
@@ -869,6 +906,8 @@
 		EAD493E413A8B75700D312FE /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				EA2FABF413AA063400CB21FA /* ReactickleButton.cpp */,
+				EA2FABF513AA063400CB21FA /* ReactickleButton.h */,
 				EAD493E513A8B75700D312FE /* ColorCube.h */,
 				EAD493E613A8B75700D312FE /* ColorPicker.cpp */,
 				EAD493E713A8B75700D312FE /* ColorPicker.h */,
@@ -906,9 +945,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* ReacticklesMagic */ = {
+		1D6058900D05DD3D006BFB54 /* magic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ReacticklesMagic" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "magic" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -920,9 +959,9 @@
 			dependencies = (
 				E49BCC6E12554C6C009F19D0 /* PBXTargetDependency */,
 			);
-			name = ReacticklesMagic;
+			name = magic;
 			productName = iPhone;
-			productReference = 1D6058910D05DD3D006BFB54 /* ReacticklesMagic.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* magic.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -950,16 +989,16 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* ReacticklesMagic */,
+				1D6058900D05DD3D006BFB54 /* magic */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */ = {
+		E49BCC5012554B6A009F19D0 /* libofxiPhone_macosx_Debug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libofxiPhone_iphoneos_Debug.a;
+			path = libofxiPhone_macosx_Debug.a;
 			remoteRef = E49BCC4F12554B6A009F19D0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1016,7 +1055,6 @@
 				EA23EF21139D1DFA0071404C /* ofxXmlSettings.cpp in Sources */,
 				EA23EF5E139D1E2F0071404C /* Apps.mm in Sources */,
 				EA23EF60139D1E2F0071404C /* testApp.mm in Sources */,
-				EA23EF61139D1E2F0071404C /* ReactickleButton.cpp in Sources */,
 				EA23EF63139D1E2F0071404C /* AboutPage.mm in Sources */,
 				EA23EF64139D1E2F0071404C /* MainMenu.mm in Sources */,
 				EA23EF65139D1E2F0071404C /* SettingsPage.mm in Sources */,
@@ -1036,6 +1074,7 @@
 				EAD4940113A8B75700D312FE /* Settings.mm in Sources */,
 				EAD4940213A8B75700D312FE /* util.cpp in Sources */,
 				EAD4940C13A8B7A200D312FE /* testAppEvents.mm in Sources */,
+				EA2FABF613AA063400CB21FA /* ReactickleButton.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1055,6 +1094,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Marek Bereza";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
@@ -1062,6 +1102,7 @@
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../../libs/tess2/lib/osx\"",
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../libs/freetype/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/FreeImage/lib/osx\"",
@@ -1069,6 +1110,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F7DCAB6B-4D2A-4794-B160-4394B068CB03";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -1088,6 +1130,7 @@
 					"\"$(SRCROOT)/../../../libs/freetype/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/FreeImage/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/poco/lib/osx\"",
+					"\"$(SRCROOT)/../../../libs/tess2/lib/osx\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1250,6 +1293,7 @@
 					"\"$(SRCROOT)/../../../libs/freetype/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/FreeImage/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/poco/lib/osx\"",
+					"\"$(SRCROOT)/../../../libs/tess2/lib/osx\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1310,6 +1354,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = (
+					../../../libs/tess2/include,
+					../../../libs/poco/include,
+					"../../../addons/ofxAccelerometer/**",
+					"../../../addons/ofxMultitouch/**",
+					"../../../addons/ofxiPhone/**",
+					"../../../libs/openFrameworks/**",
+					"../../../libs/freetype/**",
+				);
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1317,6 +1370,7 @@
 					"\"$(SRCROOT)/../../../libs/freetype/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/FreeImage/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/poco/lib/osx\"",
+					"\"$(SRCROOT)/../../../libs/tess2/lib/osx\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1327,7 +1381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ReacticklesMagic" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "magic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
