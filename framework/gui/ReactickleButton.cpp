@@ -15,7 +15,7 @@ ReactickleButton::ReactickleButton(string name) {
 	width = screenshot->getWidth();
 	height = screenshot->getHeight();
 	
-	height *= 0.8;
+	//height *= 0.8;
 	border.setup(ImageCache::getImage("img/dropShadow.png"), 4);
 	this->name = name;
 	listener = NULL;
@@ -29,9 +29,9 @@ void ReactickleButton::draw() {
 	} else {
 		ofSetHexColor(0xFFFFFF);
 	}
-	screenshot->draw(x, y-20);
-	ofSetHexColor(0xFF0000);
-	ofDrawBitmapString(name, x, y);
+	screenshot->draw(x, y, width, height);
+	//ofSetHexColor(0xFF0000);
+	//ofDrawBitmapString(name, x, y);
 }
 
 void ReactickleButton::setListener(ReactickleButtonListener *listener) {

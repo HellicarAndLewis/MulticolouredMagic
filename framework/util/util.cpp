@@ -1,5 +1,7 @@
 #include "util.h"
 #include "ofMain.h"
+#include <sys/stat.h>
+
 using namespace std;
 
 
@@ -16,7 +18,7 @@ string dateTimeString() {
 }
 
 
-string getDesktopPath() {
+string getHomeDirectory() {
 	FILE *fp = popen("who am I", "r");
 	if(fp!=NULL) {
 		printf("popen made it\n");
@@ -28,8 +30,9 @@ string getDesktopPath() {
 			username = name;
 			if(username.find(' ')!=-1) {
 				username = username.substr(0, username.find(' '));
-				string desktop = "/Users/"+username+"/Desktop";
-				return desktop;
+				string home = "/Users/"+username;
+				printf("%s\n", home.c_str());
+				return home;
 			}
 			
 		}
@@ -38,4 +41,31 @@ string getDesktopPath() {
 		printf("Couldn't find user's name, going with default\n");
 	}
 	return "";
+}
+
+string getDesktopPath() {
+	return getHomeDirectory() + "/Desktop";
+}
+
+
+string getPreferencesDirectory(string appName) {
+	//getHomeDirectory();
+	//if(1) return "/Users/marek/Library/Preferences/Reactickles Magic";
+	string prefsDir = getHomeDirectory() + "/Library/Preferences/"+appName;
+	printf("Here: %s\n", prefsDir.c_str());
+	struct stat stFileInfo; 
+	
+	// Attempt to get the file attributes 
+	if(stat(prefsDir.c_str(),&stFileInfo)!=0) { 
+		
+		if(mkdir(prefsDir.c_str(), 0777)==0) {
+			printf("Prefs: %s\n", prefsDir.c_str());
+			return prefsDir;
+		} else {
+			printf("Failed to create preferences directory: %s\n", prefsDir.c_str());
+			return "";
+		}
+	} else {
+		return prefsDir;
+	}
 }

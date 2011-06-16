@@ -13,12 +13,12 @@ bool RETINA = false;
 bool IPAD = false;
 bool HI_RES = false;
 string IMAGE_ROOT;
-
+string APP_NAME;
 
 
 
 int main(){
-	
+	APP_NAME = "openFrameworks"; // rename me!
 #ifdef TARGET_OF_IPHONE
 	if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
 		if ([[UIScreen mainScreen] scale] > 1) {

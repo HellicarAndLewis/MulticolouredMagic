@@ -7,16 +7,19 @@
 #endif
 //--------------------------------------------------------------
 void testApp::setup(){	
-
+	APP_NAME = "ReacticklesMagic";
+	
 #ifndef TARGET_OF_IPHONE
-/*	char path[512];
+	char path[512];
 	getcwd(path, 512);
 	string dataRoot = path;
 	dataRoot += "/../data/";
-	ofSetDataPathRoot(dataRoot);*/
+	ofSetDataPathRoot(dataRoot);
 	setupGui();
 #endif
 	
+	string s = getPreferencesDirectory(APP_NAME);
+	printf("%s\n", s.c_str());
 	modeDisplay.setup();
 	gain = 1;
 	volumeThreshold = 0.3;
@@ -96,6 +99,10 @@ void testApp::setupOrientation() {
 #endif
 }
 #ifndef TARGET_OF_IPHONE
+
+
+
+
 void testApp::setupGui() {
 	
 	gui.addSlider("Threshold", kinect.threshold, 0, 255);
@@ -119,6 +126,14 @@ void testApp::setupGui() {
 	gui.addContent("Blobs", kinect.contourFinder);
 	
 	gui.setDraw(false);
+	
+
+	vector<ofxSimpleGuiPage*> pages = gui.getPages();
+	string prefsDir = getPreferencesDirectory(APP_NAME);
+	for(int i = 0; i < pages.size(); i++) {
+		pages[i]->setXMLName(prefsDir+"/"+pages[i]->name + "_settings.xml");
+	}
+	
 	gui.loadFromXML();
 	gui.setAutoSave(true);
 }

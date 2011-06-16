@@ -28,3 +28,5 @@ extern bool HI_RES;
 // on whether you're HI_RES or not. If it's an iPad or iPhone4, the images
 // need to be 2x as big (well 2x2 times as big, hence the 4
 extern std::string IMAGE_ROOT;
+
+extern std::string APP_NAME;

@@ -8,14 +8,18 @@
 
 #include "Properties.h"
 #include "Settings.h"
+#include "constants.h"
 #ifdef TARGET_OF_IPHONE
 #include "ofxiPhoneExtras.h"
+#else
+#include "util.h"
 #endif
 Settings::Settings() {
 #ifdef TARGET_OF_IPHONE
 	path = ofxiPhoneGetDocumentsDirectory() + "/settings.xml";
 #else
-	path = ofToDataPath("settings.xml", true);
+	path = getPreferencesDirectory(APP_NAME);
+	path += "/settings.xml";// ofToDataPath("settings.xml", true);
 #endif
 	setDefaultValues();
 	load();
