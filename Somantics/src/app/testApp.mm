@@ -25,6 +25,7 @@ void testApp::setup(){
 	backButton.x = WIDTH - backButton.width;
 	backButton.y = HEIGHT - backButton.height;
 	backButton.setListener(this);
+	backButton.setHoldMode(false);
 	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
 	aboutPage.setup();
 	settingsPage.setup();
@@ -75,6 +76,7 @@ void testApp::setupGraphics() {
 	ofBackground(0, 0, 0);
 	ofSetFrameRate(30.f);
 	ofEnableAlphaBlending();
+	ofSetVerticalSync(true);
 }
 //--------------------------------------------------------------
 void testApp::update(){
@@ -131,7 +133,11 @@ void testApp::switchReactickle(Reactickle *reactickle) {
 	currentApp = reactickle;
 	if(isReactickle(currentApp)) {
 		currentApp->setup();
+		backButton.setHoldMode(true);
+	} else {
+		backButton.setHoldMode(false);
 	}
+	
 	currentApp->start();
 
 }

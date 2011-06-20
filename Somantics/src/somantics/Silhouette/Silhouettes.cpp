@@ -20,8 +20,17 @@ void Silhouettes::setup(){
 
 	
 #ifdef USE_FBO
-	currFrame.setup(w, h);
-	histFrame.setup(w, h);
+	currFrame = new ofFbo();
+	histFrame = new ofFbo();
+	currFrame->setup(w, h);
+	histFrame->setup(w, h);
+#endif
+}
+
+Silhouettes::~Silhouettes() {
+#ifdef USE_FBO
+	delete currFrame;
+	delete histFrame;
 #endif
 }
 //--------------------------------------------------------------
@@ -35,7 +44,7 @@ void Silhouettes::draw(){
 	
 	
 #ifdef USE_FBO	
-	currFrame.begin();
+	currFrame->begin();
 #endif
 	ofClear(0, 0, 0, 0);
 	for(int i = 0; i < silhouettes.size(); i++) {
@@ -47,8 +56,8 @@ void Silhouettes::draw(){
 		}
 	}
 #ifdef USE_FBO
-	currFrame.end();
-	histFrame.begin();
+	currFrame->end();
+	histFrame->begin();
 	if(!histFrameCleared) {
 		ofClear(0,0,0,0);
 		histFrameCleared = true;
@@ -58,10 +67,10 @@ void Silhouettes::draw(){
 	ofRect(0, 0, ofGetWidth(), ofGetHeight());
 	
 	glColor4ub(255, 255, 255, 200);
-	currFrame.draw(0, 0);
-	histFrame.end();
+	currFrame->draw(0, 0);
+	histFrame->end();
 	glColor4f(1, 1, 1, 1);
-	histFrame.draw(0, 0);
+	histFrame->draw(0, 0);
 #endif
 	
 }

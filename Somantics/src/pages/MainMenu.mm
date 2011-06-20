@@ -18,12 +18,14 @@ void MainMenu::setup() {
 	
 	initMenu();
 	
-	settingsButton.setup("settings", ofVec2f(50, 50), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
-	aboutButton.setup("about", ofVec2f(150, 50), IMAGE_ROOT + "aboutButton.png", IMAGE_ROOT + "aboutButtonDown.png");
+	settingsButton.setup("settings", ofVec2f(WIDTH/2 - 66, HEIGHT - 50), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
+	aboutButton.setup("about", ofVec2f(WIDTH/2 + 54, HEIGHT - 50), IMAGE_ROOT + "aboutButton.png", IMAGE_ROOT + "aboutButtonDown.png");
 	
-	items.push_back(&aboutButton);
-	items.push_back(&settingsButton);
-	items.push_back(&scrollView);
+	logo.setup(ofVec2f(WIDTH/2 - 150, 35), IMAGE_ROOT + "logo.png"); 
+	add(&logo);
+	add(&aboutButton);
+	add(&settingsButton);
+	add(&scrollView);
 	
 	aboutButton.setListener(this);
 	settingsButton.setListener(this);
@@ -35,7 +37,7 @@ void MainMenu::setup() {
 	} else {
 		bgImage = ImageCache::getImage("img/bgIPhone.png");
 	}
-	logo = ImageCache::getImage(IMAGE_ROOT + "logo.png");
+
 }
 
 void MainMenu::addReactickleButton(ReactickleButton *reactickleButton) {
@@ -57,6 +59,8 @@ void MainMenu::buttonPressed(string name) {
 void MainMenu::draw() {	
 	ofSetHexColor(0xFFFFFF);
 	bgImage->draw(0, 0, ofGetWidth(), ofGetHeight());
-	logo->draw(WIDTH/2, HEIGHT - 20);
 	Container::draw();
+	//ofSetHexColor(0xFF0000);
+	
+	//ofLine(WIDTH/2, 0, WIDTH/2, ofGetHeight());
 }

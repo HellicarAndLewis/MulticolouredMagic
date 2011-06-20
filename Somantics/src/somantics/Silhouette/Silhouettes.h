@@ -3,12 +3,18 @@
 #include "ofMain.h"
 #include "Silhouette.h"
 #include "Reactickle.h"
-#ifndef TARGET_OF_IPHONE
+//#ifndef TARGET_OF_IPHONE
 #define USE_FBO
-#endif
+// still can't get this to work!!!
+//#ifdef TARGET_OF_IPHONE
+//#include "ofxFBOTexture.h"
+//#define ofFbo ofxFBOTexture
+//#endif
+//#endif
 class Silhouettes : public Reactickle {
 
 public:
+	~Silhouettes();
 	void setup();
 	void update();
 	void draw();
@@ -25,7 +31,7 @@ public:
 	
 	
 #ifdef USE_FBO
-	ofFbo currFrame;
-	ofFbo histFrame;
+	ofFbo *currFrame;
+	ofFbo *histFrame;
 #endif
 };

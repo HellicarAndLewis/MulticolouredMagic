@@ -13,13 +13,13 @@
 
 void SettingsPage::setup() {
 	
-	settingsTitle = ImageCache::getImage(IMAGE_ROOT + "settingsTitle.png");	
-	colourPickerTitle = ImageCache::getImage(IMAGE_ROOT + "colourPickerTitle.png");
 	
+	settingsTitle.setup(ofVec2f(39, 85), IMAGE_ROOT + "settingsTitle.png");
+	colourPickerTitle.setup(ofVec2f(276, 110), IMAGE_ROOT + "colourPickerTitle.png");
+	colorPicker.setup();
 	slider.setup();
+	slider.y += 57;
 	
-	add(&colorPicker);
-	add(&slider);
 	if(IPAD) {
 		bgImage = ImageCache::getImage("img/bgIPad.png");
 	} else if(HI_RES) {
@@ -27,8 +27,17 @@ void SettingsPage::setup() {
 	} else {
 		bgImage = ImageCache::getImage("img/bgIPhone.png");
 	}
-	logo = ImageCache::getImage(IMAGE_ROOT + "logo.png");
-	logo->setAnchorPercent(0.5, 1);
+	
+	logo.setup(ofVec2f(WIDTH/2 - 150, 35), IMAGE_ROOT + "logo.png");
+
+
+
+	add(&settingsTitle);
+	add(&colourPickerTitle);
+	add(&colorPicker);
+	add(&slider);
+	add(&logo);	
+	
 	resetButton.setup("reset", ofVec2f(987, 53), IMAGE_ROOT+"reset.png", IMAGE_ROOT+"resetDown.png");
 	add(&resetButton);
 	resetButton.setListener(this);
@@ -45,8 +54,8 @@ void SettingsPage::buttonPressed(string name) {
 void SettingsPage::draw() {	
 	ofSetHexColor(0xFFFFFF);
 	bgImage->draw(0, 0, ofGetWidth(), ofGetHeight());
-	settingsTitle->draw(39, 35);
-	colourPickerTitle->draw(260, 59);
-	logo->draw(WIDTH/2, HEIGHT - 20);
+	//settingsTitle->draw(39, 35);
+//	colourPickerTitle->draw(260, 59);
+	//logo->draw(WIDTH/2, HEIGHT - 20);
 	Container::draw();
 }

@@ -10,6 +10,7 @@
 #include "ColorPicker.h"
 #include "SimpleButton.h"
 #include "BrightnessSlider.h"
+#include "ImageObject.h"
 
 class SettingsPage: public Reactickle, public SimpleButtonListener {
 public:
@@ -19,8 +20,16 @@ public:
 	ColorPicker colorPicker;
 	SimpleButton resetButton;
 	BrightnessSlider slider;
+	
 	ofImage *bgImage;
+	
+	ImageObject settingsTitle;
+	ImageObject colourPickerTitle;
+	ImageObject logo;
+	/*
+	
 	ofImage *settingsTitle;
 	ofImage *colourPickerTitle;
 	ofImage *logo;
+	 */
 };

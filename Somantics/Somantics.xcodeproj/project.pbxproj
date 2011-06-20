@@ -71,6 +71,7 @@
 		EAD4979713A8D9B900D312FE /* Properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4978613A8D9B900D312FE /* Properties.cpp */; };
 		EAD4979813A8D9B900D312FE /* Settings.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4978913A8D9B900D312FE /* Settings.mm */; };
 		EAD4979913A8D9B900D312FE /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4978A13A8D9B900D312FE /* util.cpp */; };
+		EAE5254313AF938A006B1572 /* ofxFBOTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE5254113AF938A006B1572 /* ofxFBOTexture.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +241,8 @@
 		EAD4978913A8D9B900D312FE /* Settings.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Settings.mm; sourceTree = "<group>"; };
 		EAD4978A13A8D9B900D312FE /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
 		EAD4978B13A8D9B900D312FE /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		EAE5254113AF938A006B1572 /* ofxFBOTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFBOTexture.cpp; sourceTree = "<group>"; };
+		EAE5254213AF938A006B1572 /* ofxFBOTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFBOTexture.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -696,6 +699,7 @@
 		EAD4974413A8D9B100D312FE /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EAE5254013AF938A006B1572 /* iPhoneFBO */,
 				EAD4974513A8D9B100D312FE /* app */,
 				EAD4974913A8D9B100D312FE /* gui */,
 				EAD4974B13A8D9B100D312FE /* pages */,
@@ -861,6 +865,15 @@
 			path = vision;
 			sourceTree = "<group>";
 		};
+		EAE5254013AF938A006B1572 /* iPhoneFBO */ = {
+			isa = PBXGroup;
+			children = (
+				EAE5254113AF938A006B1572 /* ofxFBOTexture.cpp */,
+				EAE5254213AF938A006B1572 /* ofxFBOTexture.h */,
+			);
+			path = iPhoneFBO;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -990,6 +1003,7 @@
 				EAD4979713A8D9B900D312FE /* Properties.cpp in Sources */,
 				EAD4979813A8D9B900D312FE /* Settings.mm in Sources */,
 				EAD4979913A8D9B900D312FE /* util.cpp in Sources */,
+				EAE5254313AF938A006B1572 /* ofxFBOTexture.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

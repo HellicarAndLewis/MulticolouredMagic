@@ -19,6 +19,9 @@ public:
 		touchX = 0;
 		touching = false;
 		
+		PADDING = 10*WIDTH_SCALE;
+		
+		
 		this->itemsPerCol = itemsPerCol;
 		this->x = x;
 		this->y = y;
@@ -33,6 +36,8 @@ public:
 	
 	void add(InteractiveObject *item) {
 		items.push_back(item);
+		
+		totalWidth = ((items.size()+1)/2)*(items[0]->width+PADDING);
 	}
 	
 	// this is a list of all the things that can be interacted with
@@ -49,9 +54,11 @@ public:
 				
 				
 				// pulling the bottom
+				// 
 			} else if(totalWidth + scrollOffset < width) {
-					
+				
 				deltaX = (width - (totalWidth + scrollOffset))*0.1;
+				
 			} else {
 				// normal momentum
 				deltaX *= 0.9;
@@ -65,9 +72,9 @@ public:
 			items[i]->draw();
 		}
 	}
-	
+	int PADDING;
 	void arrange() {
-		int PADDING = 10*WIDTH_SCALE;
+
 		int rowHeight = items[0]->height+PADDING;
 		int colWidth = items[0]->width+PADDING;
 		
@@ -77,9 +84,7 @@ public:
 			int row = i % itemsPerCol;
 			items[i]->x = colWidth*col + scrollOffset + PADDING;
 			items[i]->y = rowHeight*row + y + PADDING;
-			if(totalWidth<items[i]->x + items[i]->width) {
-				totalWidth = items[i]->x + items[i]->width;
-			}
+		
 		}
 	}
 	
