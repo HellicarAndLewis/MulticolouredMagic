@@ -1,0 +1,74 @@
+Multicoloured Magic
+===================
+
+Multicoloured Magic is actually 2 separate projects: (1) Reactickles Magic, (2) Somantics.
+
+Each of these 2 projects has 2 apps - a desktop one and an iPad one. (the final goal is to get it 
+running on iPhone too, but for now we're just concentrating on the first 2 platforms.
+
+Each app is actually a collection of mini apps, so the main apps act as launch-pads or shells for
+these mini apps.
+
+They share a lot of code (for gui stuff and events). This is located in the framework/ folder.
+
+Below is an explanation of the important files.
+
+app/main.mm and constants.h 
+---------------------------
+takes care of configuring runtime platform specific info, such as
+	* WIDTH - the width of the display
+	* HEIGHT - the height
+	* IPAD/HI_RES/RETINA - info about the device
+	* IMAGE_ROOT - for Mac, iPad and iPhone4 we use double sized images and this directory is 
+				   determined from here at runtime.
+	* WIDTH_SCALE/HEIGHT_SCALE - this is used when laying out elements on the screen - for the iPad,
+								 mac, iPhone4 this is 2, for normal iPhone it's 1.
+
+
+framework/app/Reactickle.h
+------------
+This is the superclass of the mini-program. The name is a little confusing because it's also the
+name of one of the projects. Each main program (e.g. Somantics iPad app) will have a set of 
+Reactickles in it (or subclasses of Reactickles, rather). 
+
+framework/graphics/
+---------
+Utilities for drawing stuff like drop shadows and hearts and the like.
+
+framework/gui/
+----
+A simple gui library with buttons, sliders, event propagation etc.
+
+framework/util/
+-----
+Files/settings helpers. 
+
+Also an image loader called ImageCache that prevents you from loading an image more than once - it's 
+not reference counted for now, but it shouldn't be a problem for this project. You don't need to 
+dispose of the image. The idea is you request an image by passing in the path. The path is used as 
+a key in a hashmap of images. If there is an image in the hashmap corresponding to the path, it 
+returns it, if not, it loads the image, saves it to the hashmap and returns you a pointer.
+
+framework/vision/
+----
+Some computer vision helpers. There's a class called KinectOrCamera which lets mac apps fall back
+to using a normal camera if there's no kinect plugged in.
+
+
+TO CREATE A NEW REACTICKLE
+==========================
+1. Subclass Reactickle, it has methods a bit like ofBaseApp.
+2. Next add it to the list in src/app/Apps.mm for your program.
+		- 1. Include the file at the top
+		- 2. Add it in MainMenu::initMenu()
+					- addReactickleButton(new ReactickleButton("Your app name"));
+		- 3. Add it in reactickleSelected()
+		
+					....
+					} else if(name=="Your app name") {
+						r = new YourApp();
+					} ....
+
+That's it!
+
+
