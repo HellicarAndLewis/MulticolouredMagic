@@ -4,6 +4,15 @@
 #ifdef TARGET_OF_IPHONE
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
+#include "ofxOpenCv.h"
+#else
+#include "KinectOrCamera.h"
+
+
+#include "ofxSimpleGuiToo.h"
+#include "TuioKinect.h"
+#include "ofxTuioClient.h"
+
 #endif
 #include "constants.h"
 #include "Reactickle.h"
@@ -61,6 +70,11 @@ public:
 	void buttonPressed(string name);
 	
 private:
+	KinectOrCamera kinect;
+	void startCrossFade(bool fadeIn);
+	float crossFadeStartTime;
+	// true if fading into an app, false if fading out to the menu.
+	bool fadingIn;
 	bool isReactickle(Reactickle *reactickle);
 	int currOrientation;
 	

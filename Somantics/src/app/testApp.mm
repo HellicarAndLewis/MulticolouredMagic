@@ -1,9 +1,10 @@
 #include "testApp.h"
 #include "MagicShapes.h"
-
+#define	CROSS_FADE_TIME 2
 //--------------------------------------------------------------
 void testApp::setup(){	
 	gain = 1;
+	crossFadeStartTime = -100;
 	volumeThreshold = 0.3;
 	ReactickleApp::instance = this;
 	setupGraphics();
@@ -18,6 +19,8 @@ void testApp::setup(){
 	//iPhoneAlerts will be sent to this.
 	ofxiPhoneAlerts.addListener(this);
 #endif
+	
+	kinect.setup();
 	currentApp = &mainMenu;
 	mainMenu.setup();
 	
@@ -84,6 +87,11 @@ void testApp::update(){
 	if(currentApp!=NULL) {
 		currentApp->volume = volume;
 		currentApp->volumeThreshold = volumeThreshold;
+		if(currentApp->needsKinect()) {
+			kinect.update();
+			//currentApp->colorPixels = kinect.getPixels();
+			//currentApp->grayPixels = kinect.getDepthPixels();
+		}
 		currentApp->update();
 	}
 	
@@ -102,9 +110,43 @@ void testApp::draw(){
 		glScalef(0.5, 0.5, 1);
 	}
 	
-//	ofCircle(WIDTH/2, HEIGHT/2, HEIGHT/2);
-	//mainMenu.draw();
-	currentApp->draw();
+
+	
+	
+	float crossFadeTime = ofGetElapsedTimef() - crossFadeStartTime;
+	
+	// if we're crossfading do this:
+	if(crossFadeTime<CROSS_FADE_TIME) {
+		
+		Reactickle *first = &mainMenu;
+		Reactickle *second = currentApp;
+		
+		// choose which way we're fading
+		if(!fadingIn) {
+			first = currentApp;
+			second = &mainMenu;
+		}
+		// we want do draw the main menu fading out
+		if(crossFadeTime<CROSS_FADE_TIME/2) {
+			// fade out menu
+			first->draw();
+			ofSetColor(0, 0, 0, ofMap(crossFadeTime, 0, CROSS_FADE_TIME/2, 0, 255, true));
+			ofRect(0, 0, WIDTH, HEIGHT);
+		} else {
+			// fade in app
+			second->draw();
+			ofSetColor(0, 0, 0, ofMap(crossFadeTime, CROSS_FADE_TIME/2, CROSS_FADE_TIME, 255, 0, true));
+			ofRect(0, 0, WIDTH, HEIGHT);
+		}
+		
+		
+		// and then the app fading in
+		
+		
+		// otherwise, just do this
+	} else {
+		currentApp->draw();
+	}
 	if(currentApp!=&mainMenu) {
 		backButton.draw();
 	}
@@ -129,17 +171,23 @@ void testApp::switchReactickle(Reactickle *reactickle) {
 		currentApp = NULL;
 	}
 	
+
 	// start the new one
 	currentApp = reactickle;
 	if(isReactickle(currentApp)) {
 		currentApp->setup();
 		backButton.setHoldMode(true);
+		startCrossFade(true);
 	} else {
 		backButton.setHoldMode(false);
 	}
 	
 	currentApp->start();
 
+}
+void testApp::startCrossFade(bool fadeIn) {
+	fadingIn = fadeIn;
+	crossFadeStartTime = ofGetElapsedTimef();
 }
 
 void testApp::buttonPressed(string name) {

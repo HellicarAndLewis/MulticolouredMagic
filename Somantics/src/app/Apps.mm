@@ -22,11 +22,12 @@
 #include "Corridors.h"
 #include "Silhouettes.h"
 #include "Windmills.h"
-
+#include "Painter.h"
 void MainMenu::initMenu() {
 	addReactickleButton(new ReactickleButton("Corridors"));
 	addReactickleButton(new ReactickleButton("Silhouette"));
 	addReactickleButton(new ReactickleButton("Windmills"));
+	addReactickleButton(new ReactickleButton("Painter"));
 
 }
 
@@ -40,6 +41,8 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Silhouettes();
 	} else if(name=="Windmills") {
 		r = new Windmills();
+	} else if(name=="Painter") {
+		r = new Painter();
 	}
 	
 	if(r!=NULL) {	

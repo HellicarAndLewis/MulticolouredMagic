@@ -5,6 +5,7 @@
  * Created by Marek Bereza on 13/04/2011.
  *
  */
+#pragma once
 #include "ofMain.h"
 #include "ofxKinect.h"
 

@@ -45,9 +45,9 @@ public:
 	// same as ofBaseApp
 	virtual void update() {};
 	
+	// don't use these - I will remove them soon
 	virtual void keyPressed( int key ){}
 	virtual void keyReleased( int key ){}
-	
 	virtual void mouseMoved( int x, int y ){}
 	virtual void mouseDragged( int x, int y, int button ){}
 	virtual void mousePressed( int x, int y, int button ){}
@@ -56,6 +56,10 @@ public:
 	virtual void audioReceived( float * input, int bufferSize, int nChannels ){}
 	virtual void audioRequested( float * input, int bufferSize, int nChannels ){}
     virtual void windowResized(int x, int y) {} // probably won't be used.
+	// end of don't use these's
+	
+	
+	
     // if the mode has been changed, 
     virtual void modeChanged() {};
 	
