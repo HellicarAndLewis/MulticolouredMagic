@@ -20,6 +20,12 @@ class Grid: public Reactickle {
 		timeOfLastNewCircle = ofGetElapsedTimef();
 	}
 	
+	bool touchDown(float x, float y, int id) {
+		positionInGrid++;
+		if(positionInGrid > gridWidth*gridHeight){
+			positionInGrid = 0;
+		}
+	}
 	void update(){
 		float timeNow = ofGetElapsedTimef();
 		

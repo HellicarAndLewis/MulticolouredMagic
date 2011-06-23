@@ -65,7 +65,6 @@ class Cascade: public Reactickle {
 public:
 
 	void start() {
-		ofSetCircleResolution(32);
         currShapeId = 0;
     }
 	

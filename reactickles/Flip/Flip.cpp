@@ -32,7 +32,7 @@ void Flip::draw() {
 	
 	ofSetHexColor(0xFFFFFF);
 	drawShape(currShapeId, pos.back(), 400);
-
+	
 	while(pos.size()>100) {
 		pos.pop_front();
 	}
