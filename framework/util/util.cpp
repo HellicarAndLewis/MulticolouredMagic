@@ -16,7 +16,13 @@ string dateTimeString() {
 	+ padZeros(ofGetHours()) +"-"+padZeros(ofGetMinutes()) +"-"+
 	padZeros(ofGetSeconds());
 }
-
+void setDataPathRootToAppContents() {
+	char path[512];
+	getcwd(path, 512);
+	string dataRoot = path;
+	dataRoot += "/../data/";
+	ofSetDataPathRoot(dataRoot);
+}
 
 string getHomeDirectory() {
 	FILE *fp = popen("who am I", "r");

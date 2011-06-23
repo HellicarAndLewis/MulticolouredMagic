@@ -39,8 +39,7 @@ public:
 	void touchDown(ofTouchEventArgs &touch);
 	void touchMoved(ofTouchEventArgs &touch);
 	void touchUp(ofTouchEventArgs &touch);
-	void touchDoubleTap(ofTouchEventArgs &touch);
-	void touchCancelled(ofTouchEventArgs &touch);
+	
 
 #ifndef TARGET_OF_IPHONE	
 	

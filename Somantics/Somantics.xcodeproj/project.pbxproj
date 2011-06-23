@@ -33,7 +33,7 @@
 		E434BF7312477FBA00452519 /* freetype-iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E434BF7212477FBA00452519 /* freetype-iphone.a */; };
 		E496D5B11252C8210098A2B3 /* glu-iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E496D5AF1252C8210098A2B3 /* glu-iphone.a */; };
 		E496D5B21252C8210098A2B3 /* glu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E496D5B01252C8210098A2B3 /* glu.a */; };
-		E49BCC7A12554CD6009F19D0 /* libofxiPhone_macosx_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49BCC5012554B6A009F19D0 /* libofxiPhone_macosx_Debug.a */; };
+		E49BCC7A12554CD6009F19D0 /* libofxiPhone_iphoneos_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */; };
 		E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
 		EA20B4FA1366F6EF0038E922 /* Default-LandscapeLeft~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EA20B4EE1366F6EF0038E922 /* Default-LandscapeLeft~ipad.png */; };
 		EA20B4FB1366F6EF0038E922 /* Default-LandscapeRight~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EA20B4EF1366F6EF0038E922 /* Default-LandscapeRight~ipad.png */; };
@@ -53,6 +53,7 @@
 		EA23EB36139CF4740071404C /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EB2F139CF4740071404C /* tinyxmlparser.cpp */; };
 		EA23EB37139CF4740071404C /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EB31139CF4740071404C /* ofxXmlSettings.cpp */; };
 		EA2FAA7713A8F95800CB21FA /* tess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2FAA7613A8F95800CB21FA /* tess2.a */; };
+		EA3AD84113B38DC100F843E2 /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA3AD83F13B38DC100F843E2 /* Painter.cpp */; };
 		EAD4976213A8D9B100D312FE /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974613A8D9B100D312FE /* Apps.mm */; };
 		EAD4976313A8D9B100D312FE /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974813A8D9B100D312FE /* testApp.mm */; };
 		EAD4976413A8D9B100D312FE /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974D13A8D9B100D312FE /* AboutPage.mm */; };
@@ -192,6 +193,8 @@
 		EA2FAA7313A8F95800CB21FA /* tesselator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tesselator.h; sourceTree = "<group>"; };
 		EA2FAA7613A8F95800CB21FA /* tess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = tess2.a; sourceTree = "<group>"; };
 		EA2FAB6013A9006600CB21FA /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		EA3AD83F13B38DC100F843E2 /* Painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Painter.cpp; sourceTree = "<group>"; };
+		EA3AD84013B38DC100F843E2 /* Painter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Painter.h; sourceTree = "<group>"; };
 		EAD4974613A8D9B100D312FE /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
 		EAD4974713A8D9B100D312FE /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		EAD4974813A8D9B100D312FE /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
@@ -250,7 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E49BCC7A12554CD6009F19D0 /* libofxiPhone_macosx_Debug.a in Frameworks */,
+				E49BCC7A12554CD6009F19D0 /* libofxiPhone_iphoneos_Debug.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -607,7 +610,7 @@
 		E49BCC4912554B69009F19D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E49BCC5012554B6A009F19D0 /* libofxiPhone_macosx_Debug.a */,
+				E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -696,6 +699,15 @@
 			path = osx;
 			sourceTree = "<group>";
 		};
+		EA3AD83E13B38DC100F843E2 /* Painter */ = {
+			isa = PBXGroup;
+			children = (
+				EA3AD83F13B38DC100F843E2 /* Painter.cpp */,
+				EA3AD84013B38DC100F843E2 /* Painter.h */,
+			);
+			path = Painter;
+			sourceTree = "<group>";
+		};
 		EAD4974413A8D9B100D312FE /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -751,6 +763,7 @@
 		EAD4975413A8D9B100D312FE /* somantics */ = {
 			isa = PBXGroup;
 			children = (
+				EA3AD83E13B38DC100F843E2 /* Painter */,
 				EAD4975513A8D9B100D312FE /* Corridors */,
 				EAD4975913A8D9B100D312FE /* Silhouette */,
 				EAD4975E13A8D9B100D312FE /* Windmills */,
@@ -927,10 +940,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E49BCC5012554B6A009F19D0 /* libofxiPhone_macosx_Debug.a */ = {
+		E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libofxiPhone_macosx_Debug.a;
+			path = libofxiPhone_iphoneos_Debug.a;
 			remoteRef = E49BCC4F12554B6A009F19D0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1004,6 +1017,7 @@
 				EAD4979813A8D9B900D312FE /* Settings.mm in Sources */,
 				EAD4979913A8D9B900D312FE /* util.cpp in Sources */,
 				EAE5254313AF938A006B1572 /* ofxFBOTexture.cpp in Sources */,
+				EA3AD84113B38DC100F843E2 /* Painter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

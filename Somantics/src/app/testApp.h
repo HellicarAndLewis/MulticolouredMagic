@@ -4,7 +4,9 @@
 #ifdef TARGET_OF_IPHONE
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
+#ifdef USING_OPENCV
 #include "ofxOpenCv.h"
+#endif
 #else
 #include "KinectOrCamera.h"
 
@@ -29,13 +31,6 @@ public:
 	void update();
 	void draw();
 	
-
-	
-	
-	
-	
-	
-
 	// app stuff
 	void launchReactickle(Reactickle *reactickle);
 	void showSettings();
@@ -50,8 +45,9 @@ public:
 	void buttonPressed(string name);
 	
 protected:
+#ifdef USING_OPENCV
 	KinectOrCamera kinect;
-	
+#endif
 	// true if fading into an app, false if fading out to the menu.
 	
 	bool isReactickle(Reactickle *reactickle);

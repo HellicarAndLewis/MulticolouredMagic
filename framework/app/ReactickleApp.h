@@ -29,24 +29,27 @@ public ofBaseApp
 {
 public:
 	
-	virtual void setup();
+	// call this in your reactickle app setup
+	void setupApp(ReactickleApp *instance, string appName);
+	void exit();
 	
+	// these just redirect to touch events.
 #ifndef TARGET_OF_IPHONE
 	void mouseDragged(int x, int y, int button);
 	void mousePressed(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
 #endif
 	
-	virtual void touchDown(ofTouchEventArgs &touch);
-	virtual void touchMoved(ofTouchEventArgs &touch);
-	virtual void touchUp(ofTouchEventArgs &touch);
+	// these will redirect to explicit versions e.g. touchDown(float x, float y, int id);
+	void touchDown(ofTouchEventArgs &touch);
+	void touchMoved(ofTouchEventArgs &touch);
+	void touchUp(ofTouchEventArgs &touch);
 	
-	
-	void setupOrientation();
 	void audioReceived( float * input, int bufferSize, int nChannels );
-	void updateOrientation();
-	void exit();
-	void setupGraphics();
+	
+	
+	
+	
 	void switchReactickle(Reactickle *reactickle);
 	
 	// stuff you have to override
@@ -63,6 +66,13 @@ public:
 	void deviceOrientationChanged(int newOrientation);
 	
 protected:
+	
+	void setupGraphics();
+	void setupOrientation();
+	int currOrientation;
+	void updateOrientation();
+	
+	// animates between reactickles
 	void startCrossFade(bool fadeIn);
 	float crossFadeStartTime;
 	bool fadingIn;

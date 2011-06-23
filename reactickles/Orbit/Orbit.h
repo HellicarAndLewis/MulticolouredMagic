@@ -69,6 +69,7 @@ public:
         switch (mode) {
             case 0:
                 if (shapeOnScreen) {
+					ofSetHexColor(0xFFFFFF);
                     drawShape(currentShapeType, centreOfBigShape, bigShapeRadius); //using the new MagicShapes.h file
                 }
                 break;
@@ -134,11 +135,10 @@ public:
         ofPopStyle(); //pop back what was there before
 	}
     
-    bool touchDown(float x, float y, int touchId){     
+    bool touchDown(float x, float y, int touchId){   
         switch (mode) {
             case 0:
                 shapeOnScreen = !shapeOnScreen;
-                
                 if(!shapeOnScreen){
                     nextShape();
                 }
@@ -191,6 +191,7 @@ public:
         if(currentShapeType >=NUM_MAGIC_SHAPES || currentShapeType < 0) { //safety!
             currentShapeType = 0;
         }
+		printf("currentShapeType: %d\n", currentShapeType);
     }
     
     int getNumModes() {

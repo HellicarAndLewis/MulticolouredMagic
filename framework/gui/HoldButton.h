@@ -93,6 +93,7 @@ public:
 			}
 			ofSetHexColor(0xFFFFFF);
 		} else {
+			glColor4f(1, 1, 1, alpha*0.3);
 			upImg->draw(x, y);
 		}
 	}

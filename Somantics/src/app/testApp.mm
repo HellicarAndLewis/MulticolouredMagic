@@ -1,13 +1,21 @@
 #include "testApp.h"
 #include "MagicShapes.h"
 #define	CROSS_FADE_TIME 2
+
+#ifndef TARGET_OF_IPHONE
+#include "util.h"
+#endif
+
 //--------------------------------------------------------------
 void testApp::setup(){
-	ReactickleApp::instance = this;
-	ReactickleApp::setup();
 	
+	setupApp(this, "Somantics");
+	
+#ifdef USING_OPENCV
 		
 	kinect.setup();
+#endif
+	
 	mainMenu = new MainMenu();
 	currentApp = mainMenu;
 	mainMenu->setup();
@@ -31,11 +39,14 @@ void testApp::update(){
 	if(currentApp!=NULL) {
 		currentApp->volume = volume;
 		currentApp->volumeThreshold = volumeThreshold;
+		
+#ifdef USING_OPENCV
 		if(currentApp->needsKinect()) {
 			kinect.update();
 			//currentApp->colorPixels = kinect.getPixels();
 			//currentApp->grayPixels = kinect.getDepthPixels();
 		}
+#endif
 		currentApp->update();
 	}
 	

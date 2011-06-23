@@ -1,30 +1,22 @@
 #include "testApp.h"
 #include "MagicShapes.h"
-#define BUTTON_PADDING 20
+#define BUTTON_PADDING 5
 #ifndef TARGET_OF_IPHONE
 #include "util.h"
 
 #endif
 //--------------------------------------------------------------
 void testApp::setup(){	
-	APP_NAME = "ReacticklesMagic";
+
+	setupApp(this, "ReacticklesMagic");
 	
+	modeDisplay.setup();
+
+
 #ifndef TARGET_OF_IPHONE
-	char path[512];
-	getcwd(path, 512);
-	string dataRoot = path;
-	dataRoot += "/../data/";
-	ofSetDataPathRoot(dataRoot);
 	setupGui();
 #endif
 	
-	string s = getPreferencesDirectory(APP_NAME);
-	modeDisplay.setup();
-	
-	
-	ReactickleApp::instance = this;
-	ReactickleApp::setup();
-
 	mainMenu = new MainMenu();
 	currentApp = mainMenu;
 	mainMenu->setup();
@@ -216,7 +208,7 @@ void testApp::buttonPressed(string name) {
 		if(isReactickle(currentApp)) {
 			int newMode = currentApp->getMode();
 			newMode++;
-			if(newMode>currentApp->getNumModes()) {
+			if(newMode>=currentApp->getNumModes()) {
 				newMode = 0;
 			}
 			currentApp->setMode(newMode);

@@ -7,10 +7,15 @@
  */
 
 #include "ReactickleApp.h"
+#include "util.h"
+#include "constants.h"
 
 ReactickleApp *ReactickleApp::instance;
 
-void ReactickleApp::setup() {
+void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
+	APP_NAME = appName;
+	this->instance = instance;
+	
 	currentApp = NULL;
 	gain = 1;
 	crossFadeStartTime = -100;
@@ -20,14 +25,19 @@ void ReactickleApp::setup() {
 	setupOrientation();
 #ifdef TARGET_OF_IPHONE
 	// register touch events
-	ofRegisterTouchEvents(this);
+	ofAddListener(ofEvents.touchDown, this, &ReactickleApp::touchDown);
+	ofAddListener(ofEvents.touchMoved, this, &ReactickleApp::touchMoved);
+	ofAddListener(ofEvents.touchUp, this, &ReactickleApp::touchUp);
 	
 	// initialize the accelerometer
 	ofxAccelerometer.setup();
 	
 	//iPhoneAlerts will be sent to this.
 	ofxiPhoneAlerts.addListener(this);
+#else
+	setDataPathRootToAppContents();
 #endif
+	
 	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
 }
 
