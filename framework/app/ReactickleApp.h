@@ -19,6 +19,9 @@
 #include "Reactickle.h"
 #include "HoldButton.h"
 
+// how long it takes for the app to fade from one reactickle to another
+#define	CROSS_FADE_TIME 2
+
 class ReactickleApp: 
 #ifdef TARGET_OF_IPHONE
 public ofxiPhoneApp 

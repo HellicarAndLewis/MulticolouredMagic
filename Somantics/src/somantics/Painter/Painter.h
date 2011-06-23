@@ -23,9 +23,10 @@ public:
 
 	
 private:
-	ofVideoGrabber 		vidGrabber;
+	
 	
 #ifdef USING_OPENCV
+	ofVideoGrabber 		vidGrabber;
 	ofxCvColorImage			colorImg;
 
 	ofxCvGrayscaleImage 	grayImage;

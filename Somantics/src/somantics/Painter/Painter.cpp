@@ -18,11 +18,14 @@ void Painter::setup(){
 	colours[4] = ofColor(0, 0, 255);
 	
 
+	
+	
+#ifdef USING_OPENCV
+	
 	// set up the camera
 	vidGrabber.setVerbose(true);
 	vidGrabber.initGrabber(320,240);
 	
-
 	// initialize all the cv images
     colorImg.allocate(320,240);
 	grayImage.allocate(320,240);
@@ -30,7 +33,7 @@ void Painter::setup(){
 	grayDiff.allocate(320,240);
 	canvas.allocate(320, 240);
 	canvas.set(0);
-	
+#endif
 	// set the vision parameters - we'll need to tweak these
 	threshold = 80;
 	amount = 0.5;
@@ -41,7 +44,7 @@ void Painter::update(){
 
     bool bNewFrame = false;
 
-
+#ifdef USING_OPENCV
        vidGrabber.grabFrame();
 	   bNewFrame = vidGrabber.isFrameNew();
     
@@ -111,13 +114,15 @@ void Painter::update(){
 		// grayBg = grayBg * 0.9 + grayImage * 0.1
 		grayBg += grayImage;
 	}
-
+#endif
 }
 
 //--------------------------------------------------------------
 void Painter::draw() {
+#ifdef USING_OPENCV
 	ofSetHexColor(0xFFFFFF);
 	canvas.draw(0,0,WIDTH, HEIGHT);
+#endif
 }
 
 

@@ -57,14 +57,10 @@ public:
 	void showSettings();
 	void showAbout();
 	
-
-	void switchReactickle(Reactickle *reactickle);
 	
 	AboutPage aboutPage;
 	SettingsPage settingsPage;
 	
-	// this is the app that's currently receiving events
-	Reactickle *currentApp;
 	
 	// back buttons for when on a reactickle
 	HoldButton modeUpButton;

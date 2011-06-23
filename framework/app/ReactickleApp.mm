@@ -42,6 +42,13 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 }
 
 
+
+
+
+
+
+
+
 void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 	if(currentApp!=NULL) {
 		currentApp->stop();
@@ -59,6 +66,7 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 		currentApp->setup();
 		backButton.setHoldMode(true);
 		startCrossFade(true);
+		
 	} else {
 		backButton.setHoldMode(false);
 	}
