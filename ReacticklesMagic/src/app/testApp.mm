@@ -19,25 +19,15 @@ void testApp::setup(){
 #endif
 	
 	string s = getPreferencesDirectory(APP_NAME);
-	printf("%s\n", s.c_str());
 	modeDisplay.setup();
-	gain = 1;
-	volumeThreshold = 0.3;
-	ReactickleApp::instance = this;
-	setupGraphics();
-	setupOrientation();
-#ifdef TARGET_OF_IPHONE
-	// register touch events
-	ofRegisterTouchEvents(this);
 	
-	// initialize the accelerometer
-	ofxAccelerometer.setup();
-	//==--
-	//iPhoneAlerts will be sent to this.
-	ofxiPhoneAlerts.addListener(this);
-#endif
-	currentApp = &mainMenu;
-	mainMenu.setup();
+	
+	ReactickleApp::instance = this;
+	ReactickleApp::setup();
+
+	mainMenu = new MainMenu();
+	currentApp = mainMenu;
+	mainMenu->setup();
 	
 	backButton.setup("back", ofVec2f(0,0), IMAGE_ROOT + "backButton.png", IMAGE_ROOT + "backButtonDown.png");
 	backButton.x = BUTTON_PADDING;
@@ -61,7 +51,6 @@ void testApp::setup(){
 	modeUpButton.setHoldMode(true);
 	modeDownButton.setHoldMode(true);
 	
-	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
 	aboutPage.setup();
 	settingsPage.setup();
 	
@@ -78,26 +67,6 @@ void testApp::setup(){
 #endif	
 }
 
-
-
-void testApp::setupOrientation() {
-	#ifdef TARGET_OF_IPHONE
-	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-	
-	int orientation = [[UIDevice currentDevice] orientation];
-	
-	
-	if(orientation==UIDeviceOrientationLandscapeLeft) {
-		iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
-	} else if(orientation==UIDeviceOrientationLandscapeRight) {
-		iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
-	} else { // default
-		iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
-	}
-	
-	currOrientation = UIDeviceOrientationPortrait;	
-#endif
-}
 #ifndef TARGET_OF_IPHONE
 
 
@@ -141,34 +110,6 @@ void testApp::setupGui() {
 
 #endif
 
-void testApp::updateOrientation() {
-#ifdef TARGET_OF_IPHONE
-	int orientation = [[UIDevice currentDevice] orientation];
-	int orient = iPhoneGetOrientation();
-	//printf("Phone orientation: %d, window orientation %d\n", orientation, orient);
-	
-	if(orientation!=currOrientation || orient==OFXIPHONE_ORIENTATION_PORTRAIT || orient==OFXIPHONE_ORIENTATION_UPSIDEDOWN) {
-		if(orientation==UIDeviceOrientationLandscapeLeft) {
-			iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
-		} else if(orientation==UIDeviceOrientationLandscapeRight) {
-			iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
-		}
-	}
-	
-	currOrientation = orientation;
-#endif
-}
-
-void testApp::setupGraphics() {
-	ofEnableNormalizedTexCoords();
-	ofBackground(0, 0, 0);
-	ofSetFrameRate(30.f);
-	ofEnableAlphaBlending();
-	ofSetCircleResolution(32);
-#ifndef TARGET_OF_IPHONE
-	ofSetVerticalSync(true);
-#endif
-}
 //--------------------------------------------------------------
 void testApp::update(){
 	updateOrientation();
@@ -203,7 +144,7 @@ void testApp::draw(){
 //	ofCircle(WIDTH/2, HEIGHT/2, HEIGHT/2);
 	//mainMenu.draw();
 	currentApp->draw();
-	if(currentApp!=&mainMenu) {
+	if(currentApp!=mainMenu) {
 		backButton.draw();
 		if(currentApp!=&aboutPage && currentApp!=&settingsPage) {
 			modeUpButton.draw();
@@ -241,7 +182,7 @@ void testApp::draw(){
 }
 
 bool testApp::isReactickle(Reactickle *reactickle) {
-	return currentApp!=&mainMenu && currentApp!=&aboutPage && currentApp!=&settingsPage;
+	return currentApp!=mainMenu && currentApp!=&aboutPage && currentApp!=&settingsPage;
 }
 
 void testApp::switchReactickle(Reactickle *reactickle) {
@@ -269,7 +210,7 @@ void testApp::switchReactickle(Reactickle *reactickle) {
 
 void testApp::buttonPressed(string name) {
 	if(name=="back") {
-		switchReactickle(&mainMenu);
+		switchReactickle(mainMenu);
 	} else if(name=="modeUp") {
 		// increment mode
 		if(isReactickle(currentApp)) {
@@ -307,36 +248,6 @@ void testApp::showAbout() {
 
 void testApp::showSettings() {
 	switchReactickle(&settingsPage);
-}
-
-
-
-//--------------------------------------------------------------
-void testApp::exit(){
-#ifdef TARGET_OF_IPHONE
-	[[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
-#else 
-	// stop the kinect
-	kinect.exit();
-#endif
-}
-
-
-
-void testApp::audioReceived( float * input, int bufferSize, int nChannels ) {
-	// samples are "interleaved"
-	float max = 0;
-	
-	for (int i = 0; i < bufferSize; i++){
-		float val = ABS(input[i]);
-		if(val>max) max = val;
-	}
-	
-	if(max>volume) volume = max;
-	else volume *= 0.96;
-	
-	volume *= gain;
-	currentApp->audioReceived(input, bufferSize, nChannels);
 }
 
 

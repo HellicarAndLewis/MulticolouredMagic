@@ -14,7 +14,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 	if(!gui.isOn()) 
 #endif
 	{
-		if(currentApp!=&mainMenu) {
+		if(currentApp!=mainMenu) {
 			if(backButton.touchDown(touch.x, touch.y, touch.id)) {
 				return;
 				
@@ -40,7 +40,7 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 	if(!gui.isOn()) 
 #endif
 	{
-		if(currentApp!=&mainMenu) {
+		if(currentApp!=mainMenu) {
 			if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
 				return;
 			} else {
@@ -63,7 +63,7 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 	if(!gui.isOn()) 
 #endif
 	{
-		if(currentApp!=&mainMenu) {
+		if(currentApp!=mainMenu) {
 			if(backButton.touchUp(touch.x, touch.y, touch.id)) {
 				return;
 			}  else {
@@ -82,41 +82,9 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 
 
 
-//--------------------------------------------------------------
-void testApp::touchDoubleTap(ofTouchEventArgs &touch){
-	
-}
-
-
-
-//--------------------------------------------------------------
-void testApp::gotMemoryWarning(){
-	
-}
-
-//--------------------------------------------------------------
-void testApp::deviceOrientationChanged(int newOrientation){
-	
-}
-
-
-//--------------------------------------------------------------
-void testApp::touchCancelled(ofTouchEventArgs& args){
-	
-}
-
-#ifdef TARGET_OF_IPHONE	
-void testApp::gotFocus() {
-	//	ofSoundStreamStart();
-}
-void testApp::lostFocus() {
-	//	ofSoundStreamStop();
-}
-#else
-
 ///////////////////////////////////////////////////////////////////////
 // MAC SPECIFIC EVENTS
-
+#ifndef TARGET_OF_IPHONE
 void testApp::keyPressed(int key) {
 	if(key==' ') {
 		gui.toggleDraw();
@@ -180,33 +148,6 @@ void testApp::tuioTouchUp(ofTouchEventArgs &touch) {
 	touch.x *= WIDTH;
 	touch.y *= HEIGHT;
 	touchUp(touch);
-}
-
-/////////////////////////////////////////////////////////////////////
-// Passing mouse stuff into the touch events
-
-void testApp::mousePressed(int x, int y, int button) {
-	ofTouchEventArgs t;
-	t.x = x;
-	t.y = y;
-	t.id = button;
-	touchDown(t);
-}
-
-void testApp::mouseDragged(int x, int y, int button) {
-	ofTouchEventArgs t;
-	t.x = x;
-	t.y = y;
-	t.id = button;
-	touchMoved(t);
-}
-
-void testApp::mouseReleased(int x, int y, int button) {
-	ofTouchEventArgs t;
-	t.x = x;
-	t.y = y;
-	t.id = button;
-	touchUp(t);
 }
 
 #endif

@@ -35,7 +35,6 @@ public:
 	void setup();
 	void update();
 	void draw();
-	void exit();
 	
 	void touchDown(ofTouchEventArgs &touch);
 	void touchMoved(ofTouchEventArgs &touch);
@@ -44,24 +43,16 @@ public:
 	void touchCancelled(ofTouchEventArgs &touch);
 
 #ifndef TARGET_OF_IPHONE	
-	void mousePressed(int x, int y, int button);
-	void mouseDragged(int x, int y, int button);
-	void mouseReleased(int x, int y, int button);
+	
 	void keyPressed(int key);
 	void tuioTouchDown(ofTouchEventArgs &touch);
 	void tuioTouchMoved(ofTouchEventArgs &touch);
 	void tuioTouchUp(ofTouchEventArgs &touch);
-#else
-	virtual void gotFocus();
-	virtual void lostFocus();
+
+	
 #endif
 	
-	void audioReceived( float * input, int bufferSize, int nChannels );
 	
-
-	void gotMemoryWarning();
-	void deviceOrientationChanged(int newOrientation);
-
 	// app stuff
 	void launchReactickle(Reactickle *reactickle);
 	void showSettings();
@@ -70,7 +61,6 @@ public:
 
 	void switchReactickle(Reactickle *reactickle);
 	
-	MainMenu mainMenu;
 	AboutPage aboutPage;
 	SettingsPage settingsPage;
 	
@@ -78,7 +68,6 @@ public:
 	Reactickle *currentApp;
 	
 	// back buttons for when on a reactickle
-	HoldButton backButton;
 	HoldButton modeUpButton;
 	HoldButton modeDownButton;
 	
@@ -87,11 +76,7 @@ public:
 	
 private:
 	bool isReactickle(Reactickle *reactickle);
-	int currOrientation;
 	
-	void setupGraphics();
-	void setupOrientation();
-	void updateOrientation();
 
 	ModeDisplay modeDisplay;
 #ifndef TARGET_OF_IPHONE

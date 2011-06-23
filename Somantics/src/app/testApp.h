@@ -28,26 +28,13 @@ public:
 	void setup();
 	void update();
 	void draw();
-	void exit();
 	
-#ifndef TARGET_OF_IPHONE
-	void mouseDragged(int x, int y, int button);
-	void mousePressed(int x, int y, int button);
-	void mouseReleased(int x, int y, int button);
-#endif
+
 	
-	void touchDown(ofTouchEventArgs &touch);
-	void touchMoved(ofTouchEventArgs &touch);
-	void touchUp(ofTouchEventArgs &touch);
-	void touchDoubleTap(ofTouchEventArgs &touch);
-	void touchCancelled(ofTouchEventArgs &touch);
 	
-	void audioReceived( float * input, int bufferSize, int nChannels );
 	
-	void lostFocus();
-	void gotFocus();
-	void gotMemoryWarning();
-	void deviceOrientationChanged(int newOrientation);
+	
+	
 
 	// app stuff
 	void launchReactickle(Reactickle *reactickle);
@@ -55,34 +42,20 @@ public:
 	void showAbout();
 	
 
-	void switchReactickle(Reactickle *reactickle);
-	MainMenu mainMenu;
 	AboutPage aboutPage;
 	SettingsPage settingsPage;
+		
 	
-	// this is the app that's currently receiving events
-	Reactickle *currentApp;
-	
-	// back buttons for when on a reactickle
-	HoldButton backButton;
-
 	// button event (for back button)
 	void buttonPressed(string name);
 	
-private:
+protected:
 	KinectOrCamera kinect;
-	void startCrossFade(bool fadeIn);
-	float crossFadeStartTime;
+	
 	// true if fading into an app, false if fading out to the menu.
-	bool fadingIn;
+	
 	bool isReactickle(Reactickle *reactickle);
 	int currOrientation;
-	
-	void setupGraphics();
-	void setupOrientation();
-	void updateOrientation();
-
-
 };
 
 
