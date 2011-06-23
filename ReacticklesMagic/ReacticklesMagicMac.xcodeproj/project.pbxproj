@@ -1591,6 +1591,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG_MODE=1";
 				HEADER_CAIRO = "\"$(OF_PATH)/libs/cairo/include/cairo\"";
 				HEADER_FMODEX = "\"$(OF_PATH)/libs/fmodex/include\"";
 				HEADER_FREEIMAGE = "\"$(OF_PATH)/libs/FreeImage/include\"";

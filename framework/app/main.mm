@@ -69,7 +69,13 @@ int main(){
 #ifdef TARGET_OF_IPHONE
 	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
 #else
-	ofSetupOpenGL(WIDTH, HEIGHT, OF_WINDOW);//OF_FULLSCREEN);			// <-------- setup the GL context
+
+	#ifdef DEBUG_MODE
+		ofSetupOpenGL(WIDTH, HEIGHT, OF_WINDOW);//OF_FULLSCREEN);			// <-------- setup the GL context
+	#else
+		ofSetupOpenGL(WIDTH, HEIGHT, OF_GAME_MODE);//OF_FULLSCREEN);			// <-------- setup the GL context
+	#endif
+	
 #endif
 	// this kicks off the running of my app
 	// can be OF_WINDOW or OF_FULLSCREEN

@@ -2216,6 +2216,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG_MODE=1";
 				HEADER_SEARCH_PATHS = (
 					../../../addons/ofxOsc/libs/oscpack/include,
 					../../../libs/tess2/include,
