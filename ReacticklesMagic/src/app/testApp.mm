@@ -214,6 +214,14 @@ void testApp::draw(){
 		modeDisplay.draw();
 	}
 	
+	
+	// do the brightness control by just drawing a black rectangle over
+	// the whole screen
+	float alpha = ofMap(Settings::getInstance()->settings["brightness"], 0, 1, 0.6, 0);
+	glColor4f(0, 0, 0, alpha);
+	ofEnableAlphaBlending(); // reset blend func
+	ofRect(0, 0, WIDTH, HEIGHT);
+	
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
 		glPopMatrix();
