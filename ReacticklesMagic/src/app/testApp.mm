@@ -164,7 +164,7 @@ void testApp::setupGraphics() {
 	ofBackground(0, 0, 0);
 	ofSetFrameRate(30.f);
 	ofEnableAlphaBlending();
-	ofSetCircleResolution(64);
+	ofSetCircleResolution(32);
 #ifndef TARGET_OF_IPHONE
 	ofSetVerticalSync(true);
 #endif
@@ -213,6 +213,7 @@ void testApp::draw(){
 	if(isReactickle(currentApp)) {
 		modeDisplay.draw();
 	}
+	
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
 		glPopMatrix();

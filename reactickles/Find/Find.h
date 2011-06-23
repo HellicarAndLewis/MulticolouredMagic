@@ -17,13 +17,16 @@ class Find: public Reactickle {
         
         newShapePositionAndColour();       
         
+		posOfShape = targetPosOfShape;
+		findColour = targetFindColour;
+		
         timeOfLastInteraction = ofGetElapsedTimef();
 	}
     
     void newShapePositionAndColour(){
-        findColour.setHSV(ofRandom(0.f,360.f), 1, 1);
-        posOfShape = ofVec2f(ofRandom(0.f, ofGetWidth()), ofRandom(0.f, ofGetHeight()));
-        radius = ofRandom(80.f, 200.f);
+        targetFindColour.setHSV(ofRandom(0.f,360.f), 1, 1);
+        targetPosOfShape = ofVec2f(ofRandom(0.f, ofGetWidth()), ofRandom(0.f, ofGetHeight()));
+        radius = ofRandom(100.f, 260.f);
         
         if(mode>0) {
             if(mode == 1){
@@ -52,6 +55,10 @@ class Find: public Reactickle {
 			timeOfLastInteraction = timeNow;
 		}        
         
+		float l = 0.7;
+		posOfShape = posOfShape * l + targetPosOfShape * (1.f - l);
+		findColour = findColour * l + targetFindColour * (1.f - l);
+		
 	}
 	
 	void draw() {
@@ -74,17 +81,7 @@ class Find: public Reactickle {
     }
     
 	bool touchMoved(float x, float y, int touchId){
-        float forgiveness = 2.f;
-        
-        ofVec2f touchPoint = ofVec2f(x,y);
-        
-        ofVec2f difference = posOfShape - touchPoint;
-        
-        if(difference.length() < forgiveness + radius){
-            newShapePositionAndColour();            
-        }
-        
-        return true;
+        touchDown(x, y, touchId);
     }
     
 	bool touchUp(float x, float y, int touchId){
@@ -95,8 +92,11 @@ class Find: public Reactickle {
 		return 3;
 	}
 	
+
 	msaColor findColour;
-    ofVec2f posOfShape;
+	ofVec2f posOfShape;
+	msaColor targetFindColour;
+    ofVec2f targetPosOfShape;
     int currShapeID;
     float timeOfLastInteraction;
     float radius;
