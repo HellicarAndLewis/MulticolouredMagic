@@ -25,6 +25,7 @@ class Grid: public Reactickle {
 		if(positionInGrid > gridWidth*gridHeight){
 			positionInGrid = 0;
 		}
+		return true;
 	}
 	void update(){
 		float timeNow = ofGetElapsedTimef();
