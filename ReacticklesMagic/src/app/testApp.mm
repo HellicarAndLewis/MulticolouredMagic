@@ -57,6 +57,7 @@ void testApp::setup(){
 	ofAddListener(ofEvents.touchMoved, this, &testApp::tuioTouchMoved);
 	
 #endif	
+ 
 }
 
 #ifndef TARGET_OF_IPHONE
@@ -104,6 +105,7 @@ void testApp::setupGui() {
 
 //--------------------------------------------------------------
 void testApp::update(){
+	
 	updateOrientation();
 	if(currentApp!=NULL) {
 		gain = Settings::getInstance()->settings["volume"];
@@ -160,7 +162,7 @@ void testApp::draw(){
 			ofSetColor(0, 0, 0, ofMap(crossFadeTime, CROSS_FADE_TIME/2, CROSS_FADE_TIME, 255, 0, true));
 			ofRect(0, 0, WIDTH, HEIGHT);
 		}
-				
+		
 		// otherwise, just do this
 	} else {
 		currentApp->draw();
@@ -203,6 +205,7 @@ void testApp::draw(){
 	}
 	gui.draw(); 
 #endif
+	 
 }
 
 bool testApp::isReactickle(Reactickle *reactickle) {

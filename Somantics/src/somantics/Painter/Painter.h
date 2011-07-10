@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#ifdef USING_OPENCV
+#ifndef TARGET_IPHONE_SIMULATOR
 #include "ofxOpenCv.h"
 #endif
 #include "Reactickle.h"
@@ -25,7 +25,7 @@ public:
 private:
 	
 	
-#ifdef USING_OPENCV
+#ifndef TARGET_IPHONE_SIMULATOR
 	ofVideoGrabber 		vidGrabber;
 	ofxCvColorImage			colorImg;
 

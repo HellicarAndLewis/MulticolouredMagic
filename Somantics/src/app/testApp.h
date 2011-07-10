@@ -4,7 +4,7 @@
 #ifdef TARGET_OF_IPHONE
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
-#ifdef USING_OPENCV
+#ifndef TARGET_IPHONE_SIMULATOR
 #include "ofxOpenCv.h"
 #endif
 #else
@@ -45,7 +45,7 @@ public:
 	void buttonPressed(string name);
 	
 protected:
-#ifdef USING_OPENCV
+#ifndef TARGET_IPHONE_SIMULATOR
 	KinectOrCamera kinect;
 #endif
 	// true if fading into an app, false if fading out to the menu.

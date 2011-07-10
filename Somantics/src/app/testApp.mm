@@ -11,7 +11,7 @@ void testApp::setup(){
 	
 	setupApp(this, "Somantics");
 	
-#ifdef USING_OPENCV
+#ifndef TARGET_IPHONE_SIMULATOR
 		
 	kinect.setup();
 #endif
@@ -40,7 +40,7 @@ void testApp::update(){
 		currentApp->volume = volume;
 		currentApp->volumeThreshold = volumeThreshold;
 		
-#ifdef USING_OPENCV
+#ifndef TARGET_IPHONE_SIMULATOR
 		if(currentApp->needsKinect()) {
 			kinect.update();
 			//currentApp->colorPixels = kinect.getPixels();

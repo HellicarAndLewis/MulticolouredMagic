@@ -20,7 +20,7 @@ void Painter::setup(){
 
 	
 	
-#ifdef USING_OPENCV
+#ifndef TARGET_IPHONE_SIMULATOR
 	
 	// set up the camera
 	vidGrabber.setVerbose(true);
@@ -44,7 +44,7 @@ void Painter::update(){
 
     bool bNewFrame = false;
 
-#ifdef USING_OPENCV
+#ifndef TARGET_IPHONE_SIMULATOR
        vidGrabber.grabFrame();
 	   bNewFrame = vidGrabber.isFrameNew();
     
@@ -119,7 +119,7 @@ void Painter::update(){
 
 //--------------------------------------------------------------
 void Painter::draw() {
-#ifdef USING_OPENCV
+#ifndef TARGET_IPHONE_SIMULATOR
 	ofSetHexColor(0xFFFFFF);
 	canvas.draw(0,0,WIDTH, HEIGHT);
 #endif

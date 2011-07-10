@@ -25,12 +25,20 @@ bool guiResFileExists(string filename) {
 ofImage *ImageCache::getImage(string path) {
 	if(path=="") {
 		printf("ImageCache::getImage() path empty!!\n");
+#ifdef IMAGECACHE_STRICT
 		return NULL;
+#else
+		return NULL;
+#endif
 	}
 	
 	if(!guiResFileExists(ofToDataPath(path, true))) {
 		printf("File doesn't exist %s\n", (path).c_str());
+#ifdef IMAGECACHE_STRICT
 		return NULL;
+#else
+		return new ofImage();
+#endif
 	}
 		
 	// cache the image if it's not already loaded
