@@ -62,6 +62,7 @@
 		EA2B901713B101890040917B /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2B900913B101890040917B /* ofxOscReceiver.cpp */; };
 		EA2B901813B101890040917B /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2B900B13B101890040917B /* ofxOscSender.cpp */; };
 		EA2B901B13B1018E0040917B /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B901A13B1018E0040917B /* osc.a */; };
+		EAB06E5213CB4048004884FC /* Sparkles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB06E5013CB4048004884FC /* Sparkles.cpp */; };
 		EAB309FD137AF3E00086DE6F /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB309F6137AF3E00086DE6F /* tinyxml.cpp */; };
 		EAB309FE137AF3E00086DE6F /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB309F8137AF3E00086DE6F /* tinyxmlerror.cpp */; };
 		EAB309FF137AF3E00086DE6F /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB309F9137AF3E00086DE6F /* tinyxmlparser.cpp */; };
@@ -82,6 +83,9 @@
 		EAB30A50137AF3EB0086DE6F /* ofxSimpleGuiPage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB30A39137AF3EB0086DE6F /* ofxSimpleGuiPage.cpp */; };
 		EAB30A51137AF3EB0086DE6F /* ofxSimpleGuiToo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB30A3B137AF3EB0086DE6F /* ofxSimpleGuiToo.cpp */; };
 		EAB30A52137AF3EB0086DE6F /* ofxSimpleGuiValueControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB30A3D137AF3EB0086DE6F /* ofxSimpleGuiValueControl.cpp */; };
+		EAC10F0613CB4E6A00DD3113 /* Sparticles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAC10F0413CB4E6A00DD3113 /* Sparticles.cpp */; };
+		EAC10F1613CB61BE00DD3113 /* Mirror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAC10F1413CB61BE00DD3113 /* Mirror.cpp */; };
+		EAC10F1913CB61CB00DD3113 /* Drawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAC10F1713CB61CB00DD3113 /* Drawer.cpp */; };
 		EAD4931113A8B48D00D312FE /* MagicShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD492F513A8B48D00D312FE /* MagicShapes.cpp */; };
 		EAD4931213A8B48D00D312FE /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD492FA13A8B48D00D312FE /* ColorPicker.cpp */; };
 		EAD4931313A8B48D00D312FE /* ImageCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4930213A8B48D00D312FE /* ImageCache.cpp */; };
@@ -254,6 +258,8 @@
 		EA2B900B13B101890040917B /* ofxOscSender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscSender.cpp; sourceTree = "<group>"; };
 		EA2B900C13B101890040917B /* ofxOscSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscSender.h; sourceTree = "<group>"; };
 		EA2B901A13B1018E0040917B /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
+		EAB06E5013CB4048004884FC /* Sparkles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sparkles.cpp; path = Sparkles/Sparkles.cpp; sourceTree = "<group>"; };
+		EAB06E5113CB4048004884FC /* Sparkles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sparkles.h; path = Sparkles/Sparkles.h; sourceTree = "<group>"; };
 		EAB309F4137AF3E00086DE6F /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		EAB309F6137AF3E00086DE6F /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		EAB309F7137AF3E00086DE6F /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
@@ -303,6 +309,12 @@
 		EAB30A3C137AF3EB0086DE6F /* ofxSimpleGuiToo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSimpleGuiToo.h; sourceTree = "<group>"; };
 		EAB30A3D137AF3EB0086DE6F /* ofxSimpleGuiValueControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSimpleGuiValueControl.cpp; sourceTree = "<group>"; };
 		EAB30A3E137AF3EB0086DE6F /* ofxSimpleGuiValueControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSimpleGuiValueControl.h; sourceTree = "<group>"; };
+		EAC10F0413CB4E6A00DD3113 /* Sparticles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sparticles.cpp; path = Sparkles/Sparticles.cpp; sourceTree = "<group>"; };
+		EAC10F0513CB4E6A00DD3113 /* Sparticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sparticles.h; path = Sparkles/Sparticles.h; sourceTree = "<group>"; };
+		EAC10F1413CB61BE00DD3113 /* Mirror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mirror.cpp; path = Mirror/Mirror.cpp; sourceTree = "<group>"; };
+		EAC10F1513CB61BE00DD3113 /* Mirror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mirror.h; path = Mirror/Mirror.h; sourceTree = "<group>"; };
+		EAC10F1713CB61CB00DD3113 /* Drawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Drawer.cpp; path = Drawer/Drawer.cpp; sourceTree = "<group>"; };
+		EAC10F1813CB61CB00DD3113 /* Drawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drawer.h; path = Drawer/Drawer.h; sourceTree = "<group>"; };
 		EAD492F213A8B48D00D312FE /* Reactickle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reactickle.h; sourceTree = "<group>"; };
 		EAD492F413A8B48D00D312FE /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
 		EAD492F513A8B48D00D312FE /* MagicShapes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MagicShapes.cpp; sourceTree = "<group>"; };
@@ -835,6 +847,17 @@
 			path = ../../../addons/ofxOsc/libs/oscpack/lib/osx;
 			sourceTree = SOURCE_ROOT;
 		};
+		EAB06E4E13CB402B004884FC /* Sparkles */ = {
+			isa = PBXGroup;
+			children = (
+				EAB06E5013CB4048004884FC /* Sparkles.cpp */,
+				EAC10F0413CB4E6A00DD3113 /* Sparticles.cpp */,
+				EAC10F0513CB4E6A00DD3113 /* Sparticles.h */,
+				EAB06E5113CB4048004884FC /* Sparkles.h */,
+			);
+			name = Sparkles;
+			sourceTree = "<group>";
+		};
 		EAB3098B137AF2ED0086DE6F /* addons */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,6 +987,24 @@
 				EAB30A33137AF3EB0086DE6F /* ofxSimpleGuiToggle.h */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		EAC10F1213CB60B400DD3113 /* Mirror */ = {
+			isa = PBXGroup;
+			children = (
+				EAC10F1413CB61BE00DD3113 /* Mirror.cpp */,
+				EAC10F1513CB61BE00DD3113 /* Mirror.h */,
+			);
+			name = Mirror;
+			sourceTree = "<group>";
+		};
+		EAC10F1313CB60BD00DD3113 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				EAC10F1713CB61CB00DD3113 /* Drawer.cpp */,
+				EAC10F1813CB61CB00DD3113 /* Drawer.h */,
+			);
+			name = Drawer;
 			sourceTree = "<group>";
 		};
 		EAD492ED13A8B48D00D312FE /* framework */ = {
@@ -1141,6 +1182,9 @@
 		EAD495F113A8CD5C00D312FE /* somantics */ = {
 			isa = PBXGroup;
 			children = (
+				EAC10F1313CB60BD00DD3113 /* Drawer */,
+				EAC10F1213CB60B400DD3113 /* Mirror */,
+				EAB06E4E13CB402B004884FC /* Sparkles */,
 				EA2B8F6D13B0FCDF0040917B /* Painter */,
 				EAD4968313A8D2B600D312FE /* Corridors */,
 				EAD4968813A8D2B600D312FE /* Silhouette */,
@@ -1620,6 +1664,10 @@
 				EA2B901613B101890040917B /* ofxOscMessage.cpp in Sources */,
 				EA2B901713B101890040917B /* ofxOscReceiver.cpp in Sources */,
 				EA2B901813B101890040917B /* ofxOscSender.cpp in Sources */,
+				EAB06E5213CB4048004884FC /* Sparkles.cpp in Sources */,
+				EAC10F0613CB4E6A00DD3113 /* Sparticles.cpp in Sources */,
+				EAC10F1613CB61BE00DD3113 /* Mirror.cpp in Sources */,
+				EAC10F1913CB61CB00DD3113 /* Drawer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

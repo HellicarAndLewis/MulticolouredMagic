@@ -20,7 +20,7 @@ void Painter::setup(){
 
 	
 	
-#ifndef TARGET_IPHONE_SIMULATOR
+#ifdef USING_OPENCV
 	
 	// set up the camera
 	vidGrabber.setVerbose(true);
@@ -35,22 +35,23 @@ void Painter::setup(){
 	canvas.set(0);
 #endif
 	// set the vision parameters - we'll need to tweak these
-	threshold = 80;
+	threshold = 60;
 	amount = 0.5;
 }
 
 //--------------------------------------------------------------
 void Painter::update(){
-
+	
     bool bNewFrame = false;
 
-#ifndef TARGET_IPHONE_SIMULATOR
+#ifdef USING_OPENCV
+	
        vidGrabber.grabFrame();
 	   bNewFrame = vidGrabber.isFrameNew();
-    
+  //  printf("New frjjame!!\n");
 	if (bNewFrame){
 
-
+		//printf("New frame\n");
 		colorImg.setFromPixels(vidGrabber.getPixels(), 320,240);
 	  
         grayImage = colorImg;
@@ -99,7 +100,7 @@ void Painter::update(){
 			float totalCount = canvas.width*canvas.height;
 			float proportionOfMatchedPixels = (float)matchCount/totalCount;
 		//	printf("Match count: %f%%\n", proportionOfMatchedPixels*100.f);
-			if(proportionOfMatchedPixels>.5) {
+			if(proportionOfMatchedPixels>.25) {
 				// change colour
 				nextColour();
 			}
@@ -119,7 +120,7 @@ void Painter::update(){
 
 //--------------------------------------------------------------
 void Painter::draw() {
-#ifndef TARGET_IPHONE_SIMULATOR
+#ifdef USING_OPENCV
 	ofSetHexColor(0xFFFFFF);
 	canvas.draw(0,0,WIDTH, HEIGHT);
 #endif
