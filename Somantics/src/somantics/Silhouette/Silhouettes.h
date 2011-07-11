@@ -3,14 +3,14 @@
 #include "ofMain.h"
 #include "Silhouette.h"
 #include "Reactickle.h"
-#ifndef TARGET_OF_IPHONE
-#define USE_FBO
+//#ifndef TARGET_OF_IPHONE
+//#define USE_FBO
 // still can't get this to work!!!
 //#ifdef TARGET_OF_IPHONE
 //#include "ofxFBOTexture.h"
 //#define ofFbo ofxFBOTexture
 //#endif
-#endif
+//#endif
 class Silhouettes : public Reactickle {
 
 public:
