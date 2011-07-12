@@ -15,7 +15,7 @@ ReactickleApp *ReactickleApp::instance;
 void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	APP_NAME = appName;
 	this->instance = instance;
-	
+	fadingOutReactickle = NULL;
 	currentApp = NULL;
 	gain = 1;
 	crossFadeStartTime = -100;
@@ -45,6 +45,49 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 
 
 
+void ReactickleApp::drawCurrentReactickle() {
+	float crossFadeTime = ofGetElapsedTimef() - crossFadeStartTime;
+	
+	// if we're crossfading do this:
+	if(crossFadeTime<CROSS_FADE_TIME) {
+		
+		Reactickle *first = mainMenu;
+		Reactickle *second = currentApp;
+		
+		// choose which way we're fading
+		if(!fadingIn) {
+			first = fadingOutReactickle;
+			second = mainMenu;
+		}
+		// we want do draw the main menu fading out
+		if(crossFadeTime<CROSS_FADE_TIME/2) {
+			// fade out menu
+			first->draw();
+			ofSetColor(0, 0, 0, ofMap(crossFadeTime, 0, CROSS_FADE_TIME/2, 0, 255, true));
+			ofRect(0, 0, WIDTH, HEIGHT);
+		} else {
+			// fade in app
+			second->draw();
+			ofSetColor(0, 0, 0, ofMap(crossFadeTime, CROSS_FADE_TIME/2, CROSS_FADE_TIME, 255, 0, true));
+			ofRect(0, 0, WIDTH, HEIGHT);
+		}
+		
+		
+		// and then the app fading in
+		
+		
+		// otherwise, just do this
+	} else {
+		currentApp->draw();
+		
+		// delete the last faded out reactickle
+		// if it's finished fading out.
+		if(fadingOutReactickle!=NULL) {
+			delete fadingOutReactickle;
+			fadingOutReactickle = NULL;
+		}
+	}
+}
 
 
 
@@ -55,7 +98,12 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 	}
 	// take care of previous reactickle - i.e. delete it if it's an actual reactickle
 	if(isReactickle(currentApp)) {
-		delete currentApp;
+		
+		// just check the old one is actually deleted before reassigning.
+		if(fadingOutReactickle!=NULL) delete fadingOutReactickle;
+		
+		fadingOutReactickle = currentApp;
+//		delete currentApp; - don't delete it yet, wait until it's faded out.
 		currentApp = NULL;
 	}
 	
@@ -68,6 +116,7 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 		startCrossFade(true);
 		
 	} else {
+		startCrossFade(false);
 		backButton.setHoldMode(false);
 	}
 	

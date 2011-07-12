@@ -1,0 +1,5 @@
+08455 19 15 23
+
+- mono/stereo
+- there's a weird problem with parameters not knowing which audio unit they belong to
+- midi channels need to be allocated.

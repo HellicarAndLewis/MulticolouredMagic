@@ -76,8 +76,16 @@ void TuioKinect::update(bool sendTuio) {
 	
 	kinect.update();
 
-	colorImage.setFromPixels(kinect.getPixels(), kinect.width, kinect.height);
-	grayImage.setFromPixels(kinect.getDepthPixels(), kinect.width, kinect.height);
+	unsigned char *colorPix = kinect.getPixels();
+	unsigned char *depthPix = kinect.getDepthPixels();
+	
+	if(colorPix) { // only load if not null
+		colorImage.setFromPixels(kinect.getPixels(), kinect.width, kinect.height);
+	}
+	
+	if(depthPix) { // only load if not null 
+		grayImage.setFromPixels(kinect.getDepthPixels(), kinect.width, kinect.height);
+	}
 
 	// flip the image accordingly - mirror does nothing if both are false
 	grayImage.mirror(flipY, flipX);

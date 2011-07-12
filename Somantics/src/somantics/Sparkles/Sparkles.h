@@ -1,15 +1,16 @@
-#pragma once
-
-#include "ofMain.h"
-#define USING_OPENCV
-#ifdef USING_OPENCV
-#include "ofxOpenCv.h"
-#endif
+//
+//  Sparkles.h
+//  SomanticsMac
+//
+//  Created by Marek Bereza on 11/07/2011.
+//  Copyright 2011 MAZBOX LTD. All rights reserved.
+//
 #include "Reactickle.h"
+#include "Sparticles.h"
+#include "ofxOpenCv.h"
+#define USING_OPENCV
 
-
-
-class Painter : public Reactickle {
+class Sparkles : public Reactickle {
 
 public:
 	void setup();
@@ -21,7 +22,7 @@ public:
 	bool touchUp(float x, float y, int touchId);
 	bool touchMoved(float x, float y, int touchId);
 	bool needsKinect() { return true; }
-
+	
 	
 private:
 	
@@ -29,19 +30,22 @@ private:
 #ifdef USING_OPENCV
 	ofVideoGrabber 		vidGrabber;
 	ofxCvColorImage			colorImg;
-
+	
 	ofxCvGrayscaleImage 	grayImage;
 	ofxCvGrayscaleImage 	grayBg;
 	ofxCvGrayscaleImage 	grayDiff;
-	ofxCvColorImage			canvas;
+
 	ofxCvContourFinder		contourFinder;
+	
+	Sparticles p;
+	
+	
+	
+	
+	
 #endif
-	void nextColour();
 	
 	int		threshold;
 	float	amount;
-	static const int NUM_PAINTER_COLOURS = 5;
-	ofColor colours[NUM_PAINTER_COLOURS];
-	int colourIndex;
 };
 

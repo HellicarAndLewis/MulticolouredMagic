@@ -59,6 +59,7 @@ unsigned char *KinectOrCamera::getDepthPixels() {
 		return kinect.getDepthPixels();
 	} else {
 		unsigned char *pix = camera.getPixels();
+		if(pix==NULL) return NULL;
 		int numPixels = width*height;
 		for(int i = 0; i < numPixels; i++) {
 			greyscaleBuffer[i] = pix[i*3];

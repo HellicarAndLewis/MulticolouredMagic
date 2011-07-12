@@ -70,15 +70,24 @@ public:
 	
 protected:
 	
+	
+	
 	void setupGraphics();
 	void setupOrientation();
 	int currOrientation;
 	void updateOrientation();
 	
+	
+	// draws the current reactickle and takes 
+	// care of fading in and out of reactickles
+	void drawCurrentReactickle();
+	
 	// animates between reactickles
 	void startCrossFade(bool fadeIn);
 	float crossFadeStartTime;
 	bool fadingIn;
+	// this is the app that's currently fading out
+	Reactickle *fadingOutReactickle;
 	
 	virtual bool isReactickle(Reactickle *reactickle) = 0;
 	float gain;

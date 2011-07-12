@@ -135,38 +135,8 @@ void testApp::draw(){
 		glScalef(0.5, 0.5, 1);
 	}
 	
-//	ofCircle(WIDTH/2, HEIGHT/2, HEIGHT/2);
-	//mainMenu.draw();
-	float crossFadeTime = ofGetElapsedTimef() - crossFadeStartTime;
-	
-	// if we're crossfading do this:
-	if(crossFadeTime<CROSS_FADE_TIME) {
-		
-		Reactickle *first = mainMenu;
-		Reactickle *second = currentApp;
-		
-		// choose which way we're fading
-		if(!fadingIn) {
-			first = currentApp;
-			second = mainMenu;
-		}
-		// we want do draw the main menu fading out
-		if(crossFadeTime<CROSS_FADE_TIME/2) {
-			// fade out menu
-			first->draw();
-			ofSetColor(0, 0, 0, ofMap(crossFadeTime, 0, CROSS_FADE_TIME/2, 0, 255, true));
-			ofRect(0, 0, WIDTH, HEIGHT);
-		} else {
-			// fade in app
-			second->draw();
-			ofSetColor(0, 0, 0, ofMap(crossFadeTime, CROSS_FADE_TIME/2, CROSS_FADE_TIME, 255, 0, true));
-			ofRect(0, 0, WIDTH, HEIGHT);
-		}
-		
-		// otherwise, just do this
-	} else {
-		currentApp->draw();
-	}
+
+	drawCurrentReactickle();
 	
 	
 	

@@ -117,8 +117,8 @@ public:
 	
 	void draw() {
 		map<int,ofVec2f>::iterator it;
-		
-		ofVec2f border[touches.size()];
+
+		ofVec2f *border = new ofVec2f[touches.size()];
 
 		
 	
@@ -141,7 +141,7 @@ public:
 		
 		*/
 		line.drawLines(border, touches.size(), true);
-		
+		delete [] border;
 	}
 	
 	
