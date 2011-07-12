@@ -14,11 +14,11 @@
 #include "ofMain.h"
 
 #include "MagicShapes.h"
-
+#include "ofxOpenCv.h"
 #ifndef TARGET_OF_IPHONE
 	// this is what you get if you're not on iphone
 	#include "ofxSimpleGuiToo.h"
-	//#include "ofxOpenCv.h"
+	//
 	#define VISION_WIDTH 640
 	#define VISION_HEIGHT 480
 	#define CAM_THRESHOLD 20
@@ -62,12 +62,12 @@ public:
     // if the mode has been changed, 
     virtual void modeChanged() {};
 	
-#ifndef TARGET_OF_IPHONE
+//#ifndef TARGET_OF_IPHONE
 	virtual bool needsKinect() { return false; }
-
+	ofxCvColorImage *colorImg;
     // how much camera movement there is
 	float movement;
-#endif
+//#endif
     
     void setMode(int mode) {
         this->mode = mode;

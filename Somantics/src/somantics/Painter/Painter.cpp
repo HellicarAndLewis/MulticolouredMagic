@@ -1,5 +1,9 @@
+
 #include "Painter.h"
 #include "constants.h"
+
+#define VISION_WIDTH  320
+#define VISION_HEIGHT 240
 
 // increment and wrap the current colour
 void Painter::nextColour() {
@@ -16,24 +20,16 @@ void Painter::setup(){
 	colours[2] = ofColor(0, 255, 255);
 	colours[3] = ofColor(0, 255, 0);
 	colours[4] = ofColor(0, 0, 255);
-	
+
 
 	
-	
-#ifdef USING_OPENCV
-	
-	// set up the camera
-	vidGrabber.setVerbose(true);
-	vidGrabber.initGrabber(320,240);
-	
-	// initialize all the cv images
-    colorImg.allocate(320,240);
-	grayImage.allocate(320,240);
-	grayBg.allocate(320,240);
-	grayDiff.allocate(320,240);
-	canvas.allocate(320, 240);
+	scaledImage.allocate(VISION_WIDTH, VISION_HEIGHT);
+	grayImage.allocate(VISION_WIDTH, VISION_HEIGHT);
+	grayBg.allocate(VISION_WIDTH, VISION_HEIGHT);
+	grayDiff.allocate(VISION_WIDTH, VISION_HEIGHT);
+	canvas.allocate(VISION_WIDTH, VISION_HEIGHT);
 	canvas.set(0);
-#endif
+
 	// set the vision parameters - we'll need to tweak these
 	threshold = 60;
 	amount = 0.5;
@@ -42,20 +38,10 @@ void Painter::setup(){
 //--------------------------------------------------------------
 void Painter::update(){
 	
-    bool bNewFrame = false;
+	if(colorImg!=NULL) {
+		scaledImage.scaleIntoMe(*colorImg);
+		grayImage = scaledImage;
 
-#ifdef USING_OPENCV
-	
-       vidGrabber.grabFrame();
-	   bNewFrame = vidGrabber.isFrameNew();
-  //  printf("New frjjame!!\n");
-	if (bNewFrame){
-
-		//printf("New frame\n");
-		colorImg.setFromPixels(vidGrabber.getPixels(), 320,240);
-	  
-        grayImage = colorImg;
-		
 
 		// take the abs value of the difference between background and incoming and then threshold:
 		grayDiff.absDiff(grayBg, grayImage);
@@ -63,7 +49,7 @@ void Painter::update(){
 		
 		// find contours which are between the size of 20 pixels and 1/3 the w*h pixels.
 		// also, find holes is set to true so we will get interior contours as well....
-		contourFinder.findContours(grayDiff, 20, (340*240)/3, 10, true);	// find holes
+		contourFinder.findContours(grayDiff, 20, (scaledImage.getWidth()*scaledImage.getHeight())/2, 10, true);	// find holes
 		
 		
 		
@@ -115,15 +101,13 @@ void Painter::update(){
 		// grayBg = grayBg * 0.9 + grayImage * 0.1
 		grayBg += grayImage;
 	}
-#endif
+
 }
 
 //--------------------------------------------------------------
 void Painter::draw() {
-#ifdef USING_OPENCV
 	ofSetHexColor(0xFFFFFF);
 	canvas.draw(0,0,WIDTH, HEIGHT);
-#endif
 }
 
 

@@ -63,6 +63,11 @@
 		EA3ADA9913B395E800F843E2 /* ofxCvHaarFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA3ADA2A13B395E600F843E2 /* ofxCvHaarFinder.cpp */; };
 		EA3ADA9A13B395E800F843E2 /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA3ADA2C13B395E600F843E2 /* ofxCvImage.cpp */; };
 		EA3ADA9B13B395E800F843E2 /* ofxCvShortImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA3ADA2F13B395E600F843E2 /* ofxCvShortImage.cpp */; };
+		EA495ACE13CC5FCC00D500B5 /* Drawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA495AC413CC5FCC00D500B5 /* Drawer.cpp */; };
+		EA495ACF13CC5FCC00D500B5 /* Mirror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA495AC713CC5FCC00D500B5 /* Mirror.cpp */; };
+		EA495AD013CC5FCC00D500B5 /* Sparkles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA495ACA13CC5FCC00D500B5 /* Sparkles.cpp */; };
+		EA495AD113CC5FCC00D500B5 /* Sparticles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA495ACC13CC5FCC00D500B5 /* Sparticles.cpp */; };
+		EA495B4E13CC76C300D500B5 /* KinectOrCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA495B4C13CC76C300D500B5 /* KinectOrCamera.cpp */; };
 		EA6C16D613CB1084001DBE32 /* opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C16D513CB1084001DBE32 /* opencv.a */; };
 		EAD4976213A8D9B100D312FE /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974613A8D9B100D312FE /* Apps.mm */; };
 		EAD4976313A8D9B100D312FE /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974813A8D9B100D312FE /* testApp.mm */; };
@@ -291,6 +296,16 @@
 		EA3ADA2F13B395E600F843E2 /* ofxCvShortImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxCvShortImage.cpp; sourceTree = "<group>"; };
 		EA3ADA3013B395E600F843E2 /* ofxCvShortImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxCvShortImage.h; sourceTree = "<group>"; };
 		EA3ADA3113B395E600F843E2 /* ofxOpenCv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOpenCv.h; sourceTree = "<group>"; };
+		EA495AC413CC5FCC00D500B5 /* Drawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Drawer.cpp; sourceTree = "<group>"; };
+		EA495AC513CC5FCC00D500B5 /* Drawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawer.h; sourceTree = "<group>"; };
+		EA495AC713CC5FCC00D500B5 /* Mirror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mirror.cpp; sourceTree = "<group>"; };
+		EA495AC813CC5FCC00D500B5 /* Mirror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mirror.h; sourceTree = "<group>"; };
+		EA495ACA13CC5FCC00D500B5 /* Sparkles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sparkles.cpp; sourceTree = "<group>"; };
+		EA495ACB13CC5FCC00D500B5 /* Sparkles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sparkles.h; sourceTree = "<group>"; };
+		EA495ACC13CC5FCC00D500B5 /* Sparticles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sparticles.cpp; sourceTree = "<group>"; };
+		EA495ACD13CC5FCC00D500B5 /* Sparticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sparticles.h; sourceTree = "<group>"; };
+		EA495B4C13CC76C300D500B5 /* KinectOrCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectOrCamera.cpp; sourceTree = "<group>"; };
+		EA495B4D13CC76C300D500B5 /* KinectOrCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectOrCamera.h; sourceTree = "<group>"; };
 		EA6C16D513CB1084001DBE32 /* opencv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = opencv.a; sourceTree = "<group>"; };
 		EAD4974613A8D9B100D312FE /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
 		EAD4974713A8D9B100D312FE /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
@@ -1071,6 +1086,35 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		EA495AC313CC5FCC00D500B5 /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				EA495AC413CC5FCC00D500B5 /* Drawer.cpp */,
+				EA495AC513CC5FCC00D500B5 /* Drawer.h */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
+		EA495AC613CC5FCC00D500B5 /* Mirror */ = {
+			isa = PBXGroup;
+			children = (
+				EA495AC713CC5FCC00D500B5 /* Mirror.cpp */,
+				EA495AC813CC5FCC00D500B5 /* Mirror.h */,
+			);
+			path = Mirror;
+			sourceTree = "<group>";
+		};
+		EA495AC913CC5FCC00D500B5 /* Sparkles */ = {
+			isa = PBXGroup;
+			children = (
+				EA495ACA13CC5FCC00D500B5 /* Sparkles.cpp */,
+				EA495ACB13CC5FCC00D500B5 /* Sparkles.h */,
+				EA495ACC13CC5FCC00D500B5 /* Sparticles.cpp */,
+				EA495ACD13CC5FCC00D500B5 /* Sparticles.h */,
+			);
+			path = Sparkles;
+			sourceTree = "<group>";
+		};
 		EAD4974413A8D9B100D312FE /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -1126,6 +1170,9 @@
 		EAD4975413A8D9B100D312FE /* somantics */ = {
 			isa = PBXGroup;
 			children = (
+				EA495AC313CC5FCC00D500B5 /* Drawer */,
+				EA495AC613CC5FCC00D500B5 /* Mirror */,
+				EA495AC913CC5FCC00D500B5 /* Sparkles */,
 				EA3AD83E13B38DC100F843E2 /* Painter */,
 				EAD4975513A8D9B100D312FE /* Corridors */,
 				EAD4975913A8D9B100D312FE /* Silhouette */,
@@ -1237,6 +1284,8 @@
 		EAD4978C13A8D9B900D312FE /* vision */ = {
 			isa = PBXGroup;
 			children = (
+				EA495B4C13CC76C300D500B5 /* KinectOrCamera.cpp */,
+				EA495B4D13CC76C300D500B5 /* KinectOrCamera.h */,
 			);
 			path = vision;
 			sourceTree = "<group>";
@@ -1389,6 +1438,11 @@
 				EA3ADA9913B395E800F843E2 /* ofxCvHaarFinder.cpp in Sources */,
 				EA3ADA9A13B395E800F843E2 /* ofxCvImage.cpp in Sources */,
 				EA3ADA9B13B395E800F843E2 /* ofxCvShortImage.cpp in Sources */,
+				EA495ACE13CC5FCC00D500B5 /* Drawer.cpp in Sources */,
+				EA495ACF13CC5FCC00D500B5 /* Mirror.cpp in Sources */,
+				EA495AD013CC5FCC00D500B5 /* Sparkles.cpp in Sources */,
+				EA495AD113CC5FCC00D500B5 /* Sparticles.cpp in Sources */,
+				EA495B4E13CC76C300D500B5 /* KinectOrCamera.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,7 +1461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = "";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
