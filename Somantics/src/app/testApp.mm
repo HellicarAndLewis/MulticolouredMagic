@@ -4,17 +4,42 @@
 
 #ifndef TARGET_OF_IPHONE
 #include "util.h"
+#else
+#include <AVFoundation/AVFoundation.h>
 #endif
 
 //--------------------------------------------------------------
 void testApp::setup(){
 	
 	setupApp(this, "Somantics");
+
+	printf("---------->>>>>>>>>><<<<<<<<<<<<<<<_----------------\n");
+//#ifndef TARGET_IPHONE_SIMULATOR
+
+#ifdef TARGET_OF_IPHONE
 	
-#ifndef TARGET_IPHONE_SIMULATOR
+	// if we're ont the iphone, we want to double check there's a camera
+	NSArray * devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+	if([devices count]>0) {
+		kinect.camera.listDevices();
 		
+		// front facing camera
+		kinect.camera.setDeviceID(2);
+
+	
+		kinect.setup();
+		colorImg.allocate(kinect.getWidth(),kinect.getHeight());
+		printf("Setting up camera\n");
+	} else {
+		printf("No cameras available\n");
+		hasCamera = false;
+	}
+#else 
+	// just a regular setup
 	kinect.setup();
+	colorImg.allocate(kinect.getWidth(),kinect.getHeight());
 #endif
+//#endif
 	
 	mainMenu = new MainMenu();
 	currentApp = mainMenu;
@@ -29,6 +54,7 @@ void testApp::setup(){
 	
 	aboutPage.setup();
 	settingsPage.setup();
+	
 }
 
 
@@ -42,7 +68,17 @@ void testApp::update(){
 		
 #ifndef TARGET_IPHONE_SIMULATOR
 		if(currentApp->needsKinect()) {
+			
 			kinect.update();
+			unsigned char *pix = kinect.getPixels();
+			if(pix!=NULL) {
+				colorImg.setFromPixels(kinect.getPixels()
+									   , kinect.getWidth(), kinect.getHeight());
+				
+				
+				currentApp->colorImg = &colorImg;
+			} else {
+				currentApp->colorImg = NULL;
 			//currentApp->colorPixels = kinect.getPixels();
 			//currentApp->grayPixels = kinect.getDepthPixels();
 		}

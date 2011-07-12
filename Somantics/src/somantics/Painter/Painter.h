@@ -1,10 +1,6 @@
 #pragma once
 
 #include "ofMain.h"
-#define USING_OPENCV
-#ifdef USING_OPENCV
-#include "ofxOpenCv.h"
-#endif
 #include "Reactickle.h"
 
 
@@ -25,17 +21,14 @@ public:
 	
 private:
 	
-	
-#ifdef USING_OPENCV
-	ofVideoGrabber 		vidGrabber;
-	ofxCvColorImage			colorImg;
 
+	ofxCvColorImage			scaledImage;
 	ofxCvGrayscaleImage 	grayImage;
 	ofxCvGrayscaleImage 	grayBg;
 	ofxCvGrayscaleImage 	grayDiff;
 	ofxCvColorImage			canvas;
 	ofxCvContourFinder		contourFinder;
-#endif
+
 	void nextColour();
 	
 	int		threshold;

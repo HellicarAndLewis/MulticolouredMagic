@@ -7,8 +7,9 @@
  */
 #pragma once
 #include "ofMain.h"
+#ifndef TARGET_OF_IPHONE
 #include "ofxKinect.h"
-
+#endif
 class KinectOrCamera {
 public:
 	void setup();
@@ -20,9 +21,16 @@ public:
 	
 	unsigned char *getPixels();
 	unsigned char *getDepthPixels();
-private:
+
+	int getWidth() { return width; }
+	int getHeight() { return height; } 
 	ofVideoGrabber camera;
-	unsigned char *greyscaleBuffer;
+	
+#ifndef TARGET_OF_IPHONE
 	ofxKinect kinect;
+
+#endif
+private:
+	unsigned char *greyscaleBuffer;
 	bool usingKinect;
 };
