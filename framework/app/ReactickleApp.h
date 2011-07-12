@@ -22,6 +22,11 @@
 // how long it takes for the app to fade from one reactickle to another
 #define	CROSS_FADE_TIME 2
 
+//OSC things
+#ifndef TARGET_OF_IPHONE
+#include "ofxOsc.h"
+#endif
+
 class ReactickleApp: 
 #ifdef TARGET_OF_IPHONE
 public ofxiPhoneApp 
@@ -34,6 +39,9 @@ public:
 	
 	// call this in your reactickle app setup
 	void setupApp(ReactickleApp *instance, string appName);
+#ifndef TARGET_OF_IPHONE
+    void setupOSC();
+#endif    
 	void exit();
 	
 	// these just redirect to touch events.
@@ -50,9 +58,6 @@ public:
 	
 	void audioReceived( float * input, int bufferSize, int nChannels );
 	
-	
-	
-	
 	void switchReactickle(Reactickle *reactickle);
 	
 	// stuff you have to override
@@ -68,6 +73,10 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 	
+#ifndef TARGET_OF_IPHONE
+    //more osc fun
+    ofxOscSender sender;
+#endif    
 protected:
 	
 	
@@ -97,6 +106,4 @@ protected:
 	Reactickle *mainMenu;
 	// back buttons for when on a reactickle
 	HoldButton backButton;
-
-
 };

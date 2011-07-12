@@ -10,6 +10,16 @@
 #include "msaColor.h"
 
 class Change: public Reactickle {
+    
+    void start(){
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 7;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
 	
 	void setup() {
 		
@@ -38,6 +48,14 @@ class Change: public Reactickle {
 		}else{
 			noiseColour.setHSV(ofRandom(0,360), 1, 1);                
 		}
+        
+#ifndef TARGET_OF_IPHONE
+        //triggers are touch downs....
+        ofxOscMessage m;
+        m.setAddress( "/touchdown" );
+        m.addIntArg(mode);
+        ReactickleApp::instance->sender.sendMessage(m);
+#endif
 		
 		timeOfLastNewCircle = ofGetElapsedTimef();
 	}
@@ -60,6 +78,15 @@ class Change: public Reactickle {
     int getNumModes() {
 		return 3;
 	}
+    
+    void modeChanged() {        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress("/modechange");
+        m.addIntArg( mode );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
 	
 	float timeOfLastNewCircle;
 	int colourPosition;

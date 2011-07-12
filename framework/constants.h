@@ -30,3 +30,6 @@ extern bool HI_RES;
 extern std::string IMAGE_ROOT;
 
 extern std::string APP_NAME;
+
+#define HOST "localhost"
+#define PORT 12345

@@ -21,12 +21,14 @@ class Flip: public Reactickle {
 public:
 	
 	bool needsKinect() { return true; }
-
+    
+    virtual void start();
 	virtual void update();
 	virtual void draw();
 	virtual bool touchDown(float x, float y, int touchId);
 	virtual bool touchMoved(float x, float y, int touchId);
 	virtual bool touchUp(float x, float y, int touchId);
+    virtual void modeChanged();
     
     int getNumModes() {
 		return 3;
@@ -38,7 +40,6 @@ public:
 	// deque of them. It was originally needed as a trail.
 	// haven't got time to change that right now.
 	deque<ofVec2f> pos;
-	void start();
 	int currShapeId;
 	ofVec2f lastPos;
 };

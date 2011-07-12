@@ -13,7 +13,6 @@
 #include "ofConstants.h"
 #include "ofMain.h"
 
-
 #include "MagicShapes.h"
 
 #ifndef TARGET_OF_IPHONE

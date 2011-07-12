@@ -9,6 +9,16 @@
 #include "MagicShapes.h"
 
 class Find: public Reactickle {
+    
+    void start(){
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 8;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
 	
 	void setup() {
         currShapeID = 0;
@@ -41,7 +51,15 @@ class Find: public Reactickle {
             }
         }else{
             currShapeID = MAGIC_CIRCLE;
-        }        
+        }   
+        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress( "/shapechange" );
+        m.addIntArg( currShapeID );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+        
     }
 	
 	void update() {
@@ -77,6 +95,13 @@ class Find: public Reactickle {
             newShapePositionAndColour();            
         }
         
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress( "/touchdown" );
+        m.addIntArg(mode);
+        ReactickleApp::instance->sender.sendMessage(m);
+#endif
+        
         return true;
     }
     
@@ -91,7 +116,15 @@ class Find: public Reactickle {
     int getNumModes() {
 		return 3;
 	}
-	
+    
+    void modeChanged() {        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress("/modechange");
+        m.addIntArg( mode );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }	
 
 	msaColor findColour;
 	ofVec2f posOfShape;

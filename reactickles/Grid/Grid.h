@@ -8,6 +8,16 @@
 #include "Reactickle.h"
 
 class Grid: public Reactickle {
+    
+    void start(){
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 5;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
 	
 	void setup(){
 		gridWidth = 6;
@@ -25,6 +35,14 @@ class Grid: public Reactickle {
 		if(positionInGrid > gridWidth*gridHeight){
 			positionInGrid = 0;
 		}
+        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress( "/touchdown" );
+        m.addIntArg(mode);
+        ReactickleApp::instance->sender.sendMessage(m);
+#endif
+        
 		return true;
 	}
 	void update(){
@@ -106,6 +124,15 @@ class Grid: public Reactickle {
     int getNumModes() {
 		return 3;
 	}
+    
+    virtual void modeChanged() {        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress("/modechange");
+        m.addIntArg( mode );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }    
 	
 	int gridWidth;
 	int gridHeight;

@@ -9,6 +9,16 @@
 #include "TraceShape.h"
 
 class Trace: public Reactickle {
+    
+    void start(){
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 9;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
 	
 	void setup() {
         maximumLengthOfTrace = 200; //start with 200, make this interactive?
@@ -34,6 +44,13 @@ class Trace: public Reactickle {
     
 	bool touchDown(float x, float y, int touchId){
         addNewTraceToTraces(x,y); 
+        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress( "/touchdown" );
+        m.addIntArg(mode);
+        ReactickleApp::instance->sender.sendMessage(m);
+#endif
         
         return true;
     }
@@ -62,7 +79,14 @@ class Trace: public Reactickle {
             }
         }else{
             currShapeID = MAGIC_CIRCLE;
-        }         
+        }    
+        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress( "/shapechange" );
+        m.addIntArg( currShapeID );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
         
         
         if(traces.size() < maximumLengthOfTrace){
@@ -83,6 +107,15 @@ class Trace: public Reactickle {
     int getNumModes() {
 		return 3;
 	}
+    
+    void modeChanged() {        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress("/modechange");
+        m.addIntArg( mode );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }	
 	
     vector<TraceShape> traces;
     

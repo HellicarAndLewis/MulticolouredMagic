@@ -8,8 +8,20 @@
  */
 #pragma once
 #include "Reactickle.h"
+#include "ReactickleApp.h"
+
 class Orbit: public Reactickle {
 public:
+    void start(){
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 1;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
+    
 	void setup(){
         ofSetCircleResolution(42); //42 is the answer to everything!
         
@@ -182,6 +194,14 @@ public:
             default:
                 break;
         }
+        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress( "/touchdown" );
+        m.addIntArg(mode);
+        ReactickleApp::instance->sender.sendMessage(m);
+#endif        
+        
 		return true;
     }
     
@@ -192,11 +212,27 @@ public:
             currentShapeType = 0;
         }
 		printf("currentShapeType: %d\n", currentShapeType);
+        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+		m.setAddress( "/shapechange" );
+		m.addIntArg( currentShapeType );
+		ReactickleApp::instance->sender.sendMessage( m );
+#endif
     }
     
     int getNumModes() {
 		return 3;
 	}
+    
+    void modeChanged() {        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress("/modechange");
+        m.addIntArg( mode );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
 	
 	float timeOfLastInteraction;
     int numberOfShapes;

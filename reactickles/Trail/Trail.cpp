@@ -10,6 +10,14 @@
 
 void Trail::start() {
 	currShapeId = MAGIC_CIRCLE;
+    
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 4;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
 }
 
 void Trail::update() {
@@ -32,6 +40,13 @@ void Trail::update() {
         }else{
             currShapeId = MAGIC_CIRCLE;
         }
+        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress( "/shapechange" );
+        m.addIntArg( currShapeId );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
                 
 		timeOfLastInteraction = timeNow;
 	}
@@ -102,6 +117,14 @@ void Trail::collision(TrailParticle &p1, TrailParticle &p2) {
 
 bool Trail::touchDown(float x, float y, int touchId) {
 	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
+    
+#ifndef TARGET_OF_IPHONE
+    ofxOscMessage m;
+    m.setAddress( "/touchdown" );
+    m.addIntArg(mode);
+    ReactickleApp::instance->sender.sendMessage(m);
+#endif
+    
 	return true;
 }
 
