@@ -35,7 +35,7 @@
 		E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9770E8CC7DD009D7055 /* CoreServices.framework */; };
 		E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9790E8CC7DD009D7055 /* OpenGL.framework */; };
 		E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */; };
-		E4C2422B10CC554B004149E2 /* openFrameworks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2421E10CC549C004149E2 /* openFrameworks.a */; };
+		E4C2422B10CC554B004149E2 /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */; };
 		E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424410CC5A17004149E2 /* AppKit.framework */; };
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
@@ -429,7 +429,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C2422B10CC554B004149E2 /* openFrameworks.a in Frameworks */,
+				E4C2422B10CC554B004149E2 /* openFrameworksDebug.a in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
@@ -746,7 +746,7 @@
 		E4C2421710CC549C004149E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4C2421E10CC549C004149E2 /* openFrameworks.a */,
+				E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1328,10 +1328,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E4C2421E10CC549C004149E2 /* openFrameworks.a */ = {
+		E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = openFrameworks.a;
+			path = openFrameworksDebug.a;
 			remoteRef = E4C2421D10CC549C004149E2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1592,6 +1592,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG_MODE=1";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_CAIRO = "\"$(OF_PATH)/libs/cairo/include/cairo\"";
 				HEADER_FMODEX = "\"$(OF_PATH)/libs/fmodex/include\"";
 				HEADER_FREEIMAGE = "\"$(OF_PATH)/libs/FreeImage/include\"";
@@ -1615,6 +1616,7 @@
 					"../../../libs/fmodex/include/**",
 					"../../../libs/freeimage/include/**",
 					../addons/ofxKinect/libs/libusb/osx/include,
+					"../../../libs/cairo/include/**",
 				);
 				HEADER_TESS2 = "\"$(OF_PATH)/libs/tess2/include\"";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
@@ -1684,7 +1686,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/win_cb\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/linux\"";
 				LIB_ASSIMP = "\"$(OF_PATH)/libs/assimp/lib/osx/assimp.a\"";
-				LIB_CAIRO = "\"$(OF_PATH)/libs/cairo/lib/osx/libcairo.a\"";
+				LIB_CAIRO = "\"$(OF_PATH)/libs/cairo/lib/osx/cairo.a\"";
 				LIB_FMODEX = "\"$(OF_PATH)/libs/fmodex/lib/osx/libfmodex.dylib\"";
 				LIB_FREEIMAGE = "\"$(OF_PATH)/libs/FreeImage/lib/osx/freeimage.a\"";
 				LIB_FREETYPE = "\"$(OF_PATH)/libs/freetype/lib/osx/freetype.a\"";
@@ -1724,6 +1726,7 @@
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_CAIRO = "\"$(OF_PATH)/libs/cairo/include/cairo\"";
 				HEADER_FMODEX = "\"$(OF_PATH)/libs/fmodex/include\"";
 				HEADER_FREEIMAGE = "\"$(OF_PATH)/libs/FreeImage/include\"";
@@ -1747,6 +1750,7 @@
 					"../../../libs/fmodex/include/**",
 					"../../../libs/freeimage/include/**",
 					../addons/ofxKinect/libs/libusb/osx/include,
+					"../../../libs/cairo/include/**",
 				);
 				HEADER_TESS2 = "\"$(OF_PATH)/libs/tess2/include\"";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
@@ -1814,7 +1818,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/win_cb\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/lib/android\"";
 				LIB_ASSIMP = "\"$(OF_PATH)/libs/assimp/lib/osx/assimp.a\"";
-				LIB_CAIRO = "\"$(OF_PATH)/libs/cairo/lib/osx/libcairo.a\"";
+				LIB_CAIRO = "\"$(OF_PATH)/libs/cairo/lib/osx/cairo.a\"";
 				LIB_FMODEX = "\"$(OF_PATH)/libs/fmodex/lib/osx/libfmodex.dylib\"";
 				LIB_FREEIMAGE = "\"$(OF_PATH)/libs/FreeImage/lib/osx/freeimage.a\"";
 				LIB_FREETYPE = "\"$(OF_PATH)/libs/freetype/lib/osx/freetype.a\"";
