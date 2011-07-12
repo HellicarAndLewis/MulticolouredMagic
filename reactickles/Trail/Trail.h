@@ -9,6 +9,7 @@
 #include "TrailParticle.h"
 #define SPAWN_RATE 1
 #define MAX_NUM_PARTICLES 200
+#include "ReactickleApp.h"
 
 class Trail: public Reactickle {
 public:
@@ -22,6 +23,15 @@ public:
 	virtual bool touchDown(float x, float y, int touchId);
 	virtual bool touchMoved(float x, float y, int touchId);
 	virtual bool touchUp(float x, float y, int touchId);
+    
+    virtual void modeChanged() {        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress("/modechange");
+        m.addIntArg( mode );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
     
     int getNumModes() {
 		return 3;

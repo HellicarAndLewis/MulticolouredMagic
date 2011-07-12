@@ -36,12 +36,18 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	ofxiPhoneAlerts.addListener(this);
 #else
 	setDataPathRootToAppContents();
+    setupOSC(); //osc too
 #endif
 	
 	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
 }
 
-
+#ifndef TARGET_OF_IPHONE
+void ReactickleApp::setupOSC(){
+    // open an outgoing connection to HOST:PORT
+    sender.setup( HOST, PORT );
+}
+#endif 
 
 
 
@@ -94,6 +100,7 @@ void ReactickleApp::drawCurrentReactickle() {
 
 
 void ReactickleApp::switchReactickle(Reactickle *reactickle) {
+
 	
 	// save for later
 	Reactickle *lastApp = currentApp;

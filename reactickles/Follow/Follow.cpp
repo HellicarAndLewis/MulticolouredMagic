@@ -8,8 +8,18 @@
 
 #include "Follow.h"
 
+#include "ReactickleApp.h"
+
 void Follow::start() {
 	currShapeId = 0;
+    
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 3;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
 }
 
 void Follow::clap() {
@@ -24,6 +34,13 @@ void Follow::clap() {
             currShapeId++;
             currShapeId %= NUM_MAGIC_SHAPES;                
         }
+        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress( "/shapechange" );
+        m.addIntArg( currShapeId );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
 	}
     
 	if(mode==1 && numParticles+1<NUM_SWARM_PARTICLES) {
@@ -131,6 +148,14 @@ void Follow::collision(FollowParticle &p1, FollowParticle &p2) {
 bool Follow::touchDown(float x, float y, int touchId) {
 	if(currShapeId<0 || currShapeId>=NUM_MAGIC_SHAPES) currShapeId = 0;
 	touches.push_back(FollowTouch(x, y, touchId, currShapeId));
+
+#ifndef TARGET_OF_IPHONE
+    ofxOscMessage m;
+    m.setAddress( "/touchdown" );
+    m.addIntArg(mode);
+    ReactickleApp::instance->sender.sendMessage(m);
+#endif 
+    
 	return true;
 }
 
@@ -187,4 +212,11 @@ void Follow::modeChanged() {
 		}
 		
 	}
+    
+#ifndef TARGET_OF_IPHONE
+    ofxOscMessage m;
+    m.setAddress("/modechange");
+    m.addIntArg( mode );
+    ReactickleApp::instance->sender.sendMessage( m );
+#endif
 }

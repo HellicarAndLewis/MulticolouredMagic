@@ -7,15 +7,21 @@
  */
 
 #include "Reactickle.h"
-#ifndef TARGET_OF_IPHONE
-#include "ofxOsc.h"
-
-#define HOST "localhost"
-#define PORT 12345
-#endif
+#include "ReactickleApp.h"
 
 class Expand: public Reactickle {
 public:
+    void start(){
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 0;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
+    
+    
 	void setup(){
         ofSetCircleResolution(42); //42 is the answer to everything!
         
@@ -32,10 +38,6 @@ public:
         shapeScale = 1.f;
         
         whiteBg = false;
-#ifndef TARGET_OF_IPHONE
-        // open an outgoing connection to HOST:PORT
-        sender.setup( HOST, PORT );
-#endif
 	}
 	
 	void update(){
@@ -105,7 +107,7 @@ public:
 #ifndef TARGET_OF_IPHONE
                 simpleMessage.setAddress( "/shapechange" );
                 simpleMessage.addIntArg( shapeType );
-                sender.sendMessage( simpleMessage );
+                ReactickleApp::instance->sender.sendMessage( simpleMessage );
 #endif
                 break;
             case 1:
@@ -130,7 +132,7 @@ public:
         ofxOscMessage m;
         m.setAddress( "/touchdown" );
         m.addIntArg(mode);
-        sender.sendMessage(m);
+        ReactickleApp::instance->sender.sendMessage(m);
 #endif
 		return true;
     }
@@ -145,13 +147,22 @@ public:
         ofxOscMessage m;
 		m.setAddress( "/shapechange" );
 		m.addIntArg( currentShapeType );
-		sender.sendMessage( m );
+		ReactickleApp::instance->sender.sendMessage( m );
 #endif
     }
     
     int getNumModes() {
 		return 3;
 	}
+    
+    void modeChanged() {        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress("/modechange");
+        m.addIntArg( mode );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
 	
 	float timeOfLastInteraction;
     float bigShapeRadius;
@@ -163,7 +174,4 @@ public:
     float shapeScale;
     
     bool whiteBg;
-#ifndef TARGET_OF_IPHONE
-    ofxOscSender sender;
-#endif
 };

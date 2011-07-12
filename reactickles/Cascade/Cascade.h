@@ -66,6 +66,14 @@ public:
 
 	void start() {
         currShapeId = 0;
+        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 6;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
     }
 	
 	void setup() {
@@ -89,6 +97,13 @@ public:
                     currShapeId++;
                     currShapeId %= NUM_MAGIC_SHAPES;                
                 }
+                
+#ifndef TARGET_OF_IPHONE
+                ofxOscMessage m;
+                m.setAddress( "/shapechange" );
+                m.addIntArg( currShapeId );
+                ReactickleApp::instance->sender.sendMessage( m );
+#endif
             }
             
 			ofPoint clapPoint = ofPoint(ofRandomWidth(), ofRandomHeight());
@@ -143,6 +158,14 @@ public:
 				magnitude = ABS(diff);
 				lastClap = ofGetElapsedTimef();
 				clapping = true;
+                
+#ifndef TARGET_OF_IPHONE
+                //claps are touch downs for this one...
+                ofxOscMessage m;
+                m.setAddress( "/touchdown" );
+                m.addIntArg(mode);
+                ReactickleApp::instance->sender.sendMessage(m);
+#endif
 				return;
 			}
 			lastSample = input[i];
@@ -152,6 +175,15 @@ public:
     int getNumModes() {
 		return 3;
 	}
+    
+    void modeChanged() {        
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        m.setAddress("/modechange");
+        m.addIntArg( mode );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
+    }
     
 	float clapThreshold;
 	float magnitude;

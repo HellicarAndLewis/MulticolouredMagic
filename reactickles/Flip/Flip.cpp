@@ -7,12 +7,22 @@
  */
 
 #include "Flip.h"
+#include "ReactickleApp.h"
 
 void Flip::start() {
 	pos.push_back(ofGetWindowSize()/2);
 	lastPos = pos.back();
 	currShapeId = MAGIC_CIRCLE;
+    
+#ifndef TARGET_OF_IPHONE
+        ofxOscMessage m;
+        int reactickleNumber = 2;
+        m.setAddress( "/reacticklechange" );
+        m.addIntArg( reactickleNumber );
+        ReactickleApp::instance->sender.sendMessage( m );
+#endif
 }
+
 void Flip::draw() {
 	int color1 = 0x000000;
 	int color2 = 0xAAAAAA;
@@ -52,8 +62,15 @@ void Flip::update() {
                 }
             }else{
                 currShapeId++;
-                currShapeId %= NUM_MAGIC_SHAPES;                
+                currShapeId %= NUM_MAGIC_SHAPES;   
             }
+            
+#ifndef TARGET_OF_IPHONE
+            ofxOscMessage m;
+            m.setAddress( "/shapechange" );
+            m.addIntArg( currShapeId );
+            ReactickleApp::instance->sender.sendMessage( m );
+#endif
 		}
 		
 		lastPos = pos.back();
@@ -67,6 +84,14 @@ bool Flip::touchDown(float x, float y, int touchId) {
 		lastPos = pos.back();
 	}
 	pos.push_back((ofVec2f(x, y)*0.05+lastPos*0.95));
+    
+#ifndef TARGET_OF_IPHONE
+    ofxOscMessage m;
+    m.setAddress( "/touchdown" );
+    m.addIntArg(mode);
+    ReactickleApp::instance->sender.sendMessage(m);
+#endif     
+    
 	return true;
 }
 bool Flip::touchMoved(float x, float y, int touchId) {
@@ -94,4 +119,13 @@ bool Flip::touchUp(float x, float y, int touchId) {
 		}
 	}
 	return true;
+}
+
+void Flip::modeChanged() {        
+#ifndef TARGET_OF_IPHONE
+    ofxOscMessage m;
+    m.setAddress("/modechange");
+    m.addIntArg( mode );
+    ReactickleApp::instance->sender.sendMessage( m );
+#endif
 }
