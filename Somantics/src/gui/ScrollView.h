@@ -27,6 +27,8 @@ public:
 		this->y = y;
 		this->width = width;
 		this->height = height;
+		
+
 	}
 	
 	void setListener(SimpleButtonListener *listener) {
@@ -44,6 +46,7 @@ public:
 	vector<InteractiveObject*> items;
 	
 	void draw() {
+		//printf("%f %f %f %f\n", x, y, width, height);
 		arrange();
 		
 		if(!touching) {
@@ -103,6 +106,10 @@ public:
 	}
 	
 	bool touchMoved(float x, float y, int touchId) {
+		if(!inside(x, y)) {
+			touching = false;
+			return false;
+		}
 		deltaX = x - touchX;
 		scrollOffset += deltaX;
 		touchX = x;

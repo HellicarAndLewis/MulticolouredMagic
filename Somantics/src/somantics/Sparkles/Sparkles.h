@@ -7,8 +7,7 @@
 //
 #include "Reactickle.h"
 #include "Sparticles.h"
-#include "ofxOpenCv.h"
-#define USING_OPENCV
+
 
 class Sparkles : public Reactickle {
 
@@ -26,11 +25,7 @@ public:
 	
 private:
 	
-	
-#ifdef USING_OPENCV
-	ofVideoGrabber 		vidGrabber;
-	ofxCvColorImage			colorImg;
-	
+	ofxCvColorImage			scaledImage;
 	ofxCvGrayscaleImage 	grayImage;
 	ofxCvGrayscaleImage 	grayBg;
 	ofxCvGrayscaleImage 	grayDiff;
@@ -43,7 +38,6 @@ private:
 	
 	
 	
-#endif
 	
 	int		threshold;
 	float	amount;

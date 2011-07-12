@@ -83,6 +83,7 @@ void ReactickleApp::drawCurrentReactickle() {
 		// delete the last faded out reactickle
 		// if it's finished fading out.
 		if(fadingOutReactickle!=NULL) {
+			printf("deleting fading out reactickle\n");
 			delete fadingOutReactickle;
 			fadingOutReactickle = NULL;
 		}
@@ -93,6 +94,10 @@ void ReactickleApp::drawCurrentReactickle() {
 
 
 void ReactickleApp::switchReactickle(Reactickle *reactickle) {
+	
+	// save for later
+	Reactickle *lastApp = currentApp;
+	
 	if(currentApp!=NULL) {
 		currentApp->stop();
 	}
@@ -100,7 +105,7 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 	if(isReactickle(currentApp)) {
 		
 		// just check the old one is actually deleted before reassigning.
-		if(fadingOutReactickle!=NULL) delete fadingOutReactickle;
+		if(fadingOutReactickle!=NULL && isReactickle(fadingOutReactickle)) delete fadingOutReactickle;
 		
 		fadingOutReactickle = currentApp;
 //		delete currentApp; - don't delete it yet, wait until it's faded out.
@@ -114,10 +119,23 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 		currentApp->setup();
 		backButton.setHoldMode(true);
 		startCrossFade(true);
+		printf("it's a reactickle\n");
+	} else if(currentApp==mainMenu) {
 		
+		// only crossfade if we're fading out of a reactickle
+		if(
+		   isReactickle(lastApp)
+		   ) {
+			printf("Should be crossfading here\n");
+			startCrossFade(false);
+			backButton.setHoldMode(false);		
+		} else {
+			printf("HERE\n");
+		}
 	} else {
-		startCrossFade(false);
+		// not a reactickle or main menu
 		backButton.setHoldMode(false);
+		printf("about or settings\n");
 	}
 	
 	currentApp->start();

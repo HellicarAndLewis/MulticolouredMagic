@@ -86,7 +86,7 @@ void Painter::update(){
 			float totalCount = canvas.width*canvas.height;
 			float proportionOfMatchedPixels = (float)matchCount/totalCount;
 		//	printf("Match count: %f%%\n", proportionOfMatchedPixels*100.f);
-			if(proportionOfMatchedPixels>.25) {
+			if(proportionOfMatchedPixels>.4) {
 				// change colour
 				nextColour();
 			}
@@ -108,6 +108,7 @@ void Painter::update(){
 void Painter::draw() {
 	ofSetHexColor(0xFFFFFF);
 	canvas.draw(0,0,WIDTH, HEIGHT);
+	
 }
 
 

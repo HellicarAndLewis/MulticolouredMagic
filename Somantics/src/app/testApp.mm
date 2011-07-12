@@ -21,10 +21,10 @@ void testApp::setup(){
 	// if we're ont the iphone, we want to double check there's a camera
 	NSArray * devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
 	if([devices count]>0) {
-		kinect.camera.listDevices();
+		//kinect.camera.listDevices();
 		
 		// front facing camera
-		kinect.camera.setDeviceID(2);
+		//kinect.camera.setDeviceID(2);
 
 	
 		kinect.setup();
@@ -66,23 +66,20 @@ void testApp::update(){
 		currentApp->volume = volume;
 		currentApp->volumeThreshold = volumeThreshold;
 		
-#ifndef TARGET_IPHONE_SIMULATOR
+//#ifndef TARGET_IPHONE_SIMULATOR
 		if(currentApp->needsKinect()) {
 			
 			kinect.update();
 			unsigned char *pix = kinect.getPixels();
 			if(pix!=NULL) {
-				colorImg.setFromPixels(kinect.getPixels()
-									   , kinect.getWidth(), kinect.getHeight());
-				
-				
+				colorImg.setFromPixels(pix, kinect.getWidth(), kinect.getHeight());
+				colorImg.mirror(true, false);
 				currentApp->colorImg = &colorImg;
 			} else {
 				currentApp->colorImg = NULL;
-			//currentApp->colorPixels = kinect.getPixels();
-			//currentApp->grayPixels = kinect.getDepthPixels();
+			}
 		}
-#endif
+//#endif
 		currentApp->update();
 	}
 	
@@ -116,6 +113,7 @@ void testApp::draw(){
 	glColor4f(0, 0, 0, alpha);
 	ofEnableAlphaBlending(); // reset blend func
 	ofRect(0, 0, WIDTH, HEIGHT);
+	colorImg.draw(0, 0, ofGetWidth(), ofGetHeight());
 	
 	
 	// pops the pixel coordinates scaling stuff.
@@ -126,7 +124,7 @@ void testApp::draw(){
 }
 
 bool testApp::isReactickle(Reactickle *reactickle) {
-	return currentApp!=mainMenu && currentApp!=&aboutPage && currentApp!=&settingsPage;
+	return reactickle!=mainMenu && reactickle!=&aboutPage && reactickle!=&settingsPage;
 }
 
 

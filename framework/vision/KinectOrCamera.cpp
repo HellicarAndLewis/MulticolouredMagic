@@ -20,14 +20,22 @@ void KinectOrCamera::setup() {
 	usingKinect = kinect.open();
 #else 
 	usingKinect = false;
+	width /= 2;
+	height /= 2;
 #endif
 	
 	if(usingKinect) {
 		
 	} else {
+		camera		.setVerbose(true);
+		camera.setDeviceID(2);
 		// init video grabber
 		camera.initGrabber(width, height);
+		width = camera.getWidth();
+		height = camera.getHeight();
 		greyscaleBuffer = new unsigned char[width*height];
+		// set up the camera
+
 	}
 	
 	
@@ -40,6 +48,7 @@ void KinectOrCamera::update() {
 		kinect.update();
 #endif
 	} else {
+		
 		camera.grabFrame();
 	}
 }

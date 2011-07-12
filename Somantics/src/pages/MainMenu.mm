@@ -14,7 +14,7 @@
 void MainMenu::setup() {
 	
 	// add all the buttons for the different Reactickles
-	scrollView.setup(0, 100, WIDTH, HEIGHT - 100);
+	scrollView.setup(0, 100, WIDTH, HEIGHT - 200);
 	
 	initMenu();
 	
