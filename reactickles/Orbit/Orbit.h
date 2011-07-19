@@ -9,6 +9,7 @@
 #pragma once
 #include "Reactickle.h"
 #include "ReactickleApp.h"
+#include "constants.h"
 
 class Orbit: public Reactickle {
 public:
@@ -41,7 +42,7 @@ public:
         maxNumberOfMiddleShapes = 8;
         maxNumberOfInnerShapes = 4;
         
-        centreOfBigShape = ofVec2f(ofGetWidth()/2.f, ofGetHeight()/2.f);  
+        centreOfBigShape = ofVec2f(WIDTH/2.f, HEIGHT/2.f);  
         startOfShapes.x = centreOfBigShape.x;
         startOfShapes.y = centreOfBigShape.y - (bigShapeRadius/2) - (shapesRadius/2);
         
@@ -68,7 +69,7 @@ public:
 		float timeSinceLastInteraction = timeNow - timeOfLastInteraction;        
 		
 		if((volume > volumeThreshold) && (timeSinceLastInteraction > 0.3f )){
-            touchDown(ofGetWidth()/2.f, ofGetHeight()/2.f, 0); //simulate a touch in the centre of the screen
+            touchDown(WIDTH/2.f, HEIGHT/2.f, 0); //simulate a touch in the centre of the screen
 		}
 	}
 	

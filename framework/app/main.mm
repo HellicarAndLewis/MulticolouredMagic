@@ -67,6 +67,7 @@ int main(){
 	IPAD = true;
 	IMAGE_ROOT = "images4/";
 	FAKE_GAME_MODE = true;
+	printf("SETTED HERE!!!!!\n\n\n\n");
 #endif
 
 	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context

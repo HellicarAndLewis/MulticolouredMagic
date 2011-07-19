@@ -8,6 +8,7 @@
 
 #include "Reactickle.h"
 #include "ReactickleApp.h"
+#include "constants.h"
 
 class Expand: public Reactickle {
 public:
@@ -29,7 +30,7 @@ public:
     
         bigShapeRadius = 400.f;
         
-        centreOfBigShape = ofVec2f(ofGetWidth()/2.f, ofGetHeight()/2.f);  
+        centreOfBigShape = ofVec2f(WIDTH/2.f, HEIGHT/2.f);  
         
         currentShapeType = 0;
         
@@ -46,7 +47,7 @@ public:
 		float timeSinceLastInteraction = timeNow - timeOfLastInteraction;        
 		
 		if((volume > volumeThreshold) && (timeSinceLastInteraction > 0.3f )){
-            touchDown(ofGetWidth()/2.f, ofGetHeight()/2.f, 0); //simulate a touch in the centre of the screen
+            touchDown(WIDTH/2.f, HEIGHT/2.f, 0); //simulate a touch in the centre of the screen
 		}
 	}
 	
@@ -73,7 +74,7 @@ public:
             case 2:
                 if(whiteBg){
                     ofSetColor(ofColor::white);
-                    ofRect(0, 0, ofGetWidth(), ofGetHeight());
+                    ofRect(0, 0, WIDTH, HEIGHT);
                     ofSetColor(ofColor::black);
                 }else{
                     ofSetColor(ofColor::white);

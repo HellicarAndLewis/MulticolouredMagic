@@ -6,6 +6,9 @@
  *
  */
 #pragma once
+
+#include <string>
+
 // this is your pixel width and height
 extern int WIDTH;
 extern int HEIGHT;

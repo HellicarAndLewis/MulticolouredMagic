@@ -33,7 +33,7 @@ public:
 		age = ofMap(ofGetElapsedTimef() - birth, 0, 5, 1, 0, true);
 		pos += vel;
 		vel.y += 0.2;
-		if(pos.y>ofGetHeight() && vel.y>0) vel.y *= -0.75;
+		if(pos.y>HEIGHT && vel.y>0) vel.y *= -0.75;
 	}
 	
 	void draw() {
@@ -140,7 +140,7 @@ public:
 		float timeSinceLastClap = ofGetElapsedTimef() - lastClap;
 		float value = ofMap(timeSinceLastClap, 0, 0.5, 0.4, 0, true);
 		ofSetColor(value*255.f, 0, 0);
-		ofRect(0, 0, ofGetWidth(), ofGetHeight());
+		ofRect(0, 0, WIDTH, HEIGHT);
 		
 		for(int i = 0; i < particles.size(); i++) {
 			particles[i].draw();

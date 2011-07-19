@@ -72,7 +72,7 @@ class Change: public Reactickle {
 	
 	void draw() {
 		noiseColour.setGL();
-		ofRect(0, 0, ofGetWidth(), ofGetHeight());
+		ofRect(0, 0, WIDTH, HEIGHT);
 	}
     
     int getNumModes() {

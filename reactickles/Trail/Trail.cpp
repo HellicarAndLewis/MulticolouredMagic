@@ -5,6 +5,7 @@
  * Created by Marek Bereza on 11/04/2011.
  *
  */
+#include "constants.h"
 
 #include "Trail.h"
 
@@ -72,9 +73,9 @@ void Trail::update() {
 		   ||
 		   particles[i].pos.y+particles[i].radius<0
 		   ||
-		   particles[i].pos.x-particles[i].radius>ofGetWidth()
+		   particles[i].pos.x-particles[i].radius>WIDTH
 		   ||
-		   particles[i].pos.y-particles[i].radius>ofGetHeight()) {
+		   particles[i].pos.y-particles[i].radius>HEIGHT) {
 			
 			particles.erase(particles.begin()+i);
 			i--;

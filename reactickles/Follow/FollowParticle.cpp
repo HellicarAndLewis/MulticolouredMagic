@@ -6,6 +6,8 @@
  *
  */
 // 10, 35
+#include "constants.h"
+
 #define MIN_RADIUS 20
 #define MAX_RADIUS 50
 #include "FollowParticle.h"
@@ -68,10 +70,10 @@ void FollowParticle::update() {
 	
 	radius = radiusBase + (radiusBase *0.4)*sin(seed+ofGetElapsedTimef()*seed);
 	
-	if(pos.x>ofGetWidth()+radius) vel.x = 0;
+	if(pos.x>WIDTH+radius) vel.x = 0;
 	else if(pos.x<-radius) vel.x = 0;
 
-	if(pos.y>ofGetHeight()+radius) vel.y = 0;
+	if(pos.y>HEIGHT+radius) vel.y = 0;
 	else if(pos.y<-radius) vel.y = 0;
 }
 

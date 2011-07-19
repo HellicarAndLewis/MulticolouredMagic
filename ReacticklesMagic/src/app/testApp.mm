@@ -136,6 +136,8 @@ void testApp::draw(){
 	}
 	
 
+	if(FAKE_GAME_MODE) centerer.begin();	
+	
 	drawCurrentReactickle();
 	
 	
@@ -159,6 +161,10 @@ void testApp::draw(){
 	ofEnableAlphaBlending(); // reset blend func
 	ofRect(0, 0, WIDTH, HEIGHT);
 	
+	
+	if(FAKE_GAME_MODE) centerer.end();
+	
+	
 	// pops the pixel coordinates scaling stuff.
 	if(RETINA) {
 		glPopMatrix();
@@ -167,7 +173,7 @@ void testApp::draw(){
 #ifndef TARGET_OF_IPHONE
 	// do the screenshot
 	if(mustTakeScreenshot) {
-		screenshot.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
+		screenshot.grabScreen(0, 0, WIDTH, HEIGHT);
 		string filename = getDesktopPath() + "/Magic-" + dateTimeString()+ ".jpg";
 		
 		screenshot.saveImage(filename);

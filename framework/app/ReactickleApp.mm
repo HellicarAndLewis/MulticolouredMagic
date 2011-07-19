@@ -15,6 +15,7 @@ ReactickleApp *ReactickleApp::instance;
 void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	APP_NAME = appName;
 	this->instance = instance;
+	centerer.setup(WIDTH, HEIGHT);
 	fadingOutReactickle = NULL;
 	currentApp = NULL;
 	gain = 1;
@@ -157,21 +158,6 @@ void ReactickleApp::startCrossFade(bool fadeIn) {
 
 
 #ifndef TARGET_OF_IPHONE
-bool fakeGameModeCoeffsInited = false;
-void transformTouchToFakeGameModeCoords(ofTouchEventArgs &touch) {
-	if(!fakeGameModeCoeffsInited) {
-		fakeGameModeCoeffsInited = true;
-	}
-	float fakeGameModeScale = (float)ofGetHeight()/(float)HEIGHT;
-	float resizedScreenWidth = (float)ofGetWidth()/fakeGameModeScale;
-	
-	
-	float moveRightBy = (resizedScreenWidth - WIDTH)/2;
-	
-	touch.x /= fakeGameModeScale;
-	touch.y /= fakeGameModeScale;
-	touch.x -= moveRightBy;
-}
 
 
 void ReactickleApp::mouseDragged(int x, int y, int button) {
@@ -179,7 +165,7 @@ void ReactickleApp::mouseDragged(int x, int y, int button) {
 	touch.x = x;
 	touch.y = y;
 	touch.id = button;
-	if(FAKE_GAME_MODE) transformTouchToFakeGameModeCoords(touch);
+	if(FAKE_GAME_MODE) centerer.transformMouse(touch.x, touch.y);
 	this->touchMoved(touch);
 }
 void ReactickleApp::mousePressed(int x, int y, int button) {
@@ -187,7 +173,7 @@ void ReactickleApp::mousePressed(int x, int y, int button) {
 	touch.x = x;
 	touch.y = y;
 	touch.id = button;
-	if(FAKE_GAME_MODE) transformTouchToFakeGameModeCoords(touch);
+	if(FAKE_GAME_MODE) centerer.transformMouse(touch.x, touch.y);
 	this->touchDown(touch);
 }
 void ReactickleApp::mouseReleased(int x, int y, int button) {
@@ -195,7 +181,7 @@ void ReactickleApp::mouseReleased(int x, int y, int button) {
 	touch.x = x;
 	touch.y = y;
 	touch.id = button;
-	if(FAKE_GAME_MODE) transformTouchToFakeGameModeCoords(touch);
+	if(FAKE_GAME_MODE) centerer.transformMouse(touch.x, touch.y);
 	this->touchUp(touch);
 }
 

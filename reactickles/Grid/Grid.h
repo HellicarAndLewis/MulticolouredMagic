@@ -24,8 +24,8 @@ class Grid: public Reactickle {
 		gridHeight = 4;
 		positionInGrid = 0;
 		
-		gridElementWidth = ofGetWidth()/gridWidth;
-		gridElementHeight = ofGetHeight()/gridHeight;	
+		gridElementWidth = WIDTH/gridWidth;
+		gridElementHeight = HEIGHT/gridHeight;	
 		
 		timeOfLastNewCircle = ofGetElapsedTimef();
 	}

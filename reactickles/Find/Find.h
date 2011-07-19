@@ -35,7 +35,7 @@ class Find: public Reactickle {
     
     void newShapePositionAndColour(){
         targetFindColour.setHSV(ofRandom(0.f,360.f), 1, 1);
-        targetPosOfShape = ofVec2f(ofRandom(0.f, ofGetWidth()), ofRandom(0.f, ofGetHeight()));
+        targetPosOfShape = ofVec2f(ofRandom(0.f, WIDTH), ofRandom(0.f, HEIGHT));
         radius = ofRandom(100.f, 260.f);
         
         if(mode>0) {

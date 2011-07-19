@@ -8,6 +8,7 @@
 
 #include "Flip.h"
 #include "ReactickleApp.h"
+#include "constants.h"
 
 void Flip::start() {
 	pos.push_back(ofGetWindowSize()/2);
@@ -28,17 +29,17 @@ void Flip::draw() {
 	int color2 = 0xAAAAAA;
 	
 
-	if(pos.back().x>ofGetWidth()/2) {
+	if(pos.back().x>WIDTH/2) {
 		int t = color1;
 		color1 = color2;
 		color2 = t;
 	}
 	
 	ofSetHexColor(color1);
-	ofRect(0, 0, ofGetWidth()/2, ofGetHeight());
+	ofRect(0, 0, WIDTH/2, HEIGHT);
 	
 	ofSetHexColor(color2);
-	ofRect(ofGetWidth()/2, 0, ofGetWidth()/2, ofGetHeight());
+	ofRect(WIDTH/2, 0, WIDTH/2, HEIGHT);
 	
 	ofSetHexColor(0xFFFFFF);
 	drawShape(currShapeId, pos.back(), 400);
@@ -52,7 +53,7 @@ void Flip::update() {
 	if(mode==0) {
 		currShapeId = MAGIC_CIRCLE;
 	} else {        
-		float w2 = ofGetWidth()/2;
+		float w2 = WIDTH/2;
 		if((lastPos.x<w2 && pos.back().x>w2) || (lastPos.x>w2 && pos.back().x<w2)) {
             if(mode == 1){
                 if (currShapeId == MAGIC_CIRCLE){

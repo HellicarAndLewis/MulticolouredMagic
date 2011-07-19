@@ -18,6 +18,7 @@
 #endif
 #include "Reactickle.h"
 #include "HoldButton.h"
+#include "Centerer.h"
 
 // how long it takes for the app to fade from one reactickle to another
 #define	CROSS_FADE_TIME 2
@@ -79,7 +80,7 @@ public:
 #endif    
 protected:
 	
-	
+	Centerer centerer;
 	
 	void setupGraphics();
 	void setupOrientation();

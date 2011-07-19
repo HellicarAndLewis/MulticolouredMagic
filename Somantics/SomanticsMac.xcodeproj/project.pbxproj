@@ -258,6 +258,7 @@
 		EA2B900B13B101890040917B /* ofxOscSender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscSender.cpp; sourceTree = "<group>"; };
 		EA2B900C13B101890040917B /* ofxOscSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscSender.h; sourceTree = "<group>"; };
 		EA2B901A13B1018E0040917B /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
+		EA30E1D413D5C16600E6E26C /* Centerer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Centerer.h; sourceTree = "<group>"; };
 		EAB06E5013CB4048004884FC /* Sparkles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sparkles.cpp; path = Sparkles/Sparkles.cpp; sourceTree = "<group>"; };
 		EAB06E5113CB4048004884FC /* Sparkles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sparkles.h; path = Sparkles/Sparkles.h; sourceTree = "<group>"; };
 		EAB309F4137AF3E00086DE6F /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
@@ -1025,6 +1026,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD4938113A8B66800D312FE /* main.mm */,
+				EA30E1D413D5C16600E6E26C /* Centerer.h */,
 				EAD4931913A8B4E100D312FE /* ReactickleApp.h */,
 				EAD4931A13A8B4E100D312FE /* ReactickleApp.mm */,
 				EAD492F213A8B48D00D312FE /* Reactickle.h */,

@@ -15,6 +15,7 @@
 
 #include "MagicShapes.h"
 #include "ofxOpenCv.h"
+
 #ifndef TARGET_OF_IPHONE
 	// this is what you get if you're not on iphone
 	#include "ofxSimpleGuiToo.h"

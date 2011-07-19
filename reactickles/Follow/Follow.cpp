@@ -7,7 +7,7 @@
  */
 
 #include "Follow.h"
-
+#include "constants.h"
 #include "ReactickleApp.h"
 
 void Follow::start() {
@@ -202,7 +202,7 @@ void Follow::keyPressed(int key) {
 void Follow::modeChanged() {
 	if(mode==0) {
 		numParticles = 1;
-		particles[0].spawn(ofGetWidth()*0.5, ofGetHeight()*0.5, mode);
+		particles[0].spawn(WIDTH*0.5, HEIGHT*0.5, mode);
 	} else if(mode==1) {
 		numParticles = 1;
 	} else if(mode==2) {
