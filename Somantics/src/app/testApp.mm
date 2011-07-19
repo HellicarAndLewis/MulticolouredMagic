@@ -13,7 +13,6 @@ void testApp::setup(){
 	
 	setupApp(this, "Somantics");
 
-	printf("---------->>>>>>>>>><<<<<<<<<<<<<<<_----------------\n");
 //#ifndef TARGET_IPHONE_SIMULATOR
 
 #ifdef TARGET_OF_IPHONE

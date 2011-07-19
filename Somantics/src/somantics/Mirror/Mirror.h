@@ -21,18 +21,25 @@ public:
 	void draw();
 
 	
-	//bool touchDown(float x, float y, int touchId);
-	//bool touchUp(float x, float y, int touchId);
-	//bool touchMoved(float x, float y, int touchId);
-	bool needsKinect() { return true; }
+	bool touchDown(float x, float y, int touchId);
+	bool touchUp(float x, float y, int touchId);
+	bool touchMoved(float x, float y, int touchId);
 	
+	bool needsKinect() { return true; }
 	
 	
 private:
 	int ratio(int l, int r, float ratio);
 	int type;
+	
+	
+	// stuff specifically for MIRROR_MIRROR
+	float offset;
+	int star;
+	
 	unsigned char *buffer;
 	ofxCvColorImage image;
-	ofMesh mirror;
+	
+	// stuff specifically for MIRROR_SLITSCAN
 	int slitScanPos;
 };

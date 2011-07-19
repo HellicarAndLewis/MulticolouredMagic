@@ -26,39 +26,17 @@ Mirror::~Mirror() {
 
 
 void Mirror::setup() {
+	
+	star = 2;
+	offset = 0.5;
+	slitScanPos = 0;
+	
 	if(buffer==NULL) {
 		buffer = new unsigned char[VISION_WIDTH*VISION_HEIGHT*3];
 	}
 	image.allocate(VISION_WIDTH, VISION_HEIGHT);
 	
-	slitScanPos = 0;
-	
-	// draw a triangle strip
-	// 
-	//			+--------+--------+
-	//			|        |        |
-	//			|        |        |
-	//			|        |        |
-	//			|        |        |
-	//          +--------+--------+
-	//
-	mirror.clear();
-	mirror.addVertex(ofVec3f(0, 0));
-	mirror.addVertex(ofVec3f(0, HEIGHT));
-	mirror.addVertex(ofVec3f(WIDTH/2, 0));
-	mirror.addVertex(ofVec3f(WIDTH/2, HEIGHT));
-	mirror.addVertex(ofVec3f(WIDTH, 0));
-	mirror.addVertex(ofVec3f(WIDTH, HEIGHT));
-	
-	
-	mirror.addTexCoord(ofVec2f(0.25, 0.0));
-	mirror.addTexCoord(ofVec2f(0.25, 1.0));
-	mirror.addTexCoord(ofVec2f(0.75, 0.0));
-	mirror.addTexCoord(ofVec2f(0.75, 1.0));
-	mirror.addTexCoord(ofVec2f(0.25, 0.0));
-	mirror.addTexCoord(ofVec2f(0.25, 1.0));
-	
-	mirror.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
+
 	
 }
 
@@ -128,11 +106,29 @@ void Mirror::update() {
 	}
 }
 
+
+	
+
+
+bool Mirror::touchDown(float x, float y, int touchId) {
+	star = 2*(int)ofMap(x, 0, WIDTH, 1, 10);
+	offset = ofMap(y, 0, HEIGHT, 0, 1);
+	return true;
+}
+
+bool Mirror::touchUp(float x, float y, int touchId) {
+	return false;
+}
+
+bool Mirror::touchMoved(float x, float y, int touchId) {
+	return touchDown(x, y, touchId);
+}
+
 void Mirror::draw() {
 	ofSetHexColor(0xFFFFFF);
 	bool usingNormTexCoords = ofGetUsingNormalizedTexCoords();
 	
-	image.draw(0, 0, WIDTH, HEIGHT);
+	//image.draw(0, 0, WIDTH, HEIGHT);
 	if(type==MIRROR_MIRROR) {
 		// push normalized tex coords
 		if(!usingNormTexCoords) {
@@ -140,7 +136,111 @@ void Mirror::draw() {
 		}
 		
 		image.getTextureReference().bind();
-		mirror.draw();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		if(star<=2) {
+			ofMesh mesh;
+			mesh.clear();
+			mesh.addVertex(ofVec3f(0, 0));
+			mesh.addVertex(ofVec3f(0, HEIGHT));
+			mesh.addVertex(ofVec3f(WIDTH/2, 0));
+			mesh.addVertex(ofVec3f(WIDTH/2, HEIGHT));
+			mesh.addVertex(ofVec3f(WIDTH, 0));
+			mesh.addVertex(ofVec3f(WIDTH, HEIGHT));
+			
+			
+			mesh.addTexCoord(ofVec2f(0.25, 0.0));
+			mesh.addTexCoord(ofVec2f(0.25, 1.0));
+			mesh.addTexCoord(ofVec2f(0.75, 0.0));
+			mesh.addTexCoord(ofVec2f(0.75, 1.0));
+			mesh.addTexCoord(ofVec2f(0.25, 0.0));
+			mesh.addTexCoord(ofVec2f(0.25, 1.0));
+			
+			mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
+			mesh.draw();
+		} else {
+			
+			float angle = 360.f/(float)star;
+			
+			
+			
+			ofMesh mesh;
+			
+			ofVec3f vec(0,0,0);
+			mesh.addVertex(vec);
+			vec.x += HEIGHT/2;
+			
+			for(int i = 0; i < star; i++) {
+				mesh.addVertex(vec);
+				vec.rotate(angle, ofVec3f(0,0,1));
+			}
+			
+			// close the loop
+			mesh.addVertex(vec);
+			
+			
+			
+			// now work out the texcoords
+			/*			
+			 __________________
+			 |   \        /   |
+			 |    \      /    |
+			 |     \    /     |
+			 |      \  /      |
+			 |       \/       |
+			 +----------------+
+			 
+			 A v shape out of the centre of the camera texture
+			 */
+			
+			
+			
+			float realOffset = 0.5;
+			// normalized distance from the centre (half the width of the above 'V')
+			float dist = ABS((float)image.getHeight()*tan(ofDegToRad(angle)*0.5))/(float)image.getHeight();
+			
+			
+			// the realOffset is where the (normalized) middle of the 'V' is on the x-axis
+			realOffset = ofMap(offset, 0, 1, dist, 1-dist);
+			
+			
+			// this is the point at the bottom of the triangle - our centre for the triangle fan
+			mesh.addTexCoord(ofVec2f(realOffset, 1));
+			
+			
+			ofVec2f ta(realOffset-dist, 0);
+			ofVec2f tb(realOffset+dist, 0);
+			for(int i = 0; i <= star; i++) {
+				if(i%2==0) {
+					mesh.addTexCoord(ta);
+				} else {
+					mesh.addTexCoord(tb);
+				}
+			}
+			
+			
+			glPushMatrix();
+			glTranslatef(WIDTH/2, HEIGHT/2, 0);
+			mesh.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
+			mesh.draw();
+			glPopMatrix();
+		}
+		
+		
+		
+		
+		
 		image.getTextureReference().unbind();
 		
 		
