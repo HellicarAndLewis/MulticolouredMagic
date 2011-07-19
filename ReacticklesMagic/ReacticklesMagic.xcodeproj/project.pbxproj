@@ -29,8 +29,6 @@
 		BBD28A9C13636CB7002BF7C7 /* PocoUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD28A9813636CB7002BF7C7 /* PocoUtil.a */; };
 		BBD28A9D13636CB7002BF7C7 /* PocoXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD28A9913636CB7002BF7C7 /* PocoXML.a */; };
 		BBE5EAB80F49AD8400F28951 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE5EAB70F49AD8400F28951 /* AudioToolbox.framework */; };
-		E434BF6512477ED500452519 /* freeimage-iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E434BF6412477ED500452519 /* freeimage-iphone.a */; };
-		E434BF7312477FBA00452519 /* freetype-iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E434BF7212477FBA00452519 /* freetype-iphone.a */; };
 		E496D5B11252C8210098A2B3 /* glu-iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E496D5AF1252C8210098A2B3 /* glu-iphone.a */; };
 		E496D5B21252C8210098A2B3 /* glu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E496D5B01252C8210098A2B3 /* glu.a */; };
 		E49BCC7A12554CD6009F19D0 /* libofxiPhone_iphoneos_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */; };
@@ -59,13 +57,15 @@
 		EA23EF65139D1E2F0071404C /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EF5D139D1E2F0071404C /* SettingsPage.mm */; };
 		EA2FABF613AA063400CB21FA /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2FABF413AA063400CB21FA /* ReactickleButton.cpp */; };
 		EA2FAC1B13AA06AE00CB21FA /* tess2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2FAC1A13AA06AE00CB21FA /* tess2.a */; };
-		EA62108513A6481200A88AF0 /* Expand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62106813A6481200A88AF0 /* Expand.cpp */; };
-		EA62108613A6481200A88AF0 /* Orbit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62106B13A6481200A88AF0 /* Orbit.cpp */; };
-		EA62108713A6481200A88AF0 /* Flip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62106E13A6481200A88AF0 /* Flip.cpp */; };
-		EA62108813A6481200A88AF0 /* Follow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107113A6481200A88AF0 /* Follow.cpp */; };
+		EA30E3CB13D5E1CA00E6E26C /* freeimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA30E3CA13D5E1CA00E6E26C /* freeimage.a */; };
+		EA30E3CD13D5E1D400E6E26C /* freetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA30E3CC13D5E1D400E6E26C /* freetype.a */; };
+		EA62108513A6481200A88AF0 /* Expand.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62106813A6481200A88AF0 /* Expand.mm */; };
+		EA62108613A6481200A88AF0 /* Orbit.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62106B13A6481200A88AF0 /* Orbit.mm */; };
+		EA62108713A6481200A88AF0 /* Flip.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62106E13A6481200A88AF0 /* Flip.mm */; };
+		EA62108813A6481200A88AF0 /* Follow.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62107113A6481200A88AF0 /* Follow.mm */; };
 		EA62108913A6481200A88AF0 /* FollowParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107313A6481200A88AF0 /* FollowParticle.cpp */; };
 		EA62108A13A6481200A88AF0 /* TrailParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107713A6481200A88AF0 /* TrailParticle.cpp */; };
-		EA62108B13A6481200A88AF0 /* Trail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107913A6481200A88AF0 /* Trail.cpp */; };
+		EA62108B13A6481200A88AF0 /* Trail.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62107913A6481200A88AF0 /* Trail.mm */; };
 		EAD493FB13A8B75700D312FE /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD493DA13A8B75700D312FE /* main.mm */; };
 		EAD493FC13A8B75700D312FE /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD493DD13A8B75700D312FE /* ReactickleApp.mm */; };
 		EAD493FD13A8B75700D312FE /* MagicShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD493E113A8B75700D312FE /* MagicShapes.cpp */; };
@@ -167,8 +167,6 @@
 		BBE5EAB70F49AD8400F28951 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DA7851271105C039007EFC90 /* glu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glu.h; sourceTree = "<group>"; };
 		DA7851281105C039007EFC90 /* gluos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gluos.h; sourceTree = "<group>"; };
-		E434BF6412477ED500452519 /* freeimage-iphone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "freeimage-iphone.a"; path = "../../../libs/FreeImage/lib/iphone/freeimage-iphone.a"; sourceTree = SOURCE_ROOT; };
-		E434BF7212477FBA00452519 /* freetype-iphone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "freetype-iphone.a"; path = "../../../libs/freetype/lib/iphone/freetype-iphone.a"; sourceTree = SOURCE_ROOT; };
 		E496D5AF1252C8210098A2B3 /* glu-iphone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "glu-iphone.a"; path = "../../../libs/glu/lib/iphone/glu-iphone.a"; sourceTree = SOURCE_ROOT; };
 		E496D5B01252C8210098A2B3 /* glu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = glu.a; path = ../../../libs/glu/lib/iphone/glu.a; sourceTree = SOURCE_ROOT; };
 		E49BCC4812554B69009F19D0 /* iPhone+OF Lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "iPhone+OF Lib.xcodeproj"; path = "../../../libs/openFrameworksCompiled/project/iphone/iPhone+OF Lib.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -207,20 +205,22 @@
 		EA2FABF513AA063400CB21FA /* ReactickleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleButton.h; sourceTree = "<group>"; };
 		EA2FAC1713AA06AE00CB21FA /* tesselator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tesselator.h; sourceTree = "<group>"; };
 		EA2FAC1A13AA06AE00CB21FA /* tess2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = tess2.a; sourceTree = "<group>"; };
+		EA30E3CA13D5E1CA00E6E26C /* freeimage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = freeimage.a; path = ../../../libs/FreeImage/lib/iphone/freeimage.a; sourceTree = SOURCE_ROOT; };
+		EA30E3CC13D5E1D400E6E26C /* freetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = freetype.a; path = ../../../libs/freetype/lib/iphone/freetype.a; sourceTree = SOURCE_ROOT; };
 		EA620EE513A6316600A88AF0 /* VolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
-		EA62106813A6481200A88AF0 /* Expand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expand.cpp; sourceTree = "<group>"; };
+		EA62106813A6481200A88AF0 /* Expand.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Expand.mm; sourceTree = "<group>"; };
 		EA62106913A6481200A88AF0 /* Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expand.h; sourceTree = "<group>"; };
-		EA62106B13A6481200A88AF0 /* Orbit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Orbit.cpp; sourceTree = "<group>"; };
+		EA62106B13A6481200A88AF0 /* Orbit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Orbit.mm; sourceTree = "<group>"; };
 		EA62106C13A6481200A88AF0 /* Orbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Orbit.h; sourceTree = "<group>"; };
-		EA62106E13A6481200A88AF0 /* Flip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Flip.cpp; sourceTree = "<group>"; };
+		EA62106E13A6481200A88AF0 /* Flip.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Flip.mm; sourceTree = "<group>"; };
 		EA62106F13A6481200A88AF0 /* Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flip.h; sourceTree = "<group>"; };
-		EA62107113A6481200A88AF0 /* Follow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Follow.cpp; sourceTree = "<group>"; };
+		EA62107113A6481200A88AF0 /* Follow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Follow.mm; sourceTree = "<group>"; };
 		EA62107213A6481200A88AF0 /* Follow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follow.h; sourceTree = "<group>"; };
 		EA62107313A6481200A88AF0 /* FollowParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FollowParticle.cpp; sourceTree = "<group>"; };
 		EA62107413A6481200A88AF0 /* FollowParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowParticle.h; sourceTree = "<group>"; };
 		EA62107713A6481200A88AF0 /* TrailParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrailParticle.cpp; sourceTree = "<group>"; };
 		EA62107813A6481200A88AF0 /* TrailParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrailParticle.h; sourceTree = "<group>"; };
-		EA62107913A6481200A88AF0 /* Trail.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trail.cpp; sourceTree = "<group>"; };
+		EA62107913A6481200A88AF0 /* Trail.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Trail.mm; sourceTree = "<group>"; };
 		EA62107A13A6481200A88AF0 /* Trail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trail.h; sourceTree = "<group>"; };
 		EA62107C13A6481200A88AF0 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		EA62107E13A6481200A88AF0 /* Cascade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cascade.h; sourceTree = "<group>"; };
@@ -274,8 +274,6 @@
 				5E25689910ED26CC00A9501C /* PocoNet.a in Frameworks */,
 				5E25689A10ED26CC00A9501C /* PocoUtil.a in Frameworks */,
 				5E25689B10ED26CC00A9501C /* PocoXML.a in Frameworks */,
-				E434BF6512477ED500452519 /* freeimage-iphone.a in Frameworks */,
-				E434BF7312477FBA00452519 /* freetype-iphone.a in Frameworks */,
 				E496D5B11252C8210098A2B3 /* glu-iphone.a in Frameworks */,
 				E496D5B21252C8210098A2B3 /* glu.a in Frameworks */,
 				E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */,
@@ -289,6 +287,8 @@
 				BBD28A9C13636CB7002BF7C7 /* PocoUtil.a in Frameworks */,
 				BBD28A9D13636CB7002BF7C7 /* PocoXML.a in Frameworks */,
 				EA2FAC1B13AA06AE00CB21FA /* tess2.a in Frameworks */,
+				EA30E3CB13D5E1CA00E6E26C /* freeimage.a in Frameworks */,
+				EA30E3CD13D5E1D400E6E26C /* freetype.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +424,6 @@
 		BB24DDD110DA784F00E9C588 /* iphone */ = {
 			isa = PBXGroup;
 			children = (
-				E434BF6412477ED500452519 /* freeimage-iphone.a */,
 			);
 			path = iphone;
 			sourceTree = "<group>";
@@ -526,7 +525,6 @@
 		BB24DE1210DA785000E9C588 /* iphone */ = {
 			isa = PBXGroup;
 			children = (
-				E434BF7212477FBA00452519 /* freetype-iphone.a */,
 			);
 			path = iphone;
 			sourceTree = "<group>";
@@ -561,6 +559,8 @@
 		BB24E1F710DAA51900E9C588 /* openFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA30E3CC13D5E1D400E6E26C /* freetype.a */,
+				EA30E3CA13D5E1CA00E6E26C /* freeimage.a */,
 				E49BCC4812554B69009F19D0 /* iPhone+OF Lib.xcodeproj */,
 			);
 			name = openFrameworks;
@@ -773,7 +773,7 @@
 		EA62106713A6481200A88AF0 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
-				EA62106813A6481200A88AF0 /* Expand.cpp */,
+				EA62106813A6481200A88AF0 /* Expand.mm */,
 				EA62106913A6481200A88AF0 /* Expand.h */,
 			);
 			path = Expand;
@@ -782,7 +782,7 @@
 		EA62106A13A6481200A88AF0 /* Orbit */ = {
 			isa = PBXGroup;
 			children = (
-				EA62106B13A6481200A88AF0 /* Orbit.cpp */,
+				EA62106B13A6481200A88AF0 /* Orbit.mm */,
 				EA62106C13A6481200A88AF0 /* Orbit.h */,
 			);
 			path = Orbit;
@@ -791,7 +791,7 @@
 		EA62106D13A6481200A88AF0 /* Flip */ = {
 			isa = PBXGroup;
 			children = (
-				EA62106E13A6481200A88AF0 /* Flip.cpp */,
+				EA62106E13A6481200A88AF0 /* Flip.mm */,
 				EA62106F13A6481200A88AF0 /* Flip.h */,
 			);
 			path = Flip;
@@ -800,7 +800,7 @@
 		EA62107013A6481200A88AF0 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
-				EA62107113A6481200A88AF0 /* Follow.cpp */,
+				EA62107113A6481200A88AF0 /* Follow.mm */,
 				EA62107213A6481200A88AF0 /* Follow.h */,
 				EA62107313A6481200A88AF0 /* FollowParticle.cpp */,
 				EA62107413A6481200A88AF0 /* FollowParticle.h */,
@@ -812,7 +812,7 @@
 			isa = PBXGroup;
 			children = (
 				EA62107613A6481200A88AF0 /* particles */,
-				EA62107913A6481200A88AF0 /* Trail.cpp */,
+				EA62107913A6481200A88AF0 /* Trail.mm */,
 				EA62107A13A6481200A88AF0 /* Trail.h */,
 			);
 			path = Trail;
@@ -1058,13 +1058,13 @@
 				EA23EF63139D1E2F0071404C /* AboutPage.mm in Sources */,
 				EA23EF64139D1E2F0071404C /* MainMenu.mm in Sources */,
 				EA23EF65139D1E2F0071404C /* SettingsPage.mm in Sources */,
-				EA62108513A6481200A88AF0 /* Expand.cpp in Sources */,
-				EA62108613A6481200A88AF0 /* Orbit.cpp in Sources */,
-				EA62108713A6481200A88AF0 /* Flip.cpp in Sources */,
-				EA62108813A6481200A88AF0 /* Follow.cpp in Sources */,
+				EA62108513A6481200A88AF0 /* Expand.mm in Sources */,
+				EA62108613A6481200A88AF0 /* Orbit.mm in Sources */,
+				EA62108713A6481200A88AF0 /* Flip.mm in Sources */,
+				EA62108813A6481200A88AF0 /* Follow.mm in Sources */,
 				EA62108913A6481200A88AF0 /* FollowParticle.cpp in Sources */,
 				EA62108A13A6481200A88AF0 /* TrailParticle.cpp in Sources */,
-				EA62108B13A6481200A88AF0 /* Trail.cpp in Sources */,
+				EA62108B13A6481200A88AF0 /* Trail.mm in Sources */,
 				EAD493FB13A8B75700D312FE /* main.mm in Sources */,
 				EAD493FC13A8B75700D312FE /* ReactickleApp.mm in Sources */,
 				EAD493FD13A8B75700D312FE /* MagicShapes.cpp in Sources */,
@@ -1099,6 +1099,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = (
+					"../../../libs/cairo/include/**",
+					../../../libs/tess2/include,
+					../../../libs/poco/include,
+					"../../../addons/ofxAccelerometer/**",
+					"../../../addons/ofxMultitouch/**",
+					"../../../addons/ofxiPhone/**",
+					"../../../libs/openFrameworks/**",
+					"../../../libs/freetype/include/**",
+				);
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1107,6 +1117,8 @@
 					"\"$(SRCROOT)/../../../libs/freetype/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/FreeImage/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/poco/lib/osx\"",
+					"\"$(SRCROOT)/../../../libs/FreeImage/lib/iphone\"",
+					"\"$(SRCROOT)/../../../libs/freetype/lib/iphone\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1131,6 +1143,8 @@
 					"\"$(SRCROOT)/../../../libs/FreeImage/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/poco/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/tess2/lib/osx\"",
+					"\"$(SRCROOT)/../../../libs/FreeImage/lib/iphone\"",
+					"\"$(SRCROOT)/../../../libs/freetype/lib/iphone\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1294,6 +1308,8 @@
 					"\"$(SRCROOT)/../../../libs/FreeImage/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/poco/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/tess2/lib/osx\"",
+					"\"$(SRCROOT)/../../../libs/FreeImage/lib/iphone\"",
+					"\"$(SRCROOT)/../../../libs/freetype/lib/iphone\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1351,17 +1367,19 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = (
+					"../../../libs/cairo/include/**",
 					../../../libs/tess2/include,
 					../../../libs/poco/include,
 					"../../../addons/ofxAccelerometer/**",
 					"../../../addons/ofxMultitouch/**",
 					"../../../addons/ofxiPhone/**",
 					"../../../libs/openFrameworks/**",
-					"../../../libs/freetype/**",
+					"../../../libs/freetype/include/**",
 				);
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
@@ -1371,9 +1389,12 @@
 					"\"$(SRCROOT)/../../../libs/FreeImage/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/poco/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/tess2/lib/osx\"",
+					"\"$(SRCROOT)/../../../libs/FreeImage/lib/iphone\"",
+					"\"$(SRCROOT)/../../../libs/freetype/lib/iphone\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = "Ad Hoc";

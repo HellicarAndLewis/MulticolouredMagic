@@ -14,9 +14,12 @@
 #include "ofMain.h"
 
 #include "MagicShapes.h"
-#include "ofxOpenCv.h"
+
+
 
 #ifndef TARGET_OF_IPHONE
+#include "ofxOpenCv.h"
+	
 	// this is what you get if you're not on iphone
 	#include "ofxSimpleGuiToo.h"
 	//
@@ -65,7 +68,10 @@ public:
 	
 //#ifndef TARGET_OF_IPHONE
 	virtual bool needsKinect() { return false; }
-	ofxCvColorImage *colorImg;
+
+#ifndef TARGET_OF_IPHONE
+ofxCvColorImage *colorImg;		
+	#endif
     // how much camera movement there is
 	float movement;
 //#endif

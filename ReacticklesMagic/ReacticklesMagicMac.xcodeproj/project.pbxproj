@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D1CD56013A63D3A003A5232 /* Expand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD55E13A63D3A003A5232 /* Expand.cpp */; };
-		5D1CD56413A63DA4003A5232 /* Orbit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56213A63DA4003A5232 /* Orbit.cpp */; };
-		5D1CD56813A63E29003A5232 /* Flip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56613A63E29003A5232 /* Flip.cpp */; };
-		5D1CD56E13A63EC8003A5232 /* Follow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56A13A63EC8003A5232 /* Follow.cpp */; };
+		5D1CD56013A63D3A003A5232 /* Expand.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD55E13A63D3A003A5232 /* Expand.mm */; };
+		5D1CD56413A63DA4003A5232 /* Orbit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56213A63DA4003A5232 /* Orbit.mm */; };
+		5D1CD56813A63E29003A5232 /* Flip.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56613A63E29003A5232 /* Flip.mm */; };
+		5D1CD56E13A63EC8003A5232 /* Follow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56A13A63EC8003A5232 /* Follow.mm */; };
 		5D1CD56F13A63EC8003A5232 /* FollowParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56C13A63EC8003A5232 /* FollowParticle.cpp */; };
 		5D1CD57613A64162003A5232 /* TrailParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD57213A64162003A5232 /* TrailParticle.cpp */; };
-		5D1CD57713A64162003A5232 /* Trail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD57413A64162003A5232 /* Trail.cpp */; };
+		5D1CD57713A64162003A5232 /* Trail.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD57413A64162003A5232 /* Trail.mm */; };
 		5D2113DC139BEEF500E0BE49 /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2113C4139BEEF500E0BE49 /* liboscpack.a */; };
 		5D2113DD139BEEF500E0BE49 /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2113C5139BEEF500E0BE49 /* liboscpack.a */; };
 		5D2113DE139BEEF500E0BE49 /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2113C7139BEEF500E0BE49 /* liboscpack.a */; };
@@ -93,6 +93,8 @@
 		EA20B697136705160038E922 /* TuioTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65A136705160038E922 /* TuioTime.cpp */; };
 		EA20B698136705160038E922 /* UdpReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65C136705160038E922 /* UdpReceiver.cpp */; };
 		EA20B699136705160038E922 /* UdpSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65E136705160038E922 /* UdpSender.cpp */; };
+		EA30E37213D5D49800E6E26C /* MultitouchSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA30E37113D5D49800E6E26C /* MultitouchSupport.framework */; };
+		EA30E37A13D5D4B900E6E26C /* ofxMultiTouchPad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA30E37813D5D4B900E6E26C /* ofxMultiTouchPad.cpp */; };
 		EA6210E913A64A8A00A88AF0 /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210D613A64A8A00A88AF0 /* Apps.mm */; };
 		EA6210EB13A64A8A00A88AF0 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210DA13A64A8A00A88AF0 /* testApp.mm */; };
 		EA6210EE13A64A8A00A88AF0 /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E413A64A8A00A88AF0 /* AboutPage.mm */; };
@@ -165,19 +167,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5D1CD55E13A63D3A003A5232 /* Expand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expand.cpp; sourceTree = "<group>"; };
+		5D1CD55E13A63D3A003A5232 /* Expand.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Expand.mm; sourceTree = "<group>"; };
 		5D1CD55F13A63D3A003A5232 /* Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expand.h; sourceTree = "<group>"; };
-		5D1CD56213A63DA4003A5232 /* Orbit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Orbit.cpp; sourceTree = "<group>"; };
+		5D1CD56213A63DA4003A5232 /* Orbit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Orbit.mm; sourceTree = "<group>"; };
 		5D1CD56313A63DA4003A5232 /* Orbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Orbit.h; sourceTree = "<group>"; };
-		5D1CD56613A63E29003A5232 /* Flip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Flip.cpp; sourceTree = "<group>"; };
+		5D1CD56613A63E29003A5232 /* Flip.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Flip.mm; sourceTree = "<group>"; };
 		5D1CD56713A63E29003A5232 /* Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flip.h; sourceTree = "<group>"; };
-		5D1CD56A13A63EC8003A5232 /* Follow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Follow.cpp; sourceTree = "<group>"; };
+		5D1CD56A13A63EC8003A5232 /* Follow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Follow.mm; sourceTree = "<group>"; };
 		5D1CD56B13A63EC8003A5232 /* Follow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follow.h; sourceTree = "<group>"; };
 		5D1CD56C13A63EC8003A5232 /* FollowParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FollowParticle.cpp; sourceTree = "<group>"; };
 		5D1CD56D13A63EC8003A5232 /* FollowParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowParticle.h; sourceTree = "<group>"; };
 		5D1CD57213A64162003A5232 /* TrailParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrailParticle.cpp; sourceTree = "<group>"; };
 		5D1CD57313A64162003A5232 /* TrailParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrailParticle.h; sourceTree = "<group>"; };
-		5D1CD57413A64162003A5232 /* Trail.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trail.cpp; sourceTree = "<group>"; };
+		5D1CD57413A64162003A5232 /* Trail.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Trail.mm; sourceTree = "<group>"; };
 		5D1CD57513A64162003A5232 /* Trail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trail.h; sourceTree = "<group>"; };
 		5D1CD57913A6422C003A5232 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		5D1CD57B13A6426A003A5232 /* Cascade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cascade.h; sourceTree = "<group>"; };
@@ -225,7 +227,7 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured MagicDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reactickles Multicoloured MagicDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured Magic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reactickles Multicoloured Magic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4C2421610CC549C004149E2 /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -352,6 +354,12 @@
 		EA20B65D136705160038E922 /* UdpReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpReceiver.h; sourceTree = "<group>"; };
 		EA20B65E136705160038E922 /* UdpSender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UdpSender.cpp; sourceTree = "<group>"; };
 		EA20B65F136705160038E922 /* UdpSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpSender.h; sourceTree = "<group>"; };
+		EA30E37113D5D49800E6E26C /* MultitouchSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultitouchSupport.framework; path = /System/Library/PrivateFrameworks/MultitouchSupport.framework; sourceTree = "<absolute>"; };
+		EA30E37413D5D4B900E6E26C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EA30E37513D5D4B900E6E26C /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		EA30E37713D5D4B900E6E26C /* MTTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTypes.h; sourceTree = "<group>"; };
+		EA30E37813D5D4B900E6E26C /* ofxMultiTouchPad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMultiTouchPad.cpp; sourceTree = "<group>"; };
+		EA30E37913D5D4B900E6E26C /* ofxMultiTouchPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMultiTouchPad.h; sourceTree = "<group>"; };
 		EA6210D613A64A8A00A88AF0 /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
 		EA6210D913A64A8A00A88AF0 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		EA6210DA13A64A8A00A88AF0 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
@@ -453,6 +461,7 @@
 				5D2113E1139BEEF500E0BE49 /* oscpack.lib in Frameworks */,
 				5D2113E2139BEEF500E0BE49 /* oscpackd.lib in Frameworks */,
 				5D2113E3139BEEF500E0BE49 /* oscpack.a in Frameworks */,
+				EA30E37213D5D49800E6E26C /* MultitouchSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +471,7 @@
 		5D1CD55D13A63D3A003A5232 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
-				5D1CD55E13A63D3A003A5232 /* Expand.cpp */,
+				5D1CD55E13A63D3A003A5232 /* Expand.mm */,
 				5D1CD55F13A63D3A003A5232 /* Expand.h */,
 			);
 			path = Expand;
@@ -471,7 +480,7 @@
 		5D1CD56113A63DA4003A5232 /* Orbit */ = {
 			isa = PBXGroup;
 			children = (
-				5D1CD56213A63DA4003A5232 /* Orbit.cpp */,
+				5D1CD56213A63DA4003A5232 /* Orbit.mm */,
 				5D1CD56313A63DA4003A5232 /* Orbit.h */,
 			);
 			path = Orbit;
@@ -480,7 +489,7 @@
 		5D1CD56513A63E29003A5232 /* Flip */ = {
 			isa = PBXGroup;
 			children = (
-				5D1CD56613A63E29003A5232 /* Flip.cpp */,
+				5D1CD56613A63E29003A5232 /* Flip.mm */,
 				5D1CD56713A63E29003A5232 /* Flip.h */,
 			);
 			path = Flip;
@@ -489,7 +498,7 @@
 		5D1CD56913A63EC8003A5232 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
-				5D1CD56A13A63EC8003A5232 /* Follow.cpp */,
+				5D1CD56A13A63EC8003A5232 /* Follow.mm */,
 				5D1CD56B13A63EC8003A5232 /* Follow.h */,
 				5D1CD56C13A63EC8003A5232 /* FollowParticle.cpp */,
 				5D1CD56D13A63EC8003A5232 /* FollowParticle.h */,
@@ -501,7 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				5D1CD57113A64162003A5232 /* particles */,
-				5D1CD57413A64162003A5232 /* Trail.cpp */,
+				5D1CD57413A64162003A5232 /* Trail.mm */,
 				5D1CD57513A64162003A5232 /* Trail.h */,
 			);
 			path = Trail;
@@ -724,6 +733,7 @@
 				E45BE9770E8CC7DD009D7055 /* CoreServices.framework */,
 				E45BE9790E8CC7DD009D7055 /* OpenGL.framework */,
 				E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */,
+				EA30E37113D5D49800E6E26C /* MultitouchSupport.framework */,
 			);
 			name = frameworks;
 			sourceTree = "<group>";
@@ -737,7 +747,7 @@
 				EA20BA6D136730CC0038E922 /* reactickles */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				EA092D7A13A76A5400739FFE /* icon.icns */,
-				E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured MagicDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured Magic.app */,
 				E4C2422310CC54B6004149E2 /* openFrameworks */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 			);
@@ -762,6 +772,7 @@
 		EA20B58A136705150038E922 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				EA30E37313D5D4B900E6E26C /* ofxMultiTouchPad */,
 				EAD6E58C135345AD00075A87 /* osx */,
 				EAD6E2451353353100075A87 /* ofxXmlSettings */,
 				EAD6E0C11353336400075A87 /* ofxOpenCv */,
@@ -1076,6 +1087,26 @@
 			path = ../reactickles;
 			sourceTree = SOURCE_ROOT;
 		};
+		EA30E37313D5D4B900E6E26C /* ofxMultiTouchPad */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E37413D5D4B900E6E26C /* .gitignore */,
+				EA30E37513D5D4B900E6E26C /* License.txt */,
+				EA30E37613D5D4B900E6E26C /* src */,
+			);
+			path = ofxMultiTouchPad;
+			sourceTree = "<group>";
+		};
+		EA30E37613D5D4B900E6E26C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EA30E37713D5D4B900E6E26C /* MTTypes.h */,
+				EA30E37813D5D4B900E6E26C /* ofxMultiTouchPad.cpp */,
+				EA30E37913D5D4B900E6E26C /* ofxMultiTouchPad.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		EA6210D413A64A8A00A88AF0 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -1293,7 +1324,7 @@
 			);
 			name = "Reactickles Multicoloured Magic";
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured MagicDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured Magic.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1423,13 +1454,13 @@
 				5D2113E5139BEEF500E0BE49 /* ofxOscMessage.cpp in Sources */,
 				5D2113E6139BEEF500E0BE49 /* ofxOscReceiver.cpp in Sources */,
 				5D2113E7139BEEF500E0BE49 /* ofxOscSender.cpp in Sources */,
-				5D1CD56013A63D3A003A5232 /* Expand.cpp in Sources */,
-				5D1CD56413A63DA4003A5232 /* Orbit.cpp in Sources */,
-				5D1CD56813A63E29003A5232 /* Flip.cpp in Sources */,
-				5D1CD56E13A63EC8003A5232 /* Follow.cpp in Sources */,
+				5D1CD56013A63D3A003A5232 /* Expand.mm in Sources */,
+				5D1CD56413A63DA4003A5232 /* Orbit.mm in Sources */,
+				5D1CD56813A63E29003A5232 /* Flip.mm in Sources */,
+				5D1CD56E13A63EC8003A5232 /* Follow.mm in Sources */,
 				5D1CD56F13A63EC8003A5232 /* FollowParticle.cpp in Sources */,
 				5D1CD57613A64162003A5232 /* TrailParticle.cpp in Sources */,
-				5D1CD57713A64162003A5232 /* Trail.cpp in Sources */,
+				5D1CD57713A64162003A5232 /* Trail.mm in Sources */,
 				EA6210E913A64A8A00A88AF0 /* Apps.mm in Sources */,
 				EA6210EB13A64A8A00A88AF0 /* testApp.mm in Sources */,
 				EA6210EE13A64A8A00A88AF0 /* AboutPage.mm in Sources */,
@@ -1447,6 +1478,7 @@
 				EAD4933D13A8B52500D312FE /* ReactickleApp.mm in Sources */,
 				EAD4969B13A8D32D00D312FE /* main.mm in Sources */,
 				EAD496AB13A8D36700D312FE /* ReactickleButton.cpp in Sources */,
+				EA30E37A13D5D4B900E6E26C /* ofxMultiTouchPad.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1583,8 +1615,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -1720,7 +1754,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
 				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;

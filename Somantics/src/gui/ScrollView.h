@@ -19,7 +19,7 @@ public:
 		touchX = 0;
 		touching = false;
 		
-		PADDING = 20*WIDTH_SCALE;
+		PADDING = 12*WIDTH_SCALE;
 		
 		
 		this->itemsPerCol = itemsPerCol;

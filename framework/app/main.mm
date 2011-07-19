@@ -55,11 +55,10 @@ int main(){
 		IMAGE_ROOT = "images/";
 	}
 	
-	WIDTH_SCALE = (float)WIDTH/480.f;
-	HEIGHT_SCALE = (float)HEIGHT/320.f;
+	
 #else 
-	WIDTH_SCALE = 1;
-	HEIGHT_SCALE = 1;
+	//WIDTH_SCALE = 2;
+	//HEIGHT_SCALE = 2;
 	WIDTH = 1024;
 	HEIGHT = 768;
 	HI_RES = true;
@@ -69,7 +68,10 @@ int main(){
 	FAKE_GAME_MODE = true;
 	printf("SETTED HERE!!!!!\n\n\n\n");
 #endif
-
+	
+	WIDTH_SCALE = (float)WIDTH/480.f;
+	HEIGHT_SCALE = (float)HEIGHT/320.f;
+	
 	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
 	
 	
