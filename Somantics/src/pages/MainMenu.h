@@ -21,6 +21,7 @@ public:
 	
 	void initMenu();
 
+	
 	void addReactickleButton(ReactickleButton *reactickleButton);
 	void reactickleSelected(string name);
 	void buttonPressed(string name);

@@ -10,7 +10,7 @@
 class ScrollView: public InteractiveObject {
 public:
 	SimpleButtonListener *listener;
-	void setup(float x, float y, float width, float height, int itemsPerCol = 2) {
+	void setup(float x, float y, float width, float height, int itemsPerCol = 3) {
 		
 		listener = NULL;
 		scrollOffset = 0;
@@ -19,7 +19,7 @@ public:
 		touchX = 0;
 		touching = false;
 		
-		PADDING = 10*WIDTH_SCALE;
+		PADDING = 20*WIDTH_SCALE;
 		
 		
 		this->itemsPerCol = itemsPerCol;

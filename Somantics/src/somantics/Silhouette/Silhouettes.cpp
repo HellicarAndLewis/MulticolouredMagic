@@ -71,7 +71,7 @@ void Silhouettes::draw(){
 	}
 	glColor4f(1,1,1, 0.02);
 	
-	ofRect(0, 0, ofGetWidth(), ofGetHeight());
+	ofRect(0, 0, WIDTH, HEIGHT);
 	
 	glColor4ub(255, 255, 255, 200);
 	currFrame->draw(0, 0);

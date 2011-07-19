@@ -5,6 +5,7 @@
  * Created by Marek Bereza on 10/05/2011.
  *
  */
+#include "constants.h"
 
 class Corridor {
 public:
@@ -14,7 +15,7 @@ public:
 		fingerWidth = 40;
 		minTouchDistance = 60;
 		startX = 0;
-		endX = ofGetWidth();
+		endX = WIDTH;
 	}
 	
 	bool touchDown(float x, float y, int touchId) {
@@ -54,12 +55,12 @@ public:
 	}
 	
 	bool dead() {
-		return touches.size()==0 && startX<fingerWidth/2 + 1 && endX>ofGetWidth()-fingerWidth/2 - 1;
+		return touches.size()==0 && startX<fingerWidth/2 + 1 && endX>WIDTH-fingerWidth/2 - 1;
 	}
 	
 	void draw() {
 		map<int,ofVec2f>::iterator it;
-		float targetStartX = ofGetWidth();
+		float targetStartX = WIDTH;
 		float targetEndX = 0;
 		for(it = touches.begin(); it != touches.end(); it++) {
 			ofVec2f t = (*it).second;
@@ -67,16 +68,16 @@ public:
 			if(t.x<targetStartX) targetStartX = t.x;
 		}
 		
-		if(targetEndX==0) targetEndX = ofGetWidth();
-		if(targetStartX==ofGetWidth()) targetStartX = 0;
+		if(targetEndX==0) targetEndX = WIDTH;
+		if(targetStartX==WIDTH) targetStartX = 0;
 		
 		targetStartX -= fingerWidth/2;
 		targetEndX += fingerWidth/2;
 		
 		startX = ofLerp(startX, targetStartX, curtainSpeed);
 		endX = ofLerp(endX, targetEndX, curtainSpeed);
-		ofRect(0, 0, startX, ofGetHeight());
-		ofRect(endX, 0, ofGetWidth()-endX, ofGetHeight());
+		ofRect(0, 0, startX, HEIGHT);
+		ofRect(endX, 0, WIDTH-endX, HEIGHT);
 	}
 	
 	float curtainSpeed;

@@ -53,7 +53,7 @@ void SettingsPage::buttonPressed(string name) {
 
 void SettingsPage::draw() {	
 	ofSetHexColor(0xFFFFFF);
-	bgImage->draw(0, 0, ofGetWidth(), ofGetHeight());
+	bgImage->draw(0, 0, WIDTH, HEIGHT);
 	//settingsTitle->draw(39, 35);
 //	colourPickerTitle->draw(260, 59);
 	//logo->draw(WIDTH/2, HEIGHT - 20);

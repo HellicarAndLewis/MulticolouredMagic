@@ -58,9 +58,6 @@ void MainMenu::buttonPressed(string name) {
 
 void MainMenu::draw() {	
 	ofSetHexColor(0xFFFFFF);
-	bgImage->draw(0, 0, ofGetWidth(), ofGetHeight());
+	bgImage->draw(0, 0, WIDTH, HEIGHT);
 	Container::draw();
-	//ofSetHexColor(0xFF0000);
-	
-	//ofLine(WIDTH/2, 0, WIDTH/2, ofGetHeight());
 }

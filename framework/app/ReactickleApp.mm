@@ -157,11 +157,29 @@ void ReactickleApp::startCrossFade(bool fadeIn) {
 
 
 #ifndef TARGET_OF_IPHONE
+bool fakeGameModeCoeffsInited = false;
+void transformTouchToFakeGameModeCoords(ofTouchEventArgs &touch) {
+	if(!fakeGameModeCoeffsInited) {
+		fakeGameModeCoeffsInited = true;
+	}
+	float fakeGameModeScale = (float)ofGetHeight()/(float)HEIGHT;
+	float resizedScreenWidth = (float)ofGetWidth()/fakeGameModeScale;
+	
+	
+	float moveRightBy = (resizedScreenWidth - WIDTH)/2;
+	
+	touch.x /= fakeGameModeScale;
+	touch.y /= fakeGameModeScale;
+	touch.x -= moveRightBy;
+}
+
+
 void ReactickleApp::mouseDragged(int x, int y, int button) {
 	ofTouchEventArgs touch;
 	touch.x = x;
 	touch.y = y;
 	touch.id = button;
+	if(FAKE_GAME_MODE) transformTouchToFakeGameModeCoords(touch);
 	this->touchMoved(touch);
 }
 void ReactickleApp::mousePressed(int x, int y, int button) {
@@ -169,6 +187,7 @@ void ReactickleApp::mousePressed(int x, int y, int button) {
 	touch.x = x;
 	touch.y = y;
 	touch.id = button;
+	if(FAKE_GAME_MODE) transformTouchToFakeGameModeCoords(touch);
 	this->touchDown(touch);
 }
 void ReactickleApp::mouseReleased(int x, int y, int button) {
@@ -176,6 +195,7 @@ void ReactickleApp::mouseReleased(int x, int y, int button) {
 	touch.x = x;
 	touch.y = y;
 	touch.id = button;
+	if(FAKE_GAME_MODE) transformTouchToFakeGameModeCoords(touch);
 	this->touchUp(touch);
 }
 

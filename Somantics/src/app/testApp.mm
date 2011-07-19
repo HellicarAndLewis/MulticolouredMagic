@@ -101,6 +101,17 @@ void testApp::draw(){
 		glScalef(0.5, 0.5, 1);
 	}
 	
+	if(FAKE_GAME_MODE) {
+		// do a fake OF_GAME_MODE - the real one locks up the computer when it crashes
+		glPushMatrix();
+		float fakeGameModeScale = (float)ofGetHeight()/(float)HEIGHT;
+		float resizedScreenWidth = (float)ofGetWidth()/fakeGameModeScale;
+		
+		glScalef(fakeGameModeScale, fakeGameModeScale, fakeGameModeScale);
+		
+		float moveRightBy = (resizedScreenWidth - WIDTH)/2;
+		glTranslatef(moveRightBy, 0, 0);
+	}
 
 	
 	
@@ -116,7 +127,7 @@ void testApp::draw(){
 	glColor4f(0, 0, 0, alpha);
 	ofEnableAlphaBlending(); // reset blend func
 	ofRect(0, 0, WIDTH, HEIGHT);
-	colorImg.draw(0, 0, ofGetWidth(), ofGetHeight());
+	colorImg.draw(0, 0, WIDTH, HEIGHT);
 	
 	
 	// pops the pixel coordinates scaling stuff.
@@ -124,6 +135,13 @@ void testApp::draw(){
 		glPopMatrix();
 	}
 	
+	if(FAKE_GAME_MODE) { // fake OF_GAME_MODE
+		ofSetHexColor(0);
+		// letterbox
+		ofRect(-1000, 0, 1000, HEIGHT);
+		ofRect(WIDTH, 0, 1000, HEIGHT);
+		glPopMatrix();
+	}
 }
 
 bool testApp::isReactickle(Reactickle *reactickle) {

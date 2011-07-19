@@ -81,7 +81,7 @@ public:
 		
 		float maxForce = 3;
 		// map the distance
-		float magnitude = ofMap(distance, 10, ofGetWidth()/6.f, maxForce, 0, true);
+		float magnitude = ofMap(distance, 10, WIDTH/6.f, maxForce, 0, true);
 		magnitude = maxForce/fastInverseSqrt(magnitude/maxForce);
 		if(pld(forcePos, forcePos+force, pos)>0) {
 			rotationSpeed += magnitude;	

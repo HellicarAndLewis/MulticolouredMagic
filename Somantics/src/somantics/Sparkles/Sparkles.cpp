@@ -52,8 +52,8 @@ void Sparkles::update(){
 			int step = 10;//contourFinder.blobs[i].pts.size()/10;
 			for(int j = 0; j < contourFinder.blobs[i].pts.size(); j+=step) {
 				p.spawn(
-						contourFinder.blobs[i].pts[j].x*ofGetWidth()/VISION_WIDTH, 
-						contourFinder.blobs[i].pts[j].y*ofGetHeight()/VISION_HEIGHT, 
+						contourFinder.blobs[i].pts[j].x*WIDTH/VISION_WIDTH, 
+						contourFinder.blobs[i].pts[j].y*HEIGHT/VISION_HEIGHT, 
 						ofRandom(-5, 5), ofRandom(-5, 5));
 			}
 		}

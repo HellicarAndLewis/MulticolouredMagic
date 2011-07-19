@@ -33,3 +33,5 @@ extern std::string APP_NAME;
 
 #define HOST "localhost"
 #define PORT 12345
+
+extern bool FAKE_GAME_MODE;

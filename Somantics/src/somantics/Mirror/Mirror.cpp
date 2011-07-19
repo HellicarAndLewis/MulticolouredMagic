@@ -33,10 +33,11 @@ void Mirror::setup() {
 	
 	if(buffer==NULL) {
 		buffer = new unsigned char[VISION_WIDTH*VISION_HEIGHT*3];
+		memset(buffer, 0, VISION_WIDTH*VISION_HEIGHT*3);
 	}
 	image.allocate(VISION_WIDTH, VISION_HEIGHT);
 	
-
+	image.set(0);
 	
 }
 
@@ -72,20 +73,21 @@ void Mirror::update() {
 			//memcpy(buffer, pixels, numPixels);
 		} else if(type==MIRROR_SLITSCAN) {
 			
-			for(int i = 0; i < 3; i++) {
+			for(int i = 0; i < 2; i++) {
 				// only copy one row of pixels
 				int pixelsStart = slitScanPos*image.getWidth()*3;
 				int numPixToCopy = image.getWidth()*3;
 				
 				memcpy(buffer + pixelsStart, pixels+pixelsStart, numPixToCopy);
 				
-				// then copy the whole buffer over
-				memcpy(pixels, buffer, numPixels);
 				
 				// increment and wrap the position
 				slitScanPos++;
 				if(slitScanPos>=image.getHeight()) slitScanPos = 0;
 			}
+			// then copy the whole buffer over
+			memcpy(pixels, buffer, numPixels);
+				
 		}
 		
 		if(type==MIRROR_AMBIENT_LAPSE) {

@@ -32,7 +32,7 @@ public:
 	
 	void draw() {
 		ofSetHexColor(0xFFFFFF);
-		bgImage->draw(0, 0, ofGetWidth(), ofGetHeight());
+		bgImage->draw(0, 0,  WIDTH, HEIGHT);
 		//logo->draw(WIDTH/2, HEIGHT - 20);
 		//aboutImage->draw(10, 10);
 		Container::draw();

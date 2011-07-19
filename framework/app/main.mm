@@ -12,6 +12,7 @@ float HEIGHT_SCALE = 1;
 bool RETINA = false;
 bool IPAD = false;
 bool HI_RES = false;
+bool FAKE_GAME_MODE = false;
 string IMAGE_ROOT;
 string APP_NAME;
 #define DEBUG_MODE
@@ -65,18 +66,13 @@ int main(){
 	RETINA = false;
 	IPAD = true;
 	IMAGE_ROOT = "images4/";
+	FAKE_GAME_MODE = true;
 #endif
-#ifdef TARGET_OF_IPHONE
-	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
-#else
 
-	#ifdef DEBUG_MODE
-		ofSetupOpenGL(WIDTH, HEIGHT, OF_WINDOW);//OF_FULLSCREEN);			// <-------- setup the GL context
-	#else
-		ofSetupOpenGL(WIDTH, HEIGHT, OF_GAME_MODE);//OF_FULLSCREEN);			// <-------- setup the GL context
-	#endif
+	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
 	
-#endif
+	
+
 	// this kicks off the running of my app
 	// can be OF_WINDOW or OF_FULLSCREEN
 	// pass in width and height too:
