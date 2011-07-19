@@ -98,7 +98,7 @@ void Mirror::update() {
 		// because we're not calling draw() on the camera's image
 		// when doing mirror, we need to explicitly update the 
 		// texture on the video card.
-		if(type==MIRROR_MIRROR) {
+		if(type==MIRROR_KALEIDOSCOPE) {
 			image.updateTexture();
 		}
 		
@@ -129,7 +129,7 @@ void Mirror::draw() {
 	bool usingNormTexCoords = ofGetUsingNormalizedTexCoords();
 	
 	//image.draw(0, 0, WIDTH, HEIGHT);
-	if(type==MIRROR_MIRROR) {
+	if(type==MIRROR_KALEIDOSCOPE) {
 		// push normalized tex coords
 		if(!usingNormTexCoords) {
 			ofEnableNormalizedTexCoords();

@@ -8,7 +8,7 @@
 #include "Reactickle.h"
 #define MIRROR_AMBIENT_LAPSE	0
 #define MIRROR_SLITSCAN			1
-#define MIRROR_MIRROR			2
+#define MIRROR_KALEIDOSCOPE		2
 
 class Mirror: public Reactickle {
 public:
@@ -33,7 +33,7 @@ private:
 	int type;
 	
 	
-	// stuff specifically for MIRROR_MIRROR
+	// stuff specifically for MIRROR_KALEIDOSCOPE
 	float offset;
 	int star;
 	

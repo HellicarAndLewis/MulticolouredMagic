@@ -33,7 +33,7 @@ void MainMenu::initMenu() {
 	addReactickleButton(new ReactickleButton("Windmills"));
 	addReactickleButton(new ReactickleButton("Painter"));
 	addReactickleButton(new ReactickleButton("Sparkles"));
-	addReactickleButton(new ReactickleButton("Mirror"));
+	addReactickleButton(new ReactickleButton("Kaleidoscope"));
 	addReactickleButton(new ReactickleButton("Slitscan"));
 	addReactickleButton(new ReactickleButton("Ambient Lapse"));
 }
@@ -52,8 +52,8 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Painter();
 	} else if(name=="Sparkles") {
 		r = new Sparkles();
-	} else if(name=="Mirror") {
-		r = new Mirror(MIRROR_MIRROR);
+	} else if(name=="Kaleidoscope") {
+		r = new Mirror(MIRROR_KALEIDOSCOPE);
 	} else if(name=="Ambient Lapse") {
 		r = new Mirror(MIRROR_AMBIENT_LAPSE);
 	} else if(name=="Slitscan") {
