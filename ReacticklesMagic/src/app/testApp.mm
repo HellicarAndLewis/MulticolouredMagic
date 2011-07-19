@@ -185,7 +185,7 @@ void testApp::draw(){
 }
 
 bool testApp::isReactickle(Reactickle *reactickle) {
-	return currentApp!=mainMenu && currentApp!=&aboutPage && currentApp!=&settingsPage;
+	return reactickle!=mainMenu && reactickle!=&aboutPage && reactickle!=&settingsPage;
 }
 void testApp::buttonPressed(string name) {
 	if(name=="back") {

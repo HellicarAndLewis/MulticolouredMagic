@@ -117,7 +117,7 @@ void testApp::draw(){
 	glColor4f(0, 0, 0, alpha);
 	ofEnableAlphaBlending(); // reset blend func
 	ofRect(0, 0, WIDTH, HEIGHT);
-	colorImg.draw(0, 0, WIDTH, HEIGHT);
+//	colorImg.draw(0, 0, WIDTH, HEIGHT);
 	
 	
 	if(FAKE_GAME_MODE) centerer.end();	
