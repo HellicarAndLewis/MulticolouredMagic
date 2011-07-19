@@ -68,6 +68,7 @@
 		EA495AD013CC5FCC00D500B5 /* Sparkles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA495ACA13CC5FCC00D500B5 /* Sparkles.cpp */; };
 		EA495AD113CC5FCC00D500B5 /* Sparticles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA495ACC13CC5FCC00D500B5 /* Sparticles.cpp */; };
 		EA495B4E13CC76C300D500B5 /* KinectOrCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA495B4C13CC76C300D500B5 /* KinectOrCamera.cpp */; };
+		EA68FEE413D48147008A7128 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68FEE313D48146008A7128 /* Accelerate.framework */; };
 		EA6C16D613CB1084001DBE32 /* opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C16D513CB1084001DBE32 /* opencv.a */; };
 		EAD4976213A8D9B100D312FE /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974613A8D9B100D312FE /* Apps.mm */; };
 		EAD4976313A8D9B100D312FE /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974813A8D9B100D312FE /* testApp.mm */; };
@@ -306,6 +307,7 @@
 		EA495ACD13CC5FCC00D500B5 /* Sparticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sparticles.h; sourceTree = "<group>"; };
 		EA495B4C13CC76C300D500B5 /* KinectOrCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectOrCamera.cpp; sourceTree = "<group>"; };
 		EA495B4D13CC76C300D500B5 /* KinectOrCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectOrCamera.h; sourceTree = "<group>"; };
+		EA68FEE313D48146008A7128 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		EA6C16D513CB1084001DBE32 /* opencv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = opencv.a; sourceTree = "<group>"; };
 		EAD4974613A8D9B100D312FE /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
 		EAD4974713A8D9B100D312FE /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				EA2FAA7713A8F95800CB21FA /* tess2.a in Frameworks */,
 				EA3ADA7D13B395E800F843E2 /* opencv.a in Frameworks */,
 				EA6C16D613CB1084001DBE32 /* opencv.a in Frameworks */,
+				EA68FEE413D48147008A7128 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE5E94E0F497BD800F28951 /* core */,
+				EA68FEE313D48146008A7128 /* Accelerate.framework */,
 			);
 			name = libs;
 			sourceTree = "<group>";

@@ -14,7 +14,7 @@ bool IPAD = false;
 bool HI_RES = false;
 string IMAGE_ROOT;
 string APP_NAME;
-#undef DEBUG_MODE
+#define DEBUG_MODE
 
 
 int main(){

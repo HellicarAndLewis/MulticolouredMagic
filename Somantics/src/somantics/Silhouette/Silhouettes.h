@@ -19,6 +19,7 @@ public:
 	void update();
 	void draw();
 
+	void stop();
 	const static int NUM_COLORS = 4;
 	ofColor colors[NUM_COLORS];
 	bool touchDown(float x, float y, int touchId);

@@ -102,6 +102,7 @@ void ReactickleApp::drawCurrentReactickle() {
 void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 
 	
+
 	// save for later
 	Reactickle *lastApp = currentApp;
 	

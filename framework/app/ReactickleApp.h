@@ -104,6 +104,7 @@ protected:
 	float volumeThreshold;
 	Reactickle *currentApp;
 	Reactickle *mainMenu;
+	
 	// back buttons for when on a reactickle
 	HoldButton backButton;
 };

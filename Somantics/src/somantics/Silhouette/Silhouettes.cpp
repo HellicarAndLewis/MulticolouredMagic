@@ -17,6 +17,7 @@ void Silhouettes::setup(){
 	
 	float w = WIDTH;
 	float h = HEIGHT;
+	ofSetBackgroundAuto(false);
 
 	
 #ifdef USE_FBO
@@ -34,6 +35,9 @@ Silhouettes::~Silhouettes() {
 #endif
 }
 
+void Silhouettes::stop() {
+	ofSetBackgroundAuto(true);
+}
 //--------------------------------------------------------------
 void Silhouettes::update(){
 }
@@ -42,7 +46,7 @@ bool histFrameCleared = false;
 //--------------------------------------------------------------
 void Silhouettes::draw(){
 //	ofBackground(255);
-	ofSetBackgroundAuto(false);
+	
 	ofSetColor(255, 255, 255, 20);
 	ofRect(0, 0, WIDTH, HEIGHT);
 #ifdef USE_FBO	

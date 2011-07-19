@@ -91,7 +91,7 @@ void Sparkles::draw() {
 	ofSetColor(0, 150,255);
 	ofDrawBitmapString(ofToString(ofGetFrameRate(), 2), 50, 20);
 
-	
+	ofEnableAlphaBlending();
 }
 
 

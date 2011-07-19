@@ -29,7 +29,7 @@ void testApp::setup(){
 	
 		kinect.setup();
 		colorImg.allocate(kinect.getWidth(),kinect.getHeight());
-		printf("Setting up camera\n");
+		printf("Setting up camera %d %d\n", kinect.getWidth(), kinect.getHeight());
 	} else {
 		printf("No cameras available\n");
 		hasCamera = false;
@@ -73,7 +73,11 @@ void testApp::update(){
 			unsigned char *pix = kinect.getPixels();
 			if(pix!=NULL) {
 				colorImg.setFromPixels(pix, kinect.getWidth(), kinect.getHeight());
+#ifdef TARGET_OF_IPHONE
 				colorImg.mirror(true, false);
+#else
+				colorImg.mirror(false, true);
+#endif
 				currentApp->colorImg = &colorImg;
 			} else {
 				currentApp->colorImg = NULL;

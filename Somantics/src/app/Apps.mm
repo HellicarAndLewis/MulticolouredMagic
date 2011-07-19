@@ -24,6 +24,8 @@
 #include "Windmills.h"
 #include "Painter.h"
 #include "Sparkles.h"
+#include "Mirror.h"
+
 
 void MainMenu::initMenu() {
 	addReactickleButton(new ReactickleButton("Corridors"));
@@ -31,6 +33,9 @@ void MainMenu::initMenu() {
 	addReactickleButton(new ReactickleButton("Windmills"));
 	addReactickleButton(new ReactickleButton("Painter"));
 	addReactickleButton(new ReactickleButton("Sparkles"));
+	addReactickleButton(new ReactickleButton("Mirror"));
+	addReactickleButton(new ReactickleButton("Slitscan"));
+	addReactickleButton(new ReactickleButton("Ambient Lapse"));
 }
 
 void MainMenu::reactickleSelected(string name) {
@@ -47,6 +52,12 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Painter();
 	} else if(name=="Sparkles") {
 		r = new Sparkles();
+	} else if(name=="Mirror") {
+		r = new Mirror(MIRROR_MIRROR);
+	} else if(name=="Ambient Lapse") {
+		r = new Mirror(MIRROR_AMBIENT_LAPSE);
+	} else if(name=="Slitscan") {
+		r = new Mirror(MIRROR_SLITSCAN);
 	}
 	
 	if(r!=NULL) {	
