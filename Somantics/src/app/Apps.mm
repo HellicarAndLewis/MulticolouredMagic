@@ -26,6 +26,8 @@
 #include "Sparkles.h"
 #include "Mirror.h"
 #include "Cascades.h"
+#include "Paths.h"
+#include "Tunnel.h"
 
 
 void MainMenu::initMenu() {
@@ -38,6 +40,8 @@ void MainMenu::initMenu() {
 	addReactickleButton(new ReactickleButton("Slitscan"));
 	addReactickleButton(new ReactickleButton("Ambient Lapse"));
 	addReactickleButton(new ReactickleButton("Cascades"));
+	addReactickleButton(new ReactickleButton("Paths"));
+	addReactickleButton(new ReactickleButton("Tunnel"));    
 }
 
 void MainMenu::reactickleSelected(string name) {
@@ -62,6 +66,10 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Mirror(MIRROR_SLITSCAN);
 	} else if(name == "Cascades") {
 		r = new Cascades();
+	}else if(name == "Paths") {
+		r = new Paths();
+	}else if(name == "Tunnel") {
+		r = new Tunnel();
 	}
 	
 	if(r!=NULL) {	
