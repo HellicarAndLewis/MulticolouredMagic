@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "Reactickle.h"
+#include "Silhouette.h"
+#include "BrushedLine.h"
 
 class Tunnel : public Reactickle {
 
@@ -15,5 +17,7 @@ class Tunnel : public Reactickle {
 	bool touchMoved(float x, float y, int touchId);
 
 	map<int,ofVec2f> touches;
-
+	vector<Silhouette> silhouettes;
+	vector<vector<ofVec2f> > history;
+	BrushedLine brushedLine;
 };

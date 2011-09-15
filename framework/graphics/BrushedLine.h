@@ -73,6 +73,22 @@ public:
 		if(mustUnbind) unbindImage();
 		
 	}
+	
+	void drawLines(vector<ofVec2f> &points, bool close = false) {
+		bindImage();
+		for(int i = 0; i+1 < points.size(); i++) {
+			ofVec2f a = points[i];
+			ofVec2f b = points[i+1];
+			
+			drawLine(points[i], points[i+1]);
+		}
+		
+		// close the loop if necessary.
+		if(close) {
+			drawLine(points[0], points[points.size()-1]);
+		}
+		unbindImage();
+	}
 	void drawLines(ofVec2f *points, int numPoints, bool close = false) {
 		
 		bindImage();
@@ -90,6 +106,9 @@ public:
 			drawLine(points[0], points[numPoints-1]);
 		}
 		unbindImage();
+	}
+	void setSize(float size) {
+		this->size = size;
 	}
 	float size;
 private:

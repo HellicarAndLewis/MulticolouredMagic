@@ -7,7 +7,7 @@
  */
 #include "BrushedLine.h"
 #include "ImageCache.h"
-
+#pragma once
 class Silhouette {
 public:
 	
@@ -23,6 +23,9 @@ public:
 		lineImage = img;
 	}
 	
+	void setSize(float size) {
+		line.setSize(size);
+	}
 	bool touchDown(float x, float y, int touchId) {
 		if(touches.size()==0) {
 			touches[touchId] = ofVec2f(x,y);
@@ -141,9 +144,17 @@ public:
 		
 		*/
 		line.drawLines(border, touches.size(), true);
+		snapshot.clear();
+		for(int i = 0; i < touches.size(); i++) {
+			snapshot.push_back(border[i]);
+		}
 		delete [] border;
 	}
+	vector<ofVec2f> snapshot;
 	
+	vector<ofVec2f> getSnapshot() {
+		return snapshot;
+	}
 	
 	map<int,ofVec2f> touches;
 	BrushedLine line;

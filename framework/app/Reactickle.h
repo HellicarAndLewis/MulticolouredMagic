@@ -17,18 +17,18 @@
 
 
 
-#ifndef TARGET_OF_IPHONE
+//#ifndef TARGET_OF_IPHONE
 #include "ofxOpenCv.h"
 	
 	// this is what you get if you're not on iphone
-	#include "ofxSimpleGuiToo.h"
+//	#include "ofxSimpleGuiToo.h"
 	//
 	#define VISION_WIDTH 640
 	#define VISION_HEIGHT 480
 	#define CAM_THRESHOLD 20
 	#define MAX_MOVEMENT 5000
 	#define MOVEMENT_FILTER 0.3f
-#endif
+//#endif
 
 #include "Container.h"
 
@@ -69,9 +69,9 @@ public:
 //#ifndef TARGET_OF_IPHONE
 	virtual bool needsKinect() { return false; }
 
-#ifndef TARGET_OF_IPHONE
+//#ifndef TARGET_OF_IPHONE
 ofxCvColorImage *colorImg;		
-	#endif
+//	#endif
     // how much camera movement there is
 	float movement;
 //#endif
