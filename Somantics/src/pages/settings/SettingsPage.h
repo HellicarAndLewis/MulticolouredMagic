@@ -11,7 +11,7 @@
 #include "SimpleButton.h"
 #include "BrightnessSlider.h"
 #include "ImageObject.h"
-
+#include "CheckBox.h"
 class SettingsPage: public Reactickle, public SimpleButtonListener {
 public:
 	void setup();
@@ -26,6 +26,8 @@ public:
 	ImageObject settingsTitle;
 	ImageObject colourPickerTitle;
 	ImageObject logo;
+	CheckBox multicoloured;
+	bool isMulticoloured;
 	/*
 	
 	ofImage *settingsTitle;

@@ -20,6 +20,8 @@ void SettingsPage::setup() {
 	slider.setup();
 	slider.y += 57;
 	
+	isMulticoloured = false;
+	multicoloured.setup("multicoloured", ofVec2f(100, 630), IMAGE_ROOT+"untick.png", IMAGE_ROOT+"tick.png", &isMulticoloured);
 	if(IPAD) {
 		bgImage = ImageCache::getImage("img/bgIPad.png");
 	} else if(HI_RES) {
@@ -36,7 +38,8 @@ void SettingsPage::setup() {
 	add(&colourPickerTitle);
 	add(&colorPicker);
 	add(&slider);
-	add(&logo);	
+	add(&logo);
+	add(&multicoloured);
 	
 	resetButton.setup("reset", ofVec2f(987, 53), IMAGE_ROOT+"reset.png", IMAGE_ROOT+"resetDown.png");
 	add(&resetButton);
