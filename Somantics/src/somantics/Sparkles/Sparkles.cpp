@@ -73,6 +73,7 @@ void Sparkles::update(){
 
 //--------------------------------------------------------------
 void Sparkles::draw() {
+	ofBackground(0,0,0);
 	ofEnableAlphaBlending();
 	glBlendFunc(GL_SRC_ALPHA,GL_ONE);
 	// draw the incoming, the grayscale, the bg and the thresholded difference

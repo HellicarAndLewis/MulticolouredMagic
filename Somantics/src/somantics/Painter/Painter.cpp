@@ -108,7 +108,13 @@ void Painter::update(){
 void Painter::draw() {
 	ofSetHexColor(0xFFFFFF);
 	canvas.draw(0,0,WIDTH, HEIGHT);
-	
+	ofEnableAlphaBlending();
+
+	glBlendFunc(GL_DST_COLOR, GL_SRC_COLOR);
+	grayImage.draw(0, 0, WIDTH, HEIGHT);
+	ofEnableAlphaBlending();
+	glColor4f(1, 1, 1, 0.75);
+	canvas.draw(0,0,WIDTH, HEIGHT);
 }
 
 
