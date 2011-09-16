@@ -46,16 +46,24 @@ public:
 		this->name = name;
 		currTouchId = -1;
 		alpha = 1;
-		upImg = ImageCache::getImage(upImgUrl);
-
+		if(upImgUrl=="") {
+			upImg = NULL;
+		} else {
+			upImg = ImageCache::getImage(upImgUrl);
+		}
+		
 		if(dnImgUrl=="") {
 			dnImg = NULL;
 		} else {
 			dnImg = ImageCache::getImage(dnImgUrl);
 		}
 
-	 
-		setFromCenter(ofPoint(centre.x, centre.y), upImg->getWidth(), upImg->getHeight());
+		float w = 0, h = 0;
+		if(upImg!=NULL) {
+			w = upImg->getWidth();
+			h = upImg->getHeight();
+		}
+		setFromCenter(ofPoint(centre.x, centre.y), w, h);
 
 	}
 	
@@ -108,12 +116,19 @@ public:
 			if(dnImg!=NULL) {
 				dnImg->draw(x, y);
 			} else {
-				ofSetHexColor(0xFFCCCC);
-				upImg->draw(x, y);
+				if(upImg!=NULL) {
+					ofSetHexColor(0xFFCCCC);
+					upImg->draw(x, y);
+				} else {
+					glColor4f(1,1,1,0.2);
+					ofRect(*this);
+				}
 			}
 			
 		} else {
-			upImg->draw(x, y);
+			if(upImg!=NULL)
+				upImg->draw(x, y);
+			
 		}
 	}
 };

@@ -115,6 +115,7 @@
 		EA620EA0142206BA0034BA96 /* ofxBox2dRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA620E72142206BA0034BA96 /* ofxBox2dRect.cpp */; };
 		EA620EA4142206DE0034BA96 /* Paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA620EA2142206DE0034BA96 /* Paths.cpp */; };
 		EA68FEE413D48147008A7128 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68FEE313D48146008A7128 /* Accelerate.framework */; };
+		EA6AD451142394E60017FA7E /* iPhoneUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6AD44F142394E60017FA7E /* iPhoneUtils.mm */; };
 		EA6C16D613CB1084001DBE32 /* opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C16D513CB1084001DBE32 /* opencv.a */; };
 		EAD4976213A8D9B100D312FE /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974613A8D9B100D312FE /* Apps.mm */; };
 		EAD4976313A8D9B100D312FE /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974813A8D9B100D312FE /* testApp.mm */; };
@@ -454,6 +455,8 @@
 		EA620EA2142206DE0034BA96 /* Paths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Paths.cpp; sourceTree = "<group>"; };
 		EA620EA3142206DE0034BA96 /* Paths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paths.h; sourceTree = "<group>"; };
 		EA68FEE313D48146008A7128 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		EA6AD44F142394E60017FA7E /* iPhoneUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iPhoneUtils.mm; sourceTree = "<group>"; };
+		EA6AD450142394E60017FA7E /* iPhoneUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneUtils.h; sourceTree = "<group>"; };
 		EA6C16D513CB1084001DBE32 /* opencv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = opencv.a; sourceTree = "<group>"; };
 		EAD4974613A8D9B100D312FE /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
 		EAD4974713A8D9B100D312FE /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
@@ -1638,6 +1641,8 @@
 				EAD4978713A8D9B900D312FE /* Properties.h */,
 				EAD4978813A8D9B900D312FE /* Settings.h */,
 				EAD4978913A8D9B900D312FE /* Settings.mm */,
+				EA6AD44F142394E60017FA7E /* iPhoneUtils.mm */,
+				EA6AD450142394E60017FA7E /* iPhoneUtils.h */,
 				EAD4978A13A8D9B900D312FE /* util.cpp */,
 				EAD4978B13A8D9B900D312FE /* util.h */,
 			);
@@ -1852,6 +1857,7 @@
 				EA620E9F142206BA0034BA96 /* ofxBox2dPolygon.cpp in Sources */,
 				EA620EA0142206BA0034BA96 /* ofxBox2dRect.cpp in Sources */,
 				EA620EA4142206DE0034BA96 /* Paths.cpp in Sources */,
+				EA6AD451142394E60017FA7E /* iPhoneUtils.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
