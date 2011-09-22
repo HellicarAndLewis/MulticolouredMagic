@@ -14,10 +14,10 @@ bool flipImage = false;
 
 //--------------------------------------------------------------
 void testApp::setup(){	
-	
-	setupApp(this, "Somantics");
 
-//#ifndef TARGET_IPHONE_SIMULATOR
+	
+
+	setupApp(this, "Somantics");
 
 #ifdef TARGET_OF_IPHONE
 	
@@ -33,9 +33,11 @@ void testApp::setup(){
 		kinect.setup();
 		colorImg.allocate(kinect.getWidth(),kinect.getHeight());
 		printf("Setting up camera %d %d\n", kinect.getWidth(), kinect.getHeight());
+		HAS_CAMERA = true;
 	} else {
 		printf("No cameras available\n");
 		hasCamera = false;
+		HAS_CAMERA = false;
 	}
 #else 
 	

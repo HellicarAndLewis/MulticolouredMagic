@@ -38,10 +38,13 @@ void MainMenu::initMenu() {
 	addReactickleButton(new ReactickleButton("Tunnel"));    
 	addReactickleButton(new ReactickleButton("Silhouette"));
 
-	addReactickleButton(new ReactickleButton("Ghost"));
-	addReactickleButton(new ReactickleButton("Painter"));
-	addReactickleButton(new ReactickleButton("Slitscan"));
-	addReactickleButton(new ReactickleButton("Kaleidoscope"));
+	
+	if(HAS_CAMERA) {
+		addReactickleButton(new ReactickleButton("Ghost"));
+		addReactickleButton(new ReactickleButton("Painter"));
+		addReactickleButton(new ReactickleButton("Slitscan"));
+		addReactickleButton(new ReactickleButton("Kaleidoscope"));
+	}
 	addReactickleButton(new ReactickleButton("Sparkles"));
 	
 	//addReactickleButton(new ReactickleButton("Cascades"));

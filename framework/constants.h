@@ -26,6 +26,7 @@ extern bool IPAD;
 // this is if it's an iPad or an iphone4 (retina)
 extern bool HI_RES;
 
+extern bool HAS_CAMERA;
 // this is where you get your resolution dependent images from.
 // it will get initialized to point to images/ or images4/ depending 
 // on whether you're HI_RES or not. If it's an iPad or iPhone4, the images

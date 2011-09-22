@@ -13,6 +13,8 @@ bool RETINA = false;
 bool IPAD = false;
 bool HI_RES = false;
 bool FAKE_GAME_MODE = false;
+bool HAS_CAMERA = true;
+
 string IMAGE_ROOT;
 string APP_NAME;
 #define DEBUG_MODE
