@@ -18,7 +18,6 @@ public:
 	void draw();
 	void buttonPressed(string name);
 	ColorPicker colorPicker;
-	SimpleButton resetButton;
 	BrightnessSlider slider;
 	
 	ofImage *bgImage;
@@ -26,8 +25,6 @@ public:
 	ImageObject settingsTitle;
 	ImageObject colourPickerTitle;
 	ImageObject logo;
-	CheckBox multicoloured;
-	bool isMulticoloured;
 	/*
 	
 	ofImage *settingsTitle;

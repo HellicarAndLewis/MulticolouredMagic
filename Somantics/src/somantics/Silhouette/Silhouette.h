@@ -12,7 +12,11 @@ class Silhouette {
 public:
 	
 	Silhouette() {
+#ifdef TARGET_OF_IPHONE
 		line.setup(lineImage, 50);
+#else
+		line.setup(lineImage, 35);
+#endif
 	}
 	
 	static void setup() {
@@ -117,6 +121,9 @@ public:
 		
 	}
 	
+	void addPoint(ofVec2f p) {
+		
+	}
 	
 	void draw() {
 		map<int,ofVec2f>::iterator it;
@@ -143,12 +150,17 @@ public:
 		ofEndShape(true);
 		
 		*/
-		line.drawLines(border, touches.size(), true);
+		draw(border, touches.size());
+		
+		delete [] border;
+	}
+	void draw(ofVec2f *border, int size) {
+		
+		line.drawLines(border, size, true);
 		snapshot.clear();
-		for(int i = 0; i < touches.size(); i++) {
+		for(int i = 0; i < size; i++) {
 			snapshot.push_back(border[i]);
 		}
-		delete [] border;
 	}
 	vector<ofVec2f> snapshot;
 	

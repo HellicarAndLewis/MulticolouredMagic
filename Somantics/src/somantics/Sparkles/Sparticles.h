@@ -10,7 +10,7 @@ public:
     
     void setup();
 	void update();
-	void draw();
+	void draw(bool multicoloured = false);
 	void spawn(float x, float y, float dx, float dy);
     
     

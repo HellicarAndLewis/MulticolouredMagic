@@ -29,6 +29,7 @@ public:
 	
 	
 private:
+	float timeOfLastStar;
 	int ratio(int l, int r, float ratio);
 	int type;
 	

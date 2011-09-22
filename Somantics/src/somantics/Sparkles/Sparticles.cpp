@@ -1,6 +1,7 @@
 
 #include "Sparticles.h"
-
+#include "Settings.h"
+#include "ColorPicker.h"
 Sparticles::Sparticles(){
 	
 	pos = 0;
@@ -51,10 +52,14 @@ void Sparticles::update(){
     }
 }
 
-void Sparticles::draw(){
+void Sparticles::draw(bool multicoloured){
     
     
-	
+	int colorIndex = Settings::getInstance()->settings["fgColor"];
+	ofColor c;
+	if(colorIndex!=20) {
+		c = ofColor::fromHex(ColorPicker::colors[colorIndex]);
+	}
     for(int i = 0; i < numParticles; i++) {
         if(ages[i]<maxAge) {
             float size = ofMap(ages[i], 0, maxAge, sizes[i], 0);
@@ -66,8 +71,11 @@ void Sparticles::draw(){
 			//             ofTranslate(1, 1, 1);
 			//            }
             //ofTranslate(1, 1, ages[i]/10); ///moves them in 3D
-            
-            ofSetColor(0, 150,255, ofMap(ages[i], 0, maxAge, 255, 0));
+            if(colorIndex==20) {
+				c.setHex(ColorPicker::colors[i%7]);
+			}
+				ofSetColor(c.r, c.g, c.b, ofMap(ages[i], 0, maxAge, 255, 0));
+			
             //ofCircle(positions[i].x - size/2, positions[i].y - size/2, size);
 			if(ofRandom(0, 1)>0.96) {
 				int r = 1+rand()%(images.size()-1);

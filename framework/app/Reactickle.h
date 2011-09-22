@@ -75,6 +75,10 @@ ofxCvColorImage *colorImg;
     // how much camera movement there is
 	float movement;
 //#endif
+#ifndef TARGET_OF_IPHONE
+	ofxCvGrayscaleImage *depthImg;
+	ofxCvGrayscaleImage *threshImg;
+#endif
     
     void setMode(int mode) {
         this->mode = mode;
@@ -96,7 +100,7 @@ ofxCvColorImage *colorImg;
 	float volumeThreshold;
 	
 	
-
+	ofImage *titleImage;
 
 protected:
     int mode;

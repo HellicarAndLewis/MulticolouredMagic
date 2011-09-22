@@ -5,22 +5,40 @@
 //--------------------------------------------------------------
 void Corridors::setup(){
 	
+
+	colors[0] = ofColor::fromHex(0x0E2356);
+	colors[1] = ofColor::fromHex(0x4D1965);
+	colors[2] = ofColor::fromHex(0xFFEC00);
+	colors[3] = ofColor::fromHex(0x6D1B00);
+	colors[4] = ofColor::fromHex(0xE50043);
+	colors[5] = ofColor::fromHex(0x74AF27);	
+	colors[6] = ofColor::fromHex(0xED6B06);
 	
-	colors[0].setHex(0xFF0000);
-	colors[1].setHex(0xFFFF00);
-	colors[2].setHex(0xFF00FF);
-	colors[3].setHex(0x0000FF);
 	
 	for(int i = 0; i < NUM_COLORS; i++) {
 		colors[i].a = 50;
 	}	
 	
-
+	
+#ifndef TARGET_OF_IPHONE
+	tracker.addListener(this);
+#endif
 	
 }
 
 //--------------------------------------------------------------
 void Corridors::update(){
+#ifndef TARGET_OF_IPHONE
+	contourFinder.findContours(*threshImg, 40*40, VISION_WIDTH*VISION_HEIGHT, 10, false);
+	
+	vector<ofVec3f> blobs;
+	for(int i = 0; i < contourFinder.blobs.size(); i++) {
+		blobs.push_back(ofVec3f(contourFinder.blobs[i].centroid.x/VISION_WIDTH, contourFinder.blobs[i].centroid.y/VISION_HEIGHT, contourFinder.blobs[i].boundingRect.width));
+	}
+	tracker.track(blobs);
+	
+	
+#endif
 }
 
 //--------------------------------------------------------------

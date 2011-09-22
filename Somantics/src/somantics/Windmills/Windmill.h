@@ -30,27 +30,15 @@ public:
 
 	
 	
-	void draw() {
+	void draw(const ofColor &c) {
 		rotationSpeed *= 0.96;
 		rotation += rotationSpeed;
-		//rotation = modulus(rotation, 180);
-		/*
-		if(rotationSpeed<3 && rotation>176) {
-			rotation = 0;
-			rotationSpeed = 0;
-		}
-		if(rotationSpeed<1) {
-			if(rotation>1) {
-				rotationSpeed = 1;
-			} else {
-				rotationSpeed = 0;
-			}
-		}*/
+		
 		
 		if(rotationSpeed<1) rotation = ofLerpDegrees(rotation, 0, 0.1);
 		
 		float alpha = ofMap(ABS(rotationSpeed), 0, 10, 0.2, 1, true);
-		glColor4f(0,0,0,alpha);
+		glColor4f(c.r/255.f, c.g/255.f, c.b/255.f, alpha);
 		glPushMatrix();
 		glTranslatef(pos.x, pos.y, 0);
 		glRotatef(rotation, 0, 0, 1);
@@ -76,6 +64,9 @@ public:
 		return x;
 	}
 	
+	void applyForce(ofVec2f force) {
+		rotationSpeed += force.length();
+	}
 	void applyForce(ofVec2f forcePos, ofVec2f force) {
 		float distance = 1.f/fastInverseSqrt(pos.distanceSquared(forcePos));
 		

@@ -14,12 +14,13 @@
 void MainMenu::setup() {
 	
 	// add all the buttons for the different Reactickles
-	scrollView.setup(0, 100, WIDTH, HEIGHT - 200);
-	
+	scrollView.setup(37, 135, WIDTH, HEIGHT - 200);
+	scrollView.scrollingEnabled = false;
+
 	initMenu();
 	
-	settingsButton.setup("settings", ofVec2f(WIDTH/2 - 66, HEIGHT - 50), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
-	aboutButton.setup("about", ofVec2f(WIDTH/2 + 54, HEIGHT - 50), IMAGE_ROOT + "aboutButton.png", IMAGE_ROOT + "aboutButtonDown.png");
+	settingsButton.setup("settings", ofVec2f(WIDTH/2 - 63, HEIGHT - 50), IMAGE_ROOT + "settingsButton.png", IMAGE_ROOT + "settingsButtonDown.png");
+	aboutButton.setup("about", ofVec2f(WIDTH/2 + 45, HEIGHT - 50), IMAGE_ROOT + "aboutButton.png", IMAGE_ROOT + "aboutButtonDown.png");
 	
 	logo.setup(ofVec2f(WIDTH/2 - 150, 35), IMAGE_ROOT + "logo.png"); 
 	add(&logo);

@@ -1,13 +1,17 @@
 #include "Tunnel.h"
 #include "constants.h"
-#define BRUSHED_LINE_SIZE 8
+#include "Settings.h"
+#include "ColorPicker.h"
+
+#ifndef TARGET_OF_IPHONE
+#include "contourutils.h"
+#endif
+#define BRUSHED_LINE_SIZE 6
 //--------------------------------------------------------------
 void Tunnel::setup(){
 	
-	float w = WIDTH;
-	float h = HEIGHT;
 	Silhouette::setup();
-	
+
 	ofEnableNormalizedTexCoords();
 	brushedLine.setup(ImageCache::getImage("img/blob.png"), BRUSHED_LINE_SIZE);
 }
@@ -25,7 +29,7 @@ void Tunnel::update(){
 		for(int k = 0; k < history[i].size(); k++) {
 			ofVec2f dist = history[i][k] - centre;
 			dist.normalize();
-			history[i][k] -= dist*10;
+			history[i][k] -= dist*7;
 			float distSquared = centre.distanceSquared(history[i][k]);
 			if(maxDistSquared<distSquared) {
 				maxDistSquared = distSquared;
@@ -38,24 +42,84 @@ void Tunnel::update(){
 		//printf("max dist: %f\n", maxDistSquared);
 		
 	}
+#ifndef TARGET_OF_IPHONE
+	if(threshImg!=NULL) {
+		contourFinder.findContours(*threshImg, 20*20, VISION_WIDTH*VISION_HEIGHT, 20, false);		
+	}
+	
+#endif
 }
 int cc = 0;
 //--------------------------------------------------------------
 void Tunnel::draw(){
-	ofBackground(150, 150, 150); // just to confirm we have something going on
+	ofBackground(0,0,0); // just to confirm we have something going on
 	while(history.size()>20) {
 		history.erase(history.begin());
 	}
 	
 	ofSetHexColor(0xFFFFFF);
+	int colorIndex = Settings::getInstance()->settings["fgColor"];
+
+		
+		
 	for(int i = 0; i < history.size(); i++) {
 		ofColor c;
-		float h = ofMap(i, history.size()-40, history.size(), 0, 255, true);
-		h = (history.size()-i)*15;
-		c.setHsb(h, 255, 255);
+		if(colorIndex==20) {
+			float h = ofMap(i, history.size()-40, history.size(), 0, 255, true);
+			h = (history.size()-i)*15;
+			c.setHsb(h, 255, 255);
+		} else {
+			c.setHex(ColorPicker::colors[colorIndex]);
+			c.setBrightness(ofMap(i, 0, 12, 0, 200, true));
+		}
 		ofSetColor(c);
 		brushedLine.drawLines(history[i], true);
 	}
+
+#ifndef TARGET_OF_IPHONE
+	silhouettes.clear();
+	Silhouette s;
+	
+	vector<ofVec2f> points, hull;
+	for(int i = 0; i < contourFinder.blobs.size(); i++) {
+		
+		
+		for(int j = 0; j < contourFinder.blobs[i].pts.size(); j++) {
+			ofVec2f point;
+			point.x = contourFinder.blobs[i].pts[j].x*WIDTH/VISION_WIDTH;
+			point.y = contourFinder.blobs[i].pts[j].y*HEIGHT/VISION_HEIGHT;
+			points.push_back(point);
+		}
+	}	
+		
+	tricks::math::calcConvexHull(points, hull);
+		
+	ofVec2f *p = new ofVec2f[hull.size()];
+	for(int j = 0; j < hull.size(); j++) {
+		p[j] = hull[j];
+	}
+	
+	if(colorIndex==20) {
+		ofSetColor(255, 0, 0);
+	} else {
+		ofSetHexColor(ColorPicker::colors[colorIndex]);
+	}
+	s.setSize(BRUSHED_LINE_SIZE);
+	s.draw(p, hull.size());
+	delete [] p;
+	cc++;
+	if(cc%10==0)
+		history.push_back(hull);
+
+	/*if(colorImg!=NULL) {
+		ofEnableAlphaBlending();
+		glColor4f(1, 1, 1, 0.1);
+		glBlendFunc(GL_DST_COLOR, GL_SRC_COLOR);
+		colorImg->draw(0, 0, WIDTH, HEIGHT);
+		ofEnableAlphaBlending();
+	}*/
+#else
+
 	
 	for(int i = 0; i < silhouettes.size(); i++) {
 		ofSetColor(255, 0, 0);
@@ -65,13 +129,15 @@ void Tunnel::draw(){
 			i--;
 		} else {
 			cc++;
-			if(cc%3==0)
+			if(cc%4==0)
 				history.push_back(silhouettes[i].getSnapshot());
 		}
 	}
+#endif
 }
 
 bool Tunnel::touchDown(float x, float y, int touchId) {
+#ifdef TARGET_OF_IPHONE
 	for(int i = 0; i < silhouettes.size(); i++) {
 		if(silhouettes[i].touchDown(x,y,touchId)) {
 			return true;
@@ -81,10 +147,12 @@ bool Tunnel::touchDown(float x, float y, int touchId) {
 	silhouettes.back().setSize(BRUSHED_LINE_SIZE);
 	silhouettes.back().touchDown(x, y, touchId);
 	touches[touchId] = ofVec2f(x, y);
+#endif
 	return true;
 }
 
 bool Tunnel::touchUp(float x, float y, int touchId) {
+#ifdef TARGET_OF_IPHONE
 	touches.erase(touchId);
 	for(int i = 0; i < silhouettes.size(); i++) {
 		if(silhouettes[i].touchUp(touchId)) {
@@ -92,10 +160,12 @@ bool Tunnel::touchUp(float x, float y, int touchId) {
 			return true;
 		}
 	}
+#endif
 	return true;
 }
 
 bool Tunnel::touchMoved(float x, float y, int touchId) {
+#ifdef TARGET_OF_IPHONE
 	touches[touchId].x = x;
 	touches[touchId].y = y;
 	for(int i = 0; i < silhouettes.size(); i++) {
@@ -103,6 +173,7 @@ bool Tunnel::touchMoved(float x, float y, int touchId) {
 			return true;
 		}
 	}
+#endif
 	return true;
 }
 

@@ -15,13 +15,15 @@ void SettingsPage::setup() {
 	
 	
 	settingsTitle.setup(ofVec2f(39, 85), IMAGE_ROOT + "settingsTitle.png");
-	colourPickerTitle.setup(ofVec2f(276, 110), IMAGE_ROOT + "colourPickerTitle.png");
+	colourPickerTitle.setup(ofVec2f(276-25, 200), IMAGE_ROOT + "colourPickerTitle.png");
 	colorPicker.setup();
+	colorPicker.y += 85;
+	colorPicker.x -= 25;
 	slider.setup();
 	slider.y += 57;
+	slider.x += 80;
 	
-	isMulticoloured = false;
-	multicoloured.setup("multicoloured", ofVec2f(100, 630), IMAGE_ROOT+"untick.png", IMAGE_ROOT+"tick.png", &isMulticoloured);
+
 	if(IPAD) {
 		bgImage = ImageCache::getImage("img/bgIPad.png");
 	} else if(HI_RES) {
@@ -39,19 +41,12 @@ void SettingsPage::setup() {
 	add(&colorPicker);
 	add(&slider);
 	add(&logo);
-	add(&multicoloured);
-	
-	resetButton.setup("reset", ofVec2f(987, 53), IMAGE_ROOT+"reset.png", IMAGE_ROOT+"resetDown.png");
-	add(&resetButton);
-	resetButton.setListener(this);
+
 }
 
 
 void SettingsPage::buttonPressed(string name) {
-	if(name=="reset") {
-		Settings::getInstance()->reset();
-		colorPicker.reset();
-	}
+
 }
 
 void SettingsPage::draw() {	

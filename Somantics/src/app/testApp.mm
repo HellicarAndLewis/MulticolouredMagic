@@ -1,15 +1,19 @@
 #include "testApp.h"
 #include "MagicShapes.h"
 
+bool flipX = false;
+bool flipImage = false;
 
 #ifndef TARGET_OF_IPHONE
 #include "util.h"
+#include "ofxSimpleGuiToo.h"
+
 #else
 #include <AVFoundation/AVFoundation.h>
 #endif
 
 //--------------------------------------------------------------
-void testApp::setup(){
+void testApp::setup(){	
 	
 	setupApp(this, "Somantics");
 
@@ -34,11 +38,22 @@ void testApp::setup(){
 		hasCamera = false;
 	}
 #else 
+	
 	// just a regular setup
 	kinect.setup();
 	colorImg.allocate(kinect.getWidth(),kinect.getHeight());
+	gui.addToggle("Flip Image", flipImage);
+	gui.addToggle("Flip Camera", flipX);
+	gui.addContent("camera", colorImg);
+	depthImg.allocate(kinect.getWidth(), kinect.getHeight());
+	gui.addContent("depth", depthImg);
+	gui.addSlider("depth threshold", depthThreshold, 0, 255);
+	threshImg.allocate(kinect.getWidth(), kinect.getHeight());
+	gui.addContent("thresholded depth", threshImg);
+	gui.loadFromXML();
+	gui.setAutoSave(true);
 #endif
-//#endif
+
 	
 	mainMenu = new MainMenu();
 	currentApp = mainMenu;
@@ -75,9 +90,17 @@ void testApp::update(){
 #ifdef TARGET_OF_IPHONE
 				colorImg.mirror(true, false);
 #else
-				colorImg.mirror(false, true);
+				colorImg.mirror(false, flipX);
 #endif
 				currentApp->colorImg = &colorImg;
+#ifndef TARGET_OF_IPHONE
+				depthImg.setFromPixels(kinect.getDepthPixels(), kinect.getWidth(), kinect.getHeight());
+				depthImg.mirror(false, flipX);
+				threshImg = depthImg;
+				threshImg.threshold(depthThreshold);
+				currentApp->depthImg = &depthImg;
+				currentApp->threshImg = &threshImg;
+#endif
 			} else {
 				currentApp->colorImg = NULL;
 			}
@@ -104,6 +127,11 @@ void testApp::draw(){
 	
 	if(FAKE_GAME_MODE) centerer.begin();
 
+	if(flipImage) {
+		glPushMatrix();
+		glScalef(-1, 1, 1);
+		glTranslatef(-WIDTH, 0, 0);
+	}
 	
 	drawCurrentReactickle();
 	
@@ -118,7 +146,9 @@ void testApp::draw(){
 	ofEnableAlphaBlending(); // reset blend func
 	ofRect(0, 0, WIDTH, HEIGHT);
 //	colorImg.draw(0, 0, WIDTH, HEIGHT);
-	
+	if(flipImage) {
+		glPopMatrix();
+	}
 	
 	if(FAKE_GAME_MODE) centerer.end();	
 	
@@ -126,7 +156,10 @@ void testApp::draw(){
 	if(RETINA) {
 		glPopMatrix();
 	}
-	
+#ifndef TARGET_OF_IPHONE
+	gui.draw();
+#endif
+	ofEnableAlphaBlending(); // for gui stuff
 	
 }
 
@@ -159,3 +192,17 @@ void testApp::showSettings() {
 
 
 
+void testApp::keyPressed(int key) {
+#ifndef TARGET_OF_IPHONE
+	switch(key) {
+		case ' ': 
+			gui.toggleDraw();
+			if(gui.isOn()) {
+				setEnabled(false);
+			} else {
+				setEnabled(true);
+			}
+			break;
+	}
+#endif
+}

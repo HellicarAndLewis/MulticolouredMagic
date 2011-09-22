@@ -25,23 +25,28 @@
 #include "Painter.h"
 #include "Sparkles.h"
 #include "Mirror.h"
-#include "Cascades.h"
+//#include "Cascades.h"
 #include "Paths.h"
 #include "Tunnel.h"
 
 
 void MainMenu::initMenu() {
-	addReactickleButton(new ReactickleButton("Corridors"));
-	addReactickleButton(new ReactickleButton("Silhouette"));
-	addReactickleButton(new ReactickleButton("Windmills"));
-	addReactickleButton(new ReactickleButton("Painter"));
-	addReactickleButton(new ReactickleButton("Sparkles"));
-	addReactickleButton(new ReactickleButton("Kaleidoscope"));
-	addReactickleButton(new ReactickleButton("Slitscan"));
-	addReactickleButton(new ReactickleButton("Ambient Lapse"));
-	addReactickleButton(new ReactickleButton("Cascades"));
 	addReactickleButton(new ReactickleButton("Paths"));
+	addReactickleButton(new ReactickleButton("Corridors"));
+	addReactickleButton(new ReactickleButton("Windmills"));
+
 	addReactickleButton(new ReactickleButton("Tunnel"));    
+	addReactickleButton(new ReactickleButton("Silhouette"));
+
+	addReactickleButton(new ReactickleButton("Ghost"));
+	addReactickleButton(new ReactickleButton("Painter"));
+	addReactickleButton(new ReactickleButton("Slitscan"));
+	addReactickleButton(new ReactickleButton("Kaleidoscope"));
+	addReactickleButton(new ReactickleButton("Sparkles"));
+	
+	//addReactickleButton(new ReactickleButton("Cascades"));
+	
+	
 }
 
 void MainMenu::reactickleSelected(string name) {
@@ -60,18 +65,19 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Sparkles();
 	} else if(name=="Kaleidoscope") {
 		r = new Mirror(MIRROR_KALEIDOSCOPE);
-	} else if(name=="Ambient Lapse") {
+	} else if(name=="Ghost") {
 		r = new Mirror(MIRROR_AMBIENT_LAPSE);
 	} else if(name=="Slitscan") {
 		r = new Mirror(MIRROR_SLITSCAN);
-	} else if(name == "Cascades") {
-		r = new Cascades();
+	//} else if(name == "Cascades") {
+	//	r = new Cascades();
 	}else if(name == "Paths") {
 		r = new Paths();
 	}else if(name == "Tunnel") {
 		r = new Tunnel();
 	}
-	
+	r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
+	r->titleImage->setAnchorPercent(0.5, 0.5);
 	if(r!=NULL) {	
 		ReactickleApp::instance->launchReactickle(r);
 	} else {

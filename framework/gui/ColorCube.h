@@ -26,48 +26,44 @@ public:
 		cross = NULL;
 		
 		listener = NULL;
+		pickerCube = NULL;
+		pickerBorder = NULL;
 	}
 	ofImage *cross;
 	GlowingBorder *glowingBorder;
-	
+	ofImage *pickerBorder;
+	ofImage *pickerCube;
+	ofImage *multicoloured;
 	void setListener(ColorCubeListener *listener) {
 		this->listener = listener;
 	}
 	// if it's a foreground one, draw it as a filled rect
 	// if it's a background one draw it as a stroked rect.
-	void setup(int color, bool isBackground = false) {
+	void setup(int color) {
 		this->color = color;
-		this->isBackground = isBackground;
+		multicoloured = ImageCache::getImage(IMAGE_ROOT + "multimini.png");
 	}
 	
 	void draw() {
 		
-		if(selected) {
+		/*if(selected) {
 			ofVec2f points[4];
 			points[0] = ofVec2f(x, y);
 			points[1] = ofVec2f(x+width, y);
 			points[2] = ofVec2f(x+width, y+height);
 			points[3] = ofVec2f(x, y+height);
 			glowingBorder->draw(points, ofColor(255, 150));
-		}
-		ofSetHexColor(color);
-		if(isBackground) {
-			int r = 3;
-			// top bar
-			ofRect(x - r, y - r, width + r*2, r*2);
-			
-			// bottom bar
-			ofRect(x - r, y + height - r, width + r*2, r*2);
-			
-			// left bar
-			ofRect(x - r, y + r, r*2, height - r*2);
-
-			// right bar
-			ofRect(x + width - r, y + r, r*2, height - r*2);
-			
+		}*/
+		if(color!=0) {
+			ofSetHexColor(color);
+			if(pickerCube!=NULL) pickerCube->draw(x, y);
 		} else {
-			ofRect(*this);
+			ofSetHexColor(0xFFFFFF);
+			if(multicoloured!=NULL) multicoloured->draw(x, y);
 		}
+		
+//		ofRect(*this);
+
 		
 		if(selected && cross!=NULL) {
 			ofSetHexColor(0xFFFFFF);
@@ -75,9 +71,13 @@ public:
 			glPushMatrix();
 			
 			glTranslatef(x + width/2, y + height/2, 0);
-			cross->draw(0, 0);
+			cross->draw(1, 1);
 			glPopMatrix();
 		}
+
+		
+		ofSetHexColor(0xFFFFFF);
+		if(pickerBorder!=NULL) pickerBorder->draw(x, y);
 	}
 	
 	void setSelected(bool selected) {
@@ -107,12 +107,10 @@ public:
 	bool touchMoved(float x, float y, int touchId) {
 		return touchDown(x, y, touchId);
 	}
-	bool getIsBackground() { return isBackground; }
 
 private:
 	bool selected;
 	int color;
-	bool isBackground;
 	ColorCubeListener *listener;
 		
 };

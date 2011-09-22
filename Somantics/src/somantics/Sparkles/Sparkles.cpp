@@ -8,6 +8,9 @@
 
 #include "Sparkles.h"
 #include "constants.h"
+#include "Settings.h"
+#include "ColorPicker.h"
+
 #define VISION_WIDTH 320
 #define VISION_HEIGHT 480
 //--------------------------------------------------------------
@@ -86,11 +89,17 @@ void Sparkles::draw() {
 	//glPushMatrix();
 	//glScalef((float)WIDTH/(float)colorImg.width, (float)HEIGHT/(float)colorImg.height, 0);
     
-	
-	p.draw();
+	int colorIndex = Settings::getInstance()->settings["fgColor"];
+
+	if(colorIndex==20) {
+		p.draw(true);
+	} else {
+		ofSetHexColor(ColorPicker::colors[colorIndex]);
+		p.draw();
+	}
 	//glPopMatrix();
-	ofSetColor(0, 150,255);
-	ofDrawBitmapString(ofToString(ofGetFrameRate(), 2), 50, 20);
+//	ofSetColor(0, 150,255);
+	//ofDrawBitmapString(ofToString(ofGetFrameRate(), 2), 50, 20);
 
 	ofEnableAlphaBlending();
 }

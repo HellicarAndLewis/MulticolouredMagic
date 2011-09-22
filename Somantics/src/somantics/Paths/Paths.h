@@ -55,12 +55,20 @@ public:
 	}
 		
 };
-class Paths : public Reactickle {
+#ifndef TARGET_OF_IPHONE
+#include "ofxBlobTracker.h"
+#endif
 
-	public:
-		void setup();
-		void update();
-		void draw();
+class Paths : public Reactickle
+#ifndef TARGET_OF_IPHONE
+, public ofxBlobListener 
+#endif
+{
+
+public:
+	void setup();
+	void update();
+	void draw();
 
 	bool touchDown(float x, float y, int touchId);
 	bool touchUp(float x, float y, int touchId);
@@ -71,4 +79,15 @@ class Paths : public Reactickle {
 	map<int, Path*> touchToPath;
 	BrushedLine brushedLine;
 	ofImage *blob;
+	ofImage *finger;
+	
+#ifndef TARGET_OF_IPHONE
+	ofxBlobTracker tracker;
+	void blobEntered(ofVec3f pos, int blobId) { touchDown(pos.x*WIDTH, pos.y*HEIGHT, blobId); }
+	void blobMoved(ofVec3f pos, int blobId) { touchMoved(pos.x*WIDTH, pos.y*HEIGHT, blobId); }
+	void blobExited(ofVec3f pos, int blobId) { touchUp(pos.x*WIDTH, pos.y*HEIGHT, blobId); }
+	
+	ofxCvContourFinder contourFinder;
+	bool needsKinect() { return true; } 
+#endif	
 };

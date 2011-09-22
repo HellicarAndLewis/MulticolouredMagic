@@ -12,8 +12,8 @@
 
 ReactickleButton::ReactickleButton(string name) {
 	screenshot = ImageCache::getImage(IMAGE_ROOT+"apps/"+name+".png");
-	width = screenshot->getWidth();
-	height = screenshot->getHeight();
+	width = screenshot->getWidth()*0.8;
+	height = screenshot->getHeight()*0.8;
 	
 	//height *= 0.8;
 	border.setup(ImageCache::getImage("img/dropShadow.png"), 4);

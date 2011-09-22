@@ -14,10 +14,12 @@
 #include "Settings.h"
 #include "GlowingBorder.h"
 #include "ImageObject.h"
+#include "InkWell.h"
 
 class ColorPicker: public Container, public ColorCubeListener {
 public:
 	ofImage *cross;
+	InkWell inkWell;
 	ColorPicker() ;
 	
 	GlowingBorder glowingBorder;
@@ -26,14 +28,14 @@ public:
 	
 	void selectFg(int index) ;
 	
-	void selectBg(int index) ;
+
 	
 	void cubePressed(ColorCube *cube) ;
 	ColorCube **fgs;
-	ColorCube **bgs;
-	ImageObject bgTitle;
-	ImageObject fgTitle;
+
+	ImageObject selection;
+	ofImage *pickerBorder;
+	ofImage *pickerCube;
+	static int colors[NUM_PICKER_COLORS];
 	
-	ColorCube fg;
-	ColorCube bg;
 };

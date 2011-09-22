@@ -12,6 +12,7 @@ class Tunnel : public Reactickle {
 		void update();
 		void draw();
 
+
 	bool touchDown(float x, float y, int touchId);
 	bool touchUp(float x, float y, int touchId);
 	bool touchMoved(float x, float y, int touchId);
@@ -20,4 +21,9 @@ class Tunnel : public Reactickle {
 	vector<Silhouette> silhouettes;
 	vector<vector<ofVec2f> > history;
 	BrushedLine brushedLine;
+	
+#ifndef TARGET_OF_IPHONE
+	ofxCvContourFinder contourFinder;
+	bool needsKinect() { return true; }
+#endif
 };

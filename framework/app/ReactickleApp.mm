@@ -9,10 +9,12 @@
 #include "ReactickleApp.h"
 #include "util.h"
 #include "constants.h"
+#include "MainMenu.h"
 
 ReactickleApp *ReactickleApp::instance;
 
 void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
+	setEnabled(true);
 	APP_NAME = appName;
 	this->instance = instance;
 	centerer.setup(WIDTH, HEIGHT);
@@ -38,6 +40,8 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 #else
 	setDataPathRootToAppContents();
     setupOSC(); //osc too
+	webserver.start("htdocs/", 8080);
+	webserver.addHandler(this, "/action");
 #endif
 	
 	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
@@ -48,11 +52,24 @@ void ReactickleApp::setupOSC(){
     // open an outgoing connection to HOST:PORT
     sender.setup( HOST, PORT );
 }
+string nextOneToLaunch = "";
+void ReactickleApp::httpGet(string url) {
+	printf("%s\n", url.c_str());
+	httpRedirect("index.html?reactickle="+getRequestParameter("reactickle"));
+
+	nextOneToLaunch = getRequestParameter("reactickle");
+}
 #endif 
 
 
 
 void ReactickleApp::drawCurrentReactickle() {
+#ifndef TARGET_OF_IPHONE
+	if(nextOneToLaunch!="") {
+		((MainMenu*)mainMenu)->reactickleSelected(nextOneToLaunch);
+		nextOneToLaunch = "";
+	}
+#endif
 	float crossFadeTime = ofGetElapsedTimef() - crossFadeStartTime;
 	
 	// if we're crossfading do this:
@@ -193,6 +210,7 @@ void ReactickleApp::mouseReleased(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ReactickleApp::touchDown(ofTouchEventArgs &touch){
+	if(!enabled) return;
 	if(currentApp!=mainMenu) {
 		if(backButton.touchDown(touch.x, touch.y, touch.id)) {
 			return;
@@ -203,6 +221,7 @@ void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 
 //--------------------------------------------------------------
 void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
+	if(!enabled) return;
 	if(currentApp!=mainMenu) {
 		if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
 			return;
@@ -213,6 +232,7 @@ void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
 
 //--------------------------------------------------------------
 void ReactickleApp::touchUp(ofTouchEventArgs &touch){
+	if(!enabled) return;
 	if(currentApp!=mainMenu) {
 		if(backButton.touchUp(touch.x, touch.y, touch.id)) {
 			return;

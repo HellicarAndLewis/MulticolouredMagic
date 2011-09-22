@@ -33,7 +33,7 @@ private:
 	
 	int		threshold;
 	float	amount;
-	static const int NUM_PAINTER_COLOURS = 5;
+	static const int NUM_PAINTER_COLOURS = 7;
 	ofColor colours[NUM_PAINTER_COLOURS];
 	int colourIndex;
 };

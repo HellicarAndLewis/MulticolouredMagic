@@ -49,11 +49,17 @@ public:
 	
 	ofVideoGrabber vidGrabber;
 	ofxCvColorImage colorImg;
+#ifndef TARGET_OF_IPHONE
+	ofxCvGrayscaleImage depthImg;
+	ofxCvGrayscaleImage threshImg;
+	float depthThreshold;
+#endif
 	bool hasCamera;
 	
 	// button event (for back button)
 	void buttonPressed(string name);
 	
+	void keyPressed(int key);
 protected:
 //#ifndef TARGET_IPHONE_SIMULATOR
 	KinectOrCamera kinect;

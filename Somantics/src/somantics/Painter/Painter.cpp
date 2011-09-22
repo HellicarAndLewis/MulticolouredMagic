@@ -1,6 +1,7 @@
 
 #include "Painter.h"
 #include "constants.h"
+#include "Settings.h"
 
 #define VISION_WIDTH  320
 #define VISION_HEIGHT 240
@@ -15,13 +16,13 @@ void Painter::setup(){
 	
 	// add all the colours to the list
 	colourIndex = 0;
-	colours[0] = ofColor(255, 0, 0);
-	colours[1] = ofColor(255, 255, 0);
-	colours[2] = ofColor(0, 255, 255);
-	colours[3] = ofColor(0, 255, 0);
-	colours[4] = ofColor(0, 0, 255);
-
-
+	colours[0] = ofColor::fromHex(0x4D1965);
+	colours[1] = ofColor::fromHex(0x0E2356);
+	colours[2] = ofColor::fromHex(0xFFEC00);
+	colours[3] = ofColor::fromHex(0x6D1B00);
+	colours[4] = ofColor::fromHex(0xE50043);
+	colours[5] = ofColor::fromHex(0x74AF27);	
+	colours[6] = ofColor::fromHex(0xED6B06);
 	
 	scaledImage.allocate(VISION_WIDTH, VISION_HEIGHT);
 	grayImage.allocate(VISION_WIDTH, VISION_HEIGHT);
@@ -40,8 +41,11 @@ void Painter::update(){
 	
 	if(colorImg!=NULL) {
 		scaledImage.scaleIntoMe(*colorImg);
+#ifdef TARGET_OF_IPHONE	
 		grayImage = scaledImage;
-
+#else 
+		grayImage.scaleIntoMe(*depthImg);
+#endif
 
 		// take the abs value of the difference between background and incoming and then threshold:
 		grayDiff.absDiff(grayBg, grayImage);
@@ -86,7 +90,7 @@ void Painter::update(){
 			float totalCount = canvas.width*canvas.height;
 			float proportionOfMatchedPixels = (float)matchCount/totalCount;
 		//	printf("Match count: %f%%\n", proportionOfMatchedPixels*100.f);
-			if(proportionOfMatchedPixels>.4) {
+			if(proportionOfMatchedPixels>.26) {
 				// change colour
 				nextColour();
 			}
@@ -109,12 +113,13 @@ void Painter::draw() {
 	ofSetHexColor(0xFFFFFF);
 	canvas.draw(0,0,WIDTH, HEIGHT);
 	ofEnableAlphaBlending();
+	glColor4f(1, 1, 1, 0.2);
+	//glBlendFunc(GL_DST_COLOR, GL_SRC_COLOR);
+	scaledImage.draw(0, 0, WIDTH, HEIGHT);
+	//ofEnableAlphaBlending();
+	//glColor4f(1, 1, 1, 0.75);
+	//canvas.draw(0,0,WIDTH, HEIGHT);
 
-	glBlendFunc(GL_DST_COLOR, GL_SRC_COLOR);
-	grayImage.draw(0, 0, WIDTH, HEIGHT);
-	ofEnableAlphaBlending();
-	glColor4f(1, 1, 1, 0.75);
-	canvas.draw(0,0,WIDTH, HEIGHT);
 }
 
 

@@ -11,7 +11,13 @@
 #include "constants.h"
 #include "ImageObject.h"
 #include "SimpleButton.h"
+
+// ugh
+#ifdef TARGET_OF_IPHONE
 #include "iPhoneUtils.h"
+#else
+#define launchUrl ofLaunchBrowser
+#endif
 
 class AboutPage: public Reactickle, public SimpleButtonListener {
 public:

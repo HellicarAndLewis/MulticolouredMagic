@@ -1,10 +1,14 @@
 #include "Windmills.h"
 #include "constants.h"
+#include "ColorPicker.h"
+#include "Settings.h"
+
 //--------------------------------------------------------------
 void Windmills::setup(){
-	
+
 	windmillsX = 30;
 	windmillsY = 25;
+
 	
 	float w = WIDTH;
 	float h = HEIGHT;
@@ -23,6 +27,13 @@ void Windmills::setup(){
 		}
 	}
 	
+#ifndef TARGET_OF_IPHONE
+	opticalFlow.allocate(VISION_WIDTH/2, VISION_HEIGHT/2);
+	grey.allocate(VISION_WIDTH, VISION_HEIGHT);
+	curr.allocate(VISION_WIDTH/2, VISION_HEIGHT/2);
+	prev.allocate(VISION_WIDTH/2, VISION_HEIGHT/2);
+#endif
+	
 }
 int Windmills::toWindmillIndex(int x, int y) {
 	return x*windmillsX + y;
@@ -40,14 +51,40 @@ void Windmills::update(){
 																	 + windmills[toWindmillIndex(x, y+1)].rotationSpeed)/5;
 		}
 	}*/
+	
+#ifndef TARGET_OF_IPHONE
+	
+	if(colorImg!=NULL) {
+		grey = *colorImg;
+		curr.scaleIntoMe(grey);
+	}
+	opticalFlow.calc(prev, curr, 3);
+	prev = curr;
+	opticalFlow.blur(4);
+	for(int i = 0; i < windmills.size(); i++) {
+
+		float cvX = ofMap(windmills[i].pos.x, 0, WIDTH, 0, VISION_WIDTH/2);
+		float cvY = ofMap(windmills[i].pos.y, 0, HEIGHT, 0, VISION_HEIGHT/2);
+		ofVec2f force;
+		opticalFlow.forceAtPos(cvX, cvY, &force.x, &force.y);
+		//force = ofVec2f();
+		if(force.length()>1) {
+			windmills[i].applyForce(force);
+		}
+		
+	}
+#endif
 }
 
 //--------------------------------------------------------------
 void Windmills::draw(){
 	ofBackground(255);
+	int color = ColorPicker::colors[(int)(Settings::getInstance()->settings["fgColor"])];
+	ofColor c = ofColor::fromHex(color);
 	for(int i = 0; i < windmills.size(); i++) {
-		windmills[i].draw();
+		windmills[i].draw(c);
 	}
+	//opticalFlow.draw(0, 0, WIDTH, HEIGHT);
 }
 
 bool Windmills::touchDown(float x, float y, int touchId) {

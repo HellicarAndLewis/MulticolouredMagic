@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script language="javascript" src="jquery-1.4.2.js"></script>
+		<script language="javascript">
+			function get(url) {
+				$.get(url, function(data) { alert(data); });
+			}
+		</script>
+	</head>
+	
+	<body>
+	<h1>ofxWebServer Example</h1>
+	<hr />
+	<ul>
+		<li><a href="javascript:get('/actions/?color=red');">RED</a></li>
+		<li><a href="javascript:get('/actions/?color=green');">GREEN</a></li>
+		<li><a href="javascript:get('/actions/?color=blue');">BLUE</a></li>
+	</ul>
+	
+	</body>
+</html>

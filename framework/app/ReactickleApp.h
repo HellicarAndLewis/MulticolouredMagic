@@ -26,18 +26,18 @@
 //OSC things
 #ifndef TARGET_OF_IPHONE
 #include "ofxOsc.h"
+#include "ofxWebServer.h"
 #endif
 
 class ReactickleApp: 
 #ifdef TARGET_OF_IPHONE
 public ofxiPhoneApp 
 #else
-public ofBaseApp
+public ofBaseApp, public ofxWSRequestHandler
 #endif
 
 {
 public:
-	
 	// call this in your reactickle app setup
 	void setupApp(ReactickleApp *instance, string appName);
 #ifndef TARGET_OF_IPHONE
@@ -50,6 +50,8 @@ public:
 	void mouseDragged(int x, int y, int button);
 	void mousePressed(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
+	ofxWebServer webserver;
+	void httpGet(string url);
 #endif
 	
 	// these will redirect to explicit versions e.g. touchDown(float x, float y, int id);
@@ -73,12 +75,14 @@ public:
 	void gotFocus();
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
-	
+	void setEnabled(bool enabled) { this->enabled = enabled; }
 #ifndef TARGET_OF_IPHONE
     //more osc fun
     ofxOscSender sender;
 #endif    
 protected:
+	
+	bool enabled;
 	
 	Centerer centerer;
 	

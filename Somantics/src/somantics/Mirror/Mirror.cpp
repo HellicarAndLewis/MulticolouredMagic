@@ -18,6 +18,7 @@
 Mirror::Mirror(int type) {
 	this->type = type;
 	buffer = NULL;
+	timeOfLastStar = -100;
 }
 
 Mirror::~Mirror() {
@@ -113,7 +114,11 @@ void Mirror::update() {
 
 
 bool Mirror::touchDown(float x, float y, int touchId) {
-	star = 2*(int)ofMap(x, 0, WIDTH, 1, 10);
+	int newStar = 2*(int)ofMap(x, 0, WIDTH, 1, 10);
+	if(newStar!=star) {
+		timeOfLastStar = ofGetElapsedTimef();
+	}
+	star = newStar;
 	offset = ofMap(y, 0, HEIGHT, 0, 1);
 	return true;
 }
@@ -146,7 +151,7 @@ void Mirror::draw() {
 		
 		
 		
-		
+
 		
 		
 		
@@ -211,7 +216,7 @@ void Mirror::draw() {
 			float realOffset = 0.5;
 			// normalized distance from the centre (half the width of the above 'V')
 			float dist = ABS((float)image.getHeight()*tan(ofDegToRad(angle)*0.5))/(float)image.getHeight();
-			
+
 			
 			// the realOffset is where the (normalized) middle of the 'V' is on the x-axis
 			realOffset = ofMap(offset, 0, 1, dist, 1-dist);
@@ -245,7 +250,25 @@ void Mirror::draw() {
 		
 		image.getTextureReference().unbind();
 		
+		float timeSinceLastStar = ofGetElapsedTimef() - timeOfLastStar;
 		
+		if(timeSinceLastStar<1) {
+			glLineWidth(3);
+			glColor4f(1, 1, 1, ofMap(timeSinceLastStar, 0, 1, 1, 0));
+			if(star>2) {
+				glPushMatrix();
+				glTranslatef(WIDTH/2, HEIGHT/2, 0);
+			
+				for(int i = 0; i < star; i++) {
+					float angle = ofMap(i, 0, star, 0, PI*2);
+					ofLine(0, 0, (HEIGHT/2)*cos(angle), (HEIGHT/2)*sin(angle));
+				}
+				glPopMatrix();
+			} else {
+				ofLine(WIDTH/2, 0, WIDTH/2, HEIGHT);
+			}
+			glLineWidth(1);
+		}
 		// pop normalized tex coords
 		if(!usingNormTexCoords) {
 			ofDisableNormalizedTexCoords();

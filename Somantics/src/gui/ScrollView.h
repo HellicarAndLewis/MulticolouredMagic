@@ -10,8 +10,10 @@
 class ScrollView: public InteractiveObject {
 public:
 	SimpleButtonListener *listener;
+	bool scrollingEnabled;
 	void setup(float x, float y, float width, float height, int itemsPerCol = 3) {
 		
+		scrollingEnabled = true;
 		listener = NULL;
 		scrollOffset = 0;
 
@@ -83,9 +85,16 @@ public:
 		
 		
 		for(int i = 0; i < items.size(); i++) {
-			int col = i / itemsPerCol;
-			int row = i % itemsPerCol;
-			items[i]->x = colWidth*col + scrollOffset + PADDING;
+			int row = 0;
+			if(i>4) row = 2;
+			else if(i>2) row = 1;
+
+			
+			int col = i;
+			if(i>4) col = i - 5;
+			else if(i>2) col = i - 3;
+			
+			items[i]->x = colWidth*col + scrollOffset + PADDING + x;
 			items[i]->y = rowHeight*row + y + PADDING;
 		
 		}
@@ -93,7 +102,7 @@ public:
 	
 	
 	bool touchDown(float x, float y, int touchId) {
-		if(inside(x, y)) {
+		if(scrollingEnabled && inside(x, y)) {
 			touchX = x;
 			touching = true;
 		}
@@ -106,13 +115,16 @@ public:
 	}
 	
 	bool touchMoved(float x, float y, int touchId) {
-		if(!inside(x, y)) {
-			touching = false;
-			return false;
+		if(scrollingEnabled) {
+			
+			if(!inside(x, y)) {
+				touching = false;
+				return false;
+			}
+			deltaX = x - touchX;
+			scrollOffset += deltaX;
+			touchX = x;
 		}
-		deltaX = x - touchX;
-		scrollOffset += deltaX;
-		touchX = x;
 		for(int i = 0; i < items.size(); i++) {
 			if(items[i]->touchMoved(x, y, touchId)) {
 				return true;
@@ -122,7 +134,9 @@ public:
 	}
 	
 	bool touchUp(float x, float y, int touchId) {
-		touching = false;
+		if(scrollingEnabled) {
+			touching = false;
+		}
 		for(int i = 0; i < items.size(); i++) {
 			if(items[i]->touchUp(x, y, touchId)) {
 				return true;
