@@ -23,7 +23,7 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	gain = 1;
 	crossFadeStartTime = -100;
 	volumeThreshold = 0.3;
-	
+	volume = 0;
 	setupGraphics();
 	setupOrientation();
 #ifdef TARGET_OF_IPHONE

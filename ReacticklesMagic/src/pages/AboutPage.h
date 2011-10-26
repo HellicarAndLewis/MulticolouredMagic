@@ -11,6 +11,12 @@
 #include "constants.h"
 #include "ImageObject.h"
 #include "SimpleButton.h"
+// ugh
+#ifdef TARGET_OF_IPHONE
+#include "iPhoneUtils.h"
+#else
+#define launchUrl ofLaunchBrowser
+#endif
 
 class AboutPage: public Reactickle, public SimpleButtonListener {
 public:
@@ -19,7 +25,15 @@ public:
 	void buttonPressed(string name) ;
 	
 	ImageObject bgImage;
+	ImageObject aboutImage;
 	ImageObject logo;
 	ImageObject aboutContent;
-	SimpleButton youtubeButton;
+	
+	
+	SimpleButton reacticklesLink;
+	SimpleButton videoButton;
+	SimpleButton twitterButton;
+	SimpleButton flickrButton;
+	SimpleButton vimeoButton;
+	
 };

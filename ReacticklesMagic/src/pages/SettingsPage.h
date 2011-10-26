@@ -18,7 +18,6 @@ public:
 	void setup();
 	void buttonPressed(string name);
 	ColorPicker colorPicker;
-	SimpleButton resetButton;
 	BrightnessSlider slider;
 	VolumeSlider volumeSlider;
 	

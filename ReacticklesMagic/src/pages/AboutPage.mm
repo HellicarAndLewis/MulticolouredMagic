@@ -24,14 +24,30 @@ void AboutPage::start() {
 	logo.x = WIDTH/2 - logo.width/2;
 	logo.y = 35;
 	
-	aboutContent.setup(ofVec2f(0, 200), IMAGE_ROOT + "aboutContent.png");
-	youtubeButton.setup("youtube", ofVec2f(587, 441), IMAGE_ROOT + "youtube.png", "youtubeDown.png");
-	youtubeButton.y = 441;
-	youtubeButton.setListener(this);
+	aboutContent.setup(ofVec2f(20, 50), IMAGE_ROOT + "aboutContent.png");
+	videoButton.setup("video", ofVec2f(787, 241), IMAGE_ROOT + "video.png");
+	videoButton.y = 201;
+	videoButton.setListener(this);
+	
+	
+	twitterButton.setup("twitter",ofVec2f(32+45+20, 32+473+16+40), IMAGE_ROOT+"twitter.png");
+	vimeoButton.setup("vimeo",ofVec2f(119+32+20, 473+32+16+40), IMAGE_ROOT+"vimeo.png");
+	flickrButton.setup("flickr",ofVec2f(195+32+20, 32+473+16+40), IMAGE_ROOT+"flickr.png");
+	reacticklesLink.setup("reactickles", ofVec2f(), "");
+	reacticklesLink.x = 121;
+	reacticklesLink.y = 448;
+	reacticklesLink.width = 142;
+	reacticklesLink.height = 20;
+	
+	
 	add(bgImage);
 	add(logo);
-	add(aboutContent);
-	add(youtubeButton);
+	add(videoButton);		videoButton.setListener(this); 
+	add(aboutContent);		
+	add(vimeoButton);		vimeoButton.setListener(this);
+	add(twitterButton);		twitterButton.setListener(this);
+	add(flickrButton);		flickrButton.setListener(this);
+	add(reacticklesLink);	reacticklesLink.setListener(this);
 	
 }
 #ifdef TARGET_OF_IPHONE
@@ -41,11 +57,17 @@ void ofxiPhoneLaunchBrowser(string url) {
 }
 #endif
 void AboutPage::buttonPressed(string name) {
-	if(name=="youtube") {
-#ifdef TARGET_OF_IPHONE
-		ofxiPhoneLaunchBrowser("http://www.youtube.com/watch?v=nKfj7SfV9sI");
-#else
-		ofLaunchBrowser("http://www.youtube.com/watch?v=nKfj7SfV9sI");
-#endif
+	if(name=="video") {
+		launchUrl("http://vimeo.com/user1978699");
+	} else if(name=="vimeo") {
+		launchUrl("http://vimeo.com/user1978699");
+	} else if(name=="reactickles") {
+		launchUrl("http://reactickles.org/");
+	} else if(name=="flickr") {
+		launchUrl("http://www.flickr.com/photos/reactickles/");
+	} else if(name=="twitter") {
+		launchUrl("http://twitter.com/reactickle");
 	}
+	
+
 }

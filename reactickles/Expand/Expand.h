@@ -45,7 +45,7 @@ public:
 		float timeNow = ofGetElapsedTimef();
 		
 		float timeSinceLastInteraction = timeNow - timeOfLastInteraction;        
-		
+		printf("volume: %f\n", volume);
 		if((volume > volumeThreshold) && (timeSinceLastInteraction > 0.3f )){
             touchDown(WIDTH/2.f, HEIGHT/2.f, 0); //simulate a touch in the centre of the screen
 		}
@@ -139,7 +139,7 @@ public:
 				}
 				shapeScale += 0.5f;
 				
-				// make triangles and crosses grow faster
+				// make triangles, hearts and crosses grow faster
 				if((currentShapeType==MAGIC_CROSS || currentShapeType==MAGIC_TRIANGLE || currentShapeType==MAGIC_HEART) && shapeScale>2) shapeScale += 0.5;
 
 				if(shapeScale >= maxScale){

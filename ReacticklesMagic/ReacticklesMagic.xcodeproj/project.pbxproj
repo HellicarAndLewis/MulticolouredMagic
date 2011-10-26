@@ -75,6 +75,7 @@
 		EAD4940113A8B75700D312FE /* Settings.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD493F313A8B75700D312FE /* Settings.mm */; };
 		EAD4940213A8B75700D312FE /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD493F413A8B75700D312FE /* util.cpp */; };
 		EAD4940C13A8B7A200D312FE /* testAppEvents.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4940B13A8B7A200D312FE /* testAppEvents.mm */; };
+		EAF8E8AF1458395500876802 /* iPhoneUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAF8E8AD1458395500876802 /* iPhoneUtils.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -254,6 +255,8 @@
 		EAD493F413A8B75700D312FE /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
 		EAD493F513A8B75700D312FE /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		EAD4940B13A8B7A200D312FE /* testAppEvents.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testAppEvents.mm; sourceTree = "<group>"; };
+		EAF8E8AD1458395500876802 /* iPhoneUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iPhoneUtils.mm; sourceTree = "<group>"; };
+		EAF8E8AE1458395500876802 /* iPhoneUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -923,6 +926,8 @@
 		EAD493ED13A8B75700D312FE /* util */ = {
 			isa = PBXGroup;
 			children = (
+				EAF8E8AD1458395500876802 /* iPhoneUtils.mm */,
+				EAF8E8AE1458395500876802 /* iPhoneUtils.h */,
 				EAD493EE13A8B75700D312FE /* ImageCache.cpp */,
 				EAD493EF13A8B75700D312FE /* ImageCache.h */,
 				EAD493F013A8B75700D312FE /* Properties.cpp */,
@@ -1075,6 +1080,7 @@
 				EAD4940213A8B75700D312FE /* util.cpp in Sources */,
 				EAD4940C13A8B7A200D312FE /* testAppEvents.mm in Sources */,
 				EA2FABF613AA063400CB21FA /* ReactickleButton.cpp in Sources */,
+				EAF8E8AF1458395500876802 /* iPhoneUtils.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

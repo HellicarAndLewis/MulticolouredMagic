@@ -38,10 +38,6 @@ void SettingsPage::setup() {
 	
 	
 	
-	resetButton.setup("reset", ofVec2f(987, 53), IMAGE_ROOT+"reset.png", IMAGE_ROOT+"resetDown.png");
-	resetButton.setListener(this);
-	
-	
 	add(bgImage);	
 	add(colorPicker);
 	add(slider);
@@ -52,16 +48,13 @@ void SettingsPage::setup() {
 	add(logo);
 
 	
-	add(resetButton);
+
 
 }
 
 
 void SettingsPage::buttonPressed(string name) {
-	if(name=="reset") {
-		Settings::getInstance()->reset();
-		colorPicker.reset();
-	}
+	
 }
 
 	   
