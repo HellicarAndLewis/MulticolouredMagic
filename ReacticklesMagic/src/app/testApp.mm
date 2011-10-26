@@ -218,6 +218,9 @@ void testApp::buttonPressed(string name) {
 
 void testApp::launchReactickle(Reactickle *reactickle) {
 	switchReactickle(reactickle);
+	if(isReactickle(reactickle)) {
+		reactickle->setMode(modeDisplay.getMode());
+	}
 }
 
 

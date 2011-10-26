@@ -36,6 +36,9 @@ public:
 		this->mode = mode;
 		lastTimeChanged = ofGetElapsedTimef();
 	}
+	int getMode() {
+		return mode;
+	}
 	
 	void draw() {
 		float timeSinceLastChange = ofGetElapsedTimef() - lastTimeChanged;
