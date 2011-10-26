@@ -117,6 +117,9 @@
 		EA68FEE413D48147008A7128 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68FEE313D48146008A7128 /* Accelerate.framework */; };
 		EA6AD451142394E60017FA7E /* iPhoneUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6AD44F142394E60017FA7E /* iPhoneUtils.mm */; };
 		EA6C16D613CB1084001DBE32 /* opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C16D513CB1084001DBE32 /* opencv.a */; };
+		EA77B9B9142C7F6400109791 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = EA77B9B8142C7F6300109791 /* Icon-72.png */; };
+		EA77B9BB142C7F6E00109791 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EA77B9BA142C7F6E00109791 /* Default-Portrait~ipad.png */; };
+		EA77B9BD142C7F8200109791 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EA77B9BC142C7F8200109791 /* Default-Landscape~ipad.png */; };
 		EAD4976213A8D9B100D312FE /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974613A8D9B100D312FE /* Apps.mm */; };
 		EAD4976313A8D9B100D312FE /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974813A8D9B100D312FE /* testApp.mm */; };
 		EAD4976413A8D9B100D312FE /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4974D13A8D9B100D312FE /* AboutPage.mm */; };
@@ -459,6 +462,9 @@
 		EA6AD450142394E60017FA7E /* iPhoneUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneUtils.h; sourceTree = "<group>"; };
 		EA6AD4521423A6230017FA7E /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
 		EA6C16D513CB1084001DBE32 /* opencv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = opencv.a; sourceTree = "<group>"; };
+		EA77B9B8142C7F6300109791 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		EA77B9BA142C7F6E00109791 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		EA77B9BC142C7F8200109791 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		EAD4974613A8D9B100D312FE /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
 		EAD4974713A8D9B100D312FE /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		EAD4974813A8D9B100D312FE /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
@@ -565,6 +571,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EA77B9BC142C7F8200109791 /* Default-Landscape~ipad.png */,
+				EA77B9BA142C7F6E00109791 /* Default-Portrait~ipad.png */,
+				EA77B9B8142C7F6300109791 /* Icon-72.png */,
 				BB24DDC910DA781C00E9C588 /* ofxiphone-Info.plist */,
 				EAD4976B13A8D9B900D312FE /* framework */,
 				EAD4974413A8D9B100D312FE /* src */,
@@ -1752,6 +1761,9 @@
 				EA23EB33139CF4740071404C /* install.xml in Resources */,
 				EA3ADA3213B395E600F843E2 /* install.xml in Resources */,
 				EA620E76142206BA0034BA96 /* install.xml in Resources */,
+				EA77B9B9142C7F6400109791 /* Icon-72.png in Resources */,
+				EA77B9BB142C7F6E00109791 /* Default-Portrait~ipad.png in Resources */,
+				EA77B9BD142C7F8200109791 /* Default-Landscape~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2295,7 +2307,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Wendy Keay-Bright Keay-Bright";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wendy Keay-Bright Keay-Bright (V6ZJDQUB74)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wendy Keay-Bright Keay-Bright";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
@@ -2335,7 +2347,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "D84CF64A-5D52-4453-8A00-C0E77AF86A66";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AE8D609C-CD55-40C4-A909-F81871228198";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D84CF64A-5D52-4453-8A00-C0E77AF86A66";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = "App Store";

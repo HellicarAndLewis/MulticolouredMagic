@@ -14,10 +14,10 @@ void Silhouettes::setup(){
 	Silhouette::setup();
 	ofEnableNormalizedTexCoords();
 
-	colors[0].setHex(0xFF0000);
-	colors[1].setHex(0xFFFF00);
-	colors[2].setHex(0xFF00FF);
-	colors[3].setHex(0x0000FF);
+	
+	
+	
+	
 	
 	float w = WIDTH;
 	float h = HEIGHT;
@@ -75,8 +75,14 @@ void Silhouettes::draw(){
 #endif
 	
 #ifdef TARGET_OF_IPHONE
+	int colorIndex = Settings::getInstance()->settings["fgColor"];
 	for(int i = 0; i < silhouettes.size(); i++) {
-		ofSetColor(colors[i%NUM_COLORS]);
+
+		if(colorIndex==20) {
+			ofSetColor(255, 0, 0);
+		} else {
+			ofSetHexColor(ColorPicker::colors[colorIndex]);
+		}
 		silhouettes[i].draw();
 		if(silhouettes[i].dead()) {
 			silhouettes.erase(silhouettes.begin()+i);
@@ -89,7 +95,7 @@ void Silhouettes::draw(){
 
 	for(int i = 0; i < contourFinder.blobs.size(); i++) {
 		if(colorIndex==20) {
-			ofSetColor(colors[i%NUM_COLORS]);
+			ofSetColor(255, 0, 0);
 		} else {
 			ofSetHexColor(ColorPicker::colors[colorIndex]);
 		}

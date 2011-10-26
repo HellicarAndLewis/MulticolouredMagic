@@ -21,8 +21,6 @@ public:
 	void draw();
 
 	void stop();
-	const static int NUM_COLORS = 4;
-	ofColor colors[NUM_COLORS];
 	bool touchDown(float x, float y, int touchId);
 	bool touchUp(float x, float y, int touchId);
 	bool touchMoved(float x, float y, int touchId);
