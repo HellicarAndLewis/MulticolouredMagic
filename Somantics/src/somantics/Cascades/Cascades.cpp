@@ -1,105 +1,79 @@
-/*
- *  Cascades.cpp
- *  SomanticsMac
- *
- *  Created by base on 13/08/11.
- *  Copyright 2011 __MyCompanyName__. All rights reserved.
- *
- */
-
 #include "Cascades.h"
 
+void Cascades::setup(){
 
-void Cascades::setup()
-{
-/*
-	// register touch events
-	ofRegisterTouchEvents(this);
+	vidGrabber.setVerbose(true);
+	vidGrabber.initGrabber(320,240);
+
+    colorImg.allocate(320,240);
+	grayImage.allocate(320,240);
+	grayBg.allocate(320,240);
+	grayDiff.allocate(320,240);
 	
-	// initialize the accelerometer
-	ofxAccelerometer.setup();
-	
-	//iPhoneAlerts will be sent to this.
-	ofxiPhoneAlerts.addListener(this);
-	
-	//If you want a landscape oreintation 
-	//iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
-*/	
- 
-	ofBackground(127,127,127);
+	ofSetVerticalSync(true);
 	
 	box2d.init();
 	box2d.setGravity(0, 10);
-	//box2d.createBounds();
-	box2d.setFPS(40.0);
-	
-	radius = 40.f;
-		
-	float x = 200.f;
-	float y = 200.f;
+	box2d.setFPS(30.0);
 	
 	bodyShape = NULL;
 	
+	bLearnBakground = true;
+	threshold = 80;
+	
+	debugging = false;
+	contours = false;
+	
 	waterfallLEdge = 10;
 	waterfallREdge = 400;
-	
-	scaledImage.allocate(VISION_WIDTH, VISION_HEIGHT);
-	grayImage.allocate(VISION_WIDTH, VISION_HEIGHT);
-	grayBg.allocate(VISION_WIDTH, VISION_HEIGHT);
-	grayDiff.allocate(VISION_WIDTH, VISION_HEIGHT);
-	canvas.allocate(VISION_WIDTH, VISION_HEIGHT);
-
-	threshold = 70;
-	amount = 0.9;
-
 }
-
 
 void Cascades::update()
 {
-
-	ofVec2f mouse(ofGetMouseX(), ofGetMouseY());
-	
+	ofBackground(100,100,100);
 	float height = ofGetHeight();
 	
 	vector<ofxBox2dCircle>::iterator cit = circles.begin();
-	while( cit != circles.end()) {
-		if(cit->getPosition().y > height) {
+	
+	while( cit != circles.end()) 
+	{
+		if(cit->getPosition().y > height + 100) {
 			circles.erase(cit);
 		}
 		++cit;
 	}
 	
-	if( circles.size() < 100 ) { // > 100 on screen
+	if( circles.size() < 50 ) { // > 100 on screen
 		ofxBox2dCircle circle;
-		circle.setPhysics(3.0, 0.5, 1.0);
-		float pos = ofRandom(waterfallREdge - waterfallLEdge) + waterfallLEdge;
-		circle.setup(box2d.getWorld(), pos, -100, radius);
+		circle.setPhysics(1, 0.5, 0.1);
+		float pos = ofRandom(waterfallREdge - waterfallLEdge) + 10;
+		circle.setup(box2d.getWorld(), pos, -100, 80);
 		circles.push_back(circle); // add a new one
 	}
 	
 	box2d.update();
-	
-	grayBg.convertToRange(0, 255.f*(1.f - amount));
-	grayImage.convertToRange(0, 255.f*(amount));
-	
-	// grayBg = grayBg * 0.9 + grayImage * 0.1
-	grayBg += grayImage;
-	
-	if(colorImg!=NULL) {
-		scaledImage.scaleIntoMe(*colorImg);
-		grayImage = scaledImage;
-		
+
+	vidGrabber.grabFrame();
+	bool newFrame = vidGrabber.isFrameNew();
+
+	if (newFrame){
+
+		colorImg.setFromPixels(vidGrabber.getPixels(), 320, 240);
+		colorImg.mirror(false, true);
+
+        grayImage = colorImg;
+		if (bLearnBakground == true){
+			grayBg = grayImage;		// the = sign copys the pixels from grayImage into grayBg (operator overloading)
+			bLearnBakground = false;
+		}
 		grayDiff.absDiff(grayBg, grayImage);
 		grayDiff.threshold(threshold);
-		
-		checkBlobs();
-		
+		contourFinder.findContours(grayDiff, 20, (340*240)/3, 10, true);	// find holes
 	}
-	
+
+	checkBlobs();
 }
 
-//--------------------------------------------------------------
 void Cascades::draw(){
 	
 	ofSetColor(255, 255, 255);
@@ -108,23 +82,24 @@ void Cascades::draw(){
 	vector<ofxBox2dCircle>::iterator cit = circles.begin();
 	while( cit != circles.end()) {
 		//cit->draw();
-		ofCircle(cit->getPosition().x, cit->getPosition().y, 80);
+		ofCircle(cit->getPosition().x, cit->getPosition().y, 10);
 		++cit;
 	}
 	
 	ofSetColor(0, 0, 255);
-	ofNoFill();
 	
 	vector<ofxCvBlob>::iterator c_it = contourFinder.blobs.begin();
 	
-	while(c_it != contourFinder.blobs.end() ) {
-		c_it->draw();
-		++c_it;
+	if(contours) {
+		while(c_it != contourFinder.blobs.end() ) {
+			c_it->draw();
+			++c_it;
+		}
 	}
 	
 	if(bodyShape != NULL) {
 		bodyShape->draw();
-	
+		
 		ofSetColor(0, 0, 255);
 		ofFill();
 		vector <ofPoint>::iterator pit = bodyShape->getVertices().begin();
@@ -136,11 +111,10 @@ void Cascades::draw(){
 	}
 }
 
-
 void Cascades::checkBlobs() 
 {
 	
-	contourFinder.findContours(grayDiff, 120, (scaledImage.getWidth()*scaledImage.getHeight())/2, 5, false); // no holes
+	contourFinder.findContours(grayDiff, 120, (grayDiff.getWidth()*grayDiff.getHeight())/2, 5, false); // no holes
 	
 	if(contourFinder.blobs.size() < 1) return;
 	
@@ -154,90 +128,105 @@ void Cascades::checkBlobs()
 	
 	cout << " largest " <<  largest.area << " " << largest.pts.size() << endl;
 	
-	
-	// ------------------------------------------------
-	// TODO read up on box2d && update shape instead of delete
-	// and new(), seems like a complete waste
-	// ------------------------------------------------
-	
-	/*
-	int pCount = 0;
-	vector <ofPoint>::iterator pit = largest.pts.begin();
-	while(pit != largest.pts.end() ) {
-		
-		if(bodyShape.getVertices().size() < pCount) {
-		
-			bodyShape.addVertex( *pit );
-		} else {
-				
-			ofPoint closest = bodyShape.getClosestPoint( *pit );
-			closest.x = pit->x; // need something smarter here
-			closest.y = pit->y; // need something smarter here
+
+	if(!debugging)
+	{
+		if(bodyShape) {
+			bodyShape->destroy();
+			delete bodyShape;
 		}
 		
-		++pit;
-		pCount++;
+		bodyShape = new ofxBox2dPolygon();
+		ofVec2f scaleUp(ofGetWidth()/320, ofGetHeight()/240);
+		
+		vector <ofPoint>::iterator pit = largest.pts.begin();
+		while(pit != largest.pts.end() )
+		{
+			// triangulatePolygonWithOutline(resampled, outline);??
+			bodyShape->addVertex( *pit * scaleUp );
+			++pit;
+		}
+		
+		bodyShape->simplify(20);
+		bodyShape->create(box2d.getWorld());
+		
+		cout << " is good shape " << bodyShape->isGoodShape() << " ";
+	
 	}
-	
-	if(pCount < bodyShape.getVertices().size()) {
-		bodyShape.getVertices().erase( bodyShape.getVertices().begin() + pCount, bodyShape.getVertices().end());
-	}*/
-	
-#ifndef DEBUG
-	if(bodyShape) {
-		bodyShape->destroy();
-		delete bodyShape;
-	}
-	
-	bodyShape = new ofxBox2dPolygon();
-	
-	vector <ofPoint>::iterator pit = largest.pts.begin();
-	while(pit != largest.pts.end() )
-	{
-		// triangulatePolygonWithOutline(resampled, outline);??
-		bodyShape->addVertex( *pit );
-		++pit;
-	}
-	bodyShape->simplify(15);
-
-	bodyShape->create(box2d.getWorld());
-	
-	cout << " is good shape " << bodyShape->isGoodShape() << " ";
-	
-#endif
 	
 }
 
-bool Cascades::touchDown(float x, float y, int touchId)
-{
-	
-#ifdef DEBUG
-	if(bodyShape) {
-		bodyShape->destroy();
-	
-		delete bodyShape;
+void Cascades::mouseDragged(int x, int y, int button){
+
+	if(debugging) {
+		
+		if(bodyShape) 
+		{
+			bodyShape->destroy();
+			delete bodyShape;
+		}
+		bodyShape = new ofxBox2dPolygon();
+		
+		ofVec2f ul( x - 50.f, y-50.f);
+		ofVec2f ur( x + 50.f, y-50.f);
+		ofVec2f lr( x + 50.f, y+50.f);
+		ofVec2f ll( x - 50.f, y+50.f);
+		
+		bodyShape->addVertex(ul);
+		bodyShape->addVertex(ur);
+		bodyShape->addVertex(lr);
+		bodyShape->addVertex(ll);
+		
+		bodyShape->create(box2d.getWorld());
+		
 	}
-	
-	bodyShape = new ofxBox2dPolygon();
-	
-	ofVec2f ul( x - 50.f, y-50.f);
-	ofVec2f ur( x + 50.f, y-50.f);
-	ofVec2f lr( x + 50.f, y+50.f);
-	ofVec2f ll( x - 50.f, y+50.f);
-	
-	bodyShape->addTriangle(ul, ur, lr);
-	bodyShape->addTriangle(ul, ll, lr);
-
-	bodyShape->create(box2d.getWorld());
-#endif
-	
 }
 
-bool Cascades::touchUp(float x, float y, int touchId)
-{
+void Cascades::mousePressed(int x, int y, int button){
+
+	if(debugging) {
+		
+		if(bodyShape) 
+		{
+			bodyShape->destroy();
+			delete bodyShape;
+		}
+		bodyShape = new ofxBox2dPolygon();
+		
+		ofVec2f ul( x - 50.f, y-50.f);
+		ofVec2f ur( x + 50.f, y-50.f);
+		ofVec2f lr( x + 50.f, y+50.f);
+		ofVec2f ll( x - 50.f, y+50.f);
+		
+		bodyShape->addVertex(ul);
+		bodyShape->addVertex(ur);
+		bodyShape->addVertex(lr);
+		bodyShape->addVertex(ll);
+		
+		bodyShape->create(box2d.getWorld());
+	
+	}
 }
 
-bool Cascades::touchMoved(float x, float y, int touchId)
-{
+void Cascades::keyPressed(int key){
+	
+	switch (key){
+		case ' ':
+			bLearnBakground = true;
+			break;
+		case '+':
+			threshold ++;
+			if (threshold > 255) threshold = 255;
+			break;
+		case '-':
+			threshold --;
+			if (threshold < 0) threshold = 0;
+			break;
+		case 'd':
+			debugging = !debugging;
+			break;
+		case 'c':
+			contours = !contours;
+			break;
+	}
 }
-
