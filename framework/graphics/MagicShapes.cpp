@@ -60,6 +60,7 @@ void drawHeart(ofVec2f centre, float size, float rotation) {
     // from: http://www.wolframalpha.com/input/?i=%281-%28|x|-1%29^2%29^0.5%3D-3%281-%28|x|%2F2%29^0.5%29^0.5
 
 	
+	
 	if(heartDisplayList==NULL) {
 		heartDisplayList = new ofPath();
 		heartDisplayList->moveTo(-2, heart1(-2));

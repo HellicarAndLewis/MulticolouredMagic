@@ -72,14 +72,19 @@ public:
                 drawShape(currentShapeType, centreOfBigShape, bigShapeRadius);
                 break;
             case 2:
-                if(whiteBg){
+                if(!whiteBg){// had to flip this because I couldn't get a heart to draw in white(?)
                     ofSetColor(ofColor::white);
                     ofRect(0, 0, WIDTH, HEIGHT);
                     ofSetColor(ofColor::black);
                 }else{
                     ofSetColor(ofColor::white);
                 }
-                drawShape(currentShapeType, centreOfBigShape, bigShapeRadius*shapeScale);                
+				
+				//if(currentShapeType==MAGIC_HEART) {
+				//	drawShape(MAGIC_CIRCLE, centreOfBigShape, bigShapeRadius*shapeScale);                
+				//} else {
+					drawShape(currentShapeType, centreOfBigShape, bigShapeRadius*shapeScale);                
+				//}
                 break;
             default:
                 break;
@@ -87,8 +92,10 @@ public:
         
         ofPopStyle(); //pop back what was there before
 	}
-    
+	
     bool touchDown(float x, float y, int touchId){  
+		
+		
 #ifndef TARGET_OF_IPHONE
         ofxOscMessage simpleMessage;
 #endif
@@ -116,16 +123,33 @@ public:
                 
                 timeOfLastInteraction = ofGetElapsedTimef();                
                 break;
+				
             case 2:
-                shapeScale += 0.5f;
-                
-                if(shapeScale >= 5.f){
-                    shapeScale = 1.f;
-                    nextShape();
-                    whiteBg = !whiteBg;
-                }
+				
+			{
+				float maxScale = 5;
+				// custom sizes for each shape to grow to
+				switch(currentShapeType) {
+					case MAGIC_CIRCLE: maxScale = 4; break;
+					case MAGIC_CROSS: maxScale = 4.5; break;
+					case MAGIC_TRIANGLE: maxScale = 7.4; break;
+					case MAGIC_HEART: maxScale = 6.0; break;
+					case MAGIC_HEXAGON: maxScale = 4.0; break;
+					case MAGIC_SQUARE: maxScale = 3.0; break;
+				}
+				shapeScale += 0.5f;
+				
+				// make triangles and crosses grow faster
+				if((currentShapeType==MAGIC_CROSS || currentShapeType==MAGIC_TRIANGLE || currentShapeType==MAGIC_HEART) && shapeScale>2) shapeScale += 0.5;
+
+				if(shapeScale >= maxScale){
+					shapeScale = 0.6;
+					nextShape();
+					whiteBg = !whiteBg;
+				}
 				timeOfLastInteraction = ofGetElapsedTimef();                
-                break;
+				break;
+			}
             default:
                 break;
         }
@@ -163,6 +187,7 @@ public:
         m.addIntArg( mode );
         ReactickleApp::instance->sender.sendMessage( m );
 #endif
+		shapeScale = 1.f;
     }
 	
 	float timeOfLastInteraction;
