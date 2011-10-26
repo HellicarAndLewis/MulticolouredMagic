@@ -93,7 +93,7 @@ void MainMenu::arrange() {
 	for(int i = 0; i < reactickleButtons.size(); i++) {
 		int col = i / itemsPerCol;
 		int row = i % itemsPerCol;
-		reactickleButtons[i]->x = colWidth*col + scrollOffset + PADDING;
+		reactickleButtons[i]->x = colWidth*col + scrollOffset + PADDING + 26;
 		reactickleButtons[i]->y = rowHeight*row + scrollRect.y + PADDING;
 	}
 }

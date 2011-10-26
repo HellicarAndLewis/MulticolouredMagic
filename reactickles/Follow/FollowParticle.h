@@ -25,7 +25,7 @@ public:
 	
 	void update();
 	
-	void attract(ofVec2f &point);
+	void attract(ofVec2f &point, float strength = 0.05);
 	
 	void draw();
 	bool isAlive();

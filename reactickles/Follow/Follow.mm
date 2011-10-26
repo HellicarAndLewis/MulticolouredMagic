@@ -88,7 +88,17 @@ void Follow::update() {
 		for(int j = 0; j < numParticles; j++) {
 			ofVec2f pos = ofVec2f(touches[i].x, touches[i].y);
 			//printf("%f, %f\n", pos.x, pos.y);
-			particles[j].attract(pos);
+			// when we're dealing with touches not from the camera, we
+			// need a faster attraction
+#ifdef TARGET_OF_IPHONE
+			if(mode!=2) {
+				particles[j].attract(pos, 1.5);
+			} else {
+				particles[j].attract(pos);
+			}
+#else 
+			particles[j].attract(pos); // default strength
+#endif
 		}
 	}
 	
@@ -204,7 +214,10 @@ void Follow::modeChanged() {
 		numParticles = 1;
 		particles[0].spawn(WIDTH*0.5, HEIGHT*0.5, mode);
 	} else if(mode==1) {
-		numParticles = 1;
+		numParticles = 5;
+		for(int i = 0; i < numParticles; i++) {
+			particles[i].spawn(ofRandomWidth(), ofRandomHeight(), mode, currShapeId);
+		}
 	} else if(mode==2) {
 		numParticles = NUM_SWARM_PARTICLES;
 		for(int i = 0; i < numParticles; i++) {

@@ -7,7 +7,6 @@
  */
 
 #include "Reactickle.h"
-#include "msaColor.h"
 
 class Change: public Reactickle {
     
@@ -24,7 +23,7 @@ class Change: public Reactickle {
 	void setup() {
 		
 //		noiseColour.setHSV(ofRandom(0.f,360.f), 1, 1);
-		noiseColour.set(0,0,0);
+		noiseColour.setHsb(0,0,0);
 	}
 	
 	bool touchDown(float x, float y, int id) {
@@ -39,14 +38,16 @@ class Change: public Reactickle {
 			}else{
 				noiseColour.set(255,255,255);
 			}
+			
 		}else if(mode == 1){
 			if(noiseColour == msaColor(0,0,0)){
-				noiseColour.setHSV(ofRandom(0,360), 1, 1);
+				noiseColour.setHsb(ofRandom(0,255), 255,255);
 			}else{
-				noiseColour.set(0,0,0);
-			}               
+				noiseColour.setHsb(0,0,0);
+			} 
+			
 		}else{
-			noiseColour.setHSV(ofRandom(0,360), 1, 1);                
+			noiseColour.setHsb(ofRandom(0,255), 255, 255);                
 		}
         
 #ifndef TARGET_OF_IPHONE
@@ -63,7 +64,7 @@ class Change: public Reactickle {
 		float timeNow = ofGetElapsedTimef();
 		
 		float timeSinceLastCircle = timeNow - timeOfLastNewCircle;
-		
+		printf("Volume:: %f\n", volume);
         if((volume > volumeThreshold) && (timeSinceLastCircle > 0.3f )){	
 			
             trigger();
@@ -71,7 +72,7 @@ class Change: public Reactickle {
 	}
 	
 	void draw() {
-		noiseColour.setGL();
+		ofSetColor(noiseColour);
 		ofRect(0, 0, WIDTH, HEIGHT);
 	}
     
@@ -90,5 +91,5 @@ class Change: public Reactickle {
 	
 	float timeOfLastNewCircle;
 	int colourPosition;
-	msaColor noiseColour;
+	ofColor noiseColour;
 };

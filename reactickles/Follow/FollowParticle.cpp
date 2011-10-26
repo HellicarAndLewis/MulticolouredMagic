@@ -125,7 +125,7 @@ void SwarmParticle::attract(ofVec2f &point) {
 	vel -= delta*magnitude*0.05*(1.f/mass);
 }*/
 
-void FollowParticle::attract(ofVec2f &point) {
+void FollowParticle::attract(ofVec2f &point, float strength /* = 0.05 */) {
 	ofVec2f delta = pos - point;
 	
 	float dist = delta.length();
@@ -143,5 +143,6 @@ void FollowParticle::attract(ofVec2f &point) {
 		magnitude = sqrt(farThreshold);
 	}
 	
-	vel -= delta*magnitude*0.05*(1.f/mass);
+	vel -= delta*magnitude*strength*(1.f/mass);
+//	vel -= delta*magnitude*0.05*(1.f/mass);
 }

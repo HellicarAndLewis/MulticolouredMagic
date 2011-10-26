@@ -13,11 +13,13 @@
 
 void SettingsPage::setup() {
 	
-	settingsTitle.setup(ofVec2f(39, 35+55), IMAGE_ROOT + "settingsTitle.png");	
-	colourPickerTitle.setup(ofVec2f(273, 115), IMAGE_ROOT + "colourPickerTitle.png");
+	settingsTitle.setup(ofVec2f(39, 35+55+20), IMAGE_ROOT + "settingsTitle.png");	
+	colourPickerTitle.setup(ofVec2f(273-18, 115+98), IMAGE_ROOT + "colourPickerTitle.png");
 	
 	
 	colorPicker.setup();
+	colorPicker.y += 108;
+	colorPicker.x -= 18;
 	slider.setup();
 	volumeSlider.setup();
 	

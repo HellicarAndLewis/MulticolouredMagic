@@ -59,7 +59,8 @@ float heart2(float x) {
 void drawHeart(ofVec2f centre, float size, float rotation) {
     // from: http://www.wolframalpha.com/input/?i=%281-%28|x|-1%29^2%29^0.5%3D-3%281-%28|x|%2F2%29^0.5%29^0.5
 
-	
+	float f[4];
+	glGetFloatv(GL_CURRENT_COLOR, f);
 	
 	if(heartDisplayList==NULL) {
 		heartDisplayList = new ofPath();
@@ -79,6 +80,7 @@ void drawHeart(ofVec2f centre, float size, float rotation) {
     if(rotation==0) glRotatef(rotation, 0, 0, 1);
     glScalef(size*0.25, -size*0.25, 1);
     glTranslatef(0, 1, 0);
+	heartDisplayList->setFillColor(ofColor(f[0]*255, f[1]*255, f[2]*255, 255));
 	heartDisplayList->draw();
     glPopMatrix();
  

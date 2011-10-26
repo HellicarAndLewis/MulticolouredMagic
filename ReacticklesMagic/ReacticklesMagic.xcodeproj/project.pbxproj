@@ -257,6 +257,7 @@
 		EAD4940B13A8B7A200D312FE /* testAppEvents.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testAppEvents.mm; sourceTree = "<group>"; };
 		EAF8E8AD1458395500876802 /* iPhoneUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iPhoneUtils.mm; sourceTree = "<group>"; };
 		EAF8E8AE1458395500876802 /* iPhoneUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneUtils.h; sourceTree = "<group>"; };
+		EAF8E8B014584C8000876802 /* InkWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkWell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -911,6 +912,7 @@
 			children = (
 				EA2FABF413AA063400CB21FA /* ReactickleButton.cpp */,
 				EA2FABF513AA063400CB21FA /* ReactickleButton.h */,
+				EAF8E8B014584C8000876802 /* InkWell.h */,
 				EAD493E513A8B75700D312FE /* ColorCube.h */,
 				EAD493E613A8B75700D312FE /* ColorPicker.cpp */,
 				EAD493E713A8B75700D312FE /* ColorPicker.h */,
