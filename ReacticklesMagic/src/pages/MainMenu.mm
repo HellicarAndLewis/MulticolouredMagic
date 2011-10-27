@@ -68,6 +68,7 @@ void MainMenu::setup() {
 		add(reactickleButtons[i]);
 	}
 	totalWidth = ((reactickleButtons.size()+1)/2)*(reactickleButtons[0]->width+PADDING);
+	 
 }
 
 

@@ -18,6 +18,7 @@ void testApp::setup(){
 #endif
 	
 	mainMenu = new MainMenu();
+	
 	currentApp = mainMenu;
 	mainMenu->setup();
 	
@@ -181,7 +182,7 @@ void testApp::draw(){
 	}
 	gui.draw(); 
 #endif
-	 
+
 }
 
 bool testApp::isReactickle(Reactickle *reactickle) {
