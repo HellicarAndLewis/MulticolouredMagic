@@ -13,15 +13,6 @@
 #include "constants.h"
 
 
-void Orbit::start(){
-#ifndef TARGET_OF_IPHONE
-	ofxOscMessage m;
-	int reactickleNumber = 1;
-	m.setAddress( "/reacticklechange" );
-	m.addIntArg( reactickleNumber );
-	ReactickleApp::instance->sender.sendMessage( m );
-#endif
-}
 
 void Orbit::setup(){
 	ofSetCircleResolution(42); //42 is the answer to everything!

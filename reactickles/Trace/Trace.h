@@ -9,7 +9,7 @@
 
 class Trace: public Reactickle {
 public:
-    void start();	
+	
 	void setup();	
 	void update();	
 	void draw();    

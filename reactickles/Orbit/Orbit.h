@@ -14,7 +14,7 @@
 
 class Orbit: public Reactickle {
 public:
-    void start();
+
     
 	void setup();
 	

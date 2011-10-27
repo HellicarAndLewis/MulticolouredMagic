@@ -9,15 +9,7 @@
 #include "Settings.h"
 
 
-void Find::start(){
-#ifndef TARGET_OF_IPHONE
-	ofxOscMessage m;
-	int reactickleNumber = 8;
-	m.setAddress( "/reacticklechange" );
-	m.addIntArg( reactickleNumber );
-	ReactickleApp::instance->sender.sendMessage( m );
-#endif
-}
+
 
 void Find::setup() {
 	currShapeID = 0;

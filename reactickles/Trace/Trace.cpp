@@ -14,15 +14,7 @@
 #include "Reactickle.h"
 #include "TraceShape.h"
 
-void Trace::start(){
-#ifndef TARGET_OF_IPHONE
-	ofxOscMessage m;
-	int reactickleNumber = 9;
-	m.setAddress( "/reacticklechange" );
-	m.addIntArg( reactickleNumber );
-	ReactickleApp::instance->sender.sendMessage( m );
-#endif
-}
+
 
 void Trace::setup() {
 	maximumLengthOfTrace = 200; //start with 200, make this interactive?

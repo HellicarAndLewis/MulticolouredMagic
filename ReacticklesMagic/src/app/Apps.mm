@@ -70,6 +70,7 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Trace();
 	}
 	if(r!=NULL) {
+		r->name = name;
 		ReactickleApp::instance->launchReactickle(r);
 	} else {
 		printf("Unknown reactickle! '%s'\n", name.c_str());

@@ -12,7 +12,7 @@
 
 class Expand: public Reactickle {
 public:
-    void start();    
+  
     
 	void setup();	
 	void update();

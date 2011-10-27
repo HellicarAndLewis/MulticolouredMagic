@@ -53,14 +53,7 @@ bool CascadeParticle::isDead() {
 
 void Cascade::start() {
 	currShapeId = 0;
-	
-#ifndef TARGET_OF_IPHONE
-	ofxOscMessage m;
-	int reactickleNumber = 6;
-	m.setAddress( "/reacticklechange" );
-	m.addIntArg( reactickleNumber );
-	ReactickleApp::instance->sender.sendMessage( m );
-#endif
+
 }
 
 void Cascade::setup() {

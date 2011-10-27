@@ -9,16 +9,7 @@
 #include "Settings.h"
 #include "ColorPicker.h"
 
-    
-void Grid::start(){
-#ifndef TARGET_OF_IPHONE
-	ofxOscMessage m;
-	int reactickleNumber = 5;
-	m.setAddress( "/reacticklechange" );
-	m.addIntArg( reactickleNumber );
-	ReactickleApp::instance->sender.sendMessage( m );
-#endif
-}
+
 
 void Grid::setup(){
 	gridWidth = 6;

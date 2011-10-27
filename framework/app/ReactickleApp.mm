@@ -164,7 +164,16 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 		printf("about or settings\n");
 	}
 	
+	
 	currentApp->start();
+	if(isReactickle(currentApp)) {
+#ifndef TARGET_OF_IPHONE
+		ofxOscMessage m;
+		m.setAddress( "/reacticklechange" );
+		m.addStringArg( reactickleNumber );
+		ReactickleApp::instance->sender.sendMessage( m );
+#endif
+	}
 	
 }
 

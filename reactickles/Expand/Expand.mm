@@ -11,15 +11,7 @@
 #include "constants.h"
 #include "ColorPicker.h"
 
-void Expand::start(){
-#ifndef TARGET_OF_IPHONE
-	ofxOscMessage m;
-	int reactickleNumber = 0;
-	m.setAddress( "/reacticklechange" );
-	m.addIntArg( reactickleNumber );
-	ReactickleApp::instance->sender.sendMessage( m );
-#endif
-}
+
 
 
 void Expand::setup(){

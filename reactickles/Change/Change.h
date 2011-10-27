@@ -10,7 +10,7 @@
 
 class Change: public Reactickle {
     
-    void start();
+
 	void setup();
 	bool touchDown(float x, float y, int id);
 	void trigger();

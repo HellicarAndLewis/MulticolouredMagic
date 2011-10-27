@@ -9,8 +9,6 @@
 
 class Find: public Reactickle {
     
-    void start();
-	
 	void setup();
     
 

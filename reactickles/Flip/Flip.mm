@@ -15,14 +15,6 @@ void Flip::start() {
 	pos.push_back(ofGetWindowSize()/2);
 	lastPos = pos.back();
 	currShapeId = MAGIC_CIRCLE;
-    
-#ifndef TARGET_OF_IPHONE
-        ofxOscMessage m;
-        int reactickleNumber = 2;
-        m.setAddress( "/reacticklechange" );
-        m.addIntArg( reactickleNumber );
-        ReactickleApp::instance->sender.sendMessage( m );
-#endif
 }
 
 void Flip::draw() {

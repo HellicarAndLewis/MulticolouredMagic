@@ -34,7 +34,7 @@
 
 class Reactickle: public Container {
 public:
-	
+	string name;
 	// this is called every time the reactickle is restarted
 	virtual void start() {};
 	virtual void stop() {};

@@ -13,13 +13,6 @@
 void Trail::start() {
 	currShapeId = MAGIC_CIRCLE;
     
-#ifndef TARGET_OF_IPHONE
-        ofxOscMessage m;
-        int reactickleNumber = 4;
-        m.setAddress( "/reacticklechange" );
-        m.addIntArg( reactickleNumber );
-        ReactickleApp::instance->sender.sendMessage( m );
-#endif
 }
 
 void Trail::update() {

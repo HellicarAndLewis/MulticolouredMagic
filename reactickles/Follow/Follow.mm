@@ -12,14 +12,6 @@
 
 void Follow::start() {
 	currShapeId = 0;
-    
-#ifndef TARGET_OF_IPHONE
-        ofxOscMessage m;
-        int reactickleNumber = 3;
-        m.setAddress( "/reacticklechange" );
-        m.addIntArg( reactickleNumber );
-        ReactickleApp::instance->sender.sendMessage( m );
-#endif
 }
 
 void Follow::clap() {
