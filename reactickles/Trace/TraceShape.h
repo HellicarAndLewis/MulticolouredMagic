@@ -7,7 +7,7 @@
 //
 
 #include "ofMain.h"
-#include "msaColor.h"
+
 #include "MagicShapes.h"
 
 class TraceShape {
@@ -18,7 +18,7 @@ public:
         pos = _pos;
         radius = ofRandom(80.f, 200.f);
         shapeType = _shapeType;
-        traceColour.setHSV(ofRandom(0.f,360.f), 1, 1);
+        traceColour.setHsb(ofRandom(0.f,255.f), 255, 255);
         birth = ofGetElapsedTimef();
         age = 0.f;
     }
@@ -33,7 +33,7 @@ public:
     }
     
 	void draw(){
-        traceColour.setGL();
+		ofSetColor(traceColour);
         drawShape(shapeType, pos, radius);
     }
 	
@@ -44,5 +44,5 @@ public:
     float birth;
     float age;
     
-    msaColor traceColour;
+	ofColor traceColour;
 };

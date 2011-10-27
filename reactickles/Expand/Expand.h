@@ -9,6 +9,7 @@
 #include "Reactickle.h"
 #include "ReactickleApp.h"
 #include "constants.h"
+#include "ColorPicker.h"
 
 class Expand: public Reactickle {
 public:
@@ -45,14 +46,18 @@ public:
 		float timeNow = ofGetElapsedTimef();
 		
 		float timeSinceLastInteraction = timeNow - timeOfLastInteraction;        
-		printf("volume: %f\n", volume);
 		if((volume > volumeThreshold) && (timeSinceLastInteraction > 0.3f )){
             touchDown(WIDTH/2.f, HEIGHT/2.f, 0); //simulate a touch in the centre of the screen
 		}
 	}
 	
 	void draw() {
-		ofSetHexColor(0xFFFFFF);
+		int colorIndex = Settings::getInstance()->settings["fgColor"];
+		if(colorIndex==20) {
+			ofSetColor(ofColor::white);
+		} else {
+			ofSetHexColor(ColorPicker::colors[colorIndex]);
+		}
         ofPushStyle(); //for safety in terms of drawing, and not messing up anyone elses code
         //ofBackground(0); //set to black (0 brightness)
         ofFill();
@@ -73,11 +78,21 @@ public:
                 break;
             case 2:
                 if(!whiteBg){// had to flip this because I couldn't get a heart to draw in white(?)
-                    ofSetColor(ofColor::white);
+					
+					if(colorIndex==20) {
+						 ofSetColor(ofColor::white);
+					} else {
+						ofSetHexColor(ColorPicker::colors[colorIndex]);
+					}
+                    //ofSetColor(ofColor::white);
                     ofRect(0, 0, WIDTH, HEIGHT);
                     ofSetColor(ofColor::black);
                 }else{
-                    ofSetColor(ofColor::white);
+					if(colorIndex==20) {
+						ofSetColor(ofColor::white);
+					} else {
+						ofSetHexColor(ColorPicker::colors[colorIndex]);
+					}
                 }
 				
 				//if(currentShapeType==MAGIC_HEART) {

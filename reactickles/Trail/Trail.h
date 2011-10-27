@@ -37,7 +37,7 @@ public:
 		return 3;
 	}
 private:
-	void spawn(ofVec2f pos);
+	void spawn(ofVec2f pos, ofColor color);
 	void collision(TrailParticle &bubble1, TrailParticle &bubble2);
 	vector<TrailParticle> particles;
 	int currShapeId;

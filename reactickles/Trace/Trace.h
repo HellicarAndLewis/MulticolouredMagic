@@ -5,7 +5,6 @@
  */
 
 #include "Reactickle.h"
-#include "msaColor.h"
 #include "TraceShape.h"
 
 class Trace: public Reactickle {

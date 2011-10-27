@@ -109,8 +109,14 @@ public:
 			
 			
 			ofColor color;
-			color.setHsb(ofRandom(0, 255), 255, 255);
-            
+			int colorIndex = Settings::getInstance()->settings["fgColor"];
+			if(colorIndex==20) {
+				color.setHsb(ofRandom(0, 255), 255, 255);
+			} else {
+				color = ofColor::fromHex(ColorPicker::colors[colorIndex]);
+			}
+			
+			            
 			int numParticles = ofRandom(8, 12);
 			
 			for(int i = 0; i < numParticles; i++) {
@@ -134,13 +140,28 @@ public:
 	}
 	ofPoint clapPoint;
 	void draw() {
+		
+
+		int colorIndex = Settings::getInstance()->settings["fgColor"];
+		
+		
 		ofBackground(0,0,0);
 
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 		float timeSinceLastClap = ofGetElapsedTimef() - lastClap;
 		float value = ofMap(timeSinceLastClap, 0, 0.5, 0.4, 0, true);
-		ofSetColor(value*255.f, 0, 0);
+		
+		ofColor color;
+		if(colorIndex==20) {
+			ofSetColor(value*255, 0, 0);
+		} else {
+			ofColor c = ofColor::fromHex(ColorPicker::colors[colorIndex]);
+			c.a = value * 255;
+			ofSetColor(c);
+		}
+		
+		
 		ofRect(0, 0, WIDTH, HEIGHT);
 		
 		for(int i = 0; i < particles.size(); i++) {

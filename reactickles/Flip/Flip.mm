@@ -9,6 +9,7 @@
 #include "Flip.h"
 #include "ReactickleApp.h"
 #include "constants.h"
+#include "ColorPicker.h"
 
 void Flip::start() {
 	pos.push_back(ofGetWindowSize()/2);
@@ -25,8 +26,20 @@ void Flip::start() {
 }
 
 void Flip::draw() {
+	int colorIndex = Settings::getInstance()->settings["fgColor"];
+	
 	int color1 = 0x000000;
 	int color2 = 0xAAAAAA;
+	int color3 = 0xFFFFFF;
+	
+	if(colorIndex!=20) {
+		color3 = ColorPicker::colors[colorIndex];
+		ofColor cc = ofColor::fromHex(color3);
+		cc.setBrightness(100);
+		color2 = cc.getHex();
+	}
+	
+
 	
 
 	if(pos.back().x>WIDTH/2) {
@@ -41,7 +54,7 @@ void Flip::draw() {
 	ofSetHexColor(color2);
 	ofRect(WIDTH/2, 0, WIDTH/2, HEIGHT);
 	
-	ofSetHexColor(0xFFFFFF);
+	ofSetHexColor(color3);
 	drawShape(currShapeId, pos.back(), 400);
 	
 	while(pos.size()>100) {

@@ -33,7 +33,17 @@ class Find: public Reactickle {
 	}
     
     void newShapePositionAndColour(){
-        targetFindColour.setHsb(ofRandom(0.f,255), 255,255);
+		
+		
+		int colorIndex = Settings::getInstance()->settings["fgColor"];
+		if(colorIndex==20) {
+			targetFindColour.setHsb(ofRandom(0.f,255), 255,255);
+		} else {
+			targetFindColour = ofColor::fromHex(ColorPicker::colors[colorIndex]);
+		}
+		
+		
+		
         targetPosOfShape = ofVec2f(ofRandom(0.f, WIDTH), ofRandom(0.f, HEIGHT));
         radius = ofRandom(100.f, 260.f);
         

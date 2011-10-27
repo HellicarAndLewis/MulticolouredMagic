@@ -237,7 +237,6 @@
 		EAD493E013A8B75700D312FE /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
 		EAD493E113A8B75700D312FE /* MagicShapes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MagicShapes.cpp; sourceTree = "<group>"; };
 		EAD493E213A8B75700D312FE /* MagicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShapes.h; sourceTree = "<group>"; };
-		EAD493E313A8B75700D312FE /* msaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msaColor.h; sourceTree = "<group>"; };
 		EAD493E513A8B75700D312FE /* ColorCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCube.h; sourceTree = "<group>"; };
 		EAD493E613A8B75700D312FE /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
 		EAD493E713A8B75700D312FE /* ColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPicker.h; sourceTree = "<group>"; };
@@ -759,15 +758,15 @@
 		EA62106613A6481200A88AF0 /* reactickles */ = {
 			isa = PBXGroup;
 			children = (
-				EA62106713A6481200A88AF0 /* Expand */,
-				EA62106A13A6481200A88AF0 /* Orbit */,
-				EA62106D13A6481200A88AF0 /* Flip */,
-				EA62107013A6481200A88AF0 /* Follow */,
-				EA62107513A6481200A88AF0 /* Trail */,
-				EA62107B13A6481200A88AF0 /* Grid */,
-				EA62107D13A6481200A88AF0 /* Cascade */,
-				EA62107F13A6481200A88AF0 /* Change */,
 				EA62108113A6481200A88AF0 /* Find */,
+				EA62106713A6481200A88AF0 /* Expand */,
+				EA62106D13A6481200A88AF0 /* Flip */,
+				EA62107513A6481200A88AF0 /* Trail */,
+				EA62107D13A6481200A88AF0 /* Cascade */,
+				EA62106A13A6481200A88AF0 /* Orbit */,
+				EA62107013A6481200A88AF0 /* Follow */,
+				EA62107B13A6481200A88AF0 /* Grid */,
+				EA62107F13A6481200A88AF0 /* Change */,
 				EA62108313A6481200A88AF0 /* Trace */,
 			);
 			name = reactickles;
@@ -902,7 +901,6 @@
 				EAD493E013A8B75700D312FE /* GlowingBorder.h */,
 				EAD493E113A8B75700D312FE /* MagicShapes.cpp */,
 				EAD493E213A8B75700D312FE /* MagicShapes.h */,
-				EAD493E313A8B75700D312FE /* msaColor.h */,
 			);
 			path = graphics;
 			sourceTree = "<group>";

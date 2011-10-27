@@ -8,6 +8,7 @@
 #include "constants.h"
 
 #include "Trail.h"
+#include "ColorPicker.h"
 
 void Trail::start() {
 	currShapeId = MAGIC_CIRCLE;
@@ -94,10 +95,11 @@ void Trail::draw() {
 }
 
 
-void Trail::spawn(ofVec2f pos) {
+void Trail::spawn(ofVec2f pos, ofColor color) {
 	if(particles.size()<MAX_NUM_PARTICLES) {
 		particles.push_back(TrailParticle());
 		particles.back().pos = pos;
+		particles.back().color = color;
 	}
 }
 
@@ -117,8 +119,8 @@ void Trail::collision(TrailParticle &p1, TrailParticle &p2) {
 }
 
 bool Trail::touchDown(float x, float y, int touchId) {
-	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
-    
+	
+    touchMoved(x, y, touchId);
 #ifndef TARGET_OF_IPHONE
     ofxOscMessage m;
     m.setAddress( "/touchdown" );
@@ -130,12 +132,23 @@ bool Trail::touchDown(float x, float y, int touchId) {
 }
 
 bool Trail::touchMoved(float x, float y, int touchId) {
-	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
+	int colorIndex = Settings::getInstance()->settings["fgColor"];
+	
+	for(int i = 0; i < SPAWN_RATE; i++) {
+		ofColor color;
+		if(colorIndex==20) {
+			color.setHsb(ofRandom(0, 360), 190, 255, 255);
+		} else {
+			color.setHex(ColorPicker::colors[colorIndex]);
+			color.setBrightness(ofRandom(125, 255));
+		}
+		spawn(ofVec2f(x, y), color);
+	}
 	return true;
 }
 
 
 bool Trail::touchUp(float x, float y, int touchId) {
-	for(int i = 0; i < SPAWN_RATE; i++) spawn(ofVec2f(x, y));
+	touchMoved(x, y, touchId);
 	return true;
 }
