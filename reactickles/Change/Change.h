@@ -33,14 +33,14 @@ class Change: public Reactickle {
 	
 	void trigger() {
 		if(mode == 0){
-			if(noiseColour == msaColor(255,255,255)){
+			if(noiseColour == ofColor(255,255,255)){
 				noiseColour.set(0,0,0);
 			}else{
 				noiseColour.set(255,255,255);
 			}
 			
 		}else if(mode == 1){
-			if(noiseColour == msaColor(0,0,0)){
+			if(noiseColour == ofColor(0,0,0)){
 				noiseColour.setHsb(ofRandom(0,255), 255,255);
 			}else{
 				noiseColour.setHsb(0,0,0);

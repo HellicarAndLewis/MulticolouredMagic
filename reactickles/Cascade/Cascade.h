@@ -5,7 +5,7 @@
  *
  */
 #include "Reactickle.h"
-#include "msaColor.h"
+
 #include "MagicShapes.h"
 
 class CascadeParticle {
@@ -47,12 +47,12 @@ public:
 //		radius = ofMap(age, 1, 0.8, 0, 100, false);
 //		circleImage->draw(pos.x, pos.y, radius*4, radius*4);
         
-		ofSetColor(color.r*255, color.g*255, color.b*255, age*255);
+		ofSetColor(color.r, color.g, color.b, age*120);
 		float radius = ofMap(age, 1, 0.6, 50, 0, true);
         drawShape(shape, pos, radius*4);
 		ofSetColor(color.r*255, color.g*255, color.b*255, ofMap(age, 1, 0.6, 100, 0, true));
-		radius = ofMap(age, 1, 0.8, 0, 100, false);
-		drawShape(shape, pos, radius*4);        
+		radius = ofMap(age, 0, 1, 0, 100, false);
+		drawShape(shape, pos, radius);        
 	}
 	bool isDead() {
 		return age<0.6;
@@ -106,12 +106,12 @@ public:
 #endif
             }
             
-			ofPoint clapPoint = ofPoint(ofRandomWidth(), ofRandomHeight());
 			
-			msaColor color;
-			color.setHSV(ofRandom(0, 360), 1, 1);
+			
+			ofColor color;
+			color.setHsb(ofRandom(0, 255), 255, 255);
             
-			int numParticles = ofRandom(12, 20);
+			int numParticles = ofRandom(8, 12);
 			
 			for(int i = 0; i < numParticles; i++) {
 				if(particles.size()<100) {
@@ -132,6 +132,7 @@ public:
 		
 		
 	}
+	ofPoint clapPoint;
 	void draw() {
 		ofBackground(0,0,0);
 
@@ -147,6 +148,12 @@ public:
 		}
 	}
 	
+	bool touchDown(float x, float y, int touchId) {
+#ifdef TARGET_OF_IPHONE
+		clapPoint = ofPoint(x, y);
+		clapping = true;
+#endif
+	}
 	
 	void audioReceived(float *input, int length, int nChannels) {
 		
@@ -156,7 +163,9 @@ public:
 			
 			if(ABS(diff)>clapThreshold) {
 				magnitude = ABS(diff);
+				
 				lastClap = ofGetElapsedTimef();
+				clapPoint = ofPoint(ofRandomWidth(), ofRandomHeight());
 				clapping = true;
                 
 #ifndef TARGET_OF_IPHONE

@@ -5,7 +5,6 @@
  */
 
 #include "Reactickle.h"
-#include "msaColor.h"
 #include "MagicShapes.h"
 
 class Find: public Reactickle {
@@ -34,7 +33,7 @@ class Find: public Reactickle {
 	}
     
     void newShapePositionAndColour(){
-        targetFindColour.setHSV(ofRandom(0.f,360.f), 1, 1);
+        targetFindColour.setHsb(ofRandom(0.f,255), 255,255);
         targetPosOfShape = ofVec2f(ofRandom(0.f, WIDTH), ofRandom(0.f, HEIGHT));
         radius = ofRandom(100.f, 260.f);
         
@@ -80,7 +79,7 @@ class Find: public Reactickle {
 	}
 	
 	void draw() {
-		findColour.setGL();
+		ofSetColor(findColour);
         drawShape(currShapeID, posOfShape, radius);
 	}
     
@@ -106,7 +105,7 @@ class Find: public Reactickle {
     }
     
 	bool touchMoved(float x, float y, int touchId){
-        touchDown(x, y, touchId);
+        return touchDown(x, y, touchId);
     }
     
 	bool touchUp(float x, float y, int touchId){
@@ -126,9 +125,9 @@ class Find: public Reactickle {
 #endif
     }	
 
-	msaColor findColour;
+	ofColor findColour;
 	ofVec2f posOfShape;
-	msaColor targetFindColour;
+	ofColor targetFindColour;
     ofVec2f targetPosOfShape;
     int currShapeID;
     float timeOfLastInteraction;
