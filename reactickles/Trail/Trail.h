@@ -24,14 +24,7 @@ public:
 	virtual bool touchMoved(float x, float y, int touchId);
 	virtual bool touchUp(float x, float y, int touchId);
     
-    virtual void modeChanged() {        
-#ifndef TARGET_OF_IPHONE
-        ofxOscMessage m;
-        m.setAddress("/modechange");
-        m.addIntArg( mode );
-        ReactickleApp::instance->sender.sendMessage( m );
-#endif
-    }
+
     
     int getNumModes() {
 		return 3;

@@ -66,7 +66,6 @@ void Change::update() {
 	float timeNow = ofGetElapsedTimef();
 	
 	float timeSinceLastCircle = timeNow - timeOfLastNewCircle;
-	printf("Volume:: %f\n", volume);
 	if((volume > volumeThreshold) && (timeSinceLastCircle > 0.3f )){	
 		
 		trigger();

@@ -44,14 +44,7 @@ public:
     int getNumModes() {
 		return 3;
 	}
-    void modeChanged() {        
-#ifndef TARGET_OF_IPHONE
-        ofxOscMessage m;
-        m.setAddress("/modechange");
-        m.addIntArg( mode );
-        ReactickleApp::instance->sender.sendMessage( m );
-#endif
-	}
+
 	
 private:
     ofPoint clapPoint;

@@ -199,6 +199,12 @@ void testApp::buttonPressed(string name) {
 				newMode = 0;
 			}
 			currentApp->setMode(newMode);
+#ifndef TARGET_OF_IPHONE
+			ofxOscMessage m;
+			m.setAddress("/modechange");
+			m.addIntArg( newMode );
+			ReactickleApp::instance->sender.sendMessage( m );
+#endif
 			modeDisplay.setMode(newMode);
 		}
 	} else if(name=="modeDown") {
@@ -210,6 +216,12 @@ void testApp::buttonPressed(string name) {
 				newMode = currentApp->getNumModes()-1;
 			}
 			currentApp->setMode(newMode);
+#ifndef TARGET_OF_IPHONE
+			ofxOscMessage m;
+			m.setAddress("/modechange");
+			m.addIntArg( newMode );
+			ReactickleApp::instance->sender.sendMessage( m );
+#endif
 			modeDisplay.setMode(newMode);
 		}
 	}
