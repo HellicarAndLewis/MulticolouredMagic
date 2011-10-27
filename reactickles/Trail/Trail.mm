@@ -121,6 +121,11 @@ bool Trail::touchDown(float x, float y, int touchId) {
 bool Trail::touchMoved(float x, float y, int touchId) {
 	int colorIndex = Settings::getInstance()->settings["fgColor"];
 	
+	if(mode==0) {
+		if(ofRandom(0, 1)>0.1) return true;
+	} else if(mode==1) {
+		if(ofRandom(0, 1)>0.5) return true;
+	}
 	for(int i = 0; i < SPAWN_RATE; i++) {
 		ofColor color;
 		if(colorIndex==20) {

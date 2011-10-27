@@ -21,9 +21,8 @@ class Change: public Reactickle {
 		return 3;
 	}
     
- 
-    
 	
+private:
 	float timeOfLastNewCircle;
 	int colourPosition;
 	ofColor noiseColour;
