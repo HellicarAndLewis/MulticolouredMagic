@@ -191,23 +191,6 @@ bool Follow::touchUp(float x, float y, int touchId) {
 	}
 	return true;
 }
-void Follow::keyPressed(int key) {
-	switch(key) {
-		case 'a':
-			FollowParticle::colorMode = COLOR_MODE_RAINBOW;
-			break;
-		case 's':
-			FollowParticle::colorMode = COLOR_MODE_RED;
-			break;
-		case 'd':
-			FollowParticle::colorMode = COLOR_MODE_GREEN;
-			break;
-		case 'f':
-			FollowParticle::colorMode = COLOR_MODE_BLUE;
-			break;
-	}
-	
-}
 
 void Follow::modeChanged() {
 	if(mode==0) {

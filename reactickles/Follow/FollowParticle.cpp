@@ -17,7 +17,6 @@
 #include "FollowParticle.h"
 #include "MagicShapes.h"
 
-int FollowParticle::colorMode = COLOR_MODE_RAINBOW;
 
 FollowParticle::FollowParticle() {
 	spawn(ofRandomWidth(), ofRandomHeight(), 0);
@@ -95,23 +94,9 @@ void FollowParticle::draw() {
 	ofFill();
 	float alpha = ofMap(ofGetElapsedTimef() - birthday, maxAge*0.76, maxAge, 255, 0, true);
 	if(mode==0) alpha = 255;
-	switch(colorMode) {
-		case COLOR_MODE_RAINBOW:
-			ofSetColor(color.r, color.g, color.b, alpha);
-			break;
-		case COLOR_MODE_RED:
-			ofSetColor(color.r*1.2, color.r*0.3, color.r*0.3, alpha);
-			break;
-		case COLOR_MODE_GREEN:
-			ofSetColor(color.r*0.3, color.r*1.2, color.r*0.3, alpha);
-			break;
+	ofSetColor(color.r, color.g, color.b, alpha);
 			
-		case COLOR_MODE_BLUE:
-			ofSetColor(color.r*0.3, color.r*0.3, color.r*1.2, alpha);
-			break;
-			
-			
-	}
+
 	float shapeSize = ofMap(ofGetElapsedTimef() - birthday, 0, maxAge*0.04, 0, radius, true);
 	if(mode==0) shapeSize = radius;
 	drawShape(shape, pos, shapeSize);
@@ -120,23 +105,7 @@ void FollowParticle::draw() {
 bool FollowParticle::isAlive() {
 	return ofGetElapsedTimef() < maxAge+birthday;
 }
-/*
-void SwarmParticle::attract(ofVec2f &point) {
-	ofVec2f delta = pos - point;
-	float dist = delta.length();
-	delta.normalize();
-	float aversionThreshold = 10;
-	float farThreshold = 70;
-	float magnitude = sqrt(dist);
 
-	if(dist<aversionThreshold) {
-		magnitude = 0;
-	} else if(dist>farThreshold) {
-		magnitude = sqrt(farThreshold);
-	}
-	
-	vel -= delta*magnitude*0.05*(1.f/mass);
-}*/
 
 void FollowParticle::attract(ofVec2f &point, float strength /* = 0.05 */) {
 	ofVec2f delta = pos - point;

@@ -46,7 +46,6 @@ void ColorPicker::setup() {
 	
 	int PADDING = 9;
 	int NUM_COLS = 7;
-	int BG_Y_OFFSET = 234;
 	
 	
 	fgs = new ColorCube*[NUM_PICKER_COLORS];

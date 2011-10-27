@@ -196,8 +196,6 @@ public:
 			o2 = b + normals[i]*radius;
 			ofVec2f topTexCoord(radius, 0);
 			
-			// angle is the angle of the normal with -y
-			float angle = atan(normals[i].x/normals[i].y);
 			topTexCoord.rotateRad(1, ofVec2f( radius, radius));
 
 			edgeTexCoords[i][0] = ofVec2f(topTexCoord.x, topTexCoord.y);

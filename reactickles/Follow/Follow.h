@@ -21,7 +21,7 @@ public:
 };
 class Follow: public Reactickle {
 public:
-	float timeOfLastInteraction;
+	
 	bool needsKinect() { return true; }
 	void update();
 	void draw();
@@ -38,9 +38,10 @@ public:
 		return 3;
 	}
 private:
+	
+	float timeOfLastInteraction;
 	vector<FollowTouch> touches;
 	FollowParticle particles[NUM_SWARM_PARTICLES];
-	void keyPressed(int key);
 	int numParticles;
 	int currShapeId;
 };

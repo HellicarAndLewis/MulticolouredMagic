@@ -5,11 +5,13 @@
 //  Created by Joel Gethin Lewis on 14/06/2011.
 //  Copyright 2011 Hellicar&Lewis. All rights reserved.
 //
+#pragma once
 
 #include "ofMain.h"
 
 #include "MagicShapes.h"
-
+#include "Settings.h"
+#include "ColorPicker.h"
 class TraceShape {
 public:
 	TraceShape(){};

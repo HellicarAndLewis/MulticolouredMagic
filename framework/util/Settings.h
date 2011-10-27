@@ -6,6 +6,8 @@
  *
  */
 #pragma once
+#include "ofMain.h"
+
 class Settings {
 private:
 	Settings();

@@ -60,7 +60,6 @@
 		EA30E3CB13D5E1CA00E6E26C /* freeimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA30E3CA13D5E1CA00E6E26C /* freeimage.a */; };
 		EA30E3CD13D5E1D400E6E26C /* freetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA30E3CC13D5E1D400E6E26C /* freetype.a */; };
 		EA62108513A6481200A88AF0 /* Expand.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62106813A6481200A88AF0 /* Expand.mm */; };
-		EA62108613A6481200A88AF0 /* Orbit.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62106B13A6481200A88AF0 /* Orbit.mm */; };
 		EA62108713A6481200A88AF0 /* Flip.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62106E13A6481200A88AF0 /* Flip.mm */; };
 		EA62108813A6481200A88AF0 /* Follow.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62107113A6481200A88AF0 /* Follow.mm */; };
 		EA62108913A6481200A88AF0 /* FollowParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62107313A6481200A88AF0 /* FollowParticle.cpp */; };
@@ -76,6 +75,12 @@
 		EAD4940213A8B75700D312FE /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD493F413A8B75700D312FE /* util.cpp */; };
 		EAD4940C13A8B7A200D312FE /* testAppEvents.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4940B13A8B7A200D312FE /* testAppEvents.mm */; };
 		EAF8E8AF1458395500876802 /* iPhoneUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAF8E8AD1458395500876802 /* iPhoneUtils.mm */; };
+		EAF8E8CF145994ED00876802 /* Change.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAF8E8CE145994ED00876802 /* Change.cpp */; };
+		EAF8E8D1145995BB00876802 /* Trace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAF8E8D0145995BB00876802 /* Trace.cpp */; };
+		EAF8E8D31459973600876802 /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAF8E8D21459973600876802 /* Grid.cpp */; };
+		EAF8E8D51459992400876802 /* Orbit.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAF8E8D41459992400876802 /* Orbit.mm */; };
+		EAF8E8D714599A6A00876802 /* Find.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAF8E8D614599A6A00876802 /* Find.cpp */; };
+		EAF8E8D914599B6500876802 /* Cascade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAF8E8D814599B6500876802 /* Cascade.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,7 +216,6 @@
 		EA620EE513A6316600A88AF0 /* VolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
 		EA62106813A6481200A88AF0 /* Expand.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Expand.mm; sourceTree = "<group>"; };
 		EA62106913A6481200A88AF0 /* Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expand.h; sourceTree = "<group>"; };
-		EA62106B13A6481200A88AF0 /* Orbit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Orbit.mm; sourceTree = "<group>"; };
 		EA62106C13A6481200A88AF0 /* Orbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Orbit.h; sourceTree = "<group>"; };
 		EA62106E13A6481200A88AF0 /* Flip.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Flip.mm; sourceTree = "<group>"; };
 		EA62106F13A6481200A88AF0 /* Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flip.h; sourceTree = "<group>"; };
@@ -258,6 +262,12 @@
 		EAF8E8AE1458395500876802 /* iPhoneUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneUtils.h; sourceTree = "<group>"; };
 		EAF8E8B014584C8000876802 /* InkWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkWell.h; sourceTree = "<group>"; };
 		EAF8E8CD145993EA00876802 /* TraceShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceShape.h; sourceTree = "<group>"; };
+		EAF8E8CE145994ED00876802 /* Change.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Change.cpp; sourceTree = "<group>"; };
+		EAF8E8D0145995BB00876802 /* Trace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trace.cpp; sourceTree = "<group>"; };
+		EAF8E8D21459973600876802 /* Grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grid.cpp; sourceTree = "<group>"; };
+		EAF8E8D41459992400876802 /* Orbit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Orbit.mm; sourceTree = "<group>"; };
+		EAF8E8D614599A6A00876802 /* Find.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Find.cpp; sourceTree = "<group>"; };
+		EAF8E8D814599B6500876802 /* Cascade.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cascade.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -786,7 +796,7 @@
 		EA62106A13A6481200A88AF0 /* Orbit */ = {
 			isa = PBXGroup;
 			children = (
-				EA62106B13A6481200A88AF0 /* Orbit.mm */,
+				EAF8E8D41459992400876802 /* Orbit.mm */,
 				EA62106C13A6481200A88AF0 /* Orbit.h */,
 			);
 			path = Orbit;
@@ -835,6 +845,7 @@
 			isa = PBXGroup;
 			children = (
 				EA62107C13A6481200A88AF0 /* Grid.h */,
+				EAF8E8D21459973600876802 /* Grid.cpp */,
 			);
 			path = Grid;
 			sourceTree = "<group>";
@@ -843,6 +854,7 @@
 			isa = PBXGroup;
 			children = (
 				EA62107E13A6481200A88AF0 /* Cascade.h */,
+				EAF8E8D814599B6500876802 /* Cascade.cpp */,
 			);
 			path = Cascade;
 			sourceTree = "<group>";
@@ -851,6 +863,7 @@
 			isa = PBXGroup;
 			children = (
 				EA62108013A6481200A88AF0 /* Change.h */,
+				EAF8E8CE145994ED00876802 /* Change.cpp */,
 			);
 			path = Change;
 			sourceTree = "<group>";
@@ -859,6 +872,7 @@
 			isa = PBXGroup;
 			children = (
 				EA62108213A6481200A88AF0 /* Find.h */,
+				EAF8E8D614599A6A00876802 /* Find.cpp */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -868,6 +882,7 @@
 			children = (
 				EAF8E8CD145993EA00876802 /* TraceShape.h */,
 				EA62108413A6481200A88AF0 /* Trace.h */,
+				EAF8E8D0145995BB00876802 /* Trace.cpp */,
 			);
 			path = Trace;
 			sourceTree = "<group>";
@@ -1066,7 +1081,6 @@
 				EA23EF64139D1E2F0071404C /* MainMenu.mm in Sources */,
 				EA23EF65139D1E2F0071404C /* SettingsPage.mm in Sources */,
 				EA62108513A6481200A88AF0 /* Expand.mm in Sources */,
-				EA62108613A6481200A88AF0 /* Orbit.mm in Sources */,
 				EA62108713A6481200A88AF0 /* Flip.mm in Sources */,
 				EA62108813A6481200A88AF0 /* Follow.mm in Sources */,
 				EA62108913A6481200A88AF0 /* FollowParticle.cpp in Sources */,
@@ -1083,6 +1097,12 @@
 				EAD4940C13A8B7A200D312FE /* testAppEvents.mm in Sources */,
 				EA2FABF613AA063400CB21FA /* ReactickleButton.cpp in Sources */,
 				EAF8E8AF1458395500876802 /* iPhoneUtils.mm in Sources */,
+				EAF8E8CF145994ED00876802 /* Change.cpp in Sources */,
+				EAF8E8D1145995BB00876802 /* Trace.cpp in Sources */,
+				EAF8E8D31459973600876802 /* Grid.cpp in Sources */,
+				EAF8E8D51459992400876802 /* Orbit.mm in Sources */,
+				EAF8E8D714599A6A00876802 /* Find.cpp in Sources */,
+				EAF8E8D914599B6500876802 /* Cascade.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
