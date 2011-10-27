@@ -257,6 +257,7 @@
 		EAF8E8AD1458395500876802 /* iPhoneUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iPhoneUtils.mm; sourceTree = "<group>"; };
 		EAF8E8AE1458395500876802 /* iPhoneUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneUtils.h; sourceTree = "<group>"; };
 		EAF8E8B014584C8000876802 /* InkWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkWell.h; sourceTree = "<group>"; };
+		EAF8E8CD145993EA00876802 /* TraceShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceShape.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -758,11 +759,11 @@
 		EA62106613A6481200A88AF0 /* reactickles */ = {
 			isa = PBXGroup;
 			children = (
-				EA62108113A6481200A88AF0 /* Find */,
 				EA62106713A6481200A88AF0 /* Expand */,
 				EA62106D13A6481200A88AF0 /* Flip */,
 				EA62107513A6481200A88AF0 /* Trail */,
 				EA62107D13A6481200A88AF0 /* Cascade */,
+				EA62108113A6481200A88AF0 /* Find */,
 				EA62106A13A6481200A88AF0 /* Orbit */,
 				EA62107013A6481200A88AF0 /* Follow */,
 				EA62107B13A6481200A88AF0 /* Grid */,
@@ -865,6 +866,7 @@
 		EA62108313A6481200A88AF0 /* Trace */ = {
 			isa = PBXGroup;
 			children = (
+				EAF8E8CD145993EA00876802 /* TraceShape.h */,
 				EA62108413A6481200A88AF0 /* Trace.h */,
 			);
 			path = Trace;

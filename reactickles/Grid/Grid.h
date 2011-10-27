@@ -82,8 +82,13 @@ class Grid: public Reactickle {
 	void draw() {
 		
 		int shapeId = MAGIC_CIRCLE;
+		int colorIndex = Settings::getInstance()->settings["fgColor"];
+		if(colorIndex==20) {
+			ofSetHexColor(0xFFFFFF);
+		} else {
+			ofSetHexColor(ColorPicker::colors[colorIndex]);
+		}
 		
-		ofSetHexColor(0xFFFFFF);
         
 		for(int i=0; i< gridHeight; i++){
 			for(int j = 0; j < gridWidth; j++){

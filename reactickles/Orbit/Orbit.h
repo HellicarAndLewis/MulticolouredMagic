@@ -10,6 +10,8 @@
 #include "Reactickle.h"
 #include "ReactickleApp.h"
 #include "constants.h"
+#include "Settings.h"
+#include "ColorPicker.h"
 
 class Orbit: public Reactickle {
 public:
@@ -78,17 +80,31 @@ public:
         ofPushStyle(); //for safety in terms of drawing, and not messing up anyone elses code
         ofBackground(0); //set to black (0 brightness)
         ofFill();
-        
+        int colorIndex = Settings::getInstance()->settings["fgColor"];
+		if(colorIndex==20) {
+			ofSetHexColor(0xFFFFFF);
+		} else {
+			ofSetHexColor(ColorPicker::colors[colorIndex]);
+		}
+		
+		
         switch (mode) {
             case 0:
                 if (shapeOnScreen) {
-					ofSetHexColor(0xFFFFFF);
+					
+
                     drawShape(currentShapeType, centreOfBigShape, bigShapeRadius); //using the new MagicShapes.h file
                 }
                 break;
             case 1:
                 if(numberOfShapes > 0){
-                    ofSetColor(shapesColour);
+					
+					if(colorIndex==20) {
+						ofSetColor(shapesColour);
+					} else {
+						ofSetHexColor(ColorPicker::colors[colorIndex]);
+					}
+                   
                     
                     ofVec2f currentShapePosition = startOfShapes;
                     
@@ -99,13 +115,23 @@ public:
                     }
                     
                 }else{
-                    ofSetColor(bigShapeColour);
+					
+					if(colorIndex==20) {
+						 ofSetColor(bigShapeColour);
+					} else {
+						ofSetHexColor(ColorPicker::colors[colorIndex]);
+					}
+                   
                     drawShape(currentShapeType, centreOfBigShape, bigShapeRadius);
                 }
                 break;
             case 2:
                 if(numberOfShapes > 0){
-                    ofSetColor(shapesColour);
+                    if(colorIndex==20) {
+						ofSetColor(shapesColour);
+					} else {
+						ofSetHexColor(ColorPicker::colors[colorIndex]);
+					}
                     
                     ofVec2f currentShapePosition = startOfShapes;
                     
@@ -136,7 +162,12 @@ public:
                         }
                     }
                 }else{
-                    ofSetColor(bigShapeColour);
+					
+					if(colorIndex==20) {
+						ofSetColor(bigShapeColour);
+					} else {
+						ofSetHexColor(ColorPicker::colors[colorIndex]);
+					}
                     drawShape(currentShapeType, centreOfBigShape, bigShapeRadius);
                 }                
                 

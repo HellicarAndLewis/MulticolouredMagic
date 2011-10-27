@@ -18,7 +18,16 @@ public:
         pos = _pos;
         radius = ofRandom(80.f, 200.f);
         shapeType = _shapeType;
-        traceColour.setHsb(ofRandom(0.f,255.f), 255, 255);
+		
+		int colorIndex = Settings::getInstance()->settings["fgColor"];
+		if(colorIndex==20) {
+			traceColour.setHsb(ofRandom(0.f,255.f), 255, 255);
+		} else {
+			traceColour.setHex(ColorPicker::colors[colorIndex]);
+			traceColour.setBrightness(ofRandom(126, 255));
+		}
+		
+		
         birth = ofGetElapsedTimef();
         age = 0.f;
     }

@@ -6,7 +6,11 @@
  *
  */
 // 10, 35
+#include "ofMain.h"
+
 #include "constants.h"
+#include "Settings.h"
+#include "ColorPicker.h"
 
 #define MIN_RADIUS 20
 #define MAX_RADIUS 50
@@ -21,11 +25,20 @@ FollowParticle::FollowParticle() {
 
 
 void FollowParticle::spawn(float x, float y, int mode, int shape) {
+	
+	
 	this->shape = shape;
 	this->mode = mode;
 	pos = ofVec2f(x, y);
 	birthday = ofGetElapsedTimef();
-	color.setHsb(ofRandom(0, 360), 190, 255, 255);
+	
+	int colorIndex = Settings::getInstance()->settings["fgColor"];
+	if(colorIndex==20) {
+		color.setHsb(ofRandom(0, 360), 190, 255, 255);
+	} else {
+		color = ofColor::fromHex(ColorPicker::colors[colorIndex]);
+		color.setBrightness(ofRandom(127, 255));
+	}
 	brightness = ofRandom(0.5, 1.0);
 	if(mode==0 || mode==1) {
 		radius = radiusBase = 160;
