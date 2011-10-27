@@ -91,13 +91,7 @@ bool Flip::touchDown(float x, float y, int touchId) {
 	}
 	pos.push_back((ofVec2f(x, y)*0.05+lastPos*0.95));
     
-#ifndef TARGET_OF_IPHONE
-    ofxOscMessage m;
-    m.setAddress( "/touchdown" );
-    m.addIntArg(mode);
-    ReactickleApp::instance->sender.sendMessage(m);
-#endif     
-    
+
 	return true;
 }
 bool Flip::touchMoved(float x, float y, int touchId) {

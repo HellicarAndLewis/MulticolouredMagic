@@ -55,13 +55,7 @@ void Change::trigger() {
 		noiseColour.setHsb(ofRandom(0,255), 255, 255);                
 	}
 	
-#ifndef TARGET_OF_IPHONE
-	//triggers are touch downs....
-	ofxOscMessage m;
-	m.setAddress( "/touchdown" );
-	m.addIntArg(mode);
-	ReactickleApp::instance->sender.sendMessage(m);
-#endif
+
 	
 	timeOfLastNewCircle = ofGetElapsedTimef();
 }

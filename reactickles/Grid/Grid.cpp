@@ -28,13 +28,7 @@ bool Grid::touchDown(float x, float y, int id) {
 		positionInGrid = 0;
 	}
 	
-#ifndef TARGET_OF_IPHONE
-	ofxOscMessage m;
-	m.setAddress( "/touchdown" );
-	m.addIntArg(mode);
-	ReactickleApp::instance->sender.sendMessage(m);
-#endif
-	
+
 	return true;
 }
 void Grid::update(){

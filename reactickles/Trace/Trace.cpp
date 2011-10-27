@@ -41,12 +41,7 @@ void Trace::draw() {
 bool Trace::touchDown(float x, float y, int touchId){
 	
 	touchMoved(x, y, touchId);
-#ifndef TARGET_OF_IPHONE
-	ofxOscMessage m;
-	m.setAddress( "/touchdown" );
-	m.addIntArg(mode);
-	ReactickleApp::instance->sender.sendMessage(m);
-#endif
+
 	
 	return true;
 }

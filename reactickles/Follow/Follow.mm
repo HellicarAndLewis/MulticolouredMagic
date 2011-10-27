@@ -151,12 +151,6 @@ bool Follow::touchDown(float x, float y, int touchId) {
 	if(currShapeId<0 || currShapeId>=NUM_MAGIC_SHAPES) currShapeId = 0;
 	touches.push_back(FollowTouch(x, y, touchId, currShapeId));
 
-#ifndef TARGET_OF_IPHONE
-    ofxOscMessage m;
-    m.setAddress( "/touchdown" );
-    m.addIntArg(mode);
-    ReactickleApp::instance->sender.sendMessage(m);
-#endif 
     
 	return true;
 }

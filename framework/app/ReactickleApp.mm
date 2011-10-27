@@ -225,6 +225,14 @@ void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 			return;
 		}
 	}
+#ifndef TARGET_OF_IPHONE
+	if(isReactickle(currentApp)) {
+		ofxOscMessage m;
+		m.setAddress( "/touchdown" );
+		m.addIntArg(mode);
+		ReactickleApp::instance->sender.sendMessage(m);
+	}
+#endif
 	currentApp->touchDown(touch.x, touch.y, touch.id);
 }
 
@@ -236,6 +244,15 @@ void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
 			return;
 		}
 	}
+	
+#ifndef TARGET_OF_IPHONE
+	if(isReactickle(currentApp)) {
+		ofxOscMessage m;
+		m.setAddress( "/touchmoved" );
+		m.addIntArg(mode);
+		ReactickleApp::instance->sender.sendMessage(m);
+	}
+#endif
 	currentApp->touchMoved(touch.x, touch.y, touch.id);
 }
 
@@ -247,6 +264,15 @@ void ReactickleApp::touchUp(ofTouchEventArgs &touch){
 			return;
 		}
 	}
+	
+#ifndef TARGET_OF_IPHONE
+	if(isReactickle(currentApp)) {
+		ofxOscMessage m;
+		m.setAddress( "/touchup" );
+		m.addIntArg(mode);
+		ReactickleApp::instance->sender.sendMessage(m);
+	}
+#endif
 	currentApp->touchUp(touch.x, touch.y, touch.id);
 }
 

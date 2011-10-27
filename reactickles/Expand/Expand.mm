@@ -158,12 +158,7 @@ bool Expand::touchDown(float x, float y, int touchId){
 		default:
 			break;
 	}
-#ifndef TARGET_OF_IPHONE
-	ofxOscMessage m;
-	m.setAddress( "/touchdown" );
-	m.addIntArg(mode);
-	ReactickleApp::instance->sender.sendMessage(m);
-#endif
+
 	return true;
 }
 
