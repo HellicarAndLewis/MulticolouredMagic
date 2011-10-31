@@ -170,7 +170,7 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 #ifndef TARGET_OF_IPHONE
 		ofxOscMessage m;
 		m.setAddress( "/reacticklechange" );
-		m.addStringArg( reactickleNumber );
+		m.addStringArg( currentApp->name );
 		ReactickleApp::instance->sender.sendMessage( m );
 #endif
 	}
@@ -229,7 +229,7 @@ void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 	if(isReactickle(currentApp)) {
 		ofxOscMessage m;
 		m.setAddress( "/touchdown" );
-		m.addIntArg(mode);
+		m.addIntArg(currentApp->mode);
 		ReactickleApp::instance->sender.sendMessage(m);
 	}
 #endif
@@ -249,7 +249,7 @@ void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
 	if(isReactickle(currentApp)) {
 		ofxOscMessage m;
 		m.setAddress( "/touchmoved" );
-		m.addIntArg(mode);
+		m.addIntArg(currentApp->mode);
 		ReactickleApp::instance->sender.sendMessage(m);
 	}
 #endif
@@ -269,7 +269,7 @@ void ReactickleApp::touchUp(ofTouchEventArgs &touch){
 	if(isReactickle(currentApp)) {
 		ofxOscMessage m;
 		m.setAddress( "/touchup" );
-		m.addIntArg(mode);
+		m.addIntArg(currentApp->mode);
 		ReactickleApp::instance->sender.sendMessage(m);
 	}
 #endif

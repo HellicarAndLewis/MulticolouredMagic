@@ -17,7 +17,7 @@ bool HAS_CAMERA = true;
 
 string IMAGE_ROOT;
 string APP_NAME;
-#define DEBUG_MODE
+//#define DEBUG_MODE
 
 
 int main(){

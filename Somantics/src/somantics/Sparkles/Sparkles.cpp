@@ -11,8 +11,8 @@
 #include "Settings.h"
 #include "ColorPicker.h"
 
-#define VISION_WIDTH 320
-#define VISION_HEIGHT 480
+//#define VISION_WIDTH 320
+//#define VISION_HEIGHT 480
 //--------------------------------------------------------------
 void Sparkles::setup(){
 	
