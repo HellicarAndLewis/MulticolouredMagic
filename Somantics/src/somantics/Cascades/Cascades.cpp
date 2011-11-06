@@ -1,14 +1,12 @@
 #include "Cascades.h"
 
-void Cascades::setup(){
+void Cascades::setup()
+{
 
-	vidGrabber.setVerbose(true);
-	vidGrabber.initGrabber(320,240);
-
-    colorImg.allocate(320,240);
-	grayImage.allocate(320,240);
-	grayBg.allocate(320,240);
-	grayDiff.allocate(320,240);
+    colorImg->allocate(VISION_WIDTH,VISION_HEIGHT);
+	grayImage.allocate(VISION_WIDTH,VISION_HEIGHT);
+	grayBg.allocate(VISION_WIDTH,VISION_HEIGHT);
+	grayDiff.allocate(VISION_WIDTH,VISION_HEIGHT);
 	
 	ofSetVerticalSync(true);
 	
@@ -25,7 +23,7 @@ void Cascades::setup(){
 	contours = false;
 	
 	waterfallLEdge = 10;
-	waterfallREdge = 400;
+	waterfallREdge = 300;
 }
 
 void Cascades::update()
@@ -43,7 +41,7 @@ void Cascades::update()
 		++cit;
 	}
 	
-	if( circles.size() < 50 ) { // > 100 on screen
+	if( circles.size() < 100 ) { // > 100 on screen
 		ofxBox2dCircle circle;
 		circle.setPhysics(1, 0.5, 0.1);
 		float pos = ofRandom(waterfallREdge - waterfallLEdge) + 10;
@@ -52,25 +50,19 @@ void Cascades::update()
 	}
 	
 	box2d.update();
-
-	vidGrabber.grabFrame();
-	bool newFrame = vidGrabber.isFrameNew();
-
-	if (newFrame){
-
-		colorImg.setFromPixels(vidGrabber.getPixels(), 320, 240);
-		colorImg.mirror(false, true);
-
-        grayImage = colorImg;
-		if (bLearnBakground == true){
-			grayBg = grayImage;		// the = sign copys the pixels from grayImage into grayBg (operator overloading)
-			bLearnBakground = false;
-		}
-		grayDiff.absDiff(grayBg, grayImage);
-		grayDiff.threshold(threshold);
-		contourFinder.findContours(grayDiff, 20, (340*240)/3, 10, true);	// find holes
+	
+	colorImg->mirror(false, true);
+	
+	grayImage = *colorImg;
+	if (bLearnBakground == true){
+		grayBg = grayImage;		// the = sign copys the pixels from grayImage into grayBg (operator overloading)
+		bLearnBakground = false;
 	}
-
+	grayDiff.absDiff(grayBg, grayImage);
+	grayDiff.threshold(threshold);
+	//|| find holes //||
+	contourFinder.findContours(grayDiff, 20, (VISION_WIDTH*VISION_HEIGHT)/3, 10, true);
+	
 	checkBlobs();
 }
 
@@ -82,7 +74,7 @@ void Cascades::draw(){
 	vector<ofxBox2dCircle>::iterator cit = circles.begin();
 	while( cit != circles.end()) {
 		//cit->draw();
-		ofCircle(cit->getPosition().x, cit->getPosition().y, 10);
+		ofCircle(cit->getPosition().x, cit->getPosition().y, 30);
 		++cit;
 	}
 	
@@ -105,7 +97,7 @@ void Cascades::draw(){
 		vector <ofPoint>::iterator pit = bodyShape->getVertices().begin();
 		while(pit != bodyShape->getVertices().end() )
 		{
-			ofCircle(pit->x, pit->y, 5);
+			ofCircle(pit->x, pit->y, 30);
 			++pit;
 		}
 	}
@@ -208,7 +200,7 @@ void Cascades::mousePressed(int x, int y, int button){
 	}
 }
 
-void Cascades::keyPressed(int key){
+/*void Cascades::keyPressed(int key){
 	
 	switch (key){
 		case ' ':
@@ -229,4 +221,4 @@ void Cascades::keyPressed(int key){
 			contours = !contours;
 			break;
 	}
-}
+}*/

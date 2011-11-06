@@ -74,10 +74,10 @@ void Paths::draw(){
 	ofSetHexColor(0xFFFFFF);
 	mesh.draw();
 	
-	
 	for(int i = 0; i < paths.size(); i++) {
 		paths[i]->draw();
 	}
+	
 	ofSetHexColor(0);
 	map<int,ofVec2f>::iterator it;
 	for(it = touches.begin(); it != touches.end(); it++) {
