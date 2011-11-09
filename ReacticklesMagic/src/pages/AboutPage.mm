@@ -30,13 +30,13 @@ void AboutPage::start() {
 	videoButton.setListener(this);
 	
 	
-	twitterButton.setup("twitter",ofVec2f(32+45+20, 32+473+16+40), IMAGE_ROOT+"twitter.png");
-	vimeoButton.setup("vimeo",ofVec2f(119+32+20, 473+32+16+40), IMAGE_ROOT+"vimeo.png");
-	flickrButton.setup("flickr",ofVec2f(195+32+20, 32+473+16+40), IMAGE_ROOT+"flickr.png");
+	twitterButton.setup("twitter",ofVec2f(32+45+59, 32+473+16+65), IMAGE_ROOT+"twitter.png");
+	vimeoButton.setup("vimeo",ofVec2f(119+32+89, 473+32+16+65), IMAGE_ROOT+"vimeo.png");
+	flickrButton.setup("flickr",ofVec2f(195+32+117, 32+473+16+65), IMAGE_ROOT+"flickr.png");
 	reacticklesLink.setup("reactickles", ofVec2f(), "");
-	reacticklesLink.x = 121;
-	reacticklesLink.y = 448;
-	reacticklesLink.width = 142;
+	reacticklesLink.x = 99;
+	reacticklesLink.y = 448+72;
+	reacticklesLink.width = 112;
 	reacticklesLink.height = 20;
 	
 	
@@ -70,4 +70,13 @@ void AboutPage::buttonPressed(string name) {
 	}
 	
 
+}
+
+
+void AboutPage::draw() {
+	Reactickle::draw();
+//	ofNoFill();
+//	ofSetHexColor(0xFFFFFF);
+//	ofRect(reacticklesLink);
+//	ofFill();
 }

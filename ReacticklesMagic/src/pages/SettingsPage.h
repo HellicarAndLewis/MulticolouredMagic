@@ -21,11 +21,19 @@ public:
 	BrightnessSlider slider;
 	VolumeSlider volumeSlider;
 	
+	
 	ImageObject bgImage;
+	
+	ImageObject micLevelText;
+	ImageObject colourText;
+	
+	ImageObject brightnessTitle;
+	ImageObject micLevelTitle;
+	
 	ImageObject settingsTitle;
 	ImageObject colourPickerTitle;
 	ImageObject logo;
-	
+
 	void draw();
 	
 };

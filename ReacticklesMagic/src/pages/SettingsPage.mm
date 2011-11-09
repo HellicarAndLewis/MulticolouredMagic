@@ -13,16 +13,26 @@
 
 void SettingsPage::setup() {
 	
-	settingsTitle.setup(ofVec2f(39, 35+55+20), IMAGE_ROOT + "settingsTitle.png");	
-	colourPickerTitle.setup(ofVec2f(273-18, 115+98), IMAGE_ROOT + "colourPickerTitle.png");
+	settingsTitle.setup(ofVec2f(39, 110), IMAGE_ROOT + "settingsTitle.png");	
+	colourPickerTitle.setup(ofVec2f(273-74, 115+98-44), IMAGE_ROOT + "colourPickerTitle.png");
+	colourText.setup(ofVec2f(116, 424), IMAGE_ROOT + "colourText.png");
+	micLevelText.setup(ofVec2f(725, 675), IMAGE_ROOT + "micLevelText.png");
+	micLevelTitle.setup(ofVec2f(870+20-4, 657-305), IMAGE_ROOT + "micLevelTitle.png");
+	brightnessTitle.setup(ofVec2f(870-126-15, 657-280), IMAGE_ROOT + "brightnessTitle.png");
 	
 	
 	colorPicker.setup();
-	colorPicker.y += 108;
-	colorPicker.x -= 18;
-	slider.setup();
-	volumeSlider.setup();
+	colorPicker.y += 60;
+	colorPicker.x = 41;
 	
+	slider.setup();
+	
+	slider.x = 739;
+	slider.y = 188;
+	
+	volumeSlider.setup();
+	volumeSlider.x = 897;
+	volumeSlider.y = slider.y;
 
 	
 	if(IPAD) {
@@ -41,8 +51,12 @@ void SettingsPage::setup() {
 	
 	
 	add(bgImage);	
+	add(colourText);
+	add(micLevelText);
 	add(colorPicker);
 	add(slider);
+	add(brightnessTitle);
+	add(micLevelTitle);
 	add(colourPickerTitle);
 	add(volumeSlider);
 	add(settingsTitle);
@@ -59,9 +73,11 @@ void SettingsPage::buttonPressed(string name) {
 	
 }
 
+
 	   
 void SettingsPage::draw() {
+	volumeSlider.setVolume(volume);
 	Reactickle::draw();
-	ofSetHexColor(0xFF0000);
-	ofRect(0, 0, ofMap(volume, 0, 1, 0, WIDTH), 20);
+//	ofSetHexColor(0xFF0000);
+//	ofRect(0, 0, ofMap(volume, 0, 1, 0, WIDTH), 20);
 }

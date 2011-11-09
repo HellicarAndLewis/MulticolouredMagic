@@ -1122,7 +1122,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Marek Bereza";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
@@ -1150,7 +1150,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F7DCAB6B-4D2A-4794-B160-4394B068CB03";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;

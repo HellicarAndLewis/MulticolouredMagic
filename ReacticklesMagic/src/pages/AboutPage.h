@@ -21,7 +21,7 @@
 class AboutPage: public Reactickle, public SimpleButtonListener {
 public:
 	void start() ;
-	
+	void draw();
 	void buttonPressed(string name) ;
 	
 	ImageObject bgImage;
@@ -29,11 +29,12 @@ public:
 	ImageObject logo;
 	ImageObject aboutContent;
 	
-	
+
 	SimpleButton reacticklesLink;
 	SimpleButton videoButton;
 	SimpleButton twitterButton;
 	SimpleButton flickrButton;
 	SimpleButton vimeoButton;
+
 	
 };

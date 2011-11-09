@@ -106,7 +106,7 @@ protected:
 	virtual bool isReactickle(Reactickle *reactickle) = 0;
 	float gain;
 	float volume;
-	float volumeThreshold;
+	static const float volumeThreshold = 0.3;
 	Reactickle *currentApp;
 	Reactickle *mainMenu;
 	

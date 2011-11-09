@@ -81,11 +81,11 @@ void ColorPicker::setup() {
 	
 	
 
-	selection.setup(ofVec2f(463+57, 130), IMAGE_ROOT+"selection.png");
+	selection.setup(ofVec2f(463+37, 130), IMAGE_ROOT+"selection.png");
 
 
 	inkWell.setup();
-	inkWell.x = 505;
+	inkWell.x = 485;
 
 
 

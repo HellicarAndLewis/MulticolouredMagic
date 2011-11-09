@@ -22,7 +22,7 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	currentApp = NULL;
 	gain = 1;
 	crossFadeStartTime = -100;
-	volumeThreshold = 0.3;
+//	volumeThreshold = 0.3;
 	volume = 0;
 	setupGraphics();
 	setupOrientation();
