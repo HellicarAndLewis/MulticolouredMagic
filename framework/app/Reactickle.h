@@ -102,7 +102,7 @@ ofxCvColorImage *colorImg;
 	
 	ofImage *titleImage;
 
-protected:
+//protected:
     int mode;
     
 };
