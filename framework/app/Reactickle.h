@@ -16,8 +16,10 @@
 #include "MagicShapes.h"
 
 
+// for now we comment this out for reactickles and include for somantics
+//#define USES_CAMERA
 
-#ifndef TARGET_OF_IPHONE
+#ifdef USES_CAMERA
 #include "ofxOpenCv.h"
 	
 	// this is what you get if you're not on iphone
@@ -69,13 +71,13 @@ public:
 //#ifndef TARGET_OF_IPHONE
 	virtual bool needsKinect() { return false; }
 
-#ifndef TARGET_OF_IPHONE
+#ifdef USES_CAMERA
 ofxCvColorImage *colorImg;		
 #endif
     // how much camera movement there is
 	float movement;
 //#endif
-#ifndef TARGET_OF_IPHONE
+#ifdef USES_CAMERA
 	ofxCvGrayscaleImage *depthImg;
 	ofxCvGrayscaleImage *threshImg;
 #endif

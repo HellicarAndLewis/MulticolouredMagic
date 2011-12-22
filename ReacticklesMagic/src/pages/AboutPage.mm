@@ -58,7 +58,7 @@ void ofxiPhoneLaunchBrowser(string url) {
 #endif
 void AboutPage::buttonPressed(string name) {
 	if(name=="video") {
-		launchUrl("http://vimeo.com/user1978699");
+		launchUrl("http://vimeo.com/33679871");
 	} else if(name=="vimeo") {
 		launchUrl("http://vimeo.com/user1978699");
 	} else if(name=="reactickles") {

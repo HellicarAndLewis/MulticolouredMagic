@@ -49,7 +49,7 @@ public:
 	
 	ofVideoGrabber vidGrabber;
 	ofxCvColorImage colorImg;
-#ifndef TARGET_OF_IPHONE
+#ifdef USES_CAMERA
 	ofxCvGrayscaleImage depthImg;
 	ofxCvGrayscaleImage threshImg;
 	float depthThreshold;

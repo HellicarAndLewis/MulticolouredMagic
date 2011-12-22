@@ -90,7 +90,7 @@ void Painter::update(){
 			float totalCount = canvas.width*canvas.height;
 			float proportionOfMatchedPixels = (float)matchCount/totalCount;
 		//	printf("Match count: %f%%\n", proportionOfMatchedPixels*100.f);
-			if(proportionOfMatchedPixels>.26) {
+			if(proportionOfMatchedPixels>.36) {
 				// change colour
 				nextColour();
 			}

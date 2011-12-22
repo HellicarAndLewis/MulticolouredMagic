@@ -219,9 +219,10 @@ void ReactickleApp::mouseReleased(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ReactickleApp::touchDown(ofTouchEventArgs &touch){
+	float mult = RETINA?2:1;
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
-		if(backButton.touchDown(touch.x, touch.y, touch.id)) {
+		if(backButton.touchDown(touch.x*mult, touch.y*mult, touch.id)) {
 			return;
 		}
 	}
@@ -233,14 +234,15 @@ void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 		ReactickleApp::instance->sender.sendMessage(m);
 	}
 #endif
-	currentApp->touchDown(touch.x, touch.y, touch.id);
+	currentApp->touchDown(touch.x*mult, touch.y*mult, touch.id);
 }
 
 //--------------------------------------------------------------
 void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
+	float mult = RETINA?2:1;
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
-		if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
+		if(backButton.touchMoved(touch.x*mult, touch.y*mult, touch.id)) {
 			return;
 		}
 	}
@@ -253,14 +255,15 @@ void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
 		ReactickleApp::instance->sender.sendMessage(m);
 	}
 #endif
-	currentApp->touchMoved(touch.x, touch.y, touch.id);
+	currentApp->touchMoved(touch.x*mult, touch.y*mult, touch.id);
 }
 
 //--------------------------------------------------------------
 void ReactickleApp::touchUp(ofTouchEventArgs &touch){
+	float mult = RETINA?2:1;
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
-		if(backButton.touchUp(touch.x, touch.y, touch.id)) {
+		if(backButton.touchUp(touch.x*mult, touch.y*mult, touch.id)) {
 			return;
 		}
 	}
@@ -273,7 +276,7 @@ void ReactickleApp::touchUp(ofTouchEventArgs &touch){
 		ReactickleApp::instance->sender.sendMessage(m);
 	}
 #endif
-	currentApp->touchUp(touch.x, touch.y, touch.id);
+	currentApp->touchUp(touch.x*mult, touch.y*mult, touch.id);
 }
 
 //--------------------------------------------------------------

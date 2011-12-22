@@ -3,7 +3,8 @@
 void Cascades::setup()
 {
 
-    colorImg->allocate(VISION_WIDTH,VISION_HEIGHT);
+	// colorImg is null at this point, this was crashing the app.
+    //colorImg->allocate(VISION_WIDTH,VISION_HEIGHT);
 	grayImage.allocate(VISION_WIDTH,VISION_HEIGHT);
 	grayBg.allocate(VISION_WIDTH,VISION_HEIGHT);
 	grayDiff.allocate(VISION_WIDTH,VISION_HEIGHT);

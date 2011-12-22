@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Icon@2x.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.reactickles.magic</string>
+	<string>org.cariad.reacticklesmagic</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
