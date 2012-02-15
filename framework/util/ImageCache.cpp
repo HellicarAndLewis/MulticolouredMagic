@@ -33,7 +33,7 @@ ofImage *ImageCache::getImage(string path) {
 	}
 	
 	if(!guiResFileExists(ofToDataPath(path, true))) {
-		printf("File doesn't exist %s\n", (path).c_str());
+		printf("File doesn't exist %s\n", ofToDataPath(path).c_str());
 #ifdef IMAGECACHE_STRICT
 		return NULL;
 #else
@@ -44,7 +44,9 @@ ofImage *ImageCache::getImage(string path) {
 	// cache the image if it's not already loaded
 	if(imageCacheImages.find(path)==imageCacheImages.end()) {
 		ofImage *img = new ofImage();
+		printf("Loading %s\n", ofToDataPath(path).c_str());
 		img->loadImage(path);
+
 		imageCacheImages[path] = img;
 		//printf("Loaded file from %s\n", string(basePath+path).c_str());
 	}

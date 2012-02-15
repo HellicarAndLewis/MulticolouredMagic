@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D1CD56013A63D3A003A5232 /* Expand.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD55E13A63D3A003A5232 /* Expand.mm */; };
-		5D1CD56413A63DA4003A5232 /* Orbit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56213A63DA4003A5232 /* Orbit.mm */; };
-		5D1CD56813A63E29003A5232 /* Flip.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56613A63E29003A5232 /* Flip.mm */; };
-		5D1CD56E13A63EC8003A5232 /* Follow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56A13A63EC8003A5232 /* Follow.mm */; };
-		5D1CD56F13A63EC8003A5232 /* FollowParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD56C13A63EC8003A5232 /* FollowParticle.cpp */; };
-		5D1CD57613A64162003A5232 /* TrailParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD57213A64162003A5232 /* TrailParticle.cpp */; };
-		5D1CD57713A64162003A5232 /* Trail.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D1CD57413A64162003A5232 /* Trail.mm */; };
 		5D2113DC139BEEF500E0BE49 /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2113C4139BEEF500E0BE49 /* liboscpack.a */; };
 		5D2113DD139BEEF500E0BE49 /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2113C5139BEEF500E0BE49 /* liboscpack.a */; };
 		5D2113DE139BEEF500E0BE49 /* liboscpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2113C7139BEEF500E0BE49 /* liboscpack.a */; };
@@ -95,20 +88,33 @@
 		EA20B699136705160038E922 /* UdpSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA20B65E136705160038E922 /* UdpSender.cpp */; };
 		EA30E37213D5D49800E6E26C /* MultitouchSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA30E37113D5D49800E6E26C /* MultitouchSupport.framework */; };
 		EA30E37A13D5D4B900E6E26C /* ofxMultiTouchPad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA30E37813D5D4B900E6E26C /* ofxMultiTouchPad.cpp */; };
-		EA6210E913A64A8A00A88AF0 /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210D613A64A8A00A88AF0 /* Apps.mm */; };
-		EA6210EB13A64A8A00A88AF0 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210DA13A64A8A00A88AF0 /* testApp.mm */; };
-		EA6210EE13A64A8A00A88AF0 /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E413A64A8A00A88AF0 /* AboutPage.mm */; };
-		EA6210EF13A64A8A00A88AF0 /* MainMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E613A64A8A00A88AF0 /* MainMenu.mm */; };
-		EA6210F013A64A8A00A88AF0 /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA6210E813A64A8A00A88AF0 /* SettingsPage.mm */; };
+		EA48D26014EAC3050081DF15 /* Apps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D25D14EAC3050081DF15 /* Apps.cpp */; };
+		EA48D26114EAC3050081DF15 /* testApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D25E14EAC3050081DF15 /* testApp.cpp */; };
+		EA48D26214EAC3050081DF15 /* testAppEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D25F14EAC3050081DF15 /* testAppEvents.cpp */; };
+		EA48D26614EAC3140081DF15 /* AboutPage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D26314EAC3140081DF15 /* AboutPage.cpp */; };
+		EA48D26714EAC3140081DF15 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D26414EAC3140081DF15 /* MainMenu.cpp */; };
+		EA48D26814EAC3140081DF15 /* SettingsPage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D26514EAC3140081DF15 /* SettingsPage.cpp */; };
+		EA48D26A14EAC32E0081DF15 /* ReactickleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D26914EAC32E0081DF15 /* ReactickleApp.cpp */; };
+		EA48D26C14EAC3430081DF15 /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D26B14EAC3430081DF15 /* Settings.cpp */; };
+		EA48D29214EAC35F0081DF15 /* Cascade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D26F14EAC35F0081DF15 /* Cascade.cpp */; };
+		EA48D29314EAC35F0081DF15 /* Change.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D27214EAC35F0081DF15 /* Change.cpp */; };
+		EA48D29414EAC35F0081DF15 /* Expand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D27514EAC35F0081DF15 /* Expand.cpp */; };
+		EA48D29514EAC35F0081DF15 /* Find.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D27814EAC35F0081DF15 /* Find.cpp */; };
+		EA48D29614EAC35F0081DF15 /* Flip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D27B14EAC35F0081DF15 /* Flip.cpp */; };
+		EA48D29714EAC35F0081DF15 /* Follow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D27E14EAC35F0081DF15 /* Follow.cpp */; };
+		EA48D29814EAC35F0081DF15 /* FollowParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D28014EAC35F0081DF15 /* FollowParticle.cpp */; };
+		EA48D29914EAC35F0081DF15 /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D28314EAC35F0081DF15 /* Grid.cpp */; };
+		EA48D29A14EAC35F0081DF15 /* Orbit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D28614EAC35F0081DF15 /* Orbit.cpp */; };
+		EA48D29B14EAC35F0081DF15 /* Trace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D28914EAC35F0081DF15 /* Trace.cpp */; };
+		EA48D29C14EAC35F0081DF15 /* TrailParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D28E14EAC35F0081DF15 /* TrailParticle.cpp */; };
+		EA48D29D14EAC35F0081DF15 /* Trail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D29014EAC35F0081DF15 /* Trail.cpp */; };
 		EA62111913A64C4400A88AF0 /* MagicShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6210FE13A64C4400A88AF0 /* MagicShapes.cpp */; };
 		EA62111A13A64C4400A88AF0 /* ImageCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62110A13A64C4400A88AF0 /* ImageCache.cpp */; };
 		EA62111B13A64C4400A88AF0 /* Properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62110C13A64C4400A88AF0 /* Properties.cpp */; };
-		EA62111C13A64C4400A88AF0 /* Settings.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA62110F13A64C4400A88AF0 /* Settings.mm */; };
 		EA62111D13A64C4400A88AF0 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62111013A64C4400A88AF0 /* util.cpp */; };
 		EA62111E13A64C4400A88AF0 /* KinectOrCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62111313A64C4400A88AF0 /* KinectOrCamera.cpp */; };
 		EA62111F13A64C4400A88AF0 /* TuioKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA62111513A64C4400A88AF0 /* TuioKinect.cpp */; };
 		EA6212B113A6700300A88AF0 /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA6212B013A6700300A88AF0 /* ColorPicker.cpp */; };
-		EAD4933D13A8B52500D312FE /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4933C13A8B52500D312FE /* ReactickleApp.mm */; };
 		EAD4969B13A8D32D00D312FE /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4969A13A8D32D00D312FE /* main.mm */; };
 		EAD496AB13A8D36700D312FE /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD496A913A8D36700D312FE /* ReactickleButton.cpp */; };
 		EAD6E19E1353336400075A87 /* ofxCvColorImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E1561353336400075A87 /* ofxCvColorImage.cpp */; };
@@ -123,7 +129,6 @@
 		EAD6E2511353353100075A87 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E24B1353353100075A87 /* tinyxmlparser.cpp */; };
 		EAD6E2521353353100075A87 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD6E24D1353353100075A87 /* ofxXmlSettings.cpp */; };
 		EAD6E58E135345AD00075A87 /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD6E58D135345AD00075A87 /* osc.a */; };
-		EAE2AE0C13A7857A002B789C /* testAppEvents.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAE2AE0B13A7857A002B789C /* testAppEvents.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,25 +172,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5D1CD55E13A63D3A003A5232 /* Expand.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Expand.mm; sourceTree = "<group>"; };
-		5D1CD55F13A63D3A003A5232 /* Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expand.h; sourceTree = "<group>"; };
-		5D1CD56213A63DA4003A5232 /* Orbit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Orbit.mm; sourceTree = "<group>"; };
-		5D1CD56313A63DA4003A5232 /* Orbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Orbit.h; sourceTree = "<group>"; };
-		5D1CD56613A63E29003A5232 /* Flip.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Flip.mm; sourceTree = "<group>"; };
-		5D1CD56713A63E29003A5232 /* Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flip.h; sourceTree = "<group>"; };
-		5D1CD56A13A63EC8003A5232 /* Follow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Follow.mm; sourceTree = "<group>"; };
-		5D1CD56B13A63EC8003A5232 /* Follow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follow.h; sourceTree = "<group>"; };
-		5D1CD56C13A63EC8003A5232 /* FollowParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FollowParticle.cpp; sourceTree = "<group>"; };
-		5D1CD56D13A63EC8003A5232 /* FollowParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowParticle.h; sourceTree = "<group>"; };
-		5D1CD57213A64162003A5232 /* TrailParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrailParticle.cpp; sourceTree = "<group>"; };
-		5D1CD57313A64162003A5232 /* TrailParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrailParticle.h; sourceTree = "<group>"; };
-		5D1CD57413A64162003A5232 /* Trail.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Trail.mm; sourceTree = "<group>"; };
-		5D1CD57513A64162003A5232 /* Trail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trail.h; sourceTree = "<group>"; };
-		5D1CD57913A6422C003A5232 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
-		5D1CD57B13A6426A003A5232 /* Cascade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cascade.h; sourceTree = "<group>"; };
-		5D1CD57D13A6432F003A5232 /* Change.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Change.h; sourceTree = "<group>"; };
-		5D1CD57F13A64418003A5232 /* Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
-		5D1CD58113A64418003A5232 /* Trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trace.h; sourceTree = "<group>"; };
 		5D2113AE139BEEF500E0BE49 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		5D2113B3139BEEF500E0BE49 /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
 		5D2113B4139BEEF500E0BE49 /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
@@ -227,7 +213,7 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured Magic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reactickles Multicoloured Magic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured MagicDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reactickles Multicoloured MagicDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4C2421610CC549C004149E2 /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -360,22 +346,49 @@
 		EA30E37713D5D4B900E6E26C /* MTTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTypes.h; sourceTree = "<group>"; };
 		EA30E37813D5D4B900E6E26C /* ofxMultiTouchPad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMultiTouchPad.cpp; sourceTree = "<group>"; };
 		EA30E37913D5D4B900E6E26C /* ofxMultiTouchPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMultiTouchPad.h; sourceTree = "<group>"; };
-		EA6210D613A64A8A00A88AF0 /* Apps.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Apps.mm; sourceTree = "<group>"; };
+		EA48D25D14EAC3050081DF15 /* Apps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Apps.cpp; sourceTree = "<group>"; };
+		EA48D25E14EAC3050081DF15 /* testApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testApp.cpp; sourceTree = "<group>"; };
+		EA48D25F14EAC3050081DF15 /* testAppEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testAppEvents.cpp; sourceTree = "<group>"; };
+		EA48D26314EAC3140081DF15 /* AboutPage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AboutPage.cpp; sourceTree = "<group>"; };
+		EA48D26414EAC3140081DF15 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
+		EA48D26514EAC3140081DF15 /* SettingsPage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SettingsPage.cpp; sourceTree = "<group>"; };
+		EA48D26914EAC32E0081DF15 /* ReactickleApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleApp.cpp; sourceTree = "<group>"; };
+		EA48D26B14EAC3430081DF15 /* Settings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Settings.cpp; sourceTree = "<group>"; };
+		EA48D26F14EAC35F0081DF15 /* Cascade.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cascade.cpp; sourceTree = "<group>"; };
+		EA48D27014EAC35F0081DF15 /* Cascade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cascade.h; sourceTree = "<group>"; };
+		EA48D27214EAC35F0081DF15 /* Change.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Change.cpp; sourceTree = "<group>"; };
+		EA48D27314EAC35F0081DF15 /* Change.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Change.h; sourceTree = "<group>"; };
+		EA48D27514EAC35F0081DF15 /* Expand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expand.cpp; sourceTree = "<group>"; };
+		EA48D27614EAC35F0081DF15 /* Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expand.h; sourceTree = "<group>"; };
+		EA48D27814EAC35F0081DF15 /* Find.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Find.cpp; sourceTree = "<group>"; };
+		EA48D27914EAC35F0081DF15 /* Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
+		EA48D27B14EAC35F0081DF15 /* Flip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Flip.cpp; sourceTree = "<group>"; };
+		EA48D27C14EAC35F0081DF15 /* Flip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flip.h; sourceTree = "<group>"; };
+		EA48D27E14EAC35F0081DF15 /* Follow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Follow.cpp; sourceTree = "<group>"; };
+		EA48D27F14EAC35F0081DF15 /* Follow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follow.h; sourceTree = "<group>"; };
+		EA48D28014EAC35F0081DF15 /* FollowParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FollowParticle.cpp; sourceTree = "<group>"; };
+		EA48D28114EAC35F0081DF15 /* FollowParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowParticle.h; sourceTree = "<group>"; };
+		EA48D28314EAC35F0081DF15 /* Grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grid.cpp; sourceTree = "<group>"; };
+		EA48D28414EAC35F0081DF15 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
+		EA48D28614EAC35F0081DF15 /* Orbit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Orbit.cpp; sourceTree = "<group>"; };
+		EA48D28714EAC35F0081DF15 /* Orbit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Orbit.h; sourceTree = "<group>"; };
+		EA48D28914EAC35F0081DF15 /* Trace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trace.cpp; sourceTree = "<group>"; };
+		EA48D28A14EAC35F0081DF15 /* Trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trace.h; sourceTree = "<group>"; };
+		EA48D28B14EAC35F0081DF15 /* TraceShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceShape.h; sourceTree = "<group>"; };
+		EA48D28E14EAC35F0081DF15 /* TrailParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrailParticle.cpp; sourceTree = "<group>"; };
+		EA48D28F14EAC35F0081DF15 /* TrailParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrailParticle.h; sourceTree = "<group>"; };
+		EA48D29014EAC35F0081DF15 /* Trail.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trail.cpp; sourceTree = "<group>"; };
+		EA48D29114EAC35F0081DF15 /* Trail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trail.h; sourceTree = "<group>"; };
 		EA6210D913A64A8A00A88AF0 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
-		EA6210DA13A64A8A00A88AF0 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
 		EA6210E113A64A8A00A88AF0 /* BrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSlider.h; sourceTree = "<group>"; };
 		EA6210E213A64A8A00A88AF0 /* VolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
 		EA6210E313A64A8A00A88AF0 /* AboutPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPage.h; sourceTree = "<group>"; };
-		EA6210E413A64A8A00A88AF0 /* AboutPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AboutPage.mm; sourceTree = "<group>"; };
 		EA6210E513A64A8A00A88AF0 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
-		EA6210E613A64A8A00A88AF0 /* MainMenu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainMenu.mm; sourceTree = "<group>"; };
 		EA6210E713A64A8A00A88AF0 /* SettingsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsPage.h; sourceTree = "<group>"; };
-		EA6210E813A64A8A00A88AF0 /* SettingsPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SettingsPage.mm; sourceTree = "<group>"; };
 		EA6210FB13A64C4400A88AF0 /* Reactickle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reactickle.h; sourceTree = "<group>"; };
 		EA6210FD13A64C4400A88AF0 /* GlowingBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowingBorder.h; sourceTree = "<group>"; };
 		EA6210FE13A64C4400A88AF0 /* MagicShapes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MagicShapes.cpp; sourceTree = "<group>"; };
 		EA6210FF13A64C4400A88AF0 /* MagicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicShapes.h; sourceTree = "<group>"; };
-		EA62110013A64C4400A88AF0 /* msaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msaColor.h; sourceTree = "<group>"; };
 		EA62110213A64C4400A88AF0 /* ColorCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCube.h; sourceTree = "<group>"; };
 		EA62110313A64C4400A88AF0 /* ColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPicker.h; sourceTree = "<group>"; };
 		EA62110413A64C4400A88AF0 /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
@@ -388,7 +401,6 @@
 		EA62110C13A64C4400A88AF0 /* Properties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Properties.cpp; sourceTree = "<group>"; };
 		EA62110D13A64C4400A88AF0 /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
 		EA62110E13A64C4400A88AF0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		EA62110F13A64C4400A88AF0 /* Settings.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Settings.mm; sourceTree = "<group>"; };
 		EA62111013A64C4400A88AF0 /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
 		EA62111113A64C4400A88AF0 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		EA62111313A64C4400A88AF0 /* KinectOrCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectOrCamera.cpp; sourceTree = "<group>"; };
@@ -398,7 +410,6 @@
 		EA6211ED13A661B200A88AF0 /* ModeDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDisplay.h; sourceTree = "<group>"; };
 		EA6212B013A6700300A88AF0 /* ColorPicker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorPicker.cpp; sourceTree = "<group>"; };
 		EAD4933B13A8B52500D312FE /* ReactickleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleApp.h; sourceTree = "<group>"; };
-		EAD4933C13A8B52500D312FE /* ReactickleApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReactickleApp.mm; sourceTree = "<group>"; };
 		EAD4969913A8D32400D312FE /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		EAD4969A13A8D32D00D312FE /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		EAD496A913A8D36700D312FE /* ReactickleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleButton.cpp; sourceTree = "<group>"; };
@@ -429,7 +440,6 @@
 		EAD6E24D1353353100075A87 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		EAD6E24E1353353100075A87 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		EAD6E58D135345AD00075A87 /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
-		EAE2AE0B13A7857A002B789C /* testAppEvents.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testAppEvents.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,103 +478,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D1CD55D13A63D3A003A5232 /* Expand */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD55E13A63D3A003A5232 /* Expand.mm */,
-				5D1CD55F13A63D3A003A5232 /* Expand.h */,
-			);
-			path = Expand;
-			sourceTree = "<group>";
-		};
-		5D1CD56113A63DA4003A5232 /* Orbit */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD56213A63DA4003A5232 /* Orbit.mm */,
-				5D1CD56313A63DA4003A5232 /* Orbit.h */,
-			);
-			path = Orbit;
-			sourceTree = "<group>";
-		};
-		5D1CD56513A63E29003A5232 /* Flip */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD56613A63E29003A5232 /* Flip.mm */,
-				5D1CD56713A63E29003A5232 /* Flip.h */,
-			);
-			path = Flip;
-			sourceTree = "<group>";
-		};
-		5D1CD56913A63EC8003A5232 /* Follow */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD56A13A63EC8003A5232 /* Follow.mm */,
-				5D1CD56B13A63EC8003A5232 /* Follow.h */,
-				5D1CD56C13A63EC8003A5232 /* FollowParticle.cpp */,
-				5D1CD56D13A63EC8003A5232 /* FollowParticle.h */,
-			);
-			path = Follow;
-			sourceTree = "<group>";
-		};
-		5D1CD57013A64161003A5232 /* Trail */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD57113A64162003A5232 /* particles */,
-				5D1CD57413A64162003A5232 /* Trail.mm */,
-				5D1CD57513A64162003A5232 /* Trail.h */,
-			);
-			path = Trail;
-			sourceTree = "<group>";
-		};
-		5D1CD57113A64162003A5232 /* particles */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD57213A64162003A5232 /* TrailParticle.cpp */,
-				5D1CD57313A64162003A5232 /* TrailParticle.h */,
-			);
-			path = particles;
-			sourceTree = "<group>";
-		};
-		5D1CD57813A6422C003A5232 /* Grid */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD57913A6422C003A5232 /* Grid.h */,
-			);
-			path = Grid;
-			sourceTree = "<group>";
-		};
-		5D1CD57A13A6426A003A5232 /* Cascade */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD57B13A6426A003A5232 /* Cascade.h */,
-			);
-			path = Cascade;
-			sourceTree = "<group>";
-		};
-		5D1CD57C13A6432F003A5232 /* Change */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD57D13A6432F003A5232 /* Change.h */,
-			);
-			path = Change;
-			sourceTree = "<group>";
-		};
-		5D1CD57E13A64417003A5232 /* Find */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD57F13A64418003A5232 /* Find.h */,
-			);
-			path = Find;
-			sourceTree = "<group>";
-		};
-		5D1CD58013A64418003A5232 /* Trace */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD58113A64418003A5232 /* Trace.h */,
-			);
-			path = Trace;
-			sourceTree = "<group>";
-		};
 		5D2113AD139BEEF500E0BE49 /* ofxOsc */ = {
 			isa = PBXGroup;
 			children = (
@@ -744,10 +657,10 @@
 				EA6210F613A64C4400A88AF0 /* framework */,
 				EA6210D413A64A8A00A88AF0 /* src */,
 				EA20B58A136705150038E922 /* addons */,
-				EA20BA6D136730CC0038E922 /* reactickles */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
+				EA48D26D14EAC35F0081DF15 /* reactickles */,
 				EA092D7A13A76A5400739FFE /* icon.icns */,
-				E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured Magic.app */,
+				E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured MagicDebug.app */,
 				E4C2422310CC54B6004149E2 /* openFrameworks */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
 			);
@@ -1069,24 +982,6 @@
 			path = TUIO;
 			sourceTree = "<group>";
 		};
-		EA20BA6D136730CC0038E922 /* reactickles */ = {
-			isa = PBXGroup;
-			children = (
-				5D1CD55D13A63D3A003A5232 /* Expand */,
-				5D1CD56113A63DA4003A5232 /* Orbit */,
-				5D1CD56513A63E29003A5232 /* Flip */,
-				5D1CD56913A63EC8003A5232 /* Follow */,
-				5D1CD57013A64161003A5232 /* Trail */,
-				5D1CD57813A6422C003A5232 /* Grid */,
-				5D1CD57A13A6426A003A5232 /* Cascade */,
-				5D1CD57C13A6432F003A5232 /* Change */,
-				5D1CD57E13A64417003A5232 /* Find */,
-				5D1CD58013A64418003A5232 /* Trace */,
-			);
-			name = reactickles;
-			path = ../reactickles;
-			sourceTree = SOURCE_ROOT;
-		};
 		EA30E37313D5D4B900E6E26C /* ofxMultiTouchPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,6 +1002,127 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		EA48D26D14EAC35F0081DF15 /* reactickles */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D26E14EAC35F0081DF15 /* Cascade */,
+				EA48D27114EAC35F0081DF15 /* Change */,
+				EA48D27414EAC35F0081DF15 /* Expand */,
+				EA48D27714EAC35F0081DF15 /* Find */,
+				EA48D27A14EAC35F0081DF15 /* Flip */,
+				EA48D27D14EAC35F0081DF15 /* Follow */,
+				EA48D28214EAC35F0081DF15 /* Grid */,
+				EA48D28514EAC35F0081DF15 /* Orbit */,
+				EA48D28814EAC35F0081DF15 /* Trace */,
+				EA48D28C14EAC35F0081DF15 /* Trail */,
+			);
+			name = reactickles;
+			path = ../reactickles;
+			sourceTree = "<group>";
+		};
+		EA48D26E14EAC35F0081DF15 /* Cascade */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D26F14EAC35F0081DF15 /* Cascade.cpp */,
+				EA48D27014EAC35F0081DF15 /* Cascade.h */,
+			);
+			path = Cascade;
+			sourceTree = "<group>";
+		};
+		EA48D27114EAC35F0081DF15 /* Change */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D27214EAC35F0081DF15 /* Change.cpp */,
+				EA48D27314EAC35F0081DF15 /* Change.h */,
+			);
+			path = Change;
+			sourceTree = "<group>";
+		};
+		EA48D27414EAC35F0081DF15 /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D27514EAC35F0081DF15 /* Expand.cpp */,
+				EA48D27614EAC35F0081DF15 /* Expand.h */,
+			);
+			path = Expand;
+			sourceTree = "<group>";
+		};
+		EA48D27714EAC35F0081DF15 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D27814EAC35F0081DF15 /* Find.cpp */,
+				EA48D27914EAC35F0081DF15 /* Find.h */,
+			);
+			path = Find;
+			sourceTree = "<group>";
+		};
+		EA48D27A14EAC35F0081DF15 /* Flip */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D27B14EAC35F0081DF15 /* Flip.cpp */,
+				EA48D27C14EAC35F0081DF15 /* Flip.h */,
+			);
+			path = Flip;
+			sourceTree = "<group>";
+		};
+		EA48D27D14EAC35F0081DF15 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D27E14EAC35F0081DF15 /* Follow.cpp */,
+				EA48D27F14EAC35F0081DF15 /* Follow.h */,
+				EA48D28014EAC35F0081DF15 /* FollowParticle.cpp */,
+				EA48D28114EAC35F0081DF15 /* FollowParticle.h */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		EA48D28214EAC35F0081DF15 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D28314EAC35F0081DF15 /* Grid.cpp */,
+				EA48D28414EAC35F0081DF15 /* Grid.h */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
+		EA48D28514EAC35F0081DF15 /* Orbit */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D28614EAC35F0081DF15 /* Orbit.cpp */,
+				EA48D28714EAC35F0081DF15 /* Orbit.h */,
+			);
+			path = Orbit;
+			sourceTree = "<group>";
+		};
+		EA48D28814EAC35F0081DF15 /* Trace */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D28914EAC35F0081DF15 /* Trace.cpp */,
+				EA48D28A14EAC35F0081DF15 /* Trace.h */,
+				EA48D28B14EAC35F0081DF15 /* TraceShape.h */,
+			);
+			path = Trace;
+			sourceTree = "<group>";
+		};
+		EA48D28C14EAC35F0081DF15 /* Trail */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D28D14EAC35F0081DF15 /* particles */,
+				EA48D29014EAC35F0081DF15 /* Trail.cpp */,
+				EA48D29114EAC35F0081DF15 /* Trail.h */,
+			);
+			path = Trail;
+			sourceTree = "<group>";
+		};
+		EA48D28D14EAC35F0081DF15 /* particles */ = {
+			isa = PBXGroup;
+			children = (
+				EA48D28E14EAC35F0081DF15 /* TrailParticle.cpp */,
+				EA48D28F14EAC35F0081DF15 /* TrailParticle.h */,
+			);
+			path = particles;
+			sourceTree = "<group>";
+		};
 		EA6210D413A64A8A00A88AF0 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -1120,10 +1136,10 @@
 		EA6210D513A64A8A00A88AF0 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				EA6210D613A64A8A00A88AF0 /* Apps.mm */,
+				EA48D25D14EAC3050081DF15 /* Apps.cpp */,
+				EA48D25E14EAC3050081DF15 /* testApp.cpp */,
+				EA48D25F14EAC3050081DF15 /* testAppEvents.cpp */,
 				EA6210D913A64A8A00A88AF0 /* testApp.h */,
-				EA6210DA13A64A8A00A88AF0 /* testApp.mm */,
-				EAE2AE0B13A7857A002B789C /* testAppEvents.mm */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -1139,14 +1155,14 @@
 		EA6210E013A64A8A00A88AF0 /* pages */ = {
 			isa = PBXGroup;
 			children = (
+				EA48D26314EAC3140081DF15 /* AboutPage.cpp */,
+				EA48D26414EAC3140081DF15 /* MainMenu.cpp */,
+				EA48D26514EAC3140081DF15 /* SettingsPage.cpp */,
 				EA6210E113A64A8A00A88AF0 /* BrightnessSlider.h */,
 				EA6210E213A64A8A00A88AF0 /* VolumeSlider.h */,
 				EA6210E313A64A8A00A88AF0 /* AboutPage.h */,
-				EA6210E413A64A8A00A88AF0 /* AboutPage.mm */,
 				EA6210E513A64A8A00A88AF0 /* MainMenu.h */,
-				EA6210E613A64A8A00A88AF0 /* MainMenu.mm */,
 				EA6210E713A64A8A00A88AF0 /* SettingsPage.h */,
-				EA6210E813A64A8A00A88AF0 /* SettingsPage.mm */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -1169,7 +1185,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD4969A13A8D32D00D312FE /* main.mm */,
-				EAD4933C13A8B52500D312FE /* ReactickleApp.mm */,
+				EA48D26914EAC32E0081DF15 /* ReactickleApp.cpp */,
 				EAD4933B13A8B52500D312FE /* ReactickleApp.h */,
 				EA6210FB13A64C4400A88AF0 /* Reactickle.h */,
 			);
@@ -1182,7 +1198,6 @@
 				EA6210FD13A64C4400A88AF0 /* GlowingBorder.h */,
 				EA6210FE13A64C4400A88AF0 /* MagicShapes.cpp */,
 				EA6210FF13A64C4400A88AF0 /* MagicShapes.h */,
-				EA62110013A64C4400A88AF0 /* msaColor.h */,
 			);
 			path = graphics;
 			sourceTree = "<group>";
@@ -1211,8 +1226,8 @@
 				EA62110B13A64C4400A88AF0 /* ImageCache.h */,
 				EA62110C13A64C4400A88AF0 /* Properties.cpp */,
 				EA62110D13A64C4400A88AF0 /* Properties.h */,
+				EA48D26B14EAC3430081DF15 /* Settings.cpp */,
 				EA62110E13A64C4400A88AF0 /* Settings.h */,
-				EA62110F13A64C4400A88AF0 /* Settings.mm */,
 				EA62111013A64C4400A88AF0 /* util.cpp */,
 				EA62111113A64C4400A88AF0 /* util.h */,
 			);
@@ -1324,7 +1339,7 @@
 			);
 			name = "Reactickles Multicoloured Magic";
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured Magic.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* Reactickles Multicoloured MagicDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1454,31 +1469,36 @@
 				5D2113E5139BEEF500E0BE49 /* ofxOscMessage.cpp in Sources */,
 				5D2113E6139BEEF500E0BE49 /* ofxOscReceiver.cpp in Sources */,
 				5D2113E7139BEEF500E0BE49 /* ofxOscSender.cpp in Sources */,
-				5D1CD56013A63D3A003A5232 /* Expand.mm in Sources */,
-				5D1CD56413A63DA4003A5232 /* Orbit.mm in Sources */,
-				5D1CD56813A63E29003A5232 /* Flip.mm in Sources */,
-				5D1CD56E13A63EC8003A5232 /* Follow.mm in Sources */,
-				5D1CD56F13A63EC8003A5232 /* FollowParticle.cpp in Sources */,
-				5D1CD57613A64162003A5232 /* TrailParticle.cpp in Sources */,
-				5D1CD57713A64162003A5232 /* Trail.mm in Sources */,
-				EA6210E913A64A8A00A88AF0 /* Apps.mm in Sources */,
-				EA6210EB13A64A8A00A88AF0 /* testApp.mm in Sources */,
-				EA6210EE13A64A8A00A88AF0 /* AboutPage.mm in Sources */,
-				EA6210EF13A64A8A00A88AF0 /* MainMenu.mm in Sources */,
-				EA6210F013A64A8A00A88AF0 /* SettingsPage.mm in Sources */,
 				EA62111913A64C4400A88AF0 /* MagicShapes.cpp in Sources */,
 				EA62111A13A64C4400A88AF0 /* ImageCache.cpp in Sources */,
 				EA62111B13A64C4400A88AF0 /* Properties.cpp in Sources */,
-				EA62111C13A64C4400A88AF0 /* Settings.mm in Sources */,
 				EA62111D13A64C4400A88AF0 /* util.cpp in Sources */,
 				EA62111E13A64C4400A88AF0 /* KinectOrCamera.cpp in Sources */,
 				EA62111F13A64C4400A88AF0 /* TuioKinect.cpp in Sources */,
 				EA6212B113A6700300A88AF0 /* ColorPicker.cpp in Sources */,
-				EAE2AE0C13A7857A002B789C /* testAppEvents.mm in Sources */,
-				EAD4933D13A8B52500D312FE /* ReactickleApp.mm in Sources */,
 				EAD4969B13A8D32D00D312FE /* main.mm in Sources */,
 				EAD496AB13A8D36700D312FE /* ReactickleButton.cpp in Sources */,
 				EA30E37A13D5D4B900E6E26C /* ofxMultiTouchPad.cpp in Sources */,
+				EA48D26014EAC3050081DF15 /* Apps.cpp in Sources */,
+				EA48D26114EAC3050081DF15 /* testApp.cpp in Sources */,
+				EA48D26214EAC3050081DF15 /* testAppEvents.cpp in Sources */,
+				EA48D26614EAC3140081DF15 /* AboutPage.cpp in Sources */,
+				EA48D26714EAC3140081DF15 /* MainMenu.cpp in Sources */,
+				EA48D26814EAC3140081DF15 /* SettingsPage.cpp in Sources */,
+				EA48D26A14EAC32E0081DF15 /* ReactickleApp.cpp in Sources */,
+				EA48D26C14EAC3430081DF15 /* Settings.cpp in Sources */,
+				EA48D29214EAC35F0081DF15 /* Cascade.cpp in Sources */,
+				EA48D29314EAC35F0081DF15 /* Change.cpp in Sources */,
+				EA48D29414EAC35F0081DF15 /* Expand.cpp in Sources */,
+				EA48D29514EAC35F0081DF15 /* Find.cpp in Sources */,
+				EA48D29614EAC35F0081DF15 /* Flip.cpp in Sources */,
+				EA48D29714EAC35F0081DF15 /* Follow.cpp in Sources */,
+				EA48D29814EAC35F0081DF15 /* FollowParticle.cpp in Sources */,
+				EA48D29914EAC35F0081DF15 /* Grid.cpp in Sources */,
+				EA48D29A14EAC35F0081DF15 /* Orbit.cpp in Sources */,
+				EA48D29B14EAC35F0081DF15 /* Trace.cpp in Sources */,
+				EA48D29C14EAC35F0081DF15 /* TrailParticle.cpp in Sources */,
+				EA48D29D14EAC35F0081DF15 /* Trail.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1496,7 +1516,8 @@
 		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -1547,13 +1568,15 @@
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_7 = "\"../../../libs/FreeImage/lib/osx/freeimage.a\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_8 = "\"../../../libs/fmodex/lib/osx/libfmodex.dylib\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_9 = "\"../../../libs/glew/lib/osx/glew.a\"";
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Debug;
 		};
 		E4B69B4F0A3A1720003C02F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -1605,12 +1628,15 @@
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_7 = "\"../../../libs/FreeImage/lib/osx/freeimage.a\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_8 = "\"../../../libs/fmodex/lib/osx/libfmodex.dylib\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_9 = "\"../../../libs/glew/lib/osx/glew.a\"";
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Release;
 		};
 		E4B69B600A3A1757003C02F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1742,6 +1768,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -1750,6 +1777,8 @@
 		E4B69B610A3A1757003C02F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1876,6 +1905,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};

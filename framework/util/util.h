@@ -9,4 +9,4 @@ std::string getPreferencesDirectory(std::string appName);
  * cp -r bin/data "$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/"
  * to your "run script build phase"
  */
-void setDataPathRootToAppContents();
+void setDataPathRootToAppContents(std::string appName);

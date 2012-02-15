@@ -16,10 +16,13 @@ string dateTimeString() {
 	+ padZeros(ofGetHours()) +"-"+padZeros(ofGetMinutes()) +"-"+
 	padZeros(ofGetSeconds());
 }
-void setDataPathRootToAppContents() {
+void setDataPathRootToAppContents(string appName) {
 	char path[512];
 	getcwd(path, 512);
 	string dataRoot = path;
+	if(dataRoot.find(".app/Contents")==-1) {
+		dataRoot += "/" + appName + ".app/Contents/MacOS";
+	}
 	dataRoot += "/../data/";
 	ofSetDataPathRoot(dataRoot);
 }

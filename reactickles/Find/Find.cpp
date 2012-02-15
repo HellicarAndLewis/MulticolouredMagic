@@ -7,7 +7,8 @@
 #include "Find.h"
 #include "ColorPicker.h"
 #include "Settings.h"
-
+#include "ofxOsc.h"
+#include "ReactickleApp.h"
 
 
 

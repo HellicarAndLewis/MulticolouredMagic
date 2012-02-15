@@ -12,14 +12,6 @@
 
 void Follow::start() {
 	currShapeId = 0;
-    
-#ifndef TARGET_OF_IPHONE
-        ofxOscMessage m;
-        int reactickleNumber = 3;
-        m.setAddress( "/reacticklechange" );
-        m.addIntArg( reactickleNumber );
-        ReactickleApp::instance->sender.sendMessage( m );
-#endif
 }
 
 void Follow::clap() {
@@ -88,7 +80,17 @@ void Follow::update() {
 		for(int j = 0; j < numParticles; j++) {
 			ofVec2f pos = ofVec2f(touches[i].x, touches[i].y);
 			//printf("%f, %f\n", pos.x, pos.y);
-			particles[j].attract(pos);
+			// when we're dealing with touches not from the camera, we
+			// need a faster attraction
+#ifdef TARGET_OF_IPHONE
+			if(mode!=2) {
+				particles[j].attract(pos, 1.5);
+			} else {
+				particles[j].attract(pos);
+			}
+#else 
+			particles[j].attract(pos); // default strength
+#endif
 		}
 	}
 	
@@ -149,12 +151,6 @@ bool Follow::touchDown(float x, float y, int touchId) {
 	if(currShapeId<0 || currShapeId>=NUM_MAGIC_SHAPES) currShapeId = 0;
 	touches.push_back(FollowTouch(x, y, touchId, currShapeId));
 
-#ifndef TARGET_OF_IPHONE
-    ofxOscMessage m;
-    m.setAddress( "/touchdown" );
-    m.addIntArg(mode);
-    ReactickleApp::instance->sender.sendMessage(m);
-#endif 
     
 	return true;
 }
@@ -181,30 +177,16 @@ bool Follow::touchUp(float x, float y, int touchId) {
 	}
 	return true;
 }
-void Follow::keyPressed(int key) {
-	switch(key) {
-		case 'a':
-			FollowParticle::colorMode = COLOR_MODE_RAINBOW;
-			break;
-		case 's':
-			FollowParticle::colorMode = COLOR_MODE_RED;
-			break;
-		case 'd':
-			FollowParticle::colorMode = COLOR_MODE_GREEN;
-			break;
-		case 'f':
-			FollowParticle::colorMode = COLOR_MODE_BLUE;
-			break;
-	}
-	
-}
 
 void Follow::modeChanged() {
 	if(mode==0) {
 		numParticles = 1;
 		particles[0].spawn(WIDTH*0.5, HEIGHT*0.5, mode);
 	} else if(mode==1) {
-		numParticles = 1;
+		numParticles = 5;
+		for(int i = 0; i < numParticles; i++) {
+			particles[i].spawn(ofRandomWidth(), ofRandomHeight(), mode, currShapeId);
+		}
 	} else if(mode==2) {
 		numParticles = NUM_SWARM_PARTICLES;
 		for(int i = 0; i < numParticles; i++) {
@@ -212,11 +194,4 @@ void Follow::modeChanged() {
 		}
 		
 	}
-    
-#ifndef TARGET_OF_IPHONE
-    ofxOscMessage m;
-    m.setAddress("/modechange");
-    m.addIntArg( mode );
-    ReactickleApp::instance->sender.sendMessage( m );
-#endif
 }

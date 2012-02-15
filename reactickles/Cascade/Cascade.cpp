@@ -7,7 +7,8 @@
 #include "Cascade.h"
 #include "ColorPicker.h"
 #include "Settings.h"
-
+#include "ofxOsc.h"
+#include "ReactickleApp.h"
 
 ///////////////////////////////////////////////////////////////////////
 // CASCADE PARTICLE

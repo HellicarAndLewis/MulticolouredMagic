@@ -26,14 +26,15 @@
 //OSC things
 #ifndef TARGET_OF_IPHONE
 #include "ofxOsc.h"
-#include "ofxWebServer.h"
+//#include "ofxWebServer.h"
 #endif
 
 class ReactickleApp: 
 #ifdef TARGET_OF_IPHONE
 public ofxiPhoneApp 
 #else
-public ofBaseApp, public ofxWSRequestHandler
+public ofBaseApp
+//, public ofxWSRequestHandler
 #endif
 
 {
@@ -50,8 +51,8 @@ public:
 	void mouseDragged(int x, int y, int button);
 	void mousePressed(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
-	ofxWebServer webserver;
-	void httpGet(string url);
+//	ofxWebServer webserver;
+//	void httpGet(string url);
 #endif
 	
 	// these will redirect to explicit versions e.g. touchDown(float x, float y, int id);
@@ -106,7 +107,7 @@ protected:
 	virtual bool isReactickle(Reactickle *reactickle) = 0;
 	float gain;
 	float volume;
-	static const float volumeThreshold = 0.3;
+	static const float VOLUME_THRESHOLD = 0.3;
 	Reactickle *currentApp;
 	Reactickle *mainMenu;
 	

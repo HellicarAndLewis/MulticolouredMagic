@@ -80,7 +80,7 @@ void testApp::update(){
 	updateOrientation();
 	if(currentApp!=NULL) {
 		currentApp->volume = volume;
-		currentApp->volumeThreshold = volumeThreshold;
+		currentApp->volumeThreshold = VOLUME_THRESHOLD;
 		
 //#ifndef TARGET_IPHONE_SIMULATOR
 		if(currentApp->needsKinect()) {

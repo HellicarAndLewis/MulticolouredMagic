@@ -13,7 +13,8 @@
 
 #include "Reactickle.h"
 #include "TraceShape.h"
-
+#include "ofxOsc.h"
+#include "ReactickleApp.h"
 
 
 void Trace::setup() {

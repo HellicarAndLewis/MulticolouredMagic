@@ -119,6 +119,9 @@
 		EA2B901713B101890040917B /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2B900913B101890040917B /* ofxOscReceiver.cpp */; };
 		EA2B901813B101890040917B /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2B900B13B101890040917B /* ofxOscSender.cpp */; };
 		EA2B901B13B1018E0040917B /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B901A13B1018E0040917B /* osc.a */; };
+		EA48D25414EAC1080081DF15 /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D25314EAC1080081DF15 /* Settings.cpp */; };
+		EA48D25614EAC1110081DF15 /* ReactickleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D25514EAC1110081DF15 /* ReactickleApp.cpp */; };
+		EA48D2A014EAC7E20081DF15 /* icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA48D29E14EAC7980081DF15 /* icon.icns */; };
 		EA87BA07142896B900A0CCDE /* mongoose.c in Sources */ = {isa = PBXBuildFile; fileRef = EA87B9F9142896B900A0CCDE /* mongoose.c */; };
 		EA87BA08142896B900A0CCDE /* ofxWebServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA87B9FC142896B900A0CCDE /* ofxWebServer.cpp */; };
 		EA87BA09142896B900A0CCDE /* ofxWSRequestHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA87B9FE142896B900A0CCDE /* ofxWSRequestHandler.cpp */; };
@@ -136,10 +139,8 @@
 		EAD4931213A8B48D00D312FE /* ColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD492FA13A8B48D00D312FE /* ColorPicker.cpp */; };
 		EAD4931313A8B48D00D312FE /* ImageCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4930213A8B48D00D312FE /* ImageCache.cpp */; };
 		EAD4931413A8B48D00D312FE /* Properties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4930413A8B48D00D312FE /* Properties.cpp */; };
-		EAD4931513A8B48D00D312FE /* Settings.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4930713A8B48D00D312FE /* Settings.mm */; };
 		EAD4931613A8B48D00D312FE /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4930813A8B48D00D312FE /* util.cpp */; };
 		EAD4931713A8B48D00D312FE /* KinectOrCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4930B13A8B48D00D312FE /* KinectOrCamera.cpp */; };
-		EAD4931B13A8B4E100D312FE /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4931A13A8B4E100D312FE /* ReactickleApp.mm */; };
 		EAD4938213A8B66800D312FE /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4938113A8B66800D312FE /* main.mm */; };
 		EAD4946D13A8BA9A00D312FE /* cameras.c in Sources */ = {isa = PBXBuildFile; fileRef = EAD4945213A8BA9A00D312FE /* cameras.c */; };
 		EAD4946E13A8BA9A00D312FE /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = EAD4945313A8BA9A00D312FE /* core.c */; };
@@ -192,6 +193,16 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E4C2426B10CC5AA6004149E2 /* GLUT.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA48D29F14EAC7D70081DF15 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				EA48D2A014EAC7E20081DF15 /* icon.icns in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +457,9 @@
 		EA2B900C13B101890040917B /* ofxOscSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscSender.h; sourceTree = "<group>"; };
 		EA2B901A13B1018E0040917B /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
 		EA30E1D413D5C16600E6E26C /* Centerer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Centerer.h; sourceTree = "<group>"; };
+		EA48D25314EAC1080081DF15 /* Settings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Settings.cpp; sourceTree = "<group>"; };
+		EA48D25514EAC1110081DF15 /* ReactickleApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleApp.cpp; sourceTree = "<group>"; };
+		EA48D29E14EAC7980081DF15 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		EA87B9F9142896B900A0CCDE /* mongoose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mongoose.c; sourceTree = "<group>"; };
 		EA87B9FA142896B900A0CCDE /* mongoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mongoose.h; sourceTree = "<group>"; };
 		EA87B9FC142896B900A0CCDE /* ofxWebServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxWebServer.cpp; sourceTree = "<group>"; };
@@ -489,13 +503,11 @@
 		EAD4930413A8B48D00D312FE /* Properties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Properties.cpp; sourceTree = "<group>"; };
 		EAD4930513A8B48D00D312FE /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
 		EAD4930613A8B48D00D312FE /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		EAD4930713A8B48D00D312FE /* Settings.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Settings.mm; sourceTree = "<group>"; };
 		EAD4930813A8B48D00D312FE /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
 		EAD4930913A8B48D00D312FE /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		EAD4930B13A8B48D00D312FE /* KinectOrCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectOrCamera.cpp; sourceTree = "<group>"; };
 		EAD4930C13A8B48D00D312FE /* KinectOrCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectOrCamera.h; sourceTree = "<group>"; };
 		EAD4931913A8B4E100D312FE /* ReactickleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactickleApp.h; sourceTree = "<group>"; };
-		EAD4931A13A8B4E100D312FE /* ReactickleApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ReactickleApp.mm; sourceTree = "<group>"; };
 		EAD4938113A8B66800D312FE /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		EAD4938313A8B67700D312FE /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		EAD4944F13A8BA9A00D312FE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -963,6 +975,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				EA48D29E14EAC7980081DF15 /* icon.icns */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4B69B5B0A3A1756003C02F2 /* SomanticsDebug.app */,
 				EAD492ED13A8B48D00D312FE /* framework */,
@@ -1395,7 +1408,7 @@
 				EAD4938113A8B66800D312FE /* main.mm */,
 				EA30E1D413D5C16600E6E26C /* Centerer.h */,
 				EAD4931913A8B4E100D312FE /* ReactickleApp.h */,
-				EAD4931A13A8B4E100D312FE /* ReactickleApp.mm */,
+				EA48D25514EAC1110081DF15 /* ReactickleApp.cpp */,
 				EAD492F213A8B48D00D312FE /* Reactickle.h */,
 			);
 			path = app;
@@ -1440,7 +1453,7 @@
 				EAD4930413A8B48D00D312FE /* Properties.cpp */,
 				EAD4930513A8B48D00D312FE /* Properties.h */,
 				EAD4930613A8B48D00D312FE /* Settings.h */,
-				EAD4930713A8B48D00D312FE /* Settings.mm */,
+				EA48D25314EAC1080081DF15 /* Settings.cpp */,
 				EAD4930813A8B48D00D312FE /* util.cpp */,
 				EAD4930913A8B48D00D312FE /* util.h */,
 			);
@@ -1885,6 +1898,7 @@
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
 				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
 				E4C2427710CC5ABF004149E2 /* CopyFiles */,
+				EA48D29F14EAC7D70081DF15 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1972,10 +1986,8 @@
 				EAD4931213A8B48D00D312FE /* ColorPicker.cpp in Sources */,
 				EAD4931313A8B48D00D312FE /* ImageCache.cpp in Sources */,
 				EAD4931413A8B48D00D312FE /* Properties.cpp in Sources */,
-				EAD4931513A8B48D00D312FE /* Settings.mm in Sources */,
 				EAD4931613A8B48D00D312FE /* util.cpp in Sources */,
 				EAD4931713A8B48D00D312FE /* KinectOrCamera.cpp in Sources */,
-				EAD4931B13A8B4E100D312FE /* ReactickleApp.mm in Sources */,
 				EAD4938213A8B66800D312FE /* main.mm in Sources */,
 				EAD4946D13A8BA9A00D312FE /* cameras.c in Sources */,
 				EAD4946E13A8BA9A00D312FE /* core.c in Sources */,
@@ -2096,6 +2108,8 @@
 				4B418C0A145DF0CA00EAF94F /* ofxBox2dJoint.cpp in Sources */,
 				4B418C0B145DF0CA00EAF94F /* ofxBox2dPolygon.cpp in Sources */,
 				4B418C0C145DF0CA00EAF94F /* ofxBox2dRect.cpp in Sources */,
+				EA48D25414EAC1080081DF15 /* Settings.cpp in Sources */,
+				EA48D25614EAC1110081DF15 /* ReactickleApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2113,7 +2127,8 @@
 		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -2123,7 +2138,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -2174,7 +2189,8 @@
 		E4B69B4F0A3A1720003C02F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -2186,7 +2202,7 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_UNROLL_LOOPS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -2237,6 +2253,7 @@
 		E4B69B600A3A1757003C02F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2253,7 +2270,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG_MODE=1";
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					../../../addons/ofxOsc/libs/oscpack/include,
 					../../../libs/tess2/include,
@@ -2369,7 +2386,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../libs/glew/libs/osx\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/android/armeabi\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/android/armeabi-v7a\"";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
@@ -2380,6 +2397,7 @@
 		E4B69B610A3A1757003C02F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2393,7 +2411,7 @@
 				GCC_MODEL_TUNING = G4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					../../../addons/ofxOsc/libs/oscpack/include,
 					../../../libs/tess2/include,
@@ -2509,7 +2527,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/android/armeabi\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/android/armeabi-v7a\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/iphone\"";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

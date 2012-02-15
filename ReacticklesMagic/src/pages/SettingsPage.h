@@ -7,7 +7,11 @@
  */
 #pragma once
 #include "Reactickle.h"
+#ifndef _WIN32
 #include "ColorPicker.h"
+#else
+#include "gui/ColorPicker.h"
+#endif
 #include "SimpleButton.h"
 #include "BrightnessSlider.h"
 #include "VolumeSlider.h"
@@ -20,20 +24,20 @@ public:
 	ColorPicker colorPicker;
 	BrightnessSlider slider;
 	VolumeSlider volumeSlider;
-	
-	
+
+
 	ImageObject bgImage;
-	
+
 	ImageObject micLevelText;
 	ImageObject colourText;
-	
+
 	ImageObject brightnessTitle;
 	ImageObject micLevelTitle;
-	
+
 	ImageObject settingsTitle;
 	ImageObject colourPickerTitle;
 	ImageObject logo;
 
 	void draw();
-	
+
 };
