@@ -9,33 +9,37 @@
 #include "Expand.h"
 
 #include "constants.h"
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
 
 
 
 
 void Expand::setup(){
 	ofSetCircleResolution(42); //42 is the answer to everything!
-	
+
 	timeOfLastInteraction = ofGetElapsedTimef();
-	
+
 	bigShapeRadius = 400.f;
-	
-	centreOfBigShape = ofVec2f(WIDTH/2.f, HEIGHT/2.f);  
-	
+
+	centreOfBigShape = ofVec2f(WIDTH/2.f, HEIGHT/2.f);
+
 	currentShapeType = 0;
-	
+
 	drawACircle = false;
-	
+
 	shapeScale = 1.f;
-	
+
 	whiteBg = false;
 }
 
 void Expand::update(){
 	float timeNow = ofGetElapsedTimef();
-	
-	float timeSinceLastInteraction = timeNow - timeOfLastInteraction;        
+
+	float timeSinceLastInteraction = timeNow - timeOfLastInteraction;
 	if((volume > volumeThreshold) && (timeSinceLastInteraction > 0.3f )){
 		touchDown(WIDTH/2.f, HEIGHT/2.f, 0); //simulate a touch in the centre of the screen
 	}
@@ -51,11 +55,11 @@ void Expand::draw() {
 	ofPushStyle(); //for safety in terms of drawing, and not messing up anyone elses code
 	//ofBackground(0); //set to black (0 brightness)
 	ofFill();
-	
+
 	switch (mode) {
 		case 0:
-			
-			
+
+
 			if (!drawACircle) {
 				drawCross(centreOfBigShape, bigShapeRadius);
 				//drawCircle(centreOfBigShape, bigShapeRadius);
@@ -68,7 +72,7 @@ void Expand::draw() {
 			break;
 		case 2:
 			if(!whiteBg){// had to flip this because I couldn't get a heart to draw in white(?)
-				
+
 				if(colorIndex==20) {
 					ofSetColor(ofColor::white);
 				} else {
@@ -84,34 +88,34 @@ void Expand::draw() {
 					ofSetHexColor(ColorPicker::colors[colorIndex]);
 				}
 			}
-			
+
 			//if(currentShapeType==MAGIC_HEART) {
-			//	drawShape(MAGIC_CIRCLE, centreOfBigShape, bigShapeRadius*shapeScale);                
+			//	drawShape(MAGIC_CIRCLE, centreOfBigShape, bigShapeRadius*shapeScale);
 			//} else {
-			drawShape(currentShapeType, centreOfBigShape, bigShapeRadius*shapeScale);                
+			drawShape(currentShapeType, centreOfBigShape, bigShapeRadius*shapeScale);
 			//}
 			break;
 		default:
 			break;
 	}
-	
+
 	ofPopStyle(); //pop back what was there before
 }
 
-bool Expand::touchDown(float x, float y, int touchId){  
-	
-	
+bool Expand::touchDown(float x, float y, int touchId){
+
+
 #ifndef TARGET_OF_IPHONE
 	ofxOscMessage simpleMessage;
 #endif
 	switch (mode) {
 		case 0:
 			drawACircle = !drawACircle;
-			
-			timeOfLastInteraction = ofGetElapsedTimef(); 
-			
+
+			timeOfLastInteraction = ofGetElapsedTimef();
+
 			int shapeType;
-			
+
 			if(drawACircle){
 				shapeType = 0;
 			}else{
@@ -125,12 +129,12 @@ bool Expand::touchDown(float x, float y, int touchId){
 			break;
 		case 1:
 			nextShape();
-			
-			timeOfLastInteraction = ofGetElapsedTimef();                
+
+			timeOfLastInteraction = ofGetElapsedTimef();
 			break;
-			
+
 		case 2:
-			
+
 		{
 			float maxScale = 5;
 			// custom sizes for each shape to grow to
@@ -143,16 +147,16 @@ bool Expand::touchDown(float x, float y, int touchId){
 				case MAGIC_SQUARE: maxScale = 3.0; break;
 			}
 			shapeScale += 0.5f;
-			
+
 			// make triangles, hearts and crosses grow faster
 			if((currentShapeType==MAGIC_CROSS || currentShapeType==MAGIC_TRIANGLE || currentShapeType==MAGIC_HEART) && shapeScale>2) shapeScale += 0.5;
-			
+
 			if(shapeScale >= maxScale){
 				shapeScale = 0.6;
 				nextShape();
 				whiteBg = !whiteBg;
 			}
-			timeOfLastInteraction = ofGetElapsedTimef();                
+			timeOfLastInteraction = ofGetElapsedTimef();
 			break;
 		}
 		default:
@@ -164,7 +168,7 @@ bool Expand::touchDown(float x, float y, int touchId){
 
 void Expand::nextShape(){
 	currentShapeType++;
-	
+
 	if(currentShapeType >= NUM_MAGIC_SHAPES || currentShapeType < 0) { //safety!
 		currentShapeType = 0;
 	}

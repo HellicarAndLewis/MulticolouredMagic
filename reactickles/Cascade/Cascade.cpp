@@ -5,7 +5,11 @@
  */
 
 #include "Cascade.h"
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
 #include "Settings.h"
 #include "ofxOsc.h"
 #include "ReactickleApp.h"
@@ -34,13 +38,13 @@ void CascadeParticle::update() {
 }
 
 void CascadeParticle::draw() {
-	
+
 	ofSetColor(color.r, color.g, color.b, age*120);
 	float radius = ofMap(age, 1, 0.6, 50, 0, true);
 	drawShape(shape, pos, radius*4);
 	ofSetColor(color.r*255, color.g*255, color.b*255, ofMap(age, 1, 0.6, 100, 0, true));
 	radius = ofMap(age, 0, 1, 0, 100, false);
-	drawShape(shape, pos, radius);        
+	drawShape(shape, pos, radius);
 }
 bool CascadeParticle::isDead() {
 	return age<0.6;
@@ -66,7 +70,7 @@ void Cascade::setup() {
 void Cascade::update() {
 	clapThreshold = volumeThreshold;
 	if(clapping) {
-		
+
 		if(mode>0) {
 			if(mode == 1){
 				if (currShapeId == MAGIC_CIRCLE){
@@ -76,9 +80,9 @@ void Cascade::update() {
 				}
 			}else{
 				currShapeId++;
-				currShapeId %= NUM_MAGIC_SHAPES;                
+				currShapeId %= NUM_MAGIC_SHAPES;
 			}
-			
+
 #ifndef TARGET_OF_IPHONE
 			ofxOscMessage m;
 			m.setAddress( "/shapechange" );
@@ -86,9 +90,9 @@ void Cascade::update() {
 			ReactickleApp::instance->sender.sendMessage( m );
 #endif
 		}
-		
-		
-		
+
+
+
 		ofColor color;
 		int colorIndex = Settings::getInstance()->settings["fgColor"];
 		if(colorIndex==20) {
@@ -96,10 +100,10 @@ void Cascade::update() {
 		} else {
 			color = ofColor::fromHex(ColorPicker::colors[colorIndex]);
 		}
-		
-		
+
+
 		int numParticles = ofRandom(8, 12);
-		
+
 		for(int i = 0; i < numParticles; i++) {
 			if(particles.size()<100) {
 				particles.push_back(CascadeParticle(clapPoint.x, clapPoint.y, volume, color, currShapeId));
@@ -107,7 +111,7 @@ void Cascade::update() {
 		}
 		clapping = false;
 	}
-	
+
 	for(int i = 0; i < particles.size(); i++) {
 		particles[i].update();
 		if(particles[i].isDead()) {
@@ -115,23 +119,23 @@ void Cascade::update() {
 			i--;
 		}
 	}
-	
-	
-	
+
+
+
 }
 void Cascade::draw() {
-	
-	
+
+
 	int colorIndex = Settings::getInstance()->settings["fgColor"];
-	
-	
+
+
 	ofBackground(0,0,0);
-	
+
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 	float timeSinceLastClap = ofGetElapsedTimef() - lastClap;
 	float value = ofMap(timeSinceLastClap, 0, 0.5, 0.4, 0, true);
-	
+
 	ofColor color;
 	if(colorIndex==20) {
 		ofSetColor(value*255, 0, 0);
@@ -140,10 +144,10 @@ void Cascade::draw() {
 		c.a = value * 255;
 		ofSetColor(c);
 	}
-	
-	
+
+
 	ofRect(0, 0, WIDTH, HEIGHT);
-	
+
 	for(int i = 0; i < particles.size(); i++) {
 		particles[i].draw();
 	}
@@ -157,18 +161,18 @@ bool Cascade::touchDown(float x, float y, int touchId) {
 }
 
 void Cascade::audioReceived(float *input, int length, int nChannels) {
-	
+
 	float lastSample = input[0];
 	for(int i = 1; i < length; i++) {
 		float diff = input[i] - lastSample;
-		
+
 		if(ABS(diff)>clapThreshold) {
 			magnitude = ABS(diff);
-			
+
 			lastClap = ofGetElapsedTimef();
 			clapPoint = ofPoint(ofRandomWidth(), ofRandomHeight());
 			clapping = true;
-			
+
 #ifndef TARGET_OF_IPHONE
 			//claps are touch downs for this one...
 			ofxOscMessage m;

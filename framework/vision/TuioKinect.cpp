@@ -21,7 +21,9 @@
 #include "TuioKinect.h"
 
 ofxCvKalman *tuioPointSmoothed[32];
+#include "TuioPoint.h"
 
+using namespace TUIO;
 TuioPoint updateKalman(int id, TuioPoint tp) {
 	if (id>=16) return NULL;
 	if(tuioPointSmoothed[id*2] == NULL) {
@@ -62,10 +64,10 @@ void TuioKinect::setup() {
 	blendAmount = 0.1;
 
 	TuioTime::initSession();	
-	tuioServer = new TuioServer();
-	tuioServer->setSourceName("TuioKinect");
-	tuioServer->enableObjectProfile(false);
-	tuioServer->enableBlobProfile(false);
+	tuioServer = new TUIO::TuioServer();
+//	tuioServer->setSourceName("TuioKinect");
+//	tuioServer->enableObjectProfile(false);
+//	tuioServer->enableBlobProfile(false);
 	
 	for (int i=0;i<32;i++)
 		tuioPointSmoothed[i] = NULL;

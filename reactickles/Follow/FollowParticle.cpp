@@ -10,7 +10,11 @@
 
 #include "constants.h"
 #include "Settings.h"
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
 
 #define MIN_RADIUS 20
 #define MAX_RADIUS 50
@@ -24,13 +28,13 @@ FollowParticle::FollowParticle() {
 
 
 void FollowParticle::spawn(float x, float y, int mode, int shape) {
-	
-	
+
+
 	this->shape = shape;
 	this->mode = mode;
 	pos = ofVec2f(x, y);
 	birthday = ofGetElapsedTimef();
-	
+
 	int colorIndex = Settings::getInstance()->settings["fgColor"];
 	if(colorIndex==20) {
 		color.setHsb(ofRandom(0, 360), 190, 255, 255);
@@ -56,32 +60,32 @@ void FollowParticle::spawn(float x, float y, int mode, int shape) {
 }
 #define MAX_SPEED 8
 void FollowParticle::update() {
-		
+
 	pos += vel;
 	vel += ofVec2f(
 				   ofRandom(-0.2, 0.2),
 				   0
 				   );
-	
+
 	// bit o drag
 	vel *= 0.99;
-	
-	
+
+
 	if(vel.x>MAX_SPEED) {
 		vel.x = MAX_SPEED;
 	} else if(vel.x<-MAX_SPEED) {
 		vel.x = -MAX_SPEED;
 	}
-	
+
 	if(vel.y>MAX_SPEED) {
 		vel.y = MAX_SPEED;
 	} else if(vel.y<-MAX_SPEED) {
 		vel.y = -MAX_SPEED;
 	}
-	
-	
+
+
 	radius = radiusBase + (radiusBase *0.4)*sin(seed+ofGetElapsedTimef()*seed);
-	
+
 	if(pos.x>WIDTH+radius) vel.x = 0;
 	else if(pos.x<-radius) vel.x = 0;
 
@@ -95,7 +99,7 @@ void FollowParticle::draw() {
 	float alpha = ofMap(ofGetElapsedTimef() - birthday, maxAge*0.76, maxAge, 255, 0, true);
 	if(mode==0) alpha = 255;
 	ofSetColor(color.r, color.g, color.b, alpha);
-			
+
 
 	float shapeSize = ofMap(ofGetElapsedTimef() - birthday, 0, maxAge*0.04, 0, radius, true);
 	if(mode==0) shapeSize = radius;
@@ -109,22 +113,22 @@ bool FollowParticle::isAlive() {
 
 void FollowParticle::attract(ofVec2f &point, float strength /* = 0.05 */) {
 	ofVec2f delta = pos - point;
-	
+
 	float dist = delta.length();
-	
+
 	delta.normalize();
-	
+
 	float nearThreshold = 10;
 	float farThreshold = 70;
 
 	float magnitude = sqrt(dist);
-	
+
 	if(dist<nearThreshold) {
 		magnitude = 0;
 	} else if(dist>farThreshold) {
 		magnitude = sqrt(farThreshold);
 	}
-	
+
 	vel -= delta*magnitude*strength*(1.f/mass);
 //	vel -= delta*magnitude*0.05*(1.f/mass);
 }

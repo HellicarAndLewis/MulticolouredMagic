@@ -112,13 +112,73 @@ int freenect_apply_registration(freenect_device* dev, uint8_t* input_packed, uin
 
 	uint32_t target_offset = DEPTH_Y_RES * reg->reg_pad_info.start_lines;
 	uint32_t x,y,source_index = 8;
-
+	uint16_t baseMask = 0x7FF;
 	for (y = 0; y < DEPTH_Y_RES; y++) {
 		for (x = 0; x < DEPTH_X_RES; x++) {
 
 			// get 8 pixels from the packed frame
 			if (source_index == 8) {
-				unpack_8_pixels( input_packed, unpack );
+				//unpack_8_pixels( input_packed, unpack );
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				uint8_t r0  = *(input_packed+0);
+				uint8_t r1  = *(input_packed+1);
+				uint8_t r2  = *(input_packed+2);
+				uint8_t r3  = *(input_packed+3);
+				uint8_t r4  = *(input_packed+4);
+				uint8_t r5  = *(input_packed+5);
+				uint8_t r6  = *(input_packed+6);
+				uint8_t r7  = *(input_packed+7);
+				uint8_t r8  = *(input_packed+8);
+				uint8_t r9  = *(input_packed+9);
+				uint8_t r10 = *(input_packed+10);
+				
+				unpack[0] =  (r0<<3)  | (r1>>5);
+				unpack[1] = ((r1<<6)  | (r2>>2) )           & baseMask;
+				unpack[2] = ((r2<<9)  | (r3<<1) | (r4>>7) ) & baseMask;
+				unpack[3] = ((r4<<4)  | (r5>>4) )           & baseMask;
+				unpack[4] = ((r5<<7)  | (r6>>1) )           & baseMask;
+				unpack[5] = ((r6<<10) | (r7<<2) | (r8>>6) ) & baseMask;
+				unpack[6] = ((r8<<5)  | (r9>>3) )           & baseMask;
+				unpack[7] = ((r9<<8)  | (r10)   )           & baseMask;
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				source_index = 0;
 				input_packed += 11;
 			}
@@ -173,12 +233,64 @@ int freenect_apply_depth_to_mm(freenect_device* dev, uint8_t* input_packed, uint
 {
 	freenect_registration* reg = &(dev->registration);
 	uint16_t unpack[8];
+	uint16_t baseMask = 0x7FF;
+	
 	uint32_t x,y,source_index = 8;
 	for (y = 0; y < DEPTH_Y_RES; y++) {
 		for (x = 0; x < DEPTH_X_RES; x++) {
 			// get 8 pixels from the packed frame
 			if (source_index == 8) {
-				unpack_8_pixels( input_packed, unpack );
+				//unpack_8_pixels( input_packed, unpack );
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				uint8_t r0  = *(input_packed+0);
+				uint8_t r1  = *(input_packed+1);
+				uint8_t r2  = *(input_packed+2);
+				uint8_t r3  = *(input_packed+3);
+				uint8_t r4  = *(input_packed+4);
+				uint8_t r5  = *(input_packed+5);
+				uint8_t r6  = *(input_packed+6);
+				uint8_t r7  = *(input_packed+7);
+				uint8_t r8  = *(input_packed+8);
+				uint8_t r9  = *(input_packed+9);
+				uint8_t r10 = *(input_packed+10);
+				
+				unpack[0] =  (r0<<3)  | (r1>>5);
+				unpack[1] = ((r1<<6)  | (r2>>2) )           & baseMask;
+				unpack[2] = ((r2<<9)  | (r3<<1) | (r4>>7) ) & baseMask;
+				unpack[3] = ((r4<<4)  | (r5>>4) )           & baseMask;
+				unpack[4] = ((r5<<7)  | (r6>>1) )           & baseMask;
+				unpack[5] = ((r6<<10) | (r7<<2) | (r8>>6) ) & baseMask;
+				unpack[6] = ((r8<<5)  | (r9>>3) )           & baseMask;
+				unpack[7] = ((r9<<8)  | (r10)   )           & baseMask;
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				source_index = 0;
 				input_packed += 11;
 			}

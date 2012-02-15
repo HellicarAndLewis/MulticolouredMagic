@@ -2,7 +2,7 @@
  TUIO C++ Library - part of the reacTIVision project
  http://reactivision.sourceforge.net/
  
- Copyright (c) 2005-2009 Martin Kaltenbrunner <martin@tuio.org>
+ Copyright (c) 2005-2009 Martin Kaltenbrunner <mkalten@iua.upf.edu>
  
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 #ifndef INCLUDED_TUIOCURSOR_H
 #define INCLUDED_TUIOCURSOR_H
 
+#include <math.h>
 #include "TuioContainer.h"
 
 namespace TUIO {
@@ -30,9 +31,9 @@ namespace TUIO {
 	 * The TuioCursor class encapsulates /tuio/2Dcur TUIO cursors.
 	 *
 	 * @author Martin Kaltenbrunner
-	 * @version 1.5
+	 * @version 1.4
 	 */ 
-	class LIBDECL TuioCursor: public TuioContainer {
+	class TuioCursor: public TuioContainer {
 		
 	protected:
 		/**
@@ -41,8 +42,6 @@ namespace TUIO {
 		int cursor_id;
 		
 	public:
-		using TuioContainer::update;
-		
 		/**
 		 * This constructor takes a TuioTime argument and assigns it along with the provided 
 		 * Session ID, Cursor ID, X and Y coordinate to the newly created TuioCursor.
@@ -53,7 +52,9 @@ namespace TUIO {
 		 * @param	xp	the X coordinate to assign
 		 * @param	yp	the Y coordinate to assign
 		 */
-		TuioCursor (TuioTime ttime, long si, int ci, float xp, float yp);
+		TuioCursor (TuioTime ttime, long si, int ci, float xp, float yp):TuioContainer(ttime,si,xp,yp) {
+			cursor_id = ci;
+		};
 
 		/**
 		 * This constructor takes the provided Session ID, Cursor ID, X and Y coordinate 
@@ -64,7 +65,9 @@ namespace TUIO {
 		 * @param	xp	the X coordinate to assign
 		 * @param	yp	the Y coordinate to assign
 		 */
-		TuioCursor (long si, int ci, float xp, float yp);
+		TuioCursor (long si, int ci, float xp, float yp):TuioContainer(si,xp,yp) {
+			cursor_id = ci;
+		};
 		
 		/**
 		 * This constructor takes the atttibutes of the provided TuioCursor 
@@ -72,7 +75,9 @@ namespace TUIO {
 		 *
 		 * @param	tcur	the TuioCursor to assign
 		 */
-		TuioCursor (TuioCursor *tcur);
+		TuioCursor (TuioCursor *tcur):TuioContainer(tcur) {
+			cursor_id = tcur->getCursorID();
+		};
 		
 		/**
 		 * The destructor is doing nothing in particular. 
@@ -83,7 +88,9 @@ namespace TUIO {
 		 * Returns the Cursor ID of this TuioCursor.
 		 * @return	the Cursor ID of this TuioCursor
 		 */
-		int getCursorID() const;
+		int getCursorID() {
+			return cursor_id;
+		};
 	};
-}
+};
 #endif

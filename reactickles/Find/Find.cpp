@@ -5,7 +5,11 @@
  */
 
 #include "Find.h"
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
 #include "Settings.h"
 #include "ofxOsc.h"
 #include "ReactickleApp.h"
@@ -14,32 +18,32 @@
 
 void Find::setup() {
 	currShapeID = 0;
-	
+
 	mode = 0;
-	
-	newShapePositionAndColour();       
-	
+
+	newShapePositionAndColour();
+
 	posOfShape = targetPosOfShape;
 	findColour = targetFindColour;
-	
+
 	timeOfLastInteraction = ofGetElapsedTimef();
 }
 
 void Find::newShapePositionAndColour(){
-	
-	
+
+
 	int colorIndex = Settings::getInstance()->settings["fgColor"];
 	if(colorIndex==20) {
 		targetFindColour.setHsb(ofRandom(0.f,255), 255,255);
 	} else {
 		targetFindColour = ofColor::fromHex(ColorPicker::colors[colorIndex]);
 	}
-	
-	
-	
+
+
+
 	targetPosOfShape = ofVec2f(ofRandom(0.f, WIDTH), ofRandom(0.f, HEIGHT));
 	radius = ofRandom(100.f, 260.f);
-	
+
 	if(mode>0) {
 		if(mode == 1){
 			if (currShapeID == MAGIC_CIRCLE){
@@ -49,36 +53,36 @@ void Find::newShapePositionAndColour(){
 			}
 		}else{
 			currShapeID++;
-			currShapeID %= NUM_MAGIC_SHAPES;                
+			currShapeID %= NUM_MAGIC_SHAPES;
 		}
 	}else{
 		currShapeID = MAGIC_CIRCLE;
-	}   
-	
+	}
+
 #ifndef TARGET_OF_IPHONE
 	ofxOscMessage m;
 	m.setAddress( "/shapechange" );
 	m.addIntArg( currShapeID );
 	ReactickleApp::instance->sender.sendMessage( m );
 #endif
-	
+
 }
 
 void Find::update() {
 	float timeNow = ofGetElapsedTimef();
-	
+
 	float timeSinceLastInteraction = timeNow - timeOfLastInteraction;
-	
-	if((volume > volumeThreshold) && (timeOfLastInteraction > 0.3f )){			
+
+	if((volume > volumeThreshold) && (timeOfLastInteraction > 0.3f )){
 		newShapePositionAndColour();
-		
+
 		timeOfLastInteraction = timeNow;
-	}        
-	
+	}
+
 	float l = 0.7;
 	posOfShape = posOfShape * l + targetPosOfShape * (1.f - l);
 	findColour = findColour * l + targetFindColour * (1.f - l);
-	
+
 }
 
 void Find::draw() {
@@ -88,15 +92,15 @@ void Find::draw() {
 
 bool Find::touchDown(float x, float y, int touchId){
 	float forgiveness = 2.f;
-	
+
 	ofVec2f touchPoint = ofVec2f(x,y);
-	
+
 	ofVec2f difference = posOfShape - touchPoint;
-	
+
 	if(difference.length() < forgiveness + radius){
-		newShapePositionAndColour();            
+		newShapePositionAndColour();
 	}
-	
+
 	return true;
 }
 

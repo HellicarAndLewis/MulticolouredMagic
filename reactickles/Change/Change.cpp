@@ -5,19 +5,23 @@
  */
 #include "Settings.h"
 #include "Change.h"
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
 
 
 
 
 void Change::setup() {
-	
+
 	//		noiseColour.setHSV(ofRandom(0.f,360.f), 1, 1);
 	noiseColour.setHsb(0,0,0);
 }
 
 bool Change::touchDown(float x, float y, int id) {
-	trigger(); 
+	trigger();
 	return true;
 }
 
@@ -32,31 +36,31 @@ void Change::trigger() {
 			} else {
 				noiseColour.setHex(ColorPicker::colors[colorIndex]);
 			}
-			
+
 		}
-		
+
 	}else if(mode == 1){
 		if(noiseColour == ofColor(0,0,0)){
-			
+
 			int colorIndex = Settings::getInstance()->settings["fgColor"];
 			if(colorIndex==20) {
 				noiseColour.setHsb(ofRandom(0,255), 255,255);
 			} else {
 				noiseColour.setHex(ColorPicker::colors[colorIndex]);
 			}
-			
-			
-			
+
+
+
 		}else{
 			noiseColour.setHsb(0,0,0);
-		} 
-		
-	}else{
-		noiseColour.setHsb(ofRandom(0,255), 255, 255);                
-	}
-	
+		}
 
-	
+	}else{
+		noiseColour.setHsb(ofRandom(0,255), 255, 255);
+	}
+
+
+
 	timeOfLastNewCircle = ofGetElapsedTimef();
 }
 
@@ -64,10 +68,10 @@ void Change::trigger() {
 
 void Change::update() {
 	float timeNow = ofGetElapsedTimef();
-	
+
 	float timeSinceLastCircle = timeNow - timeOfLastNewCircle;
-	if((volume > volumeThreshold) && (timeSinceLastCircle > 0.3f )){	
-		
+	if((volume > volumeThreshold) && (timeSinceLastCircle > 0.3f )){
+
 		trigger();
 	}
 }

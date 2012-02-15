@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Reactickles Multicoloured Magic" />
+		<Option title="ReacticklesMulticolouredMagic" />
 		<Option makefile="makefile" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
@@ -126,8 +126,8 @@
 			<Add directory="..\..\..\addons\ofxXmlSettings\src" />
 			<Add directory="..\..\..\addons\ofxXmlSettings\libs" />
 			<Add directory="..\addons\ofxKinect\libs\libfreenect" />
-			<Add directory="..\addons\TUIO" />
 			<Add directory="..\..\..\addons\ofxOsc\libs\oscpack\include" />
+			<Add directory="..\addons\TUIO" />
 			<Add directory="..\addons\ofxTuioClient" />
 		</Compiler>
 		<Linker>
@@ -179,6 +179,7 @@
 			<Add library="wsock32" />
 			<Add library="ws2_32" />
 			<Add library="Iphlpapi" />
+			<Add library="..\..\..\addons\ofxOsc\libs\oscpack\lib\win_cb\oscpack.a" />
 		</Linker>
 		<ExtraCommands>
 			<Add after='xcopy /e /i /y &quot;$(PROJECT_DIR)..\..\..\export\win_cb\*.dll&quot;  &quot;$(PROJECT_DIR)bin&quot;' />
@@ -418,12 +419,6 @@
 		<Unit filename="..\addons\ofxKinect\src\ofxBase3DVideo.h" />
 		<Unit filename="..\addons\ofxKinect\src\ofxKinect.cpp" />
 		<Unit filename="..\addons\ofxKinect\src\ofxKinect.h" />
-		<Unit filename="..\addons\ofxKinect\src\ofxKinectCalibration.cpp" />
-		<Unit filename="..\addons\ofxKinect\src\ofxKinectCalibration.h" />
-		<Unit filename="..\addons\ofxKinect\src\ofxKinectPlayer.cpp" />
-		<Unit filename="..\addons\ofxKinect\src\ofxKinectPlayer.h" />
-		<Unit filename="..\addons\ofxKinect\src\ofxKinectRecorder.cpp" />
-		<Unit filename="..\addons\ofxKinect\src\ofxKinectRecorder.h" />
 		<Unit filename="..\addons\ofxMSAInteractiveObject\src\ofxMSAInteractiveObject.cpp" />
 		<Unit filename="..\addons\ofxMSAInteractiveObject\src\ofxMSAInteractiveObject.h" />
 		<Unit filename="..\addons\ofxSimpleGuiToo\src\Controls\ofxSimpleGuiButton.cpp" />

@@ -9,6 +9,7 @@
 // taken from http://code.google.com/p/julapy/source/browse/trunk/openframeworks/bom/bom_main/src/addons/ofxContourUtil/libs/convexHull.h?r=928
 // Implementation of Monotone Chain Convex Hull algorithm.
 #include <algorithm>
+#include <float.h>
 
 
 bool ofVec2flt(const ofVec2f &a, const ofVec2f &b) {
@@ -31,22 +32,22 @@ void tricks::math::calcConvexHull(vector<ofVec2f> &P, vector<ofVec2f> &H)
 {
 	int n = P.size(), k = 0;
 	H.resize(2*n);
-	
+
 	// Sort points lexicographically
 	sort(P.begin(), P.end(), &ofVec2flt);
-	
+
 	// Build lower hull
 	for (int i = 0; i < n; i++) {
 		while (k >= 2 && ofVec2fcross(H[k-2], H[k-1], P[i]) <= 0) k--;
 		H[k++] = P[i];
 	}
-	
+
 	// Build upper hull
 	for (int i = n-2, t = k+1; i >= 0; i--) {
 		while (k >= t && ofVec2fcross(H[k-2], H[k-1], P[i]) <= 0) k--;
 		H[k++] = P[i];
 	}
-	
+
 	H.resize(k);
 }
 
@@ -72,33 +73,33 @@ void tricks::math::fillContour(vector<ofVec2f> &contour, float maxPointDist) {
 		printf("fillContour Error: maxPointDist must be bigger than 1\n");
 		return;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
 	// printf("contourSize: %d, maxPointDist: %f\n", contour.size(), maxPointDist);
-	
+
 	for(int i = 0; i < contour.size(); i++) {
-		
+
 		ofVec2f length = contour[(i+1)%contour.size()] - contour[i];
-		
+
 		float distanceToNextPoint = length.length();
 		if(distanceToNextPoint>0) {
-			
 
-			
+
+
 			// if the distance is too far
 			if(distanceToNextPoint>maxPointDist) {
-				
+
 				// normalized direction vector
 				ofVec2f direction = length/distanceToNextPoint;
-				
+
 				float numberOfPointsToInsert = distanceToNextPoint / maxPointDist;
 
 
@@ -112,7 +113,7 @@ void tricks::math::fillContour(vector<ofVec2f> &contour, float maxPointDist) {
 				contour.insert(contour.begin()+i+1, newPoints.begin(), newPoints.end());
 				i += newPoints.size();
 
-				
+
 			}
 		}
 	}
@@ -148,7 +149,7 @@ ofRectangle tricks::math::getBoundingBox(vector<ofVec2f> &contour) {
 		if(contour[i].x<minP.x) minP.x = contour[i].x;
 		if(contour[i].y<minP.y) minP.y = contour[i].y;
 	}
-	
+
 	return ofRectangle(minP.x, minP.y, maxP.x - minP.x, maxP.y - minP.y);
 }
 
@@ -160,12 +161,12 @@ bool tricks::math::pointInsidePolygon(ofVec2f &p, const vector<ofVec2f> &polygon
 	int i;
 	double xinters;
 	ofVec2f p1,p2;
-	
+
 	float x = p.x;
 	float y = p.y;
-	
+
 	int N = polygon.size();
-	
+
 	p1 = polygon[0];
 	for (i=1;i<=N;i++) {
 		p2 = polygon[i % N];
@@ -182,7 +183,7 @@ bool tricks::math::pointInsidePolygon(ofVec2f &p, const vector<ofVec2f> &polygon
 		}
 		p1 = p2;
 	}
-	
+
 	if (counter % 2 == 0) return false;
 	else return true;
 }

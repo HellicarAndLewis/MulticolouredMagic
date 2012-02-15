@@ -57,10 +57,10 @@ public:
 	
 	// we're not using these, just a compatibility problem
 	// between different versions of TUIO c++
-	void addTuioBlob(TuioBlob *tblb) {}
+	/*void addTuioBlob(TuioBlob *tblb) {}
 	void updateTuioBlob(TuioBlob *tblb) {}
 	void removeTuioBlob(TuioBlob *tblb) {}
-	
+	*/
 	
 	void refresh(TuioTime frameTime);
 	void drawCursors();

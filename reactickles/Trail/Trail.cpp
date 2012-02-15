@@ -8,18 +8,22 @@
 #include "constants.h"
 
 #include "Trail.h"
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
 
 void Trail::start() {
 	currShapeId = MAGIC_CIRCLE;
-    
+
 }
 
 void Trail::update() {
     float timeNow = ofGetElapsedTimef();
-	
-	float timeSinceLastInteraction = timeNow - timeOfLastInteraction;        
-	
+
+	float timeSinceLastInteraction = timeNow - timeOfLastInteraction;
+
 	if((volume > volumeThreshold) && (timeSinceLastInteraction > 0.3f )){
         if(mode>0) {
             if(mode == 1){
@@ -30,26 +34,26 @@ void Trail::update() {
                 }
             }else{
                 currShapeId++;
-                currShapeId %= NUM_MAGIC_SHAPES;                
+                currShapeId %= NUM_MAGIC_SHAPES;
             }
         }else{
             currShapeId = MAGIC_CIRCLE;
         }
-        
+
 #ifndef TARGET_OF_IPHONE
         ofxOscMessage m;
         m.setAddress( "/shapechange" );
         m.addIntArg( currShapeId );
         ReactickleApp::instance->sender.sendMessage( m );
 #endif
-                
+
 		timeOfLastInteraction = timeNow;
 	}
-    
+
 	for(int i = 0; i < particles.size(); i++) particles[i].update();
-	
+
 	// check for collisions
-	
+
 	for(int i = 0; i < particles.size(); i++) {
 		for(int j = i+1; j < particles.size(); j++) {
 			//if(i!=j) {
@@ -70,7 +74,7 @@ void Trail::update() {
 		   particles[i].pos.x-particles[i].radius>WIDTH
 		   ||
 		   particles[i].pos.y-particles[i].radius>HEIGHT) {
-			
+
 			particles.erase(particles.begin()+i);
 			i--;
 		}
@@ -83,7 +87,7 @@ void Trail::draw() {
 	//glDisable(GL_DEPTH_TEST);
 		ofBackground(0,0,0);
 	ofClear(0, 0, 0, 0);
-	
+
 	for(int i = 0; i < particles.size(); i++) particles[i].draw(currShapeId);
 }
 
@@ -100,7 +104,7 @@ void Trail::collision(TrailParticle &p1, TrailParticle &p2) {
 	float minDistSqr = p1.radius + p2.radius;
 	minDistSqr *= minDistSqr;
 	float currDistSqr = p2.pos.squareDistance(p1.pos);
-	
+
 	// there's a collision
 	if(minDistSqr>currDistSqr) {
 		// vector from bubble1 to 2
@@ -112,15 +116,15 @@ void Trail::collision(TrailParticle &p1, TrailParticle &p2) {
 }
 
 bool Trail::touchDown(float x, float y, int touchId) {
-	
+
     touchMoved(x, y, touchId);
-    
+
 	return true;
 }
 
 bool Trail::touchMoved(float x, float y, int touchId) {
 	int colorIndex = Settings::getInstance()->settings["fgColor"];
-	
+
 	if(mode==0) {
 		if(ofRandom(0, 1)>0.1) return true;
 	} else if(mode==1) {

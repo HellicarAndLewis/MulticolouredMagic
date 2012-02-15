@@ -17,6 +17,8 @@ string dateTimeString() {
 	padZeros(ofGetSeconds());
 }
 void setDataPathRootToAppContents(string appName) {
+// do nothing if we're in windows.
+#ifndef _WIN32
 	char path[512];
 	getcwd(path, 512);
 	string dataRoot = path;
@@ -25,6 +27,7 @@ void setDataPathRootToAppContents(string appName) {
 	}
 	dataRoot += "/../data/";
 	ofSetDataPathRoot(dataRoot);
+#endif
 }
 
 string getHomeDirectory() {
@@ -43,7 +46,7 @@ string getHomeDirectory() {
 				printf("%s\n", home.c_str());
 				return home;
 			}
-			
+
 		}
 		pclose(fp);
 	} else {
@@ -58,15 +61,17 @@ string getDesktopPath() {
 
 
 string getPreferencesDirectory(string appName) {
+#ifndef _WIN32
+
 	//getHomeDirectory();
 	//if(1) return "/Users/marek/Library/Preferences/Reactickles Magic";
 	string prefsDir = getHomeDirectory() + "/Library/Preferences/"+appName;
 	printf("Here: %s\n", prefsDir.c_str());
-	struct stat stFileInfo; 
-	
-	// Attempt to get the file attributes 
-	if(stat(prefsDir.c_str(),&stFileInfo)!=0) { 
-		
+	struct stat stFileInfo;
+
+	// Attempt to get the file attributes
+	if(stat(prefsDir.c_str(),&stFileInfo)!=0) {
+
 		if(mkdir(prefsDir.c_str(), 0777)==0) {
 			printf("Prefs: %s\n", prefsDir.c_str());
 			return prefsDir;
@@ -77,4 +82,7 @@ string getPreferencesDirectory(string appName) {
 	} else {
 		return prefsDir;
 	}
+#else
+    return "";
+#endif
 }
