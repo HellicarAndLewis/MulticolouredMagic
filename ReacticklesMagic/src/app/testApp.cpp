@@ -70,7 +70,7 @@ void testApp::setupGui() {
 	
 	gui.addSlider("Threshold", kinect.threshold, 0, 255);
 	gui.addSlider("Far clipping", kinect.farClip, 0, 255);
-//	gui.addSlider("blend amount", kinect.blendAmount, 0.01, 0.2);
+	gui.addSlider("blend amount", kinect.blendAmount, 0.01, 0.2);
 	kinect.blendAmount = 0.1;
 	
 	gui.addTitle("SOUND");
@@ -83,10 +83,10 @@ void testApp::setupGui() {
 	gui.addToggle("Camera Flip Horizontal", kinect.flipX);
 	gui.addToggle("Camera Flip Vertical", kinect.flipY);
 	gui.addContent("Camera image", kinect.colorImage);
-	gui.addContent("Depth image", kinect.depthImage);
-	//gui.addContent("Thresholded image", kinect.grayImage);
-	//gui.addContent("Bg image", kinect.bgImage);
-	//gui.addContent("Blobs", kinect.contourFinder);
+	gui.addContent("Depth image", kinect.grayImage);
+	//gui.addContent("Thresholded image", kinect.th);
+	gui.addContent("Bg image", kinect.bgImage);
+	gui.addContent("Blobs", kinect.contourFinder);
 	
 	gui.setDraw(false);
 	
@@ -112,6 +112,7 @@ void testApp::update(){
 		gain = Settings::getInstance()->settings["volume"];
 #ifndef TARGET_OF_IPHONE	
 		kinect.update(currentApp->needsKinect());
+		//printf("Needds kinect %d\n", currentApp->needsKinect());
 #endif
 		currentApp->volume = volume*gain;
 		currentApp->volumeThreshold = VOLUME_THRESHOLD;

@@ -8,3 +8,7 @@ ReacticklesMagic/build/*
 */bin/*.app
 .DS_Store
 */.DS_Store
+*/obj/*
+*.dll
+*.depend
+*.layout

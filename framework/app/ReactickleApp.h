@@ -77,6 +77,10 @@ public:
 	void gotMemoryWarning();
 	void deviceOrientationChanged(int newOrientation);
 	void setEnabled(bool enabled) { this->enabled = enabled; }
+
+	// hack to make the mode up/dn buttons work.
+	virtual void buttonDown(float x, float y, int id) {}; 
+	virtual void buttonUp(float x, float y, int id) {}; 
 #ifndef TARGET_OF_IPHONE
     //more osc fun
     ofxOscSender sender;

@@ -96,6 +96,7 @@ bool Flip::touchDown(float x, float y, int touchId) {
 	pos.push_back((ofVec2f(x, y)*0.05+lastPos*0.95));
 
 
+
 	return true;
 }
 bool Flip::touchMoved(float x, float y, int touchId) {
@@ -104,7 +105,6 @@ bool Flip::touchMoved(float x, float y, int touchId) {
 		lastPos = pos.back();
 	}
 	pos.push_back((ofVec2f(x, y)*0.05+lastPos*0.95));
-
 	for(int i = 0; i < touches.size(); i++) {
 		if(touchId==touches[i].touchId) {
 			touches[i].x = x;
@@ -112,6 +112,7 @@ bool Flip::touchMoved(float x, float y, int touchId) {
 			return true;
 		}
 	}
+
 	return touchDown(x, y, touchId);
 
 }

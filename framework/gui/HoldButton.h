@@ -15,12 +15,12 @@
  */
 class HoldButton: public SimpleButton {
 public:
-	
+
 
 	bool holdMode;
 	float touchStart;
 	bool buttonPressed;
-	
+
 	/**
 	 * If hold mode is set to true, you need to hold
 	 * down on the button to activate it. If it's false
@@ -29,23 +29,24 @@ public:
 	void setHoldMode(bool holdMode) {
 		this->holdMode = holdMode;
 	}
-	
-	
+
+
 	bool touchDown(float xx, float yy, int tid) {
-		buttonPressed = false;
+
+        buttonPressed = false;
 		if(inside(xx, yy)) {
 			touchStart = ofGetElapsedTimef();
 			currTouchId = tid;
 			down = true;
 		}
-		
+
 		return down;
 	}
-	
-	
-	
+
+
+
 	virtual bool touchUp(float xx, float yy, int tid) {
-		
+
 		if(currTouchId==tid) {
 			currTouchId = -1;
 			down = false;
@@ -63,19 +64,19 @@ public:
 			}
 		}
 		return down;
-		
+
 	}
-	
-	
-	
+
+
+
 	virtual void draw() {
 		x = (int)x;
 		y = (int)y;
 		ofSetColor(255, 255, 255, alpha*255.f);
 		if(down) {
-			
-			
-			// if we're in hold mode we need to 
+
+
+			// if we're in hold mode we need to
 			// look at the timer and decide whether
 			// to trigger.
 			if(holdMode && listener!=NULL) {

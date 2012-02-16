@@ -13,11 +13,11 @@ map<string,ofImage*> imageCacheImages;
 
 
 
-bool guiResFileExists(string filename) { 
-	struct stat stFileInfo; 
-	
-	// Attempt to get the file attributes 
-	return stat(filename.c_str(),&stFileInfo)==0; 
+bool guiResFileExists(string filename) {
+	struct stat stFileInfo;
+
+	// Attempt to get the file attributes
+	return stat(filename.c_str(),&stFileInfo)==0;
 }
 
 
@@ -31,7 +31,7 @@ ofImage *ImageCache::getImage(string path) {
 		return NULL;
 #endif
 	}
-	
+
 	if(!guiResFileExists(ofToDataPath(path, true))) {
 		printf("File doesn't exist %s\n", ofToDataPath(path).c_str());
 #ifdef IMAGECACHE_STRICT
@@ -40,16 +40,16 @@ ofImage *ImageCache::getImage(string path) {
 		return new ofImage();
 #endif
 	}
-		
+
 	// cache the image if it's not already loaded
 	if(imageCacheImages.find(path)==imageCacheImages.end()) {
 		ofImage *img = new ofImage();
-		printf("Loading %s\n", ofToDataPath(path).c_str());
+		//printf("Loading %s\n", ofToDataPath(path).c_str());
 		img->loadImage(path);
 
 		imageCacheImages[path] = img;
 		//printf("Loaded file from %s\n", string(basePath+path).c_str());
 	}
-		
+
 	return imageCacheImages[path];
 }

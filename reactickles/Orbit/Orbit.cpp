@@ -229,7 +229,7 @@ void Orbit::nextShape(){
 	if(currentShapeType >=NUM_MAGIC_SHAPES || currentShapeType < 0) { //safety!
 		currentShapeType = 0;
 	}
-	printf("currentShapeType: %d\n", currentShapeType);
+//	printf("currentShapeType: %d\n", currentShapeType);
 
 #ifndef TARGET_OF_IPHONE
 	ofxOscMessage m;

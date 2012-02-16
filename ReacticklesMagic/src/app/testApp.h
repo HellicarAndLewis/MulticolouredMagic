@@ -37,6 +37,13 @@ public:
 	void update();
 	void draw();
 
+	
+	void buttonDown(float x, float y, int id);
+	void buttonMoved(float x, float y, int id);
+	void buttonUp(float x, float y, int id);
+
+		
+	// don't use these for now
 	void touchDown(ofTouchEventArgs &touch);
 	void touchMoved(ofTouchEventArgs &touch);
 	void touchUp(ofTouchEventArgs &touch);

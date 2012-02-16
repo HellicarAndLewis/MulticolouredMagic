@@ -15,20 +15,26 @@ void KinectOrCamera::setup() {
 	// try kinect first
 	greyscaleBuffer = NULL;
 
-#ifndef TARGET_OF_IPHONE	   
+#ifndef TARGET_OF_IPHONE
 	kinect.init();
 	usingKinect = kinect.open();
-#else 
+#else
 	usingKinect = false;
 	width /= 2;
 	height /= 2;
 #endif
-	
+
 	if(usingKinect) {
-		
+
+		printf("Using kinect\n");
 	} else {
-		camera		.setVerbose(true);
+		camera		.setVerbose(false);
+#ifdef TARGET_OF_IPHONE
+		// if we're working on the iPhone
+		// we want to use the front-facing camera.
 		camera.setDeviceID(2);
+#endif
+
 		// init video grabber
 		camera.initGrabber(width, height);
 		width = camera.getWidth();
@@ -37,9 +43,9 @@ void KinectOrCamera::setup() {
 		// set up the camera
 
 	}
-	
-	
-	
+
+
+
 }
 
 void KinectOrCamera::update() {
@@ -48,7 +54,7 @@ void KinectOrCamera::update() {
 		kinect.update();
 #endif
 	} else {
-		
+
 		camera.grabFrame();
 	}
 }

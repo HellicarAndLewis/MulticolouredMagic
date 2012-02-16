@@ -24,7 +24,7 @@
 
 ofxTuioClient::ofxTuioClient() {
     bIsConnected = false;	
-	bVerbose = false;
+	bVerbose = true;
 }
 
 void ofxTuioClient::connect(int port){

@@ -2,7 +2,7 @@
 #include "testApp.h"
 #include "ReactickleApp.h"
 
-
+#include <winver.h>
 
 int WIDTH = 480;
 int HEIGHT = 320;
@@ -28,16 +28,16 @@ int main(){
 			RETINA = true;
 		}
 	}
-	
+
 	WIDTH = [[UIScreen mainScreen] bounds].size.width;
 	HEIGHT = [[UIScreen mainScreen] bounds].size.height;
-	
+
 	if(WIDTH<HEIGHT) {
 		int temp = WIDTH;
 		WIDTH = HEIGHT;
 		HEIGHT = temp;
 	}
-	
+
 	if(!RETINA) {
 		if([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)]) {
 			IPAD = [[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPad;
@@ -48,7 +48,7 @@ int main(){
 		WIDTH *= 2;
 		HEIGHT *= 2;
 	}
-	
+
 	if(IPAD||RETINA) {
 		IMAGE_ROOT = "images4/";
 		HI_RES = true;
@@ -56,9 +56,9 @@ int main(){
 		HI_RES = false;
 		IMAGE_ROOT = "images/";
 	}
-	
-	
-#else 
+
+
+#else
 	//WIDTH_SCALE = 2;
 	//HEIGHT_SCALE = 2;
 	WIDTH = 1024;
@@ -68,19 +68,19 @@ int main(){
 	IPAD = true;
 	IMAGE_ROOT = "images4/";
 	FAKE_GAME_MODE = true;
-	printf("SETTED HERE!!!!!\n\n\n\n");
+//	printf("SETTED HERE!!!!!\n\n\n\n");
 #endif
-	
+
 	WIDTH_SCALE = (float)WIDTH/480.f;
 	HEIGHT_SCALE = (float)HEIGHT/320.f;
-	
-	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
-	
-	
+
+	ofSetupOpenGL(WIDTH, HEIGHT, OF_WINDOW);//OF_FULLSCREEN);			// <-------- setup the GL context
+
+
 
 	// this kicks off the running of my app
 	// can be OF_WINDOW or OF_FULLSCREEN
 	// pass in width and height too:
 	ofRunApp( new testApp());
-	
+
 }

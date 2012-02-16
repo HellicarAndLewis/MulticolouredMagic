@@ -31,10 +31,10 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	ofAddListener(ofEvents.touchDown, this, &ReactickleApp::touchDown);
 	ofAddListener(ofEvents.touchMoved, this, &ReactickleApp::touchMoved);
 	ofAddListener(ofEvents.touchUp, this, &ReactickleApp::touchUp);
-	
+
 	// initialize the accelerometer
 	ofxAccelerometer.setup();
-	
+
 	//iPhoneAlerts will be sent to this.
 	ofxiPhoneAlerts.addListener(this);
 #else
@@ -43,7 +43,7 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 //	webserver.start("htdocs/", 8080);
 //	webserver.addHandler(this, "/action");
 #endif
-	
+
 	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
 }
 
@@ -59,7 +59,7 @@ string nextOneToLaunch = "";
 
 	nextOneToLaunch = getRequestParameter("reactickle");
 }*/
-#endif 
+#endif
 
 
 
@@ -71,13 +71,13 @@ void ReactickleApp::drawCurrentReactickle() {
 	}
 #endif
 	float crossFadeTime = ofGetElapsedTimef() - crossFadeStartTime;
-	
+
 	// if we're crossfading do this:
 	if(crossFadeTime<CROSS_FADE_TIME) {
-		
+
 		Reactickle *first = mainMenu;
 		Reactickle *second = currentApp;
-		
+
 		// choose which way we're fading
 		if(!fadingIn) {
 			first = fadingOutReactickle;
@@ -95,19 +95,19 @@ void ReactickleApp::drawCurrentReactickle() {
 			ofSetColor(0, 0, 0, ofMap(crossFadeTime, CROSS_FADE_TIME/2, CROSS_FADE_TIME, 255, 0, true));
 			ofRect(0, 0, WIDTH, HEIGHT);
 		}
-		
-		
+
+
 		// and then the app fading in
-		
-		
+
+
 		// otherwise, just do this
 	} else {
 		currentApp->draw();
-		
+
 		// delete the last faded out reactickle
 		// if it's finished fading out.
 		if(fadingOutReactickle!=NULL) {
-			printf("deleting fading out reactickle\n");
+//			printf("deleting fading out reactickle\n");
 			delete fadingOutReactickle;
 			fadingOutReactickle = NULL;
 		}
@@ -119,52 +119,52 @@ void ReactickleApp::drawCurrentReactickle() {
 
 void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 
-	
+
 
 	// save for later
 	Reactickle *lastApp = currentApp;
-	
+
 	if(currentApp!=NULL) {
 		currentApp->stop();
 	}
 	// take care of previous reactickle - i.e. delete it if it's an actual reactickle
 	if(isReactickle(currentApp)) {
-		
+
 		// just check the old one is actually deleted before reassigning.
 		if(fadingOutReactickle!=NULL && isReactickle(fadingOutReactickle)) delete fadingOutReactickle;
-		
+
 		fadingOutReactickle = currentApp;
 //		delete currentApp; - don't delete it yet, wait until it's faded out.
 		currentApp = NULL;
 	}
-	
-	
+
+
 	// start the new one
 	currentApp = reactickle;
 	if(isReactickle(currentApp)) {
 		currentApp->setup();
 		backButton.setHoldMode(true);
 		startCrossFade(true);
-		printf("it's a reactickle\n");
+//		printf("it's a reactickle\n");
 	} else if(currentApp==mainMenu) {
-		
+
 		// only crossfade if we're fading out of a reactickle
 		if(
 		   isReactickle(lastApp)
 		   ) {
-			printf("Should be crossfading here\n");
+//			printf("Should be crossfading here\n");
 			startCrossFade(false);
-			backButton.setHoldMode(false);		
+			backButton.setHoldMode(false);
 		} else {
-			printf("HERE\n");
+	//		printf("HERE\n");
 		}
 	} else {
 		// not a reactickle or main menu
 		backButton.setHoldMode(false);
-		printf("about or settings\n");
+//		printf("about or settings\n");
 	}
-	
-	
+
+
 	currentApp->start();
 	if(isReactickle(currentApp)) {
 #ifndef TARGET_OF_IPHONE
@@ -174,7 +174,7 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 		ReactickleApp::instance->sender.sendMessage( m );
 #endif
 	}
-	
+
 }
 
 void ReactickleApp::startCrossFade(bool fadeIn) {
@@ -235,10 +235,12 @@ void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 	}
 #endif
 	currentApp->touchDown(touch.x*mult, touch.y*mult, touch.id);
+	this->buttonDown(touch.x*mult, touch.y*mult, touch.id);
 }
 
 //--------------------------------------------------------------
 void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
+	printf("Test");
 	float mult = RETINA?2:1;
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
@@ -246,7 +248,7 @@ void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
 			return;
 		}
 	}
-	
+
 #ifndef TARGET_OF_IPHONE
 	if(isReactickle(currentApp)) {
 		ofxOscMessage m;
@@ -256,6 +258,7 @@ void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
 	}
 #endif
 	currentApp->touchMoved(touch.x*mult, touch.y*mult, touch.id);
+	
 }
 
 //--------------------------------------------------------------
@@ -267,7 +270,7 @@ void ReactickleApp::touchUp(ofTouchEventArgs &touch){
 			return;
 		}
 	}
-	
+
 #ifndef TARGET_OF_IPHONE
 	if(isReactickle(currentApp)) {
 		ofxOscMessage m;
@@ -277,26 +280,27 @@ void ReactickleApp::touchUp(ofTouchEventArgs &touch){
 	}
 #endif
 	currentApp->touchUp(touch.x*mult, touch.y*mult, touch.id);
+	this->buttonUp(touch.x*mult, touch.y*mult, touch.id);
 }
 
 //--------------------------------------------------------------
 void ReactickleApp::lostFocus(){
-	
+
 }
 
 //--------------------------------------------------------------
 void ReactickleApp::gotFocus(){
-	
+
 }
 
 //--------------------------------------------------------------
 void ReactickleApp::gotMemoryWarning(){
-	
+
 }
 
 //--------------------------------------------------------------
 void ReactickleApp::deviceOrientationChanged(int newOrientation){
-	
+
 }
 void ReactickleApp::setupGraphics() {
 	ofEnableNormalizedTexCoords();
@@ -312,7 +316,7 @@ void ReactickleApp::updateOrientation() {
 	int orientation = [[UIDevice currentDevice] orientation];
 	int orient = iPhoneGetOrientation();
 	//printf("Phone orientation: %d, window orientation %d\n", orientation, orient);
-	
+
 	if(orientation!=currOrientation || orient==OFXIPHONE_ORIENTATION_PORTRAIT || orient==OFXIPHONE_ORIENTATION_UPSIDEDOWN) {
 		if(orientation==UIDeviceOrientationLandscapeLeft) {
 			iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
@@ -320,7 +324,7 @@ void ReactickleApp::updateOrientation() {
 			iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 		}
 	}
-	
+
 	currOrientation = orientation;
 #endif
 }
@@ -329,15 +333,15 @@ void ReactickleApp::updateOrientation() {
 void ReactickleApp::audioReceived( float * input, int bufferSize, int nChannels ) {
 	// samples are "interleaved"
 	float max = 0;
-	
+
 	for (int i = 0; i < bufferSize; i++){
 		float val = gain*ABS(input[i]);
 		if(val>max) max = val;
 	}
-	
+
 	if(max>volume) volume = max;
 	else volume *= 0.96;
-	
+
 	if(currentApp!=NULL) {
 		//volume *= gain;
 		currentApp->audioReceived(input, bufferSize, nChannels);
@@ -354,10 +358,10 @@ void ReactickleApp::exit(){
 void ReactickleApp::setupOrientation() {
 #ifdef TARGET_OF_IPHONE
 	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-	
+
 	int orientation = [[UIDevice currentDevice] orientation];
-	
-	
+
+
 	if(orientation==UIDeviceOrientationLandscapeLeft) {
 		iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 	} else if(orientation==UIDeviceOrientationLandscapeRight) {
@@ -365,7 +369,7 @@ void ReactickleApp::setupOrientation() {
 	} else { // default
 		iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
 	}
-	
-	currOrientation = UIDeviceOrientationPortrait;	
+
+	currOrientation = UIDeviceOrientationPortrait;
 #endif
 }

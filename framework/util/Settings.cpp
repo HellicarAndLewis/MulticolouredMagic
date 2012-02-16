@@ -36,19 +36,19 @@ void Settings::reset() {
 	// default values
 	setDefaultValues();
 	save();
-	
+
 }
 
 void Settings::save() {
-	
+
 	Properties p;
-	
+
 	map<string,float>::iterator it;
 	for ( it=settings.begin() ; it != settings.end(); it++ ) {
 		p.set((*it).first, (*it).second);
 	}
 	p.save(path);
-	printf("Saved to %s\n", path.c_str());
+	//printf("Saved to %s\n", path.c_str());
 }
 void Settings::load() {
 	Properties p;
@@ -58,5 +58,5 @@ void Settings::load() {
 	for(int i = 0; i < keys.size(); i++) {
 		settings[keys[i]] = p.getFloat(keys[i]);
 	}
-	
+
 }

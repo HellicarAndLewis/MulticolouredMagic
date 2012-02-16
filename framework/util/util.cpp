@@ -33,17 +33,17 @@ void setDataPathRootToAppContents(string appName) {
 string getHomeDirectory() {
 	FILE *fp = popen("who am I", "r");
 	if(fp!=NULL) {
-		printf("popen made it\n");
+//		printf("popen made it\n");
 		char name[512];
 		string username;
 		ofSleepMillis(100);
 		if(fgets(name, 512, fp)) {
-			printf("fgets\n");
+//			printf("fgets\n");
 			username = name;
 			if(username.find(' ')!=-1) {
 				username = username.substr(0, username.find(' '));
 				string home = "/Users/"+username;
-				printf("%s\n", home.c_str());
+//				printf("%s\n", home.c_str());
 				return home;
 			}
 
@@ -66,14 +66,14 @@ string getPreferencesDirectory(string appName) {
 	//getHomeDirectory();
 	//if(1) return "/Users/marek/Library/Preferences/Reactickles Magic";
 	string prefsDir = getHomeDirectory() + "/Library/Preferences/"+appName;
-	printf("Here: %s\n", prefsDir.c_str());
+//	printf("Here: %s\n", prefsDir.c_str());
 	struct stat stFileInfo;
 
 	// Attempt to get the file attributes
 	if(stat(prefsDir.c_str(),&stFileInfo)!=0) {
 
 		if(mkdir(prefsDir.c_str(), 0777)==0) {
-			printf("Prefs: %s\n", prefsDir.c_str());
+//			printf("Prefs: %s\n", prefsDir.c_str());
 			return prefsDir;
 		} else {
 			printf("Failed to create preferences directory: %s\n", prefsDir.c_str());

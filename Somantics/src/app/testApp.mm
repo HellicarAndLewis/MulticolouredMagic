@@ -1,7 +1,7 @@
 #include "testApp.h"
 #include "MagicShapes.h"
 
-bool flipX = false;
+bool flipX = true;
 bool flipImage = false;
 
 #ifndef TARGET_OF_IPHONE
