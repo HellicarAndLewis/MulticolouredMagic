@@ -5,7 +5,12 @@
 #include "contourutils.h"
 #endif
 #include "Settings.h"
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
+
 
 //--------------------------------------------------------------
 void Silhouettes::setup(){
@@ -14,17 +19,17 @@ void Silhouettes::setup(){
 	Silhouette::setup();
 	ofEnableNormalizedTexCoords();
 
-	
-	
-	
-	
-	
+
+
+
+
+
 	float w = WIDTH;
 	float h = HEIGHT;
-	
-	
 
-	
+
+
+
 #ifdef USE_FBO
 	currFrame = new ofFbo();
 	histFrame = new ofFbo();
@@ -51,7 +56,7 @@ void Silhouettes::stop() {
 void Silhouettes::update(){
 #ifndef TARGET_OF_IPHONE
 	if(threshImg!=NULL) {
-		contourFinder.findContours(*threshImg, 20*20, VISION_WIDTH*VISION_HEIGHT, 20, false);		
+		contourFinder.findContours(*threshImg, 20*20, VISION_WIDTH*VISION_HEIGHT, 20, false);
 	}
 
 #endif
@@ -61,19 +66,19 @@ bool histFrameCleared = false;
 //--------------------------------------------------------------
 void Silhouettes::draw(){
 //	ofBackground(255);
-	
-	
-#ifdef USE_FBO	
+
+
+#ifdef USE_FBO
 
 	ofBackground(255);
 	currFrame->begin();
 	ofClear(0, 0, 0, 0);
-	
-#else 
+
+#else
 	ofSetColor(255, 255, 255, 20);
 	ofRect(0, 0, WIDTH, HEIGHT);
 #endif
-	
+
 #ifdef TARGET_OF_IPHONE
 	int colorIndex = Settings::getInstance()->settings["fgColor"];
 	for(int i = 0; i < silhouettes.size(); i++) {
@@ -89,7 +94,7 @@ void Silhouettes::draw(){
 			i--;
 		}
 	}
-#else 
+#else
 	Silhouette s;
 	int colorIndex = Settings::getInstance()->settings["fgColor"];
 
@@ -107,39 +112,39 @@ void Silhouettes::draw(){
 			point.y = contourFinder.blobs[i].pts[j].y*HEIGHT/VISION_HEIGHT;
 			points.push_back(point);
 		}
-		
-		
+
+
 		tricks::math::calcConvexHull(points, hull);
-		
-		
+
+
 		ofVec2f *p = new ofVec2f[hull.size()];
 		for(int j = 0; j < hull.size(); j++) {
 			p[j] = hull[j];
 		}
-		
+
 		s.draw(p, hull.size());
 		delete [] p;
 	}
 #endif
-	
+
 #ifdef USE_FBO
 	currFrame->end();
-/*	
+/*
 	histFrame->begin();
 	if(!histFrameCleared) {
 		ofClear(0,0,0,0);
 		histFrameCleared = true;
 	}
 	glColor4f(1,1,1, 0.02);
-	
+
 	ofRect(0, 0, WIDTH, HEIGHT);
-	
+
 	glColor4ub(255, 255, 255, 200);
 	currFrame->draw(0, 0);
 	histFrame->end();
 	glColor4f(1, 1, 1, 1);
 	histFrame->draw(0, 0);
-*/	
+*/
 	currFrame->draw(0, 0, WIDTH, HEIGHT);
 #endif
 
@@ -157,7 +162,7 @@ bool Silhouettes::touchDown(float x, float y, int touchId) {
 	silhouettes.back().touchDown(x, y, touchId);
 	touches[touchId] = ofVec2f(x, y);
 #endif
-	return true;	
+	return true;
 }
 
 bool Silhouettes::touchUp(float x, float y, int touchId) {
@@ -165,7 +170,7 @@ bool Silhouettes::touchUp(float x, float y, int touchId) {
 	touches.erase(touchId);
 	for(int i = 0; i < silhouettes.size(); i++) {
 		if(silhouettes[i].touchUp(touchId)) {
-			
+
 			return true;
 		}
 	}

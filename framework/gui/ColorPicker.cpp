@@ -6,7 +6,12 @@
 *
 */
 
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
+
 
 int ColorPicker::colors[NUM_PICKER_COLORS];
 
@@ -34,52 +39,52 @@ ColorPicker::ColorPicker() {
 	colors[i++] = 0xFFFADE;
 	colors[i++] = 0xF8E7E2;
 	colors[i++] = 0;
-	
+
 }
 
 GlowingBorder glowingBorder;
 void ColorPicker::setup() {
-	
-	
+
+
 	x = 120;
 	y = 98+55;
-	
+
 	int PADDING = 9;
 	int NUM_COLS = 7;
-	
-	
+
+
 	fgs = new ColorCube*[NUM_PICKER_COLORS];
 
-	
-	
+
+
 	// foreground
 	for(int i = 0; i < NUM_PICKER_COLORS; i++) {
 		ColorCube *c = new ColorCube();
-		
+
 		c->setup(colors[i]);
 		c->x = (i%NUM_COLS)*(c->width+PADDING);
 		c->y = (i/NUM_COLS)*(c->height+PADDING);
 		c->setListener(this);
 		fgs[i] = c;
 		add(c);
-		
+
 	}
-		
+
 	pickerBorder = ImageCache::getImage(IMAGE_ROOT + "pickerBorder.png");
 	pickerCube = ImageCache::getImage(IMAGE_ROOT + "pickerCube.png");
-	
+
 	glowingBorder.setup(ImageCache::getImage("img/dropShadow.png"), 4);
 	cross = ImageCache::getImage(IMAGE_ROOT + "x.png");
 	cross->setAnchorPercent(0.5 ,0.5);
-	
+
 	for(int i = 0; i < NUM_PICKER_COLORS; i++) {
 		fgs[i]->cross = cross;
 		fgs[i]->glowingBorder = &glowingBorder;
 		fgs[i]->pickerBorder = pickerBorder;
 		fgs[i]->pickerCube = pickerCube;
 	}
-	
-	
+
+
 
 	selection.setup(ofVec2f(463+37, 130), IMAGE_ROOT+"selection.png");
 
@@ -94,7 +99,7 @@ void ColorPicker::setup() {
 
 
 
-	add(inkWell);	
+	add(inkWell);
 }
 void ColorPicker::reset() {
 	selectFg(Settings::getInstance()->settings["fgColor"]);
@@ -106,7 +111,7 @@ void ColorPicker::selectFg(int index) {
 	for(int i = 0; i < NUM_PICKER_COLORS; i++) {
 		fgs[i]->setSelected(false);
 	}
-	
+
 	// select the appropriate one
 	fgs[index]->setSelected(true);
 	inkWell.setColor(fgs[index]->getColor());
@@ -116,12 +121,12 @@ void ColorPicker::selectFg(int index) {
 }
 
 void ColorPicker::cubePressed(ColorCube *cube) {
-	
+
 	for(int i = 0; i < NUM_PICKER_COLORS; i++) {
 		if(fgs[i]==cube) {
 			selectFg(i);
 			return;
 		}
 	}
-	
+
 }

@@ -1,6 +1,11 @@
 #include "Windmills.h"
 #include "constants.h"
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
+
 #include "Settings.h"
 
 //--------------------------------------------------------------
@@ -9,11 +14,11 @@ void Windmills::setup(){
 	windmillsX = 30;
 	windmillsY = 25;
 
-	
+
 	float w = WIDTH;
 	float h = HEIGHT;
-	
-	
+
+
 	for(int x = 0; x < windmillsX; x++) {
 		for(int y = 0; y < windmillsY; y++) {
 			windmills.push_back(Windmill());
@@ -26,14 +31,14 @@ void Windmills::setup(){
 			windmills.back().pos = pos;
 		}
 	}
-	
+
 #ifndef TARGET_OF_IPHONE
 	opticalFlow.allocate(VISION_WIDTH/2, VISION_HEIGHT/2);
 	grey.allocate(VISION_WIDTH, VISION_HEIGHT);
 	curr.allocate(VISION_WIDTH/2, VISION_HEIGHT/2);
 	prev.allocate(VISION_WIDTH/2, VISION_HEIGHT/2);
 #endif
-	
+
 }
 int Windmills::toWindmillIndex(int x, int y) {
 	return x*windmillsX + y;
@@ -43,17 +48,17 @@ void Windmills::update(){
 	//flowField.update();
 	/*for(int x = 1; x < windmillsX-1; x++) {
 		for(int y = 1; y < windmillsY-1; y++) {
-			
+
 			windmills[toWindmillIndex(x, y)].rotationSpeed = (windmills[toWindmillIndex(x-1, y)].rotationSpeed
-																	 + windmills[toWindmillIndex(x, y)].rotationSpeed 
+																	 + windmills[toWindmillIndex(x, y)].rotationSpeed
 																	 + windmills[toWindmillIndex(x+1, y)].rotationSpeed
-																	 + windmills[toWindmillIndex(x, y-1)].rotationSpeed 
+																	 + windmills[toWindmillIndex(x, y-1)].rotationSpeed
 																	 + windmills[toWindmillIndex(x, y+1)].rotationSpeed)/5;
 		}
 	}*/
-	
+
 #ifndef TARGET_OF_IPHONE
-	
+
 	if(colorImg!=NULL) {
 		grey = *colorImg;
 		curr.scaleIntoMe(grey);
@@ -71,7 +76,7 @@ void Windmills::update(){
 		if(force.length()>1) {
 			windmills[i].applyForce(force);
 		}
-		
+
 	}
 #endif
 }

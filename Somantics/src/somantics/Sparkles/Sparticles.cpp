@@ -1,9 +1,15 @@
 
 #include "Sparticles.h"
 #include "Settings.h"
-#include "ColorPicker.h"
+
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
+
 Sparticles::Sparticles(){
-	
+
 	pos = 0;
     maxAge = 50;
     numParticles = 500;
@@ -11,19 +17,19 @@ Sparticles::Sparticles(){
     velocities = new ofVec2f[numParticles];
     ages = new int[numParticles];
     sizes = new float[numParticles];
-	
+
     for(int i = 0; i < numParticles; i++) {
         positions[i] = ofVec2f(-10, -10);
         velocities[i] = ofVec2f(0, 0);
         ages[i] = maxAge;
 		sizes[i] = ofRandom(5, 26);
     }
-	
-	
+
+
 }
 
 void Sparticles::setup() {
-	
+
 	vector<string> imgs;
 	imgs.push_back("img/particles/blob.png");
 	imgs.push_back("img/particles/glitter.png");
@@ -53,8 +59,8 @@ void Sparticles::update(){
 }
 
 void Sparticles::draw(bool multicoloured){
-    
-    
+
+
 	int colorIndex = Settings::getInstance()->settings["fgColor"];
 	ofColor c;
 	if(colorIndex!=20) {
@@ -63,7 +69,7 @@ void Sparticles::draw(bool multicoloured){
     for(int i = 0; i < numParticles; i++) {
         if(ages[i]<maxAge) {
             float size = ofMap(ages[i], 0, maxAge, sizes[i], 0);
-            
+
 			//            if (particleDisplayMode == 2){
 			//            ofTranslate(1, 1, -size);
 			//            }
@@ -75,7 +81,7 @@ void Sparticles::draw(bool multicoloured){
 				c.setHex(ColorPicker::colors[i%7]);
 			}
 				ofSetColor(c.r, c.g, c.b, ofMap(ages[i], 0, maxAge, 255, 0));
-			
+
             //ofCircle(positions[i].x - size/2, positions[i].y - size/2, size);
 			if(ofRandom(0, 1)>0.96) {
 				int r = 1+rand()%(images.size()-1);
@@ -86,14 +92,14 @@ void Sparticles::draw(bool multicoloured){
 //            ofRect(positions[i].x - size/2, positions[i].y - size/2, size, size);
         }
     }
-	
+
 }
 
 void Sparticles::spawn(float x, float y, float dx, float dy){
     ages[pos] = 0;
     positions[pos] = ofVec2f(x, y);
     velocities[pos] = ofVec2f(dx, dy);
-    
+
     pos++;
     pos %= numParticles;
 }

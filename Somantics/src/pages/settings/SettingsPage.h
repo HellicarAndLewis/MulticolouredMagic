@@ -7,7 +7,12 @@
  */
 #pragma once
 #include "Reactickle.h"
-#include "ColorPicker.h"
+#ifdef _WIN32
+    #include "gui/ColorPicker.h"
+#else
+    #include "ColorPicker.h"
+#endif
+
 #include "SimpleButton.h"
 #include "BrightnessSlider.h"
 #include "ImageObject.h"
@@ -19,14 +24,14 @@ public:
 	void buttonPressed(string name);
 	ColorPicker colorPicker;
 	BrightnessSlider slider;
-	
+
 	ofImage *bgImage;
-	
+
 	ImageObject settingsTitle;
 	ImageObject colourPickerTitle;
 	ImageObject logo;
 	/*
-	
+
 	ofImage *settingsTitle;
 	ofImage *colourPickerTitle;
 	ofImage *logo;

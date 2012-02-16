@@ -240,7 +240,7 @@ void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 
 //--------------------------------------------------------------
 void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
-	printf("Test");
+//	printf("Test");
 	float mult = RETINA?2:1;
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
@@ -258,7 +258,7 @@ void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
 	}
 #endif
 	currentApp->touchMoved(touch.x*mult, touch.y*mult, touch.id);
-	
+
 }
 
 //--------------------------------------------------------------

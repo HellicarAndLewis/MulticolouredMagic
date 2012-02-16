@@ -154,10 +154,10 @@ void Cascade::draw() {
 }
 
 bool Cascade::touchDown(float x, float y, int touchId) {
-#ifdef TARGET_OF_IPHONE
+//#ifdef TARGET_OF_IPHONE
 	clapPoint = ofPoint(x, y);
 	clapping = true;
-#endif
+//#endif
 }
 
 void Cascade::audioReceived(float *input, int length, int nChannels) {

@@ -65,6 +65,7 @@ void TuioKinect::setup() {
 
 	TuioTime::initSession();
 	tuioServer = new TUIO::TuioServer();
+	tuioServer->setVerbose(false);
 //	tuioServer->setSourceName("TuioKinect");
 //	tuioServer->enableObjectProfile(false);
 //	tuioServer->enableBlobProfile(false);
@@ -119,12 +120,12 @@ void TuioKinect::update(bool sendTuio) {
 
 	// threshold it with our threshold value
 	grayImage.threshold(threshold);
-	
+
 	contourFinder.findContours(grayImage, 900, (kinect.width*kinect.height)/8, 20, false);
 
 
 	// only send tuio if it's required.
-	if(true) {//sendTuio) {
+	if(sendTuio) {
 		updateTuio();
 	}
 }

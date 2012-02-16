@@ -1,15 +1,18 @@
 #include "Tunnel.h"
 #include "constants.h"
 #include "Settings.h"
+#ifdef _WIN32
+#include "gui/ColorPicker.h"
+#else
 #include "ColorPicker.h"
-
+#endif
 #ifndef TARGET_OF_IPHONE
 #include "contourutils.h"
 #endif
 #define BRUSHED_LINE_SIZE 6
 //--------------------------------------------------------------
 void Tunnel::setup(){
-	
+
 	Silhouette::setup();
 
 	ofEnableNormalizedTexCoords();
@@ -17,7 +20,7 @@ void Tunnel::setup(){
 }
 
 //--------------------------------------------------------------
-void Tunnel::update(){ 
+void Tunnel::update(){
 	// take the snapshots and make them bigger
 	for(int i = 0; i < history.size(); i++) {
 		ofVec2f centre;
@@ -38,15 +41,15 @@ void Tunnel::update(){
 		if(maxDistSquared<400) {
 			history.erase(history.begin()+i);
 			i--;
-		} 
+		}
 		//printf("max dist: %f\n", maxDistSquared);
-		
+
 	}
 #ifndef TARGET_OF_IPHONE
 	if(threshImg!=NULL) {
-		contourFinder.findContours(*threshImg, 20*20, VISION_WIDTH*VISION_HEIGHT, 20, false);		
+		contourFinder.findContours(*threshImg, 20*20, VISION_WIDTH*VISION_HEIGHT, 20, false);
 	}
-	
+
 #endif
 }
 int cc = 0;
@@ -56,12 +59,12 @@ void Tunnel::draw(){
 	while(history.size()>20) {
 		history.erase(history.begin());
 	}
-	
+
 	ofSetHexColor(0xFFFFFF);
 	int colorIndex = Settings::getInstance()->settings["fgColor"];
 
-		
-		
+
+
 	for(int i = 0; i < history.size(); i++) {
 		ofColor c;
 		if(colorIndex==20) {
@@ -79,26 +82,26 @@ void Tunnel::draw(){
 #ifndef TARGET_OF_IPHONE
 	silhouettes.clear();
 	Silhouette s;
-	
+
 	vector<ofVec2f> points, hull;
 	for(int i = 0; i < contourFinder.blobs.size(); i++) {
-		
-		
+
+
 		for(int j = 0; j < contourFinder.blobs[i].pts.size(); j++) {
 			ofVec2f point;
 			point.x = contourFinder.blobs[i].pts[j].x*WIDTH/VISION_WIDTH;
 			point.y = contourFinder.blobs[i].pts[j].y*HEIGHT/VISION_HEIGHT;
 			points.push_back(point);
 		}
-	}	
-		
+	}
+
 	tricks::math::calcConvexHull(points, hull);
-		
+
 	ofVec2f *p = new ofVec2f[hull.size()];
 	for(int j = 0; j < hull.size(); j++) {
 		p[j] = hull[j];
 	}
-	
+
 	if(colorIndex==20) {
 		ofSetColor(255, 0, 0);
 	} else {
@@ -120,7 +123,7 @@ void Tunnel::draw(){
 	}*/
 #else
 
-	
+
 	for(int i = 0; i < silhouettes.size(); i++) {
 		ofSetColor(255, 0, 0);
 		silhouettes[i].draw();
@@ -156,7 +159,7 @@ bool Tunnel::touchUp(float x, float y, int touchId) {
 	touches.erase(touchId);
 	for(int i = 0; i < silhouettes.size(); i++) {
 		if(silhouettes[i].touchUp(touchId)) {
-			
+
 			return true;
 		}
 	}
