@@ -12,3 +12,5 @@ ReacticklesMagic/build/*
 *.dll
 *.depend
 *.layout
+*.exe
+*.o
