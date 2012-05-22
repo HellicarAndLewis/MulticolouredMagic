@@ -220,6 +220,7 @@ void ReactickleApp::mouseReleased(int x, int y, int button) {
 //--------------------------------------------------------------
 void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 	float mult = RETINA?2:1;
+	printf("%d\n", enabled);
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
 		if(backButton.touchDown(touch.x*mult, touch.y*mult, touch.id)) {

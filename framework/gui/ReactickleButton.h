@@ -16,20 +16,25 @@ public:
 class ReactickleButton: public InteractiveObject {
 public:
 	ReactickleButton(string name);
+
+	virtual void draw();
 	
-	void draw();
-	
-	bool touchDown(float xx, float yy, int tid);
-	bool touchMoved(float xx, float yy, int tid);
-	bool touchUp(float xx, float yy, int tid);
+	virtual bool touchDown(float xx, float yy, int tid);
+	virtual bool touchMoved(float xx, float yy, int tid);
+	virtual bool touchUp(float xx, float yy, int tid);
 		
 	void setListener(ReactickleButtonListener *listener);
+protected:
+	virtual void setup(string name);
+	string name;
+	int currTouchId;
+	bool down;
+	ReactickleButtonListener *listener;
 private:
 	float startX;
 	ofImage *screenshot;
-	string name;
-	ReactickleButtonListener *listener;
-	int currTouchId;
-	bool down;
+	
+	
+	
 	GlowingBorder border;
 };

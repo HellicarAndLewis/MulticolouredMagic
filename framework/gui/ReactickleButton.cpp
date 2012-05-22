@@ -11,18 +11,20 @@
 #include "constants.h"
 
 ReactickleButton::ReactickleButton(string name) {
+	this->setup(name);
+	this->name = name;
+	listener = NULL;
+	currTouchId = -1;
+	down = false;
+}
+void ReactickleButton::setup(string name) {
 	screenshot = ImageCache::getImage(IMAGE_ROOT+"apps/"+name+".png");
 	width = screenshot->getWidth();
 	height = screenshot->getHeight();
 	
 	//height *= 0.8;
 	border.setup(ImageCache::getImage("img/dropShadow.png"), 4);
-	this->name = name;
-	listener = NULL;
-	currTouchId = -1;
-	down = false;
 }
-
 void ReactickleButton::draw() {
 	if(down) {
 		ofSetHexColor(0x999999);
