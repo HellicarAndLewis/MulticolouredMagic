@@ -90,6 +90,9 @@
 		EAEDDFC1156BB5AA0016A7F7 /* TuioClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAEDDFB6156BB5AA0016A7F7 /* TuioClient.cpp */; };
 		EAEDDFC2156BB5AA0016A7F7 /* TuioServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAEDDFBD156BB5AA0016A7F7 /* TuioServer.cpp */; };
 		EAEDDFC3156BB5AA0016A7F7 /* TuioTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAEDDFBF156BB5AA0016A7F7 /* TuioTime.cpp */; };
+		EAEE3B6B156D336C009EBFF5 /* Ghost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAEE3B6A156D336B009EBFF5 /* Ghost.cpp */; };
+		EAFC35B8156D22FE002CC186 /* ofxBlobSmoother.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAFC35B4156D22FE002CC186 /* ofxBlobSmoother.cpp */; };
+		EAFC35B9156D22FE002CC186 /* ofxBlobTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAFC35B6156D22FE002CC186 /* ofxBlobTracker.cpp */; };
 		ac59cecc06d479990bb40dc4b6e8d708 /* ofxCvFloatImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7b6a03390302d5a2c9f0e4ab630ae8d6 /* ofxCvFloatImage.cpp */; };
 		d88d764a83ef6141a37bfd8a797dc59d /* ofxCvContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c76de5c29bdbd2caa1dd0021a7376220 /* ofxCvContourFinder.cpp */; };
 		dbf87635ae30aae223f0609e6ee16e2f /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c6151136d101f857dae12722e3c42f4a /* ofxCvImage.cpp */; };
@@ -351,6 +354,14 @@
 		EAEDDFBE156BB5AA0016A7F7 /* TuioServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioServer.h; sourceTree = "<group>"; };
 		EAEDDFBF156BB5AA0016A7F7 /* TuioTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioTime.cpp; sourceTree = "<group>"; };
 		EAEDDFC0156BB5AA0016A7F7 /* TuioTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioTime.h; sourceTree = "<group>"; };
+		EAEE3B69156D335D009EBFF5 /* Ghost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Ghost.h; path = apps/ghost/Ghost.h; sourceTree = "<group>"; };
+		EAEE3B6A156D336B009EBFF5 /* Ghost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ghost.cpp; path = apps/ghost/Ghost.cpp; sourceTree = "<group>"; };
+		EAFC35B1156D1A6D002CC186 /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Spring.h; path = apps/pendulum/Spring.h; sourceTree = "<group>"; };
+		EAFC35B4156D22FE002CC186 /* ofxBlobSmoother.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBlobSmoother.cpp; sourceTree = "<group>"; };
+		EAFC35B5156D22FE002CC186 /* ofxBlobSmoother.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBlobSmoother.h; sourceTree = "<group>"; };
+		EAFC35B6156D22FE002CC186 /* ofxBlobTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBlobTracker.cpp; sourceTree = "<group>"; };
+		EAFC35B7156D22FE002CC186 /* ofxBlobTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBlobTracker.h; sourceTree = "<group>"; };
+		EAFC35BA156D278D002CC186 /* Pendule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pendule.h; path = apps/pendulum/Pendule.h; sourceTree = "<group>"; };
 		c1c56d20a1a57dc44096bfe709100d93 /* ofxCvContourFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCvContourFinder.h; path = ../../../addons/ofxOpenCv/src/ofxCvContourFinder.h; sourceTree = SOURCE_ROOT; };
 		c6151136d101f857dae12722e3c42f4a /* ofxCvImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxCvImage.cpp; path = ../../../addons/ofxOpenCv/src/ofxCvImage.cpp; sourceTree = SOURCE_ROOT; };
 		c76de5c29bdbd2caa1dd0021a7376220 /* ofxCvContourFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxCvContourFinder.cpp; path = ../../../addons/ofxOpenCv/src/ofxCvContourFinder.cpp; sourceTree = SOURCE_ROOT; };
@@ -392,6 +403,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				EAFC35B3156D22FE002CC186 /* ofxBlobTracker */,
 				EA9E6B1B156BE8ED00DE542C /* ofxTuioClient */,
 				EA9E6AC9156BE51200DE542C /* ofxMSAInteractiveObject */,
 				EA9E6AD8156BE51200DE542C /* ofxSimpleGuiToo */,
@@ -580,6 +592,7 @@
 		EA9E6B3A156BF56800DE542C /* apps */ = {
 			isa = PBXGroup;
 			children = (
+				EAEE3B68156D3351009EBFF5 /* ghost */,
 				EA9E6B3D156BF5E500DE542C /* echo */,
 				EA9E6B3C156BF57D00DE542C /* pendulum */,
 				EA9E6B3B156BF56F00DE542C /* mistingmirror */,
@@ -599,6 +612,8 @@
 		EA9E6B3C156BF57D00DE542C /* pendulum */ = {
 			isa = PBXGroup;
 			children = (
+				EAFC35B1156D1A6D002CC186 /* Spring.h */,
+				EAFC35BA156D278D002CC186 /* Pendule.h */,
 				EA9E6B24156BEB4500DE542C /* Pendulum.h */,
 				EA9E6B25156BEB8500DE542C /* Pendulum.cpp */,
 			);
@@ -1165,6 +1180,27 @@
 			path = ../addons/TUIO;
 			sourceTree = "<group>";
 		};
+		EAEE3B68156D3351009EBFF5 /* ghost */ = {
+			isa = PBXGroup;
+			children = (
+				EAEE3B69156D335D009EBFF5 /* Ghost.h */,
+				EAEE3B6A156D336B009EBFF5 /* Ghost.cpp */,
+			);
+			name = ghost;
+			sourceTree = "<group>";
+		};
+		EAFC35B3156D22FE002CC186 /* ofxBlobTracker */ = {
+			isa = PBXGroup;
+			children = (
+				EAFC35B4156D22FE002CC186 /* ofxBlobSmoother.cpp */,
+				EAFC35B5156D22FE002CC186 /* ofxBlobSmoother.h */,
+				EAFC35B6156D22FE002CC186 /* ofxBlobTracker.cpp */,
+				EAFC35B7156D22FE002CC186 /* ofxBlobTracker.h */,
+			);
+			name = ofxBlobTracker;
+			path = ../addons/ofxBlobTracker;
+			sourceTree = "<group>";
+		};
 		c756caafd542831674e15fe662490682 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -1351,6 +1387,9 @@
 				EA9E6B26156BEB8500DE542C /* Pendulum.cpp in Sources */,
 				EA9E6B39156BF55F00DE542C /* MistingMirror.cpp in Sources */,
 				EA9E6B3F156BF5FB00DE542C /* Echo.cpp in Sources */,
+				EAFC35B8156D22FE002CC186 /* ofxBlobSmoother.cpp in Sources */,
+				EAFC35B9156D22FE002CC186 /* ofxBlobTracker.cpp in Sources */,
+				EAEE3B6B156D336C009EBFF5 /* Ghost.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1508,7 +1547,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxKinect/libs/libusb/osx/libs\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = SomabilityDebug;
-				SDKROOT = macosx10.6;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1599,7 +1638,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxKinect/libs/libusb/osx/libs\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = Somability;
-				SDKROOT = macosx10.6;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

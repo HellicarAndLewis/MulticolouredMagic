@@ -18,6 +18,7 @@ void KinectOrCamera::setup() {
 #ifndef TARGET_OF_IPHONE
 	kinect.init();
 	usingKinect = kinect.open();
+	kinect.setRegistration(true);
 #else
 	usingKinect = false;
 	width /= 2;

@@ -59,6 +59,7 @@ void testApp::setup(){
 	currentApp = mainMenu;
 	mainMenu->setup();
 	
+	blobTracker.addListener(this);
 	
 	backButton.setup("back", ofVec2f(0,0), IMAGE_ROOT + "backButton.png", IMAGE_ROOT + "backButtonDown.png");
 	backButton.x = WIDTH - backButton.width;
@@ -123,6 +124,18 @@ void testApp::update(){
 				threshImg.threshold(depthThreshold);
 				currentApp->depthImg = &depthImg;
 				currentApp->threshImg = &threshImg;
+				
+				if(currentApp->needsKinectBlobs()) {
+					contourFinder.findContours(threshImg, 40*40, kinect.getHeight()*kinect.getHeight(),
+											   10, false);
+					vector<ofVec2f> blobs;
+					for(int i = 0; i < contourFinder.blobs.size(); i++) {
+						blobs.push_back(
+										ofVec2f(contourFinder.blobs[i].centroid.x,
+												contourFinder.blobs[i].centroid.y)/ofVec2f(VISION_WIDTH, VISION_HEIGHT));
+					}
+					blobTracker.track(blobs);
+				}
 #endif
 			} else {
 				currentApp->colorImg = NULL;
@@ -220,4 +233,24 @@ void testApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void testApp::dragEvent(ofDragInfo dragInfo){ 
 
+}
+
+
+void testApp::blobEntered(ofVec3f pos, int blobId) {
+	if(currentApp!=NULL && currentApp->needsKinectBlobs()) {
+		currentApp->touchDown(pos.x*WIDTH, pos.y*HEIGHT, blobId);
+	}
+}
+
+
+void testApp::blobMoved(ofVec3f pos, int blobId) {
+	if(currentApp!=NULL && currentApp->needsKinectBlobs()) {
+		currentApp->touchMoved(pos.x*WIDTH, pos.y*HEIGHT, blobId);
+	}
+}
+
+void testApp::blobExited(ofVec3f pos, int blobId) {
+	if(currentApp!=NULL && currentApp->needsKinectBlobs()) {
+		currentApp->touchUp(pos.x*WIDTH, pos.y*HEIGHT, blobId);
+	}
 }

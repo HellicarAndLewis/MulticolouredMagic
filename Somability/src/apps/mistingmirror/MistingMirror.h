@@ -12,8 +12,21 @@
 #include "Reactickle.h"
 
 class MistingMirror: public Reactickle {
+
 public:
+	void start();
+	void stop();
+	
+	void setup();
+	
+	void update();
 	void draw();
+	
+	ofImage img;
+
+	ofxCvGrayscaleImage mask;
+	int frameNum;
+	bool needsKinect() { return true;} 
 };
 
 

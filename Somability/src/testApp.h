@@ -29,14 +29,19 @@
 #include "MainMenu.h"
 #include "ReactickleApp.h"
 #include "HoldButton.h"
+#include "ofxBlobTracker.h"
 
 
-class testApp : public ReactickleApp, public SimpleButtonListener {
+class testApp : public ReactickleApp, public SimpleButtonListener, ofxBlobListener {
 
 public:
 	void setup();
 	void update();
 	void draw();
+	
+	void blobEntered(ofVec3f pos, int blobId);
+	void blobMoved(ofVec3f pos, int blobId);
+	void blobExited(ofVec3f pos, int blobId);
 		
 	
 	// app stuff
@@ -55,7 +60,8 @@ public:
 	ofxCvGrayscaleImage depthImg;
 	ofxCvGrayscaleImage threshImg;
 	ofxCvColorImage colorImg;
-
+	ofxCvContourFinder contourFinder;
+	
 	float depthThreshold;
 #endif
 	bool hasCamera;
@@ -71,6 +77,8 @@ protected:
 	
 	bool isReactickle(Reactickle *reactickle);
 	int currOrientation;
+	
+	ofxBlobTracker blobTracker;
 
 };
 

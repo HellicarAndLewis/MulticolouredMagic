@@ -23,11 +23,13 @@
 #include "Pendulum.h"
 #include "MistingMirror.h"
 #include "Echo.h"
+#include "Ghost.h"
 
 void MainMenu::initMenu() {
 	addReactickleButton(new SimpleReactickleButton("Pendulum"));
 	addReactickleButton(new SimpleReactickleButton("Misting Mirror"));
 	addReactickleButton(new SimpleReactickleButton("Echo"));
+	addReactickleButton(new SimpleReactickleButton("Ghost"));
 	
 	//addReactickleButton(new ReactickleButton("Cascades"));
 
@@ -44,6 +46,8 @@ void MainMenu::reactickleSelected(string name) {
 		r = new MistingMirror();
 	} else if(name=="Echo") {
 		r = new Echo();
+	} else if(name=="Ghost") {
+		r = new Ghost();
 	}
 	r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
 	r->titleImage->setAnchorPercent(0.5, 0.5);

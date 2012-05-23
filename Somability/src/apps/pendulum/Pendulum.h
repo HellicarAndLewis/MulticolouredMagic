@@ -11,10 +11,23 @@
 
 #include "ofMain.h"
 #include "Reactickle.h"
-
+#include "Pendule.h"
 class Pendulum: public Reactickle {
 public:
+	void start();
+	void setup();
+	void update();
 	void draw();
+	bool touchDown(float x, float y, int touchId);
+	bool touchMoved(float x, float y, int touchId);
+	bool touchUp(float x, float y, int touchId);
+	
+	map<int,Pendule> pendula;
+
+	
+	bool needsKinect() { return true; }
+	bool needsKinectBlobs() { return true; }
+	ofImage img;
 };
 
 

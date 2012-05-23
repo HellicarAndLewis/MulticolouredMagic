@@ -70,7 +70,7 @@ public:
 	
 //#ifndef TARGET_OF_IPHONE
 	virtual bool needsKinect() { return false; }
-
+	virtual bool needsKinectBlobs() { return false; }
 #ifdef USES_CAMERA
 ofxCvColorImage *colorImg;		
 #endif
