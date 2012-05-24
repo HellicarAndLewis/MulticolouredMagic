@@ -23,7 +23,6 @@ void ofxBox2dCircle::setup(b2World * b2dworld, float x, float y, float radius) {
 	}
 	
 	// these are used to create the shape
-	b2BodyDef	  bodyDef;
 	b2CircleShape shape;
 	
 	shape.m_p.SetZero();
@@ -42,6 +41,9 @@ void ofxBox2dCircle::setup(b2World * b2dworld, float x, float y, float radius) {
 	
 	body  = b2dworld->CreateBody(&bodyDef);
 	body->CreateFixture(&fixture);
+}
+void ofxBox2dCircle::setup(b2World * b2dworld, ofVec2f &pts, float radius) {
+    setup(b2dworld, pts.x, pts.y, radius);
 }
 
 //------------------------------------------------
@@ -116,26 +118,17 @@ float ofxBox2dCircle::getRadius() {
  
  -- any help here :) --
  
+ here is a solution for changing the radius on the fly without
+ destroying the shape - chrispie
+ 
  */
 void ofxBox2dCircle::setRadius(float r) {
-	/*
-	 if(body != NULL) {
-	 for(b2Shape* s=body->GetShapeList(); s; s=s->GetNext()) {
-	 body->DestroyShape(s);
-	 }
-	 
-	 circle.radius	    = r/OFX_BOX2D_SCALE;
-	 circle.density		= mass;
-	 circle.restitution  = bounce;
-	 circle.friction		= friction;
-	 
-	 //body = world->CreateBody(&bodyDef);
-	 body->SetLinearVelocity(b2Vec2(0.0, 0.0));
-	 body->CreateShape(&circle);
-	 body->SetMassFromShapes();
-	 }
-	 */
-	printf("this does nothing yst!!!\n");
+	this->radius = r;
+	
+	for (b2Fixture* f= body->GetFixtureList(); f; f = f->GetNext())
+	{
+		f->GetShape()->m_radius=r/OFX_BOX2D_SCALE;
+	}
 }
 
 //------------------------------------------------
@@ -147,8 +140,17 @@ void ofxBox2dCircle::draw() {
 	ofTranslate(getPosition().x, getPosition().y, 0);
 	ofRotate(getRotation(), 0, 0, 1);
 	ofCircle(0, 0, radius);
-	ofSetColor(0);
+	
+    ofPushStyle();
+    ofEnableAlphaBlending();
+    ofSetColor(0);
 	ofLine(0, 0, radius, 0);
+    if(isSleeping()) {
+        ofSetColor(255, 100);
+        ofCircle(0, 0, radius);
+    }
+    ofPopStyle();
+    
 	ofPopMatrix();
 	
 }

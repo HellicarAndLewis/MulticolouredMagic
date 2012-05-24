@@ -27,8 +27,10 @@ public:
 	bool isBody();
 	
 	//----------------------------------------
+    static bool shouldRemove(ofxBox2dBaseShape &b);
 	bool isFixed();
-	
+	bool isSleeping();
+    
 	//----------------------------------------
 	b2World* getWorld();
 	
@@ -54,22 +56,8 @@ public:
 	//------------------------------------------------ 
 	void* getData();
 	
-	/*
 	//------------------------------------------------ 
-	virtual void setFilterData(b2FilterData data) {
-		for(b2Shape* s=body->GetShapeList(); s; s=s->GetNext()) {
-			
-			//b2FilterData filter = s->GetFilterData();
-			//			filter.groupIndex = newValue;
-			//			myShape->SetFilterData(filter):
-			//			myWorld->Refilter(myShape);
-			
-			s->SetFilterData(data);
-			world->Refilter(s);
-		}
-		
-	}
-	*/
+	virtual void setFilterData(b2Filter filter);
 	
 	//------------------------------------------------ 
 	virtual void enableGravity(bool b);
