@@ -13,14 +13,11 @@
 #include "ofxOpenCv.h"
 //#endif
 
-#include "KinectOrCamera.h"
 
 
 
 #ifndef TARGET_OF_IPHONE
 #include "ofxSimpleGuiToo.h"
-#include "TuioKinect.h"
-#include "ofxTuioClient.h"
 #endif
 
 
@@ -30,6 +27,7 @@
 #include "ReactickleApp.h"
 #include "HoldButton.h"
 #include "ofxBlobTracker.h"
+#include "ofxOpenNI.h"
 
 
 class testApp : public ReactickleApp, public SimpleButtonListener, ofxBlobListener {
@@ -38,6 +36,7 @@ public:
 	void setup();
 	void update();
 	void draw();
+	void exit();
 	
 	void blobEntered(ofVec3f pos, int blobId);
 	void blobMoved(ofVec3f pos, int blobId);
@@ -71,7 +70,7 @@ public:
 	
 protected:
 	//#ifndef TARGET_IPHONE_SIMULATOR
-	KinectOrCamera kinect;
+	ofxOpenNI openNI;
 	//#endif
 	// true if fading into an app, false if fading out to the menu.
 	

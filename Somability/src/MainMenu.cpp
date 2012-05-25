@@ -37,8 +37,8 @@ void MainMenu::addReactickleButton(ReactickleButton *reactickleButton) {
 	reactickleButton->width = 160;
 	reactickleButton->height = 120;
 	
-	reactickleButton->x = 20 + reactickleButtonCount*(reactickleButton->width + 20);
-	reactickleButton->y = 20;
+	reactickleButton->x = 20 + (reactickleButtonCount%5)*(reactickleButton->width + 20);
+	reactickleButton->y = 20 + (reactickleButtonCount/5)*(reactickleButton->height + 20);
 
 	this->add(reactickleButton);
 	reactickleButton->setListener(this);

@@ -1,5 +1,5 @@
 #include "testApp.h"
-
+#include "Skeletons.h"
 
 bool flipX = true;
 bool flipImage = false;
@@ -17,43 +17,39 @@ bool flipImage = false;
 void testApp::setup(){
 	setupApp(this, "Somability");
 	ofSetFullscreen(false);
+	Skeletons::getInstance().setOpenNI(&openNI);
 	
-#ifdef TARGET_OF_IPHONE
+
 	
-	// if we're ont the iphone, we want to double check there's a camera
-	NSArray * devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-	if([devices count]>0) {
-		//kinect.camera.listDevices();
-		
-		// front facing camera
-		//kinect.camera.setDeviceID(2);
-		
-		
-		kinect.setup();
-		colorImg.allocate(kinect.getWidth(),kinect.getHeight());
-		printf("Setting up camera %d %d\n", kinect.getWidth(), kinect.getHeight());
-		HAS_CAMERA = true;
-	} else {
-		printf("No cameras available\n");
-		hasCamera = false;
-		HAS_CAMERA = false;
-	}
-#else 
+
 	
 	// just a regular setup
-	kinect.setup();
-	colorImg.allocate(kinect.getWidth(),kinect.getHeight());
+	
+	openNI.setup();
+    openNI.addDepthGenerator();
+    openNI.addImageGenerator();
+    openNI.setRegister(true);
+    openNI.setMirror(true);
+    openNI.addUserGenerator();
+    openNI.setMaxNumUsers(4);
+	openNI.setDepthColoring(COLORING_GREY);
+    openNI.start();
+
+	
+	
+	
+	colorImg.allocate(640, 480);
 	gui.addToggle("Flip Image", flipImage);
 	gui.addToggle("Flip Camera", flipX);
 	gui.addContent("camera", colorImg);
-	depthImg.allocate(kinect.getWidth(), kinect.getHeight());
+	depthImg.allocate(640, 480);
 	gui.addContent("depth", depthImg);
 	gui.addSlider("depth threshold", depthThreshold, 0, 255);
-	threshImg.allocate(kinect.getWidth(), kinect.getHeight());
+	threshImg.allocate(640, 480);
 	gui.addContent("thresholded depth", threshImg);
 	gui.loadFromXML();
 	gui.setAutoSave(true);
-#endif
+
 	
 	mainMenu = new MainMenu();
 	currentApp = mainMenu;
@@ -69,6 +65,10 @@ void testApp::setup(){
 
 	
 	
+}
+
+void testApp::exit() {
+	openNI.stop();
 }
 
 void testApp::showAbout() {
@@ -100,6 +100,8 @@ void testApp::launchReactickle(Reactickle *reactickle) {
 
 //--------------------------------------------------------------
 void testApp::update(){
+
+	openNI.update();
 	if(currentApp!=NULL) {
 		currentApp->volume = volume;
 		currentApp->volumeThreshold = VOLUME_THRESHOLD;
@@ -107,10 +109,10 @@ void testApp::update(){
 		//#ifndef TARGET_IPHONE_SIMULATOR
 		if(currentApp->needsKinect()) {
 			
-			kinect.update();
-			unsigned char *pix = kinect.getPixels();
+
+			unsigned char *pix = openNI.getImagePixels().getPixels();
 			if(pix!=NULL) {
-				colorImg.setFromPixels(pix, kinect.getWidth(), kinect.getHeight());
+				colorImg.setFromPixels(openNI.getImagePixels().getPixels(), 640, 480);
 #ifdef TARGET_OF_IPHONE
 				colorImg.mirror(true, false);
 #else
@@ -118,15 +120,24 @@ void testApp::update(){
 #endif
 				currentApp->colorImg = &colorImg;
 #ifndef TARGET_OF_IPHONE
-				depthImg.setFromPixels(kinect.getDepthPixels(), kinect.getWidth(), kinect.getHeight());
+				unsigned char *dep = openNI.getDepthPixels().getPixels();
+				unsigned char *d = depthImg.getPixels();
+				for(int i = 0; i < 480*640; i++) {
+					if(dep[i*4]==0) d[i] = 0; // this is really annoying, but the 
+												// black unknowns of the kinect
+												// turn up at the wrong end.
+					else d[i] = 255-dep[i*4]; 
+				}
+				depthImg.setFromPixels(d, 640, 480);
 				depthImg.mirror(false, flipX);
+				// depthImg.invert();
 				threshImg = depthImg;
 				threshImg.threshold(depthThreshold);
 				currentApp->depthImg = &depthImg;
 				currentApp->threshImg = &threshImg;
 				
 				if(currentApp->needsKinectBlobs()) {
-					contourFinder.findContours(threshImg, 40*40, kinect.getHeight()*kinect.getHeight(),
+					contourFinder.findContours(threshImg, 40*40, 480*480,
 											   10, false);
 					vector<ofVec2f> blobs;
 					for(int i = 0; i < contourFinder.blobs.size(); i++) {
@@ -191,10 +202,12 @@ void testApp::draw(){
 	if(RETINA) {
 		glPopMatrix();
 	}
+//	openNI.drawDebug(0, 0);
 #ifndef TARGET_OF_IPHONE
 	gui.draw();
 #endif
 	ofEnableAlphaBlending(); // for gui stuff
+	
 }
 
 //--------------------------------------------------------------
@@ -209,6 +222,9 @@ void testApp::keyPressed(int key){
 				setEnabled(true);
 			}
 			break;
+		case 'f':
+			ofToggleFullscreen();
+			break;
 	}
 #endif
 
@@ -222,7 +238,14 @@ void testApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h){
-
+	WIDTH = w;
+	HEIGHT = h;
+	
+	
+	// hacky, but reposition backbutton if we go between
+	// fullscreen and windowed.
+	backButton.x = WIDTH - backButton.width;
+	backButton.y = HEIGHT - backButton.height;
 }
 
 //--------------------------------------------------------------

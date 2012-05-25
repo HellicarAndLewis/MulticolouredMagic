@@ -24,12 +24,20 @@
 #include "MistingMirror.h"
 #include "Echo.h"
 #include "Ghost.h"
+#include "Stickman.h"
+#include "Catcher.h"
+#include "MoveLoop.h"
+
+
 
 void MainMenu::initMenu() {
 	addReactickleButton(new SimpleReactickleButton("Pendulum"));
 	addReactickleButton(new SimpleReactickleButton("Misting Mirror"));
 	addReactickleButton(new SimpleReactickleButton("Echo"));
 	addReactickleButton(new SimpleReactickleButton("Ghost"));
+	addReactickleButton(new SimpleReactickleButton("Stickman"));
+	addReactickleButton(new SimpleReactickleButton("Catcher"));
+	addReactickleButton(new SimpleReactickleButton("MoveLoop"));
 	
 	//addReactickleButton(new ReactickleButton("Cascades"));
 
@@ -42,15 +50,21 @@ void MainMenu::reactickleSelected(string name) {
 	
 	if(name=="Pendulum") {
 		r = new Pendulum();
+	} else if(name=="MoveLoop") {
+		r = new MoveLoop();
 	} else if(name=="Misting Mirror") {
 		r = new MistingMirror();
 	} else if(name=="Echo") {
 		r = new Echo();
 	} else if(name=="Ghost") {
 		r = new Ghost();
+	} else if(name=="Stickman") {
+		r = new Stickman();
+	} else if(name=="Catcher") {
+		r = new Catcher();
 	}
-	r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
-	r->titleImage->setAnchorPercent(0.5, 0.5);
+	/*r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
+	r->titleImage->setAnchorPercent(0.5, 0.5);*/
 	if(r!=NULL) {	
 		ReactickleApp::instance->launchReactickle(r);
 	} else {

@@ -7,11 +7,16 @@
 //
 #include "constants.h"
 #include "Pendulum.h"
+#include "Skeletons.h"
+
 float mx = 0;
 float my = 0;
 void Pendulum::setup() {
-	img.allocate(VISION_WIDTH, VISION_HEIGHT, OF_IMAGE_COLOR_ALPHA);
-
+	box2d.init();
+	box2d.setGravity(0, 20);
+	box2d.setFPS(30.0);
+	//pendula[0] = Pendule();
+	//pendula[0].setup(&box2d);
 }
 
 void Pendulum::start() {
@@ -20,50 +25,78 @@ void Pendulum::start() {
 void Pendulum::update() {
 	
 	
-	map<int,Pendule>::iterator it = pendula.begin();
-	for(; it != pendula.end(); it++) {
-		(*it).second.update();
-	}
-
-	unsigned char *pix = img.getPixels();
-	unsigned char *c = colorImg->getPixels();
-	unsigned char *t = threshImg->getPixels();
-	int cnt = VISION_WIDTH * VISION_HEIGHT;
-	for(int i = 0; i < cnt; i++) {
-		pix[i*4] = (c[i*3] * t[i])/255;
-		pix[i*4+1] = (c[i*3+1] * t[i])/255;
-		pix[i*4+2] = (c[i*3+2] * t[i])/255;
-		pix[i*4+3] = t[i];
+	
 		
+	// add any new skelingtons
+	for(int i = 0; i < Skeletons::getInstance().size(); i++) {
+		ofxOpenNIUser &user = Skeletons::getInstance().getUser(i);
+		if(pendula.find(user.getXnID())==pendula.end()) {
+			pendula[user.getXnID()] = Pendule();
+			printf("Creating pendule\n");
+			pendula[user.getXnID()].setup(&box2d);
+		}
+		
+		ofPoint p = g_worldToProjective(user.getCenter());
+		p *= ofPoint(WIDTH, HEIGHT);
+		p /= ofPoint(640, 480);
+		
+		pendula[user.getXnID()].setTarget(ofVec2f(p.x, p.y));
+//		printf("%f %f\n", p.x, p.y);
 	}
-	img.setFromPixels(pix, VISION_WIDTH, VISION_HEIGHT, OF_IMAGE_COLOR_ALPHA);
+	
+	// get rid of any old ones.
+	map<int,Pendule>::iterator it = pendula.begin();
+	for(; it != pendula.end(); ) {
+		bool found = false;
+		for(int i = 0; i < Skeletons::getInstance().size(); i++) {
+			if(Skeletons::getInstance().getUser(i).getXnID()==(*it).first) {
+				
+				found = true;
+				break;
+			}
+		}
+		if(!found) {
+			(*it).second.destroy();
+			printf("DEleting pendule\n");
+			pendula.erase(it++);
+		} else {
+			++it;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	box2d.update();
 }
 
 
 
 void Pendulum::draw() {
 	ofSetHexColor(0xFFFFFF);
-	img.draw(0, 0, WIDTH, HEIGHT);
-	
-	
+//	colorImg->draw(0, 0, WIDTH, HEIGHT);
+//	ofSetLineWidth(10);
+
+
 	map<int,Pendule>::iterator it = pendula.begin();
 	for(; it != pendula.end(); it++) {
 		(*it).second.draw();
 	}
+//	ofSetLineWidth(1);
 }
 
 
 bool Pendulum::touchDown(float x, float y, int touchId) {
-	pendula[touchId] = Pendule(x, y);
-	pendula[touchId].setTarget(ofVec2f(x, y));
 }
 
 bool Pendulum::touchMoved(float x, float y, int touchId) {
-	pendula[touchId].setTarget(ofVec2f(x, y));
+	//pendula[0].setTarget(ofVec2f(x, y));
 }
 
 bool Pendulum::touchUp(float x, float y, int touchId) {
-	if(pendula.find(touchId)!=pendula.end()) {
-		pendula.erase(touchId);
-	}
+	
 }

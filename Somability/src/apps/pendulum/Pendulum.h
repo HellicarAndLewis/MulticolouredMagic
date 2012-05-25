@@ -11,6 +11,7 @@
 
 #include "ofMain.h"
 #include "Reactickle.h"
+#include "ofxBox2d.h"
 #include "Pendule.h"
 class Pendulum: public Reactickle {
 public:
@@ -26,8 +27,7 @@ public:
 
 	
 	bool needsKinect() { return true; }
-	bool needsKinectBlobs() { return true; }
-	ofImage img;
+	ofxBox2d box2d;
 };
 
 
