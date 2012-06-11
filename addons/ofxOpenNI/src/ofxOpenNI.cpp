@@ -1247,13 +1247,9 @@ void ofxOpenNI::update(){
 //--------------------------------------------------------------
 void ofxOpenNI::updateGenerators(){
 
+    if(bIsShuttingDown || bPaused || !bIsContextReady) return;
+ 
 	if(bIsThreaded && bUseSafeThreading) lock(); // with this here I get ~30 fps with 2 Kinects/60 fps with 1 kinect -> BUT no crash on exit!
-	if(bIsShuttingDown || bPaused){
-        if(bIsThreaded) unlock();
-        return;
-    }
-
-    if(!bIsContextReady) return;
 
     //g_Context.WaitAnyUpdateAll();
     if(g_bIsDepthOn && (g_Depth.IsNewDataAvailable() || g_bIsPlayerOn)){
@@ -1269,6 +1265,7 @@ void ofxOpenNI::updateGenerators(){
         g_User.WaitAndUpdateData();
     }
     if(g_bIsHandsOn && (g_Hands.IsNewDataAvailable() || g_bIsPlayerOn)){
+        g_HandsFocusGesture.WaitAndUpdateData();
         g_Hands.WaitAndUpdateData();
     }
     if(g_bIsGestureOn && (g_Gesture.IsNewDataAvailable() || g_bIsPlayerOn)){
@@ -1381,8 +1378,6 @@ void ofxOpenNI::updateDepthPixels(){
                 bUseSubtraction = true;
             }
 
-            if(getNumDepthThresholds() > 0) updateDepthThresholds((bUseSubtraction ? 11000 : *depth), depthColor, x, y);
-
             getDepthColor(depthColoring, *depth, depthColor, maxDepth);
 
 			texture[0] = depthColor.r;
@@ -1394,6 +1389,8 @@ void ofxOpenNI::updateDepthPixels(){
 			}else{
 				texture[3] = depthColor.a;
             }
+
+            if(getNumDepthThresholds() > 0) updateDepthThresholds((bUseSubtraction ? 11000 : *depth), depthColor, x, y);
 
 		}
 	}
@@ -1655,11 +1652,11 @@ void ofxOpenNI::updateDepthThresholds(const unsigned short& depth, ofColor& dept
     if(bIsThreaded) Poco::ScopedLock<ofMutex> lock();
     int nIndex = nY * getWidth() + nX;
     ofPoint p = ofPoint(nX, nY, depth);
-    bool anyDepthThresholdInside = false;
     for(int i = 0; i < currentDepthThresholds.size(); i++){
         ofxOpenNIDepthThreshold & depthThreshold = currentDepthThresholds[i];
-        bool inside = depthThreshold.inside(p);
-        if(inside) anyDepthThresholdInside = true;
+        ofxOpenNIROI & roi = depthThreshold.getROI();
+        if(roi.getLeftBottomNearWorld() == roi.getRightTopFarWorld()) continue; // skip bogus roi's
+        bool inside = depthThreshold.inside(p); // remember to convert to world perspective if doing ROI's
         if(depthThreshold.getUseMaskPixels()){
             if(depthThreshold.maskPixels.getWidth() != getWidth() || depthThreshold.maskPixels.getHeight() != getHeight()){
                 ofLogVerbose(LOG_NAME) << "Allocating mask pixels for depthThreshold";
@@ -2007,7 +2004,7 @@ bool ofxOpenNI::addGesture(string niteGestureName, ofPoint LeftBottomNear, ofPoi
 
     // TODO: add id's to area so we can fire events specifically for these bounding areas
     XnBoundingBox3D * boundingBox3D = NULL;
-    if(LeftBottomNear != NULL && RightTopFar != NULL) {
+    if(LeftBottomNear != ofPoint(0,0,0) && RightTopFar != ofPoint(0,0,0)) {
         ofLogWarning(LOG_NAME) << "LeftBottomNear and RightTopFar should be in world co-ordinates ie., they are in mm's and left.x/bottom.y from the centre of the sensor is negative, whilst right.x/top.y is positive; depth.z is always positive starting at 0 to maxDepth (10000) mm";
         boundingBox3D = new XnBoundingBox3D;
         boundingBox3D->LeftBottomNear = toXn(LeftBottomNear);
@@ -2065,7 +2062,7 @@ bool ofxOpenNI::addAllHandFocusGestures(){
         return false;
     }
     for (int i = 0; i < availableGestures.size(); i++) {
-        addGesture(availableGestures[i]);
+        addHandFocusGesture(availableGestures[i]);
     }
 	return true;
 }
@@ -2099,7 +2096,7 @@ bool ofxOpenNI::addHandFocusGesture(string niteGestureName, ofPoint LeftBottomNe
 
     // TODO: add id's to area so we can fire events specifically for these bounding areas
     XnBoundingBox3D * boundingBox3D = NULL;
-    if(LeftBottomNear != NULL && RightTopFar != NULL) {
+    if(LeftBottomNear != ofPoint(0,0,0) && RightTopFar != ofPoint(0,0,0)) {
         ofLogWarning(LOG_NAME) << "LeftBottomNear and RightTopFar should be in world co-ordinates ie., they are in mm's and left.x/bottom.y from the centre of the sensor is negative, whilst right.x/top.y is positive; depth.z is always positive starting at 0 to maxDepth (10000) mm";
         boundingBox3D = new XnBoundingBox3D;
         boundingBox3D->LeftBottomNear = toXn(LeftBottomNear);
@@ -3142,10 +3139,7 @@ void ofxOpenNI::drawDebug(float x, float y, float w, float h){
 
 //--------------------------------------------------------------
 void ofxOpenNI::drawDepth(){
-	if(bUseTexture && bIsContextReady) {
-		
-		drawDepth(0.0f, 0.0f, getWidth(), getHeight());
-	}
+	if(bUseTexture && bIsContextReady) drawDepth(0.0f, 0.0f, getWidth(), getHeight());
 }
 
 //--------------------------------------------------------------

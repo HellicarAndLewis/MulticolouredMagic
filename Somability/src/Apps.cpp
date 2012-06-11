@@ -29,7 +29,7 @@
 #include "MoveLoop.h"
 #include "CannonBall.h"
 #include "MultiCannonball.h"
-
+#include "HandPendulum.h"
 
 
 void MainMenu::initMenu() {
@@ -42,6 +42,7 @@ void MainMenu::initMenu() {
 	addReactickleButton(new SimpleReactickleButton("Catcher"));
 	addReactickleButton(new SimpleReactickleButton("MoveLoop"));
 	addReactickleButton(new SimpleReactickleButton("Multi Cannonball"));
+    addReactickleButton(new SimpleReactickleButton("HandPendulum"));
 	
 	//addReactickleButton(new ReactickleButton("Cascades"));
 
@@ -70,7 +71,10 @@ void MainMenu::reactickleSelected(string name) {
 		r = new CannonBall();
 	} else if(name=="Multi Cannonball") {
 		r = new MultiCannonball();
+	} else if(name=="HandPendulum") {
+		r = new HandPendulum();
 	}
+    
 	/*r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
 	r->titleImage->setAnchorPercent(0.5, 0.5);*/
 	if(r!=NULL) {	

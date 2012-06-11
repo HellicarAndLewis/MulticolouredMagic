@@ -65,40 +65,40 @@ void ofxSimpleGuiToo::setup() {
 	setDraw(false);
 	setPage(1);
 	
-	ofAddListener(ofEvents.keyPressed, this, &ofxSimpleGuiToo::keyPressed);
+	ofAddListener(ofEvents().keyPressed, this, &ofxSimpleGuiToo::keyPressed);
 }
 
 
 
 void ofxSimpleGuiToo::addListeners() {
 //	ofAddListener(ofEvents.setup, this, &ofxSimpleGuiToo::setup);
-	ofAddListener(ofEvents.update, this, &ofxSimpleGuiToo::update);
+	ofAddListener(ofEvents().update, this, &ofxSimpleGuiToo::update);
 //	ofAddListener(ofEvents.draw, this, &ofxSimpleGuiToo::draw);
 //	ofAddListener(ofEvents.exit, this, &ofxSimpleGuiToo::exit);
 
-	ofAddListener(ofEvents.mousePressed, this, &ofxSimpleGuiToo::mousePressed);
-	ofAddListener(ofEvents.mouseMoved, this, &ofxSimpleGuiToo::mouseMoved);
-	ofAddListener(ofEvents.mouseDragged, this, &ofxSimpleGuiToo::mouseDragged);
-	ofAddListener(ofEvents.mouseReleased, this, &ofxSimpleGuiToo::mouseReleased);
+	ofAddListener(ofEvents().mousePressed, this, &ofxSimpleGuiToo::mousePressed);
+	ofAddListener(ofEvents().mouseMoved, this, &ofxSimpleGuiToo::mouseMoved);
+	ofAddListener(ofEvents().mouseDragged, this, &ofxSimpleGuiToo::mouseDragged);
+	ofAddListener(ofEvents().mouseReleased, this, &ofxSimpleGuiToo::mouseReleased);
 
 //	ofAddListener(ofEvents.keyPressed, this, &ofxSimpleGuiToo::keyPressed);
-	ofAddListener(ofEvents.keyReleased, this, &ofxSimpleGuiToo::keyReleased);
+	ofAddListener(ofEvents().keyReleased, this, &ofxSimpleGuiToo::keyReleased);
 }
 
 
 void ofxSimpleGuiToo::removeListeners() {
 //	ofRemoveListener(ofEvents.setup, this, &ofxSimpleGuiToo::setup);
-	ofRemoveListener(ofEvents.update, this, &ofxSimpleGuiToo::update);
+	ofRemoveListener(ofEvents().update, this, &ofxSimpleGuiToo::update);
 //	ofRemoveListener(ofEvents.draw, this, &ofxSimpleGuiToo::draw);
 //	ofRemoveListener(ofEvents.exit, this, &ofxSimpleGuiToo::exit);
 
-	ofRemoveListener(ofEvents.mousePressed, this, &ofxSimpleGuiToo::mousePressed);
-	ofRemoveListener(ofEvents.mouseMoved, this, &ofxSimpleGuiToo::mouseMoved);
-	ofRemoveListener(ofEvents.mouseDragged, this, &ofxSimpleGuiToo::mouseDragged);
-	ofRemoveListener(ofEvents.mouseReleased, this, &ofxSimpleGuiToo::mouseReleased);
+	ofRemoveListener(ofEvents().mousePressed, this, &ofxSimpleGuiToo::mousePressed);
+	ofRemoveListener(ofEvents().mouseMoved, this, &ofxSimpleGuiToo::mouseMoved);
+	ofRemoveListener(ofEvents().mouseDragged, this, &ofxSimpleGuiToo::mouseDragged);
+	ofRemoveListener(ofEvents().mouseReleased, this, &ofxSimpleGuiToo::mouseReleased);
 
 //	ofRemoveListener(ofEvents.keyPressed, this, &ofxSimpleGuiToo::keyPressed);
-	ofRemoveListener(ofEvents.keyReleased, this, &ofxSimpleGuiToo::keyReleased);
+	ofRemoveListener(ofEvents().keyReleased, this, &ofxSimpleGuiToo::keyReleased);
 }
 
 void ofxSimpleGuiToo::setDraw(bool b) {
