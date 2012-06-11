@@ -30,6 +30,7 @@
 #include "CannonBall.h"
 #include "MultiCannonball.h"
 #include "HandPendulum.h"
+#include "HandShooter.h"
 
 
 void MainMenu::initMenu() {
@@ -44,6 +45,7 @@ void MainMenu::initMenu() {
 //	addReactickleButton(new SimpleReactickleButton("MoveLoop"));
 
     addReactickleButton(new SimpleReactickleButton("HandPendulum"));
+	addReactickleButton(new SimpleReactickleButton("HandShooter"));
 	
 	//addReactickleButton(new ReactickleButton("Cascades"));
 
@@ -74,6 +76,8 @@ void MainMenu::reactickleSelected(string name) {
 		r = new MultiCannonball();
 	} else if(name=="HandPendulum") {
 		r = new HandPendulum();
+	} else if(name=="HandShooter") {
+		r = new HandShooter();
 	}
     
 	/*r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
