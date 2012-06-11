@@ -7,4 +7,4 @@ OF_PATH = ../../..
 
 OTHER_LDFLAGS = $(OF_CORE_LIBS) $(OF_PATH)/addons/ofxOpenCv/libs/opencv/lib/osx/opencv.a
 
-HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS) $(OF_PATH)/addons/ofxOpenCv/src $(OF_PATH)/addons/ofxOpenCv/libs/opencv/include $(OF_PATH)/addons/ofxOpenCv/libs/opencv/include/opencv $(OF_PATH)/addons/ofxOsc/src $(OF_PATH)/addons/ofxOsc/libs/oscpack/src $(OF_PATH)/addons/ofxOpenNI/src $(OF_PATH)/addons/ofxOpenNI/include $(OF_PATH)/addons/ofxOpenNI/include/openni $(OF_PATH)/addons/ofxOpenNI/include/nite  $(OF_PATH)/addons/ofxOpenNI/include/libusb
+HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS) $(OF_PATH)/addons/ofxOpenCv/src $(OF_PATH)/addons/ofxOpenCv/libs/opencv/include $(OF_PATH)/addons/ofxOpenCv/libs/opencv/include/opencv $(OF_PATH)/addons/ofxOsc/src $(OF_PATH)/addons/ofxOsc/libs/oscpack/src ../addons/ofxOpenNI/src $(OF_PATH)/addons/ofxOpenNI/include ../addons/ofxOpenNI/include/openni ../addons/ofxOpenNI/include/nite  ../addons/ofxOpenNI/include/libusb

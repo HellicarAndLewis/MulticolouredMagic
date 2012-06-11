@@ -1,25 +1,19 @@
 #pragma once
 
-
 #include "ofMain.h"
+
 #ifdef TARGET_OF_IPHONE
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
 #endif
 
-
-
 //#ifndef TARGET_IPHONE_SIMULATOR
 #include "ofxOpenCv.h"
 //#endif
 
-
-
-
 #ifndef TARGET_OF_IPHONE
 #include "ofxSimpleGuiToo.h"
 #endif
-
 
 #include "constants.h"
 #include "Reactickle.h"
@@ -28,7 +22,6 @@
 #include "HoldButton.h"
 #include "ofxBlobTracker.h"
 #include "ofxOpenNI.h"
-
 
 class testApp : public ReactickleApp, public SimpleButtonListener, ofxBlobListener {
 

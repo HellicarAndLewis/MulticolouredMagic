@@ -27,7 +27,7 @@
 #include "Stickman.h"
 #include "Catcher.h"
 #include "MoveLoop.h"
-
+#include "HandPendulum.h"
 
 
 void MainMenu::initMenu() {
@@ -38,6 +38,7 @@ void MainMenu::initMenu() {
 	addReactickleButton(new SimpleReactickleButton("Stickman"));
 	addReactickleButton(new SimpleReactickleButton("Catcher"));
 	addReactickleButton(new SimpleReactickleButton("MoveLoop"));
+    addReactickleButton(new SimpleReactickleButton("HandPendulum"));
 	
 	//addReactickleButton(new ReactickleButton("Cascades"));
 
@@ -62,7 +63,10 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Stickman();
 	} else if(name=="Catcher") {
 		r = new Catcher();
+	} else if(name=="HandPendulum") {
+		r = new HandPendulum();
 	}
+    
 	/*r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
 	r->titleImage->setAnchorPercent(0.5, 0.5);*/
 	if(r!=NULL) {	
