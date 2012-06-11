@@ -60,7 +60,6 @@
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
 		E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
-		EA5A35CF15865338009E1C6F /* CannonBall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA5A35CC15865338009E1C6F /* CannonBall.cpp */; };
 		EA9E6B1E156BE8ED00DE542C /* ofxTuioClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA9E6B1C156BE8ED00DE542C /* ofxTuioClient.cpp */; };
 		EA9E6B22156BEAFF00DE542C /* Apps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA9E6B1F156BEAFF00DE542C /* Apps.cpp */; };
 		EA9E6B26156BEB8500DE542C /* Pendulum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA9E6B25156BEB8500DE542C /* Pendulum.cpp */; };
@@ -403,10 +402,6 @@
 		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		EA5A35CB15865338009E1C6F /* Cannon_Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cannon_Ball.h; path = apps/cannonball/Cannon_Ball.h; sourceTree = "<group>"; };
-		EA5A35CC15865338009E1C6F /* CannonBall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CannonBall.cpp; path = apps/cannonball/CannonBall.cpp; sourceTree = "<group>"; };
-		EA5A35CD15865338009E1C6F /* CannonBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CannonBall.h; path = apps/cannonball/CannonBall.h; sourceTree = "<group>"; };
-		EA5A35CE15865338009E1C6F /* MultiCannonball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiCannonball.h; path = apps/cannonball/MultiCannonball.h; sourceTree = "<group>"; };
 		EA9E6B1C156BE8ED00DE542C /* ofxTuioClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTuioClient.cpp; sourceTree = "<group>"; };
 		EA9E6B1D156BE8ED00DE542C /* ofxTuioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTuioClient.h; sourceTree = "<group>"; };
 		EA9E6B1F156BEAFF00DE542C /* Apps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Apps.cpp; sourceTree = "<group>"; };
@@ -1106,17 +1101,6 @@
 			name = openFrameworks;
 			sourceTree = "<group>";
 		};
-		EA5A35CA15865321009E1C6F /* cannonball */ = {
-			isa = PBXGroup;
-			children = (
-				EA5A35CB15865338009E1C6F /* Cannon_Ball.h */,
-				EA5A35CC15865338009E1C6F /* CannonBall.cpp */,
-				EA5A35CD15865338009E1C6F /* CannonBall.h */,
-				EA5A35CE15865338009E1C6F /* MultiCannonball.h */,
-			);
-			name = cannonball;
-			sourceTree = "<group>";
-		};
 		EA9E6B1B156BE8ED00DE542C /* ofxTuioClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -1130,7 +1114,6 @@
 		EA9E6B3A156BF56800DE542C /* apps */ = {
 			isa = PBXGroup;
 			children = (
-				EA5A35CA15865321009E1C6F /* cannonball */,
 				EADFCFF0156F83380057CDDB /* moveloop */,
 				EAFECD5B156E6C9100193979 /* catcher */,
 				EAFECD57156E699D00193979 /* stickman */,
@@ -1875,7 +1858,6 @@
 				5DA6157E158612F300E8E1C0 /* ofxOpenNI.cpp in Sources */,
 				5DA6157F158612F300E8E1C0 /* ofxOpenNITypes.cpp in Sources */,
 				5D9C8B2415862FE80048E23F /* HandPendulum.cpp in Sources */,
-				EA5A35CF15865338009E1C6F /* CannonBall.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

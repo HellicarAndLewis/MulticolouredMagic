@@ -21,10 +21,13 @@ void Stickman::update() {
 void Stickman::draw() {
 	glPushMatrix();
 	ofSetHexColor(0xFFFFFF);
+	
 	glScalef((float)WIDTH/640.f, (float)HEIGHT/480.f, 1);
+	colorImg->draw(0,0,640, 480);
 	for(int i = 0; i < Skeletons::getInstance().size(); i++) {
 		ofxOpenNIUser &user = Skeletons::getInstance().getUser(i);
 		user.drawSkeleton();
 	}
 	//	printf("%d skelingtons\n", Skeletons::getInstance().size());
+	glPopMatrix();
 }

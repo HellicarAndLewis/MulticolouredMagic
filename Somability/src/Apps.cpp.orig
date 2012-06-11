@@ -27,9 +27,13 @@
 #include "Stickman.h"
 #include "Catcher.h"
 #include "MoveLoop.h"
+<<<<<<< HEAD
 #include "CannonBall.h"
 #include "MultiCannonball.h"
+
+=======
 #include "HandPendulum.h"
+>>>>>>> a23a631816117f088648b38f391f54e81887194f
 
 
 void MainMenu::initMenu() {
@@ -39,11 +43,13 @@ void MainMenu::initMenu() {
 	addReactickleButton(new SimpleReactickleButton("Ghost"));
 	addReactickleButton(new SimpleReactickleButton("Stickman"));
 	addReactickleButton(new SimpleReactickleButton("Cannon Ball"));
-	addReactickleButton(new SimpleReactickleButton("Multi Cannonball"));
 	addReactickleButton(new SimpleReactickleButton("Catcher"));
-//	addReactickleButton(new SimpleReactickleButton("MoveLoop"));
-
+	addReactickleButton(new SimpleReactickleButton("MoveLoop"));
+<<<<<<< HEAD
+	addReactickleButton(new SimpleReactickleButton("Multi Cannonball"));
+=======
     addReactickleButton(new SimpleReactickleButton("HandPendulum"));
+>>>>>>> a23a631816117f088648b38f391f54e81887194f
 	
 	//addReactickleButton(new ReactickleButton("Cascades"));
 
@@ -68,12 +74,15 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Stickman();
 	} else if(name=="Catcher") {
 		r = new Catcher();
+<<<<<<< HEAD
 	} else if(name=="Cannon Ball") {
 		r = new CannonBall();
 	} else if(name=="Multi Cannonball") {
 		r = new MultiCannonball();
+=======
 	} else if(name=="HandPendulum") {
 		r = new HandPendulum();
+>>>>>>> a23a631816117f088648b38f391f54e81887194f
 	}
     
 	/*r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
