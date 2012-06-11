@@ -27,6 +27,7 @@
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
 		E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		EA5A35B815860371009E1C6F /* CannonBall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA5A35B615860371009E1C6F /* CannonBall.cpp */; };
 		EA9E6B09156BE51200DE542C /* ofxMSAInteractiveObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA9E6AD6156BE51200DE542C /* ofxMSAInteractiveObject.cpp */; };
 		EA9E6B0C156BE51200DE542C /* ofxSimpleGuiButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA9E6AE5156BE51200DE542C /* ofxSimpleGuiButton.cpp */; };
 		EA9E6B0D156BE51200DE542C /* ofxSimpleGuiColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA9E6AE7156BE51200DE542C /* ofxSimpleGuiColorPicker.cpp */; };
@@ -209,6 +210,11 @@
 		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		EA5A35B615860371009E1C6F /* CannonBall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CannonBall.cpp; path = apps/cannonball/CannonBall.cpp; sourceTree = "<group>"; };
+		EA5A35B715860371009E1C6F /* CannonBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CannonBall.h; path = apps/cannonball/CannonBall.h; sourceTree = "<group>"; };
+		EA5A35BE15864BA5009E1C6F /* LineEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineEquation.h; sourceTree = "<group>"; };
+		EA5A35BF15864BBD009E1C6F /* Cannon_Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cannon_Ball.h; path = apps/cannonball/Cannon_Ball.h; sourceTree = "<group>"; };
+		EA5A35C0158650E0009E1C6F /* MultiCannonball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiCannonball.h; path = apps/cannonball/MultiCannonball.h; sourceTree = "<group>"; };
 		EA9E6ACA156BE51200DE542C /* changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changelog.txt; sourceTree = "<group>"; };
 		EA9E6AD3156BE51200DE542C /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		EA9E6AD4156BE51200DE542C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -624,6 +630,17 @@
 			name = openFrameworks;
 			sourceTree = "<group>";
 		};
+		EA5A35B41586024A009E1C6F /* cannonball */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A35B615860371009E1C6F /* CannonBall.cpp */,
+				EA5A35C0158650E0009E1C6F /* MultiCannonball.h */,
+				EA5A35B715860371009E1C6F /* CannonBall.h */,
+				EA5A35BF15864BBD009E1C6F /* Cannon_Ball.h */,
+			);
+			name = cannonball;
+			sourceTree = "<group>";
+		};
 		EA9E6AC9156BE51200DE542C /* ofxMSAInteractiveObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +736,7 @@
 		EA9E6B3A156BF56800DE542C /* apps */ = {
 			isa = PBXGroup;
 			children = (
+				EA5A35B41586024A009E1C6F /* cannonball */,
 				EADFCFF0156F83380057CDDB /* moveloop */,
 				EAFECD5B156E6C9100193979 /* catcher */,
 				EAFECD57156E699D00193979 /* stickman */,
@@ -836,6 +854,7 @@
 				EAEDDED0156BB2E30016A7F7 /* Settings.h */,
 				EAEDDED1156BB2E30016A7F7 /* util.cpp */,
 				EAEDDED2156BB2E30016A7F7 /* util.h */,
+				EA5A35BE15864BA5009E1C6F /* LineEquation.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -1498,6 +1517,7 @@
 				EAFECE58156E756900193979 /* ofxBox2dPolygon.cpp in Sources */,
 				EAFECE59156E756900193979 /* ofxBox2dRect.cpp in Sources */,
 				EADFCFF3156F83540057CDDB /* MoveLoop.cpp in Sources */,
+				EA5A35B815860371009E1C6F /* CannonBall.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

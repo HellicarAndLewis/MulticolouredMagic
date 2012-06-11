@@ -67,12 +67,21 @@ void Catcher::draw() {
 	glPushMatrix();
 	glScalef((float)WIDTH/colorImg->getWidth(), (float)HEIGHT/colorImg->getHeight(), 1);
 	colorImg->draw(0, 0);
-	contours.draw(0, 0);
+	glLineWidth(3);
+	for(int i = 0; i < contours.blobs.size(); i++) {
+		glBegin(GL_LINE_LOOP);
+		for(int j = 0; j < contours.blobs[i].pts.size(); j+=6) {
+			glVertex2f(contours.blobs[i].pts[j].x,contours.blobs[i].pts[j].y);
+		}
+		glEnd();
+	}
+	glLineWidth(1);
+//	contours.draw(0, 0);
 	
 	for(int i=0; i<circles.size(); i++) {
 		ofFill();
 		ofSetHexColor(0x90d4e3);
-		circles[i].draw();
+		ofCircle(circles[i].getPosition(), circles[i].getRadius());
 	}
 
 	

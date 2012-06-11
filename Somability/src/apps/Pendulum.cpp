@@ -41,7 +41,7 @@ void Pendulum::update() {
 		p /= ofPoint(640, 480);
 		
 		pendula[user.getXnID()].setTarget(ofVec2f(p.x, p.y));
-//		printf("%f %f\n", p.x, p.y);
+		printf("%f %f\n", p.x, p.y);
 	}
 	
 	// get rid of any old ones.
@@ -67,10 +67,6 @@ void Pendulum::update() {
 	
 	
 	
-	
-	
-	
-	
 	box2d.update();
 }
 
@@ -91,10 +87,12 @@ void Pendulum::draw() {
 
 
 bool Pendulum::touchDown(float x, float y, int touchId) {
+	pendula[0] = Pendule();
+	pendula[0].setup(&box2d);
 }
 
 bool Pendulum::touchMoved(float x, float y, int touchId) {
-	//pendula[0].setTarget(ofVec2f(x, y));
+	pendula[0].setTarget(ofVec2f(x, y));
 }
 
 bool Pendulum::touchUp(float x, float y, int touchId) {

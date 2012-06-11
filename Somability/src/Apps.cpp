@@ -27,17 +27,21 @@
 #include "Stickman.h"
 #include "Catcher.h"
 #include "MoveLoop.h"
+#include "CannonBall.h"
+#include "MultiCannonball.h"
 
 
 
 void MainMenu::initMenu() {
-	addReactickleButton(new SimpleReactickleButton("Pendulum"));
+	//addReactickleButton(new SimpleReactickleButton("Pendulum"));
 	addReactickleButton(new SimpleReactickleButton("Misting Mirror"));
 	addReactickleButton(new SimpleReactickleButton("Echo"));
 	addReactickleButton(new SimpleReactickleButton("Ghost"));
 	addReactickleButton(new SimpleReactickleButton("Stickman"));
+	addReactickleButton(new SimpleReactickleButton("Cannon Ball"));
 	addReactickleButton(new SimpleReactickleButton("Catcher"));
 	addReactickleButton(new SimpleReactickleButton("MoveLoop"));
+	addReactickleButton(new SimpleReactickleButton("Multi Cannonball"));
 	
 	//addReactickleButton(new ReactickleButton("Cascades"));
 
@@ -62,6 +66,10 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Stickman();
 	} else if(name=="Catcher") {
 		r = new Catcher();
+	} else if(name=="Cannon Ball") {
+		r = new CannonBall();
+	} else if(name=="Multi Cannonball") {
+		r = new MultiCannonball();
 	}
 	/*r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
 	r->titleImage->setAnchorPercent(0.5, 0.5);*/
