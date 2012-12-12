@@ -9,6 +9,8 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxXmlSettings.h"
+#include <map>
+
 /**
  *  \brief Simple wrapper for ofxXmlSettings, to write property lists.
  * 

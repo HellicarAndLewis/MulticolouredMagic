@@ -8,7 +8,7 @@
 
 #include "ImageCache.h"
 #include <sys/stat.h>
-
+#include <map>
 map<string,ofImage*> imageCacheImages;
 
 

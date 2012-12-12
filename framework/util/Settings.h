@@ -7,7 +7,7 @@
  */
 #pragma once
 #include "ofMain.h"
-
+#include <map>
 class Settings {
 private:
 	Settings();

@@ -13,6 +13,8 @@
  */
 #include "ofMain.h"
 
+#pragma once
+
 class Centerer {
 public:
 
