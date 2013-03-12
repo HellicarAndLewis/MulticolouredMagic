@@ -18,7 +18,7 @@ ofImage Particle::particle;
 ofColor Particle::color;
 //--------------------------------------------------------------
 void Sampler::init(){
-
+	currTouchId = -1;
 	//AppSettings::addListener(this);
 	movementThreshold = 0.02;
 	//Particle::color = &AppSettings::color3;
@@ -238,11 +238,12 @@ void Sampler::audioReceived 	(float * input, int bufferSize, int nChannels){
 void Sampler::mouseMoved(int x, int y ) {
 }
 
+
 //--------------------------------------------------------------
 void Sampler::mousePressed(int x, int y, int button){
 	if(gui.input==INPUT_TOUCH && !gui.gui.isEnabled()) {
 		float pitch = ofMap(x, 0, ofGetWidth(), 1, 0);
-		
+		currTouchId = button;
 		playSound(0.8, pitch);
 	}
 	/*int note = valueToNote(1.f-((float)y/ofGetHeight()));
@@ -255,12 +256,22 @@ void Sampler::mouseDragged(int x, int y, int button){
 	if(gui.input==INPUT_TOUCH && !gui.gui.isEnabled()) {
 		float pitch = ofMap(x, 0, ofGetWidth(), 1, 0);
 		int currNote = pitch*vision.levels.size();
-		if(currNote!=lastNote) {
-
+		
+		if(currTouchId==-1) currTouchId = button;
+		
+		if(currNote!=lastNote && currTouchId==button) {
+			
 			playSound(0.6, pitch);
 		}
 	}
 
+}
+//--------------------------------------------------------------
+void Sampler::mouseReleased(int x, int y, int button){
+	// let the program know the currTouchId is up for grabs.
+	if(button==currTouchId) {
+		currTouchId = -1;
+	}
 }
 
 void Sampler::playSound(float volume, float pitch) {
@@ -293,9 +304,6 @@ void Sampler::spawnParticle(ofPoint pos, float volume) {
 }
 
 
-//--------------------------------------------------------------
-void Sampler::mouseReleased(int x, int y, int button){
-}
 
 
 

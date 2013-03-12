@@ -67,6 +67,7 @@ public:
 	int lastSound;
 	float movementThreshold;
 	SamplerGui gui;
+	int currTouchId;
 };
 
 
