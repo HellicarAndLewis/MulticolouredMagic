@@ -20,6 +20,8 @@
 #include "ofMain.h"
 #include "MiniSampler.h"
 #include <map>
+
+
 class Pad {
 public:
 	float radius;
@@ -45,16 +47,8 @@ public:
 	}
 	
 	void draw() {
-		float t = ofGetElapsedTimef();
-		map<int,Touch>::iterator it;
-		for(it = touches.begin(); it != touches.end(); it++) {
-			if((*it).second.isOld(t)) {
-				touchUp((*it).second.pos.x, (*it).second.pos.y, (*it).second.id);
-				break;
-			}
-		}
-		
-		
+	
+
 		
 		if(recMode) {
 			float c = currRecId==id?1:0;
@@ -90,12 +84,6 @@ public:
 		}
 		
 		
-
-		for(it = touches.begin(); it != touches.end(); it++) {
-			ofSetHexColor(0xFFFFFF);
-			ofCircle((*it).second.pos, 5);
-		}
-		
 	}
 	
 	void trigger() {
@@ -114,23 +102,16 @@ public:
 		if(currRecId==id) {
 			printf("Can stop recording\n");
 			currRecId = -1;
+			recMode = false;
 		}
 	}
 
 	struct Touch {
 		ofVec2f pos;
 		int id;
-		float time;
 		Touch(int id = 0, ofVec2f pos = ofVec2f()) {
 			this->id = id;
 			this->pos = pos;
-			ping();
-		}
-		void ping() {
-			this->time = ofGetElapsedTimef();
-		}
-		bool isOld(float currTime) {
-			return currTime - this->time >10.0;
 		}
 	};
 	
@@ -154,7 +135,6 @@ public:
 	void touchMoved(float x, float y, int id) {
 		if(touches.find(id)!=touches.end()) {
 			touches[id].pos.set(x,y);
-			touches[id].ping();
 		}
 
 		

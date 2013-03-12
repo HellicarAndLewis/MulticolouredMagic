@@ -5,7 +5,6 @@ void testApp::setup(){
 
 	ofSetLogLevel(OF_LOG_VERBOSE);
 
-
 	ofSetCircleResolution(50);
 	ofBackground(0,0,0);
 	
@@ -48,6 +47,7 @@ void testApp::setup(){
 	}
 
 }
+
 
 void testApp::setNumPads(int numPads) {
 	if(numPads>11) numPads = 11;
