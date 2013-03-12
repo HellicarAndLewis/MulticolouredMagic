@@ -7,7 +7,7 @@
  * \  \:\~~\__\/ \  \:\/:/__\/ \__\/  |:|/:/ \  \:\/:/~/:/ \  \:\ /  /:/    ~\~~\::::/
  *  \  \:\        \  \::/          |  |:/:/   \  \::/ /:/   \  \:\  /:/      |~~|:|~~ 
  *   \  \:\        \  \:\          |  |::/     \  \:\/:/     \  \:\/:/       |  |:|   
- *    \  \:\        \  \:\         |  |:/       \  \::/       \  \::/        |  |:|   
+ *    \  \:\        \  \:\         |  |:/       \  \::/       \  \::/        |  |:|
  *     \__\/         \__\/         |__|/         \__\/         \__\/         |__|/   
  *
  *  Description: 
@@ -19,7 +19,7 @@
 #pragma once
 #include "ofMain.h"
 #include "MiniSampler.h"
-
+#include <map>
 class Pad {
 public:
 	float radius;
@@ -35,13 +35,24 @@ public:
 	}
 	
 	Pad(int id, ofVec2f centre, float radius) {
+		set(id,centre,radius);
+	}
+	
+	void set(int id, ofVec2f centre, float radius) {
 		this->id = id;
 		this->centre = centre;
 		this->radius = radius;
 	}
 	
-	
 	void draw() {
+		float t = ofGetElapsedTimef();
+		map<int,Touch>::iterator it;
+		for(it = touches.begin(); it != touches.end(); it++) {
+			if((*it).second.isOld(t)) {
+				touchUp((*it).second.pos.x, (*it).second.pos.y, (*it).second.id);
+				break;
+			}
+		}
 		
 		
 		
@@ -79,6 +90,11 @@ public:
 		}
 		
 		
+
+		for(it = touches.begin(); it != touches.end(); it++) {
+			ofSetHexColor(0xFFFFFF);
+			ofCircle((*it).second.pos, 5);
+		}
 		
 	}
 	
@@ -101,37 +117,73 @@ public:
 		}
 	}
 
+	struct Touch {
+		ofVec2f pos;
+		int id;
+		float time;
+		Touch(int id = 0, ofVec2f pos = ofVec2f()) {
+			this->id = id;
+			this->pos = pos;
+			ping();
+		}
+		void ping() {
+			this->time = ofGetElapsedTimef();
+		}
+		bool isOld(float currTime) {
+			return currTime - this->time >10.0;
+		}
+	};
+	
 	void touchDown(float x, float y, int id) {
+		touches[id] = Touch(id, ofVec2f(x,y));
+					
 		float d = ofDistSquared(x, y, centre.x, centre.y);
 		if(d<radius*radius) {
 			if(recMode) {
 				startRecording();
 			} else {
-				trigger();
-				playTouchId = id;
+				if(!sampler.isPlaying()) {
+					trigger();
+				
+					playTouchId = id;
+				}
 			}
 		}
 	}
+	
 	void touchMoved(float x, float y, int id) {
+		if(touches.find(id)!=touches.end()) {
+			touches[id].pos.set(x,y);
+			touches[id].ping();
+		}
+
+		
+
+		bool fingerStillIn = false;
+		
+		// if there's any fingers still in the zone, keep
+		map<int,Touch>::iterator it;
+		for(it = touches.begin(); it != touches.end(); it++) {
+			float d = ofDistSquared((*it).second.pos.x, (*it).second.pos.y, centre.x, centre.y);
+			if(d<radius*radius) {
+				fingerStillIn = true;
+				break;
+			}
+		}
+		
+		
 		// if you move out of the circle when recording, stop recording
 		if(recMode) {
-			if(this->id==currRecId) {
+			//if(this->id==currRecId) {
 
-				float d = ofDistSquared(x, y, centre.x, centre.y);
-				if(d>radius*radius) {
-					stopRecording();
-				}
+			if(!fingerStillIn) {
+				stopRecording();
 			}
+			//}
 		} else {
 
-			float d = ofDistSquared(x, y, centre.x, centre.y);
-			// if finger falls off play circle
-			if(d>radius*radius) {
-				if(id==playTouchId) {
-				
-					sampler.stop();
-				}
-				
+			if(!fingerStillIn) {
+				sampler.stop();
 			} else if(!sampler.isPlaying()) {
 				touchDown(x, y, id);
 			}
@@ -139,17 +191,31 @@ public:
 		}
 	}
 	void touchUp(float x, float y, int id) {
-		float d = ofDistSquared(x, y, centre.x, centre.y);
-		if(d<radius*radius) {
+		if(touches.find(id)!=touches.end()) {
+			touches.erase(id);
+		}
 		
+		bool fingerStillIn = false;
+		
+		// if there's any fingers still in the zone, keep
+		map<int,Touch>::iterator it;
+		for(it = touches.begin(); it != touches.end(); it++) {
+			float d = ofDistSquared((*it).second.pos.x, (*it).second.pos.y, centre.x, centre.y);
+			if(d<radius*radius) {
+				fingerStillIn = true;
+				break;
+			}
+		}
+		
+		if(!fingerStillIn) {
 			if(recMode) {
-				printf("Stopping recording\n");
 				stopRecording();
 			} else {
 				sampler.stop();
 			}
 		}
 	}
+	
 	 
 	void addSamples(float *out, int length, int numChannels) {
 		sampler.addSamples(out, length, numChannels);
@@ -157,7 +223,7 @@ public:
 	void recordSamples(float *in, int length) {
 		sampler.recordSamples(in, length);
 	}
-	
+	map<int,Touch> touches;
 	
 	MiniSampler sampler;
 	static bool recMode;
@@ -165,3 +231,4 @@ public:
 	int playTouchId;
 	static vector<ofVec2f> unitCircle;
 };
+

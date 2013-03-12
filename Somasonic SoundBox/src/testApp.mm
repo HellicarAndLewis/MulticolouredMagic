@@ -53,11 +53,7 @@ void testApp::setNumPads(int numPads) {
 	if(numPads>11) numPads = 11;
 	mutex.lock();
 	gui.numPads = numPads;
-	// delete old pads - want to reuse eventually
-	for(int i = 0; i < pads.size(); i++) {
-		delete pads[i];
-	}
-	pads.clear();
+	
 
 	
 	ofVec2f centre(ofGetWidth()/2, ofGetHeight()/2);
@@ -109,11 +105,24 @@ void testApp::setNumPads(int numPads) {
 			radius /= 4;
 			break;
 	}
-		
-	for(int i = 0; i < numPads; i++) {
+	
+	
+	// if there aren't enough, add here
+	for(int i = pads.size(); i < numPads; i++) {
+		pads.push_back(new Pad);
+	}
+	
+	// if there's too many, remove
+	while(pads.size()>numPads) {
+		delete pads[pads.size()-1];
+		pads.erase(pads.begin()+pads.size()-1);
+	}
+	
+	
+	for(int i = 0; i < pads.size(); i++) {
 		float angle = ofMap(i, 0, numPads, 0, PI*2);
 		ofVec2f offset(dist*cos(angle), dist*sin(angle));
-		pads.push_back(new Pad(i, centre+offset, radius));
+		pads[i]->set(i, centre+offset,radius);
 	}
 	mutex.unlock();
 }
@@ -237,12 +246,12 @@ void testApp::touchUp(ofTouchEventArgs & touch){
 
 //--------------------------------------------------------------
 void testApp::touchDoubleTap(ofTouchEventArgs & touch){
-    
+	touchUp(touch);
 }
 
 //--------------------------------------------------------------
 void testApp::touchCancelled(ofTouchEventArgs & touch){
-
+	touchUp(touch);
 }
 
 //--------------------------------------------------------------
