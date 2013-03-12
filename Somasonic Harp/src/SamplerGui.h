@@ -32,7 +32,7 @@ public:
 	
 	int key;
 	float noteRange;
-
+	int showCamera;
 	int soundId;
 	void setup() {
 		overActivator = false;
@@ -43,12 +43,14 @@ public:
 		key = 0;
 		soundId = 0;
 		recording = false;
+		showCamera = true;
 		noteRange = 16;
 		gui.setWidth(500);
 		gui.addSegmented("Input", input, "Front Camera|Accelerometer|Touch")->height = 40;
 		
 		gui.addSegmented("Scale", scale, "PENTATONIC|MAJOR|MINOR|CHROMATIC")->height = 40;
 		gui.addSegmented("Key", key, "C|C#|D|D#|E|F|F#|G|G#|A|A#|B")->height = 40;
+		gui.addSegmented("Show Camera", showCamera, "NO|YES")->height = 40;
 		Slider *s = gui.addSlider("Note Range", noteRange, 5, 30);
 
 		

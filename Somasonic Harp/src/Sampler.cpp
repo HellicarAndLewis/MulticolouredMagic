@@ -93,11 +93,12 @@ void Sampler::update() {
 	if(gui.input==INPUT_ACCELEROMETER) {
 		ofPoint a = ofxAccelerometer.getOrientation();
 		float ax = a.x;// + a.y;
-
+		printf("%f\n", ax);
 		float pitch = ofMap(ax, -45, 45, 1, 0);
-		if(ax<-45) pitch = 0;
+		if(ax<-45) pitch = 1;
 		else if(ax>45) {
-			pitch = ofMap(ax, 45, 135, 0, 1, true);
+			pitch = 0;
+//			pitch = ofMap(ax, 45, 135, 0, 1, true);
 		}
 		int currNote = pitch*vision.levels.size();
 		if(currNote!=lastNote) {
@@ -163,7 +164,9 @@ void Sampler::draw(){
 	
 	ofSetHexColor(0xFFFFFF);
 	
-	vision.draw();
+	if(gui.showCamera) {
+		vision.draw();
+	}
 	
 	
 	// fade out a note
