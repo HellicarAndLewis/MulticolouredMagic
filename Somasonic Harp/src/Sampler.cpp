@@ -92,7 +92,7 @@ void Sampler::update() {
 	wasRecording = gui.recording;
 	if(gui.input==INPUT_ACCELEROMETER) {
 		ofPoint a = ofxAccelerometer.getOrientation();
-		float ax = a.x + a.y;
+		float ax = a.x;// + a.y;
 
 		float pitch = ofMap(ax, -45, 45, 1, 0);
 		if(ax<-45) pitch = 0;
