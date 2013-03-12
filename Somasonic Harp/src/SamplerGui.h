@@ -37,7 +37,7 @@ public:
 	void setup() {
 		overActivator = false;
 		activator.set(10, 10, 70, 30);
-		input = INPUT_CAMERA;
+		input = INPUT_TOUCH;
 		scale = 0;
 		mustLoadSound = false;
 		key = 0;
