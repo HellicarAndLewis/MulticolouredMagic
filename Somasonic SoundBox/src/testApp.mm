@@ -3,9 +3,11 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 
+	Pad::circle.loadImage("circle.png");
+	Pad::circle.setAnchorPercent(0.5, 0.5);
 	ofSetLogLevel(OF_LOG_VERBOSE);
 
-	ofSetCircleResolution(50);
+	ofEnableAlphaBlending();
 	ofBackground(0,0,0);
 	
 	centerer.setup(WIDTH, HEIGHT);
@@ -163,7 +165,11 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	ofClear(0, 0, 0, 0);
+	if(Pad::recMode) {
+		ofClear(100,0,0,0);
+	} else {
+		ofClear(0, 0, 0, 0);
+	}
 	for(int i = 0; i < pads.size(); i++) {
 		pads[i]->draw();
 	}
