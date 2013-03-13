@@ -154,7 +154,7 @@ public:
 		// reset to normal alpha blending
 		ofEnableAlphaBlending();
 		
-		glPushMatrix();
+		/*glPushMatrix();
 		ofNoFill();
 		glScalef((float)ofGetWidth()/VISION_WIDTH, (float)ofGetHeight()/VISION_HEIGHT, 1);
 		for(int i = 0; i < levels.size(); i++) {
@@ -166,7 +166,7 @@ public:
 			
 	//		ofRect( (float)i*ofGetWidth()/levels.size(), 0, (float)ofGetWidth()/levels.size(), (float)ofGetHeight()*levels[i].second*5.f);
 		}
-		glPopMatrix();
+		glPopMatrix();*/
 		ofFill();
 	}
 	int numLevels;

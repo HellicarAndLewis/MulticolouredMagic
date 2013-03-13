@@ -16,6 +16,7 @@
  */
 
 #include "SimpleGui.h"
+#include "RecordButton.h"
 
 class SamplerGui: public xmlgui::Listener {
 public:
@@ -33,8 +34,16 @@ public:
 	int key;
 	float noteRange;
 	int showCamera;
+	
 	int soundId;
+	
+	int useYAxisAsVolume;
+	int showGridLines;
+	RecordButton recordButton;
 	void setup() {
+
+		useYAxisAsVolume = 0;
+		showGridLines = 0;
 		holdCount = 0;
 		overActivator = false;
 		activator.set(10, 10, 70, 30);
@@ -51,12 +60,22 @@ public:
 		
 		gui.addSegmented("Scale", scale, "PENTATONIC|MAJOR|MINOR|CHROMATIC")->height = 40;
 		gui.addSegmented("Key", key, "C|C#|D|D#|E|F|F#|G|G#|A|A#|B")->height = 40;
-		gui.addSegmented("Show Camera", showCamera, "NO|YES")->height = 40;
-		Slider *s = gui.addSlider("Note Range", noteRange, 5, 30);
-
-		
+		Slider *s = gui.addSlider("Note Range", noteRange, 1, 30);
 		s->height = 40;
 		s->stepped = true;
+		
+		
+		gui.addSegmented("Use Y Axis as Volume", useYAxisAsVolume, "NO|YES")->size(90, 40);
+		
+		gui.addChild(&recordButton);
+		gui.addTitle("Appearance");
+		gui.addSegmented("Show Camera", showCamera, "NO|YES")->size(90, 40);
+		gui.addSegmented("Show Grid Lines", showGridLines, "NO|YES")->size(90, 40);
+		
+
+
+		
+
 		
 		ofDirectory samples;
 		int numSounds = samples.listDir("sounds");
@@ -76,6 +95,8 @@ public:
 	
 	void controlChanged(xmlgui::Event *e) {
 		if(e->control->id=="OK") {
+			ofSoundStreamStop();
+			ofSoundStreamSetup(2, 0, ofGetAppPtr(), 44100, 512, 4);
 			gui.setEnabled(false);
 		}
 		if(e->control->id=="Sound") {
@@ -95,10 +116,7 @@ public:
 			
 		}
 	}
-	void enableGui() {
-		gui.setEnabled(true);
-	}
-	
+
 	void draw() {
 		int MAX_HOLD_COUNT = 20;
 		if(!gui.isEnabled()) {
@@ -110,6 +128,8 @@ public:
 			
 			if(holdCount>MAX_HOLD_COUNT) {
 				gui.setEnabled(true);
+				ofSoundStreamStop();
+				ofSoundStreamSetup(0, 1, ofGetAppPtr(), 44100, 512, 4);
 				holdCount = 0;
 			}
 		}

@@ -15,9 +15,13 @@ Poco::Mutex controlMutex;
 
 ofImage Particle::particle;
 
+
 ofColor Particle::color;
+
+int noteOffset = 0;
 //--------------------------------------------------------------
 void Sampler::init(){
+	
 	currTouchId = -1;
 	//AppSettings::addListener(this);
 	movementThreshold = 0.02;
@@ -74,6 +78,8 @@ void Sampler::init(){
 	video.initGrabber(VISION_WIDTH, VISION_HEIGHT, OF_PIXELS_BGRA);
 	vision.setup();
 	gui.setup();
+	
+	gui.recordButton.recListener = this;
 }
 
 
@@ -84,8 +90,8 @@ void Sampler::update() {
 
 	if(!wasRecording && gui.recording) {
 		// recording just started.
-		ofSoundStreamStop();
-		ofSoundStreamSetup(0, 1, ofGetAppPtr(), 44100, 512, 4);
+		//ofSoundStreamStop();
+		//ofSoundStreamSetup(0, 1, ofGetAppPtr(), 44100, 512, 4);
 
 	}
 	
@@ -93,8 +99,13 @@ void Sampler::update() {
 	if(gui.input==INPUT_ACCELEROMETER) {
 		ofPoint a = ofxAccelerometer.getOrientation();
 		float ax = a.x;// + a.y;
-		printf("%f\n", ax);
+	//	printf("%f\n", ax);
 		float pitch = ofMap(ax, -45, 45, 1, 0);
+		float vol = 0.8;
+		if(gui.useYAxisAsVolume) {
+			vol = ofMap(a.y, -45, 45, 1, 0);
+		}
+		
 		if(ax<-45) pitch = 1;
 		else if(ax>45) {
 			pitch = 0;
@@ -103,7 +114,7 @@ void Sampler::update() {
 		int currNote = pitch*vision.levels.size();
 		if(currNote!=lastNote) {
 			
-			playSound(0.8, pitch);
+			playSound(vol, pitch);
 		}
 	}
 	ofBackground(0,0,0);
@@ -145,10 +156,12 @@ void Sampler::update() {
 	if(gui.mustLoadSound) {
 		controlMutex.lock();
 		sample.loadFromFile(gui.soundFile);
-		
+
 		controlMutex.unlock();
 		gui.mustLoadSound = false;
+		noteOffset = 0;
 	}
+	
 	
 	/*for(int i = 0; i < particles.size(); i++) {
 		particles[i].update();
@@ -158,7 +171,19 @@ void Sampler::update() {
 		}
 	}*/
 }
-
+void Sampler::recordingStarted() {
+	controlMutex.lock();
+	recording = true;
+	recordPos = 0;
+	controlMutex.unlock();
+}
+void Sampler::recordingEnded() {
+	controlMutex.lock();
+	recording = false;
+	sample.load(recordBuffer, recordPos);
+	controlMutex.unlock();
+	noteOffset = -12;
+}
 //--------------------------------------------------------------
 void Sampler::draw(){
 	
@@ -184,8 +209,16 @@ void Sampler::draw(){
 
 	ofSetHexColor(0xFFFFFF);
 
-	for(int i = 0; i < particles.size(); i++) {
-		particles[i].draw();
+//	for(int i = 0; i < particles.size(); i++) {
+//		particles[i].draw();
+//	}
+	
+	if(gui.showGridLines) {
+		glColor4f(1,1,1,0.4);
+		for(int i = 0; i <vision.levels.size(); i++) {
+			float x = ofMap(i, 0, vision.levels.size(), 0, ofGetWidth());
+			ofLine(x, 0, x, ofGetHeight());
+		}
 	}
 	//gui.draw();
 }
@@ -247,7 +280,11 @@ void Sampler::mousePressed(int x, int y, int button){
 	if(gui.input==INPUT_TOUCH && !gui.gui.isEnabled()) {
 		float pitch = ofMap(x, 0, ofGetWidth(), 1, 0);
 		currTouchId = button;
-		playSound(0.8, pitch);
+		float vol = 0.8;
+		if(gui.useYAxisAsVolume) {
+			vol = ofMap(y, ofGetHeight(), 0, 0.0, 1, true);
+		}
+		playSound(vol, pitch);
 	}
 	/*int note = valueToNote(1.f-((float)y/ofGetHeight()));
 	 playbackSpeed = noteToSpeed(note);
@@ -263,8 +300,11 @@ void Sampler::mouseDragged(int x, int y, int button){
 		if(currTouchId==-1) currTouchId = button;
 		
 		if(currNote!=lastNote && currTouchId==button) {
-			
-			playSound(0.6, pitch);
+			float vol = 0.6;
+			if(gui.useYAxisAsVolume) {
+				vol = ofMap(y, ofGetHeight(), 0, 0.0, 1, true);
+			}
+			playSound(vol, pitch);
 		}
 	}
 
@@ -279,7 +319,11 @@ void Sampler::mouseReleased(int x, int y, int button){
 
 void Sampler::playSound(float volume, float pitch) {
 
+	volume = volume * volume;
 	int note = valueToNote(pitch);
+	if(vision.levels.size()>5) {
+		note += noteOffset;
+	}
 	playbackSpeed = noteToSpeed(note);
 	sample.trigger(volume);
 	noteLastTime = ofGetElapsedTimef();

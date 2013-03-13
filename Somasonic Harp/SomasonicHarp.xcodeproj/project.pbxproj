@@ -186,6 +186,7 @@
 		EA34D56F16768EF700F5C58F /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		EA34D57116768EF700F5C58F /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		EA34D57216768EF700F5C58F /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		EA53BCA316F0CD3E00A76398 /* RecordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordButton.h; sourceTree = "<group>"; };
 		EAB183721677696B00D1B8CD /* SimpleGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleGui.cpp; sourceTree = "<group>"; };
 		EAB183731677696B00D1B8CD /* SimpleGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGui.h; sourceTree = "<group>"; };
 		EAB183751677696B00D1B8CD /* ColourPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColourPicker.h; sourceTree = "<group>"; };
@@ -577,6 +578,7 @@
 				EA34D4B116768EB100F5C58F /* Sample.cpp */,
 				EA34D4B216768EB100F5C58F /* Sample.h */,
 				EAB183C116776B3E00D1B8CD /* SamplerGui.h */,
+				EA53BCA316F0CD3E00A76398 /* RecordButton.h */,
 				EA34D4B316768EB100F5C58F /* Sampler.cpp */,
 				EA34D4B416768EB100F5C58F /* Sampler.h */,
 				EA34D4B516768EB100F5C58F /* Vision.h */,

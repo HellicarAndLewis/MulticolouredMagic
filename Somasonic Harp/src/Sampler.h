@@ -12,11 +12,12 @@
 
 
 
-class Sampler {
+class Sampler: public RecordButtonListener {
 	
 public:
 	
-
+	void recordingStarted();
+	void recordingEnded();
 	void init();
 	void update();
 	void draw();
