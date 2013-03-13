@@ -17,6 +17,7 @@
 
 #include "SimpleGui.h"
 #include "MiniSampler.h"
+#include "Pad.h"
 
 class SoundBoxGui: public xmlgui::Listener {
 public:
@@ -26,15 +27,17 @@ public:
 	
 	xmlgui::SimpleGui gui;
 	int numPads;
-
+	int holdCount;
 
 	void setup() {
+		holdCount = 0;
 		overActivator = false;
 		activator.set(10, 10, 70, 30);
 
 		gui.setWidth(500);
 		gui.addSlider("Number of Pads", numPads, 1, 11)->height = 40;
 		gui.addSegmented("loop", (int&)MiniSampler::looping, "OFF|ON")->size(100, 40);
+		gui.addSegmented("trigger", Pad::triggerType, "MOMENTARY|TOGGLE")->height=40;
 		gui.addPushButton("OK")->size(100, 40);
 		gui.addListener(this);
 	}
@@ -49,10 +52,24 @@ public:
 	}
 	
 	void draw() {
+		int MAX_HOLD_COUNT = 30;
 		if(!gui.isEnabled()) {
-			if(overActivator) ofSetHexColor(0xFF0000);
-			else ofSetHexColor(0xFFFFFF);
+			if(overActivator) {
+				holdCount++;
+			} else {
+				holdCount = 0;
+			}
+			if(holdCount>MAX_HOLD_COUNT) {
+				enableGui();
+				holdCount = 0;
+			}
+		}
+		if(!gui.isEnabled()) {
+			glColor4f(1, 1, 1, 0.5);
 			ofRect(activator);
+			glColor4f(1,1,1,1);
+			ofRect(activator.x, activator.y, activator.width*ofMap(holdCount, 0, MAX_HOLD_COUNT, 0, 1), activator.height);
+			
 			ofSetHexColor(0);
 			ofDrawBitmapString("MENU", activator.x+3, activator.y+15);
 		} else {
@@ -73,9 +90,7 @@ public:
 	void touchUp(int id, float x, float y) {
 		if(!gui.isEnabled()) {
 			overActivator = activator.inside(x, y);
-			if(overActivator) {
-				enableGui();
-			}
+			
 		}
 		
 		overActivator = false;
@@ -85,6 +100,7 @@ public:
 		if(!gui.isEnabled()) {
 			overActivator = activator.inside(x, y);
 		}
+	
 	}
 };
 

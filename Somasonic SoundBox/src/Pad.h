@@ -20,7 +20,8 @@
 #include "ofMain.h"
 #include "MiniSampler.h"
 #include <map>
-
+#define TRIGGER_TOGGLE 1
+#define TRIGGER_MOMENTARY 0
 
 class Pad {
 public:
@@ -34,10 +35,11 @@ public:
 		centre = ofVec2f(ofGetWidth()/2, ofGetHeight()/2);
 		radius = 400;
 		playTouchId = -1;
-		
+		triggerType = TRIGGER_MOMENTARY;
+
 	}
 	
-
+static int triggerType;
 	
 	void set(int id, ofVec2f centre, float radius) {
 		this->id = id;
@@ -63,7 +65,10 @@ public:
 			
 //			ofCircle(centre, radius);
 			circle.draw(centre, radius*2,radius*2);
-			
+			if(currRecId==id) {
+				glColor4f(1,1,1,ofMap(sin((ofGetElapsedTimef()-recordStartTime)*8), -1,1, 0.2,0.8));
+				circle.draw(centre, radius*2,radius*2);
+			}
 			if(!sampler.isEmpty()) {
 				ofSetColor(100,0,0);
 				
@@ -103,6 +108,7 @@ public:
 		if(currRecId==-1) {
 			sampler.clear();
 			currRecId = id;
+			recordStartTime = ofGetElapsedTimef();
 		}
 	}
 	
@@ -123,28 +129,42 @@ public:
 		}
 	};
 	
+	void toggle() {
+		if(!sampler.isPlaying()) {
+			trigger();
+		} else {
+			sampler.stop();
+		}
+	}
 	void touchDown(float x, float y, int id) {
 		touches[id] = Touch(id, ofVec2f(x,y));
-					
+		
 		float d = ofDistSquared(x, y, centre.x, centre.y);
 		if(d<radius*radius) {
+			
 			if(recMode) {
 				startRecording();
 			} else {
-				if(!sampler.isPlaying()) {
-					trigger();
-				
-					playTouchId = id;
+				if(triggerType==TRIGGER_MOMENTARY) {
+					if(!sampler.isPlaying()) {
+						trigger();
+					
+						playTouchId = id;
+					}
+				} else {
+					toggle();
 				}
 			}
 		}
+		
+		
 	}
 	
 	void touchMoved(float x, float y, int id) {
 		if(touches.find(id)!=touches.end()) {
 			touches[id].pos.set(x,y);
 		}
-
+		
 		
 
 		bool fingerStillIn = false;
@@ -169,7 +189,8 @@ public:
 			}
 			//}
 		} else {
-
+			
+			if(triggerType==TRIGGER_TOGGLE) return;
 			if(!fingerStillIn) {
 				sampler.stop();
 			} else if(!sampler.isPlaying()) {
@@ -179,9 +200,11 @@ public:
 		}
 	}
 	void touchUp(float x, float y, int id) {
+		
 		if(touches.find(id)!=touches.end()) {
 			touches.erase(id);
 		}
+		
 		
 		bool fingerStillIn = false;
 		
@@ -199,6 +222,7 @@ public:
 			if(recMode) {
 				stopRecording();
 			} else {
+				if(triggerType==TRIGGER_TOGGLE) return;
 				sampler.stop();
 			}
 		}
@@ -219,5 +243,6 @@ public:
 	int playTouchId;
 	static vector<ofVec2f> unitCircle;
 	static ofImage circle;
+									  float recordStartTime;
 };
 

@@ -35,6 +35,7 @@ public:
 	int showCamera;
 	int soundId;
 	void setup() {
+		holdCount = 0;
 		overActivator = false;
 		activator.set(10, 10, 70, 30);
 		input = INPUT_TOUCH;
@@ -99,16 +100,32 @@ public:
 	}
 	
 	void draw() {
+		int MAX_HOLD_COUNT = 20;
 		if(!gui.isEnabled()) {
-			if(overActivator) ofSetHexColor(0xFF0000);
-			else ofSetHexColor(0xFFFFFF);
+			if(overActivator) {
+				holdCount++;
+			} else {
+				holdCount = 0;
+			}
+			
+			if(holdCount>MAX_HOLD_COUNT) {
+				gui.setEnabled(true);
+				holdCount = 0;
+			}
+		}
+		if(!gui.isEnabled()) {
+			glColor4f(1, 1, 1, 0.5);
 			ofRect(activator);
+			glColor4f(1,1,1,1);
+			ofRect(activator.x, activator.y, activator.width*ofMap(holdCount, 0, MAX_HOLD_COUNT, 0, 1), activator.height);
 			ofSetHexColor(0);
 			ofDrawBitmapString("MENU", activator.x+3, activator.y+15);
 		} else {
 			ofEnableAlphaBlending();
 			ofSetColor(0, 0, 0, 100);
-			ofRect(0, 0, ofGetWidth(), ofGetHeight());
+
+				ofRect(0, 0, ofGetWidth(), ofGetHeight());
+			
 		}
 	}
 	
@@ -123,9 +140,6 @@ public:
 	void touchUp(int id, float x, float y) {
 		if(!gui.isEnabled()) {
 			overActivator = activator.inside(x, y);
-			if(overActivator) {
-				enableGui();
-			}
 		}
 		
 		overActivator = false;
@@ -139,7 +153,7 @@ public:
 	bool mustLoadSound;
 	string soundFile;
 	bool recording;
-	
+	int holdCount;
 };
 
 
