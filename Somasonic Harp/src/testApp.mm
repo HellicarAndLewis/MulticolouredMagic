@@ -19,7 +19,7 @@ void testApp::setup(){
 	ofAddListener(ofEvents().touchDown, this, &testApp::touchDown);
 	ofAddListener(ofEvents().touchMoved, this, &testApp::touchMoved);
 	ofAddListener(ofEvents().touchUp, this, &testApp::touchUp);
-	
+
 	// initialize the accelerometer
 	ofxAccelerometer.setup();
 	

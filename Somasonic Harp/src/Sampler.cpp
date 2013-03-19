@@ -1,7 +1,8 @@
 #include "Sampler.h"
 #include "stdio.h"
+#ifdef TARGET_OF_IPHONE
 #include "ofxAccelerometer.h"
-
+#endif
 
 
 //pthread_mutex_t         controlMutex = PTHREAD_MUTEX_INITIALIZER;
@@ -97,6 +98,7 @@ void Sampler::update() {
 	
 	wasRecording = gui.recording;
 	if(gui.input==INPUT_ACCELEROMETER) {
+		#ifdef TARGET_OF_IPHONE
 		ofPoint a = ofxAccelerometer.getOrientation();
 		float ax = a.x;// + a.y;
 	//	printf("%f\n", ax);
@@ -116,6 +118,7 @@ void Sampler::update() {
 			
 			playSound(vol, pitch);
 		}
+		#endif
 	}
 	ofBackground(0,0,0);
 	vision.numLevels = gui.noteRange;
