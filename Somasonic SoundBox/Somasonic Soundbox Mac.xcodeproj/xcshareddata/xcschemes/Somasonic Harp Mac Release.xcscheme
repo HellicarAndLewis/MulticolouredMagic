@@ -16,7 +16,7 @@
                BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
                BuildableName = "Somasonic Harp Mac.app"
                BlueprintName = "Somasonic Harp Mac"
-               ReferencedContainer = "container:Somasonic Harp Mac.xcodeproj">
+               ReferencedContainer = "container:Somasonic Soundbox Mac.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,7 +34,7 @@
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
             BuildableName = "Somasonic Harp Mac.app"
             BlueprintName = "Somasonic Harp Mac"
-            ReferencedContainer = "container:Somasonic Harp Mac.xcodeproj">
+            ReferencedContainer = "container:Somasonic Soundbox Mac.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -44,6 +44,7 @@
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
+      ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
@@ -52,7 +53,7 @@
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
             BuildableName = "Somasonic Harp Mac.app"
             BlueprintName = "Somasonic Harp Mac"
-            ReferencedContainer = "container:Somasonic Harp Mac.xcodeproj">
+            ReferencedContainer = "container:Somasonic Soundbox Mac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,7 +71,7 @@
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
             BuildableName = "Somasonic Harp Mac.app"
             BlueprintName = "Somasonic Harp Mac"
-            ReferencedContainer = "container:Somasonic Harp Mac.xcodeproj">
+            ReferencedContainer = "container:Somasonic Soundbox Mac.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -6,7 +6,7 @@ OF_PATH = ../../..
 #include "../../../libs/openFrameworksCompiled/project/ios/CoreOF.xcconfig"
 
 OTHER_LDFLAGS = $(OF_CORE_LIBS) 
-HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS)
+HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS) ../addons/ofxKinect/libs/libusb/osx/include
 
 COMPRESS_PNG_FILES = NO
 GCC_THUMB_SUPPORT = NO

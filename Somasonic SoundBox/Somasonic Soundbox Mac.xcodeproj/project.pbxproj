@@ -29,6 +29,25 @@
 		E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */; };
 		E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E715D3B6510020DFD4 /* QTKit.framework */; };
 		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
+		EA7F9FF816F8C8AA0048A270 /* Parameterized.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FB416F8C8AA0048A270 /* Parameterized.cpp */; };
+		EA7F9FF916F8C8AA0048A270 /* SimpleGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FB716F8C8AA0048A270 /* SimpleGui.cpp */; };
+		EA7F9FFA16F8C8AA0048A270 /* Editor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FDC16F8C8AA0048A270 /* Editor.cpp */; };
+		EA7F9FFB16F8C8AA0048A270 /* Inspector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FDE16F8C8AA0048A270 /* Inspector.cpp */; };
+		EA7F9FFD16F8C8AA0048A270 /* Container.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FE616F8C8AA0048A270 /* Container.cpp */; };
+		EA7F9FFE16F8C8AA0048A270 /* Control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FE816F8C8AA0048A270 /* Control.cpp */; };
+		EA7F9FFF16F8C8AA0048A270 /* Controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FEA16F8C8AA0048A270 /* Controls.cpp */; };
+		EA7FA00016F8C8AA0048A270 /* Gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FED16F8C8AA0048A270 /* Gui.cpp */; };
+		EA7FA00116F8C8AA0048A270 /* Instantiator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FEF16F8C8AA0048A270 /* Instantiator.cpp */; };
+		EA7FA00216F8C8AA0048A270 /* ofGuiEventDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FF216F8C8AA0048A270 /* ofGuiEventDispatcher.cpp */; };
+		EA7FA00316F8C8AA0048A270 /* Resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7F9FF616F8C8AA0048A270 /* Resources.cpp */; };
+		EA7FA0E016F8C95D0048A270 /* cameras.c in Sources */ = {isa = PBXBuildFile; fileRef = EA7FA08716F8C95C0048A270 /* cameras.c */; };
+		EA7FA0E116F8C95D0048A270 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = EA7FA08A16F8C95C0048A270 /* core.c */; };
+		EA7FA0E216F8C95D0048A270 /* freenect.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7FA09016F8C95C0048A270 /* freenect.lib */; };
+		EA7FA0E316F8C95D0048A270 /* registration.c in Sources */ = {isa = PBXBuildFile; fileRef = EA7FA09416F8C95C0048A270 /* registration.c */; };
+		EA7FA0E416F8C95D0048A270 /* tilt.c in Sources */ = {isa = PBXBuildFile; fileRef = EA7FA09616F8C95C0048A270 /* tilt.c */; };
+		EA7FA0E516F8C95D0048A270 /* usb_libusb10.c in Sources */ = {isa = PBXBuildFile; fileRef = EA7FA09716F8C95C0048A270 /* usb_libusb10.c */; };
+		EA7FA0E616F8C95D0048A270 /* usb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7FA09F16F8C95C0048A270 /* usb-1.0.a */; };
+		EA7FA0E716F8C95D0048A270 /* ofxKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA7FA0D616F8C95C0048A270 /* ofxKinect.cpp */; };
 		EADBC7DB16766A4B00B579EA /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = EADBC7D816766A4B00B579EA /* main.mm */; };
 		EADBC7DC16766A4B00B579EA /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EADBC7DA16766A4B00B579EA /* testApp.mm */; };
 		EADBC80F16766AE700B579EA /* MagicShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EADBC7E916766AE700B579EA /* MagicShapes.cpp */; };
@@ -40,8 +59,6 @@
 		EADBC81616766AE700B579EA /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EADBC80316766AE700B579EA /* util.cpp */; };
 		EADBC81716766AE700B579EA /* contourutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EADBC80616766AE700B579EA /* contourutils.cpp */; };
 		EADBC81816766AE700B579EA /* KinectOrCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EADBC80816766AE700B579EA /* KinectOrCamera.cpp */; };
-		EADBC82A16766B6C00B579EA /* Sample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EADBC82416766B6C00B579EA /* Sample.cpp */; };
-		EADBC82B16766B6C00B579EA /* Sampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EADBC82616766B6C00B579EA /* Sampler.cpp */; };
 		EADBC83E167679B500B579EA /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EADBC837167679B500B579EA /* tinyxml.cpp */; };
 		EADBC83F167679B500B579EA /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EADBC839167679B500B579EA /* tinyxmlerror.cpp */; };
 		EADBC840167679B500B579EA /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EADBC83A167679B500B579EA /* tinyxmlparser.cpp */; };
@@ -160,6 +177,121 @@
 		E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		E7E077E715D3B6510020DFD4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		E7F985F515E0DE99003869B5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
+		EA7F9FB416F8C8AA0048A270 /* Parameterized.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parameterized.cpp; sourceTree = "<group>"; };
+		EA7F9FB516F8C8AA0048A270 /* Parameterized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parameterized.h; sourceTree = "<group>"; };
+		EA7F9FB616F8C8AA0048A270 /* ParameterizedGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterizedGui.h; sourceTree = "<group>"; };
+		EA7F9FB716F8C8AA0048A270 /* SimpleGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleGui.cpp; sourceTree = "<group>"; };
+		EA7F9FB816F8C8AA0048A270 /* SimpleGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGui.h; sourceTree = "<group>"; };
+		EA7F9FBA16F8C8AA0048A270 /* ColourPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColourPicker.h; sourceTree = "<group>"; };
+		EA7F9FBB16F8C8AA0048A270 /* Contour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contour.h; sourceTree = "<group>"; };
+		EA7F9FBC16F8C8AA0048A270 /* DoubleField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleField.h; sourceTree = "<group>"; };
+		EA7F9FBD16F8C8AA0048A270 /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawable.h; sourceTree = "<group>"; };
+		EA7F9FBE16F8C8AA0048A270 /* FileField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileField.h; sourceTree = "<group>"; };
+		EA7F9FBF16F8C8AA0048A270 /* FloatField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatField.h; sourceTree = "<group>"; };
+		EA7F9FC016F8C8AA0048A270 /* FPSCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPSCounter.h; sourceTree = "<group>"; };
+		EA7F9FC116F8C8AA0048A270 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
+		EA7F9FC216F8C8AA0048A270 /* HorizontalRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalRule.h; sourceTree = "<group>"; };
+		EA7F9FC316F8C8AA0048A270 /* IntField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntField.h; sourceTree = "<group>"; };
+		EA7F9FC416F8C8AA0048A270 /* IntSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntSlider.h; sourceTree = "<group>"; };
+		EA7F9FC516F8C8AA0048A270 /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
+		EA7F9FC616F8C8AA0048A270 /* Knob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Knob.h; sourceTree = "<group>"; };
+		EA7F9FC716F8C8AA0048A270 /* LabeledControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabeledControl.h; sourceTree = "<group>"; };
+		EA7F9FC816F8C8AA0048A270 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		EA7F9FC916F8C8AA0048A270 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		EA7F9FCA16F8C8AA0048A270 /* MenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBar.h; sourceTree = "<group>"; };
+		EA7F9FCB16F8C8AA0048A270 /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItem.h; sourceTree = "<group>"; };
+		EA7F9FCC16F8C8AA0048A270 /* Meter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meter.h; sourceTree = "<group>"; };
+		EA7F9FCD16F8C8AA0048A270 /* Pane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pane.h; sourceTree = "<group>"; };
+		EA7F9FCE16F8C8AA0048A270 /* Panner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panner.h; sourceTree = "<group>"; };
+		EA7F9FCF16F8C8AA0048A270 /* PushButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushButton.h; sourceTree = "<group>"; };
+		EA7F9FD016F8C8AA0048A270 /* RangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeSlider.h; sourceTree = "<group>"; };
+		EA7F9FD116F8C8AA0048A270 /* SegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedControl.h; sourceTree = "<group>"; };
+		EA7F9FD216F8C8AA0048A270 /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
+		EA7F9FD316F8C8AA0048A270 /* Slider2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider2D.h; sourceTree = "<group>"; };
+		EA7F9FD416F8C8AA0048A270 /* SliderBank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderBank.h; sourceTree = "<group>"; };
+		EA7F9FD516F8C8AA0048A270 /* Spinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spinner.h; sourceTree = "<group>"; };
+		EA7F9FD616F8C8AA0048A270 /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
+		EA7F9FD716F8C8AA0048A270 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
+		EA7F9FD816F8C8AA0048A270 /* Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Title.h; sourceTree = "<group>"; };
+		EA7F9FD916F8C8AA0048A270 /* Toggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toggle.h; sourceTree = "<group>"; };
+		EA7F9FDA16F8C8AA0048A270 /* VU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VU.h; sourceTree = "<group>"; };
+		EA7F9FDC16F8C8AA0048A270 /* Editor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Editor.cpp; sourceTree = "<group>"; };
+		EA7F9FDD16F8C8AA0048A270 /* Editor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Editor.h; sourceTree = "<group>"; };
+		EA7F9FDE16F8C8AA0048A270 /* Inspector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Inspector.cpp; sourceTree = "<group>"; };
+		EA7F9FDF16F8C8AA0048A270 /* Inspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inspector.h; sourceTree = "<group>"; };
+		EA7F9FE616F8C8AA0048A270 /* Container.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Container.cpp; sourceTree = "<group>"; };
+		EA7F9FE716F8C8AA0048A270 /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
+		EA7F9FE816F8C8AA0048A270 /* Control.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Control.cpp; sourceTree = "<group>"; };
+		EA7F9FE916F8C8AA0048A270 /* Control.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Control.h; sourceTree = "<group>"; };
+		EA7F9FEA16F8C8AA0048A270 /* Controls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controls.cpp; sourceTree = "<group>"; };
+		EA7F9FEB16F8C8AA0048A270 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		EA7F9FEC16F8C8AA0048A270 /* GridSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridSequence.h; sourceTree = "<group>"; };
+		EA7F9FED16F8C8AA0048A270 /* Gui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gui.cpp; sourceTree = "<group>"; };
+		EA7F9FEE16F8C8AA0048A270 /* Gui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gui.h; sourceTree = "<group>"; };
+		EA7F9FEF16F8C8AA0048A270 /* Instantiator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Instantiator.cpp; sourceTree = "<group>"; };
+		EA7F9FF016F8C8AA0048A270 /* Instantiator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instantiator.h; sourceTree = "<group>"; };
+		EA7F9FF116F8C8AA0048A270 /* Listener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Listener.h; sourceTree = "<group>"; };
+		EA7F9FF216F8C8AA0048A270 /* ofGuiEventDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofGuiEventDispatcher.cpp; sourceTree = "<group>"; };
+		EA7F9FF316F8C8AA0048A270 /* ofGuiEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofGuiEventDispatcher.h; sourceTree = "<group>"; };
+		EA7F9FF416F8C8AA0048A270 /* ofxXmlGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlGui.h; sourceTree = "<group>"; };
+		EA7F9FF516F8C8AA0048A270 /* ParameterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterInfo.h; sourceTree = "<group>"; };
+		EA7F9FF616F8C8AA0048A270 /* Resources.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resources.cpp; sourceTree = "<group>"; };
+		EA7F9FF716F8C8AA0048A270 /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
+		EA7FA06A16F8C95C0048A270 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EA7FA08616F8C95C0048A270 /* APACHE20 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = APACHE20; sourceTree = "<group>"; };
+		EA7FA08716F8C95C0048A270 /* cameras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cameras.c; sourceTree = "<group>"; };
+		EA7FA08816F8C95C0048A270 /* cameras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameras.h; sourceTree = "<group>"; };
+		EA7FA08916F8C95C0048A270 /* CONTRIB */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CONTRIB; sourceTree = "<group>"; };
+		EA7FA08A16F8C95C0048A270 /* core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = core.c; sourceTree = "<group>"; };
+		EA7FA08B16F8C95C0048A270 /* freenect_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = freenect_internal.h; sourceTree = "<group>"; };
+		EA7FA08C16F8C95C0048A270 /* GPL2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GPL2; sourceTree = "<group>"; };
+		EA7FA08F16F8C95C0048A270 /* freenect.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = freenect.dll; sourceTree = "<group>"; };
+		EA7FA09016F8C95C0048A270 /* freenect.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = freenect.lib; sourceTree = "<group>"; };
+		EA7FA09116F8C95C0048A270 /* libfreenect-registration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libfreenect-registration.h"; sourceTree = "<group>"; };
+		EA7FA09216F8C95C0048A270 /* libfreenect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libfreenect.h; sourceTree = "<group>"; };
+		EA7FA09316F8C95C0048A270 /* libfreenect.pc.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libfreenect.pc.in; sourceTree = "<group>"; };
+		EA7FA09416F8C95C0048A270 /* registration.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = registration.c; sourceTree = "<group>"; };
+		EA7FA09516F8C95C0048A270 /* registration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registration.h; sourceTree = "<group>"; };
+		EA7FA09616F8C95C0048A270 /* tilt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tilt.c; sourceTree = "<group>"; };
+		EA7FA09716F8C95C0048A270 /* usb_libusb10.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = usb_libusb10.c; sourceTree = "<group>"; };
+		EA7FA09816F8C95C0048A270 /* usb_libusb10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usb_libusb10.h; sourceTree = "<group>"; };
+		EA7FA09D16F8C95C0048A270 /* libusb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
+		EA7FA09F16F8C95C0048A270 /* usb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "usb-1.0.a"; sourceTree = "<group>"; };
+		EA7FA0A416F8C95C0048A270 /* libusb0.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.dll; sourceTree = "<group>"; };
+		EA7FA0A516F8C95C0048A270 /* libusb0.sys */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.sys; sourceTree = "<group>"; };
+		EA7FA0A716F8C95C0048A270 /* libusb0.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.dll; sourceTree = "<group>"; };
+		EA7FA0A816F8C95C0048A270 /* libusb0.sys */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.sys; sourceTree = "<group>"; };
+		EA7FA0A916F8C95C0048A270 /* libusb-win32-bin-README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "libusb-win32-bin-README.txt"; sourceTree = "<group>"; };
+		EA7FA0AC16F8C95C0048A270 /* installer_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = installer_license.txt; sourceTree = "<group>"; };
+		EA7FA0AE16F8C95C0048A270 /* libusb0.sys */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.sys; sourceTree = "<group>"; };
+		EA7FA0AF16F8C95C0048A270 /* libusb0_x86.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0_x86.dll; sourceTree = "<group>"; };
+		EA7FA0B016F8C95C0048A270 /* Xbox_NUI_Audio.cat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xbox_NUI_Audio.cat; sourceTree = "<group>"; };
+		EA7FA0B116F8C95C0048A270 /* Xbox_NUI_Audio.inf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Xbox_NUI_Audio.inf; sourceTree = "<group>"; };
+		EA7FA0B416F8C95C0048A270 /* libusb0.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.dll; sourceTree = "<group>"; };
+		EA7FA0B516F8C95C0048A270 /* libusb0.sys */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.sys; sourceTree = "<group>"; };
+		EA7FA0B716F8C95C0048A270 /* libusb0.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.dll; sourceTree = "<group>"; };
+		EA7FA0B816F8C95C0048A270 /* libusb0.sys */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.sys; sourceTree = "<group>"; };
+		EA7FA0B916F8C95C0048A270 /* libusb-win32-bin-README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "libusb-win32-bin-README.txt"; sourceTree = "<group>"; };
+		EA7FA0BC16F8C95C0048A270 /* installer_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = installer_license.txt; sourceTree = "<group>"; };
+		EA7FA0BE16F8C95C0048A270 /* libusb0.sys */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.sys; sourceTree = "<group>"; };
+		EA7FA0BF16F8C95C0048A270 /* libusb0_x86.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0_x86.dll; sourceTree = "<group>"; };
+		EA7FA0C016F8C95C0048A270 /* Xbox_NUI_Camera.cat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xbox_NUI_Camera.cat; sourceTree = "<group>"; };
+		EA7FA0C116F8C95C0048A270 /* Xbox_NUI_Camera.inf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Xbox_NUI_Camera.inf; sourceTree = "<group>"; };
+		EA7FA0C416F8C95C0048A270 /* libusb0.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.dll; sourceTree = "<group>"; };
+		EA7FA0C516F8C95C0048A270 /* libusb0.sys */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.sys; sourceTree = "<group>"; };
+		EA7FA0C716F8C95C0048A270 /* libusb0.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.dll; sourceTree = "<group>"; };
+		EA7FA0C816F8C95C0048A270 /* libusb0.sys */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.sys; sourceTree = "<group>"; };
+		EA7FA0C916F8C95C0048A270 /* libusb-win32-bin-README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "libusb-win32-bin-README.txt"; sourceTree = "<group>"; };
+		EA7FA0CC16F8C95C0048A270 /* installer_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = installer_license.txt; sourceTree = "<group>"; };
+		EA7FA0CE16F8C95C0048A270 /* libusb0.sys */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0.sys; sourceTree = "<group>"; };
+		EA7FA0CF16F8C95C0048A270 /* libusb0_x86.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = libusb0_x86.dll; sourceTree = "<group>"; };
+		EA7FA0D016F8C95C0048A270 /* Xbox_NUI_Motor.cat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xbox_NUI_Motor.cat; sourceTree = "<group>"; };
+		EA7FA0D116F8C95C0048A270 /* Xbox_NUI_Motor.inf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Xbox_NUI_Motor.inf; sourceTree = "<group>"; };
+		EA7FA0D216F8C95C0048A270 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		EA7FA0D316F8C95C0048A270 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		EA7FA0D516F8C95C0048A270 /* ofxBase3DVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBase3DVideo.h; sourceTree = "<group>"; };
+		EA7FA0D616F8C95C0048A270 /* ofxKinect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxKinect.cpp; sourceTree = "<group>"; };
+		EA7FA0D716F8C95C0048A270 /* ofxKinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxKinect.h; sourceTree = "<group>"; };
 		EADBC7D816766A4B00B579EA /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		EADBC7D916766A4B00B579EA /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		EADBC7DA16766A4B00B579EA /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
@@ -195,12 +327,6 @@
 		EADBC80716766AE700B579EA /* contourutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contourutils.h; sourceTree = "<group>"; };
 		EADBC80816766AE700B579EA /* KinectOrCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectOrCamera.cpp; sourceTree = "<group>"; };
 		EADBC80916766AE700B579EA /* KinectOrCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectOrCamera.h; sourceTree = "<group>"; };
-		EADBC82316766B6C00B579EA /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
-		EADBC82416766B6C00B579EA /* Sample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sample.cpp; sourceTree = "<group>"; };
-		EADBC82516766B6C00B579EA /* Sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample.h; sourceTree = "<group>"; };
-		EADBC82616766B6C00B579EA /* Sampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sampler.cpp; sourceTree = "<group>"; };
-		EADBC82716766B6C00B579EA /* Sampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sampler.h; sourceTree = "<group>"; };
-		EADBC82816766B6C00B579EA /* Vision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vision.h; sourceTree = "<group>"; };
 		EADBC82916766B6C00B579EA /* WavFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WavFile.h; sourceTree = "<group>"; };
 		EADBC837167679B500B579EA /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
 		EADBC838167679B500B579EA /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
@@ -208,7 +334,6 @@
 		EADBC83A167679B500B579EA /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		EADBC83C167679B500B579EA /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		EADBC83D167679B500B579EA /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
-		EADBC84216767A7700B579EA /* ofxKinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxKinect.h; sourceTree = "<group>"; };
 		EADBC84516767D1F00B579EA /* rtAudio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = rtAudio.a; path = ../../../../libs/rtAudio/lib/osx/rtAudio.a; sourceTree = "<group>"; };
 		EADBC84716767D8300B579EA /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = ../../../../libs/fmodex/lib/osx/libfmodex.dylib; sourceTree = "<group>"; };
 		a0399084868e7cafb7e3d8e975d55095 /* retina.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = retina.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/contrib/retina.hpp; sourceTree = SOURCE_ROOT; };
@@ -282,6 +407,8 @@
 				E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */,
 				EADBC84616767D1F00B579EA /* rtAudio.a in Frameworks */,
 				EADBC84816767D8300B579EA /* libfmodex.dylib in Frameworks */,
+				EA7FA0E216F8C95D0048A270 /* freenect.lib in Frameworks */,
+				EA7FA0E616F8C95D0048A270 /* usb-1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +584,8 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				EA7FA06916F8C95C0048A270 /* ofxKinect */,
+				EA7F9FB116F8C8AA0048A270 /* xmlgui */,
 				EADBC835167679B500B579EA /* ofxXmlSettings */,
 				a0b90d3b0adb9c1716816714bf7f212b /* ofxOpenCv */,
 			);
@@ -531,14 +660,7 @@
 				EADBC7D916766A4B00B579EA /* testApp.h */,
 				EADBC7DA16766A4B00B579EA /* testApp.mm */,
 				EADBC84716767D8300B579EA /* libfmodex.dylib */,
-				EADBC82316766B6C00B579EA /* Particle.h */,
-				EADBC82416766B6C00B579EA /* Sample.cpp */,
-				EADBC82516766B6C00B579EA /* Sample.h */,
-				EADBC82616766B6C00B579EA /* Sampler.cpp */,
-				EADBC84216767A7700B579EA /* ofxKinect.h */,
 				EADBC84516767D1F00B579EA /* rtAudio.a */,
-				EADBC82716766B6C00B579EA /* Sampler.h */,
-				EADBC82816766B6C00B579EA /* Vision.h */,
 				EADBC82916766B6C00B579EA /* WavFile.h */,
 			);
 			path = src;
@@ -551,6 +673,417 @@
 				E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */,
 			);
 			name = openFrameworks;
+			sourceTree = "<group>";
+		};
+		EA7F9FB116F8C8AA0048A270 /* xmlgui */ = {
+			isa = PBXGroup;
+			children = (
+				EA7F9FB216F8C8AA0048A270 /* src */,
+			);
+			name = xmlgui;
+			path = ../addons/xmlgui;
+			sourceTree = "<group>";
+		};
+		EA7F9FB216F8C8AA0048A270 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EA7F9FB316F8C8AA0048A270 /* container */,
+				EA7F9FB916F8C8AA0048A270 /* controls */,
+				EA7F9FDB16F8C8AA0048A270 /* editor */,
+				EA7F9FE516F8C8AA0048A270 /* framework */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EA7F9FB316F8C8AA0048A270 /* container */ = {
+			isa = PBXGroup;
+			children = (
+				EA7F9FB416F8C8AA0048A270 /* Parameterized.cpp */,
+				EA7F9FB516F8C8AA0048A270 /* Parameterized.h */,
+				EA7F9FB616F8C8AA0048A270 /* ParameterizedGui.h */,
+				EA7F9FB716F8C8AA0048A270 /* SimpleGui.cpp */,
+				EA7F9FB816F8C8AA0048A270 /* SimpleGui.h */,
+			);
+			path = container;
+			sourceTree = "<group>";
+		};
+		EA7F9FB916F8C8AA0048A270 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				EA7F9FBA16F8C8AA0048A270 /* ColourPicker.h */,
+				EA7F9FBB16F8C8AA0048A270 /* Contour.h */,
+				EA7F9FBC16F8C8AA0048A270 /* DoubleField.h */,
+				EA7F9FBD16F8C8AA0048A270 /* Drawable.h */,
+				EA7F9FBE16F8C8AA0048A270 /* FileField.h */,
+				EA7F9FBF16F8C8AA0048A270 /* FloatField.h */,
+				EA7F9FC016F8C8AA0048A270 /* FPSCounter.h */,
+				EA7F9FC116F8C8AA0048A270 /* Grid.h */,
+				EA7F9FC216F8C8AA0048A270 /* HorizontalRule.h */,
+				EA7F9FC316F8C8AA0048A270 /* IntField.h */,
+				EA7F9FC416F8C8AA0048A270 /* IntSlider.h */,
+				EA7F9FC516F8C8AA0048A270 /* Keyboard.h */,
+				EA7F9FC616F8C8AA0048A270 /* Knob.h */,
+				EA7F9FC716F8C8AA0048A270 /* LabeledControl.h */,
+				EA7F9FC816F8C8AA0048A270 /* List.h */,
+				EA7F9FC916F8C8AA0048A270 /* Menu.h */,
+				EA7F9FCA16F8C8AA0048A270 /* MenuBar.h */,
+				EA7F9FCB16F8C8AA0048A270 /* MenuItem.h */,
+				EA7F9FCC16F8C8AA0048A270 /* Meter.h */,
+				EA7F9FCD16F8C8AA0048A270 /* Pane.h */,
+				EA7F9FCE16F8C8AA0048A270 /* Panner.h */,
+				EA7F9FCF16F8C8AA0048A270 /* PushButton.h */,
+				EA7F9FD016F8C8AA0048A270 /* RangeSlider.h */,
+				EA7F9FD116F8C8AA0048A270 /* SegmentedControl.h */,
+				EA7F9FD216F8C8AA0048A270 /* Slider.h */,
+				EA7F9FD316F8C8AA0048A270 /* Slider2D.h */,
+				EA7F9FD416F8C8AA0048A270 /* SliderBank.h */,
+				EA7F9FD516F8C8AA0048A270 /* Spinner.h */,
+				EA7F9FD616F8C8AA0048A270 /* Text.h */,
+				EA7F9FD716F8C8AA0048A270 /* TextField.h */,
+				EA7F9FD816F8C8AA0048A270 /* Title.h */,
+				EA7F9FD916F8C8AA0048A270 /* Toggle.h */,
+				EA7F9FDA16F8C8AA0048A270 /* VU.h */,
+			);
+			path = controls;
+			sourceTree = "<group>";
+		};
+		EA7F9FDB16F8C8AA0048A270 /* editor */ = {
+			isa = PBXGroup;
+			children = (
+				EA7F9FDC16F8C8AA0048A270 /* Editor.cpp */,
+				EA7F9FDD16F8C8AA0048A270 /* Editor.h */,
+				EA7F9FDE16F8C8AA0048A270 /* Inspector.cpp */,
+				EA7F9FDF16F8C8AA0048A270 /* Inspector.h */,
+			);
+			path = editor;
+			sourceTree = "<group>";
+		};
+		EA7F9FE516F8C8AA0048A270 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				EA7F9FE616F8C8AA0048A270 /* Container.cpp */,
+				EA7F9FE716F8C8AA0048A270 /* Container.h */,
+				EA7F9FE816F8C8AA0048A270 /* Control.cpp */,
+				EA7F9FE916F8C8AA0048A270 /* Control.h */,
+				EA7F9FEA16F8C8AA0048A270 /* Controls.cpp */,
+				EA7F9FEB16F8C8AA0048A270 /* Event.h */,
+				EA7F9FEC16F8C8AA0048A270 /* GridSequence.h */,
+				EA7F9FED16F8C8AA0048A270 /* Gui.cpp */,
+				EA7F9FEE16F8C8AA0048A270 /* Gui.h */,
+				EA7F9FEF16F8C8AA0048A270 /* Instantiator.cpp */,
+				EA7F9FF016F8C8AA0048A270 /* Instantiator.h */,
+				EA7F9FF116F8C8AA0048A270 /* Listener.h */,
+				EA7F9FF216F8C8AA0048A270 /* ofGuiEventDispatcher.cpp */,
+				EA7F9FF316F8C8AA0048A270 /* ofGuiEventDispatcher.h */,
+				EA7F9FF416F8C8AA0048A270 /* ofxXmlGui.h */,
+				EA7F9FF516F8C8AA0048A270 /* ParameterInfo.h */,
+				EA7F9FF616F8C8AA0048A270 /* Resources.cpp */,
+				EA7F9FF716F8C8AA0048A270 /* Resources.h */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		EA7FA06916F8C95C0048A270 /* ofxKinect */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA06A16F8C95C0048A270 /* .gitignore */,
+				EA7FA08416F8C95C0048A270 /* libs */,
+				EA7FA0D216F8C95C0048A270 /* LICENSE.txt */,
+				EA7FA0D316F8C95C0048A270 /* README.markdown */,
+				EA7FA0D416F8C95C0048A270 /* src */,
+			);
+			name = ofxKinect;
+			path = ../addons/ofxKinect;
+			sourceTree = "<group>";
+		};
+		EA7FA08416F8C95C0048A270 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA08516F8C95C0048A270 /* libfreenect */,
+				EA7FA09916F8C95C0048A270 /* libusb */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		EA7FA08516F8C95C0048A270 /* libfreenect */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA08616F8C95C0048A270 /* APACHE20 */,
+				EA7FA08716F8C95C0048A270 /* cameras.c */,
+				EA7FA08816F8C95C0048A270 /* cameras.h */,
+				EA7FA08916F8C95C0048A270 /* CONTRIB */,
+				EA7FA08A16F8C95C0048A270 /* core.c */,
+				EA7FA08B16F8C95C0048A270 /* freenect_internal.h */,
+				EA7FA08C16F8C95C0048A270 /* GPL2 */,
+				EA7FA08D16F8C95C0048A270 /* lib */,
+				EA7FA09116F8C95C0048A270 /* libfreenect-registration.h */,
+				EA7FA09216F8C95C0048A270 /* libfreenect.h */,
+				EA7FA09316F8C95C0048A270 /* libfreenect.pc.in */,
+				EA7FA09416F8C95C0048A270 /* registration.c */,
+				EA7FA09516F8C95C0048A270 /* registration.h */,
+				EA7FA09616F8C95C0048A270 /* tilt.c */,
+				EA7FA09716F8C95C0048A270 /* usb_libusb10.c */,
+				EA7FA09816F8C95C0048A270 /* usb_libusb10.h */,
+			);
+			path = libfreenect;
+			sourceTree = "<group>";
+		};
+		EA7FA08D16F8C95C0048A270 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA08E16F8C95C0048A270 /* vs2010 */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		EA7FA08E16F8C95C0048A270 /* vs2010 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA08F16F8C95C0048A270 /* freenect.dll */,
+				EA7FA09016F8C95C0048A270 /* freenect.lib */,
+			);
+			path = vs2010;
+			sourceTree = "<group>";
+		};
+		EA7FA09916F8C95C0048A270 /* libusb */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA09A16F8C95C0048A270 /* osx */,
+				EA7FA0A016F8C95C0048A270 /* win */,
+			);
+			path = libusb;
+			sourceTree = "<group>";
+		};
+		EA7FA09A16F8C95C0048A270 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA09B16F8C95C0048A270 /* include */,
+				EA7FA09E16F8C95C0048A270 /* libs */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		EA7FA09B16F8C95C0048A270 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA09C16F8C95C0048A270 /* libusb-1.0 */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		EA7FA09C16F8C95C0048A270 /* libusb-1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA09D16F8C95C0048A270 /* libusb.h */,
+			);
+			path = "libusb-1.0";
+			sourceTree = "<group>";
+		};
+		EA7FA09E16F8C95C0048A270 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA09F16F8C95C0048A270 /* usb-1.0.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		EA7FA0A016F8C95C0048A270 /* win */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0A116F8C95C0048A270 /* inf */,
+			);
+			path = win;
+			sourceTree = "<group>";
+		};
+		EA7FA0A116F8C95C0048A270 /* inf */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0A216F8C95C0048A270 /* xbox nui audio */,
+				EA7FA0B216F8C95C0048A270 /* xbox nui camera */,
+				EA7FA0C216F8C95C0048A270 /* xbox nui motor */,
+			);
+			path = inf;
+			sourceTree = "<group>";
+		};
+		EA7FA0A216F8C95C0048A270 /* xbox nui audio */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0A316F8C95C0048A270 /* amd64 */,
+				EA7FA0A616F8C95C0048A270 /* ia64 */,
+				EA7FA0A916F8C95C0048A270 /* libusb-win32-bin-README.txt */,
+				EA7FA0AA16F8C95C0048A270 /* license */,
+				EA7FA0AD16F8C95C0048A270 /* x86 */,
+				EA7FA0B016F8C95C0048A270 /* Xbox_NUI_Audio.cat */,
+				EA7FA0B116F8C95C0048A270 /* Xbox_NUI_Audio.inf */,
+			);
+			path = "xbox nui audio";
+			sourceTree = "<group>";
+		};
+		EA7FA0A316F8C95C0048A270 /* amd64 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0A416F8C95C0048A270 /* libusb0.dll */,
+				EA7FA0A516F8C95C0048A270 /* libusb0.sys */,
+			);
+			path = amd64;
+			sourceTree = "<group>";
+		};
+		EA7FA0A616F8C95C0048A270 /* ia64 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0A716F8C95C0048A270 /* libusb0.dll */,
+				EA7FA0A816F8C95C0048A270 /* libusb0.sys */,
+			);
+			path = ia64;
+			sourceTree = "<group>";
+		};
+		EA7FA0AA16F8C95C0048A270 /* license */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0AB16F8C95C0048A270 /* libusb-win32 */,
+			);
+			path = license;
+			sourceTree = "<group>";
+		};
+		EA7FA0AB16F8C95C0048A270 /* libusb-win32 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0AC16F8C95C0048A270 /* installer_license.txt */,
+			);
+			path = "libusb-win32";
+			sourceTree = "<group>";
+		};
+		EA7FA0AD16F8C95C0048A270 /* x86 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0AE16F8C95C0048A270 /* libusb0.sys */,
+				EA7FA0AF16F8C95C0048A270 /* libusb0_x86.dll */,
+			);
+			path = x86;
+			sourceTree = "<group>";
+		};
+		EA7FA0B216F8C95C0048A270 /* xbox nui camera */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0B316F8C95C0048A270 /* amd64 */,
+				EA7FA0B616F8C95C0048A270 /* ia64 */,
+				EA7FA0B916F8C95C0048A270 /* libusb-win32-bin-README.txt */,
+				EA7FA0BA16F8C95C0048A270 /* license */,
+				EA7FA0BD16F8C95C0048A270 /* x86 */,
+				EA7FA0C016F8C95C0048A270 /* Xbox_NUI_Camera.cat */,
+				EA7FA0C116F8C95C0048A270 /* Xbox_NUI_Camera.inf */,
+			);
+			path = "xbox nui camera";
+			sourceTree = "<group>";
+		};
+		EA7FA0B316F8C95C0048A270 /* amd64 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0B416F8C95C0048A270 /* libusb0.dll */,
+				EA7FA0B516F8C95C0048A270 /* libusb0.sys */,
+			);
+			path = amd64;
+			sourceTree = "<group>";
+		};
+		EA7FA0B616F8C95C0048A270 /* ia64 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0B716F8C95C0048A270 /* libusb0.dll */,
+				EA7FA0B816F8C95C0048A270 /* libusb0.sys */,
+			);
+			path = ia64;
+			sourceTree = "<group>";
+		};
+		EA7FA0BA16F8C95C0048A270 /* license */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0BB16F8C95C0048A270 /* libusb-win32 */,
+			);
+			path = license;
+			sourceTree = "<group>";
+		};
+		EA7FA0BB16F8C95C0048A270 /* libusb-win32 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0BC16F8C95C0048A270 /* installer_license.txt */,
+			);
+			path = "libusb-win32";
+			sourceTree = "<group>";
+		};
+		EA7FA0BD16F8C95C0048A270 /* x86 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0BE16F8C95C0048A270 /* libusb0.sys */,
+				EA7FA0BF16F8C95C0048A270 /* libusb0_x86.dll */,
+			);
+			path = x86;
+			sourceTree = "<group>";
+		};
+		EA7FA0C216F8C95C0048A270 /* xbox nui motor */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0C316F8C95C0048A270 /* amd64 */,
+				EA7FA0C616F8C95C0048A270 /* ia64 */,
+				EA7FA0C916F8C95C0048A270 /* libusb-win32-bin-README.txt */,
+				EA7FA0CA16F8C95C0048A270 /* license */,
+				EA7FA0CD16F8C95C0048A270 /* x86 */,
+				EA7FA0D016F8C95C0048A270 /* Xbox_NUI_Motor.cat */,
+				EA7FA0D116F8C95C0048A270 /* Xbox_NUI_Motor.inf */,
+			);
+			path = "xbox nui motor";
+			sourceTree = "<group>";
+		};
+		EA7FA0C316F8C95C0048A270 /* amd64 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0C416F8C95C0048A270 /* libusb0.dll */,
+				EA7FA0C516F8C95C0048A270 /* libusb0.sys */,
+			);
+			path = amd64;
+			sourceTree = "<group>";
+		};
+		EA7FA0C616F8C95C0048A270 /* ia64 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0C716F8C95C0048A270 /* libusb0.dll */,
+				EA7FA0C816F8C95C0048A270 /* libusb0.sys */,
+			);
+			path = ia64;
+			sourceTree = "<group>";
+		};
+		EA7FA0CA16F8C95C0048A270 /* license */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0CB16F8C95C0048A270 /* libusb-win32 */,
+			);
+			path = license;
+			sourceTree = "<group>";
+		};
+		EA7FA0CB16F8C95C0048A270 /* libusb-win32 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0CC16F8C95C0048A270 /* installer_license.txt */,
+			);
+			path = "libusb-win32";
+			sourceTree = "<group>";
+		};
+		EA7FA0CD16F8C95C0048A270 /* x86 */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0CE16F8C95C0048A270 /* libusb0.sys */,
+				EA7FA0CF16F8C95C0048A270 /* libusb0_x86.dll */,
+			);
+			path = x86;
+			sourceTree = "<group>";
+		};
+		EA7FA0D416F8C95C0048A270 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FA0D516F8C95C0048A270 /* ofxBase3DVideo.h */,
+				EA7FA0D616F8C95C0048A270 /* ofxKinect.cpp */,
+				EA7FA0D716F8C95C0048A270 /* ofxKinect.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		EADBC7DD16766AE700B579EA /* framework */ = {
@@ -783,7 +1316,7 @@
 /* Begin PBXProject section */
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "Somasonic Harp Mac" */;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "Somasonic Soundbox Mac" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -858,12 +1391,27 @@
 				EADBC81616766AE700B579EA /* util.cpp in Sources */,
 				EADBC81716766AE700B579EA /* contourutils.cpp in Sources */,
 				EADBC81816766AE700B579EA /* KinectOrCamera.cpp in Sources */,
-				EADBC82A16766B6C00B579EA /* Sample.cpp in Sources */,
-				EADBC82B16766B6C00B579EA /* Sampler.cpp in Sources */,
 				EADBC83E167679B500B579EA /* tinyxml.cpp in Sources */,
 				EADBC83F167679B500B579EA /* tinyxmlerror.cpp in Sources */,
 				EADBC840167679B500B579EA /* tinyxmlparser.cpp in Sources */,
 				EADBC841167679B500B579EA /* ofxXmlSettings.cpp in Sources */,
+				EA7F9FF816F8C8AA0048A270 /* Parameterized.cpp in Sources */,
+				EA7F9FF916F8C8AA0048A270 /* SimpleGui.cpp in Sources */,
+				EA7F9FFA16F8C8AA0048A270 /* Editor.cpp in Sources */,
+				EA7F9FFB16F8C8AA0048A270 /* Inspector.cpp in Sources */,
+				EA7F9FFD16F8C8AA0048A270 /* Container.cpp in Sources */,
+				EA7F9FFE16F8C8AA0048A270 /* Control.cpp in Sources */,
+				EA7F9FFF16F8C8AA0048A270 /* Controls.cpp in Sources */,
+				EA7FA00016F8C8AA0048A270 /* Gui.cpp in Sources */,
+				EA7FA00116F8C8AA0048A270 /* Instantiator.cpp in Sources */,
+				EA7FA00216F8C8AA0048A270 /* ofGuiEventDispatcher.cpp in Sources */,
+				EA7FA00316F8C8AA0048A270 /* Resources.cpp in Sources */,
+				EA7FA0E016F8C95D0048A270 /* cameras.c in Sources */,
+				EA7FA0E116F8C95D0048A270 /* core.c in Sources */,
+				EA7FA0E316F8C95D0048A270 /* registration.c in Sources */,
+				EA7FA0E416F8C95D0048A270 /* tilt.c in Sources */,
+				EA7FA0E516F8C95D0048A270 /* usb_libusb10.c in Sources */,
+				EA7FA0E716F8C95D0048A270 /* ofxKinect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,6 +1469,7 @@
 					../../../addons/ofxOpenCv/libs/opencv/lib,
 					../../../addons/ofxOpenCv/libs/opencv/lib/osx,
 					../../../addons/ofxOpenCv/src,
+					../addons/ofxKinect/libs/libusb/osx/include,
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
@@ -979,6 +1528,7 @@
 					../../../addons/ofxOpenCv/libs/opencv/lib,
 					../../../addons/ofxOpenCv/libs/opencv/lib/osx,
 					../../../addons/ofxOpenCv/src,
+					../addons/ofxKinect/libs/libusb/osx/include,
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
@@ -1100,9 +1650,13 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/rtAudio/lib/osx\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../libs/fmodex/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../addons/ofxKinect/libs/libfreenect/lib/vs2010\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../addons/ofxKinect/libs/libusb/osx/libs\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
@@ -1215,9 +1769,13 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/rtAudio/lib/osx\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../libs/fmodex/lib/osx\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../addons/ofxKinect/libs/libfreenect/lib/vs2010\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../addons/ofxKinect/libs/libusb/osx/libs\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1227,7 +1785,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "Somasonic Harp Mac" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "Somasonic Soundbox Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,

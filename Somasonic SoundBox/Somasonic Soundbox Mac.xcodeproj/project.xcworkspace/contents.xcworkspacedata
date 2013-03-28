@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Somasonic Harp Mac.xcodeproj">
+      location = "self:Somasonic Soundbox Mac.xcodeproj">
    </FileRef>
 </Workspace>
