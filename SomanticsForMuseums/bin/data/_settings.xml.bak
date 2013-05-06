@@ -1,0 +1,14 @@
+<controls>
+    <Toggle_Flip_Image>
+        <name>Flip Image</name>
+        <value>0</value>
+    </Toggle_Flip_Image>
+    <Toggle_Flip_Camera>
+        <name>Flip Camera</name>
+        <value>1</value>
+    </Toggle_Flip_Camera>
+    <SliderFloat_depth_threshold>
+        <name>depth threshold</name>
+        <value>104.550003</value>
+    </SliderFloat_depth_threshold>
+</controls>
