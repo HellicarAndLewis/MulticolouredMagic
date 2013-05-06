@@ -231,6 +231,8 @@
 		EA7FA05116F8C8FE0048A270 /* ParameterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterInfo.h; sourceTree = "<group>"; };
 		EA7FA05216F8C8FE0048A270 /* Resources.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resources.cpp; sourceTree = "<group>"; };
 		EA7FA05316F8C8FE0048A270 /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
+		EACF8DB11737F34700A68F1D /* RecordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordButton.h; sourceTree = "<group>"; };
+		EACF8DB21737F5F100A68F1D /* SamplerGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplerGui.h; sourceTree = "<group>"; };
 		EADBC7D816766A4B00B579EA /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		EADBC7D916766A4B00B579EA /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		EADBC7DA16766A4B00B579EA /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
@@ -600,12 +602,14 @@
 			children = (
 				EADBC7DD16766AE700B579EA /* framework */,
 				EADBC7D816766A4B00B579EA /* main.mm */,
+				EACF8DB11737F34700A68F1D /* RecordButton.h */,
 				EADBC7D916766A4B00B579EA /* testApp.h */,
 				EADBC7DA16766A4B00B579EA /* testApp.mm */,
 				EADBC84716767D8300B579EA /* libfmodex.dylib */,
 				EADBC82316766B6C00B579EA /* Particle.h */,
 				EADBC82416766B6C00B579EA /* Sample.cpp */,
 				EADBC82516766B6C00B579EA /* Sample.h */,
+				EACF8DB21737F5F100A68F1D /* SamplerGui.h */,
 				EADBC82616766B6C00B579EA /* Sampler.cpp */,
 				EADBC84216767A7700B579EA /* ofxKinect.h */,
 				EADBC84516767D1F00B579EA /* rtAudio.a */,

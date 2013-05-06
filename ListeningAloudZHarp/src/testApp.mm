@@ -40,31 +40,14 @@ void testApp::setup(){
 	centerer.setup(WIDTH, HEIGHT);
 	setupGraphics();
 	setupOrientation();
-	
-#ifdef TARGET_OF_IPHONE
-	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
-	// register touch events
-	ofAddListener(ofEvents().touchDown, this, &testApp::touchDown);
-	ofAddListener(ofEvents().touchMoved, this, &testApp::touchMoved);
-	ofAddListener(ofEvents().touchUp, this, &testApp::touchUp);
 
-	// initialize the accelerometer
-	ofxAccelerometer.setup();
-	
-	//iPhoneAlerts will be sent to this.
-	ofxiPhoneAlerts.addListener(this);
-
-#else
-//	setDataPathRootToAppContents(appName);
-
-#endif
 	
 	
 	ofSetFrameRate(60);
 	sampler.init();
 	
 
-	ofSoundStreamSetup(2, 0, this, 44100, 512, 4);
+	ofSoundStreamSetup(2, 1, this, 44100, 512, 4);
 	 
 }
 
@@ -99,12 +82,11 @@ void testApp::exit(){
 
 //--------------------------------------------------------------
 void testApp::audioOut(float * output, int bufferSize, int nChannels){
-	
+	printf(".\n");
 	sampler.audioRequested (output,bufferSize,nChannels);
 	
 }
 void testApp::audioIn(float * output, int bufferSize, int nChannels){
-	
 	sampler.audioReceived(output,bufferSize,nChannels);
 	
 }

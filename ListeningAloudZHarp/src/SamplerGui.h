@@ -67,9 +67,9 @@ public:
 	
 	int useYAxisAsVolume;
 	int showGridLines;
-	RecordButton recordButton;
+	RecordButton *recordButton;
 	void setup() {
-
+		recordButton = new RecordButton();
 		useYAxisAsVolume = 0;
 		showGridLines = 0;
 		holdCount = 0;
@@ -95,7 +95,7 @@ public:
 		
 		gui.addSegmented("Use Y Axis as Volume", useYAxisAsVolume, "NO|YES")->size(90, 40);
 		
-		gui.addChild(&recordButton);
+		gui.addChild(recordButton);
 		gui.addTitle("Appearance");
 		gui.addSegmented("Show Camera", showCamera, "NO|YES")->size(90, 40);
 		gui.addSegmented("Show Grid Lines", showGridLines, "NO|YES")->size(90, 40);
@@ -123,8 +123,8 @@ public:
 	
 	void controlChanged(xmlgui::Event *e) {
 		if(e->control->id=="OK") {
-			ofSoundStreamStop();
-			ofSoundStreamSetup(2, 0, ofGetAppPtr(), 44100, 512, 4);
+			//ofSoundStreamStop();
+			//ofSoundStreamSetup(2, 1, ofGetAppPtr(), 44100, 512, 4);
 			gui.setEnabled(false);
 		}
 		if(e->control->id=="Sound") {
@@ -155,9 +155,10 @@ public:
 			}
 			
 			if(holdCount>MAX_HOLD_COUNT) {
+				//printf("Here\n");
 				gui.setEnabled(true);
-				ofSoundStreamStop();
-				ofSoundStreamSetup(0, 1, ofGetAppPtr(), 44100, 512, 4);
+				//ofSoundStreamStop();
+				//ofSoundStreamSetup(0, 1, ofGetAppPtr(), 44100, 512, 4);
 				holdCount = 0;
 			}
 		}
