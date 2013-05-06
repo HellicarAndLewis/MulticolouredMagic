@@ -96,6 +96,7 @@ protected:
 	
 	bool isReactickle(Reactickle *reactickle);
 	int currOrientation;
+	void launch(int i);
 };
 
 
