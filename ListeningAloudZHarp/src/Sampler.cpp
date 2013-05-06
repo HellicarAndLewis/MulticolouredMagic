@@ -108,7 +108,7 @@ void Sampler::init(){
 	vision.setup();
 	gui.setup();
 	
-	gui.recordButton.recListener = this;
+	gui.recordButton->recListener = this;
 }
 
 
@@ -203,15 +203,18 @@ void Sampler::update() {
 	}*/
 }
 void Sampler::recordingStarted() {
+	printf("Record start\n");
 	controlMutex.lock();
 	recording = true;
 	recordPos = 0;
 	controlMutex.unlock();
 }
 void Sampler::recordingEnded() {
+	printf("Record end\n");
 	controlMutex.lock();
 	recording = false;
 	sample.load(recordBuffer, recordPos);
+	printf("Loaded sample of %d length\n", recordPos);
 	controlMutex.unlock();
 	noteOffset = -12;
 }
@@ -279,7 +282,8 @@ void Sampler::audioRequested (float * output, int bufferSize, int nChannels) {
 //--------------------------------------------------------------
 void Sampler::audioReceived 	(float * input, int bufferSize, int nChannels){
 
-
+	//if(recording) printf("We're recording\n");
+	//else printf("Not record\n");
 	controlMutex.lock();
 	for(int i = 0; i < bufferSize; i++) {
 

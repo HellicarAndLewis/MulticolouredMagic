@@ -108,7 +108,7 @@ void Sampler::init(){
 	vision.setup();
 	gui.setup();
 	
-	gui.recordButton.recListener = this;
+	gui.recordButton->recListener = this;
 }
 
 

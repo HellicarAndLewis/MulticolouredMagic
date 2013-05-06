@@ -67,9 +67,9 @@ public:
 	
 	int useYAxisAsVolume;
 	int showGridLines;
-	RecordButton recordButton;
+	RecordButton *recordButton;
 	void setup() {
-
+		recordButton = new RecordButton();
 		useYAxisAsVolume = 0;
 		showGridLines = 0;
 		holdCount = 0;
@@ -95,7 +95,7 @@ public:
 		
 		gui.addSegmented("Use Y Axis as Volume", useYAxisAsVolume, "NO|YES")->size(90, 40);
 		
-		gui.addChild(&recordButton);
+		gui.addChild(recordButton);
 		gui.addTitle("Appearance");
 		gui.addSegmented("Show Camera", showCamera, "NO|YES")->size(90, 40);
 		gui.addSegmented("Show Grid Lines", showGridLines, "NO|YES")->size(90, 40);
