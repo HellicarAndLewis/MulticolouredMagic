@@ -140,9 +140,11 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-	// this is 3 minutes in frames - how long between switches
-	int interval = 3*60*30;
-
+	// this is 3 minutes in frames - how long between switches, 3 minutes 60 seconds 30 fps
+    
+	int interval = 3*60*(int)ofGetFrameRate();
+	//int interval = 5*ofGetFrameRate(); //change every 5 seconds
+    
 	if(ofGetFrameNum()%interval==0) {
 		launch((CURR_REACTICKLE+1)%NUM_REACTICLES);
 	}
@@ -179,6 +181,8 @@ void testApp::update(){
 //#endif
 		currentApp->update();
 	}
+    
+    ofHideCursor();//hide mouse
 	
 }
 
@@ -206,9 +210,9 @@ void testApp::draw(){
 	
 	drawCurrentReactickle();
 	
-	if(currentApp!=mainMenu) {
-		backButton.draw();
-	}
+//	if(currentApp!=mainMenu) {
+//		backButton.draw();
+//	}
 	
 	// do the brightness control by just drawing a black rectangle over
 	// the whole screen
