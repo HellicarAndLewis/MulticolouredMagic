@@ -166,7 +166,6 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 		currentApp = NULL;
 	}
 
-
 	// start the new one
 	currentApp = reactickle;
 	if(isReactickle(currentApp)) {
@@ -177,19 +176,14 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 	} else if(currentApp==mainMenu) {
 
 		// only crossfade if we're fading out of a reactickle
-		if(
-		   isReactickle(lastApp)
-		   ) {
-//			printf("Should be crossfading here\n");
+		if(isReactickle(lastApp)) {
 			startCrossFade(false);
 			backButton.setHoldMode(false);
-		} else {
-	//		printf("HERE\n");
 		}
 	} else {
 		// not a reactickle or main menu
 		backButton.setHoldMode(false);
-//		printf("about or settings\n");
+
 	}
 
 

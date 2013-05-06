@@ -28,6 +28,14 @@
 
 #include "testApp.h"
 #include "MagicShapes.h"
+#include "Corridors.h"
+#include "Silhouettes.h"
+#include "Windmills.h"
+#include "Painter.h"
+#include "Sparkles.h"
+#include "Mirror.h"
+#include "Paths.h"
+#include "Tunnel.h"
 
 bool flipX = true;
 bool flipImage = false;
@@ -39,6 +47,32 @@ bool flipImage = false;
 #else
 #include <AVFoundation/AVFoundation.h>
 #endif
+
+int NUM_REACTICLES = 10;
+int CURR_REACTICKLE = 0;
+void testApp::launch(int i) {
+	CURR_REACTICKLE = i;
+	Reactickle *r = NULL;
+	switch(i) {
+		case 0: r = new Corridors(); break;
+		case 1: r = new Silhouettes(); break;
+		case 2: r = new Windmills(); break;
+		case 3: r = new Painter(); break;
+		case 4: r = new Sparkles(); break;
+		case 5: r = new Mirror(MIRROR_KALEIDOSCOPE); break;
+		case 6: r = new Mirror(MIRROR_AMBIENT_LAPSE); break;
+		case 7: r = new Mirror(MIRROR_SLITSCAN); break;
+		case 8: r = new Paths(); break;
+		case 9: r = new Tunnel(); break;
+	}
+	if(r!=NULL) {
+		
+		switchReactickle(r);
+		crossFadeStartTime = ofGetElapsedTimef() - CROSS_FADE_TIME;
+
+
+	}
+}
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -98,6 +132,7 @@ void testApp::setup(){
 	
 	aboutPage.setup();
 	settingsPage.setup();
+	launch(CURR_REACTICKLE);
 	
 }
 
@@ -105,6 +140,12 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
+	// this is 3 minutes in frames - how long between switches
+	int interval = 3*60*30;
+
+	if(ofGetFrameNum()%interval==0) {
+		launch((CURR_REACTICKLE+1)%NUM_REACTICLES);
+	}
 	updateOrientation();
 	if(currentApp!=NULL) {
 		currentApp->volume = volume;
@@ -233,6 +274,8 @@ void testApp::keyPressed(int key) {
 				setEnabled(true);
 			}
 			break;
+		case 'z':
+			launch((CURR_REACTICKLE+1)%NUM_REACTICLES);
 	}
 #endif
 }
