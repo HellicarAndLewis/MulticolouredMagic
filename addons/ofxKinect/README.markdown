@@ -1,5 +1,5 @@
 ofxKinect
-==================
+=========
 
 Copyright (c) 2010, 2011 ofxKinect Team
 
@@ -19,6 +19,12 @@ ofxKinect is an Open Frameworks addon for the Xbox Kinect that runs on Linux and
 OpenFrameworks is a cross platform open source toolkit for creative coding in C++.
 
 [http://www.openframeworks.cc/](http://www.openframeworks.cc/)
+
+###NOTE: Does not currently support Kinect4Windows Hardware!
+
+If you have a Kinect4Windows device, it will not currently work in ofxKinect as libfreenect does not support them yet. The [fix is in the works](https://github.com/OpenKinect/libfreenect/issues/298).
+
+In the meantime, we suggest you use ofxOpenNI or get an Xbox Kinect instead ...
 
 Installation
 ------------
@@ -69,7 +75,7 @@ Xcode4: Open the Xcode project, select the "ofxKinectExample" scheme, and hit "R
 
 Install the libusb-1.0 library. On Ubuntu, you can do this with:
 <pre>
-sudo apt-get install libusb1.0-0-dev
+sudo apt-get install libusb-1.0-0-dev
 </pre>
 
 Open the Code::Blocks .cbp and hit F9 to build. Optionally, you can build the example with the Makefile.
@@ -88,6 +94,14 @@ SUBSYSTEM=="usb", SYSFS{idVendor}=="045e", SYSFS{idProduct}=="02ad", MODE="0660"
 SUBSYSTEM=="usb", SYSFS{idVendor}=="045e", SYSFS{idProduct}=="02b0", MODE="0660", GROUP="plugdev"
 </pre>
 
+From Ubuntu 12.10 the correct settings for udev rules are:
+<pre>
+SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02ae", MODE="0660", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02ad", MODE="0660", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02b0", MODE="0660", GROUP="plugdev"
+</pre>
+
+
 ### Windows
 
 Precompiled libfreenect Kinect drivers and an example Visual Studio 2010 solution as well as a Codeblocks workspace are included.
@@ -98,6 +112,8 @@ libs/libusb/win/inf
 </pre>
 
 You may need to manually update each driver individually if you've plugged it in before. ofxKinect will not work if the drivers are not installed.
+
+**NOTE**: You cannot use the OpenNI drivers and the libfreenect drivers included with ofxKinect at the same time. You must manually uninstall one and reinstall the other in the Device Manager. Sorry, that's just how it is. :P 
 
 How to Create a New ofxKinect Project
 -----------------------------------------
@@ -220,6 +236,8 @@ ofxKinect supports multiple kinects, however stability is based on the bandwidth
 <pre>
 kinect.init(false, false);  // disable video image (faster fps)
 </pre>
+
+For Kinect4Windows, Microsoft states that only 2 Kinects can be supported on the same USB bus. In practice on OSX, this proves to be the case as, even with the RGB images disabled, there are transfer errors using ofxKinect and 3 Kinects simultaneously. If you need to support many Kinects, you will probably need to add extra USB controllers to your machine …
 
 Developing ofxKinect
 --------------------

@@ -29,21 +29,18 @@
 #pragma once
 
 #include "ofMain.h"
-#ifdef TARGET_OF_IPHONE
-#include "ofxiPhone.h"
-#include "ofxiPhoneExtras.h"
-#endif
 #include "constants.h"
 #include "Centerer.h"
 #include "Sampler.h"
+#include "ofxControlPanel.h"
+#include "ofxBlobTracker.h"
+#include "ofxKinect.h"
 
 class testApp :
 
-#ifdef TARGET_OF_IPHONE
-public ofxiPhoneApp
-#else 
+
+
 public ofBaseApp
-#endif
 {
 	
 	public:
@@ -56,33 +53,40 @@ public ofBaseApp
         void audioOut(float * output, int bufferSize, int nChannels);
 	 void audioIn(float * output, int bufferSize, int nChannels);
 		
-        void touchDown(ofTouchEventArgs & touch);
-        void touchMoved(ofTouchEventArgs & touch);
-        void touchUp(ofTouchEventArgs & touch);
-        void touchDoubleTap(ofTouchEventArgs & touch);
-        void touchCancelled(ofTouchEventArgs & touch);
-
-
-
-#ifndef TARGET_OF_IPHONE
+      
 	void mouseDragged(int x, int y, int button);
 	void mousePressed(int x, int y, int button);
 	void mouseReleased(int x, int y, int button);
-#endif
-	
-	
-        void lostFocus();
-        void gotFocus();
-        void gotMemoryWarning();
-        void deviceOrientationChanged(int newOrientation);
 
 private:
 	void setupGraphics();
-	void setupOrientation();
-	int currOrientation;
-	void updateOrientation();
 	
 	Centerer centerer;
 	Sampler sampler;
+    
+    //bits from joel code...
+    
+    ofxKinect kinect;
+	
+	ofxCvColorImage colorImg;
+	
+	ofxCvGrayscaleImage grayImage; // grayscale depth image
+	ofxCvGrayscaleImage grayThreshNear; // the near thresholded image
+	ofxCvGrayscaleImage grayThreshFar; // the far thresholded image
+    ofxCvGrayscaleImage maskImage;
+	
+	ofxCvContourFinder contourFinder;
+    
+    float _(string name);
+    void maskGrayImage();
+    
+    ofxControlPanel panel;
+    
+    ofxBlobTracker          blobTracker;
+    void blobAdded(ofxBlob &_blob);
+    void blobMoved(ofxBlob &_blob);
+    void blobDeleted(ofxBlob &_blob);
+    
+    void keyPressed(int key);
 };
 

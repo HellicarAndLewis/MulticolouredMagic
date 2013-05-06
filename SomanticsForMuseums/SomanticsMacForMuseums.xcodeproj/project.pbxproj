@@ -1358,8 +1358,8 @@
 			children = (
 				EAD4938113A8B66800D312FE /* main.mm */,
 				EA30E1D413D5C16600E6E26C /* Centerer.h */,
-				EAD4931913A8B4E100D312FE /* ReactickleApp.h */,
 				EA48D25514EAC1110081DF15 /* ReactickleApp.cpp */,
+				EAD4931913A8B4E100D312FE /* ReactickleApp.h */,
 				EAD492F213A8B48D00D312FE /* Reactickle.h */,
 			);
 			path = app;

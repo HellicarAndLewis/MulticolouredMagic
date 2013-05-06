@@ -353,7 +353,7 @@ void Sampler::mouseReleased(int x, int y, int button){
 }
 
 void Sampler::playSound(float volume, float pitch) {
-
+    
 	volume = volume * volume;
 	int note = valueToNote(pitch);
 	if(vision.levels.size()>5) {
@@ -363,17 +363,20 @@ void Sampler::playSound(float volume, float pitch) {
 	sample.trigger(volume);
 	noteLastTime = ofGetElapsedTimef();
 	lastNote = pitch*vision.levels.size();
+    
+    
+}
 
-	// do some stuff here
-	ofPoint pos, force;
-	/*if(vision.getBiggestFlowPoint(&pos, &force)) {
-		// correct the y pos
-		float y = (float)((float)lastMaxLevel+0.5)/vision.levels.size();
-		pos.y = y;
-		spawnParticle(pos, volume);
-	}*/
-	 // TODO: Spawn particles here
-#pragma TODO("SPAWN PARTICLES")
+void Sampler::triggerSound(float volume) {
+    
+	volume = volume * volume;
+	
+	playbackSpeed = 1.f;;
+	sample.trigger(volume);
+	noteLastTime = ofGetElapsedTimef();
+	//lastNote = pitch*vision.levels.size();
+    
+    
 }
 
 void Sampler::spawnParticle(ofPoint pos, float volume) {

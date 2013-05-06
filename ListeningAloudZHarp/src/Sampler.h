@@ -82,6 +82,7 @@ public:
 	
 	// both volume and pitch go from 0 to 1
 	void playSound(float volume, float pitch);
+    void triggerSound(float volume);
 
 	
 	void spawnParticle(ofPoint pos, float volume);
