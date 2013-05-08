@@ -64,15 +64,22 @@ void testApp::setup(){
     ofSetVerticalSync(true);
 	ofSetFrameRate(60);
 	
-    panel.setup("Listening Aloud Z Harp", 0, 0, 1024/2, ofGetHeight());
-	panel.addPanel("Kinect", 4, false);
+    panel.setup("Listening Aloud Z Harp by Cariad Interactive. Press g to hide/show GUI", 0, 0, ofGetWidth(), ofGetHeight());
+	panel.addPanel("Kinect", 5, false);
 	panel.setWhichPanel("Kinect");
-	panel.setWhichColumn(0);
-    //panel.addSlider("Brightness", "BRIGHTNESS", 255,0,255,true); //true means this is an int
+    panel.setWhichColumn(0);
+    panel.addDrawableRect("Video", &kinect.getTextureReference(), 320, 240);
+    panel.addDrawableRect("Kinect", &kinect.getDepthTextureReference(), 320, 240);
+
+    //panel.addDrawableRect("Blobs", &blobTracker., 320, 240); how do we get blob tracker in? Need to do custom draw...
+    panel.setWhichColumn(2);
+    panel.addDrawableRect("Mask", &maskImage, 320, 240);
+    panel.addDrawableRect("Masked Image", &grayImage, 320, 240);
+    panel.setWhichColumn(4);
     //panel.addSlider(string name, string xmlName, float value, float low, float high. bool isanint)
     panel.addSlider("near", "NEAR", 255, 0, 255, true);
     panel.addSlider("far", "FAR", 0, 0, 255, true);
-    panel.addToggle("horizontalFlip", "HORIZONTALFLIP", false);
+    //panel.addToggle("horizontalFlip", "HORIZONTALFLIP", false);
     panel.addSlider("minArea", "MINAREA", 100,1,10000, true);
     panel.addSlider("maxArea", "MAXAREA", 10000,1,10000, true);
     panel.addSlider("nConsidered", "NCONSIDERED", 10,1,50, true);
@@ -107,9 +114,9 @@ void testApp::update(){
 		// load grayscale depth image from the kinect source
 		grayImage.setFromPixels(kinect.getDepthPixels(), kinect.width, kinect.height);
         
-        if(panel.getValueB("HORIZONTALFLIP")){
-            grayImage.mirror(false, true/*bool bFlipVertically, bool bFlipHorizontally*/);
-        }
+//        if(panel.getValueB("HORIZONTALFLIP")){
+//            grayImage.mirror(false, true/*bool bFlipVertically, bool bFlipHorizontally*/);
+//        }
         
         maskGrayImage();
         
@@ -167,12 +174,12 @@ void testApp::draw(){
 	
     ofSetColor(255, 255, 255);
 	
-    // draw from the live kinect
-    kinect.drawDepth(10, 10, 400, 300);
-    kinect.draw(420, 10, 400, 300);
+    // draw from the live kinect, in gui now...
+    //kinect.drawDepth(10, 10, 400, 300);
+    //kinect.draw(420, 10, 400, 300);
     
-    grayImage.draw(10, 320, 400, 300);
-    blobTracker.draw(10, 320, 400, 300);
+    //grayImage.draw(10, 320, 400, 300);
+    //blobTracker.draw(10, 320, 400, 300);
     //contourFinder.draw(10, 320, 400, 300);
     
     /*	// or, instead we can draw each blob individually,
@@ -190,22 +197,22 @@ void testApp::draw(){
      blobTracker[i].centroid.y * ofGetHeight());
      }*/
     
-    maskImage.draw(420, 320, 400,300);
+    //maskImage.draw(420, 320, 400,300);
     
 	
 	// draw instructions
-	ofSetColor(255, 255, 255);
-	stringstream reportStream;
-	reportStream << "accel is: " << ofToString(kinect.getMksAccel().x, 2) << " / "
-	<< ofToString(kinect.getMksAccel().y, 2) << " / "
-	<< ofToString(kinect.getMksAccel().z, 2) << endl
-	<< "press p to switch between images and point cloud, rotate the point cloud with the mouse" << endl
-	<< "set near threshold " << panel.getValueF("NEAR") << endl
-	<< "set far threshold " << panel.getValueF("FAR") << " num blobs found " << contourFinder.nBlobs
-	<< ", fps: " << ofGetFrameRate() << endl
-	<< "press c to close the connection and o to open it again, connection is: " << kinect.isConnected() << endl
-	<< "press 1-5 & 0 to change the led mode (mac/linux only)" << endl;
-	ofDrawBitmapString(reportStream.str(),20,652);
+//	ofSetColor(255, 255, 255);
+//	stringstream reportStream;
+//	reportStream << "accel is: " << ofToString(kinect.getMksAccel().x, 2) << " / "
+//	<< ofToString(kinect.getMksAccel().y, 2) << " / "
+//	<< ofToString(kinect.getMksAccel().z, 2) << endl
+//	<< "press p to switch between images and point cloud, rotate the point cloud with the mouse" << endl
+//	<< "set near threshold " << panel.getValueF("NEAR") << endl
+//	<< "set far threshold " << panel.getValueF("FAR") << " num blobs found " << contourFinder.nBlobs
+//	<< ", fps: " << ofGetFrameRate() << endl
+//	<< "press c to close the connection and o to open it again, connection is: " << kinect.isConnected() << endl
+//	<< "press 1-5 & 0 to change the led mode (mac/linux only)" << endl;
+//	ofDrawBitmapString(reportStream.str(),20,652);
     
     panel.draw();
 }
@@ -227,20 +234,20 @@ void testApp::audioIn(float * output, int bufferSize, int nChannels){
 }
 
 void testApp::mouseDragged(int x, int y, int button) {
-    sampler.mouseDragged(x, y, button);
+    //sampler.mouseDragged(x, y, button);
 	sampler.gui.touchMoved(button, x,y);
     
     panel.mouseDragged(x, y, button);
 }
 void testApp::mousePressed(int x, int y, int button) {
-	sampler.mousePressed(x, y, button);
+	//sampler.mousePressed(x, y, button);
 	sampler.gui.touchDown(button, x,y);
     
     panel.mousePressed(x, y, button);
 
 }
 void testApp::mouseReleased(int x, int y, int button) {
-	sampler.mouseReleased(x, y, button);
+	//sampler.mouseReleased(x, y, button);
 	sampler.gui.touchUp(button, x,y);
     
     panel.mouseReleased();

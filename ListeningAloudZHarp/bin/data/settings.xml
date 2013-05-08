@@ -1,0 +1,33 @@
+<NEAR>
+    <val_0>255.000000000</val_0>
+</NEAR>
+<FAR>
+    <val_0>0.000000000</val_0>
+</FAR>
+<HORIZONTALFLIP>
+    <val_0>0.000000000</val_0>
+</HORIZONTALFLIP>
+<MINAREA>
+    <val_0>100.000000000</val_0>
+</MINAREA>
+<MAXAREA>
+    <val_0>10000.000000000</val_0>
+</MAXAREA>
+<NCONSIDERED>
+    <val_0>1.816666722</val_0>
+</NCONSIDERED>
+<FINDHOLES>
+    <val_0>0.000000000</val_0>
+</FINDHOLES>
+<LEFTCROP>
+    <val_0>0.205555558</val_0>
+</LEFTCROP>
+<RIGHTCROP>
+    <val_0>0.422222227</val_0>
+</RIGHTCROP>
+<TOPCROP>
+    <val_0>0.266666681</val_0>
+</TOPCROP>
+<BOTTOMCROP>
+    <val_0>0.594444454</val_0>
+</BOTTOMCROP>
