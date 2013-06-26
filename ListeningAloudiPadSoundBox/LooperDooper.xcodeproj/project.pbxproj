@@ -43,6 +43,7 @@
 		EA34D57416768EF700F5C58F /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA34D56E16768EF700F5C58F /* tinyxmlerror.cpp */; };
 		EA34D57516768EF700F5C58F /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA34D56F16768EF700F5C58F /* tinyxmlparser.cpp */; };
 		EA34D57616768EF700F5C58F /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA34D57116768EF700F5C58F /* ofxXmlSettings.cpp */; };
+		EA8F9C79177B2D4400EE9189 /* RingDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C78177B2D4400EE9189 /* RingDrawer.cpp */; };
 		EA9EC0AD177A07A200C27300 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9EC0AC177A07A200C27300 /* icon72.png */; };
 		EA9EC0AF177A07A500C27300 /* icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9EC0AE177A07A500C27300 /* icon144.png */; };
 		EA9EC0B1177A07AD00C27300 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9EC0B0177A07AD00C27300 /* icon114.png */; };
@@ -190,6 +191,8 @@
 		EA34D56F16768EF700F5C58F /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		EA34D57116768EF700F5C58F /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		EA34D57216768EF700F5C58F /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		EA8F9C77177B2D2400EE9189 /* RingDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingDrawer.h; sourceTree = "<group>"; };
+		EA8F9C78177B2D4400EE9189 /* RingDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RingDrawer.cpp; sourceTree = "<group>"; };
 		EA9EC0AC177A07A200C27300 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
 		EA9EC0AE177A07A500C27300 /* icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon144.png; sourceTree = "<group>"; };
 		EA9EC0B0177A07AD00C27300 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
@@ -600,6 +603,8 @@
 				EAB183C116776B3E00D1B8CD /* SoundBoxGui.h */,
 				E4D8936B11527B74007E1F53 /* main.mm */,
 				E4D8936D11527B74007E1F53 /* testApp.mm */,
+				EA8F9C77177B2D2400EE9189 /* RingDrawer.h */,
+				EA8F9C78177B2D4400EE9189 /* RingDrawer.cpp */,
 				EA0024A41678C44A00CE8309 /* HoldToggle.h */,
 				E4D8936C11527B74007E1F53 /* testApp.h */,
 				EA0024B01678DADF00CE8309 /* MiniSampler.h */,
@@ -1033,6 +1038,7 @@
 				EAB183BD1677696B00D1B8CD /* Resources.cpp in Sources */,
 				EA0024A61678C59C00CE8309 /* Pad.cpp in Sources */,
 				EA0024B21678E83D00CE8309 /* MiniSampler.cpp in Sources */,
+				EA8F9C79177B2D4400EE9189 /* RingDrawer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

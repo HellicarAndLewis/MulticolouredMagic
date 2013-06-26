@@ -46,40 +46,63 @@
 
 #pragma once
 #include "Control.h"
+#include "RingDrawer.h"
 
 class HoldToggle: public xmlgui::Control {
 public:
+	RingDrawer ringDrawer;
+	
 	xmlgui::Listener *listener;
+	vector<ofImage> images;
 	void setup(string name, bool &val) {
 		names = ofSplitString(name, "|");
+		for(int i = 0; i < names.size(); i++) {
+			images.push_back(ofImage());
+			images[i].loadImage(names[i]+".png");
+			images[i].setAnchorPercent(0.5, 0.5);
+		}
+		
 		pointToValue(&val);
 		on = false;
 		touchDownStart = 1000000;
+		
 	}
+	
 	
 	void addListener(xmlgui::Listener *l) {
 		this->listener = l;
 	}
 	
 	void draw() {
+		float t = ofMap(ofGetElapsedTimef(), touchDownStart, touchDownStart+0.5, 0, 1, true);
 
 		if(down) {
-			ofSetHexColor(0x999999);
-		} else {
 			ofSetHexColor(0xFFFFFF);
+		} else {
+			ofSetHexColor(0x999999);
 		}
-		ofRect(*this);
-		
-		
-		float t = ofMap(ofGetElapsedTimef(), touchDownStart, touchDownStart+0.5, 0, 1, true);
+		//ofRect(*this);
+		ofPoint centre = (*this).getCenter();
 		if(down) {
-			if(t==0) {
-			} else if(t<1) {
-				ofSetHexColor(0xFFFFFF);
-				ofRectangle r = *this;
-				r.width *= t;
-				ofRect(r);
-			} else {
+			ringDrawer.drawRing(centre, width/2, t, width*0.8/2, bval(value)?0x640000:0);
+		}
+		
+		
+		if(down) {
+			ofSetHexColor(0xFFFFFF);
+		} else {
+			ofSetHexColor(0x999999);
+		}
+		
+		
+		images[bval(value)?1:0].setAnchorPercent(0.5, 0.5);
+		float off = 0;
+		if(bval(value)==0) off = 10;
+		images[bval(value)?1:0].draw(centre.x+off, centre.y);
+
+		
+		if(down) {
+			if(t>=1) {
 				// do it
 				bval(value) = !bval(value);
 				touchDownStart = 1000000;
@@ -87,10 +110,6 @@ public:
 		}
 		
 		ofSetHexColor(0);
-		ofNoFill();
-		ofRect(*this);
-		ofFill();
-		ofDrawBitmapString(bval(value)?names[1]:names[0], x+3, y+height-5);
 	}
 	
 	

@@ -36,6 +36,5 @@
 bool Pad::recMode = true;
 int Pad::currRecId = -1;
 
-vector<ofVec2f> Pad::unitCircle;
 ofImage Pad::circle;
 int Pad::triggerType = TRIGGER_MOMENTARY;

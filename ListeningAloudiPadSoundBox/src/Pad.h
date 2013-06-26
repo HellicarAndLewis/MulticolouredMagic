@@ -46,6 +46,8 @@
 
 #pragma once
 #include "ofMain.h"
+#include "RingDrawer.h"
+
 #include "MiniSampler.h"
 #include <map>
 #define TRIGGER_TOGGLE 1
@@ -78,7 +80,7 @@ public:
 	MiniSampler sampler;
 	int playTouchId;
 	float recordStartTime;
-	
+	RingDrawer ringDrawer;
 	
 	Pad() {
 		timeTriggered = 0;
@@ -106,47 +108,58 @@ public:
 	
 	void draw() {
 	
-		float ring = 0.8;
-		
+		float ring = 0.9;
+		float innerRadius = radius * ring * 0.8;
 		if(recMode) {
-			float c = currRecId==id?1:0;
-			ofSetHexColor(color);
-		
 			
-//			ofCircle(centre, radius);
-			circle.draw(centre, radius*2,radius*2);
-			if(currRecId==id) {
-				glColor4f(1,1,1,ofMap(sin((ofGetElapsedTimef()-recordStartTime)*8), -1,1, 0.2,0.8));
-				circle.draw(centre, radius*2,radius*2);
-			}
-			if(!sampler.isEmpty()) {
-				ofSetColor(100,0,0);
-				
-				circle.draw(centre, radius*2*ring,radius*2*ring);
-			}
-		} else {
-			float c = ofMap(ofGetElapsedTimef(), timeTriggered, timeTriggered+0.5, 1, 0, true);
 			ofSetHexColor(color);
-			//ofCircle(centre, radius);
-			circle.draw(centre, radius*2,radius*2);
-			glColor4f(1,1,1,0.5);
-
-			glPushMatrix();
-			glTranslatef(centre.x, centre.y, 0);
-			glScalef(radius*0.98, radius*0.98, 1);
-			glEnableClientState(GL_VERTEX_ARRAY);
-			glVertexPointer(2, GL_FLOAT, sizeof(ofVec2f), &unitCircle[0].x);
-			int num = ofMap(sampler.getPosition(), 0, 1, 0, unitCircle.size(), true);
-			glDrawArrays(GL_TRIANGLE_FAN, 0, num);
-			glPopMatrix();
+			ringDrawer.drawRing(centre, radius, 1, radius*ring, 0x640000);
+			
+			if(currRecId==id) {
+//				glColor4f(1,1,1,ofMap(sin((ofGetElapsedTimef()-recordStartTime)*8), -1,1, 0.2,1));
+				ofSetHexColor(color);
+			} else {
+				ofSetHexColor(0xAAAAAA);
+			}
+			
 			if(!sampler.isEmpty()) {
-				ofSetHexColor(0);
-				
-				circle.draw(centre, radius*2*ring,radius*2*ring);
+				circle.draw(centre, innerRadius*2,innerRadius*2);
+			}
+			
+		} else {
+			
+
+			if(!sampler.isEmpty()) {
+				if(sampler.isPlaying()) {
+
+					// is playing, grey ring, filling up with colour. coloured circle
+
+					
+					ofSetHexColor(0xAAAAAA);
+					ringDrawer.drawRing(centre, radius, 1, radius*ring);
+					
+					ofSetHexColor(color);
+					ringDrawer.drawRing(centre, radius, sampler.getPosition(), radius*ring);
+
+					ofSetHexColor(color);
+					circle.draw(centre, innerRadius*2, innerRadius*2);
+					
+				} else {
+					
+					// has sample, but not playing - colour ring, grey circle
+					ofSetHexColor(color);
+					ringDrawer.drawRing(centre, radius, 1, radius*ring);
+					
+					ofSetHexColor(0xAAAAAA);
+					circle.draw(centre, innerRadius*2, innerRadius*2);
+				}
+
+			} else {
+				// if it's empty and we're in play mod,e just draw an empty colour ring
+				ofSetHexColor(color);
+				ringDrawer.drawRing(centre, radius, 1, radius*ring);
 			}
 		}
-		
-		
 	}
 	
 	void trigger() {
@@ -290,7 +303,7 @@ public:
 	static bool recMode;
 	static int currRecId;
 
-	static vector<ofVec2f> unitCircle;
+	
 	static ofImage circle;
 	static int triggerType;
 				

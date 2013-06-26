@@ -60,21 +60,19 @@ void testApp::setup(){
 //	setDataPathRootToAppContents(appName);
 
 #endif
-	recMode.set(20, ofGetHeight()-40, 120, 30);
-	recMode.setup("PLAY MODE|REC MODE", Pad::recMode);
+	float h = 140;
+	float pad = 20;
+	recMode.set(pad, ofGetHeight()-h - pad, h, h);
+	recMode.setup("play|rec", Pad::recMode);
 	
 	ofSetFrameRate(60);
-	
+	ofSetCircleResolution(100);
 	
 
 	ofSoundStreamSetup(0, 1, this, 44100, 512, 4);
 	setNumPads(3);
 	
-	Pad::unitCircle.push_back(ofVec2f());
-	for(int i = 0; i <= 360; i++) {
-		float angle = ofMap(i, 0, 360, 0, PI*2);
-		Pad::unitCircle.push_back(ofVec2f(cos(angle), sin(angle)));
-	}
+	
 
 }
 

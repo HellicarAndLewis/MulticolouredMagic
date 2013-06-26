@@ -43,9 +43,38 @@
 		EA34D57416768EF700F5C58F /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA34D56E16768EF700F5C58F /* tinyxmlerror.cpp */; };
 		EA34D57516768EF700F5C58F /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA34D56F16768EF700F5C58F /* tinyxmlparser.cpp */; };
 		EA34D57616768EF700F5C58F /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA34D57116768EF700F5C58F /* ofxXmlSettings.cpp */; };
+		EA8F9CBC177B404400EE9189 /* ofAppiPhoneWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C84177B404400EE9189 /* ofAppiPhoneWindow.mm */; };
+		EA8F9CBD177B404400EE9189 /* ofxiOSEAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C88177B404400EE9189 /* ofxiOSEAGLView.mm */; };
+		EA8F9CBE177B404400EE9189 /* ofxiPhoneAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C8A177B404400EE9189 /* ofxiPhoneAppDelegate.mm */; };
+		EA8F9CBF177B404400EE9189 /* ofxiPhoneViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C8C177B404400EE9189 /* ofxiPhoneViewController.mm */; };
+		EA8F9CC0177B404400EE9189 /* ofxiPhoneAccelerometer.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C8E177B404400EE9189 /* ofxiPhoneAccelerometer.mm */; };
+		EA8F9CC1177B404400EE9189 /* ofxiPhoneAlerts.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C90177B404400EE9189 /* ofxiPhoneAlerts.mm */; };
+		EA8F9CC2177B404400EE9189 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C94177B404400EE9189 /* EAGLView.m */; };
+		EA8F9CC3177B404400EE9189 /* ES1Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C96177B404400EE9189 /* ES1Renderer.m */; };
+		EA8F9CC4177B404400EE9189 /* ES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C98177B404400EE9189 /* ES2Renderer.m */; };
+		EA8F9CC5177B404400EE9189 /* ofxiPhoneSoundStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C9E177B404400EE9189 /* ofxiPhoneSoundStream.mm */; };
+		EA8F9CC6177B404400EE9189 /* ofxOpenALSoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9C9F177B404400EE9189 /* ofxOpenALSoundPlayer.cpp */; };
+		EA8F9CC7177B404400EE9189 /* SoundEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CA1177B404400EE9189 /* SoundEngine.cpp */; };
+		EA8F9CC8177B404400EE9189 /* ofxiPhoneCoreLocation.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CA5177B404400EE9189 /* ofxiPhoneCoreLocation.mm */; };
+		EA8F9CC9177B404400EE9189 /* ofxiPhoneExternalDisplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CA7177B404400EE9189 /* ofxiPhoneExternalDisplay.mm */; };
+		EA8F9CCA177B404400EE9189 /* ofxiPhoneExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CA9177B404400EE9189 /* ofxiPhoneExtras.mm */; };
+		EA8F9CCB177B404400EE9189 /* ofxiPhoneImagePicker.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CAB177B404400EE9189 /* ofxiPhoneImagePicker.mm */; };
+		EA8F9CCC177B404400EE9189 /* ofxiPhoneKeyboard.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CAD177B404400EE9189 /* ofxiPhoneKeyboard.mm */; };
+		EA8F9CCD177B404400EE9189 /* ofxiPhoneMapKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CAF177B404400EE9189 /* ofxiPhoneMapKit.mm */; };
+		EA8F9CCE177B404400EE9189 /* ofxiPhoneMapKitDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CB1177B404400EE9189 /* ofxiPhoneMapKitDelegate.mm */; };
+		EA8F9CCF177B404400EE9189 /* AVFoundationVideoGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CB5177B404400EE9189 /* AVFoundationVideoGrabber.mm */; };
+		EA8F9CD0177B404400EE9189 /* AVFoundationVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CB7177B404400EE9189 /* AVFoundationVideoPlayer.m */; };
+		EA8F9CD1177B404400EE9189 /* ofiPhoneVideoGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CB9177B404400EE9189 /* ofiPhoneVideoGrabber.mm */; };
+		EA8F9CD2177B404400EE9189 /* ofiPhoneVideoPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CBB177B404400EE9189 /* ofiPhoneVideoPlayer.mm */; };
+		EA8F9CDA177B405800EE9189 /* changelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CD4177B405800EE9189 /* changelog.txt */; };
+		EA8F9CDB177B405800EE9189 /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CD5177B405800EE9189 /* install.xml */; };
+		EA8F9CDC177B405800EE9189 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CD6177B405800EE9189 /* LICENSE.txt */; };
+		EA8F9CDD177B405800EE9189 /* ofxAccelerometer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CD8177B405800EE9189 /* ofxAccelerometer.cpp */; };
+		EA8F9CE6177B407200EE9189 /* changelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CDF177B407200EE9189 /* changelog.txt */; };
+		EA8F9CE7177B407200EE9189 /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CE0177B407200EE9189 /* install.xml */; };
+		EA8F9CE8177B407200EE9189 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CE1177B407200EE9189 /* LICENSE.txt */; };
+		EA8F9CE9177B407200EE9189 /* ofxMultiTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CE3177B407200EE9189 /* ofxMultiTouch.cpp */; };
 		EAB183B31677696B00D1B8CD /* SimpleGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB183721677696B00D1B8CD /* SimpleGui.cpp */; };
-		EAB183B41677696B00D1B8CD /* Editor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB183961677696B00D1B8CD /* Editor.cpp */; };
-		EAB183B51677696B00D1B8CD /* Inspector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB183981677696B00D1B8CD /* Inspector.cpp */; };
 		EAB183B71677696B00D1B8CD /* Container.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB183A01677696B00D1B8CD /* Container.cpp */; };
 		EAB183B81677696B00D1B8CD /* Control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB183A21677696B00D1B8CD /* Control.cpp */; };
 		EAB183B91677696B00D1B8CD /* Controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB183A41677696B00D1B8CD /* Controls.cpp */; };
@@ -85,7 +114,7 @@
 		0cf0aa3895d28e97d8a1e4a938976234 /* ground_truth.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ground_truth.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/ground_truth.h; sourceTree = SOURCE_ROOT; };
 		114b872696817cc33990fc83feb1259e /* imgproc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = imgproc.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/imgproc/imgproc.hpp; sourceTree = SOURCE_ROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* SomasonicHarp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomasonicHarp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* MuseicBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseicBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1e95efd35ed9c5d97f2f015ed292592d /* timer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = timer.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/timer.h; sourceTree = SOURCE_ROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -187,6 +216,68 @@
 		EA34D57116768EF700F5C58F /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		EA34D57216768EF700F5C58F /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		EA53BCA316F0CD3E00A76398 /* RecordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordButton.h; sourceTree = "<group>"; };
+		EA8F9C83177B404400EE9189 /* ofAppiPhoneWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofAppiPhoneWindow.h; sourceTree = "<group>"; };
+		EA8F9C84177B404400EE9189 /* ofAppiPhoneWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofAppiPhoneWindow.mm; sourceTree = "<group>"; };
+		EA8F9C85177B404400EE9189 /* ofxiPhoneApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneApp.h; sourceTree = "<group>"; };
+		EA8F9C87177B404400EE9189 /* ofxiOSEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiOSEAGLView.h; sourceTree = "<group>"; };
+		EA8F9C88177B404400EE9189 /* ofxiOSEAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiOSEAGLView.mm; sourceTree = "<group>"; };
+		EA8F9C89177B404400EE9189 /* ofxiPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneAppDelegate.h; sourceTree = "<group>"; };
+		EA8F9C8A177B404400EE9189 /* ofxiPhoneAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneAppDelegate.mm; sourceTree = "<group>"; };
+		EA8F9C8B177B404400EE9189 /* ofxiPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneViewController.h; sourceTree = "<group>"; };
+		EA8F9C8C177B404400EE9189 /* ofxiPhoneViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneViewController.mm; sourceTree = "<group>"; };
+		EA8F9C8E177B404400EE9189 /* ofxiPhoneAccelerometer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneAccelerometer.mm; sourceTree = "<group>"; };
+		EA8F9C8F177B404400EE9189 /* ofxiPhoneAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneAlerts.h; sourceTree = "<group>"; };
+		EA8F9C90177B404400EE9189 /* ofxiPhoneAlerts.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneAlerts.mm; sourceTree = "<group>"; };
+		EA8F9C91177B404400EE9189 /* ofxiPhoneAlertsListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneAlertsListener.h; sourceTree = "<group>"; };
+		EA8F9C93177B404400EE9189 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		EA8F9C94177B404400EE9189 /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
+		EA8F9C95177B404400EE9189 /* ES1Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES1Renderer.h; sourceTree = "<group>"; };
+		EA8F9C96177B404400EE9189 /* ES1Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES1Renderer.m; sourceTree = "<group>"; };
+		EA8F9C97177B404400EE9189 /* ES2Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES2Renderer.h; sourceTree = "<group>"; };
+		EA8F9C98177B404400EE9189 /* ES2Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES2Renderer.m; sourceTree = "<group>"; };
+		EA8F9C99177B404400EE9189 /* ESRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRenderer.h; sourceTree = "<group>"; };
+		EA8F9C9A177B404400EE9189 /* ofxiOSExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiOSExtensions.h; sourceTree = "<group>"; };
+		EA8F9C9B177B404400EE9189 /* ofxiPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhone.h; sourceTree = "<group>"; };
+		EA8F9C9D177B404400EE9189 /* ofxiPhoneSoundStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneSoundStream.h; sourceTree = "<group>"; };
+		EA8F9C9E177B404400EE9189 /* ofxiPhoneSoundStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneSoundStream.mm; sourceTree = "<group>"; };
+		EA8F9C9F177B404400EE9189 /* ofxOpenALSoundPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOpenALSoundPlayer.cpp; sourceTree = "<group>"; };
+		EA8F9CA0177B404400EE9189 /* ofxOpenALSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOpenALSoundPlayer.h; sourceTree = "<group>"; };
+		EA8F9CA1177B404400EE9189 /* SoundEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundEngine.cpp; sourceTree = "<group>"; };
+		EA8F9CA2177B404400EE9189 /* SoundEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEngine.h; sourceTree = "<group>"; };
+		EA8F9CA4177B404400EE9189 /* ofxiPhoneCoreLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneCoreLocation.h; sourceTree = "<group>"; };
+		EA8F9CA5177B404400EE9189 /* ofxiPhoneCoreLocation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneCoreLocation.mm; sourceTree = "<group>"; };
+		EA8F9CA6177B404400EE9189 /* ofxiPhoneExternalDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneExternalDisplay.h; sourceTree = "<group>"; };
+		EA8F9CA7177B404400EE9189 /* ofxiPhoneExternalDisplay.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneExternalDisplay.mm; sourceTree = "<group>"; };
+		EA8F9CA8177B404400EE9189 /* ofxiPhoneExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneExtras.h; sourceTree = "<group>"; };
+		EA8F9CA9177B404400EE9189 /* ofxiPhoneExtras.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneExtras.mm; sourceTree = "<group>"; };
+		EA8F9CAA177B404400EE9189 /* ofxiPhoneImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneImagePicker.h; sourceTree = "<group>"; };
+		EA8F9CAB177B404400EE9189 /* ofxiPhoneImagePicker.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneImagePicker.mm; sourceTree = "<group>"; };
+		EA8F9CAC177B404400EE9189 /* ofxiPhoneKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneKeyboard.h; sourceTree = "<group>"; };
+		EA8F9CAD177B404400EE9189 /* ofxiPhoneKeyboard.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneKeyboard.mm; sourceTree = "<group>"; };
+		EA8F9CAE177B404400EE9189 /* ofxiPhoneMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneMapKit.h; sourceTree = "<group>"; };
+		EA8F9CAF177B404400EE9189 /* ofxiPhoneMapKit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneMapKit.mm; sourceTree = "<group>"; };
+		EA8F9CB0177B404400EE9189 /* ofxiPhoneMapKitDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneMapKitDelegate.h; sourceTree = "<group>"; };
+		EA8F9CB1177B404400EE9189 /* ofxiPhoneMapKitDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneMapKitDelegate.mm; sourceTree = "<group>"; };
+		EA8F9CB2177B404400EE9189 /* ofxiPhoneMapKitListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneMapKitListener.h; sourceTree = "<group>"; };
+		EA8F9CB4177B404400EE9189 /* AVFoundationVideoGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVFoundationVideoGrabber.h; sourceTree = "<group>"; };
+		EA8F9CB5177B404400EE9189 /* AVFoundationVideoGrabber.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AVFoundationVideoGrabber.mm; sourceTree = "<group>"; };
+		EA8F9CB6177B404400EE9189 /* AVFoundationVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVFoundationVideoPlayer.h; sourceTree = "<group>"; };
+		EA8F9CB7177B404400EE9189 /* AVFoundationVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVFoundationVideoPlayer.m; sourceTree = "<group>"; };
+		EA8F9CB8177B404400EE9189 /* ofiPhoneVideoGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofiPhoneVideoGrabber.h; sourceTree = "<group>"; };
+		EA8F9CB9177B404400EE9189 /* ofiPhoneVideoGrabber.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofiPhoneVideoGrabber.mm; sourceTree = "<group>"; };
+		EA8F9CBA177B404400EE9189 /* ofiPhoneVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofiPhoneVideoPlayer.h; sourceTree = "<group>"; };
+		EA8F9CBB177B404400EE9189 /* ofiPhoneVideoPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofiPhoneVideoPlayer.mm; sourceTree = "<group>"; };
+		EA8F9CD4177B405800EE9189 /* changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changelog.txt; sourceTree = "<group>"; };
+		EA8F9CD5177B405800EE9189 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
+		EA8F9CD6177B405800EE9189 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		EA8F9CD8177B405800EE9189 /* ofxAccelerometer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAccelerometer.cpp; sourceTree = "<group>"; };
+		EA8F9CD9177B405800EE9189 /* ofxAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAccelerometer.h; sourceTree = "<group>"; };
+		EA8F9CDF177B407200EE9189 /* changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changelog.txt; sourceTree = "<group>"; };
+		EA8F9CE0177B407200EE9189 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
+		EA8F9CE1177B407200EE9189 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		EA8F9CE3177B407200EE9189 /* ofxMultiTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMultiTouch.cpp; sourceTree = "<group>"; };
+		EA8F9CE4177B407200EE9189 /* ofxMultiTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMultiTouch.h; sourceTree = "<group>"; };
+		EA8F9CE5177B407200EE9189 /* ofxMultiTouchListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMultiTouchListener.h; sourceTree = "<group>"; };
 		EAB183721677696B00D1B8CD /* SimpleGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleGui.cpp; sourceTree = "<group>"; };
 		EAB183731677696B00D1B8CD /* SimpleGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGui.h; sourceTree = "<group>"; };
 		EAB183751677696B00D1B8CD /* ColourPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColourPicker.h; sourceTree = "<group>"; };
@@ -221,10 +312,6 @@
 		EAB183921677696B00D1B8CD /* Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Title.h; sourceTree = "<group>"; };
 		EAB183931677696B00D1B8CD /* Toggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toggle.h; sourceTree = "<group>"; };
 		EAB183941677696B00D1B8CD /* VU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VU.h; sourceTree = "<group>"; };
-		EAB183961677696B00D1B8CD /* Editor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Editor.cpp; sourceTree = "<group>"; };
-		EAB183971677696B00D1B8CD /* Editor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Editor.h; sourceTree = "<group>"; };
-		EAB183981677696B00D1B8CD /* Inspector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Inspector.cpp; sourceTree = "<group>"; };
-		EAB183991677696B00D1B8CD /* Inspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inspector.h; sourceTree = "<group>"; };
 		EAB183A01677696B00D1B8CD /* Container.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Container.cpp; sourceTree = "<group>"; };
 		EAB183A11677696B00D1B8CD /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
 		EAB183A21677696B00D1B8CD /* Control.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Control.cpp; sourceTree = "<group>"; };
@@ -367,7 +454,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* SomasonicHarp.app */,
+				1D6058910D05DD3D006BFB54 /* MuseicBox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -534,6 +621,9 @@
 		BB16F26B0F2B646B00518274 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				EA8F9CDE177B407200EE9189 /* ofxMultiTouch */,
+				EA8F9CD3177B405800EE9189 /* ofxAccelerometer */,
+				EA8F9C80177B404400EE9189 /* ofxiPhone */,
 				EAB1836C1677696B00D1B8CD /* xmlgui */,
 				EA34D56A16768EF700F5C58F /* ofxXmlSettings */,
 				a0b90d3b0adb9c1716816714bf7f212b /* ofxOpenCv */,
@@ -679,6 +769,172 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		EA8F9C80177B404400EE9189 /* ofxiPhone */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9C81177B404400EE9189 /* src */,
+			);
+			name = ofxiPhone;
+			path = ../../../addons/ofxiPhone;
+			sourceTree = "<group>";
+		};
+		EA8F9C81177B404400EE9189 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9C82177B404400EE9189 /* app */,
+				EA8F9C86177B404400EE9189 /* core */,
+				EA8F9C8D177B404400EE9189 /* events */,
+				EA8F9C92177B404400EE9189 /* gl */,
+				EA8F9C9A177B404400EE9189 /* ofxiOSExtensions.h */,
+				EA8F9C9B177B404400EE9189 /* ofxiPhone.h */,
+				EA8F9C9C177B404400EE9189 /* sound */,
+				EA8F9CA3177B404400EE9189 /* utils */,
+				EA8F9CB3177B404400EE9189 /* video */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EA8F9C82177B404400EE9189 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9C83177B404400EE9189 /* ofAppiPhoneWindow.h */,
+				EA8F9C84177B404400EE9189 /* ofAppiPhoneWindow.mm */,
+				EA8F9C85177B404400EE9189 /* ofxiPhoneApp.h */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		EA8F9C86177B404400EE9189 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9C87177B404400EE9189 /* ofxiOSEAGLView.h */,
+				EA8F9C88177B404400EE9189 /* ofxiOSEAGLView.mm */,
+				EA8F9C89177B404400EE9189 /* ofxiPhoneAppDelegate.h */,
+				EA8F9C8A177B404400EE9189 /* ofxiPhoneAppDelegate.mm */,
+				EA8F9C8B177B404400EE9189 /* ofxiPhoneViewController.h */,
+				EA8F9C8C177B404400EE9189 /* ofxiPhoneViewController.mm */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		EA8F9C8D177B404400EE9189 /* events */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9C8E177B404400EE9189 /* ofxiPhoneAccelerometer.mm */,
+				EA8F9C8F177B404400EE9189 /* ofxiPhoneAlerts.h */,
+				EA8F9C90177B404400EE9189 /* ofxiPhoneAlerts.mm */,
+				EA8F9C91177B404400EE9189 /* ofxiPhoneAlertsListener.h */,
+			);
+			path = events;
+			sourceTree = "<group>";
+		};
+		EA8F9C92177B404400EE9189 /* gl */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9C93177B404400EE9189 /* EAGLView.h */,
+				EA8F9C94177B404400EE9189 /* EAGLView.m */,
+				EA8F9C95177B404400EE9189 /* ES1Renderer.h */,
+				EA8F9C96177B404400EE9189 /* ES1Renderer.m */,
+				EA8F9C97177B404400EE9189 /* ES2Renderer.h */,
+				EA8F9C98177B404400EE9189 /* ES2Renderer.m */,
+				EA8F9C99177B404400EE9189 /* ESRenderer.h */,
+			);
+			path = gl;
+			sourceTree = "<group>";
+		};
+		EA8F9C9C177B404400EE9189 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9C9D177B404400EE9189 /* ofxiPhoneSoundStream.h */,
+				EA8F9C9E177B404400EE9189 /* ofxiPhoneSoundStream.mm */,
+				EA8F9C9F177B404400EE9189 /* ofxOpenALSoundPlayer.cpp */,
+				EA8F9CA0177B404400EE9189 /* ofxOpenALSoundPlayer.h */,
+				EA8F9CA1177B404400EE9189 /* SoundEngine.cpp */,
+				EA8F9CA2177B404400EE9189 /* SoundEngine.h */,
+			);
+			path = sound;
+			sourceTree = "<group>";
+		};
+		EA8F9CA3177B404400EE9189 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9CA4177B404400EE9189 /* ofxiPhoneCoreLocation.h */,
+				EA8F9CA5177B404400EE9189 /* ofxiPhoneCoreLocation.mm */,
+				EA8F9CA6177B404400EE9189 /* ofxiPhoneExternalDisplay.h */,
+				EA8F9CA7177B404400EE9189 /* ofxiPhoneExternalDisplay.mm */,
+				EA8F9CA8177B404400EE9189 /* ofxiPhoneExtras.h */,
+				EA8F9CA9177B404400EE9189 /* ofxiPhoneExtras.mm */,
+				EA8F9CAA177B404400EE9189 /* ofxiPhoneImagePicker.h */,
+				EA8F9CAB177B404400EE9189 /* ofxiPhoneImagePicker.mm */,
+				EA8F9CAC177B404400EE9189 /* ofxiPhoneKeyboard.h */,
+				EA8F9CAD177B404400EE9189 /* ofxiPhoneKeyboard.mm */,
+				EA8F9CAE177B404400EE9189 /* ofxiPhoneMapKit.h */,
+				EA8F9CAF177B404400EE9189 /* ofxiPhoneMapKit.mm */,
+				EA8F9CB0177B404400EE9189 /* ofxiPhoneMapKitDelegate.h */,
+				EA8F9CB1177B404400EE9189 /* ofxiPhoneMapKitDelegate.mm */,
+				EA8F9CB2177B404400EE9189 /* ofxiPhoneMapKitListener.h */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		EA8F9CB3177B404400EE9189 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9CB4177B404400EE9189 /* AVFoundationVideoGrabber.h */,
+				EA8F9CB5177B404400EE9189 /* AVFoundationVideoGrabber.mm */,
+				EA8F9CB6177B404400EE9189 /* AVFoundationVideoPlayer.h */,
+				EA8F9CB7177B404400EE9189 /* AVFoundationVideoPlayer.m */,
+				EA8F9CB8177B404400EE9189 /* ofiPhoneVideoGrabber.h */,
+				EA8F9CB9177B404400EE9189 /* ofiPhoneVideoGrabber.mm */,
+				EA8F9CBA177B404400EE9189 /* ofiPhoneVideoPlayer.h */,
+				EA8F9CBB177B404400EE9189 /* ofiPhoneVideoPlayer.mm */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		EA8F9CD3177B405800EE9189 /* ofxAccelerometer */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9CD4177B405800EE9189 /* changelog.txt */,
+				EA8F9CD5177B405800EE9189 /* install.xml */,
+				EA8F9CD6177B405800EE9189 /* LICENSE.txt */,
+				EA8F9CD7177B405800EE9189 /* src */,
+			);
+			name = ofxAccelerometer;
+			path = ../../../addons/ofxAccelerometer;
+			sourceTree = "<group>";
+		};
+		EA8F9CD7177B405800EE9189 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9CD8177B405800EE9189 /* ofxAccelerometer.cpp */,
+				EA8F9CD9177B405800EE9189 /* ofxAccelerometer.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EA8F9CDE177B407200EE9189 /* ofxMultiTouch */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9CDF177B407200EE9189 /* changelog.txt */,
+				EA8F9CE0177B407200EE9189 /* install.xml */,
+				EA8F9CE1177B407200EE9189 /* LICENSE.txt */,
+				EA8F9CE2177B407200EE9189 /* src */,
+			);
+			name = ofxMultiTouch;
+			path = ../../../addons/ofxMultiTouch;
+			sourceTree = "<group>";
+		};
+		EA8F9CE2177B407200EE9189 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F9CE3177B407200EE9189 /* ofxMultiTouch.cpp */,
+				EA8F9CE4177B407200EE9189 /* ofxMultiTouch.h */,
+				EA8F9CE5177B407200EE9189 /* ofxMultiTouchListener.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		EAB1836C1677696B00D1B8CD /* xmlgui */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,7 +949,6 @@
 			children = (
 				EAB1836E1677696B00D1B8CD /* container */,
 				EAB183741677696B00D1B8CD /* controls */,
-				EAB183951677696B00D1B8CD /* editor */,
 				EAB1839F1677696B00D1B8CD /* framework */,
 			);
 			path = src;
@@ -746,17 +1001,6 @@
 				EAB183941677696B00D1B8CD /* VU.h */,
 			);
 			path = controls;
-			sourceTree = "<group>";
-		};
-		EAB183951677696B00D1B8CD /* editor */ = {
-			isa = PBXGroup;
-			children = (
-				EAB183961677696B00D1B8CD /* Editor.cpp */,
-				EAB183971677696B00D1B8CD /* Editor.h */,
-				EAB183981677696B00D1B8CD /* Inspector.cpp */,
-				EAB183991677696B00D1B8CD /* Inspector.h */,
-			);
-			path = editor;
 			sourceTree = "<group>";
 		};
 		EAB1839F1677696B00D1B8CD /* framework */ = {
@@ -880,9 +1124,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* SomasonicHarp */ = {
+		1D6058900D05DD3D006BFB54 /* MuseicBox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SomasonicHarp" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MuseicBox" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -894,9 +1138,9 @@
 			dependencies = (
 				E41D410413B3A11300A75A5D /* PBXTargetDependency */,
 			);
-			name = SomasonicHarp;
+			name = MuseicBox;
 			productName = iPhone;
-			productReference = 1D6058910D05DD3D006BFB54 /* SomasonicHarp.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* MuseicBox.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -904,7 +1148,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SomasonicHarp" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MuseicBox" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -924,7 +1168,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* SomasonicHarp */,
+				1D6058900D05DD3D006BFB54 /* MuseicBox */,
 			);
 		};
 /* End PBXProject section */
@@ -947,6 +1191,12 @@
 				BB24DDCA10DA781C00E9C588 /* ofxiphone-Info.plist in Resources */,
 				E41D3ED713B38FB500A75A5D /* Project.xcconfig in Resources */,
 				E41D3EE613B3906D00A75A5D /* CoreOF.xcconfig in Resources */,
+				EA8F9CDA177B405800EE9189 /* changelog.txt in Resources */,
+				EA8F9CDB177B405800EE9189 /* install.xml in Resources */,
+				EA8F9CDC177B405800EE9189 /* LICENSE.txt in Resources */,
+				EA8F9CE6177B407200EE9189 /* changelog.txt in Resources */,
+				EA8F9CE7177B407200EE9189 /* install.xml in Resources */,
+				EA8F9CE8177B407200EE9189 /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,8 +1246,6 @@
 				EA34D57516768EF700F5C58F /* tinyxmlparser.cpp in Sources */,
 				EA34D57616768EF700F5C58F /* ofxXmlSettings.cpp in Sources */,
 				EAB183B31677696B00D1B8CD /* SimpleGui.cpp in Sources */,
-				EAB183B41677696B00D1B8CD /* Editor.cpp in Sources */,
-				EAB183B51677696B00D1B8CD /* Inspector.cpp in Sources */,
 				EAB183B71677696B00D1B8CD /* Container.cpp in Sources */,
 				EAB183B81677696B00D1B8CD /* Control.cpp in Sources */,
 				EAB183B91677696B00D1B8CD /* Controls.cpp in Sources */,
@@ -1005,6 +1253,31 @@
 				EAB183BB1677696B00D1B8CD /* Instantiator.cpp in Sources */,
 				EAB183BC1677696B00D1B8CD /* ofGuiEventDispatcher.cpp in Sources */,
 				EAB183BD1677696B00D1B8CD /* Resources.cpp in Sources */,
+				EA8F9CBC177B404400EE9189 /* ofAppiPhoneWindow.mm in Sources */,
+				EA8F9CBD177B404400EE9189 /* ofxiOSEAGLView.mm in Sources */,
+				EA8F9CBE177B404400EE9189 /* ofxiPhoneAppDelegate.mm in Sources */,
+				EA8F9CBF177B404400EE9189 /* ofxiPhoneViewController.mm in Sources */,
+				EA8F9CC0177B404400EE9189 /* ofxiPhoneAccelerometer.mm in Sources */,
+				EA8F9CC1177B404400EE9189 /* ofxiPhoneAlerts.mm in Sources */,
+				EA8F9CC2177B404400EE9189 /* EAGLView.m in Sources */,
+				EA8F9CC3177B404400EE9189 /* ES1Renderer.m in Sources */,
+				EA8F9CC4177B404400EE9189 /* ES2Renderer.m in Sources */,
+				EA8F9CC5177B404400EE9189 /* ofxiPhoneSoundStream.mm in Sources */,
+				EA8F9CC6177B404400EE9189 /* ofxOpenALSoundPlayer.cpp in Sources */,
+				EA8F9CC7177B404400EE9189 /* SoundEngine.cpp in Sources */,
+				EA8F9CC8177B404400EE9189 /* ofxiPhoneCoreLocation.mm in Sources */,
+				EA8F9CC9177B404400EE9189 /* ofxiPhoneExternalDisplay.mm in Sources */,
+				EA8F9CCA177B404400EE9189 /* ofxiPhoneExtras.mm in Sources */,
+				EA8F9CCB177B404400EE9189 /* ofxiPhoneImagePicker.mm in Sources */,
+				EA8F9CCC177B404400EE9189 /* ofxiPhoneKeyboard.mm in Sources */,
+				EA8F9CCD177B404400EE9189 /* ofxiPhoneMapKit.mm in Sources */,
+				EA8F9CCE177B404400EE9189 /* ofxiPhoneMapKitDelegate.mm in Sources */,
+				EA8F9CCF177B404400EE9189 /* AVFoundationVideoGrabber.mm in Sources */,
+				EA8F9CD0177B404400EE9189 /* AVFoundationVideoPlayer.m in Sources */,
+				EA8F9CD1177B404400EE9189 /* ofiPhoneVideoGrabber.mm in Sources */,
+				EA8F9CD2177B404400EE9189 /* ofiPhoneVideoPlayer.mm in Sources */,
+				EA8F9CDD177B405800EE9189 /* ofxAccelerometer.cpp in Sources */,
+				EA8F9CE9177B407200EE9189 /* ofxMultiTouch.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,9 +1298,35 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					src,
+					../../../addons/ofxOpenCv/libs,
+					../../../addons/ofxOpenCv/libs/opencv,
+					../../../addons/ofxOpenCv/libs/opencv/include,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/calib3d,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/contrib,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/core,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/features2d,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/gpu,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/highgui,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/imgproc,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/legacy,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/ml,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/objdetect,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/ts,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/video,
+					../../../addons/ofxOpenCv/libs/opencv/lib,
+					../../../addons/ofxOpenCv/libs/opencv/lib/ios,
+					../../../addons/ofxOpenCv/src,
+					../../../libs/glu/include_ios,
+				);
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = SomasonicHarp;
+				PRODUCT_NAME = MuseicBox;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv6 armv7";
 			};
@@ -1039,9 +1338,35 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					src,
+					../../../addons/ofxOpenCv/libs,
+					../../../addons/ofxOpenCv/libs/opencv,
+					../../../addons/ofxOpenCv/libs/opencv/include,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/calib3d,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/contrib,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/core,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/features2d,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/gpu,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/highgui,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/imgproc,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/legacy,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/ml,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/objdetect,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/ts,
+					../../../addons/ofxOpenCv/libs/opencv/include/opencv2/video,
+					../../../addons/ofxOpenCv/libs/opencv/lib,
+					../../../addons/ofxOpenCv/libs/opencv/lib/ios,
+					../../../addons/ofxOpenCv/src,
+					../../../libs/glu/include_ios,
+				);
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = SomasonicHarp;
+				PRODUCT_NAME = MuseicBox;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv6 armv7";
@@ -1188,7 +1513,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SomasonicHarp" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MuseicBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -1197,7 +1522,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SomasonicHarp" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MuseicBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
