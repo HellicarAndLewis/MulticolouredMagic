@@ -49,11 +49,13 @@
 
 class MiniSampler {
 public:
+	
 	float *sample;
 	int sampleLength;
 	bool playing;
 	int playhead;
 	int maxSampleSize;
+	
 	MiniSampler() {
 		maxSampleSize = 44100;
 		sampleLength = 0;

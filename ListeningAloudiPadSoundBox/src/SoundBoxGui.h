@@ -65,7 +65,7 @@ public:
 		gui.setWidth(500);
 		gui.addSlider("Number of Pads", numPads, 1, 11)->height = 40;
 		gui.addSegmented("loop", (int&)MiniSampler::looping, "OFF|ON")->size(100, 40);
-		gui.addSegmented("trigger", Pad::triggerType, "MOMENTARY|TOGGLE")->height=40;
+		gui.addSegmented("trigger", Pad::triggerType, "DIRECT|LATCH")->height=40;
 		gui.addPushButton("OK")->size(100, 40);
 		gui.addListener(this);
 	}

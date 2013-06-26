@@ -53,11 +53,33 @@
 
 class Pad {
 public:
+	
+	
+	struct Touch {
+		ofVec2f pos;
+		
+		int id;
+		Touch(int id = 0, ofVec2f pos = ofVec2f()) {
+			this->id = id;
+			this->pos = pos;
+		}
+	};
+	
+	
+	
 	float radius;
 	ofVec2f centre;
 	float timeTriggered;
 	int id;
 	int color;
+	
+	map<int,Touch> touches;
+	
+	MiniSampler sampler;
+	int playTouchId;
+	float recordStartTime;
+	
+	
 	Pad() {
 		timeTriggered = 0;
 		centre = ofVec2f(ofGetWidth()/2, ofGetHeight()/2);
@@ -67,7 +89,7 @@ public:
 
 	}
 	
-static int triggerType;
+
 	
 	void set(int id, ofVec2f centre, float radius) {
 		this->id = id;
@@ -77,7 +99,7 @@ static int triggerType;
 		switch(id%4) {
 			case 0: color = 0xe70038; break;
 			case 1: color = 0x88c453; break;
-			case 2: color = 0xf39a3c; break;
+			case 2: color = 0xF5CF38; break;
 			case 3: color = 0x0098d0; break;
 		}
 	}
@@ -144,19 +166,10 @@ static int triggerType;
 		if(currRecId==id) {
 			printf("Can stop recording\n");
 			currRecId = -1;
-			recMode = false;
+			//recMode = false;
 		}
 	}
 
-	struct Touch {
-		ofVec2f pos;
-		int id;
-		Touch(int id = 0, ofVec2f pos = ofVec2f()) {
-			this->id = id;
-			this->pos = pos;
-		}
-	};
-	
 	void toggle() {
 		if(!sampler.isPlaying()) {
 			trigger();
@@ -164,6 +177,8 @@ static int triggerType;
 			sampler.stop();
 		}
 	}
+	
+	
 	void touchDown(float x, float y, int id) {
 		touches[id] = Touch(id, ofVec2f(x,y));
 		
@@ -190,6 +205,12 @@ static int triggerType;
 	
 	void touchMoved(float x, float y, int id) {
 		if(touches.find(id)!=touches.end()) {
+			// touch re-entered
+			if(touches[id].pos.distance(centre)>radius && ofVec2f(x, y).distance(centre)<radius) {
+				touches[id].pos.set(x,y);
+				touchDown(x, y, id);
+				//return;
+			}
 			touches[id].pos.set(x,y);
 		}
 		
@@ -222,7 +243,9 @@ static int triggerType;
 			if(!fingerStillIn) {
 				sampler.stop();
 			} else if(!sampler.isPlaying()) {
-				touchDown(x, y, id);
+				if(MiniSampler::looping) {
+					touchDown(x, y, id);
+				}
 			}
 			
 		}
@@ -263,14 +286,13 @@ static int triggerType;
 	void recordSamples(float *in, int length) {
 		sampler.recordSamples(in, length);
 	}
-	map<int,Touch> touches;
-	
-	MiniSampler sampler;
+
 	static bool recMode;
 	static int currRecId;
-	int playTouchId;
+
 	static vector<ofVec2f> unitCircle;
 	static ofImage circle;
-									  float recordStartTime;
+	static int triggerType;
+				
 };
 

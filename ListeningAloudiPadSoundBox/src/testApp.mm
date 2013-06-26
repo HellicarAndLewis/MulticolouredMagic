@@ -103,36 +103,36 @@ void testApp::setNumPads(int numPads) {
 			radius /= 2.2;
 			break;
 		case 4:
-			dist = ofGetHeight()/3.6;
-			radius /= 3;
+			dist = ofGetHeight()/3.4;
+			radius /= 2.75;
 			break;
 		case 5:
 			dist = ofGetHeight()/3.2;
 			radius /= 2.8;
 			break;
 		case 6:
-			dist = ofGetHeight()/3;
+			dist = ofGetHeight()/2.8;
 			radius /= 2.9;
 			break;
 		case 7:
-			dist = ofGetHeight()/3;
+			dist = ofGetHeight()/2.82;
 			radius /= 3.2;
 			break;
 		case 8:
-			dist = ofGetHeight()/3;
-			radius /= 3.3;
+			dist = ofGetHeight()/2.6;
+			radius /= 3.4;
 			break;
 		case 9:
-			dist = ofGetHeight()/3;
-			radius /= 3.5;
+			dist = ofGetHeight()/2.7;
+			radius /= 3.9;
 			break;
 		case 10:
-			dist = ofGetHeight()/3;
-			radius /= 3.7;
+			dist = ofGetHeight()/2.6;
+			radius /= 4.1;
 			break;
 		case 11:
-			dist = ofGetHeight()/3;
-			radius /= 4;
+			dist = ofGetHeight()/2.6;
+			radius /= 4.1;
 			break;
 	}
 	
@@ -151,6 +151,9 @@ void testApp::setNumPads(int numPads) {
 	
 	for(int i = 0; i < pads.size(); i++) {
 		float angle = ofMap(i, 0, numPads, 0, PI*2);
+		if(pads.size()==8) {
+			angle += PI*2/16.f;
+		}
 		ofVec2f offset(dist*cos(angle), dist*sin(angle));
 		pads[i]->set(i, centre+offset,radius);
 	}
