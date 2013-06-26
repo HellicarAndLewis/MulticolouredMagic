@@ -93,7 +93,7 @@ public:
 		s->stepped = true;
 		
 		
-		gui.addSegmented("Use Y Axis as Volume", useYAxisAsVolume, "NO|YES")->size(90, 40);
+		gui.addSegmented("Vary Volume", useYAxisAsVolume, "NO|YES")->size(90, 40);
 		
 		gui.addChild(&recordButton);
 		gui.addTitle("Appearance");

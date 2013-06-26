@@ -75,7 +75,7 @@ public:
 	
 	// give this function a normalized
 	// value, and it gives back a note number
-	int valueToNote(float y);
+	int valueToNote(int y);
 	
 	// converts a note number to sample playback speed
 	float noteToSpeed(int note);

@@ -131,9 +131,10 @@ void Sampler::update() {
 		float ax = a.x;// + a.y;
 	//	printf("%f\n", ax);
 		float pitch = ofMap(ax, -45, 45, 1, 0);
+		if(pitch>=1) return;
 		float vol = 0.8;
 		if(gui.useYAxisAsVolume) {
-			vol = ofMap(a.y, -45, 45, 1, 0);
+			vol = ofMap(a.y, -45, 45, 0.85, 0, true);
 		}
 		
 		if(ax<-45) pitch = 1;
@@ -171,6 +172,11 @@ void Sampler::update() {
 		if(volume>1) volume = 1;
 		if(volume>movementThreshold) { // some threshold
 			lastMaxLevel = currMaxLevel;
+			if(gui.useYAxisAsVolume) {
+				volume = ofMap(volume, 0, 1, 0.5, 0.85, true);
+			} else {
+				volume = 0.8;
+			}
 			if(gui.input==INPUT_CAMERA) playSound(volume, 1.f - (float)currMaxLevel/vision.levels.size());
 		} else {
 			currMaxLevel = -1;
@@ -349,27 +355,23 @@ void Sampler::mouseReleased(int x, int y, int button){
 }
 
 void Sampler::playSound(float volume, float pitch) {
-
+	if(volume>0.8) volume = 0.8;
+	if(volume<0) volume = 0;
 	volume = volume * volume;
-	int note = valueToNote(pitch);
-	if(vision.levels.size()>5) {
-		note += noteOffset;
-	}
+	int pos = pitch*vision.levels.size();
+	pos = pos - vision.levels.size()/2;
+	
+	int note = valueToNote(pos);
+	//if(vision.levels.size()>5) {
+	//	note += noteOffset;
+	//}
 	playbackSpeed = noteToSpeed(note);
+	printf("pitch: %f   note: %d   speed: %f   pos: %d\n", pitch, note, playbackSpeed, pos);
 	sample.trigger(volume);
 	noteLastTime = ofGetElapsedTimef();
 	lastNote = pitch*vision.levels.size();
 
-	// do some stuff here
-	ofPoint pos, force;
-	/*if(vision.getBiggestFlowPoint(&pos, &force)) {
-		// correct the y pos
-		float y = (float)((float)lastMaxLevel+0.5)/vision.levels.size();
-		pos.y = y;
-		spawnParticle(pos, volume);
-	}*/
-	 // TODO: Spawn particles here
-#pragma TODO("SPAWN PARTICLES")
+
 }
 
 void Sampler::spawnParticle(ofPoint pos, float volume) {
@@ -390,7 +392,7 @@ float Sampler::noteToSpeed(int note) {
 	return pow(2, (float)note/12.f);
 }
 
-int Sampler::valueToNote(float value) {
+int Sampler::valueToNote(int value) {
 	int scale = gui.scale;
 	int notesInScale = 5;
 	if(scales[scale]==PENTATONIC) {
@@ -402,31 +404,36 @@ int Sampler::valueToNote(float value) {
 	} else if(scales[scale]==CHROMATIC) {
 		notesInScale = 12;
 	}
-	int maxOctaves = 2;
+	
 
-	// how many octaves we want
-	/*value *= maxOctaves;
 
-	// how many notes in the scale
-	value *= notesInScale;
-*/
+	int noteInScale = value;
+	int octave = 0;
+	
+	if(noteInScale>=    3*notesInScale) octave = 3;
+	else if(noteInScale>=2*notesInScale) octave = 2;
+	else if(noteInScale>=  notesInScale) octave = 1;
+	else if(noteInScale>=0) octave = 0;
 
-	value *= gui.noteRange;
-		// this is the position in the scale
-	int noteInScale = floor(value);
+	else if(noteInScale>=-notesInScale) octave = -1;
+	else if(noteInScale>=-notesInScale*2) octave = -2;
+	else if(noteInScale>=-notesInScale*3) octave = -3;
 
-	// this is the chromatic position
-	int noteNum = 0;
 
-	// work out the octave offset
-	noteNum = floor(noteInScale/notesInScale)*12;
-
+	
+	
 	// add the note offset
+	int scalePos = noteInScale;
+	if(scalePos>=0) scalePos %= notesInScale;
+	else {
+		while(scalePos<0) scalePos += notesInScale;
+	}
+	printf("Octave: %d       scale pos %d\n", octave, scalePos);
 
-
-
+	int noteNum = octave*12;
+	
 	if(scales[scale]==PENTATONIC) {
-		switch(noteInScale%notesInScale) {
+		switch(scalePos) {
 			case 0: noteNum += 0;  break;
 			case 1: noteNum += 3;  break;
 			case 2: noteNum += 5;  break;
@@ -434,7 +441,7 @@ int Sampler::valueToNote(float value) {
 			case 4: noteNum += 10; break;
 		}
 	} else if(scales[scale]==MAJOR) {
-		switch(noteInScale%notesInScale) {
+		switch(scalePos) {
 			case 0: noteNum += 0;  break;
 			case 1: noteNum += 2;  break;
 			case 2: noteNum += 4;  break;
@@ -445,7 +452,7 @@ int Sampler::valueToNote(float value) {
 
 		}
 	} else if(scales[scale]==MINOR) {
-		switch(noteInScale%notesInScale) {
+		switch(scalePos) {
 			case 0: noteNum += 0;  break;
 			case 1: noteNum += 2;  break;
 			case 2: noteNum += 3;  break;
@@ -455,11 +462,11 @@ int Sampler::valueToNote(float value) {
 			case 6: noteNum += 11; break;
 		}
 	} else if(scales[scale]==CHROMATIC) {
-		noteNum += noteInScale%notesInScale;
+		noteNum += scalePos;
 	}
 
 
-	return noteNum + 4 + gui.key; // set the pitch here
+	return noteNum + gui.key; // set the pitch here
 
 }
 

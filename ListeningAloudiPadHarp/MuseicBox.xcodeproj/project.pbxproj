@@ -74,6 +74,15 @@
 		EA8F9CE7177B407200EE9189 /* install.xml in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CE0177B407200EE9189 /* install.xml */; };
 		EA8F9CE8177B407200EE9189 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CE1177B407200EE9189 /* LICENSE.txt */; };
 		EA8F9CE9177B407200EE9189 /* ofxMultiTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA8F9CE3177B407200EE9189 /* ofxMultiTouch.cpp */; };
+		EA8F9CF4177B486800EE9189 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CF3177B486800EE9189 /* icon57.png */; };
+		EA8F9CF6177B486D00EE9189 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CF5177B486D00EE9189 /* icon114.png */; };
+		EA8F9CF8177B487300EE9189 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CF7177B487300EE9189 /* icon72.png */; };
+		EA8F9CFA177B487700EE9189 /* icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CF9177B487700EE9189 /* icon144.png */; };
+		EA8F9CFC177B49CE00EE9189 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CFB177B49CE00EE9189 /* Default-Portrait@2x~ipad.png */; };
+		EA8F9CFE177B49DC00EE9189 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CFD177B49DC00EE9189 /* Default-Portrait~ipad.png */; };
+		EA8F9D00177B49E600EE9189 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9CFF177B49E600EE9189 /* Default.png */; };
+		EA8F9D02177B49ED00EE9189 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9D01177B49ED00EE9189 /* Default@2x.png */; };
+		EA8F9D04177B49FE00EE9189 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA8F9D03177B49FE00EE9189 /* Default-568h@2x.png */; };
 		EAB183B31677696B00D1B8CD /* SimpleGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB183721677696B00D1B8CD /* SimpleGui.cpp */; };
 		EAB183B71677696B00D1B8CD /* Container.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB183A01677696B00D1B8CD /* Container.cpp */; };
 		EAB183B81677696B00D1B8CD /* Control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB183A21677696B00D1B8CD /* Control.cpp */; };
@@ -278,6 +287,15 @@
 		EA8F9CE3177B407200EE9189 /* ofxMultiTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMultiTouch.cpp; sourceTree = "<group>"; };
 		EA8F9CE4177B407200EE9189 /* ofxMultiTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMultiTouch.h; sourceTree = "<group>"; };
 		EA8F9CE5177B407200EE9189 /* ofxMultiTouchListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMultiTouchListener.h; sourceTree = "<group>"; };
+		EA8F9CF3177B486800EE9189 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		EA8F9CF5177B486D00EE9189 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
+		EA8F9CF7177B487300EE9189 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
+		EA8F9CF9177B487700EE9189 /* icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon144.png; sourceTree = "<group>"; };
+		EA8F9CFB177B49CE00EE9189 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		EA8F9CFD177B49DC00EE9189 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		EA8F9CFF177B49E600EE9189 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		EA8F9D01177B49ED00EE9189 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		EA8F9D03177B49FE00EE9189 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EAB183721677696B00D1B8CD /* SimpleGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleGui.cpp; sourceTree = "<group>"; };
 		EAB183731677696B00D1B8CD /* SimpleGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleGui.h; sourceTree = "<group>"; };
 		EAB183751677696B00D1B8CD /* ColourPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColourPicker.h; sourceTree = "<group>"; };
@@ -505,6 +523,15 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EA8F9D03177B49FE00EE9189 /* Default-568h@2x.png */,
+				EA8F9D01177B49ED00EE9189 /* Default@2x.png */,
+				EA8F9CFF177B49E600EE9189 /* Default.png */,
+				EA8F9CFD177B49DC00EE9189 /* Default-Portrait~ipad.png */,
+				EA8F9CFB177B49CE00EE9189 /* Default-Portrait@2x~ipad.png */,
+				EA8F9CF9177B487700EE9189 /* icon144.png */,
+				EA8F9CF7177B487300EE9189 /* icon72.png */,
+				EA8F9CF5177B486D00EE9189 /* icon114.png */,
+				EA8F9CF3177B486800EE9189 /* icon57.png */,
 				E4D8936A11527B74007E1F53 /* src */,
 				BB24E1F710DAA51900E9C588 /* openFrameworks */,
 				BB16F26B0F2B646B00518274 /* addons */,
@@ -1197,6 +1224,15 @@
 				EA8F9CE6177B407200EE9189 /* changelog.txt in Resources */,
 				EA8F9CE7177B407200EE9189 /* install.xml in Resources */,
 				EA8F9CE8177B407200EE9189 /* LICENSE.txt in Resources */,
+				EA8F9CF4177B486800EE9189 /* icon57.png in Resources */,
+				EA8F9CF6177B486D00EE9189 /* icon114.png in Resources */,
+				EA8F9CF8177B487300EE9189 /* icon72.png in Resources */,
+				EA8F9CFA177B487700EE9189 /* icon144.png in Resources */,
+				EA8F9CFC177B49CE00EE9189 /* Default-Portrait@2x~ipad.png in Resources */,
+				EA8F9CFE177B49DC00EE9189 /* Default-Portrait~ipad.png in Resources */,
+				EA8F9D00177B49E600EE9189 /* Default.png in Resources */,
+				EA8F9D02177B49ED00EE9189 /* Default@2x.png in Resources */,
+				EA8F9D04177B49FE00EE9189 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
