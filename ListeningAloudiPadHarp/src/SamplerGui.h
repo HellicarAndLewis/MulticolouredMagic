@@ -45,13 +45,12 @@
 
 #include "SimpleGui.h"
 #include "RecordButton.h"
+#include "HoldToggle.h"
 
 class SamplerGui: public xmlgui::Listener {
 public:
-	
-	ofRectangle activator;
-	bool overActivator;
-	
+	List *listyList;
+	HoldToggle activator;
 	xmlgui::SimpleGui gui;
 	int input;
 	int scale;
@@ -68,13 +67,16 @@ public:
 	int useYAxisAsVolume;
 	int showGridLines;
 	RecordButton recordButton;
+	bool guiActive;
+	ofImage title;
 	void setup() {
-
+		recordButton.setup();
+		title.loadImage("settings-title.png");
 		useYAxisAsVolume = 0;
 		showGridLines = 0;
-		holdCount = 0;
-		overActivator = false;
-		activator.set(10, 10, 70, 30);
+		activator.set(ofGetWidth() - 10 - 120, 10, 120, 120);
+		guiActive = false;
+		activator.setup("settings|close", guiActive);
 		input = INPUT_TOUCH;
 		scale = 0;
 		mustLoadSound = false;
@@ -83,8 +85,9 @@ public:
 		recording = false;
 		showCamera = true;
 		noteRange = 16;
-		gui.setWidth(500);
-		gui.addSegmented("Input", input, "Front Camera|Accelerometer|Touch")->height = 40;
+		gui.setWidth(450);
+		gui.setAutoLayoutPadding(25);
+		gui.addSegmented("Input", input, "Camera|Accelerometer|Touch")->height = 40;
 		
 		gui.addSegmented("Scale", scale, "PENTATONIC|MAJOR|MINOR|CHROMATIC")->height = 40;
 		gui.addSegmented("Key", key, "C|C#|D|D#|E|F|F#|G|G#|A|A#|B")->height = 40;
@@ -113,26 +116,30 @@ public:
 			sounds.push_back(samples.getName(i));
 		}
 		
-		List *l = gui.addList("Sound", soundId, sounds);
-		l->itemHeight = 40;
-		l->height = 160;
-		//gui.addPushButton("Press and hold to record a sound")->size(500, 40);
-		gui.addPushButton("OK")->size(100, 40);
+		listyList = gui.addList("Sound", soundId, sounds);
+
+		printf("List of things: %d\n", listyList->items.size());
+		listyList->itemHeight = 34;
+		listyList->height = 160;
+//		gui.addPushButton("Press and hold to record a sound")->size(500, 40);
+//		gui.addPushButton("OK")->size(100, 40);
 		gui.addListener(this);
+		gui.y = 140;
+		activator.addListener(this);
 	}
 	
 	void controlChanged(xmlgui::Event *e) {
-		if(e->control->id=="OK") {
-			ofSoundStreamStop();
-			ofSoundStreamSetup(2, 0, ofGetAppPtr(), 44100, 512, 4);
-			gui.setEnabled(false);
-		}
-		if(e->control->id=="Sound") {
-			mustLoadSound = true;
+
+		if(e->type==xmlgui::Event::TOUCH_UP && e->control->id=="Sound") {
 			List *l = (List*)gui.getControlById("Sound");
 			string s = l->getSelectedString();
-			soundFile = ofToDataPath("sounds/" + s);
+			string newSoundFile = ofToDataPath("sounds/" + s);
+			if(soundFile!=newSoundFile) {
+				mustLoadSound = true;
+				soundFile = newSoundFile;
+			}
 		}
+
 		if(e->control->id=="Press and hold to record a sound") {
 			if(e->type==xmlgui::Event::TOUCH_DOWN) {
 				printf("Start recording\n");
@@ -143,65 +150,47 @@ public:
 			}
 			
 		}
+		if(e->control->id=="settings|close") {
+			gui.setEnabled(guiActive);
+			if(guiActive) {
+			} else {
+				//ofSoundStreamStop();
+				//ofSoundStreamSetup(2, 0, ofGetAppPtr(), 44100, 512, 4);
+				gui.setEnabled(false);
+			}
+		}
 	}
 
 	void draw() {
-		int MAX_HOLD_COUNT = 20;
-		if(!gui.isEnabled()) {
-			if(overActivator) {
-				holdCount++;
-			} else {
-				holdCount = 0;
-			}
+		
+		if(gui.isEnabled()) {
 			
-			if(holdCount>MAX_HOLD_COUNT) {
-				gui.setEnabled(true);
-				ofSoundStreamStop();
-				ofSoundStreamSetup(0, 1, ofGetAppPtr(), 44100, 512, 4);
-				holdCount = 0;
-			}
-		}
-		if(!gui.isEnabled()) {
-			glColor4f(1, 1, 1, 0.5);
-			ofRect(activator);
-			glColor4f(1,1,1,1);
-			ofRect(activator.x, activator.y, activator.width*ofMap(holdCount, 0, MAX_HOLD_COUNT, 0, 1), activator.height);
-			ofSetHexColor(0);
-			ofDrawBitmapString("MENU", activator.x+3, activator.y+15);
-		} else {
 			ofEnableAlphaBlending();
-			ofSetColor(0, 0, 0, 100);
-
-				ofRect(0, 0, ofGetWidth(), ofGetHeight());
 			
+			ofSetColor(0, 0, 0, 160);
+			ofRect(0, 0, ofGetWidth(), ofGetHeight());
+			ofSetColor(255);
+			title.draw(20, 20);
 		}
+		activator.draw();
 	}
 	
 	
 	void touchDown(int id, float x, float y) {
-		if(!gui.isEnabled()) {
-			overActivator = activator.inside(x, y);
-		}
+		activator.touchDown(x, y, id);
 	}
 	
 	
 	void touchUp(int id, float x, float y) {
-		if(!gui.isEnabled()) {
-			overActivator = activator.inside(x, y);
-		}
-		
-		overActivator = false;
+		activator.touchUp(x, y, id);
 	}
 	
 	void touchMoved(int id, float x, float y) {
-		if(!gui.isEnabled()) {
-			overActivator = activator.inside(x, y);
-		}
+		activator.touchMoved(x, y, id);
 	}
 	bool mustLoadSound;
 	string soundFile;
 	bool recording;
-	int holdCount;
 };
 
 

@@ -366,7 +366,7 @@ void Sampler::playSound(float volume, float pitch) {
 	//	note += noteOffset;
 	//}
 	playbackSpeed = noteToSpeed(note);
-	printf("pitch: %f   note: %d   speed: %f   pos: %d\n", pitch, note, playbackSpeed, pos);
+	//printf("pitch: %f   note: %d   speed: %f   pos: %d\n", pitch, note, playbackSpeed, pos);
 	sample.trigger(volume);
 	noteLastTime = ofGetElapsedTimef();
 	lastNote = pitch*vision.levels.size();
@@ -428,7 +428,7 @@ int Sampler::valueToNote(int value) {
 	else {
 		while(scalePos<0) scalePos += notesInScale;
 	}
-	printf("Octave: %d       scale pos %d\n", octave, scalePos);
+	//printf("Octave: %d       scale pos %d\n", octave, scalePos);
 
 	int noteNum = octave*12;
 	

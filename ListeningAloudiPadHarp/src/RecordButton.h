@@ -54,12 +54,17 @@ public:
 class RecordButton: public LabeledControl {
 public:
 	RecordButtonListener *recListener;
+	ofImage recImg;
 	RecordButton(): LabeledControl() {
 		recListener = NULL;
 		name = "PRESS TO RECORD";
-		width = 140;
+		width = 270;
 		height = 40;
 		wasRecording = false;
+		
+	}
+	void setup(){
+		recImg.loadImage("rec.png");
 	}
 	
 	bool wasRecording;
@@ -83,10 +88,11 @@ public:
 		ofRect(*this);
 		
 		ofSetHexColor(0xFFFFFF);
+		recImg.draw(x+3, y+3, height-6, height-6);
 		if(down) {
-			ofDrawBitmapString("RECORDING", x + 3, y+16);
+			xmlgui::Resources::drawString("RECORDING", x + height+3, y+26);
 		} else {
-			ofDrawBitmapString("HOLD DOWN TO RECORD", x + 3, y+16);
+			xmlgui::Resources::drawString("HOLD DOWN TO RECORD", x+ height+ 3, y+26);
 		}
 		
 		

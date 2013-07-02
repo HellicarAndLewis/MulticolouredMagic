@@ -55,6 +55,7 @@ public:
 	xmlgui::Listener *listener;
 	vector<ofImage> images;
 	void setup(string name, bool &val) {
+		id = name;
 		names = ofSplitString(name, "|");
 		for(int i = 0; i < names.size(); i++) {
 			images.push_back(ofImage());
@@ -97,7 +98,7 @@ public:
 		
 		images[bval(value)?1:0].setAnchorPercent(0.5, 0.5);
 		float off = 0;
-		if(bval(value)==0) off = 10;
+		if(names[bval(value)?1:0]=="play") off = 10;
 		images[bval(value)?1:0].draw(centre.x+off, centre.y);
 
 		
@@ -105,6 +106,8 @@ public:
 			if(t>=1) {
 				// do it
 				bval(value) = !bval(value);
+				xmlgui::Event e(this, xmlgui::Event::TOUCH_UP);
+				if(listener!=NULL) listener->controlChanged(&e);
 				touchDownStart = 1000000;
 			}
 		}

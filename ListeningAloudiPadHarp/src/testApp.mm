@@ -35,7 +35,7 @@ void testApp::setup(){
 
 	ofBackground(255, 255, 255);
 
-	
+	xmlgui::Resources::setFont("Arial.ttf", 12);
 	
 	centerer.setup(WIDTH, HEIGHT);
 	setupGraphics();
@@ -64,7 +64,7 @@ void testApp::setup(){
 	sampler.init();
 	
 
-	ofSoundStreamSetup(2, 0, this, 44100, 512, 4);
+	ofSoundStreamSetup(2, 1, this, 44100, 512, 4);
 	 
 }
 
