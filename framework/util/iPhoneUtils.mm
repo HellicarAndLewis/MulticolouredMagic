@@ -243,13 +243,13 @@ string iPhoneGetDocsDir() {
 }
 
 
-string getUDID() {
+/*string getUDID() {
 	char udidOut[128];	
 	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
 	
 	NSStringToString(udid, udidOut);
 	return string(udidOut);
-}
+}*/
 
 
 #include "Poco/Net/HTTPClientSession.h"

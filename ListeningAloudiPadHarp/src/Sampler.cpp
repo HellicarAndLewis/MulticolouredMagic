@@ -90,22 +90,28 @@ void Sampler::init(){
 	// 44100 samples per second
 	// 256 samples per buffer
 	// 1 num buffers (latency)
-
-
- 
+	
 	controlMutex.lock();
 	sample.loadFromFile(ofToDataPath("sounds/harp.wav"));
 	controlMutex.unlock();
-
-
+	
+	
 	//--------- PANEL 1
-
+#ifndef TARGET_OS_IPHONE_SIMULATOR
+	
+	
 	video.listDevices();
-	#ifdef TARGET_OF_IPHONE
+	
+	
+	
+	
+#ifdef TARGET_OF_IPHONE
 	video.setDeviceID(1);
-	#endif
+#endif
 	video.initGrabber(VISION_WIDTH, VISION_HEIGHT, OF_PIXELS_BGRA);
+#endif
 	vision.setup();
+	
 	gui.setup();
 	
 	gui.recordButton.recListener = this;
@@ -116,20 +122,20 @@ bool wasRecording = false;
 
 int lastMaxLevel = -1;
 void Sampler::update() {
-
+	
 	if(!wasRecording && gui.recording) {
 		// recording just started.
 		//ofSoundStreamStop();
 		//ofSoundStreamSetup(0, 1, ofGetAppPtr(), 44100, 512, 4);
-
+		
 	}
 	
 	wasRecording = gui.recording;
 	if(gui.input==INPUT_ACCELEROMETER) {
-		#ifdef TARGET_OF_IPHONE
+#ifdef TARGET_OF_IPHONE
 		ofPoint a = ofxAccelerometer.getOrientation();
 		float ax = a.x;// + a.y;
-	//	printf("%f\n", ax);
+					   //	printf("%f\n", ax);
 		float pitch = ofMap(ax, -45, 45, 1, 0);
 		if(pitch>=1) return;
 		float vol = 0.8;
@@ -140,18 +146,20 @@ void Sampler::update() {
 		if(ax<-45) pitch = 1;
 		else if(ax>45) {
 			pitch = 0;
-//			pitch = ofMap(ax, 45, 135, 0, 1, true);
+			//			pitch = ofMap(ax, 45, 135, 0, 1, true);
 		}
 		int currNote = pitch*vision.levels.size();
 		if(currNote!=lastNote) {
 			
 			playSound(vol, pitch);
 		}
-		#endif
+#endif
 	}
 	ofBackground(0,0,0);
 	vision.numLevels = gui.noteRange;
+#ifndef TARGET_OS_IPHONE_SIMULATOR
 	vision.video = &video;
+#endif
 	// the vision code works out how much average change there is in each of
 	// either vertical or horizontal strips across the screen.
 	// this bit of code finds out if the strip with the most change
@@ -159,13 +167,13 @@ void Sampler::update() {
 	float max = 0;
 	int currMaxLevel = -1;
 	for(int i = 0; i < vision.levels.size(); i++) {
-
+		
 		if(max<vision.levels[i].second) {
 			max = vision.levels[i].second;
 			currMaxLevel = i;
 		}
 	}
-
+	
 	if(lastMaxLevel!=currMaxLevel) {
 		//printf("Playing note %d %f\n", currMaxLevel, max);
 		float volume = ofMap(max, 0, 0.5, 0, 1);
@@ -182,18 +190,18 @@ void Sampler::update() {
 			currMaxLevel = -1;
 		}
 	}
-
+	
 	lastMaxLevel = currMaxLevel;
-
-
-
+	
+	
+	
 	vision.update();
 	
 	
 	if(gui.mustLoadSound) {
 		controlMutex.lock();
 		sample.loadFromFile(gui.soundFile);
-
+		
 		controlMutex.unlock();
 		gui.mustLoadSound = false;
 		noteOffset = 0;
@@ -201,12 +209,12 @@ void Sampler::update() {
 	
 	
 	/*for(int i = 0; i < particles.size(); i++) {
-		particles[i].update();
-		if(!particles[i].alive) {
-			particles.erase(particles.begin()+i);
-			i--;
-		}
-	}*/
+	 particles[i].update();
+	 if(!particles[i].alive) {
+	 particles.erase(particles.begin()+i);
+	 i--;
+	 }
+	 }*/
 }
 void Sampler::recordingStarted() {
 	controlMutex.lock();
@@ -234,21 +242,21 @@ void Sampler::draw(){
 	// fade out a note
 	if(ofGetElapsedTimef() - noteLastTime < 1.5f) {
 		float alpha = 0.5*ofMap(ofGetElapsedTimef() - noteLastTime, 0, 1.5, 255, 0);
-
+		
 		ofSetColor(255, 0, 0, alpha);
 		float width = (float) ofGetWidth()/vision.levels.size();
 		
 		ofRect(ofGetWidth() - width*(lastNote+1), 0, width, ofGetHeight());
 	}
-
-
-
-
+	
+	
+	
+	
 	ofSetHexColor(0xFFFFFF);
-
-//	for(int i = 0; i < particles.size(); i++) {
-//		particles[i].draw();
-//	}
+	
+	//	for(int i = 0; i < particles.size(); i++) {
+	//		particles[i].draw();
+	//	}
 	
 	if(gui.showGridLines) {
 		glColor4f(1,1,1,0.4);
@@ -271,7 +279,7 @@ void Sampler::audioRequested (float * output, int bufferSize, int nChannels) {
 	if(recording) {
 		memset(output, 0, bufferSize*nChannels*sizeof(float));
 	} else {
-	//	printf("Sound %f\n", playbackSpeed);
+		//	printf("Sound %f\n", playbackSpeed);
 		// otherwise, maybe we want playback
 		for(int i = 0; i < bufferSize; i++) {
 			float s = sample.getSample(playbackSpeed);
@@ -284,13 +292,13 @@ void Sampler::audioRequested (float * output, int bufferSize, int nChannels) {
 }
 //--------------------------------------------------------------
 void Sampler::audioReceived 	(float * input, int bufferSize, int nChannels){
-
-
+	
+	
 	controlMutex.lock();
 	for(int i = 0; i < bufferSize; i++) {
-
+		
 		float inp = input[i*nChannels];
-
+		
 		// do the recording
 		if(recording && recordPos<recordBufferSize) {
 			recordBuffer[recordPos++] = inp;
@@ -303,7 +311,7 @@ void Sampler::audioReceived 	(float * input, int bufferSize, int nChannels){
 		}
 	}
 	controlMutex.unlock();
-
+	
 }
 
 
@@ -344,7 +352,7 @@ void Sampler::mouseDragged(int x, int y, int button){
 			playSound(vol, pitch);
 		}
 	}
-
+	
 }
 //--------------------------------------------------------------
 void Sampler::mouseReleased(int x, int y, int button){
@@ -370,8 +378,8 @@ void Sampler::playSound(float volume, float pitch) {
 	sample.trigger(volume);
 	noteLastTime = ofGetElapsedTimef();
 	lastNote = pitch*vision.levels.size();
-
-
+	
+	
 }
 
 void Sampler::spawnParticle(ofPoint pos, float volume) {
@@ -405,8 +413,8 @@ int Sampler::valueToNote(int value) {
 		notesInScale = 12;
 	}
 	
-
-
+	
+	
 	int noteInScale = value;
 	int octave = 0;
 	
@@ -414,12 +422,12 @@ int Sampler::valueToNote(int value) {
 	else if(noteInScale>=2*notesInScale) octave = 2;
 	else if(noteInScale>=  notesInScale) octave = 1;
 	else if(noteInScale>=0) octave = 0;
-
+	
 	else if(noteInScale>=-notesInScale) octave = -1;
 	else if(noteInScale>=-notesInScale*2) octave = -2;
 	else if(noteInScale>=-notesInScale*3) octave = -3;
-
-
+	
+	
 	
 	
 	// add the note offset
@@ -429,7 +437,7 @@ int Sampler::valueToNote(int value) {
 		while(scalePos<0) scalePos += notesInScale;
 	}
 	//printf("Octave: %d       scale pos %d\n", octave, scalePos);
-
+	
 	int noteNum = octave*12;
 	
 	if(scales[scale]==PENTATONIC) {
@@ -449,7 +457,7 @@ int Sampler::valueToNote(int value) {
 			case 4: noteNum += 7; break;
 			case 5: noteNum += 9;  break;
 			case 6: noteNum += 11;  break;
-
+				
 		}
 	} else if(scales[scale]==MINOR) {
 		switch(scalePos) {
@@ -464,15 +472,15 @@ int Sampler::valueToNote(int value) {
 	} else if(scales[scale]==CHROMATIC) {
 		noteNum += scalePos;
 	}
-
-
+	
+	
 	return noteNum + gui.key; // set the pitch here
-
+	
 }
 
 
 void Sampler::soundChanged() {
-
+	
 	controlMutex.lock();
 	string sndUrl = "";//AppSettings::soundFile;
 	if(sndUrl=="") {
@@ -481,3 +489,5 @@ void Sampler::soundChanged() {
 	sample.loadFromFile(sndUrl);
 	controlMutex.unlock();
 }
+
+ 

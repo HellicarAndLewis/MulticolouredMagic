@@ -41,7 +41,8 @@ void testApp::setup(){
 	centerer.setup(WIDTH, HEIGHT);
 	setupGraphics();
 	setupOrientation();
-	
+	xmlgui::Resources::setFont("Arial.ttf", 12);
+	gui.gui.setAutoLayoutPadding(30);
 #ifdef TARGET_OF_IPHONE
 	ofxiPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 	// register touch events

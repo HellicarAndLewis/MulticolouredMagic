@@ -53,6 +53,7 @@ void testApp::setup(){
 	
 	//iPhoneAlerts will be sent to this.
 	ofxiPhoneAlerts.addListener(this);
+	
 
 #else
 //	setDataPathRootToAppContents(appName);

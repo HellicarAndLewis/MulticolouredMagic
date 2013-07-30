@@ -46,33 +46,39 @@
 #include "SimpleGui.h"
 #include "MiniSampler.h"
 #include "Pad.h"
+#include "HoldToggle.h"
 
 class SoundBoxGui: public xmlgui::Listener {
 public:
 	
-	ofRectangle activator;
-	bool overActivator;
-	
 	xmlgui::SimpleGui gui;
 	int numPads;
-	int holdCount;
 
+	ofImage title;
+
+	HoldToggle activator;
+	bool guiActive;
 	void setup() {
-		holdCount = 0;
-		overActivator = false;
-		activator.set(10, 10, 70, 30);
-
-		gui.setWidth(500);
+		guiActive = false;
+		title.loadImage("settings-title.png");
+		activator.set(ofGetWidth() - 10 - 120, 10, 120, 120);
+		activator.setup("settings|close", guiActive);
+		gui.y = 140;
+		gui.setWidth(450);
 		gui.addSlider("Number of Pads", numPads, 1, 11)->height = 40;
-		gui.addSegmented("loop", (int&)MiniSampler::looping, "OFF|ON")->size(100, 40);
-		gui.addSegmented("trigger", Pad::triggerType, "DIRECT|LATCH")->height=40;
-		gui.addPushButton("OK")->size(100, 40);
+		gui.addSegmented("Loop", (int&)MiniSampler::looping, "OFF|ON")->size(100, 40);
+		gui.addSegmented("Trigger", Pad::triggerType, "DIRECT|LATCH")->height=40;
 		gui.addListener(this);
+		activator.addListener(this);
+		
 	}
 	
 	void controlChanged(xmlgui::Event *e) {
-		if(e->control->id=="OK") {
-			gui.setEnabled(false);
+	
+		
+		if(e->control->id=="settings|close") {
+			gui.setEnabled(guiActive);
+			
 		}
 	}
 	void enableGui() {
@@ -80,55 +86,30 @@ public:
 	}
 	
 	void draw() {
-		int MAX_HOLD_COUNT = 30;
-		if(!gui.isEnabled()) {
-			if(overActivator) {
-				holdCount++;
-			} else {
-				holdCount = 0;
-			}
-			if(holdCount>MAX_HOLD_COUNT) {
-				enableGui();
-				holdCount = 0;
-			}
-		}
-		if(!gui.isEnabled()) {
-			glColor4f(1, 1, 1, 0.5);
-			ofRect(activator);
-			glColor4f(1,1,1,1);
-			ofRect(activator.x, activator.y, activator.width*ofMap(holdCount, 0, MAX_HOLD_COUNT, 0, 1), activator.height);
+		
+		if(gui.isEnabled()) {
 			
-			ofSetHexColor(0);
-			ofDrawBitmapString("MENU", activator.x+3, activator.y+15);
-		} else {
 			ofEnableAlphaBlending();
-			ofSetColor(0, 0, 0, 60);
+			ofSetColor(0, 0, 0, 100);
 			ofRect(0, 0, ofGetWidth(), ofGetHeight());
+			ofSetColor(255);
+			title.draw(20,20);
 		}
+		activator.draw();
 	}
 	
 	
 	void touchDown(int id, float x, float y) {
-		if(!gui.isEnabled()) {
-			overActivator = activator.inside(x, y);
-		}
+		activator.touchDown(x, y, id);
 	}
 	
 	
 	void touchUp(int id, float x, float y) {
-		if(!gui.isEnabled()) {
-			overActivator = activator.inside(x, y);
-			
-		}
-		
-		overActivator = false;
+		activator.touchUp(x, y, id);
 	}
 	
 	void touchMoved(int id, float x, float y) {
-		if(!gui.isEnabled()) {
-			overActivator = activator.inside(x, y);
-		}
-	
+		activator.touchMoved(x, y, id);
 	}
 };
 

@@ -66,11 +66,11 @@ int main(){
 		HEIGHT = temp;
 	}
 	
-	if(!RETINA) {
+	//if(!RETINA) {
 		if([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)]) {
 			IPAD = [[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPad;
 		}
-	}
+	//}
 	//printf("WIDTH: %d    HEIGHT: %d\n", WIDTH, HEIGHT);
 	if(RETINA) {
 		WIDTH *= 2;
@@ -86,7 +86,7 @@ int main(){
 	}
 	
 	
-#else 
+#else
 	//WIDTH_SCALE = 2;
 	//HEIGHT_SCALE = 2;
 	WIDTH = 1024;
@@ -102,7 +102,11 @@ int main(){
 	WIDTH_SCALE = (float)WIDTH/480.f;
 	HEIGHT_SCALE = (float)HEIGHT/320.f;
 #ifdef TARGET_OF_IPHONE
-	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
+	ofAppiPhoneWindow * iOSWindow = new ofAppiPhoneWindow();
+	if(!IPAD && RETINA) {
+		iOSWindow->enableRetina();
+	}
+	ofSetupOpenGL(iOSWindow, WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
 #else
 	ofSetupOpenGL(WIDTH, HEIGHT, OF_WINDOW);			// <-------- setup the GL context
 #endif

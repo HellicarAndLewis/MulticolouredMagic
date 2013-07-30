@@ -52,6 +52,7 @@
 #endif
 class Vision {
 public:
+	#ifndef TARGET_OS_IPHONE_SIMULATOR
 	ofVideoGrabber *video;
 	ofxCvColorImage camImg;
 	ofxCvGrayscaleImage greyImg;
@@ -59,6 +60,7 @@ public:
 	ofxCvGrayscaleImage bgImg;
 	ofxCvGrayscaleImage diffImg;
 	ofxCvGrayscaleImage blendImage;
+	#endif
 	
 //	ofxCvOpticalFlowLK flow;
 	
@@ -70,6 +72,7 @@ public:
 	vector<pair<ofRectangle, float> > levels;
 	bool vertical;
 	void setup() {//ofxControlPanel *_gui) {
+#ifndef TARGET_OS_IPHONE_SIMULATOR
 		vertical = true;
 		numLevels = 18;
 		//gui = _gui;
@@ -82,23 +85,12 @@ public:
 //		flow.allocate(VISION_WIDTH, VISION_HEIGHT);
 		
 		bgImg.set(0);
-		
-		//gui->setWhichPanel("vision");
-		//gui->setWhichColumn(0);
-		//gui->addDrawableRect("video", &camera, 320, 240);
-		//gui->addDrawableRect("diffImage", &diffImg, 200, 150);
-		
-		//gui->addSlider("Learn Speed", "learnSpeed", 0.5, 0, 1, false);
-		//gui->addSlider("Number of Notes", "levels", 5, 5, 30, true);
-		//gui->setWhichColumn(1);
-		//gui->addCustomRect("Background tint", &bgColorPicker, 200, 150);
-		//gui->addCustomRect("note tint", &noteColorPicker, 200, 150);
-		//gui->addToggle("Vertical or Horizontal", "vertical", vertical);
+#endif
 	}
 	
 	void update() {
+				#ifndef TARGET_OS_IPHONE_SIMULATOR
 
-		//printf("%d %d\n", video->getWidth(), video->getHeight());
 
 		float learnSpeed = 0.5;//gui->getValueF("learnSpeed");
 		
@@ -123,25 +115,19 @@ public:
 		for(int i = 0; i < numLevels; i++) {
 
 			ofRectangle rect;
-			//if(vertical) {
-			//	rect.x = 0;
-			//	rect.width = VISION_WIDTH;
-			//	rect.height = (float)VISION_HEIGHT/numLevels;
-			//	rect.y = rect.height*i;
-			//} else {
-				rect.y = 0;
-				rect.height = VISION_HEIGHT;
-				rect.width = (float)VISION_WIDTH/numLevels;
-				rect.x = rect.width*i;
-			//}
+
+			rect.y = 0;
+			rect.height = VISION_HEIGHT;
+			rect.width = (float)VISION_WIDTH/numLevels;
+			rect.x = rect.width*i;
+
 			float value = getAveragePixelValueInRect(pixels, &rect);
 
 			levels.push_back(make_pair(rect, value));
 		}
-		
-		//flow.calc(greyLast, greyImg, 7);
-		//flow.blur(5);
-	//	greyLast = greyImg;
+		#endif
+
+
 	
 	}
 	
@@ -166,6 +152,7 @@ public:
 	}
 	
 	void draw() {
+		#ifndef TARGET_OS_IPHONE_SIMULATOR
 		//flow.draw(0, 0, ofGetWidth(), ofGetHeight());
 		// additive blending
 		ofEnableAlphaBlending();
@@ -181,21 +168,9 @@ public:
 		
 		// reset to normal alpha blending
 		ofEnableAlphaBlending();
-		
-		/*glPushMatrix();
-		ofNoFill();
-		glScalef((float)ofGetWidth()/VISION_WIDTH, (float)ofGetHeight()/VISION_HEIGHT, 1);
-		for(int i = 0; i < levels.size(); i++) {
-			
-			ofSetColor(255, 255, 255, 150);
-			ofRectangle r = levels[i].first;
-			r.height *= levels[i].second;
-			ofRect(r);
-			
-	//		ofRect( (float)i*ofGetWidth()/levels.size(), 0, (float)ofGetWidth()/levels.size(), (float)ofGetHeight()*levels[i].second*5.f);
-		}
-		glPopMatrix();*/
+
 		ofFill();
+		#endif
 	}
 	int numLevels;
 };

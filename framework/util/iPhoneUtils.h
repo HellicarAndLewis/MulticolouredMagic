@@ -82,7 +82,7 @@ int getFreeMemory();
 
 string iPhoneGetDocsDir();
 
-string getUDID();
+//string getUDID();
 
 /** Warns the user with a standard alert dialog */
 void warnWithAlert(string title, string message);

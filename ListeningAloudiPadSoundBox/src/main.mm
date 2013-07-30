@@ -2,23 +2,23 @@
  * == Simplified BSD *** MODIFIED FOR NON-COMMERCIAL USE ONLY!!! *** ==
  * Copyright (c) 2011, Cariad Interactive LTD
  * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification, are permitted 
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted
  * provided that the following conditions are met:
- * 
- *   * Redistributions of source code must retain the above copyright notice, this list of 
+ *
+ *   * Redistributions of source code must retain the above copyright notice, this list of
  *     conditions and the following disclaimer.
- * 
- *   * Redistributions in binary form must reproduce the above copyright notice, this list of 
- *     conditions and the following disclaimer in the documentation and/or other materials provided 
+ *
+ *   * Redistributions in binary form must reproduce the above copyright notice, this list of
+ *     conditions and the following disclaimer in the documentation and/or other materials provided
  *     with the distribution.
- * 
- *   * Any redistribution, use, or modification is done solely for personal benefit and not for any 
+ *
+ *   * Any redistribution, use, or modification is done solely for personal benefit and not for any
  *     commercial purpose or for monetary gain
  *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR 
- * IMPLIED WARRANTIES, INCLUDING, BUT NOT  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND 
- * FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ * FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
  * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
  * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
@@ -66,11 +66,11 @@ int main(){
 		HEIGHT = temp;
 	}
 	
-	if(!RETINA) {
-		if([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)]) {
-			IPAD = [[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPad;
-		}
+	//if(!RETINA) {
+	if([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)]) {
+		IPAD = [[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPad;
 	}
+	//}
 	//printf("WIDTH: %d    HEIGHT: %d\n", WIDTH, HEIGHT);
 	if(RETINA) {
 		WIDTH *= 2;
@@ -86,7 +86,7 @@ int main(){
 	}
 	
 	
-#else 
+#else
 	//WIDTH_SCALE = 2;
 	//HEIGHT_SCALE = 2;
 	WIDTH = 1024;
@@ -96,20 +96,22 @@ int main(){
 	IPAD = true;
 	IMAGE_ROOT = "images4/";
 	//FAKE_GAME_MODE = true;
-	printf("SETTED HERE!!!!!\n\n\n\n");
 #endif
 	
 	WIDTH_SCALE = (float)WIDTH/480.f;
 	HEIGHT_SCALE = (float)HEIGHT/320.f;
 #ifdef TARGET_OF_IPHONE
-	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
+	ofAppiPhoneWindow * iOSWindow = new ofAppiPhoneWindow();
+	if(!IPAD && RETINA) {
+		iOSWindow->enableRetina();
+	}
+	ofSetupOpenGL(iOSWindow, WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
 #else
 	ofSetupOpenGL(WIDTH, HEIGHT, OF_WINDOW);			// <-------- setup the GL context
 #endif
 	// this kicks off the running of my app
 	// can be OF_WINDOW or OF_FULLSCREEN
 	// pass in width and height too:
-	printf("Test app creating\n");
 	ofRunApp( new testApp());
-	printf("Test app created\n");	
+
 }

@@ -59,8 +59,9 @@ public:
 
 	void audioRequested (float * output, int bufferSize, int nChannels); 		
 	void audioReceived 	(float * input, int bufferSize, int nChannels);
-	
+#ifndef TARGET_OS_IPHONE_SIMULATOR
 	ofVideoGrabber video;
+#endif
 	Sample sample;
 	float *recordBuffer;
 	int recordBufferSize;

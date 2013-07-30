@@ -119,8 +119,8 @@ public:
 		listyList = gui.addList("Sound", soundId, sounds);
 
 		printf("List of things: %d\n", listyList->items.size());
-		listyList->itemHeight = 34;
-		listyList->height = 160;
+		listyList->itemHeight = 24;
+		listyList->height = 560;
 //		gui.addPushButton("Press and hold to record a sound")->size(500, 40);
 //		gui.addPushButton("OK")->size(100, 40);
 		gui.addListener(this);
