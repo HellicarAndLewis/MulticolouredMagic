@@ -150,8 +150,8 @@ void ofxFBOTexture::setup(int w, int h, int internalGlDataType, int numSamples) 
 			break;
 	}
 #else
-	texData.glType		= GL_RGBA;
-	texData.pixelType	= GL_UNSIGNED_BYTE;
+	texData.glTypeInternal		= GL_RGBA;
+	//texData.pixelType	= GL_UNSIGNED_BYTE;
 	pixels				= new unsigned char[w * h * 4];
 #endif			
 	
@@ -163,7 +163,7 @@ void ofxFBOTexture::setup(int w, int h, int internalGlDataType, int numSamples) 
 	glTexParameterf(texData.textureTarget, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glTexParameterf(texData.textureTarget, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameterf(texData.textureTarget, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexImage2D(texData.textureTarget, 0, texData.glTypeInternal, texData.tex_w, texData.tex_h, 0, texData.glType, texData.pixelType, 0);
+	glTexImage2D(texData.textureTarget, 0, texData.glTypeInternal, texData.tex_w, texData.tex_h, 0, texData.glTypeInternal, GL_UNSIGNED_BYTE, 0);
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 	
 	
@@ -379,8 +379,8 @@ void ofxFBOTexture::clean() {
 			delete [](unsigned char*)pixels;
 	}
 #else
-	texData.glType		= GL_RGBA;
-	texData.pixelType	= GL_UNSIGNED_BYTE;
+	texData.glTypeInternal		= GL_RGBA;
+
 	delete [](unsigned char*)pixels;
 #endif		
 	
@@ -454,7 +454,7 @@ void *ofxFBOTexture::getPixels() {
 #ifndef TARGET_OPENGLES
 	glReadBuffer(GL_COLOR_ATTACHMENT0_EXT);
 #endif
-	glReadPixels(0, 0, texData.width, texData.height, texData.glType, texData.pixelType, pixels);
+	glReadPixels(0, 0, texData.width, texData.height, texData.glTypeInternal, GL_UNSIGNED_BYTE, pixels);
 	if(!alreadyIn) end();  // if fbo wasn't bound when the function was called, unbind it
 	bReading = false;
 	return pixels;

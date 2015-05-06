@@ -71,7 +71,7 @@ int main(){
 			IPAD = [[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPad;
 		}
 	}
-	//printf("WIDTH: %d    HEIGHT: %d\n", WIDTH, HEIGHT);
+	printf("WIDTH: %d    HEIGHT: %d\n", WIDTH, HEIGHT);
 	if(RETINA) {
 		WIDTH *= 2;
 		HEIGHT *= 2;
@@ -85,7 +85,7 @@ int main(){
 		IMAGE_ROOT = "images/";
 	}
 	
-	
+	printf("retina? %d    iPad? %d    hi-res? %d\n", RETINA, IPAD, HI_RES);
 #else 
 	//WIDTH_SCALE = 2;
 	//HEIGHT_SCALE = 2;

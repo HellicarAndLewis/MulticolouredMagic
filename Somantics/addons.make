@@ -1,0 +1,3 @@
+ofxOpenCv
+ofxBox2d
+ofxXmlSettings

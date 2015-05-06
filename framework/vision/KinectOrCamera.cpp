@@ -84,7 +84,7 @@ void KinectOrCamera::update() {
 #endif
 	} else {
 
-		camera.grabFrame();
+		camera.update();
 	}
 }
 void KinectOrCamera::close() {

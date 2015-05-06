@@ -56,9 +56,9 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	setupOrientation();
 #ifdef TARGET_OF_IPHONE
 	// register touch events
-	ofAddListener(ofEvents.touchDown, this, &ReactickleApp::touchDown);
-	ofAddListener(ofEvents.touchMoved, this, &ReactickleApp::touchMoved);
-	ofAddListener(ofEvents.touchUp, this, &ReactickleApp::touchUp);
+	ofAddListener(ofEvents().touchDown, this, &ReactickleApp::touchDown);
+	ofAddListener(ofEvents().touchMoved, this, &ReactickleApp::touchMoved);
+	ofAddListener(ofEvents().touchUp, this, &ReactickleApp::touchUp);
 
 	// initialize the accelerometer
 	ofxAccelerometer.setup();
@@ -242,7 +242,7 @@ void ReactickleApp::mouseReleased(int x, int y, int button) {
 //--------------------------------------------------------------
 void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 	float mult = RETINA?2:1;
-	printf("%d\n", enabled);
+	//printf("%d\n", enabled);
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
 		if(backButton.touchDown(touch.x*mult, touch.y*mult, touch.id)) {
@@ -337,14 +337,14 @@ void ReactickleApp::setupGraphics() {
 void ReactickleApp::updateOrientation() {
 #ifdef TARGET_OF_IPHONE
 	int orientation = [[UIDevice currentDevice] orientation];
-	int orient = iPhoneGetOrientation();
+	int orient = ofxiOSGetOrientation();
 	//printf("Phone orientation: %d, window orientation %d\n", orientation, orient);
 
-	if(orientation!=currOrientation || orient==OFXIPHONE_ORIENTATION_PORTRAIT || orient==OFXIPHONE_ORIENTATION_UPSIDEDOWN) {
+	if(orientation!=currOrientation || orient==ofxiOS_ORIENTATION_PORTRAIT || orient==ofxiOS_ORIENTATION_UPSIDEDOWN) {
 		if(orientation==UIDeviceOrientationLandscapeLeft) {
-			iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
+			ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_LEFT);
 		} else if(orientation==UIDeviceOrientationLandscapeRight) {
-			iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
+			ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_RIGHT);
 		}
 	}
 
@@ -386,11 +386,11 @@ void ReactickleApp::setupOrientation() {
 
 
 	if(orientation==UIDeviceOrientationLandscapeLeft) {
-		iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
+		ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_RIGHT);
 	} else if(orientation==UIDeviceOrientationLandscapeRight) {
-		iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
+		ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_LEFT);
 	} else { // default
-		iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
+		ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_LEFT);
 	}
 
 	currOrientation = UIDeviceOrientationPortrait;

@@ -74,7 +74,6 @@ ofImage *ImageCache::getImage(string path) {
 		ofImage *img = new ofImage();
 		//printf("Loading %s\n", ofToDataPath(path).c_str());
 		img->loadImage(path);
-
 		imageCacheImages[path] = img;
 		//printf("Loaded file from %s\n", string(basePath+path).c_str());
 	}

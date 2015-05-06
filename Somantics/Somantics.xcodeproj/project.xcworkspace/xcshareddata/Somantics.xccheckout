@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7076F457-4181-48C1-9470-2886F61AA5AB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Somantics</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E9FCA45F65D2C059D349621B6D38F21D4EDF75E9</key>
+		<string>https://github.com/HellicarAndLewis/MulticolouredMagic.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Somantics/Somantics.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E9FCA45F65D2C059D349621B6D38F21D4EDF75E9</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/HellicarAndLewis/MulticolouredMagic.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E9FCA45F65D2C059D349621B6D38F21D4EDF75E9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E9FCA45F65D2C059D349621B6D38F21D4EDF75E9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MulticolouredMagic</string>
+		</dict>
+	</array>
+</dict>
+</plist>
