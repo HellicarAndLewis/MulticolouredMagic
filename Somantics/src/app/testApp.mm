@@ -151,7 +151,7 @@ void testApp::draw(){
 	// pixel coordinates.
 	if(RETINA) { 
 		glPushMatrix();
-		glScalef(0.5, 0.5, 1);
+	//	glScalef(0.5, 0.5, 1);
 	}
 	
 	

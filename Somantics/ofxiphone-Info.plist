@@ -32,6 +32,8 @@
 	<true/>
 	<key>UIApplicationExitsOnSuspend</key>
 	<false/>
+	<key>NSHighResolutionCapable</key>
+	<true/>
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>

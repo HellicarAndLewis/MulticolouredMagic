@@ -72,10 +72,6 @@ int main(){
 		}
 	}
 	printf("WIDTH: %d    HEIGHT: %d\n", WIDTH, HEIGHT);
-	if(RETINA) {
-		WIDTH *= 2;
-		HEIGHT *= 2;
-	}
 	
 	if(IPAD||RETINA) {
 		IMAGE_ROOT = "images4/";

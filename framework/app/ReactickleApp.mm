@@ -241,11 +241,10 @@ void ReactickleApp::mouseReleased(int x, int y, int button) {
 
 //--------------------------------------------------------------
 void ReactickleApp::touchDown(ofTouchEventArgs &touch){
-	float mult = RETINA?2:1;
 	//printf("%d\n", enabled);
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
-		if(backButton.touchDown(touch.x*mult, touch.y*mult, touch.id)) {
+		if(backButton.touchDown(touch.x, touch.y, touch.id)) {
 			return;
 		}
 	}
@@ -257,17 +256,16 @@ void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 		ReactickleApp::instance->sender.sendMessage(m);
 	}
 #endif
-	currentApp->touchDown(touch.x*mult, touch.y*mult, touch.id);
-	this->buttonDown(touch.x*mult, touch.y*mult, touch.id);
+	currentApp->touchDown(touch.x, touch.y, touch.id);
+	this->buttonDown(touch.x, touch.y, touch.id);
 }
 
 //--------------------------------------------------------------
 void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
-//	printf("Test");
-	float mult = RETINA?2:1;
+
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
-		if(backButton.touchMoved(touch.x*mult, touch.y*mult, touch.id)) {
+		if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
 			return;
 		}
 	}
@@ -280,16 +278,16 @@ void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
 		ReactickleApp::instance->sender.sendMessage(m);
 	}
 #endif
-	currentApp->touchMoved(touch.x*mult, touch.y*mult, touch.id);
+	currentApp->touchMoved(touch.x, touch.y, touch.id);
 
 }
 
 //--------------------------------------------------------------
 void ReactickleApp::touchUp(ofTouchEventArgs &touch){
-	float mult = RETINA?2:1;
+
 	if(!enabled) return;
 	if(currentApp!=mainMenu) {
-		if(backButton.touchUp(touch.x*mult, touch.y*mult, touch.id)) {
+		if(backButton.touchUp(touch.x, touch.y, touch.id)) {
 			return;
 		}
 	}
@@ -302,8 +300,8 @@ void ReactickleApp::touchUp(ofTouchEventArgs &touch){
 		ReactickleApp::instance->sender.sendMessage(m);
 	}
 #endif
-	currentApp->touchUp(touch.x*mult, touch.y*mult, touch.id);
-	this->buttonUp(touch.x*mult, touch.y*mult, touch.id);
+	currentApp->touchUp(touch.x, touch.y, touch.id);
+	this->buttonUp(touch.x, touch.y, touch.id);
 }
 
 //--------------------------------------------------------------
